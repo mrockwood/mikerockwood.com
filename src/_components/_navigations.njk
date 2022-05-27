@@ -1,0 +1,57 @@
+  {% if tags %}
+    {% if 'work' in tags %}
+      {% set previousPost = collections.work | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.work | getNextCollectionItem(page) %}
+      {% set middleText = 'browse' %}
+      {% endif %}
+
+    {% if 'posts' in tags %}
+      {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+      {% set middleText = 'read' %}
+    {% endif %}
+  {% endif %}
+
+{% if previousPost or nextPost %}
+<div class="grid grid-cols-2 mt-10 max-w-screen-md mx-auto px-5 md:px-0 gap-x-2 border-t border-gray-200 dark:border-gray-800">
+  <div id="previousPost" class="py-5">
+    {% if previousPost %}
+    <strong class="block text-xs tracking-widest font-normal uppercase text-gray-400" aria-label="Navigate to previous item">Previous</strong>
+    <a href="{{ previousPost.url }}" class="text-lg hover:text-purple-800 dark:hover:text-yellow-200 transition-colors font-bold tracking-tight">
+      <span class="block" style="min-height:60px;">{{ previousPost.data.title }}</span>
+      {% if previousPost.data.featuredImg %}
+        <picture class="inline">
+          <img
+            class="inline"
+            loading="lazy"
+            alt="{{ previousPost.data.title }}"
+            src="https://res.cloudinary.com/kailoon/image/upload/v1613700746/kailoon.com/{{previousPost.data.featuredImg}}.webp"
+            srcset="https://res.cloudinary.com/kailoon/image/upload/dpr_auto,q_auto,w_200/v1613700746/kailoon.com/{{previousPost.data.featuredImg}}.webp 400w"
+          />
+        </picture>
+      {% endif %}
+    </a>
+    {% endif %}
+  </div>
+
+  <div id="nextPost" class="w-full py-5 text-right">
+    {% if nextPost %}
+    <strong class="block text-xs tracking-widest font-normal uppercase text-gray-400" aria-label="Navigate to Next item">Next</strong>
+    <a href="{{ nextPost.url }}" class="text-lg leading-tight tracking-tight font-bold hover:text-purple-800 dark:hover:text-yellow-200 transition-colors">
+      <span class="block" style="min-height:60px;">{{ nextPost.data.title }}</span>
+      {% if nextPost.data.featuredImg %}
+        <picture class="inline">
+          <img
+            class="inline"
+            loading="lazy"
+            alt="{{ nextPost.data.title }}"
+            src="https://res.cloudinary.com/kailoon/image/upload/v1613700746/kailoon.com/{{nextPost.data.featuredImg}}.webp"
+            srcset="https://res.cloudinary.com/kailoon/image/upload/dpr_auto,q_auto,w_200/v1613700746/kailoon.com/{{nextPost.data.featuredImg}}.webp 400w"
+          />
+        </picture>
+      {% endif %}
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

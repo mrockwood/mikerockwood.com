@@ -1,0 +1,37 @@
+
+<div class="{%- if topColor -%}{{topColor}}{%- endif -%} {% if page.url !== '/' %}pb-32 lg:pb-64{% endif %}">
+  <header class="relative max-w-screen-xl mx-auto h-24 p-5 md:flex md:justify-between md:items-center">
+      <!-- logo -->
+      <a href="/" title="back to homepage" class="logo">
+        <svg class="dark:text-white transform scale-75" width="52" height="52" xmlns="http://www.w3.org/2000/svg" fill="currentColor"  xmlns:v="https://vecta.io/nano">
+        <path d="M52 39a13.02 13.02 0 0 1-13-13 13.02 13.02 0 0 1 13-13v26zM26 13L13 26l13 13V13z"/>
+        <path d="M13 39L0 52V13L13 0V39Z"/>
+        </svg>
+      </a>
+      <nav class="hidden md:block py-1">
+        {% set navPages = collections.all | eleventyNavigation %}
+        <ul class="text-right">
+          {%- for entry in navPages %}
+          <li class="inline-block mr-5">
+            <a
+            href="{{ entry.url | url }}"
+            class="font-bold transition-colors dark:hover:text-yellow-200 hover:text-black
+            {% if entry.url == page.url %} dark:text-yellow-200 text-black {% else %}dark:text-white text-gray-700 {% endif %}"
+            >{{ entry.title }}</a>
+          </li>
+        {%- endfor %}
+          <li class="inline-block">
+            <a
+              href="{{ metadata.author.mailtolink }}"
+              title="get in touch"
+              target="_blank"
+              rel="noreferrer"
+              class="text-gray-800 dark:text-yellow-300 py-2 px-5 rounded-full font-bold border-2 border-gray-900 dark:border-yellow-100 border-opacity-20 transition-colors hover:border-opacity-100"
+            ><span>Get in touch</span>
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+  </header>
+</div>
