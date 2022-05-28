@@ -8,7 +8,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const markdownItAnchor = require('markdown-it-anchor')
 
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addPassthroughCopy('./src/assets/styles/styles.css')
+	// eleventyConfig.addPassthroughCopy('./src/assets/styles/styles.css')
 	eleventyConfig.addPassthroughCopy('./src/browserconfig.xml')
 	eleventyConfig.addPassthroughCopy('./src/site.webmanifest')
 	eleventyConfig.addPassthroughCopy('./src/admin/config.yml')
