@@ -1,11 +1,13 @@
 const { DateTime } = require('luxon')
 const fs = require('fs')
 const pluginNavigation = require('@11ty/eleventy-navigation')
-const markdownIt = require('markdown-it')
-const markdownitlinkatt = require('markdown-it-link-attributes')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const pluginImage = require("@11ty/eleventy-img")
+const markdownIt = require('markdown-it')
+const markdownitlinkatt = require('markdown-it-link-attributes')
 const markdownItAnchor = require('markdown-it-anchor')
+
 
 module.exports = function (eleventyConfig) {
 	// eleventyConfig.addPassthroughCopy('./src/assets/styles/styles.css')

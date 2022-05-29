@@ -1,10 +1,10 @@
 <!-- footer start -->
-<footer id="footer" class="md:pt-8 pb-10 md:pb-16 border-t border-gray-200 dark:border-gray-800">
+<footer id="footer" class="pt-8 pb-10 md:pb-16 border-t border-gray-200 dark:border-gray-800">
 
-	<div class="max-w-screen-xl m-auto px-5 grid gap-10 grid-cols-4">
+	<div class="max-w-screen-xl m-auto px-5 grid gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
 		<!-- copyright -->
-		<div class="mt-7 md:mt-0 text-sm flex-1 flex flex-col items-start">
+		<div class="text-sm flex-1 flex flex-col items-start">
 			<span class="font-bold">
 				© 2022
 			</span>
@@ -15,30 +15,64 @@
 			</span>
 		</div>
 
+		<!-- futhermore -->
+		<div class="text-sm flex-1 flex flex-col items-start">
+			<span class="font-bold">
+				Furthermore
+			</span>
+			<span class="mt-1">
+				<a class="underline hover:text-primary-gray-20" href>Now</a>
+				/
+				<a class="underline hover:text-primary-gray-20" href>Uses</a>
+			</span>
+		</div>
+
 		<!-- elsewhere -->
-		<div class="mt-7 md:mt-0 text-sm flex-1 flex flex-col items-start">
+		<div class="text-sm flex-1 flex flex-col items-start">
 			<span class="font-bold">
 				Elsewhere
 			</span>
 			<span class="mt-1">
-				<a class="underline hover:text-primary-gray-20" href>
-					Github
-				</a>
+				<a class="underline hover:text-primary-gray-20" href="https://www.linkedin.com/in/mikerockwood" title="Linkedin" rel="me">LinkedIn</a>
+				/
+				<a class="underline hover:text-primary-gray-20" href="https://github.com/mrockwood" title="Github" rel="me">Github</a>
 			</span>
 		</div>
 
 		<!-- links -->
-		<div class="mt-7 md:mt-0 text-sm flex-1 flex flex-col items-start">
+		<div class="text-sm flex-1 flex flex-col items-start">
 			<span class="font-bold">
 				Links
 			</span>
 			<span class="mt-1">
-				<a class="underline hover:text-primary-gray-20" href>
+				<a class="underline hover:text-primary-gray-20" href="{{ '/blogroll/' | url }}">
 					Blogroll
 				</a>
 			</span>
 		</div>
 
+	</div>
+
+	<!-- sticky footer for mobile -->
+	<div id="sticky-footer"
+	class="md:hidden text-base w-full px-5 flex justify-between items-center fixed bottom-0 bg-black md:relative dark:bg-purple-900">
+		{% set navPages = collections.all | eleventyNavigation %}
+		{%- for entry in navPages %}
+		<a
+			href="{{ entry.url | url }}"
+			class="text-gray-300 py-4 dark:text-purple-300
+			{% if entry.url == page.url %} text-white dark:text-white {% endif %}
+			"
+			>{{ entry.title }}</a>
+		{%- endfor %}
+		<a
+			href="{{ metadata.author.mailtolink }}"
+			title="get in touch"
+			target="_blank"
+			rel="noreferrer"
+			class="text-gray-300 py-4 dark:text-purple-300"
+		>contact
+		</a>
 	</div>
 
 </footer>
