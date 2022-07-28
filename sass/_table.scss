@@ -1,0 +1,269 @@
+// Name:            Table
+// Description:     Styles for tables
+//
+// Component:       `uk-table`
+//
+// Modifiers:       `uk-table-middle`
+//                  `uk-table-divider`
+//                  `uk-table-striped`
+//                  `uk-table-hover`
+//                  `uk-table-small`
+//                  `uk-table-justify`
+//                  `uk-table-shrink`
+//                  `uk-table-expand`
+//                  `uk-table-link`
+//                  `uk-table-responsive`
+//
+// States:          `uk-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-table']) {
+
+    --table-margin-vertical: var(--global-margin);
+
+    --table-cell-padding-vertical: 16px;
+    --table-cell-padding-horizontal: 12px;
+
+    --table-header-cell-font-size: var(--global-font-size);
+    --table-header-cell-font-weight: bold;
+    --table-header-cell-color: hsl(var(--global-color));
+
+    --table-footer-font-size: var(--global-small-font-size);
+
+    --table-caption-font-size: var(--global-small-font-size);
+    --table-caption-color: hsl(var(--global-muted-color));
+
+    --table-row-active-background: hsla(50,100%,50%,0.12);
+
+    --table-divider-border-width: var(--global-border-width);
+    --table-divider-border: hsl(var(--global-border));
+
+    --table-striped-row-background: hsl(var(--global-muted-background));
+
+    --table-hover-row-background: var(--table-row-active-background);
+
+    --table-small-cell-padding-vertical: 10px;
+    --table-small-cell-padding-horizontal: 12px;
+
+    --table-large-cell-padding-vertical: 22px;
+    --table-large-cell-padding-horizontal: 12px;
+
+    --table-expand-min-width: 150px;
+
+}
+
+
+/* ========================================================================
+   Component: Table
+ ========================================================================== */
+
+/*
+ * 1. Remove most spacing between table cells.
+ * 2. Behave like a block element
+ * 3. Style
+ */
+
+.uk-table {
+    /* 1 */
+    border-collapse: collapse;
+    border-spacing: 0;
+    /* 2 */
+    inline-size: 100%;
+    /* 3 */
+    margin-block-end: var(--table-margin-vertical);
+}
+
+/* Add margin if adjacent element */
+* + .uk-table { margin-block-start: var(--table-margin-vertical); }
+
+
+/* Header cell
+ ========================================================================== */
+
+/*
+ * 1. Style
+ */
+
+.uk-table th {
+    padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
+    text-align: left;
+    vertical-align: bottom;
+    /* 1 */
+    font-size: var(--table-header-cell-font-size);
+    font-weight: var(--table-header-cell-font-weight);
+    color: var(--table-header-cell-color);
+}
+
+
+/* Cell
+ ========================================================================== */
+
+.uk-table td {
+    padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
+    vertical-align: top;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-table td > :last-child { margin-block-end: 0; }
+
+
+/* Footer
+ ========================================================================== */
+
+.uk-table tfoot {
+    font-size: var(--table-footer-font-size);
+}
+
+
+/* Caption
+ ========================================================================== */
+
+.uk-table caption {
+    font-size: var(--table-caption-font-size);
+    text-align: left;
+    color: var(--table-caption-color);
+}
+
+
+/* Alignment modifier
+ ========================================================================== */
+
+.uk-table-middle,
+.uk-table-middle td { vertical-align: middle !important; }
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Divider
+ */
+
+.uk-table-divider > tr:not(:first-child),
+.uk-table-divider > :not(:first-child) > tr,
+.uk-table-divider > :first-child > tr:not(:first-child) {
+    border-block-start: var(--table-divider-border-width) solid var(--table-divider-border);
+}
+
+/*
+ * Striped
+ */
+
+.uk-table-striped > tr:nth-of-type(odd),
+.uk-table-striped tbody tr:nth-of-type(odd) {
+    background: var(--table-striped-row-background);
+}
+
+/*
+ * Hover
+ */
+
+.uk-table-hover > tr:hover,
+.uk-table-hover tbody tr:hover {
+    background: var(--table-hover-row-background);
+}
+
+
+/* Active state
+ ========================================================================== */
+
+.uk-table > tr.uk-active,
+.uk-table tbody tr.uk-active {
+    background: var(--table-row-active-background);
+}
+
+/* Size modifier
+ ========================================================================== */
+
+.uk-table-small th,
+.uk-table-small td {
+    padding: var(--table-small-cell-padding-vertical) var(--table-small-cell-padding-horizontal);
+}
+
+.uk-table-large th,
+.uk-table-large td {
+    padding: var(--table-large-cell-padding-vertical) var(--table-large-cell-padding-horizontal);
+}
+
+
+/* Justify modifier
+ ========================================================================== */
+
+.uk-table-justify th:first-child,
+.uk-table-justify td:first-child { padding-inline-start: 0; }
+
+.uk-table-justify th:last-child,
+.uk-table-justify td:last-child { padding-inline-end: 0; }
+
+
+/* Cell size modifier
+ ========================================================================== */
+
+.uk-table-shrink { inline-size: 1px; }
+.uk-table-expand { min-inline-size: var(--table-expand-min-width); }
+
+
+/* Cell link modifier
+ ========================================================================== */
+
+/*
+ * Does not work with `uk-table-justify` at the moment
+ */
+
+.uk-table-link { padding: 0 !important; }
+
+.uk-table-link > a {
+    display: block;
+    padding: var(--table-cell-padding-vertical) var(--table-cell-padding-horizontal);
+}
+
+.uk-table-small .uk-table-link > a { padding: var(--table-small-cell-padding-vertical) var(--table-small-cell-padding-horizontal); }
+
+
+/* Responsive table
+ ========================================================================== */
+
+
+/* Phone landscape and smaller */
+@media (max-width: $breakpoint-small-max) {
+
+    .uk-table-responsive,
+    .uk-table-responsive tbody,
+    .uk-table-responsive th,
+    .uk-table-responsive td,
+    .uk-table-responsive tr { display: block; }
+
+    .uk-table-responsive thead { display: none; }
+
+    .uk-table-responsive th,
+    .uk-table-responsive td {
+        inline-size: auto !important;
+        max-inline-size: none !important;
+        min-inline-size: 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+
+    .uk-table-responsive th:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:first-child) > a { padding-block-start: calc((var(--table-cell-padding-vertical) * 0.33333)) !important; }
+
+    .uk-table-responsive th:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:last-child) > a { padding-block-end: calc((var(--table-cell-padding-vertical) * 0.33333)) !important; }
+
+    .uk-table-justify.uk-table-responsive th,
+    .uk-table-justify.uk-table-responsive td {
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+    }
+
+}

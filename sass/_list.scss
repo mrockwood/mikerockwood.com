@@ -1,0 +1,190 @@
+// Name:            List
+// Description:     Styles for lists
+//
+// Component:       `uk-list`
+//
+// Modifiers:       `uk-list-disc`
+//                  `uk-list-circle`
+//                  `uk-list-square`
+//                  `uk-list-decimal`
+//                  `uk-list-hyphen`
+//                  `uk-list-muted`
+//                  `uk-list-emphasis`
+//                  `uk-list-primary`
+//                  `uk-list-secondary`
+//                  `uk-list-bullet`
+//                  `uk-list-divider`
+//                  `uk-list-striped`
+//                  `uk-list-large`
+//                  `uk-list-collapse`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-list']) {
+
+    --list-margin-top:                                var(--global-small-margin);
+
+    --list-padding-left:                              30px;
+
+    --list-marker-height:                             calc( var(--global-line-height) * 1em );
+
+    --list-muted-color:                               hsl(var(--global-muted-color));
+    --list-emphasis-color:                            hsl(var(--global-emphasis-color));
+    --list-primary-color:                             hsl(var(--global-primary-background));
+    --list-secondary-color:                           hsl(var(--global-secondary-background));
+
+    --list-divider-margin-top:                        var(--global-small-margin);
+    --list-divider-border-width:                      var(--global-border-width);
+    --list-divider-border:                            hsl(var(--global-border));
+
+    --list-striped-padding-vertical:                  var(--global-small-margin);
+    --list-striped-padding-horizontal:                var(--global-small-margin);
+    --list-striped-background:                        hsl(var(--global-muted-background));
+
+    --list-large-margin-top:                          var(--global-margin);
+    --list-large-divider-margin-top:                  var(--global-margin);
+    --list-large-striped-padding-vertical:            var(--global-margin);
+    --list-large-striped-padding-horizontal:          var(--global-small-margin);
+
+}
+
+
+/* ========================================================================
+   Component: List
+ ========================================================================== */
+
+.uk-list {
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-list > * > :last-child { margin-block-end: 0; }
+
+/*
+ * Style
+ */
+
+.uk-list > :nth-child(n+2),
+.uk-list > * > ul { margin-block-start: var(--list-margin-top); }
+
+
+/* Marker modifiers
+ * Moving `::marker` inside `::before` to style it differently
+ * To style the `::marker` is currently only supported in Firefox and Safari
+ ========================================================================== */
+
+.uk-list-disc > *,
+.uk-list-circle > *,
+.uk-list-square > *,
+.uk-list-decimal > *,
+.uk-list-hyphen > * { padding-inline-start: var(--list-padding-left); }
+
+/*
+ * Type modifiers
+ */
+
+.uk-list-decimal { counter-reset: decimal; }
+.uk-list-decimal > * { counter-increment: decimal; }
+
+.uk-list-disc > ::before,
+.uk-list-circle > ::before,
+.uk-list-square > ::before,
+.uk-list-decimal > ::before,
+.uk-list-hyphen > ::before {
+    content: "";
+    position: relative;
+    inset-inline-start: calc( -1 * var(--list-padding-left) );
+    inline-size: var(--list-padding-left);
+    block-size: var(--list-marker-height);
+    margin-block-end: calc( -1 * var(--list-marker-height) );
+    display: list-item;
+    list-style-position: inside;
+    text-align: right;
+}
+
+.uk-list-disc > ::before { list-style-type: disc; }
+.uk-list-circle > ::before { list-style-type: circle; }
+.uk-list-square > ::before { list-style-type: square; }
+.uk-list-decimal > ::before { content: counter(decimal, decimal) '\200A.\00A0'; }
+.uk-list-hyphen > ::before { content: '–\00A0\00A0'; }
+
+/*
+ * Color modifiers
+ */
+
+.uk-list-muted > ::before { color: var(--list-muted-color) !important; }
+.uk-list-emphasis > ::before { color: var(--list-emphasis-color) !important; }
+.uk-list-primary > ::before { color: var(--list-primary-color) !important; }
+.uk-list-secondary > ::before { color: var(--list-secondary-color) !important; }
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Divider
+ */
+
+.uk-list-divider > :nth-child(n+2) {
+    margin-block-start: var(--list-divider-margin-top);
+    padding-block-start: var(--list-divider-margin-top);
+    border-block-start: var(--list-divider-border-width) solid var(--list-divider-border);
+}
+
+/*
+ * Striped
+ */
+
+.uk-list-striped > * {
+    padding: var(--list-striped-padding-vertical) var(--list-striped-padding-horizontal);
+}
+
+.uk-list-striped > :nth-of-type(odd) { background: var(--list-striped-background); }
+
+.uk-list-striped > :nth-child(n+2) { margin-block-start: 0; }
+
+
+/* Size modifier
+ ========================================================================== */
+
+.uk-list-large > :nth-child(n+2),
+.uk-list-large > * > ul { margin-block-start: var(--list-large-margin-top); }
+
+.uk-list-collapse > :nth-child(n+2),
+.uk-list-collapse > * > ul { margin-block-start: 0; }
+
+/*
+ * Divider
+ */
+
+.uk-list-large.uk-list-divider > :nth-child(n+2) {
+    margin-block-start: var(--list-large-divider-margin-top);
+    padding-block-start: var(--list-large-divider-margin-top);
+}
+
+.uk-list-collapse.uk-list-divider > :nth-child(n+2) {
+    margin-block-start: 0;
+    padding-block-start: 0;
+}
+
+/*
+ * Striped
+ */
+
+.uk-list-large.uk-list-striped > * { padding: var(--list-large-striped-padding-vertical) var(--list-large-striped-padding-horizontal); }
+
+.uk-list-collapse.uk-list-striped > * {
+    padding-block-start: 0;
+    padding-block-end: 0;
+}
+
+.uk-list-large.uk-list-striped > :nth-child(n+2),
+.uk-list-collapse.uk-list-striped > :nth-child(n+2) { margin-block-start: 0; }

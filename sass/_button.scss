@@ -1,0 +1,346 @@
+// Name:            Button
+// Description:     Styles for buttons
+//
+// Component:       `uk-button`
+//
+// Sub-objects:     `uk-button-group`
+//
+// Modifiers:       `uk-button-default`
+//                  `uk-button-primary`
+//                  `uk-button-secondary`
+//                  `uk-button-danger`
+//                  `uk-button-text`
+//                  `uk-button-link`
+//                  `uk-button-small`
+//                  `uk-button-large`
+//
+// States:          `uk-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-button']) {
+
+    --button-line-height:                             var(--global-control-height);
+    --button-small-line-height:                       var(--global-control-small-height);
+    --button-large-line-height:                       var(--global-control-large-height);
+
+    --button-font-size:                               var(--global-font-size);
+    --button-small-font-size:                         var(--global-small-font-size);
+    --button-large-font-size:                         var(--global-medium-font-size);
+
+    --button-padding-horizontal:                      var(--global-gutter);
+    --button-small-padding-horizontal:                var(--global-small-gutter);
+    --button-large-padding-horizontal:                var(--global-medium-gutter);
+
+    --button-default-background:                      hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
+    --button-default-color:                           hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --button-default-hover-background:                hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.9 ); // hsl(var(--global-muted-background) / 0.9);
+    --button-default-hover-color:                     hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --button-default-active-background:               hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 ); // hsl(var(--global-muted-background) / 0.8);
+    --button-default-active-color:                    hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+
+    --button-primary-background:                      hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
+    --button-primary-color:                           hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-primary-hover-background:                hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.9 ); // hsl(var(--global-primary-background) / 0.9);
+    --button-primary-hover-color:                     hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-primary-active-background:               hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.8 ); // hsl(var(--global-primary-background) / 0.8);
+    --button-primary-active-color:                    hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+
+    --button-secondary-background:                    hsl( var(--theme-secondary-background, var(--global-secondary-background) ) ); // hsl(var(--global-secondary-background));
+    --button-secondary-color:                         hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-secondary-hover-background:              hsl( var(--theme-secondary-background, var(--global-secondary-background) ) / 0.9 ); // hsl(var(--global-secondary-background) / 0.9);
+    --button-secondary-hover-color:                   hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-secondary-active-background:             hsl( var(--theme-secondary-background, var(--global-secondary-background) ) / 0.8 ); // hsl(var(--global-secondary-background) / 0.8);
+    --button-secondary-active-color:                  hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+
+    --button-danger-background:                       hsl( var(--theme-danger-background, var(--global-danger-background) ) ); // hsl(var(--global-danger-background));
+    --button-danger-color:                            hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-danger-hover-background:                 hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.9 ); // hsl(var(--global-danger-background) / 0.9);
+    --button-danger-hover-color:                      hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-danger-active-background:                hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.8 ); // hsl(var(--global-danger-background) / 0.8);
+    --button-danger-active-color:                     hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+
+    --button-disabled-background:                     hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
+    --button-disabled-color:                          hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+
+    --button-text-line-height:                        var(--global-line-height);
+    --button-text-color:                              hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --button-text-hover-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --button-text-disabled-color:                     hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+
+    --button-link-line-height:                        var(--global-line-height);
+    --button-link-color:                              hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --button-link-hover-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --button-link-hover-text-decoration:              none;
+    --button-link-disabled-color:                     hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+
+}
+
+
+/* ========================================================================
+   Component: Button
+ ========================================================================== */
+
+/*
+ * 1. Remove margins in Chrome, Safari and Opera.
+ * 2. Remove borders for `button`.
+ * 3. Address `overflow` set to `hidden` in IE.
+ * 4. Correct `font` properties and `color` not being inherited for `button`.
+ * 5. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 6. Remove default style for `input type="submit"`in iOS.
+ * 7. Style
+ * 8. `line-height` is used to create a height because it also centers the text vertically for `a` elements.
+ *    Better would be to use height and flexbox to center the text vertically but flexbox doesn't work in Firefox on `button` elements.
+ * 9. Align text if button has a width
+ * 10. Required for `a`.
+ */
+
+.uk-button {
+    /* 1 */
+    margin: 0;
+    /* 2 */
+    border: none;
+    /* 3 */
+    overflow: visible;
+    /* 4 */
+    font: inherit;
+    color: inherit;
+    /* 5 */
+    text-transform: none;
+    /* 6 */
+    -webkit-appearance: none;
+    border-radius: 0;
+    /* 7 */
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 var(--button-padding-horizontal);
+    vertical-align: middle;
+    font-size: var(--button-font-size);
+    /* 8 */
+    line-height: var(--button-line-height);
+    /* 9 */
+    text-align: center;
+    /* 10 */
+    text-decoration: none;
+}
+
+.uk-button:not(:disabled) { cursor: pointer; }
+
+/*
+ * Remove the inner border and padding in Firefox.
+ */
+
+.uk-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Hover */
+.uk-button:hover {
+    /* 9 */
+    text-decoration: none;
+}
+
+/* OnClick + Active */
+.uk-button:active,
+.uk-button.uk-active {}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.uk-button-default {
+    background-color: var(--button-default-background);
+    color: var(--button-default-color);
+}
+
+/* Hover */
+.uk-button-default:hover {
+    background-color: var(--button-default-hover-background);
+    color: var(--button-default-hover-color);
+}
+
+/* OnClick + Active */
+.uk-button-default:active,
+.uk-button-default.uk-active {
+    background-color: var(--button-default-active-background);
+    color: var(--button-default-active-color);
+}
+
+/*
+ * Primary
+ */
+
+.uk-button-primary {
+    background-color: var(--button-primary-background);
+    color: var(--button-primary-color);
+}
+
+/* Hover */
+.uk-button-primary:hover {
+    background-color: var(--button-primary-hover-background);
+    color: var(--button-primary-hover-color);
+}
+
+/* OnClick + Active */
+.uk-button-primary:active,
+.uk-button-primary.uk-active {
+    background-color: var(--button-primary-active-background);
+    color: var(--button-primary-active-color);
+}
+
+/*
+ * Secondary
+ */
+
+.uk-button-secondary {
+    background-color: var(--button-secondary-background);
+    color: var(--button-secondary-color);
+}
+
+/* Hover */
+.uk-button-secondary:hover {
+    background-color: var(--button-secondary-hover-background);
+    color: var(--button-secondary-hover-color);
+}
+
+/* OnClick + Active */
+.uk-button-secondary:active,
+.uk-button-secondary.uk-active {
+    background-color: var(--button-secondary-active-background);
+    color: var(--button-secondary-active-color);
+}
+
+/*
+ * Danger
+ */
+
+.uk-button-danger {
+    background-color: var(--button-danger-background);
+    color: var(--button-danger-color);
+}
+
+/* Hover */
+.uk-button-danger:hover {
+    background-color: var(--button-danger-hover-background);
+    color: var(--button-danger-hover-color);
+}
+
+/* OnClick + Active */
+.uk-button-danger:active,
+.uk-button-danger.uk-active {
+    background-color: var(--button-danger-active-background);
+    color: var(--button-danger-active-color);
+}
+
+/*
+ * Disabled
+ * The same for all style modifiers
+ */
+
+.uk-button-default:disabled,
+.uk-button-primary:disabled,
+.uk-button-secondary:disabled,
+.uk-button-danger:disabled {
+    background-color: var(--button-disabled-background);
+    color: var(--button-disabled-color);
+}
+
+
+/* Size modifiers
+ ========================================================================== */
+
+.uk-button-small {
+    padding: 0 var(--button-small-padding-horizontal);
+    line-height: var(--button-small-line-height);
+    font-size: var(--button-small-font-size);
+}
+
+.uk-button-large {
+    padding: 0 var(--button-large-padding-horizontal);
+    line-height: var(--button-large-line-height);
+    font-size: var(--button-large-font-size);
+}
+
+
+/* Text modifiers
+ ========================================================================== */
+
+/*
+ * Text
+ * 1. Reset
+ * 2. Style
+ */
+
+.uk-button-text {
+    /* 1 */
+    padding: 0;
+    line-height: var(--button-text-line-height);
+    background: none;
+    /* 2 */
+    color: var(--button-text-color);
+}
+
+/* Hover */
+.uk-button-text:hover {
+    color: var(--button-text-hover-color);
+}
+
+/* Disabled */
+.uk-button-text:disabled {
+    color: var(--button-text-disabled-color);
+}
+
+/*
+ * Link
+ * 1. Reset
+ * 2. Style
+ */
+
+.uk-button-link {
+    /* 1 */
+    padding: 0;
+    line-height: var(--button-link-line-height);
+    background: none;
+    /* 2 */
+    color: var(--button-link-color);
+}
+
+/* Hover */
+.uk-button-link:hover {
+    color: var(--button-link-hover-color);
+    text-decoration: var(--button-link-hover-text-decoration);
+}
+
+/* Disabled */
+.uk-button-link:disabled {
+    color: var(--button-link-disabled-color);
+    text-decoration: none;
+}
+
+
+/* Group
+ ========================================================================== */
+
+/*
+ * 1. Using `flex` instead of `inline-block` to prevent whitespace betweent child elements
+ * 2. Behave like button
+ * 3. Create position context
+ */
+
+.uk-button-group {
+    /* 1 */
+    display: inline-flex;
+    /* 2 */
+    vertical-align: middle;
+    /* 3 */
+    position: relative;
+}

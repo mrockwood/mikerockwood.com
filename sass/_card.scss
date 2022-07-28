@@ -1,0 +1,285 @@
+// Name:            Card
+// Description:     Component to create boxed content containers
+//
+// Component:       `uk-card`
+//
+// Sub-objects:     `uk-card-body`
+//                  `uk-card-header`
+//                  `uk-card-footer`
+//                  `uk-card-media-*`
+//                  `uk-card-title`
+//                  `uk-card-badge`
+//
+// Modifiers:       `uk-card-hover`
+//                  `uk-card-default`
+//                  `uk-card-primary`
+//                  `uk-card-secondary`
+//                  `uk-card-small`
+//                  `uk-card-large`
+//
+// Uses:            `uk-grid-stack`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-card']) {
+
+    --card-body-padding-horizontal:                  var(--global-gutter);
+    --card-body-padding-vertical:                    var(--global-gutter);
+
+    --card-header-padding-horizontal:                var(--global-gutter);
+    --card-header-padding-vertical:                  calc( var(--global-gutter) * 0.5 );
+
+    --card-footer-padding-horizontal:                var(--global-gutter);
+    --card-footer-padding-vertical:                  calc( var(--global-gutter) * 0.5 );
+
+    --card-title-font-size:                          var(--global-large-font-size);
+    --card-title-line-height:                        1.4;
+
+    --card-badge-top:                                15px;
+    --card-badge-right:                              15px;
+    --card-badge-height:                             22px;
+    --card-badge-padding-horizontal:                 10px;
+    --card-badge-background:                         hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
+    --card-badge-color:                              hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--global-inverse-color));
+    --card-badge-font-size:                          var(--global-small-font-size);
+
+    --card-hover-background:                         var(--global-muted-background);
+
+    --card-default-background:                       hsl(var(--global-muted-background));
+    --card-default-color:                            hsl(var(--global-color));
+    --card-default-title-color:                      hsl(var(--global-emphasis-color));
+    --card-default-hover-background:                 hsl(var(--global-muted-background) / 0.9);
+
+    --card-primary-background:                       hsl(var(--global-primary-background));
+    --card-primary-color:                            hsl(var(--global-inverse-color));
+    --card-primary-title-color:                      hsl(var(--inverse-global-emphasis-color));
+    --card-primary-hover-background:                 hsl(var(--global-primary-background) / 0.9);
+
+    --card-secondary-background:                     hsl(var(--global-secondary-background));
+    --card-secondary-color:                          hsl(var(--global-inverse-color));
+    --card-secondary-title-color:                    hsl(var(--inverse-global-emphasis-color));
+    --card-secondary-hover-background:               hsl(var(--global-secondary-background) / 0.9);
+
+    --card-small-body-padding-horizontal:            var(--global-margin);
+    --card-small-body-padding-vertical:              var(--global-margin);
+    --card-small-header-padding-horizontal:          var(--global-margin);
+    --card-small-header-padding-vertical:            calc( var(--global-margin) * 0.66667);
+    --card-small-footer-padding-horizontal:          var(--global-margin);
+    --card-small-footer-padding-vertical:            calc( var(--global-margin) * 0.66667);
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    :where([class*='uk-card']) {
+
+        --card-body-padding-horizontal:              var(--global-medium-gutter);
+        --card-body-padding-vertical:                var(--global-medium-gutter);
+
+        --card-header-padding-horizontal:            var(--global-medium-gutter);
+        --card-header-padding-vertical:              calc( var(--global-medium-gutter) * 0.5 );
+
+        --card-footer-padding-horizontal:            var(--global-medium-gutter);
+        --card-footer-padding-vertical:              calc( var(--global-medium-gutter) * 0.5 );
+
+        --card-large-body-padding-horizontal:        var(--global-large-gutter);
+        --card-large-body-padding-vertical:          var(--global-large-gutter);
+        --card-large-header-padding-horizontal:      var(--global-large-gutter);
+        --card-large-header-padding-vertical:        calc( var(--global-large-gutter) * 0.5 );
+        --card-large-footer-padding-horizontal:      var(--global-large-gutter);
+        --card-large-footer-padding-vertical:        calc( var(--global-large-gutter) * 0.5 );
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Card
+ ========================================================================== */
+
+.uk-card {
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+/* Sections
+ ========================================================================== */
+
+.uk-card-body {
+    display: flow-root;
+    padding: var(--card-body-padding-vertical) var(--card-body-padding-horizontal);
+}
+
+.uk-card-header {
+    display: flow-root;
+    padding: var(--card-header-padding-vertical) var(--card-header-padding-horizontal);
+}
+
+.uk-card-footer {
+    display: flow-root;
+    padding: var(--card-footer-padding-vertical) var(--card-footer-padding-horizontal);
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-card-body > :last-child,
+.uk-card-header > :last-child,
+.uk-card-footer > :last-child { margin-block-end: 0; }
+
+
+/* Media
+ ========================================================================== */
+
+/*
+ * Reserved alignment modifier to style the media element, e.g. with `border-radius`
+ * Implemented by the theme
+ */
+
+[class*='uk-card-media'] {}
+
+.uk-card-media-top,
+.uk-grid-stack > .uk-card-media-left,
+.uk-grid-stack > .uk-card-media-right  {}
+
+.uk-card-media-bottom {}
+
+:not(.uk-grid-stack) > .uk-card-media-left {}
+
+:not(.uk-grid-stack) > .uk-card-media-right {}
+
+
+/* Title
+ ========================================================================== */
+
+.uk-card-title {
+    font-size: var(--card-title-font-size);
+    line-height: var(--card-title-line-height);
+}
+
+
+/* Badge
+ ========================================================================== */
+
+/*
+ * 1. Position
+ * 2. Size
+ * 3. Style
+ * 4. Center child vertically
+ */
+
+.uk-card-badge {
+    /* 1 */
+    position: absolute;
+    inset-block-start: var(--card-badge-top);
+    inset-inline-end: var(--card-badge-right);
+    z-index: 1;
+    /* 2 */
+    block-size: var(--card-badge-height);
+    padding: 0 var(--card-badge-padding-horizontal);
+    /* 3 */
+    background: var(--card-badge-background);
+    color: var(--card-badge-color);
+    font-size: var(--card-badge-font-size);
+    /* 4 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.uk-card-badge:first-child + * { margin-block-start: 0; }
+
+
+/* Hover modifier
+ ========================================================================== */
+
+.uk-card-hover:not(.uk-card-default):not(.uk-card-primary):not(.uk-card-secondary):hover {
+    background-color: var(--card-hover-background);
+}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ * Note: Header and Footer are only implemented for the default style
+ */
+
+.uk-card-default {
+    background-color: var(--card-default-background);
+    color: var(--card-default-color);
+}
+
+.uk-card-default .uk-card-title {
+    color: var(--card-default-title-color);
+}
+
+.uk-card-default.uk-card-hover:hover {
+    background-color: var(--card-default-hover-background);
+}
+
+.uk-card-default .uk-card-header {}
+
+.uk-card-default .uk-card-footer {}
+
+/*
+ * Primary
+ */
+
+.uk-card-primary {
+    background-color: var(--card-primary-background);
+    color: var(--card-primary-color);
+}
+
+.uk-card-primary .uk-card-title {
+    color: var(--card-primary-title-color);
+}
+
+.uk-card-primary.uk-card-hover:hover {
+    background-color: var(--card-primary-hover-background);
+}
+
+/*
+ * Secondary
+ */
+
+.uk-card-secondary {
+    background-color: var(--card-secondary-background);
+    color: var(--card-secondary-color);
+}
+
+.uk-card-secondary .uk-card-title {
+    color: var(--card-secondary-title-color);
+}
+
+.uk-card-secondary.uk-card-hover:hover {
+    background-color: var(--card-secondary-hover-background);
+}
+
+
+/* Size modifier
+ ========================================================================== */
+
+/*
+ * Small
+ */
+
+.uk-card-small.uk-card-body,
+.uk-card-small .uk-card-body { padding: var(--card-small-body-padding-vertical) var(--card-small-body-padding-horizontal); }
+
+.uk-card-small .uk-card-header { padding: var(--card-small-header-padding-vertical) var(--card-small-header-padding-horizontal); }
+.uk-card-small .uk-card-footer { padding: var(--card-small-footer-padding-vertical) var(--card-small-footer-padding-horizontal); }

@@ -1,0 +1,103 @@
+// Name:            Link
+// Description:     Styles for links
+//
+// Component:       `uk-link-muted`
+//                  `uk-link-text`
+//                  `uk-link-heading`
+//                  `uk-link-reset`
+//
+// Sub-objects:     `uk-link-toggle`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-link']) {
+
+    --link-muted-color:                               hsl(var(--global-muted-color));
+    --link-muted-hover-color:                         hsl(var(--global-color));
+
+    --link-text-hover-color:                          hsl(var(--global-muted-color));
+
+    --link-heading-hover-color:                       hsl(var(--global-primary-background));
+    --link-heading-hover-text-decoration:             none;
+
+}
+
+
+/* ========================================================================
+   Component: Link
+ ========================================================================== */
+
+/* Muted
+ ========================================================================== */
+
+a.uk-link-muted,
+.uk-link-muted a,
+.uk-link-toggle .uk-link-muted {
+    color: var(--link-muted-color);
+}
+
+a.uk-link-muted:hover,
+.uk-link-muted a:hover,
+.uk-link-toggle:hover .uk-link-muted {
+    color: var(--link-muted-hover-color);
+}
+
+
+/* Text
+ ========================================================================== */
+
+a.uk-link-text,
+.uk-link-text a,
+.uk-link-toggle .uk-link-text {
+    color: inherit;
+}
+
+a.uk-link-text:hover,
+.uk-link-text a:hover,
+.uk-link-toggle:hover .uk-link-text {
+    color: var(--link-text-hover-color);
+}
+
+
+/* Heading
+ ========================================================================== */
+
+a.uk-link-heading,
+.uk-link-heading a,
+.uk-link-toggle .uk-link-heading {
+    color: inherit;
+}
+
+a.uk-link-heading:hover,
+.uk-link-heading a:hover,
+.uk-link-toggle:hover .uk-link-heading {
+    color: var(--link-heading-hover-color);
+    text-decoration: var(--link-heading-hover-text-decoration);
+}
+
+
+/* Reset
+ ========================================================================== */
+
+/*
+ * `!important` needed to override inverse component
+ */
+
+a.uk-link-reset,
+.uk-link-reset a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+
+/* Toggle
+ ========================================================================== */
+
+.uk-link-toggle {
+    color: inherit !important;
+    text-decoration: none !important;
+}

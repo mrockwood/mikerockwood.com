@@ -1,0 +1,8 @@
+{% macro menu() %}
+<ul class="uk-navbar-nav uk-visible@m">
+    {%- for i in config.extra.menu -%}
+    {% set link_url = i.url | replace(from="$BASE_URL", to=config.base_url) %}
+    <li {% if current_path and current_path == link_url %}class="uk-active"{% endif %}><a href="{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- if i.slash and config.extra.uglyurls %}index.html{%- endif %}">{{ i.name | safe }}</a></li>
+    {%- endfor -%}
+</ul>
+{% endmacro menu %}

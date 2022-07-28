@@ -1,0 +1,186 @@
+// Name:            Icon
+// Description:     Component to create icons
+//
+// Component:       `uk-icon`
+//
+// Modifiers:       `uk-icon-image`
+//                  `uk-icon-link`
+//                  `uk-icon-button`
+//
+// States:          `uk-preserve`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where(.uk-icon) {
+
+    --icon-image-size:                                20px;
+
+    --icon-link-color:                                hsl(var(--global-muted-color));
+    --icon-link-hover-color:                          hsl(var(--global-color));
+    --icon-link-active-color:                         hsl(var(--global-muted-color));
+
+    --icon-button-size:                               42px;
+    --icon-button-border-radius:                      500px;
+    --icon-button-background:                         hsl(var(--global-muted-background));
+    --icon-button-color:                              hsl(var(--global-muted-color));
+
+    --icon-button-hover-background:                   hsl(var(--global-muted-background));
+    --icon-button-hover-color:                        hsl(var(--global-color));
+
+    --icon-button-active-background:                  hsl(var(--global-muted-background));
+    --icon-button-active-color:                       hsl(var(--global-color));
+
+}
+
+
+/* ========================================================================
+   Component: Icon
+ ========================================================================== */
+
+/*
+ * Note: 1. - 7. is required for `button` elements. Needed for Close and Form Icon component.
+ * 1. Remove margins in Chrome, Safari and Opera.
+ * 2. Remove borders for `button`.
+ * 3. Remove border-radius in Chrome.
+ * 4. Address `overflow` set to `hidden` in IE.
+ * 5. Correct `font` properties and `color` not being inherited for `button`.
+ * 6. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 7. Remove default `button` padding and background color
+ * 8. Style
+ * 9. Fill all SVG elements with the current text color if no `fill` attribute is set
+ * 10. Let the container fit the height of the icon
+ */
+
+.uk-icon {
+    /* 1 */
+    margin: 0;
+    /* 2 */
+    border: none;
+    /* 3 */
+    border-radius: 0;
+    /* 4 */
+    overflow: visible;
+    /* 5 */
+    font: inherit;
+    color: inherit;
+    /* 6 */
+    text-transform: none;
+    /* 7. */
+    padding: 0;
+    background-color: transparent;
+    /* 8 */
+    display: inline-block;
+    /* 9 */
+    fill: currentcolor;
+    /* 10 */
+    line-height: 0;
+}
+
+/* Required for `button`. */
+button.uk-icon:not(:disabled) { cursor: pointer; }
+
+/*
+ * Remove the inner border and padding in Firefox.
+ */
+
+.uk-icon::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * Set the fill and stroke color of all SVG elements to the current text color
+ */
+
+.uk-icon:not(.uk-preserve) [fill*='#']:not(.uk-preserve) { fill: currentcolor; }
+.uk-icon:not(.uk-preserve) [stroke*='#']:not(.uk-preserve) { stroke: currentcolor; }
+
+/*
+ * Fix Firefox blurry SVG rendering: https://bugzilla.mozilla.org/show_bug.cgi?id=1046835
+ */
+
+.uk-icon > * { transform: translate(0,0); }
+
+
+/* Image modifier
+ ========================================================================== */
+
+/*
+ * Display images in icon dimensions
+ * 1. Required for `span` with background image
+ * 2. Required for `image`
+ */
+
+.uk-icon-image {
+    inline-size: var(--icon-image-size);
+    block-size: var(--icon-image-size);
+    /* 1 */
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    /* 2 */
+    object-fit: scale-down;
+    max-inline-size: none;
+}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Link
+ * 1. Allow text within link
+ */
+
+.uk-icon-link {
+    color: var(--icon-link-color);
+    /* 1 */
+    text-decoration: none !important;
+}
+
+.uk-icon-link:hover {
+    color: var(--icon-link-hover-color);
+}
+
+/* OnClick + Active */
+.uk-icon-link:active,
+.uk-active > .uk-icon-link {
+    color: var(--icon-link-active-color);
+}
+
+/*
+ * Button
+ * 1. Center icon vertically and horizontally
+ */
+
+.uk-icon-button {
+    box-sizing: border-box;
+    inline-size: var(--icon-button-size);
+    block-size: var(--icon-button-size);
+    border-radius: var(--icon-button-border-radius);
+    background: var(--icon-button-background);
+    color: var(--icon-button-color);
+    vertical-align: middle;
+    /* 1 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover */
+.uk-icon-button:hover {
+    background-color: var(--icon-button-hover-background);
+    color: var(--icon-button-hover-color);
+}
+
+/* OnClick + Active */
+.uk-icon-button:active,
+.uk-active > .uk-icon-button {
+    background-color: var(--icon-button-active-background);
+    color: var(--icon-button-active-color);
+}

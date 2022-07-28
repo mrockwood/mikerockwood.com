@@ -1,0 +1,54 @@
+{#- TODO:
+    - [x] add rss
+    - [x] favicons
+    - [x] media preview
+    - [ ] twitter
+-#}
+    
+{% macro fonts() %}
+    <link rel="preload" href="{{ get_url(path="/fonts/Rubik[wght].woff2") }}" as="font" type="font/woff2" crossorigin="anonymous">
+{% endmacro fonts %}
+
+{% macro styling() %}
+    <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
+{% endmacro styling %}
+
+{% macro favicon() %}
+    {%- if config.extra.favicon is defined -%}
+        <link rel="shortcut icon" href="{{ get_url(path=config.extra.favicon) }}" type="image/x-icon" />
+    {%- endif -%}
+{% endmacro favicon %}
+
+{% macro rss() %}
+    {%- if config.generate_feed -%}
+        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }} RSS" href="{{ get_url(path=config.feed_filename) }}">
+    {%- endif -%}
+{% endmacro rss %}
+
+{% macro general_meta() %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    {%- if page.title -%}
+        <meta name="description" content="{{ config.description }} {{ page.title }} {{ page.description }}"/>
+    {%- else -%}
+        <meta name="description" content="{{ config.description }}"/>
+    {%- endif -%}
+
+    {%- if page.taxonomies.tags or page.taxonomies.categories -%}
+        <meta name="keywords" content="
+        {%- if page.taxonomies.categories -%}
+            {%- for cat in page.taxonomies.categories -%}
+                    {{ cat }}, {% endfor -%}
+        {%- endif -%}
+
+        {%- if page.taxonomies.tags -%}
+            {%- for tag in page.taxonomies.tags -%}
+                {%- if loop.last -%}
+                    {{ tag }}
+                {%- else -%}
+                    {{ tag }}, {% endif -%}
+            {%- endfor -%}
+        {%- endif -%}
+        " />
+    {%- endif -%}
+{% endmacro general_meta %}

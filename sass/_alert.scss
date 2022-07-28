@@ -1,0 +1,127 @@
+// Name:            Alert
+// Description:     Component to create alert messages
+//
+// Component:       `uk-alert`
+//
+// Adopted:         `uk-alert-close`
+//
+// Modifiers:       `uk-alert-primary`
+//                  `uk-alert-success`
+//                  `uk-alert-warning`
+//                  `uk-alert-danger`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-alert']) {
+
+    --alert-margin-vertical:                          var(--global-margin);
+    --alert-padding:                                  15px;
+    --alert-padding-right:                            calc( var(--alert-padding) + 14px );
+    --alert-background:                               hsl(var(--global-muted-background));
+    --alert-color:                                    hsl(var(--global-color));
+
+    --alert-close-top:                                calc( var(--alert-padding) + 5px );
+    --alert-close-right:                              var(--alert-padding);
+
+    --alert-primary-background:                       hsl(var(--global-primary-background) / 0.16);
+    --alert-primary-color:                            hsl(var(--global-primary-background));
+
+    --alert-success-background:                       hsl(var(--global-success-background) / 0.1);
+    --alert-success-color:                            hsl(var(--global-success-background));
+
+    --alert-warning-background:                       hsl(var(--global-warning-background) / 0.1);
+    --alert-warning-color:                            hsl(var(--global-warning-background));
+
+    --alert-danger-background:                        hsl(var(--global-danger-background) / 0.1);
+    --alert-danger-color:                             hsl(var(--global-danger-background));
+
+}
+
+
+/* ========================================================================
+   Component: Alert
+ ========================================================================== */
+
+.uk-alert {
+    position: relative;
+    margin-block-end: var(--alert-margin-vertical);
+    padding: var(--alert-padding) var(--alert-padding-right) var(--alert-padding) var(--alert-padding);
+    background: var(--alert-background);
+    color: var(--alert-color);
+}
+
+/* Add margin if adjacent element */
+* + .uk-alert { margin-block-start: var(--alert-margin-vertical); }
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-alert > :last-child { margin-block-end: 0; }
+
+
+/* Close
+ * Adopts `uk-close`
+ ========================================================================== */
+
+.uk-alert-close {
+    position: absolute;
+    inset-block-start: var(--alert-close-top);
+    inset-inline-end: var(--alert-close-right);
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.uk-alert-close:first-child + * { margin-block-start: 0; }
+
+/*
+ * Hover
+ */
+
+.uk-alert-close:hover {}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Primary
+ */
+
+.uk-alert-primary {
+    background: var(--alert-primary-background);
+    color: var(--alert-primary-color);
+}
+
+/*
+ * Success
+ */
+
+.uk-alert-success {
+    background: var(--alert-success-background);
+    color: var(--alert-success-color);
+}
+
+/*
+ * Warning
+ */
+
+.uk-alert-warning {
+    background: var(--alert-warning-background);
+    color: var(--alert-warning-color);
+}
+
+/*
+ * Danger
+ */
+
+.uk-alert-danger {
+    background: var(--alert-danger-background);
+    color: var(--alert-danger-color);
+}

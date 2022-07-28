@@ -1,0 +1,568 @@
+// Name:            Base
+// Description:     Default values for HTML elements
+//
+// Component:       `uk-link`
+//                  `uk-h1`, `uk-h2`, `uk-h3`, `uk-h4`, `uk-h5`, `uk-h6`
+//                  `uk-hr`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where(html) {
+
+    --base-body-background:                           hsl(var(--global-background));
+    --base-body-font-family:                          var(--global-font-family);
+    --base-body-font-weight:                          normal;
+    --base-body-font-size:                            var(--global-font-size);
+    --base-body-line-height:                          var(--global-line-height);
+    --base-body-color:                                hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+
+    --base-link-color:                                hsl( var(--theme-link-color, var(--global-link-color) ) ); // hsl(var(--global-link-color));
+    --base-link-text-decoration:                      none;
+    --base-link-hover-color:                          hsl( var(--theme-link-hover-color, var(--global-link-hover-color) ) ); // hsl(var(--global-link-hover-color));
+    --base-link-hover-text-decoration:                underline;
+
+    --base-strong-font-weight:                        bolder;
+    --base-code-font-size:                            var(--global-small-font-size);
+    --base-code-font-family:                          Consolas, monaco, monospace;
+    --base-code-color:                                hsl(var(--global-danger-background));
+    --base-em-color:                                  hsl(var(--global-emphasis-color));
+    --base-ins-background:                            hsla(50,100%,50%,0.2);
+    --base-ins-color:                                 hsl(var(--global-color));
+    --base-mark-background:                           hsla(50,100%,50%,0.2);
+    --base-mark-color:                                hsl(var(--global-color));
+    --base-quote-font-style:                          italic;
+    --base-small-font-size:                           80%;
+
+    --base-margin-vertical:                           var(--global-margin);
+
+    --base-heading-font-family:                       var(--global-font-family);
+    --base-heading-font-weight:                       normal;
+    --base-heading-color:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --base-heading-text-transform:                    none;
+    --base-heading-margin-top:                        var(--global-medium-margin);
+    --base-h1-font-size:                              calc( var(--global-2xlarge-font-size) * 0.85 );
+    --base-h1-line-height:                            1.2;
+    --base-h2-font-size:                              calc( var(--global-xlarge-font-size) * 0.85 );
+    --base-h2-line-height:                            1.3;
+    --base-h3-font-size:                              var(--global-large-font-size);
+    --base-h3-line-height:                            1.4;
+    --base-h4-font-size:                              var(--global-medium-font-size);
+    --base-h4-line-height:                            1.4;
+    --base-h5-font-size:                              var(--global-font-size);
+    --base-h5-line-height:                            1.4;
+    --base-h6-font-size:                              var(--global-small-font-size);
+    --base-h6-line-height:                            1.4;
+
+    --base-list-padding-left:                         30px;
+
+    --base-hr-margin-vertical:                        var(--global-margin);
+    --base-hr-border-width:                           var(--global-border-width);
+    --base-hr-border:                                 hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+
+    --base-blockquote-font-size:                      var(--global-medium-font-size);
+    --base-blockquote-line-height:                    1.5;
+    --base-blockquote-font-style:                     italic;
+    --base-blockquote-margin-vertical:                var(--global-margin);
+    --base-blockquote-footer-margin-top:              var(--global-small-margin);
+    --base-blockquote-footer-font-size:               var(--global-small-font-size);
+    --base-blockquote-footer-line-height:             1.5;
+
+    --base-pre-font-size:                             var(--global-small-font-size);
+    --base-pre-line-height:                           1.5;
+    --base-pre-font-family:                           var(--base-code-font-family);
+    --base-pre-color:                                 hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+
+    --base-focus-outline-width:                       2px;
+    --base-focus-outline-style:                       dotted;
+    --base-focus-outline:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --base-focus-outline-offset:                      1px;
+
+    --base-selection-background:                      #39f;
+    --base-selection-color:                           hsl(var(--global-inverse-color));
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    :where(html) {
+
+        --base-h1-font-size:                          var(--global-2xlarge-font-size);
+        --base-h2-font-size:                          var(--global-xlarge-font-size);
+
+    }
+
+}
+
+/*.uk-light,
+.uk-section-primary:not(.uk-preserve-color),
+.uk-section-secondary:not(.uk-preserve-color),
+.uk-tile-primary:not(.uk-preserve-color),
+.uk-tile-secondary:not(.uk-preserve-color),
+.uk-card-primary.uk-card-body,
+.uk-card-primary > :not([class*='uk-card-media']),
+.uk-card-secondary.uk-card-body,
+.uk-card-secondary > :not([class*='uk-card-media']),
+.uk-overlay-primary,
+.uk-offcanvas-bar {
+
+    --base-body-background:                           #222;
+    --base-body-color:                                hsl(var(--inverse-global-color));
+    --base-link-color:                                hsl(var(--inverse-global-emphasis-color));
+    --base-link-hover-color:                          hsl(var(--inverse-global-emphasis-color));
+    --base-code-color:                                hsl(var(--inverse-global-color));
+    --base-em-color:                                  hsl(var(--inverse-global-emphasis-color));
+    --base-heading-color:                             hsl(var(--inverse-global-emphasis-color));
+    --base-hr-border:                                 hsl(var(--inverse-global-border));
+    --base-pre-color:                                 hsl(var(--inverse-global-color));
+    --base-focus-outline:                             hsl(var(--inverse-global-emphasis-color));
+
+}*/
+
+
+/* Pass media breakpoints to JS
+ ========================================================================== */
+
+/*
+ * Breakpoints
+ */
+
+:where(html) {
+    --uk-breakpoint-s: var(--breakpoint-small);
+    --uk-breakpoint-m: var(--breakpoint-medium);
+    --uk-breakpoint-l: var(--breakpoint-large);
+    --uk-breakpoint-xl: var(--breakpoint-xlarge);
+}
+
+
+/* ========================================================================
+   Component: Base
+ ========================================================================== */
+
+/*
+ * 1. Set `font-size` to support `rem` units
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Remove the margin in all browsers.
+ * 4. 'Sticky' footer
+ * 4. Style
+ */
+
+:where(body) {
+    /* 1 */
+    font-family: var(--base-body-font-family);
+    font-size: var(--base-body-font-size);
+    font-weight: var(--base-body-font-weight);
+    line-height: var(--base-body-line-height);
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 3 */
+    margin: 0;
+    /* 4 */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /* 5 */
+    background: var(--base-body-background);
+    color: var(--base-body-color);
+}
+
+/* 4 */
+:where(main) {
+    flex: 1;
+}
+
+
+/* Links
+ ========================================================================== */
+
+/*
+ * Style
+ */
+
+:where(a, .uk-link) {
+    color: var(--base-link-color);
+    text-decoration: var(--base-link-text-decoration);
+    cursor: pointer;
+}
+
+:where(a, .uk-link):hover,
+:where(.uk-link-toggle):hover :where(.uk-link) {
+    color: var(--base-link-hover-color);
+    text-decoration: var(--base-link-hover-text-decoration);
+}
+
+
+/* Text-level semantics
+ ========================================================================== */
+
+/*
+ * 1. Add the correct text decoration in Edge.
+ * 2. The shorthand declaration `underline dotted` is not supported in Safari.
+ */
+
+abbr[title] {
+    /* 1 */
+    text-decoration: underline dotted;
+    /* 2 */
+    -webkit-text-decoration-style: dotted;
+}
+
+/*
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong { font-weight: var(--base-strong-font-weight); }
+
+/*
+ * 1. Consolas has a better baseline in running text compared to `Courier`
+ * 2. Correct the odd `em` font sizing in all browsers.
+ * 3. Style
+ */
+
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+    /* 1 */
+    font-family: var(--base-code-font-family);
+    /* 2 */
+    font-size: var(--base-code-font-size);
+    /* 3 */
+    color: var(--base-code-color);
+    white-space: nowrap;
+}
+
+/*
+ * Emphasize
+ */
+
+em { color: var(--base-em-color); }
+
+/*
+ * Insert
+ */
+
+ins {
+    background: var(--base-ins-background);
+    color: var(--base-ins-color);
+    text-decoration: none;
+}
+
+/*
+ * Mark
+ */
+
+mark {
+    background: var(--base-mark-background);
+    color: var(--base-mark-color);
+}
+
+/*
+ * Quote
+ */
+
+q { font-style: var(--base-quote-font-style); }
+
+/*
+ * Add the correct font size in all browsers.
+ */
+
+small { font-size: var(--base-small-font-size); }
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup { inset-block-start: -0.5em; }
+sub { inset-block-end: -0.25em; }
+
+
+/* Embedded content
+ ========================================================================== */
+
+/*
+ * Remove the gap between the element and the bottom of its parent container.
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video { vertical-align: middle; }
+
+/*
+ * 1. Constrain the element to its parent width.
+ * 2. Preserve the intrinsic aspect ratio and auto-scale the height of an image if the `height` attribute is present.
+ * 3. Take border and padding into account.
+ */
+
+canvas,
+img,
+svg,
+video {
+    /* 1 */
+    max-inline-size: 100%;
+    /* 2 */
+    block-size: auto;
+    /* 3 */
+    box-sizing: border-box;
+}
+
+/*
+ * Iframe
+ * Remove border in all browsers
+ */
+
+iframe { border: 0; }
+
+
+/* Block elements
+ ========================================================================== */
+
+/*
+ * Margins
+ */
+
+p,
+ul,
+ol,
+dl,
+pre,
+address,
+fieldset,
+figure { margin: 0 0 var(--base-margin-vertical) 0; }
+
+/* Add margin if adjacent element */
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + pre,
+* + address,
+* + fieldset,
+* + figure { margin-block-start: var(--base-margin-vertical); }
+
+
+/* Headings
+ ========================================================================== */
+
+h1, .uk-h1,
+h2, .uk-h2,
+h3, .uk-h3,
+h4, .uk-h4,
+h5, .uk-h5,
+h6, .uk-h6,
+.uk-heading-small,
+.uk-heading-medium,
+.uk-heading-large,
+.uk-heading-xlarge,
+.uk-heading-2xlarge {
+    margin: 0 0 var(--base-margin-vertical) 0;
+    font-family: var(--base-heading-font-family);
+    font-weight: var(--base-heading-font-weight);
+    color: var(--base-heading-color);
+    text-transform: var(--base-heading-text-transform);
+}
+
+/* Add margin if adjacent element */
+* + h1, * + .uk-h1,
+* + h2, * + .uk-h2,
+* + h3, * + .uk-h3,
+* + h4, * + .uk-h4,
+* + h5, * + .uk-h5,
+* + h6, * + .uk-h6,
+* + .uk-heading-small,
+* + .uk-heading-medium,
+* + .uk-heading-large,
+* + .uk-heading-xlarge,
+* + .uk-heading-2xlarge { margin-block-start: var(--base-heading-margin-top); }
+
+/*
+ * Sizes
+ */
+
+h1, .uk-h1 {
+    font-size: var(--base-h1-font-size);
+    line-height: var(--base-h1-line-height);
+}
+
+h2, .uk-h2 {
+    font-size: var(--base-h2-font-size);
+    line-height: var(--base-h2-line-height);
+}
+
+h3, .uk-h3 {
+    font-size: var(--base-h3-font-size);
+    line-height: var(--base-h3-line-height);
+}
+
+h4, .uk-h4 {
+    font-size: var(--base-h4-font-size);
+    line-height: var(--base-h4-line-height);
+}
+
+h5, .uk-h5 {
+    font-size: var(--base-h5-font-size);
+    line-height: var(--base-h5-line-height);
+}
+
+h6, .uk-h6 {
+    font-size: var(--base-h6-font-size);
+    line-height: var(--base-h6-line-height);
+}
+
+
+/* Lists
+ ========================================================================== */
+
+ul,
+ol { padding-inline-start: var(--base-list-padding-left); }
+
+/*
+ * Reset margin for nested lists
+ */
+
+ul > li > ul,
+ul > li > ol,
+ol > li > ol,
+ol > li > ul { margin: 0; }
+
+
+/* Description lists
+ ========================================================================== */
+
+dt { font-weight: bold; }
+dd { margin-inline-start: 0; }
+
+
+/* Horizontal rules
+ ========================================================================== */
+
+/*
+ * 1. Show the overflow in Chrome, Edge and IE.
+ * 2. Add the correct text-align in Edge and IE.
+ * 3. Style
+ */
+
+hr, .uk-hr {
+    /* 1 */
+    overflow: visible;
+    /* 2 */
+    text-align: inherit;
+    /* 3 */
+    margin: 0 0 var(--base-hr-margin-vertical) 0;
+    border: 0;
+    border-block-start: var(--base-hr-border-width) solid var(--base-hr-border);
+}
+
+/* Add margin if adjacent element */
+* + hr,
+* + .uk-hr { margin-block-start: var(--base-hr-margin-vertical); }
+
+
+/* Address
+ ========================================================================== */
+
+address { font-style: normal; }
+
+
+/* Blockquotes
+ ========================================================================== */
+
+blockquote {
+    margin: 0 0 var(--base-blockquote-margin-vertical) 0;
+    font-size: var(--base-blockquote-font-size);
+    line-height: var(--base-blockquote-line-height);
+    font-style: var(--base-blockquote-font-style);
+}
+
+/* Add margin if adjacent element */
+* + blockquote { margin-block-start: var(--base-blockquote-margin-vertical); }
+
+/*
+ * Content
+ */
+
+blockquote p:last-of-type { margin-block-end: 0; }
+
+blockquote footer {
+    margin-block-start: var(--base-blockquote-footer-margin-top);
+    font-size: var(--base-blockquote-footer-font-size);
+    line-height: var(--base-blockquote-footer-line-height);
+}
+
+
+/* Preformatted text
+ ========================================================================== */
+
+/*
+ * 1. Contain overflow in all browsers.
+ */
+
+pre {
+    font: var(--base-pre-font-size) unquote("/") var(--base-pre-line-height) var(--base-pre-font-family);
+    color: var(--base-pre-color);
+    -moz-tab-size: 4;
+    tab-size: 4;
+    /* 1 */
+    overflow: auto;
+}
+
+pre code { font-family: var(--base-pre-font-family); }
+
+
+/* Focus
+ ========================================================================== */
+
+:focus { outline: none; }
+
+:focus-visible { outline: var(--base-focus-outline-width) var(--base-focus-outline-style) var(--base-focus-outline); }
+
+
+/* Selection pseudo-element
+ ========================================================================== */
+
+::selection {
+    background: var(--base-selection-background);
+    color: var(--base-selection-color);
+    text-shadow: none;
+}
+
+
+/* HTML5 elements
+ ========================================================================== */
+
+/*
+ * 1. Add the correct display in Edge, IE 10+, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+
+details, /* 1 */
+main { /* 2 */
+    display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary { display: list-item; }
+
+/*
+ * Add the correct display in IE.
+ */
+
+template { display: none; }

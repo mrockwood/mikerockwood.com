@@ -1,0 +1,526 @@
++++
+title = "Nav"
+description = "Defines different styles for list navigations."
++++
+
+# Nav
+
+<p class="uk-text-lead">Defines different styles for list navigations.</p>
+
+## Usage
+
+To apply this component, use the following classes.
+
+| Class         | Description                                                                                                      |
+|:--------------|:-----------------------------------------------------------------------------------------------------------------|
+| `.uk-nav`     | Add this class to a `<ul>` element to define the Nav component. Use `<a>` elements as nav items within the list. |
+| `.uk-active ` | Add this class to a list item to apply an active state to a menu item.                                           |
+
+```html
+<ul class="uk-nav">
+    <li class="uk-active"><a href=""></a></li>
+    <li><a href=""></a></li>
+</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s uk-width-2-5@m">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+    </ul>
+</div>
+{% end %}
+
+**Note** By default, the nav has no styling. That's why it is important to add a modifier class. In our example we are using the `.uk-nav-default` class.
+
+***
+
+## Nested navs
+
+Add the `.uk-parent` class to an item to turn it into a parent. Add the `.uk-nav-sub` class to a `<ul>` element inside the item to create the subnav.
+
+```html
+<ul class="uk-nav">
+    <li class="uk-parent">
+        <a href=""></a>
+        <ul class="uk-nav-sub">
+            <li><a href=""></a></li>
+            <li>
+                <a href=""></a>
+                <ul>…</ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s uk-width-2-5@m">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li class="uk-parent">
+            <a href="#">Parent</a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{% end %}
+
+
+***
+
+## Accordion
+
+By default, child menu items are always visible. To apply an accordion effect, just add the `uk-nav` attribute to the main `<ul>`.
+
+**Note** The attribute automatically sets the `.uk-nav` class, so you don't have to apply it manually.
+
+```html
+<ul uk-nav>…</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s uk-width-2-5@m">
+    <ul class="uk-nav-default" uk-nav>
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li class="uk-parent">
+            <a href="#">Parent</a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="uk-parent">
+            <a href="#">Parent</a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">Sub item</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+### Parent icon
+
+To create a parent icon, just add the `uk-nav-parent-icon` attribute to a `<span>` element.
+
+```html
+<ul uk-nav>
+    <li>
+        <a href="">Parent <span uk-nav-parent-icon></span></a>
+        …
+    </li>
+</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s uk-width-2-5@m">
+    <ul class="uk-nav-default" uk-nav>
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">Sub item</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+### Multiple open subnavs
+
+When clicking on a parent item, an open one will close, allowing only one open nested list at a time. To allow multiple open subnavs, just add the `multiple: true` option to the attribute.
+
+```html
+<ul uk-nav="multiple: true">…</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s uk-width-2-5@m">
+    <ul class="uk-nav-default" uk-nav="multiple: true">
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">Sub item</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Header and divider
+
+Add one of the following classes to a list item to create a header or a divider between items.
+
+| Element           | Description                                                                  |
+|:------------------|:-----------------------------------------------------------------------------|
+| `.uk-nav-header`  | Add this class to a `<li>` element to create a header.                       |
+| `.uk-nav-divider` | Add this class to a `<li>` element to create a divider separating nav items. |
+
+```html
+<li class="uk-nav-header"></li>
+
+<li class="uk-nav-divider"></li>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s uk-width-2-5@m">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-nav-header">Header</li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a href="#">Item</a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Subtitle
+
+Add the `.uk-nav-subtitle` class to a `div` element to create an item subtitled.
+
+```html
+<ul class="uk-nav">
+    <li>
+        <a href="">
+            <div>
+                Item
+                <div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div>
+            </div>
+        </a>
+    </li>
+</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s uk-width-2-5@m">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a href="#"><div>Active<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+        <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+        <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+        <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Default modifier
+
+Add the `.uk-nav-default` class to give the nav its default style. You can place the nav inside cards or anywhere else in your content.
+
+```html
+<ul class="uk-nav uk-nav-default">…</ul>
+```
+
+{% example() %}
+<div class="uk-card uk-card-default uk-card-body uk-width-1-2@s">
+    <ul class="uk-nav-default" uk-nav>
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">Sub item</a></li>
+            </ul>
+        </li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">Sub item</a></li>
+            </ul>
+        </li>
+        <li class="uk-nav-header">Header</li>
+        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Primary modifier
+
+Add the `.uk-nav-primary` class to give the nav a more distinct styling, for example when placing it inside a modal.
+
+```html
+<ul class="uk-nav uk-nav-primary">…</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s">
+    <ul class="uk-nav-primary" uk-nav>
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">Sub item</a></li>
+            </ul>
+        </li>
+        <li class="uk-parent">
+            <a href="#">Parent <span uk-nav-parent-icon></span></a>
+            <ul class="uk-nav-sub">
+                <li><a href="#">Sub item</a></li>
+                <li><a href="#">Sub item</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Item</a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Secondary modifier
+
+Add the `.uk-nav-secondary` class to have an extra style if the nav has subtitles.
+
+```html
+<ul class="uk-nav uk-nav-secondary">…</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s">
+    <ul class="uk-nav uk-nav-secondary">
+        <li class="uk-active"><a href="#"><div>Active<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+        <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+        <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+        <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Center modifier
+
+Add the `.uk-nav-center` class to center nav items. This can be combined with the default and primary style modifiers.
+
+```html
+<ul class="uk-nav uk-nav-default uk-nav-center">…</ul>
+```
+
+{% example() %}
+<div class="uk-card uk-card-default uk-card-body uk-width-1-2@s">
+    <ul class="uk-nav-default uk-nav-center" uk-nav>
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Divider modifier
+
+Add the `.uk-nav-divider` class to separate nav items with lines. This can be combined with the default, primary and secondary style modifiers.
+
+```html
+<ul class="uk-nav uk-nav-default uk-nav-divider">…</ul>
+```
+
+{% example() %}
+<div class="uk-width-1-2@s">
+    <ul class="uk-nav-default uk-nav-divider" uk-nav>
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Nav in Dropdown
+
+Add the `.uk-dropdown-nav` class to place a nav inside a default dropdown from the [Dropdown component](dropdown.md).
+
+```html
+<div uk-dropdown>
+    <ul class="uk-nav uk-dropdown-nav">…</ul>
+</div>
+```
+
+{% example() %}
+<button class="uk-button uk-button-default" type="button">Hover</button>
+<div uk-dropdown>
+    <ul class="uk-nav uk-dropdown-nav">
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li><a href="#">Item</a></li>
+        <li class="uk-nav-header">Header</li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a href="#">Item</a></li>
+    </ul>
+</div>
+{% end %}
+
+***
+
+## Nav in Navbar
+
+Add the `.uk-navbar-dropdown-nav` class to place the nav inside a navbar dropdown from the [Navbar component](navbar.md).
+
+```html
+<div class="uk-navbar-dropdown">
+    <ul class="uk-nav uk-navbar-dropdown-nav">…</ul>
+</div>
+```
+
+{% example() %}
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="#">Parent</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+{% end %}
+
+***
+
+## Nav in offcanvas
+
+A nav can be used inside an offcanvas from the [Offcanvas component](offcanvas.md). No modifier class needs to be added.
+
+{% example() %}
+<a href="#offcanvas-slide" class="uk-button uk-button-default" uk-toggle>Open</a>
+
+<div id="offcanvas-slide" uk-offcanvas>
+    <div class="uk-offcanvas-bar">
+
+        <ul class="uk-nav uk-nav-default">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li><a href="#">Item</a></li>
+            <li class="uk-nav-header">Header</li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="#">Item</a></li>
+        </ul>
+
+    </div>
+</div>
+{% end %}
+
+***
+
+## Component options
+
+Any of these options can be applied to the component attribute. Separate multiple options with a semicolon. [Learn more](javascript.md#component-configuration)
+
+| Option        | Value        | Default        | Description                                                                       |
+|:--------------|:-------------|:---------------|:----------------------------------------------------------------------------------|
+| `targets`     | CSS selector | `> .uk-parent` | The element(s) to toggle.                                                         |
+| `toggle `     | CSS selector | `> a`          | The toggle element(s).                                                            |
+| `content`     | CSS selector | `> ul`         | The content element(s).                                                           |
+| `collapsible` | Boolean      | `true`         | Allow all items to be closed.                                                     |
+| `multiple`    | Boolean      | `false`        | Allow multiple open items.                                                        |
+| `transition`  | String       | `ease`         | The transition to use.                                                            |
+| `animation`   | String       | `true`         | Space-separated names of [animations](animation.md). Comma-separated for animation out. |
+| `duration`    | Number       | `200`          | The animation duration in milliseconds.                                           |
+
+***
+
+## JavaScript
+
+Learn more about [JavaScript components](javascript.md#programmatic-use).
+
+### Initialization
+
+```js
+UIkit.nav(element, options);
+```
+
+### Methods
+
+The following methods are available for the component:
+
+#### Toggle
+
+```js
+UIkit.nav(element).toggle(index, animate);
+```
+
+Toggles the content pane.
+
+| Name      | Type                 | Default | Description                                  |
+|:----------|:---------------------|:--------|:---------------------------------------------|
+| `index`   | String, Number, Node | 0       | Nav pane to toggle. 0 based index.           |
+| `animate` | Boolean              | true    | Suppress opening animation by passing false. |

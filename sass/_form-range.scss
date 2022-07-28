@@ -1,0 +1,124 @@
+// Name:            Form Range
+// Description:     Styles for the range input type
+//
+// Component:       `uk-range`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-range']) {
+
+    --form-range-track-height:                        3px;
+    --form-range-track-background:                    hsl(var(--global-muted-background) / 0.8);
+    --form-range-track-focus-background:              hsl(var(--global-muted-background));
+
+    --form-range-thumb-height:                        15px;
+    --form-range-thumb-width:                         var(--form-range-thumb-height);
+    --form-range-thumb-border-radius:                 500px;
+    --form-range-thumb-background:                    hsl(var(--global-color));
+
+}
+
+
+/* ========================================================================
+   Component: Form Range
+ ========================================================================== */
+
+/*
+ * 1. Remove default style.
+ * 2. Define consistent box sizing.
+ * 3. Remove `margin` in all browsers.
+ * 4. Align to the center of the line box.
+ * 5. Prevent content overflow if a fixed width is used.
+ * 6. Take the full width.
+ * 7. Remove white background in Chrome.
+ */
+
+.uk-range {
+    /* 1 */
+    -webkit-appearance: none;
+    /* 2 */
+    box-sizing: border-box;
+    /* 3 */
+    margin: 0;
+    /* 4 */
+    vertical-align: middle;
+    /* 5 */
+    max-inline-size: 100%;
+    /* 6 */
+    inline-size: 100%;
+    /* 7 */
+    background: transparent;
+}
+
+/* Focus */
+.uk-range:focus { outline: none; }
+.uk-range::-moz-focus-outer { border: none; }
+
+/*
+ * Improves consistency of cursor style for clickable elements
+ */
+
+.uk-range:not(:disabled)::-webkit-slider-thumb { cursor: pointer; }
+.uk-range:not(:disabled)::-moz-range-thumb { cursor: pointer; }
+
+
+/*
+ * Track
+ * 1. Safari doesn't have a focus state. Using active instead.
+ */
+
+/* Webkit */
+.uk-range::-webkit-slider-runnable-track {
+    block-size: var(--form-range-track-height);
+    background: var(--form-range-track-background);
+}
+
+.uk-range:focus::-webkit-slider-runnable-track,
+/* 1 */
+.uk-range:active::-webkit-slider-runnable-track {
+    background: var(--form-range-track-focus-background);
+}
+
+/* Firefox */
+.uk-range::-moz-range-track {
+    block-size: var(--form-range-track-height);
+    background: var(--form-range-track-background);
+}
+
+.uk-range:focus::-moz-range-track {
+    background: var(--form-range-track-focus-background);
+}
+
+/*
+ * Thumb
+ * 1. Reset
+ * 2. Style
+ */
+
+/* Webkit */
+.uk-range::-webkit-slider-thumb {
+    /* 1 */
+    -webkit-appearance: none;
+    margin-block-start: calc( ( var(--form-range-thumb-height) * 0.5 ) * -1 );
+    /* 2 */
+    block-size: var(--form-range-thumb-height);
+    inline-size: var(--form-range-thumb-width);
+    border-radius: var(--form-range-thumb-border-radius);
+    background: var(--form-range-thumb-background);
+}
+
+/* Firefox */
+.uk-range::-moz-range-thumb {
+    /* 1 */
+    border: none;
+    /* 2 */
+    block-size: var(--form-range-thumb-height);
+    inline-size: var(--form-range-thumb-width);
+    margin-block-start: calc( ( var(--form-range-thumb-height) * 0.5 ) * -1 );
+    border-radius: var(--form-range-thumb-border-radius);
+    background: var(--form-range-thumb-background);
+}

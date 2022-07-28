@@ -1,0 +1,100 @@
+// Name:            Pagination
+// Description:     Component to create a page navigation
+//
+// Component:       `uk-pagination`
+//
+// Adopted:         `uk-pagination-next`
+//                  `uk-pagination-previous`
+//
+// States:          `uk-active`
+//                  `uk-disabled`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-pagination']) {
+
+    --pagination-margin-horizontal:                   0;
+
+    --pagination-item-padding-vertical:               5px;
+    --pagination-item-padding-horizontal:             10px;
+    --pagination-item-color:                          hsl(var(--global-muted-color));
+    --pagination-item-hover-color:                    hsl(var(--global-color));
+    --pagination-item-hover-text-decoration:          none;
+    --pagination-item-active-color:                   hsl(var(--global-color));
+    --pagination-item-disabled-color:                 hsl(var(--global-muted-color));
+
+}
+
+
+/* ========================================================================
+   Component: Pagination
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Gutter
+ * 3. Reset list
+ */
+
+.uk-pagination {
+    display: flex;
+    /* 1 */
+    flex-wrap: wrap;
+    /* 2 */
+    margin-inline-start: calc(-1 * var(--pagination-margin-horizontal));
+    /* 3 */
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ * 3. Create position context for dropdowns
+ */
+
+.uk-pagination > * {
+    /* 1 */
+    flex: none;
+    /* 2 */
+    padding-inline-start: var(--pagination-margin-horizontal);
+    /* 3 */
+    position: relative;
+}
+
+
+/* Items
+ ========================================================================== */
+
+/*
+ * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * 2. Style
+ */
+
+.uk-pagination > * > * {
+    /* 1 */
+    display: block;
+    /* 2 */
+    padding: var(--pagination-item-padding-vertical) var(--pagination-item-padding-horizontal);
+    color: var(--pagination-item-color);
+}
+
+/* Hover */
+.uk-pagination > * > :hover {
+    color: var(--pagination-item-hover-color);
+    text-decoration: var(--pagination-item-hover-text-decoration);
+}
+
+/* Active */
+.uk-pagination > .uk-active > * {
+    color: var(--pagination-item-active-color);
+}
+
+/* Disabled */
+.uk-pagination > .uk-disabled > * {
+    color: var(--pagination-item-disabled-color);
+}

@@ -1,0 +1,89 @@
+<!-- representative h-card: https://microformats.org/wiki/h-card -->
+<div class="h-card vcard" rel="author">
+
+  <img 
+    class="u-photo" 
+    alt="{% if config.extra.author.name %}{{ config.extra.author.name }}{% else %}author photo{% endif %}"
+    src="{% if config.extra.author.avatar %}{{ config.extra.author.avatar }}{% else %}https://picsum.photos/120.webp{% endif %}"
+  >
+
+  <div class="">
+        
+    <h1 class="p-name fn">
+      {% if config.extra.author.name %}
+        {{ config.extra.author.name }}
+      {% else %}
+        {{ config.title }}
+      {% endif %}
+    </h1>
+        
+    <div class="properties">
+
+      <a class="u-url u-uid" href="{{ config.base_url }}">
+        {% if config.extra.author.name %}
+          {{ config.extra.author.name }}
+        {% else %}
+          {{ config.base_url }}
+        {% endif %}
+      </a>
+
+      {% if config.extra.author.nickname %}
+      <span class="p-nickname">{{ config.extra.author.nickname }}</span>
+      {% endif %}
+
+      {% if config.extra.author.email %}
+      <a class="u-email" href="mailto:{{ config.extra.author.email }}">{{ config.extra.author.email }}</a>
+      {% endif %}
+
+      {%- if config.extra.social.mastodon -%}
+      <a rel="me" href="{{ config.extra.social.mastodon }}/">Mastodon</a>{% endif -%}
+      {%- if config.extra.social.element -%}
+      <a rel="me" href="https://{{ config.extra.social.element }}/">Element{% endif -%}
+      {%- if config.extra.social.matrix -%}
+      <a rel="me" href="https://{{ config.extra.social.matrix }}/">Matrix{% endif -%}
+      {%- if config.extra.social.twitter -%}
+      <a rel="me" href="https://twitter.com/{{ config.extra.social.twitter }}/">Twitter{% endif -%}
+      {%- if config.extra.social.facebook -%}
+      <a rel="me" href="https://www.facebook.com/{{ config.extra.social.facebook }}/">Facebook{% endif -%}
+      {%- if config.extra.social.linkedin -%}
+      <a rel="me" href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}/">LinkedIn{% endif -%}
+      {%- if config.extra.social.researchgate -%}
+      <a rel="me" href="https://www.researchgate.net/profile/{{ config.extra.social.researchgate }}/">ResearchGate{% endif -%}
+      {%- if config.extra.social.gitlab -%}
+      <a rel="me" href="https://gitlab.com/{{ config.extra.social.gitlab }}/">Gitlab{% endif -%}
+      {%- if config.extra.social.github -%}
+      <a rel="me" href="https://github.com/{{ config.extra.social.github }}/">Github{% endif -%}
+      {%- if config.extra.social.bitbucket -%}
+      <a rel="me" href="https://bitbucket.org/{{ config.extra.social.bitbucket }}/">Bitbucket{% endif -%}
+      {%- if config.extra.social.python -%}
+      <a rel="me" href="https://pypi.org/user/{{ config.extra.social.python }}/">Python{% endif -%}
+      {%- if config.extra.social.docker -%}
+      <a rel="me" href="https://hub.docker.com/u/{{ config.extra.social.docker }}/">Docker{% endif -%}
+      {%- if config.extra.social.stack -%}
+      <a rel="me" href="https://stackoverflow.com/users/{{ config.extra.social.stack }}/">Stack{% endif -%}
+      {%- if config.extra.social.instagram -%}
+      <a rel="me" href="https://www.instagram.com/{{ config.extra.social.instagram }}/">Instagram{% endif -%}
+      {%- if config.extra.social.pinterest -%}
+      <a rel="me" href="https://www.pinterest.com/{{ config.extra.social.pinterest }}/">Pinterest{% endif -%}
+      {%- if config.extra.social.twitch -%}
+      <a rel="me" href="https://www.twitch.tv/{{ config.extra.social.twitch }}/">Twitch{% endif -%}
+      {%- if config.extra.social.youtube -%}
+      <a rel="me" href="https://www.youtube.com/{{ config.extra.social.youtube }}">YouTube{% endif -%}
+      {%- if config.extra.social.buymeacoffee -%}
+      <a rel="me" href="https://www.buymeacoffee.com/{{ config.extra.social.buymeacoffee }}/">Buy Me A Coffee{% endif -%}
+      {%- if config.extra.social.github_sponsor -%}
+      <a rel="me" href="https://github.com/sponsors/{{ config.extra.social.github_sponsor }}/">GitHub Sponsor</a>{% endif -%}
+
+    </div>
+        
+    <p class="p-note">
+      {% if config.extra.bio %}
+        {{ config.extra.bio }}
+      {% else %}
+        {{ config.description }}
+      {% endif %}
+    </p>
+        
+  </div>
+
+</div>

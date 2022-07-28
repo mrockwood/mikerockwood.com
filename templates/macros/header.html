@@ -1,0 +1,24 @@
+{% macro header() %}
+<div class="uk-header">
+    <div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
+        <nav class="uk-navbar">
+            <div class="uk-navbar-left">
+                {{ logo::logo() }}
+            </div>
+            <div class="uk-navbar-right">
+                {# Check if there are menu items to render, yes if > 0 #}
+                {%- set num = config.extra.menu | length -%}
+                {% if num > 0 -%}
+                    {{ menu::menu() }}
+                {% endif -%}
+                <div class="uk-navbar-item uk-hidden@m">
+                    <button uk-toggle="target: #js-mobile-menu" uk-navbar-toggle-icon class="uk-icon-button"></button>
+                </div> 
+                <div class="uk-navbar-item">
+                    <button uk-toggle="target: #js-theme-menu" class="uk-icon-button" uk-icon="github"></button>
+                </div> 
+            </div>            
+        </nav>
+    </div>
+</div>
+{% endmacro header %}

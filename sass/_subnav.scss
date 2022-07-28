@@ -1,0 +1,192 @@
+// Name:            Subnav
+// Description:     Component to create a sub navigation
+//
+// Component:       `uk-subnav`
+//
+// Modifiers:       `uk-subnav-divider`
+//                  `uk-subnav-pill`
+//
+// States:          `uk-active`
+//                  `uk-first-column`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-subnav']) {
+
+    --subnav-margin-horizontal:                       20px;
+
+    --subnav-item-color:                              hsl(var(--global-muted-color));
+    --subnav-item-hover-color:                        hsl(var(--global-color));
+    --subnav-item-hover-text-decoration:              none;
+    --subnav-item-active-color:                       hsl(var(--global-emphasis-color));
+
+    --subnav-divider-margin-horizontal:               var(--subnav-margin-horizontal);
+    --subnav-divider-border-height:                   1.5em;
+    --subnav-divider-border-width:                    var(--global-border-width);
+    --subnav-divider-border:                          hsl(var(--global-border));
+
+    --subnav-pill-item-padding-vertical:              5px;
+    --subnav-pill-item-padding-horizontal:            10px;
+    --subnav-pill-item-background:                    transparent;
+    --subnav-pill-item-color:                         var(--subnav-item-color);
+    --subnav-pill-item-hover-background:              hsl(var(--global-muted-background));
+    --subnav-pill-item-hover-color:                   hsl(var(--global-color));
+    --subnav-pill-item-onclick-background:            var(--subnav-pill-item-hover-background);
+    --subnav-pill-item-onclick-color:                 var(--subnav-pill-item-hover-color);
+    --subnav-pill-item-active-background:             hsl(var(--global-primary-background));
+    --subnav-pill-item-active-color:                  hsl(var(--global-inverse-color));
+
+    --subnav-item-disabled-color:                     hsl(var(--global-muted-color));
+
+}
+
+
+/* ========================================================================
+   Component: Subnav
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Center items vertically if they have a different height
+ * 3. Gutter
+ * 4. Reset list
+ */
+
+.uk-subnav {
+    display: flex;
+    /* 1 */
+    flex-wrap: wrap;
+    /* 2 */
+    align-items: center;
+    /* 3 */
+    margin-inline-start: calc(-1 * var(--subnav-margin-horizontal));
+    /* 4 */
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ * 3. Create position context for dropdowns
+ */
+
+.uk-subnav > * {
+    /* 1 */
+    flex: none;
+    /* 2 */
+    padding-inline-start: var(--subnav-margin-horizontal);
+    /* 3 */
+    position: relative;
+}
+
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * Using `:first-child` instead of `a` to support `span` elements for text
+ * 1. Center content vertically, e.g. an icon
+ * 2. Imitate white space gap when using flexbox
+ * 3. Style
+ */
+
+.uk-subnav > * > :first-child {
+    /* 1 */
+    display: flex;
+    align-items: center;
+    /* 2 */
+    column-gap: 0.25em;
+    /* 3 */
+    color: var(--subnav-item-color);
+}
+
+/* Hover */
+.uk-subnav > * > a:hover {
+    color: var(--subnav-item-hover-color);
+    text-decoration: var(--subnav-item-hover-text-decoration);
+}
+
+/* Active */
+.uk-subnav > .uk-active > a {
+    color: var(--subnav-item-active-color);
+}
+
+
+/* Divider modifier
+ ========================================================================== */
+
+/*
+ * Set gutter
+ */
+
+.uk-subnav-divider { margin-inline-start: calc(((var(--subnav-divider-margin-horizontal) * 2) + var(--subnav-divider-border-width)) * -1); }
+
+/*
+ * Align items and divider vertically
+ */
+
+.uk-subnav-divider > * {
+    display: flex;
+    align-items: center;
+}
+
+/*
+ * Divider
+ * 1. `nth-child` makes it also work without JS if it's only one row
+ */
+
+.uk-subnav-divider > ::before {
+    content: "";
+    block-size: var(--subnav-divider-border-height);
+    margin-inline-start: calc(var(--subnav-divider-margin-horizontal) - var(--subnav-margin-horizontal));
+    margin-inline-end: var(--subnav-divider-margin-horizontal);
+    border-inline-start: var(--subnav-divider-border-width) solid transparent;
+}
+
+/* 1 */
+.uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before {
+    border-left-color: var(--subnav-divider-border);
+}
+
+
+/* Pill modifier
+ ========================================================================== */
+
+.uk-subnav-pill > * > :first-child {
+    padding: var(--subnav-pill-item-padding-vertical) var(--subnav-pill-item-padding-horizontal);
+    background: var(--subnav-pill-item-background);
+    color: var(--subnav-pill-item-color);
+}
+
+/* Hover */
+.uk-subnav-pill > * > a:hover {
+    background-color: var(--subnav-pill-item-hover-background);
+    color: var(--subnav-pill-item-hover-color);
+}
+
+/* OnClick */
+.uk-subnav-pill > * > a:active {
+    background-color: var(--subnav-pill-item-onclick-background);
+    color: var(--subnav-pill-item-onclick-color);
+}
+
+/* Active */
+.uk-subnav-pill > .uk-active > a {
+    background-color: var(--subnav-pill-item-active-background);
+    color: var(--subnav-pill-item-active-color);
+}
+
+
+/* Disabled
+ * The same for all style modifiers
+ ========================================================================== */
+
+.uk-subnav > .uk-disabled > a {
+    color: var(--subnav-item-disabled-color);
+}

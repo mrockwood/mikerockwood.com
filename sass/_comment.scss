@@ -1,0 +1,136 @@
+// Name:            Comment
+// Description:     Component to create nested comments
+//
+// Component:       `uk-comment`
+//
+// Sub-objects:     `uk-comment-body`
+//                  `uk-comment-header`
+//                  `uk-comment-title`
+//                  `uk-comment-meta`
+//                  `uk-comment-avatar`
+//                  `uk-comment-list`
+//
+// Modifier:        `uk-comment-primary`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-comment']) {
+
+    --comment-header-margin-bottom:                   var(--global-margin);
+
+    --comment-title-font-size:                        var(--global-medium-font-size);
+    --comment-title-line-height:                      1.4;
+
+    --comment-meta-font-size:                         var(--global-small-font-size);
+    --comment-meta-line-height:                       1.4;
+    --comment-meta-color:                             hsl(var(--global-muted-color));
+
+    --comment-list-margin-top:                        var(--global-large-margin);
+    --comment-list-padding-left:                      30px;
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    :where([class*='uk-comment']) {
+
+        --comment-list-padding-left:                  100px;
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Comment
+ ========================================================================== */
+
+.uk-comment {}
+
+
+/* Sections
+ ========================================================================== */
+
+.uk-comment-body {
+    display: flow-root;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.uk-comment-header {
+    display: flow-root;
+    margin-block-end: var(--comment-header-margin-bottom);
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-comment-body > :last-child,
+.uk-comment-header > :last-child { margin-block-end: 0; }
+
+
+/* Title
+ ========================================================================== */
+
+.uk-comment-title {
+    font-size: var(--comment-title-font-size);
+    line-height: var(--comment-title-line-height);
+}
+
+
+/* Meta
+ ========================================================================== */
+
+.uk-comment-meta {
+    font-size: var(--comment-meta-font-size);
+    line-height: var(--comment-meta-line-height);
+    color: var(--comment-meta-color);
+}
+
+
+/* Avatar
+ ========================================================================== */
+
+.uk-comment-avatar {}
+
+
+/* List
+ ========================================================================== */
+
+.uk-comment-list {
+    padding: 0;
+    list-style: none;
+}
+
+/* Adjacent siblings */
+.uk-comment-list > :nth-child(n+2) {
+    margin-block-start: var(--comment-list-margin-top);
+}
+
+/*
+ * Sublists
+ * Note: General sibling selector allows reply block between comment and sublist
+ */
+
+.uk-comment-list .uk-comment ~ ul {
+    margin: var(--comment-list-margin-top) 0 0 0;
+    padding-inline-start: var(--comment-list-padding-left);
+    list-style: none;
+}
+
+/* Adjacent siblings */
+.uk-comment-list .uk-comment ~ ul > :nth-child(n+2) {
+    margin-block-start: var(--comment-list-margin-top);
+}
+
+
+/* Style modifier
+ ========================================================================== */
+
+.uk-comment-primary {}

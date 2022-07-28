@@ -1,0 +1,16 @@
+<div class="ukd-example uk-position-relative uk-margin-medium">
+  <ul uk-tab>
+    <li><a href="#">Preview</a></li>
+    <li><a href="#">Markup</a></li>
+  </ul>
+  <ul class="uk-switcher uk-margin">
+      <li>{{ body | safe }}</li>
+      <li><pre><code id="code_test" class="language-html">{{ body }}</code></pre></li>
+  </ul>
+  <div class="uk-position-top-right uk-margin-small-top">
+      <ul class="uk-iconnav">
+          <li><a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code_test"><img class="uk-icon" src="{{ config.base_url | safe }}/images/icon-clipboard.svg" uk-svg></a></li>
+          <li><a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code_test"><img class="uk-icon" src="{{ config.base_url | safe }}/images/icon-flask.svg" uk-svg></a></li>
+      </ul>
+  </div>
+</div>

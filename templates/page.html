@@ -1,0 +1,40 @@
+{% import "macros/head.html" as head -%}
+
+{% extends "base.html" -%}
+
+{%- block title %}
+    <title>{{ page.title }} - {{  config.extra.author }}</title>
+    {# TODO: make some kind of social media linking, i guess? #}
+    {#%- include "snippets/social.html" %#}
+{%- endblock title -%}
+
+{%- block main -%}
+<header class="uk-section uk-text-center">
+    <div class="uk-container uk-container-large">
+        <h1 class="uk-heading-xlarge uk-text-bold uk-text-uppercase">
+            {{ page.title }}
+        </h1>
+        {% if page.description %}
+        <p class="uk-width-large uk-margin-auto">
+            {{ page.description }}
+        </p>
+        {% endif %}
+    </div>    
+</header>
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="{{ page.permalink  }}">{{ page.title }}</a>
+            </h1>
+        </header>
+
+        {#- Skipping logic for cover as was in original Terminal theme -#}
+
+        {{ page.content | safe }}
+
+        {{ comments::comments() }}
+        {# TODO: Decide if any sort of commenting functionality is desired? #}
+        {#%- include "snippets/comments.html"  -%#}
+    </article>
+{%- endblock main -%}

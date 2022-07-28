@@ -1,0 +1,67 @@
+// Name:            Spinner
+// Description:     Component to create a loading spinner
+//
+// Component:       `uk-spinner`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-spinner']) {
+
+    --spinner-size:                                   30px;
+    --spinner-stroke-width:                           1px;
+    --spinner-radius:                                 calc( ( var(--spinner-size) - var(--spinner-stroke-width) ) / 2); /* Minus stroke width to prevent overflow clipping */
+    --spinner-circumference:                          calc( 2 * 3.141 * var(--spinner-radius) );
+    --spinner-duration:                               1.4s;
+
+}
+
+
+/* ========================================================================
+   Component: Spinner
+ ========================================================================== */
+
+/*
+ * Adopts `uk-icon`
+ */
+
+.uk-spinner {}
+
+
+/* SVG
+ ========================================================================== */
+
+.uk-spinner > * { animation: uk-spinner-rotate var(--spinner-duration) linear infinite; }
+
+@keyframes uk-spinner-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(270deg); }
+}
+
+/*
+ * Circle
+ */
+
+.uk-spinner > * > * {
+    stroke-dasharray: var(--spinner-circumference);
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: uk-spinner-dash var(--spinner-duration) ease-in-out infinite;
+    stroke-width: var(--spinner-stroke-width);
+    stroke-linecap: round;
+}
+
+@keyframes uk-spinner-dash {
+    0% { stroke-dashoffset: var(--spinner-circumference); }
+    50% {
+        stroke-dashoffset: calc(var(--spinner-circumference) * 0.25);
+        transform:rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: var(--spinner-circumference);
+        transform:rotate(450deg);
+    }
+}

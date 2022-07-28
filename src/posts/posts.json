@@ -1,5 +1,0 @@
-{
-	"layout": "single",
-	"templateEngineOverride": "njk,md",
-	"tags": ["posts"]
-}

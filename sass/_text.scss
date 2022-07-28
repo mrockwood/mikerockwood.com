@@ -1,0 +1,260 @@
+// Name:            Text
+// Description:     Utilities for text
+//
+// Component:       `uk-text-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-text']) {
+
+    --text-lead-font-size:                            var(--global-large-font-size);
+    --text-lead-line-height:                          1.5;
+    --text-lead-color:                                hsl(var(--global-emphasis-color));
+    
+    --text-meta-font-size:                            var(--global-small-font-size);
+    --text-meta-line-height:                          1.4;
+    --text-meta-color:                                hsl(var(--global-muted-color));
+    
+    --text-small-font-size:                           var(--global-small-font-size);
+    --text-small-line-height:                         1.5;
+    
+    --text-large-font-size:                           var(--global-large-font-size);
+    --text-large-line-height:                         1.5;
+    
+    --text-muted-color:                               hsl(var(--global-muted-color));
+    --text-emphasis-color:                            hsl(var(--global-emphasis-color));
+    --text-primary-color:                             hsl(var(--global-primary-background));
+    --text-secondary-color:                           hsl(var(--global-secondary-background));
+    --text-success-color:                             hsl(var(--global-success-background));
+    --text-warning-color:                             hsl(var(--global-warning-background));
+    --text-danger-color:                              hsl(var(--global-danger-background));
+    
+    --text-background-color:                          hsl(var(--global-primary-background));
+
+    --text-default-tracking:                          0;
+    --text-2xsmall-tracking:                          .025em;
+    --text-xsmall-tracking:                           .050em;
+    --text-small-tracking:                            .075em;
+    --text-medium-tracking:                           .150em;
+    --text-large-tracking:                            .500em;
+    --text-xlarge-tracking:                           .750em;
+    --text-2xlarge-tracking:                          1em;
+
+}
+
+
+/* ========================================================================
+   Component: Text
+ ========================================================================== */
+
+
+/* Style modifiers
+ ========================================================================== */
+
+.uk-text-lead {
+    font-size: var(--text-lead-font-size);
+    line-height: var(--text-lead-line-height);
+    color: var(--text-lead-color);
+}
+
+.uk-text-meta {
+    font-size: var(--text-meta-font-size);
+    line-height: var(--text-meta-line-height);
+    color: var(--text-meta-color);
+}
+
+
+/* Size modifiers
+ ========================================================================== */
+
+.uk-text-small {
+    font-size: var(--text-small-font-size);
+    line-height: var(--text-small-line-height);
+}
+
+.uk-text-large {
+    font-size: var(--text-large-font-size);
+    line-height: var(--text-large-line-height);
+}
+
+.uk-text-default {
+    font-size: var(--global-font-size);
+    line-height: var(--global-line-height);
+}
+
+
+/* Weight modifier
+ ========================================================================== */
+
+.uk-text-light { font-weight: 300; }
+.uk-text-normal { font-weight: 400; }
+.uk-text-bold { font-weight: 700; }
+
+.uk-text-lighter { font-weight: lighter; }
+.uk-text-bolder { font-weight: bolder; }
+
+
+/* Style modifier
+ ========================================================================== */
+
+.uk-text-italic { font-style: italic; }
+
+
+/* Transform modifier
+ ========================================================================== */
+
+.uk-text-capitalize { text-transform: capitalize !important; }
+.uk-text-uppercase { text-transform: uppercase !important; }
+.uk-text-lowercase { text-transform: lowercase !important; }
+
+
+/* Decoration modifier
+ ========================================================================== */
+
+.uk-text-decoration-none { text-decoration: none !important; }
+
+
+/* Color modifiers
+ ========================================================================== */
+
+.uk-text-muted { color: var(--text-muted-color) !important; }
+.uk-text-emphasis { color: var(--text-emphasis-color) !important; }
+.uk-text-primary { color: var(--text-primary-color) !important; }
+.uk-text-secondary { color: var(--text-secondary-color) !important; }
+.uk-text-success { color: var(--text-success-color) !important; }
+.uk-text-warning { color: var(--text-warning-color) !important; }
+.uk-text-danger { color: var(--text-danger-color) !important; }
+
+
+/* Background modifier
+ ========================================================================== */
+
+/*
+ * 1. The background clips to the foreground text. Works in all browsers.
+ * 2. Default color is set to transparent.
+ * 3. Container fits the text
+ * 4. Style
+ */
+
+.uk-text-background {
+    /* 1 */
+    -webkit-background-clip: text;
+    /* 2 */
+    color: transparent !important;
+    /* 3 */
+    display: inline-block;
+    /* 4 */
+    background-color: var(--text-background-color);
+}
+
+
+/* Color modifiers
+ ========================================================================== */
+
+.uk-text-tracking-default { letter-spacing: var(--text-default-tracking); }
+.uk-text-tracking-2xsmall { letter-spacing: var(--text-2xsmall-tracking); }
+.uk-text-tracking-xsmall { letter-spacing: var(--text-xsmall-tracking); }
+.uk-text-tracking-small { letter-spacing: var(--text-small-tracking); }
+.uk-text-tracking-medium { letter-spacing: var(--text-medium-tracking); }
+.uk-text-tracking-large { letter-spacing: var(--text-large-tracking); }
+.uk-text-tracking-xlarge { letter-spacing: var(--text-xlarge-tracking); }
+.uk-text-tracking-2xlarge { letter-spacing: var(--text-2xlarge-tracking); }
+
+
+/* Alignment modifiers
+ ========================================================================== */
+
+.uk-text-left { text-align: start !important; }
+.uk-text-right { text-align: end !important; }
+.uk-text-center { text-align: center !important; }
+.uk-text-justify { text-align: justify !important; }
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .uk-text-left\@s { text-align: start !important; }
+    .uk-text-right\@s { text-align: end !important; }
+    .uk-text-center\@s { text-align: center !important; }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .uk-text-left\@m { text-align: start !important; }
+    .uk-text-right\@m { text-align: end !important; }
+    .uk-text-center\@m { text-align: center !important; }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .uk-text-left\@l { text-align: start !important; }
+    .uk-text-right\@l { text-align: end !important; }
+    .uk-text-center\@l { text-align: center !important; }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .uk-text-left\@xl { text-align: start !important; }
+    .uk-text-right\@xl { text-align: end !important; }
+    .uk-text-center\@xl { text-align: center !important; }
+
+}
+
+/*
+ * Vertical
+ */
+
+.uk-text-top { vertical-align: top !important; }
+.uk-text-middle { vertical-align: middle !important; }
+.uk-text-bottom { vertical-align: bottom !important; }
+.uk-text-baseline { vertical-align: baseline !important; }
+
+
+/* Wrap modifiers
+ ========================================================================== */
+
+/*
+ * Prevent text from wrapping onto multiple lines
+ */
+
+.uk-text-nowrap { white-space: nowrap; }
+
+/*
+ * 1. Make sure a max-width is set after which truncation can occur
+ * 2. Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
+ * 3. Fix for table cells
+ */
+
+.uk-text-truncate {
+    /* 1 */
+    max-inline-size: 100%;
+    /* 2 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 2 */
+th.uk-text-truncate,
+td.uk-text-truncate { max-inline-size: 0; }
+
+/*
+ * Wrap long words onto the next line and break them if they are too long to fit.
+ * 1. Make it work with table cells in all browsers.
+ * Note: Not using `hyphens: auto` because it hyphenates text even if not needed.
+ */
+
+.uk-text-break { overflow-wrap: break-word; }
+
+ /* 1 */
+th.uk-text-break,
+td.uk-text-break { word-break: break-word; }

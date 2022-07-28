@@ -1,0 +1,133 @@
+// Name:            Align
+// Description:     Utilities to align embedded content
+//
+// Component:       `uk-align-left-*`
+//                  `uk-align-right-*`
+//                  `uk-align-center`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-align']) {
+
+    --align-margin-horizontal:                        var(--global-gutter);
+    --align-margin-vertical:                          var(--global-gutter);
+
+}
+
+@media (min-width: $breakpoint-medium) {
+
+    :where([class*='uk-align']) {
+
+        --align-margin-horizontal:                    var(--global-medium-gutter);
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Align
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+[class*='uk-align'] {
+    display: block;
+    margin-block-end: var(--align-margin-vertical);
+}
+
+* + [class*='uk-align'] { margin-block-start: var(--align-margin-vertical); }
+
+/*
+ * Center
+ */
+
+.uk-align-center { margin-inline: auto; }
+
+/*
+ * Left/Right
+ */
+
+.uk-align-left {
+    margin-block-start: 0;
+    margin-inline-end: var(--align-margin-horizontal);
+    float: inline-start;
+}
+
+.uk-align-right {
+    margin-block-start: 0;
+    margin-inline-start: var(--align-margin-horizontal);
+    float: inline-end;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .uk-align-left\@s {
+        margin-block-start: 0;
+        margin-inline-end: var(--align-margin-horizontal);
+        float: inline-start;
+    }
+
+    .uk-align-right\@s {
+        margin-block-start: 0;
+        margin-inline-start: var(--align-margin-horizontal);
+        float: inline-end;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .uk-align-left\@m {
+        margin-block-start: 0;
+        margin-inline-end: var(--align-margin-horizontal);
+        float: inline-start;
+    }
+
+    .uk-align-right\@m {
+        margin-block-start: 0;
+        margin-inline-start: var(--align-margin-horizontal);
+        float: inline-end;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .uk-align-left\@l {
+        margin-block-start: 0;
+        float: inline-start;
+    }
+
+    .uk-align-right\@l {
+        margin-block-start: 0;
+        float: inline-end;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .uk-align-left\@xl {
+        margin-block-start: 0;
+        margin-inline-end: var(--align-margin-horizontal);
+        float: inline-start;
+    }
+
+    .uk-align-right\@xl {
+        margin-block-start: 0;
+        margin-inline-start: var(--align-margin-horizontal);
+        float: inline-end;
+    }
+
+}

@@ -1,0 +1,281 @@
+// Name:            Search
+// Description:     Component to create the search
+//
+// Component:       `uk-search`
+//
+// Sub-objects:     `uk-search-input`
+//                  `uk-search-toggle`
+//
+// Adopted:         `uk-search-icon`
+//
+// Modifier:        `uk-search-default`
+//                  `uk-search-navbar`
+//                  `uk-search-large`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-search']) {
+
+    --search-color:                                       hsl(var(--global-color));
+    --search-placeholder-color:                           hsl(var(--global-muted-color));
+
+    --search-icon-color:                                  hsl(var(--global-muted-color));
+
+    --search-default-width:                               240px;
+    --search-default-height:                              var(--global-control-height);
+    --search-default-padding-horizontal:                  10px;
+    --search-default-background:                          hsl(var(--global-muted-background) / 0.8);
+    --search-default-focus-background:                    hsl(var(--global-muted-background));
+
+    --search-default-icon-width:                          var(--global-control-height);
+    --search-default-icon-padding:                        0px;
+
+    --search-navbar-width:                                400px;
+    --search-navbar-height:                               40px;
+    --search-navbar-background:                           transparent;
+    --search-navbar-font-size:                            var(--global-large-font-size);
+
+    --search-navbar-icon-width:                           40px;
+    --search-navbar-icon-padding:                         0px;
+
+    --search-large-width:                                 500px;
+    --search-large-height:                                80px;
+    --search-large-background:                            transparent;
+    --search-large-font-size:                             var(--global-2xlarge-font-size);
+
+    --search-large-icon-width:                            80px;
+    --search-large-icon-padding:                          0px;
+
+    --search-toggle-color:                                hsl(var(--global-muted-color));
+    --search-toggle-hover-color:                          hsl(var(--global-color));
+
+}
+
+
+/* ========================================================================
+   Component: Search
+ ========================================================================== */
+
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Reset `form`
+ */
+
+.uk-search {
+    /* 1 */
+    display: inline-block;
+    /* 2 */
+    position: relative;
+    /* 3 */
+    max-inline-size: 100%;
+    /* 4 */
+    margin: 0;
+}
+
+
+/* Input
+ ========================================================================== */
+
+/*
+ * Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.
+ */
+
+.uk-search-input::-webkit-search-cancel-button,
+.uk-search-input::-webkit-search-decoration { -webkit-appearance: none; }
+
+/*
+ * Removes placeholder transparency in Firefox.
+ */
+
+.uk-search-input::-moz-placeholder { opacity: 1; }
+
+/*
+ * 1. Define consistent box sizing.
+ * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
+ * 3. Remove `border-radius` in iOS.
+ * 4. Change font properties to `inherit` in all browsers
+ * 5. Show the overflow in Edge.
+ * 6. Remove default style in iOS.
+ * 7. Vertical alignment
+ * 8. Take the full container width
+ * 9. Style
+ */
+
+.uk-search-input {
+    /* 1 */
+    box-sizing: border-box;
+    /* 2 */
+    margin: 0;
+    /* 3 */
+    border-radius: 0;
+    /* 4 */
+    font: inherit;
+    /* 5 */
+    overflow: visible;
+    /* 6 */
+    -webkit-appearance: none;
+    /* 7 */
+    vertical-align: middle;
+    /* 8 */
+    inline-size: 100%;
+    /* 9 */
+    border: none;
+    color: var(--search-color);
+}
+
+.uk-search-input:focus { outline: none; }
+
+/* Placeholder */
+.uk-search-input::placeholder { color: search-placeholder-color; }
+
+
+/* Icon (Adopts `uk-icon`)
+ ========================================================================== */
+
+/*
+ * Position above input
+ * 1. Set position
+ * 2. Center icon vertically and horizontally
+ * 3. Style
+ */
+
+.uk-search .uk-search-icon {
+    /* 1 */
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    /* 2 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /* 3 */
+    color: var(--search-icon-color);
+}
+
+/*
+ * Required for `a`.
+ */
+
+.uk-search .uk-search-icon:hover { color: var(--search-icon-color); }
+
+/*
+ * Make `input` element clickable through icon, e.g. if it's a `span`
+ */
+
+.uk-search .uk-search-icon:not(a):not(button):not(input) { pointer-events: none; }
+
+/*
+ * Position modifier
+ */
+
+.uk-search .uk-search-icon-flip {
+    inset-inline-end: 0;
+    inset-inline-start: auto;
+}
+
+
+/* Default modifier
+ ========================================================================== */
+
+.uk-search-default { inline-size: var(--search-default-width); }
+
+/*
+ * Input
+ */
+
+.uk-search-default .uk-search-input {
+    block-size: var(--search-default-height);
+    padding-inline-start: var(--search-default-padding-horizontal);
+    padding-inline-end: var(--search-default-padding-horizontal);
+    background: var(--search-default-background);
+}
+
+/* Focus */
+.uk-search-default .uk-search-input:focus {
+    background-color: var(--search-default-focus-background);
+}
+
+/*
+ * Icon
+ */
+
+.uk-search-default .uk-search-icon { inline-size: var(--search-default-icon-width); }
+
+.uk-search-default .uk-search-icon:not(.uk-search-icon-flip) ~ .uk-search-input { padding-inline-start: calc(var(--search-default-icon-width) + var(--search-default-icon-padding)); }
+.uk-search-default .uk-search-icon-flip ~ .uk-search-input { padding-inline-end: calc(var(--search-default-icon-width) + var(--search-default-icon-padding)); }
+
+
+/* Navbar modifier
+ ========================================================================== */
+
+.uk-search-navbar { inline-size: var(--search-navbar-width); }
+
+/*
+ * Input
+ */
+
+.uk-search-navbar .uk-search-input {
+    block-size: var(--search-navbar-height);
+    background: var(--search-navbar-background);
+    font-size: var(--search-navbar-font-size);
+}
+
+/* Focus */
+.uk-search-navbar .uk-search-input:focus {}
+
+/*
+ * Icon
+ */
+
+.uk-search-navbar .uk-search-icon { inline-size: var(--search-navbar-icon-width); }
+
+.uk-search-navbar .uk-search-icon:not(.uk-search-icon-flip) ~ .uk-search-input { padding-inline-start: calc(var(--search-navbar-icon-width) + var(--search-navbar-icon-padding)); }
+.uk-search-navbar .uk-search-icon-flip ~ .uk-search-input { padding-inline-end: calc(var(--search-navbar-icon-width) + var(--search-navbar-icon-padding)); }
+
+
+/* Large modifier
+ ========================================================================== */
+
+.uk-search-large { inline-size: var(--search-large-width); }
+
+/*
+ * Input
+ */
+
+.uk-search-large .uk-search-input {
+    block-size: var(--search-large-height);
+    background: var(--search-large-background);
+    font-size: var(--search-large-font-size);
+}
+
+/* Focus */
+.uk-search-large .uk-search-input:focus {}
+
+/*
+ * Icon
+ */
+
+.uk-search-large .uk-search-icon { inline-size: var(--search-large-icon-width); }
+
+.uk-search-large .uk-search-icon:not(.uk-search-icon-flip) ~ .uk-search-input { padding-inline-start: calc(var(--search-large-icon-width) + var(--search-large-icon-padding)); }
+.uk-search-large .uk-search-icon-flip ~ .uk-search-input { padding-inline-end: calc(var(--search-large-icon-width) + var(--search-large-icon-padding)); }
+
+
+/* Toggle
+ ========================================================================== */
+
+.uk-search-toggle {
+    color: var(--search-toggle-color);
+}
+
+/* Hover */
+.uk-search-toggle:hover {
+    color: var(--search-toggle-hover-color);
+}

@@ -1,0 +1,316 @@
+// Name:            Modal
+// Description:     Component to create modal dialogs
+//
+// Component:       `uk-modal`
+//
+// Sub-objects:     `uk-modal-page`
+//                  `uk-modal-dialog`
+//                  `uk-modal-header`
+//                  `uk-modal-body`
+//                  `uk-modal-footer`
+//                  `uk-modal-title`
+//                  `uk-modal-close`
+//
+// Adopted:         `uk-modal-close-default`
+//                  `uk-modal-close-outside`
+//                  `uk-modal-close-full`
+//
+// Modifiers:       `uk-modal-container`
+//                  `uk-modal-full`
+//
+// States:          `uk-open`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-modal']) {
+
+    --modal-z-index:                                  calc( var(--global-z-index) + 10 );
+    --modal-background:                               rgba(0,0,0,0.6);
+
+    --modal-padding-horizontal:                       15px;
+    --modal-padding-vertical:                         var(--modal-padding-horizontal);
+
+    --modal-dialog-width:                             600px;
+    --modal-dialog-background:                        hsl(var(--global-background));
+
+    --modal-container-width:                          1200px;
+
+    --modal-body-padding-horizontal:                  var(--global-gutter);
+    --modal-body-padding-vertical:                    var(--global-gutter);
+
+    --modal-header-padding-horizontal:                var(--global-gutter);
+    --modal-header-padding-vertical:                  calc( var(--modal-header-padding-horizontal) * 0.5 );
+    --modal-header-background:                        hsl(var(--global-muted-background));
+
+    --modal-footer-padding-horizontal:                var(--global-gutter);
+    --modal-footer-padding-vertical:                  calc( var(--modal-footer-padding-horizontal) * 0.5 );
+    --modal-footer-background:                        hsl(var(--global-muted-background));
+
+    --modal-title-font-size:                          var(--global-xlarge-font-size);
+    --modal-title-line-height:                        1.3;
+
+    --modal-close-position:                           var(--global-small-margin);
+    --modal-close-padding:                            5px;
+
+    --modal-close-outside-position:                   0;
+    --modal-close-outside-translate:                  100%;
+    --modal-close-outside-color:                      white;
+    --modal-close-outside-hover-color:                hsl(var(--global-inverse-color));
+
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    :where([class*='uk-modal']) {
+
+        --modal-padding-horizontal:                   var(--global-gutter);
+        --modal-padding-vertical:                     50px;
+
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    :where([class*='uk-modal']) {
+
+        --modal-padding-horizontal:                   var(--global-medium-gutter);
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Modal
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background page
+ * 6. Fade-in transition
+ */
+
+.uk-modal {
+    /* 1 */
+    display: none;
+    /* 2 */
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    z-index: var(--modal-z-index);
+    /* 3 */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* 4 */
+    padding: var(--modal-padding-vertical) var(--modal-padding-horizontal);
+    /* 5 */
+    background: var(--modal-background);
+    /* 6 */
+    opacity: 0;
+    transition: opacity 0.15s linear;
+}
+
+/*
+ * Open
+ */
+
+.uk-modal.uk-open { opacity: 1; }
+
+
+/* Page
+ ========================================================================== */
+
+/*
+ * Prevent scrollbars
+ */
+
+.uk-modal-page { overflow: hidden; }
+
+
+/* Dialog
+ ========================================================================== */
+
+/*
+ * 1. Create position context for spinner and close button
+ * 2. Dimensions
+ * 3. `!important` is needed to overwrite `uk-width-auto`. See `#modal-media-image` in tests
+ * 4. Style
+ * 5. Slide-in transition
+ */
+
+.uk-modal-dialog {
+    /* 1 */
+    position: relative;
+    /* 2 */
+    box-sizing: border-box;
+    margin: 0 auto;
+    inline-size: var(--modal-dialog-width);
+    /* 3 */
+    max-inline-size: 100% !important;
+    /* 4 */
+    background: var(--modal-dialog-background);
+    /* 5 */
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: 0.3s linear;
+    transition-property: opacity, transform;
+}
+
+/*
+ * Open
+ */
+
+.uk-open > .uk-modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Size modifier
+ ========================================================================== */
+
+/*
+ * Container size
+ * Take the same size as the Container component
+ */
+
+.uk-modal-container .uk-modal-dialog { inline-size: var(--modal-container-width); }
+
+/*
+ * Full size
+ * 1. Remove padding and background from modal
+ * 2. Reset all default declarations from modal dialog
+ */
+
+/* 1 */
+.uk-modal-full {
+    padding: 0;
+    background: none;
+}
+
+/* 2 */
+.uk-modal-full .uk-modal-dialog {
+    margin: 0;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    transform: translateY(0);
+}
+
+
+/* Sections
+ ========================================================================== */
+
+.uk-modal-body {
+    display: flow-root;
+    padding: var(--modal-body-padding-vertical) var(--modal-body-padding-horizontal);
+}
+
+.uk-modal-header {
+    display: flow-root;
+    padding: var(--modal-header-padding-vertical) var(--modal-header-padding-horizontal);
+    background: var(--modal-header-background);
+}
+
+.uk-modal-footer {
+    display: flow-root;
+    padding: var(--modal-footer-padding-vertical) var(--modal-footer-padding-horizontal);
+    background: var(--modal-footer-background);
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-modal-body > :last-child,
+.uk-modal-header > :last-child,
+.uk-modal-footer > :last-child { margin-block-end: 0; }
+
+
+/* Title
+ ========================================================================== */
+
+.uk-modal-title {
+    font-size: var(--modal-title-font-size);
+    line-height: var(--modal-title-line-height);
+}
+
+
+/* Close
+ * Adopts `uk-close`
+ ========================================================================== */
+
+[class*='uk-modal-close-'] {
+    position: absolute;
+    z-index: var(--modal-z-index);
+    inset-block-start: var(--modal-close-position);
+    inset-inline-end: var(--modal-close-position);
+    padding: var(--modal-close-padding);
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+[class*='uk-modal-close-']:first-child + * { margin-block-start: 0; }
+
+/*
+ * Hover
+ */
+
+[class*='uk-modal-close-']:hover {}
+
+/*
+ * Default
+ */
+
+.uk-modal-close-default {}
+
+.uk-modal-close-default:hover {}
+
+/*
+ * Outside
+ * 1. Prevent scrollbar on small devices
+ */
+
+.uk-modal-close-outside {
+    inset-block-start: var(--modal-close-outside-position);
+    /* 1 */
+    inset-inline-end: calc( -1 * var(--modal-close-padding) );
+    transform: translate(0, calc( -1 * var(--modal-close-outside-translate)));
+    color: var(--modal-close-outside-color);
+}
+
+.uk-modal-close-outside:hover {
+    color: var(--modal-close-outside-hover-color);
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    /* 1 */
+    .uk-modal-close-outside {
+        inset-inline-end: var(--modal-close-outside-position);
+        transform: translate(var(--modal-close-outside-translate), calc( -1 * var(--modal-close-outside-translate)));
+    }
+
+}
+
+/*
+ * Full
+ */
+
+.uk-modal-close-full {}
+
+.uk-modal-close-full:hover {}

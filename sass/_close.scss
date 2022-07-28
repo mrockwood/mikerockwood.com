@@ -1,0 +1,35 @@
+// Name:            Close
+// Description:     Component to create a close button
+//
+// Component:       `uk-close`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where(.uk-close) {
+
+    --close-color:                                    hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --close-hover-color:                              hsl( var(--theme-color, var(--global-color) ) );
+
+}
+
+
+/* ========================================================================
+   Component: Close
+ ========================================================================== */
+
+/*
+ * Adopts `uk-icon`
+ */
+
+.uk-close {
+    color: var(--close-color);
+}
+
+/* Hover */
+.uk-close:hover {
+    color: var(--close-hover-color);
+}

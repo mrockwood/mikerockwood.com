@@ -1,0 +1,45 @@
+// Name:            Totop
+// Description:     Component to create an icon to scroll back to top
+//
+// Component:       `uk-totop`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-totop']) { 
+
+    --totop-padding:                                  5px;
+    --totop-color:                                    hsl(var(--global-muted-color));
+
+    --totop-hover-color:                              hsl(var(--global-color));
+
+    --totop-active-color:                             hsl(var(--global-emphasis-color));
+
+}
+
+
+/* ========================================================================
+   Component: Totop
+ ========================================================================== */
+
+/*
+ * Addopts `uk-icon`
+ */
+
+.uk-totop {
+    padding: var(--totop-padding);
+    color: var(--totop-color);
+}
+
+/* Hover */
+.uk-totop:hover {
+    color: var(--totop-hover-color);
+}
+
+/* OnClick */
+.uk-totop:active {
+    color: var(--totop-active-color);
+}

@@ -1,0 +1,60 @@
+// Name:            Description list
+// Description:     Styles for description lists
+//
+// Component:       `uk-description-list`
+//
+// Modifiers:       `uk-description-list-divider`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-description-list']) {
+
+    --description-list-term-color:                    hsl(var(--global-emphasis-color));
+    --description-list-term-margin-top:               var(--global-margin);
+
+    --description-list-divider-term-margin-top:       var(--global-margin);
+    --description-list-divider-term-border-width:     var(--global-border-width);
+    --description-list-divider-term-border:           hsl(var(--global-border));
+
+}
+
+
+/* ========================================================================
+   Component: Description list
+ ========================================================================== */
+
+/*
+ * Term
+ */
+
+.uk-description-list > dt {
+    color: var(--description-list-term-color);
+}
+
+.uk-description-list > dt:nth-child(n+2) {
+    margin-block-start: var(--description-list-term-margin-top);
+}
+
+/*
+ * Description
+ */
+
+.uk-description-list > dd {}
+
+
+/* Style modifier
+ ========================================================================== */
+
+/*
+ * Line
+ */
+
+.uk-description-list-divider > dt:nth-child(n+2) {
+    margin-block-start: var(--description-list-divider-term-margin-top);
+    padding-block-start: var(--description-list-divider-term-margin-top);
+    border-block-start: var(--description-list-divider-term-border-width) solid var(--description-list-divider-term-border);
+}

@@ -1,0 +1,126 @@
+// Name:            Section
+// Description:     Component to create horizontal layout section
+//
+// Component:       `uk-section`
+//
+// Modifiers:       `uk-section-xsmall`
+//                  `uk-section-small`
+//                  `uk-section-large`
+//                  `uk-section-xlarge`
+//                  `uk-section-default`
+//                  `uk-section-muted`
+//                  `uk-section-primary`
+//                  `uk-section-secondary`
+//                  `uk-section-overlap`
+//
+// States:          `uk-preserve-color`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-section']) {
+
+    --section-padding-vertical:                        var(--global-medium-margin);
+    --section-xsmall-padding-vertical:                 var(--global-margin);
+    --section-small-padding-vertical:                  var(--global-medium-margin);
+    --section-large-padding-vertical:                  var(--global-large-margin);
+    --section-xlarge-padding-vertical:                 var(--global-xlarge-margin);
+
+    --section-default-background:                      hsl(var(--global-background));
+    --section-muted-background:                        hsl(var(--global-muted-background));
+    --section-primary-background:                      hsl(var(--global-primary-background));
+    --section-secondary-background:                    hsl(var(--global-secondary-background));
+
+}
+
+@media (min-width: $breakpoint-medium) {
+
+    :where([class*='uk-section']) {
+
+        --section-padding-vertical:                    var(--global-large-margin);
+        --section-large-padding-vertical:              var(--global-xlarge-margin);
+        --section-xlarge-padding-vertical:             calc(var(--global-large-margin) + var(--global-xlarge-margin));
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Section
+ ========================================================================== */
+
+/*
+ * 1. Make it work with `100vh` and height in general
+ */
+
+.uk-section {
+    display: flow-root;
+    box-sizing: border-box; /* 1 */
+    padding-block: var(--section-padding-vertical);
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-section > :last-child { margin-block-end: 0; }
+
+
+/* Size modifiers
+ ========================================================================== */
+
+.uk-section-xsmall { padding-block: var(--section-xsmall-padding-vertical); }
+.uk-section-small { padding-block: var(--section-small-padding-vertical); }
+.uk-section-large { padding-block: var(--section-large-padding-vertical); }
+.uk-section-xlarge { padding-block: var(--section-xlarge-padding-vertical); }
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.uk-section-default {
+    background: var(--section-default-background);
+}
+
+/*
+ * Muted
+ */
+
+.uk-section-muted {
+    background: var(--section-muted-background);
+}
+
+/*
+ * Primary
+ */
+
+.uk-section-primary {
+    background: var(--section-primary-background);
+}
+
+/*
+ * Secondary
+ */
+
+.uk-section-secondary {
+    background: var(--section-secondary-background);
+}
+
+
+/* Overlap modifier
+ ========================================================================== */
+
+/*
+ * Reserved modifier to make a section overlap another section with an border image
+ * Implemented by the theme
+ */
+
+.uk-section-overlap {}

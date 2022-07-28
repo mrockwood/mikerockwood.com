@@ -1,0 +1,39 @@
+// Name:            Placeholder
+// Description:     Component to create placeholder boxes
+//
+// Component:       `uk-placeholder`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-placeholder']) {
+
+    --placeholder-margin-vertical:                    var(--global-margin);
+    --placeholder-padding-vertical:                   var(--global-gutter);
+    --placeholder-padding-horizontal:                 var(--global-gutter);
+    --placeholder-background:                         hsl(var(--global-muted-background));
+
+}
+
+
+/* ========================================================================
+   Component: Placeholder
+ ========================================================================== */
+
+.uk-placeholder {
+    margin-block-end: var(--placeholder-margin-vertical);
+    padding: var(--placeholder-padding-vertical) var(--placeholder-padding-horizontal);
+    background: var(--placeholder-background);
+}
+
+/* Add margin if adjacent element */
+* + .uk-placeholder { margin-block-start: var(--placeholder-margin-vertical); }
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-placeholder > :last-child { margin-block-end: 0; }

@@ -1,0 +1,134 @@
+// Name:            Dropdown
+// Description:     Component to create dropdown menus
+//
+// Component:       `uk-dropdown`
+//
+// Adopted:         `uk-dropdown-nav`
+//
+// Modifiers:       `uk-dropdown-top-*`
+//                  `uk-dropdown-bottom-*`
+//                  `uk-dropdown-left-*`
+//                  `uk-dropdown-right-*`
+//                  `uk-dropdown-stack`
+//                  `uk-dropdown-grid`
+//
+// States:          `uk-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where(.uk-dropdown) {
+
+    --dropdown-z-index:                               calc( var(--global-z-index) + 20 );
+    --dropdown-margin:                                var(--global-small-margin);
+    --dropdown-min-width:                             200px;
+    --dropdown-padding:                               15px;
+    --dropdown-background:                            hsl(var(--global-muted-background));
+    --dropdown-color:                                 hsl(var(--global-color));
+
+    --dropdown-nav-item-color:                        hsl(var(--global-muted-color));
+    --dropdown-nav-item-hover-color:                  hsl(var(--global-color));
+    --dropdown-nav-subtitle-font-size:                var(--global-small-font-size);
+    --dropdown-nav-header-color:                      hsl(var(--global-emphasis-color));
+    --dropdown-nav-divider-border-width:              var(--global-border-width);
+    --dropdown-nav-divider-border:                    hsl(var(--global-border));
+    --dropdown-nav-sublist-item-color:                hsl(var(--global-muted-color));
+    --dropdown-nav-sublist-item-hover-color:          hsl(var(--global-color));
+
+}
+
+
+/* ========================================================================
+   Component: Dropdown
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ * 4. Style
+ */
+
+.uk-dropdown {
+    /* 1 */
+    display: none;
+    /* 2 */
+    position: absolute;
+    z-index: var(--dropdown-z-index);
+    --uk-position-offset: var(--dropdown-margin);
+    --uk-position-viewport-offset: 10;
+    /* 3 */
+    box-sizing: border-box;
+    min-inline-size: var(--dropdown-min-width);
+    max-inline-size: 100vw;
+    /* 4 */
+    padding: var(--dropdown-padding);
+    background: var(--dropdown-background);
+    color: var(--dropdown-color);
+}
+
+/* Show */
+.uk-dropdown.uk-open { display: block; }
+
+
+/* Nav
+ * Adopts `uk-nav`
+ ========================================================================== */
+
+.uk-dropdown-nav {}
+
+/*
+ * Items
+ */
+
+.uk-dropdown-nav > li > a {
+    color: var(--dropdown-nav-item-color);
+}
+
+/* Hover + Active */
+.uk-dropdown-nav > li > a:hover,
+.uk-dropdown-nav > li.uk-active > a {
+    color: var(--dropdown-nav-item-hover-color);
+}
+
+/*
+ * Subtitle
+ */
+
+.uk-dropdown-nav .uk-nav-subtitle {
+    font-size: var(--dropdown-nav-subtitle-font-size);
+}
+
+/*
+ * Header
+ */
+
+.uk-dropdown-nav .uk-nav-header {
+    color: var(--dropdown-nav-header-color);
+}
+
+/*
+ * Divider
+ */
+
+.uk-dropdown-nav .uk-nav-divider {
+    border-block-start: var(--dropdown-nav-divider-border-width) solid var(--dropdown-nav-divider-border);
+}
+
+/*
+ * Sublists
+ */
+
+.uk-dropdown-nav .uk-nav-sub a { color: var(--dropdown-nav-sublist-item-color); }
+
+.uk-dropdown-nav .uk-nav-sub a:hover,
+.uk-dropdown-nav .uk-nav-sub li.uk-active > a { color: var(--dropdown-nav-sublist-item-hover-color); }
+
+
+/* Grid modifiers
+ ========================================================================== */
+
+.uk-dropdown-stack .uk-dropdown-grid > * { width: 100% !important; }

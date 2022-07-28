@@ -1,0 +1,84 @@
+// Name:            Breadcrumb
+// Description:     Component to create a breadcrumb navigation
+//
+// Component:       `uk-breadcrumb`
+//
+// States:          `uk-disabled`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-breadcrumb']) {
+
+    --breadcrumb-item-font-size:                          var(--global-small-font-size);
+    --breadcrumb-item-color:                              hsl(var(--global-muted-color));
+    --breadcrumb-item-hover-color:                        hsl(var(--global-color));
+    --breadcrumb-item-hover-text-decoration:              none;
+    --breadcrumb-item-active-color:                       hsl(var(--global-color));
+
+    --breadcrumb-divider:                                 "/";
+    --breadcrumb-divider-margin-horizontal:               20px;
+    --breadcrumb-divider-font-size:                       var(--breadcrumb-item-font-size);
+    --breadcrumb-divider-color:                           hsl(var(--global-muted-color));
+
+}
+
+
+/* ========================================================================
+   Component: Breadcrumb
+ ========================================================================== */
+
+.uk-breadcrumb {
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * 1. Doesn't generate any box and replaced by child boxes
+ */
+
+.uk-breadcrumb > * { display: contents; }
+
+
+/* Items
+ ========================================================================== */
+
+.uk-breadcrumb > * > * {
+    font-size: var(--breadcrumb-item-font-size);
+    color: var(--breadcrumb-item-color);
+}
+
+/* Hover */
+.uk-breadcrumb > * > :hover {
+    color: var(--breadcrumb-item-hover-color);
+    text-decoration: var(--breadcrumb-item-hover-text-decoration);
+}
+
+/* Disabled */
+.uk-breadcrumb > .uk-disabled > * {}
+
+/* Active */
+.uk-breadcrumb > :last-child > span,
+.uk-breadcrumb > :last-child > a:not([href]) {
+    color: var(--breadcrumb-item-active-color);
+}
+
+/*
+ * Divider
+ * `nth-child` makes it also work without JS if it's only one row
+ * 1. Remove space between inline block elements.
+ * 2. Style
+ */
+
+.uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
+    content: var(--breadcrumb-divider);
+    display: inline-block;
+    /* 1 */
+    margin: 0 var(--breadcrumb-divider-margin-horizontal) 0 unquote('calc(var(--breadcrumb-divider-margin-horizontal) - 4px)');
+    /* 2 */
+    font-size: var(--breadcrumb-divider-font-size);
+    color: var(--breadcrumb-divider-color);
+}

@@ -1,0 +1,67 @@
+// Name:            Overlay
+// Description:     Component to create content areas overlaying an image
+//
+// Component:       `uk-overlay`
+//
+// Adopted:         `uk-overlay-icon`
+//
+// Modifier:        `uk-overlay-default`
+//                  `uk-overlay-primary`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-overlay']) {
+
+    --overlay-padding-horizontal:                     var(--global-gutter);
+    --overlay-padding-vertical:                       var(--global-gutter);
+
+    --overlay-default-background:                     hsl(var(--global-background) / 0.8);
+
+    --overlay-primary-background:                     hsl(var(--global-secondary-background) / 0.8);
+
+}
+
+
+/* ========================================================================
+   Component: Overlay
+ ========================================================================== */
+
+.uk-overlay {
+    padding: var(--overlay-padding-vertical) var(--overlay-padding-horizontal);
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-overlay > :last-child { margin-block-end: 0; }
+
+
+/* Icon
+ ========================================================================== */
+
+.uk-overlay-icon {}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.uk-overlay-default {
+    background: var(--overlay-default-background);
+}
+
+/*
+ * Primary
+ */
+
+.uk-overlay-primary {
+    background: var(--overlay-primary-background);
+}

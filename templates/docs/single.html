@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="post">
+        <h1 class="post-title">{{ page.title }}</h1>
+
+        {% if page.description -%}
+            <p class="post-desc">{{ page.description }}</p>
+        {% endif %}
+
+        {% if page.extra.featuredImg -%}
+            <img src="{{ page.extra.featuredImg }}" alt="" />
+        {% endif %}
+
+        <div class="post-content">
+            {{ page.content | safe }}
+        </div>
+    </div>
+{% endblock content %}

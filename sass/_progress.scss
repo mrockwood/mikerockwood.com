@@ -1,0 +1,74 @@
+// Name:            Progress
+// Description:     Component to create progress bars
+//
+// Component:       `uk-progress`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-progress']) {
+
+    --progress-height:                                15px;
+    --progress-margin-vertical:                       var(--global-margin);
+    --progress-background:                            hsl(var(--global-muted-background));
+
+    --progress-bar-background:                        hsl(var(--global-primary-background));
+
+}
+
+
+/* ========================================================================
+   Component: Progress
+ ========================================================================== */
+
+/*
+ * 1. Add the correct vertical alignment in all browsers.
+ * 2. Behave like a block element.
+ * 3. Remove borders in Firefox.
+ * 4. Remove default style in Chrome, Safari and Edge.
+ * 5. Style
+ */
+
+.uk-progress {
+    /* 1 */
+    vertical-align: baseline;
+    /* 2 */
+    display: block;
+    inline-size: 100%;
+    /* 3 */
+    border: 0;
+    /* 4 */
+    background-color: var(--progress-background);
+    /* 5 */
+    margin-block-end: var(--progress-margin-vertical);
+    block-size: var(--progress-height);
+}
+
+/* Add margin if adjacent element */
+* + .uk-progress { margin-block-start: var(--progress-margin-vertical); }
+
+/*
+ * Show background color set on `uk-progress` in Chrome, Safari and Edge.
+ */
+
+ .uk-progress::-webkit-progress-bar { background-color: transparent; }
+
+/*
+ * Progress Bar
+ * 1. Transitions don't work on `::-moz-progress-bar` pseudo element in Firefox yet.
+ *    https://bugzilla.mozilla.org/show_bug.cgi?id=662351
+ */
+
+.uk-progress::-webkit-progress-value {
+    background-color: var(--progress-bar-background);
+    transition: width 0.6s ease;
+}
+
+.uk-progress::-moz-progress-bar {
+    background-color: var(--progress-bar-background);
+    /* 1 */
+    transition: width 0.6s ease;
+}

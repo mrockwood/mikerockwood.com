@@ -1,0 +1,95 @@
+// Name:            Thumbnav
+// Description:     Component to create thumbnail navigations
+//
+// Component:       `uk-thumbnav`
+//
+// Modifier:        `uk-thumbnav-vertical`
+//
+// States:          `uk-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-thumbnav']) {
+
+    --thumbnav-margin-horizontal: 15px;
+    --thumbnav-margin-vertical: var(--thumbnav-margin-horizontal);
+
+}
+
+
+/* ========================================================================
+   Component: Thumbnav
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Reset list
+ * 3. Gutter
+ */
+
+.uk-thumbnav {
+    display: flex;
+    /* 1 */
+    flex-wrap: wrap;
+    /* 2 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* 3 */
+    margin-inline-start: calc( var(--thumbnav-margin-horizontal) * -1 );
+}
+
+/*
+ * Space is allocated based on content dimensions, but shrinks: 0 1 auto
+ * 1. Gutter
+ */
+
+.uk-thumbnav > * {
+    /* 1 */
+    padding-inline-start: var(--thumbnav-margin-horizontal);
+}
+
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Items
+ */
+
+.uk-thumbnav > * > * {
+    display: inline-block;
+}
+
+/* Hover */
+.uk-thumbnav > * > :hover {}
+
+/* Active */
+.uk-thumbnav > .uk-active > * {}
+
+
+/* Modifier: 'uk-thumbnav-vertical'
+ ========================================================================== */
+
+/*
+ * 1. Change direction
+ * 2. Gutter
+ */
+
+.uk-thumbnav-vertical {
+    /* 1 */
+    flex-direction: column;
+    /* 2 */
+    margin-inline-start: 0;
+    margin-block-start: calc( var(--thumbnav-margin-vertical) * -1 );
+}
+
+/* 2 */
+.uk-thumbnav-vertical > * {
+    padding-inline-start: 0;
+    padding-block-start: var(--thumbnav-margin-vertical);
+}

@@ -1,0 +1,40 @@
+// Name:            Marker
+// Description:     Component to create a marker icon
+//
+// Component:       `uk-marker`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-marker']) {
+
+    --marker-padding:                                  5px;
+    --marker-background:                               hsl( var(--theme-secondary-background, var(--global-secondary-background) ) ); // hsl(var(--global-secondary-background));
+    --marker-color:                                    hsl( var(--theme-background, var(--global-background) ) ); // hsl(var(--global-background));
+
+    --marker-hover-color:                              hsl( var(--theme-background, var(--global-background) ) ); // hsl(var(--global-background));
+
+}
+
+
+/* ========================================================================
+   Component: Marker
+ ========================================================================== */
+
+/*
+ * Addopts `uk-icon`
+ */
+
+.uk-marker {
+    padding: var(--marker-padding);
+    background: var(--marker-background);
+    color: var(--marker-color);
+}
+
+/* Hover */
+.uk-marker:hover {
+    color: var(--marker-hover-color);
+}

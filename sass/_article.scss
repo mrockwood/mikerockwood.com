@@ -1,0 +1,82 @@
+// Name:            Article
+// Description:     Component to create articles
+//
+// Component:       `uk-article`
+//
+// Sub-objects:     `uk-article-title`
+//                  `uk-article-meta`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-article']) {
+
+    --article-margin-top:                             var(--global-large-margin);
+
+    --article-title-font-size:                        calc( var(--global-2xlarge-font-size) * 0.85 );
+    --article-title-line-height:                      1.2;
+
+    --article-meta-font-size:                         var(--global-small-font-size);
+    --article-meta-line-height:                       1.4;
+    --article-meta-color:                             hsl(var(--global-muted-color));
+
+}
+
+@media (min-width: $breakpoint-medium) {
+
+    :where([class*='uk-article']) {
+
+        --article-title-font-size:                    var(--global-2xlarge-font-size);
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Article
+ ========================================================================== */
+
+.uk-article {
+    display: flow-root;
+    @if(mixin-exists(hook-article)) {@include hook-article();}
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-article > :last-child { margin-block-end: 0; }
+
+
+/* Adjacent sibling
+ ========================================================================== */
+
+.uk-article + .uk-article {
+    margin-block-start: var(--article-margin-top);
+    @if(mixin-exists(hook-article-adjacent)) {@include hook-article-adjacent();}
+}
+
+
+/* Title
+ ========================================================================== */
+
+.uk-article-title {
+    font-size: var(--article-title-font-size);
+    line-height: var(--article-title-line-height);
+    @if(mixin-exists(hook-article-title)) {@include hook-article-title();}
+}
+
+
+/* Meta
+ ========================================================================== */
+
+.uk-article-meta {
+    font-size: var(--article-meta-font-size);
+    line-height: var(--article-meta-line-height);
+    color: var(--article-meta-color);
+    @if(mixin-exists(hook-article-meta)) {@include hook-article-meta();}
+}

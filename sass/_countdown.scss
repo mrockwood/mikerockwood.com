@@ -1,0 +1,97 @@
+// Name:            Countdown
+// Description:     Component to create countdown timers
+//
+// Component:       `uk-countdown`
+//
+// Sub-objects:     `uk-countdown-number`
+//                  `uk-countdown-separator`
+//                  `uk-countdown-label`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-countdown']) {
+
+    --countdown-number-line-height:                   0.8;
+    --countdown-number-font-size:                     2rem; // 32px
+
+    --countdown-separator-line-height:                1.6;
+    --countdown-separator-font-size:                  1rem; // 16px
+
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    :where([class*='uk-countdown']) {
+
+        --countdown-number-font-size:                 4rem; // 64px
+
+        --countdown-separator-font-size:              2rem; // 32px
+
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    :where([class*='uk-countdown']) {
+
+        --countdown-number-font-size:                 6rem; // 96px
+
+        --countdown-separator-font-size:              3rem; // 48px
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Countdown
+ ========================================================================== */
+
+.uk-countdown {}
+
+
+/* Item
+ ========================================================================== */
+
+.uk-countdown-number,
+.uk-countdown-separator {}
+
+
+/* Number
+ ========================================================================== */
+
+
+/*
+ * 1. Make numbers all of the same size to prevent jumping. Must be supported by the font.
+ * 2. Style
+ */
+
+.uk-countdown-number {
+    /* 1 */
+    font-variant-numeric: tabular-nums;
+    /* 2 */
+    font-size: var(--countdown-number-font-size);
+    line-height: var(--countdown-number-line-height);
+}
+
+
+/* Separator
+ ========================================================================== */
+
+.uk-countdown-separator {
+    font-size: var(--countdown-separator-font-size);
+    line-height: var(--countdown-separator-line-height);
+}
+
+
+/* Label
+ ========================================================================== */
+
+.uk-countdown-label {}

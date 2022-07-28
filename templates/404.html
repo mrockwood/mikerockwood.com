@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{%- block seo %}
+  {{ super() }}
+  {%- set title = "404 Page not found" %}
+
+  {%- if config.title %}
+    {%- set title_addition = title_separator ~ config.title %}
+  {%- else %}
+    {%- set title_addition = "" %}
+  {%- endif %}
+
+  {%- set description = config.description %}
+
+  {{- macros_head::seo(title=title, title_addition=title_addition, description=description, is_404=true) }}
+{%- endblock seo %}
+
+{%- block content %}
+<div class="uk-section uk-section-2xlarge@m uk-flex-middle uk-flex-center">
+  <div class="uk-container">
+      <div class="uk-width-2xlarge@m uk-margin-auto uk-text-center">
+          <h3 class="uk-heading-xlarge">404</h3>
+          <h1 class="uk-heading-medium">Page not found!</h1>
+          <p>The page you are looking for does not exist or has been moved!</p>
+          <p class="uk-margin-large-top">
+            <a href="{{ config.base_url | safe }}{%- if config.extra.uglyurls %}index.html{%- endif %}" class="">
+                <span uk-icon="icon: arrow-left"></span>
+                <span>Back to homepage</span>
+            </a>
+          </p>
+      </div>
+  </div>
+</div>
+{%- endblock content %}
