@@ -117,7 +117,7 @@
     --blue-7-hsl: 208 77% 47%;
     --blue-8-hsl: 209 77% 43%;
     --blue-9-hsl: 209 75% 38%;
-    
+
     //
     // Cyan
     //
@@ -215,7 +215,7 @@
 // ========================================================================
 
 * {
-  
+
     //
     // Light
     //
@@ -275,7 +275,7 @@
 :root {
 
     color-scheme: light;
-  
+
     //
     // Defaults
     //
@@ -592,8 +592,47 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 // overrides
 
 
+.uk-light {
 
-.uk-light,
+	// --global-color:                           		  var(--text-color-light);
+	// --global-emphasis-color:                  		  var(--text-emphasis-light);
+	// --global-muted-color:                     		  var(--text-muted-light);
+
+	// --global-background:                      		  var(--surface-default-light);
+	// --global-muted-background:                		  var(--surface-muted-light);
+	// --global-primary-background:             		  var(--surface-primary-light);
+
+	// --global-border:                          		  var(--border-color-light);
+
+	--inverse-global-color:                           var(--text-color-light);
+	--inverse-global-emphasis-color:                  var(--text-emphasis-light);
+	--inverse-global-muted-color:                     var(--text-muted-light);
+
+	--inverse-global-background:                      var(--surface-default-light);
+	--inverse-global-muted-background:                var(--surface-muted-light);
+	--inverse-global-primary-background:              var(--surface-primary-light);
+
+	--inverse-global-border:                          var(--border-color-light);
+
+}
+
+.uk-dark {
+
+	--inverse-global-color:                           var(--text-color-dark);
+	--inverse-global-emphasis-color:                  var(--text-emphasis-dark);
+	--inverse-global-muted-color:                     var(--text-muted-dark);
+
+	--inverse-global-background:                      var(--surface-default-dark);
+	--inverse-global-muted-background:                var(--surface-muted-dark);
+	--inverse-global-primary-background:              var(--surface-primary-dark);
+
+	--inverse-global-border:                          var(--border-color-dark);
+
+}
+
+
+
+//.uk-light,
 .uk-section-primary:not(.uk-preserve-color),
 .uk-section-secondary:not(.uk-preserve-color),
 .uk-tile-primary:not(.uk-preserve-color),
