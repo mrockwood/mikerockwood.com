@@ -1,11 +1,11 @@
 ---
 layout: posts.njk
-metaTitle: Writings
+metaTitle: Writing
 metaDescription: Thoughts & things happened in my life.
-title: Writings
+title: Writing
 description: Thoughts & things happened in my life.
 templateEngineOverride: njk,md
 eleventyNavigation:
-  key: writings
+  key: writing
   order: 3
 ---

@@ -1,55 +1,109 @@
-<!-- footer start -->
-<footer id="footer" class="pt-8 pb-10 md:pb-16 border-t border-gray-200 dark:border-gray-800">
+<!-- contact -->
+<section class="relative py-14 bg-gradient">
+	<div class="max-w-screen-xl m-auto px-5 sm:flex sm:justify-between sm:items-center">
 
-	<div class="max-w-screen-xl m-auto px-5 grid gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-4">
-
-		<!-- copyright -->
-		<div class="text-sm flex-1 flex flex-col items-start">
-			<span class="font-bold">
-				© 2022
-			</span>
-			<span class="mt-1">
-				<a class="underline hover:text-primary-gray-20" href>
-					Mike Rockwood
-				</a>
-			</span>
+		<div>
+			<h3 class="font-bold text-4xl tracking-tight text-white">I am open to work now.</h3>
+			<p class="block text-xl tracking-tight text-white" style="opacity:0.7; padding-top:5px;">
+				Let's talk &amp; get some coffee?
+			</p>
 		</div>
 
-		<!-- futhermore -->
+		<div>
+			<a href="mailto:test@test.com" title="get in touch" target="_blank" rel="noreferrer" class="text-purple-800 bg-purple-100 transition-colors hover:text-purple-100 hover:bg-purple-800 dark:text-yellow-900 dark:bg-yellow-400 dark:hover:bg-yellow-200 dark:hover:text-yellow-900 font-bold tracking-tight text-lg mt-6 sm:mt-0 py-3 px-5 rounded-full inline-flex items-center justify-center">
+				<svg class="inline-block w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+				</svg>
+				Let's get in touch
+			</a>
+		</div>
+
+	</div>
+</section>
+
+<section class="py-14">
+	<div class="max-w-screen-xl m-auto px-5 grid gap-5 md:gap-10 grid-cols-2 md:grid-cols-4">
+		
+		<!-- Navigate -->
 		<div class="text-sm flex-1 flex flex-col items-start">
-			<span class="font-bold">
+			<h5 class="font-bold text-base">
+				Navigate
+			</h5>
+			<ul class="mt-2">
+				{% set navPages = collections.all | eleventyNavigation %}
+				{%- for entry in navPages %}
+				<li class="py-2">
+					<a href="{{ entry.url | url }}" class="underline hover:text-primary-gray-20 dark:text-purple-300 {% if entry.url == page.url %} text-purple-800 dark:text-white {% endif %}">
+						{{ entry.title }}
+					</a>
+				</li>
+				{%- endfor %}
+			</ul>
+		</div>
+
+		<!-- Futhermore -->
+		<div class="text-sm flex-1 flex flex-col items-start">
+			<h5 class="font-bold text-base">
 				Furthermore
-			</span>
-			<span class="mt-1">
-				<a class="underline hover:text-primary-gray-20" href>Now</a>
-				/
-				<a class="underline hover:text-primary-gray-20" href>Uses</a>
-			</span>
+			</h5>
+			<ul class="mt-2">
+				<li class="py-2">
+					<a class="underline hover:text-primary-gray-20" href>
+						colophon
+					</a>
+				</li>
+				<li class="py-2">
+					<a class="underline hover:text-primary-gray-20" href>
+						now
+					</a>
+				</li>
+				<li class="py-2">
+					<a class="underline hover:text-primary-gray-20" href>
+						uses
+					</a>
+				</li>
+			</ul>
 		</div>
 
-		<!-- elsewhere -->
+		<!-- Links -->
 		<div class="text-sm flex-1 flex flex-col items-start">
-			<span class="font-bold">
-				Elsewhere
-			</span>
-			<span class="mt-1">
-				<a class="underline hover:text-primary-gray-20" href="https://www.linkedin.com/in/mikerockwood" title="Linkedin" rel="me">LinkedIn</a>
-				/
-				<a class="underline hover:text-primary-gray-20" href="https://github.com/mrockwood" title="Github" rel="me">Github</a>
-			</span>
-		</div>
-
-		<!-- links -->
-		<div class="text-sm flex-1 flex flex-col items-start">
-			<span class="font-bold">
+			<h5 class="font-bold text-base">
 				Links
-			</span>
-			<span class="mt-1">
-				<a class="underline hover:text-primary-gray-20" href="{{ '/blogroll/' | url }}">
-					Blogroll
-				</a>
-			</span>
+			</h5>
+			<ul class="mt-2">
+				<li class="py-2">
+					<a class="underline hover:text-primary-gray-20" href="{{ '/blogroll/' | url }}">
+						blogroll
+					</a>
+				</li>
+			</ul>
 		</div>
+
+		<!-- Elsewhere -->
+		<div class="text-sm flex-1 flex flex-col items-start">
+			<h5 class="font-bold text-base">
+				Elsewhere
+			</h5>
+			<ul class="mt-2">
+				{% for item, url in metadata.socials %}
+				<li class="py-2">
+					<a href="{{ url }}" target="_blank" rel="noreferrer" class="underline hover:text-primary-gray-20 hover:text-purple-800 dark:text-gray-200 dark:hover:text-yellow-200" target="_blank" rel="noreferrer" title="follow me on social">
+						{{ item }}
+					</a>
+				</li>
+				{%- endfor %}
+			</ul>
+		</div>
+
+	</div>
+</section>
+
+<!-- footer start -->
+<footer id="footer" class="pt-4 pb-5 md:pb-8 border-t border-gray-200 dark:border-gray-800">
+
+	<div class="text-center md:text-left max-w-screen-xl m-auto sm:flex sm:justify-between sm:items-center text-sm pb-16 md:pb-0">
+
+		<p id="credit" class="p-5 text-gray-500 dark:text-gray-400">{{ data.footerCreditLine1 }}</p>
 
 	</div>
 
