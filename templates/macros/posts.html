@@ -87,3 +87,10 @@
         {# end of tags for-loop #}
     {% endfor -%}
 {% endmacro tags %}
+
+{% macro tree() %}
+	{% for subsection in section.subsections | sort %}
+		{% set subsection_item = get_section(path=subsection) %}
+			{{ subsection_item.title  }}
+		{% endfor %}
+{% endmacro tree %}

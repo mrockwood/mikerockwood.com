@@ -18,13 +18,33 @@
 {%- endblock seo %}
 
 {%- block content %}
-{%- set section_item = get_section(path="_index.md") %}
-    <div>
-      {%- for year, posts in section_item.pages | group_by(attribute="year") %}
-      <h2>{{ year }}</h2>
-      {%- for post in posts %}
-      <p><a href="{{ post.permalink | safe }}">{{ post.title }}</a> - <time datetime="{{ post.date }}">{{ post.date | date(format="%F") }}</time></p>
-      {%- endfor %}
-      {%- endfor %}
-    </div>
+<header class="uk-section uk-text-center">
+	<div class="uk-container uk-container-large">
+		<h1 class="uk-heading-xlarge uk-text-bold uk-text-uppercase">
+			{{ section.title }}
+		</h1>
+		{% if section.description %}
+		<p class="uk-width-large uk-margin-auto">
+			{{ section.description }}
+		</p>
+		{% endif %}
+	</div>
+</header>
+
+{% for subsection in section.subsections | sort %}
+<section class="uk-section">
+	<div class="uk-container">
+		{% set subsection_item = get_section(path=subsection) %}
+		<h2>{{ subsection_item.title  }}</h2>
+
+		{% for post in subsection_item.pages %}
+		<article class="uk-article">
+			<h3 class="uk-article-title"><a href="{{ post.path }}">{{ post.title }}</a></h3>
+			<p class="uk-article-meta">{{ post.date }}</p>
+		</article>
+		{% endfor %}
+	</div>
+</section>
+{% endfor %}
+
 {%- endblock content %}
