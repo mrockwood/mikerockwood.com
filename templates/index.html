@@ -1,25 +1,25 @@
 {%- extends "base.html" %}
 
 {%- block seo %}
-  {{- super() }}
+{{- super() }}
 
-  {%- if config.title %}
-    {%- set title = config.title %}
-  {%- else %}
-    {%- set title = "" %}
-  {%- endif %}
+{%- if config.title %}
+{%- set title = config.title %}
+{%- else %}
+{%- set title = "" %}
+{%- endif %}
 
-  {%- if config.extra.title_addition and title %}
-    {%- set title_addition = title_separator ~ config.extra.title_addition %}
-  {%- elif config.extra.title_addition %}
-    {%- set title_addition = config.extra.title_addition %}
-  {%- else %}
-    {%- set title_addition = "" %}
-  {%- endif %}
+{%- if config.extra.title_addition and title %}
+{%- set title_addition = title_separator ~ config.extra.title_addition %}
+{%- elif config.extra.title_addition %}
+{%- set title_addition = config.extra.title_addition %}
+{%- else %}
+{%- set title_addition = "" %}
+{%- endif %}
 
-  {%- set description = config.description %}
+{%- set description = config.description %}
 
-  {{- macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
+{{- macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
 {%- endblock seo %}
 
 
@@ -27,128 +27,195 @@
 {%- block content %}
 
 <div class="demo uk-section-default">
-  <div style="padding-block-start: calc( var(--section-large-padding-vertical) - ( var(--navbar-padding-vertical) * 2 + var(--navbar-nav-item-height) ) );" data-src="/wordpress/wp-content/themes/yootheme/cache/home-hero-05c7289f.webp" data-srcset="https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzc2OCw0MzIsNzY4LDQzMl1dLFsiZG9Dcm9wIixbNzY4LDQzMiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=9f70f4294394640fd629d7138d2ba1bb 768w, https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzEwMjQsNTc2LDEwMjQsNTc2XV0sWyJkb0Nyb3AiLFsxMDI0LDU3NiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=ad0aeefc149e952106b1097da6381a14 1024w, /wordpress/wp-content/themes/yootheme/cache/home-hero-fe1a4ae8.webp 1366w, /wordpress/wp-content/themes/yootheme/cache/home-hero-76ef0dd3.webp 1600w, /wordpress/wp-content/themes/yootheme/cache/home-hero-b7df0736.webp 1920w, /wordpress/wp-content/themes/yootheme/cache/home-hero-05c7289f.webp 2560w" data-sizes="(max-aspect-ratio: 2560/1440) 178vh" uk-img class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-image@s uk-section uk-section-large uk-flex uk-flex-middle" uk-parallax="bgx: 0,-60" uk-height-viewport="offset-top: true;">   
-      <div class="uk-width-1-1">            
-          <div class="uk-container uk-container-large">
-              <div class="uk-child-width-1-1 uk-grid-margin" uk-grid>
-                  <div class="uk-grid-item-match uk-width-1-1@m">
-                      <div class="uk-flex">  
-                          <div class="uk-tile uk-width-1-1 uk-background-norepeat uk-background-center-center" data-src="/demo/vision/images/styles/white-yellow/home-hero-texture.svg" uk-img uk-parallax="bgy: -10,-90">        
-                              
-                              <h1 class="uk-h6 uk-heading-line uk-margin-small uk-width-medium@m uk-text-left@m uk-text-center uk-text-uppercase uk-text-tracking-small" uk-parallax="opacity: 1,0; media: @s; viewport: 0.95;">
-                                  <span>Front-End Developer</span>
-                              </h1>
-                              <h2 class="uk-heading-large uk-text-bold uk-margin-small uk-text-left@m uk-text-center uk-text-uppercase uk-text-bold" uk-parallax="y: 0,60; opacity: 1,0; easing: 0.8; media: @s; viewport: 0.95;">
-                                  With an eye<br class="uk-visible@l">
-                                  for design
-                              </h2>
-                              <div class="uk-margin uk-text-left@m uk-text-center" uk-parallax="y: 0,300; opacity: 1,0; easing: 0.3; target: !.uk-section; media: @s;">
-                                  <a class="uk-icon-link" href="#services" uk-scroll><span uk-icon="icon: arrow-down; width: 30; height: 30;"></span></a>    
-                              </div>     
-                                  
-                          </div>                            
-                      </div>                        
-                  </div>
-              </div>
-          </div>            
-      </div>      
-  </div>    
+	<div style="padding-block-start: calc( var(--section-large-padding-vertical) - ( var(--navbar-padding-vertical) * 2 + var(--navbar-nav-item-height) ) );" data-src="/wordpress/wp-content/themes/yootheme/cache/home-hero-05c7289f.webp" data-srcset="https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzc2OCw0MzIsNzY4LDQzMl1dLFsiZG9Dcm9wIixbNzY4LDQzMiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=9f70f4294394640fd629d7138d2ba1bb 768w, https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzEwMjQsNTc2LDEwMjQsNTc2XV0sWyJkb0Nyb3AiLFsxMDI0LDU3NiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=ad0aeefc149e952106b1097da6381a14 1024w, /wordpress/wp-content/themes/yootheme/cache/home-hero-fe1a4ae8.webp 1366w, /wordpress/wp-content/themes/yootheme/cache/home-hero-76ef0dd3.webp 1600w, /wordpress/wp-content/themes/yootheme/cache/home-hero-b7df0736.webp 1920w, /wordpress/wp-content/themes/yootheme/cache/home-hero-05c7289f.webp 2560w" data-sizes="(max-aspect-ratio: 2560/1440) 178vh" uk-img class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-image@s uk-section uk-section-large uk-flex uk-flex-middle" uk-parallax="bgx: 0,-60" uk-height-viewport="offset-top: true;">
+		<div class="uk-width-1-1">
+			<div class="uk-container uk-container-large">
+				<div class="uk-child-width-1-1 uk-grid-margin" uk-grid>
+					<div class="uk-grid-item-match uk-width-1-1@m">
+						<div class="uk-flex">
+							<div class="uk-tile uk-width-1-1 uk-background-norepeat uk-background-center-center" data-src="/demo/vision/images/styles/white-yellow/home-hero-texture.svg" uk-img uk-parallax="bgy: -10,-90">
+
+								<h1 class="uk-h6 uk-heading-line uk-margin-small uk-width-medium@m uk-text-left@m uk-text-center uk-text-uppercase uk-text-tracking-small" uk-parallax="opacity: 1,0; media: @s; viewport: 0.95;">
+									<span>Front-End Developer</span>
+								</h1>
+								<h2 class="uk-heading-large uk-text-bold uk-margin-small uk-text-left@m uk-text-center uk-text-uppercase uk-text-bold" uk-parallax="y: 0,60; opacity: 1,0; easing: 0.8; media: @s; viewport: 0.95;">
+									With an eye<br class="uk-visible@l">
+									for design
+								</h2>
+								<div class="uk-margin uk-text-left@m uk-text-center" uk-parallax="y: 0,300; opacity: 1,0; easing: 0.3; target: !.uk-section; media: @s;">
+									<a class="uk-icon-link" href="#services" uk-scroll><span uk-icon="icon: arrow-down; width: 30; height: 30;"></span></a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
 <!-- about
 <div class="uk-section uk-section-secondary uk-section-large">
-  <div class="uk-container uk-container-large">
-      <h2 class="uk-h3 uk-margin-remove">at a glance</h2>
-      <div class="uk-grid uk-grid-column-xsmall uk-grid-medium@m uk-flex-middle uk-margin-large-top uk-margin-2xlarge-top@m" uk-grid>
-          <div class="uk-width-1-2 uk-width-1-4@m">
-              <div class="uk-panel uk-overflow-hidden">
-                  <canvas width="250" height="500"></canvas>
-                  <img src="/images/size-v.jpg" alt="image" uk-cover>
-              </div>
-          </div>
-          <div class="uk-width-1-2 uk-width-1-4@m">
-              <div class="uk-panel uk-overflow-hidden">
-                  <canvas width="250" height="500"></canvas>
-                  <img src="/images/size-v.jpg" alt="image" uk-cover>
-              </div>
-          </div>
-          <div class="uk-width-expand@m uk-flex uk-flex-right@m">
-              <div class="uk-width-large@m">
-                  <p class="uk-margin-remove">dannel is a leeds-based studio of design founded in 2018 working within the fields of architecture, interiors, products, graphic design and design strategy.</p>
-                  <div class="uk-grid uk-grid-column-xsmall uk-grid-medium@m uk-child-width-1-2 uk-margin-large-top uk-margin-2xlarge-top@m" uk-grid>
-                      <div>
-                          <div class="uk-panel">
-                              <h4 class="uk-heading-small uk-text-bold uk-margin-remove">03</h4>
-                              <p class="uk-text-small uk-margin-xsmall-top">projects <br> done</p>
-                          </div>
-                      </div>
-                      <div>
-                          <div class="uk-panel">
-                              <h4 class="uk-heading-small uk-text-bold uk-margin-remove">08</h4>
-                              <p class="uk-text-small uk-margin-xsmall-top">people <br> working</p>
-                          </div>
-                      </div>
-                      <div class="uk-grid-margin">
-                          <div class="uk-panel">
-                              <h4 class="uk-heading-small uk-text-bold uk-margin-remove">70</h4>
-                              <p class="uk-text-small uk-margin-xsmall-top">stories <br> published</p>
-                          </div>
-                      </div>
-                      <div class="uk-grid-margin">
-                          <div class="uk-panel">
-                              <h4 class="uk-heading-small uk-text-bold uk-margin-remove">04</h4>
-                              <p class="uk-text-small uk-margin-xsmall-top">years <br> of experience</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+	<div class="uk-container uk-container-large">
+		<h2 class="uk-h3 uk-margin-remove">at a glance</h2>
+		<div class="uk-grid uk-grid-column-xsmall uk-grid-medium@m uk-flex-middle uk-margin-large-top uk-margin-2xlarge-top@m" uk-grid>
+			<div class="uk-width-1-2 uk-width-1-4@m">
+				<div class="uk-panel uk-overflow-hidden">
+					<canvas width="250" height="500"></canvas>
+					<img src="/images/size-v.jpg" alt="image" uk-cover>
+				</div>
+			</div>
+			<div class="uk-width-1-2 uk-width-1-4@m">
+				<div class="uk-panel uk-overflow-hidden">
+					<canvas width="250" height="500"></canvas>
+					<img src="/images/size-v.jpg" alt="image" uk-cover>
+				</div>
+			</div>
+			<div class="uk-width-expand@m uk-flex uk-flex-right@m">
+				<div class="uk-width-large@m">
+					<p class="uk-margin-remove">dannel is a leeds-based studio of design founded in 2018 working within the fields of architecture, interiors, products, graphic design and design strategy.</p>
+					<div class="uk-grid uk-grid-column-xsmall uk-grid-medium@m uk-child-width-1-2 uk-margin-large-top uk-margin-2xlarge-top@m" uk-grid>
+						<div>
+							<div class="uk-panel">
+								<h4 class="uk-heading-small uk-text-bold uk-margin-remove">03</h4>
+								<p class="uk-text-small uk-margin-xsmall-top">projects <br> done</p>
+							</div>
+						</div>
+						<div>
+							<div class="uk-panel">
+								<h4 class="uk-heading-small uk-text-bold uk-margin-remove">08</h4>
+								<p class="uk-text-small uk-margin-xsmall-top">people <br> working</p>
+							</div>
+						</div>
+						<div class="uk-grid-margin">
+							<div class="uk-panel">
+								<h4 class="uk-heading-small uk-text-bold uk-margin-remove">70</h4>
+								<p class="uk-text-small uk-margin-xsmall-top">stories <br> published</p>
+							</div>
+						</div>
+						<div class="uk-grid-margin">
+							<div class="uk-panel">
+								<h4 class="uk-heading-small uk-text-bold uk-margin-remove">04</h4>
+								<p class="uk-text-small uk-margin-xsmall-top">years <br> of experience</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div> -->
 
-<div class="uk-overflow-hidden uk-section uk-section-xlarge">
-  <div class="uk-container">
-      <div class="uk-grid uk-grid-large uk-flex-between" uk-grid>
-          <div class="uk-width-2-5@m uk-first-column">
-              <p class="uk-text-lead uk-margin-remove">As a full-service UX design agency, we work closely with our clients to define, design and develop transformative user experiences across all platforms and brand’s touchpoints.</p>
-              <div class="uk-margin-top uk-margin-large-top@m">
-                  <a href="studio-about.html" class="uk-link-expand uk-link-underline uk-text-large@m">
-                      <span>About dannel</span>
-                  </a>
-              </div>
-          </div>
-          <div class="uk-width-2-5@m">
-              <div class="uk-grid uk-grid-medium uk-child-width-1-2" uk-grid>
-                  <div class="">
-                      <div class="uk-panel">
-                          <h3 class="uk-heading-medium uk-text-bold uk-margin-remove">24</h3>
-                          <p class="uk-margin-xsmall-top">Designers <br> and developers</p>
-                      </div>
-                  </div>
-                  <div>
-                      <div class="uk-panel">
-                          <h3 class="uk-heading-medium uk-text-bold uk-margin-remove">12k</h3>
-                          <p class="uk-margin-xsmall-top">Happy <br> customers</p>
-                      </div>
-                  </div>
-                  <div class="uk-grid-margin">
-                      <div class="uk-panel">
-                          <h3 class="uk-heading-medium uk-text-bold uk-margin-remove">7</h3>
-                          <p class="uk-margin-xsmall-top">Years <br> in business</p>
-                      </div>
-                  </div>
-                  <div class="uk-grid-margin">
-                      <div class="uk-panel">
-                          <h3 class="uk-heading-medium uk-text-bold uk-margin-remove">10</h3>
-                          <p class="uk-margin-xsmall-top">Awwwards <br> winning</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>        
-  </div>
+
+<div id="works" class="uk-section uk-section-secondary uk-section-large">
+	<div class="uk-container uk-container-large">
+		<h2 class="uk-h1 uk-position-relative" uk-scrollspy-class>Featured Project</h2>
+		<div class="uk-grid-large uk-margin-medium-top uk-grid uk-grid-stack" uk-grid>
+			<div class="uk-first-column">
+				<div class="uk-card uk-card-default">
+					<div class="uk-grid-collapse uk-grid-match uk-grid uk-flex-middle" uk-grid>
+						<div class="uk-width-expand@m">
+							<div class="uk-panel uk-overflow-hidden">
+								<canvas width="784" height="588"></canvas>
+								<img src="{{ config.base_url | safe }}/images/architect-01.jpg" alt="image" data-uk-cover="" class="uk-cover" style="height: 646px; width: 646px;">
+								<div class="uk-position-cover uk-position-z-index uk-visible@m" style="background-image: linear-gradient(to right, var(--card-default-background) 8.33%, transparent);"></div>
+								<div class="uk-position-cover uk-position-z-index uk-hidden@m" style="background-image: linear-gradient(to top, var(--card-default-background) 8.33%, transparent);"></div>
+							</div>
+						</div>
+						<div class="uk-width-1-2@m uk-flex-first@m uk-first-column">
+							<div class="uk-panel uk-card uk-card-body uk-card-large uk-padding-remove-right@m uk-flex-column uk-flex-between">
+								<div class="uk-panel">
+									<div class="uk-text-small">
+										<span class="uk-label">Front-End</span> <span class="uk-label">Design</span>
+									</div>
+									<h3 class="uk-h1 uk-margin-large-top@m">Note x vester.</h3>
+									<p class="">Netus libero sem amet tortor integer nibh ut sit euismod faucibus.</p>
+								</div>
+								<div class="uk-margin-top">
+									<a href="https://www.behance.net/gallery/32365357/Envato-Studio-T-Shirt" class="uk-button uk-button-large uk-button-primary">
+										<span>View case study</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="uk-margin-medium-top">
+			<a href="https://www.behance.net/unistudioco" class="">
+				<span>More work</span>
+			</a>
+		</div>
+	</div>
 </div>
+
+
+<div class="uk-overflow-hidden uk-section uk-section-large">
+	<div class="uk-container">
+		<div class="uk-grid uk-grid-large uk-flex-between" uk-grid>
+			<div class="uk-width-2-5@m uk-first-column">
+				<p class="uk-text-lead uk-margin-remove">As a full-service UX design agency, we work closely with our clients to define, design and develop transformative user experiences across all platforms and brand’s touchpoints.</p>
+				<div class="uk-margin-top uk-margin-large-top@m">
+					<a href="studio-about.html" class="uk-link-expand uk-link-underline uk-text-large@m">
+						<span>About dannel</span>
+					</a>
+				</div>
+			</div>
+			<div class="uk-width-2-5@m">
+				<div class="uk-grid uk-grid-medium uk-child-width-1-2" uk-grid>
+					<div class="">
+						<div class="uk-panel">
+							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">24</h3>
+							<p class="uk-margin-xsmall-top">Designers <br> and developers</p>
+						</div>
+					</div>
+					<div>
+						<div class="uk-panel">
+							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">12k</h3>
+							<p class="uk-margin-xsmall-top">Happy <br> customers</p>
+						</div>
+					</div>
+					<div class="uk-grid-margin">
+						<div class="uk-panel">
+							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">7</h3>
+							<p class="uk-margin-xsmall-top">Years <br> in business</p>
+						</div>
+					</div>
+					<div class="uk-grid-margin">
+						<div class="uk-panel">
+							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">10</h3>
+							<p class="uk-margin-xsmall-top">Awwwards <br> winning</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<section class="uk-section">
+	<div class="uk-container">
+		{% set articles = get_section(path="posts/articles/_index.md") %}
+		{% for year, pages in articles.pages | group_by(attribute="year") %}
+		<div class="posts-group">
+			<div class="post-year">{{ year }}</div>
+			<ul class="posts-list">
+				{% for page in pages %}
+				<li class="post-item">
+					<a href="{{ page.permalink }}">
+						<span class="post-title">{{ page.title }}</span>
+						<span class="post-day">{{ page.date | date(format="%b %d") }}</span>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endfor %}
+	</div>
+</section>
 
 {%- endblock content %}

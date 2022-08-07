@@ -232,7 +232,7 @@
 .uk-object-none { object-fit: none; }
 .uk-object-scale-down { object-fit: scale-down; }
 
-/* 
+/*
  * Position
  */
 
@@ -252,10 +252,10 @@
 
 .uk-border-circle { border-radius: 50%; }
 .uk-border-pill { border-radius: 500px; }
-.uk-border-rounded { 
+.uk-border-rounded {
     --border-rounded-border-radius: 5px;
-    
-    border-radius: var(--border-rounded-border-radius); 
+
+    border-radius: var(--border-rounded-border-radius);
 }
 
 /*
@@ -268,7 +268,7 @@
 /* Box-shadow
  ========================================================================== */
 
-[class*='uk-box-shadow'] { 
+[class*='uk-box-shadow'] {
     --box-shadow-bottom-height: 30px;
     --box-shadow-bottom-bottom: calc( var(--box-shadow-bottom-height) * -1 );
     --box-shadow-bottom-border-radius: 100%;
@@ -285,10 +285,10 @@
  * Hover
  */
 
-[class*='uk-box-shadow-hover'] { 
+[class*='uk-box-shadow-hover'] {
     --box-shadow-duration: 0.1s;
-    
-    transition: box-shadow var(--box-shadow-duration) ease-in-out; 
+
+    transition: box-shadow var(--box-shadow-duration) ease-in-out;
 }
 
 .uk-box-shadow-hover-small:hover { box-shadow: var(--global-small-box-shadow); }
@@ -378,13 +378,15 @@
  */
 
 .uk-logo {
-    --logo-font-size: var(--global-large-font-size);
+    --logo-font-size: var(--global-font-size);
     --logo-font-family: var(--global-font-family);
+	--logo-font-weight: 500;
     --logo-color: hsl(var(--global-emphasis-color));
     --logo-hover-color: hsl(var(--global-emphasis-color));
 
     font-size: var(--logo-font-size);
     font-family: var(--logo-font-family);
+	font-weight: var(--logo-font-weight);
     color: var(--logo-color);
     /* 1 */
     text-decoration: none;
@@ -431,10 +433,10 @@
  * Create a box-shadow when dragging a file over the upload area
  */
 
-.uk-dragover { 
+.uk-dragover {
     --dragover-box-shadow: 0 0 20px rgba(100,100,100,0.3);
-    
-    box-shadow: var(--dragover-box-shadow); 
+
+    box-shadow: var(--dragover-box-shadow);
 }
 
 

@@ -604,34 +604,84 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 
 	// --global-border:                          		  var(--border-color-light);
 
-	--inverse-global-color:                           var(--text-color-light);
-	--inverse-global-emphasis-color:                  var(--text-emphasis-light);
-	--inverse-global-muted-color:                     var(--text-muted-light);
+	// --inverse-global-color:                           var(--text-color-light);
+	// --inverse-global-emphasis-color:                  var(--text-emphasis-light);
+	// --inverse-global-muted-color:                     var(--text-muted-light);
 
-	--inverse-global-background:                      var(--surface-default-light);
-	--inverse-global-muted-background:                var(--surface-muted-light);
-	--inverse-global-primary-background:              var(--surface-primary-light);
+	// --inverse-global-background:                      var(--surface-default-light);
+	// --inverse-global-muted-background:                var(--surface-muted-light);
+	// --inverse-global-primary-background:              var(--surface-primary-light);
 
-	--inverse-global-border:                          var(--border-color-light);
+	// --inverse-global-border:                          var(--border-color-light);
+
+	// --
+
+	--theme-color:                                   var(--text-color-dark);
+    --theme-emphasis-color:                          var(--text-emphasis-dark);
+    --theme-muted-color:                             var(--text-muted-dark);
+
+    --theme-background:                              var(--surface-default-dark);
+    --theme-muted-background:                        var(--surface-muted-dark);
+    --theme-primary-background:                      var(--surface-primary-dark);
+    --theme-secondary-background:                    var(--surface-default-light);
+
+    --theme-border:                                  var(--border-color-dark);
+
+    // inverse
+
+    --inverse-theme-color:                           var(--text-color-light);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis-light);
+    --inverse-theme-muted-color:                     var(--text-muted-light);
+
+    --inverse-theme-background:                      var(--surface-default-light);
+    --inverse-theme-muted-background:                var(--surface-muted-light);
+    --inverse-theme-primary-background:              var(--surface-primary-light);
+    --inverse-theme-secondary-background:            var(--surface-default-dark);
+
+    --inverse-theme-border:                          var(--border-color-light);
 
 }
 
 .uk-dark {
 
-	--inverse-global-color:                           var(--text-color-dark);
-	--inverse-global-emphasis-color:                  var(--text-emphasis-dark);
-	--inverse-global-muted-color:                     var(--text-muted-dark);
+	// --inverse-global-color:                           var(--text-color-dark);
+	// --inverse-global-emphasis-color:                  var(--text-emphasis-dark);
+	// --inverse-global-muted-color:                     var(--text-muted-dark);
 
-	--inverse-global-background:                      var(--surface-default-dark);
-	--inverse-global-muted-background:                var(--surface-muted-dark);
-	--inverse-global-primary-background:              var(--surface-primary-dark);
+	// --inverse-global-background:                      var(--surface-default-dark);
+	// --inverse-global-muted-background:                var(--surface-muted-dark);
+	// --inverse-global-primary-background:              var(--surface-primary-dark);
 
-	--inverse-global-border:                          var(--border-color-dark);
+	// --inverse-global-border:                          var(--border-color-dark);
+
+	--theme-color:                                   var(--text-color-light);
+    --theme-emphasis-color:                          var(--text-emphasis-light);
+    --theme-muted-color:                             var(--text-muted-light);
+
+    --theme-background:                              var(--surface-default-light);
+    --theme-muted-background:                        var(--surface-muted-light);
+    --theme-primary-background:                      var(--surface-primary-light);
+    --theme-secondary-background:                    var(--surface-default-dark);
+
+    --theme-border:                                  var(--border-color-light);
+
+    // inverse
+
+    --inverse-theme-color:                           var(--text-color-dark);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis-dark);
+    --inverse-theme-muted-color:                     var(--text-muted-dark);
+
+    --inverse-theme-background:                      var(--surface-default-dark);
+    --inverse-theme-muted-background:                var(--surface-muted-dark);
+    --inverse-theme-primary-background:              var(--surface-primary-dark);
+    --inverse-theme-secondary-background:            var(--surface-default-light);
+
+    --inverse-theme-border:                          var(--border-color-dark);
 
 }
 
 
-
+/*
 //.uk-light,
 .uk-section-primary:not(.uk-preserve-color),
 .uk-section-secondary:not(.uk-preserve-color),
@@ -716,54 +766,53 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
     // --global-secondary-background:                    var(--surface-default);
 
 }
+*/
 
 
-/*
 :where(
-    .uk-light,
     .uk-section-primary:not(.uk-preserve-color),
     .uk-section-secondary:not(.uk-preserve-color),
     .uk-tile-primary:not(.uk-preserve-color),
     .uk-tile-secondary:not(.uk-preserve-color),
-    .uk-card-primary.uk-card-body,
-    .uk-card-primary > :not([class*='uk-card-media']),
-    .uk-card-secondary.uk-card-body,
-    .uk-card-secondary > :not([class*='uk-card-media']),
+    // .uk-card-primary.uk-card-body,
+    // .uk-card-primary > :not([class*='uk-card-media']),
+    // .uk-card-secondary.uk-card-body,
+    // .uk-card-secondary > :not([class*='uk-card-media']),
     .uk-overlay-primary,
     .uk-offcanvas-bar
 ) {
 
-    color: #{'hsl(var(--inverse-global-color))'}; // Sass breaks on this for some reason
+    color: #{'hsl(var(--invert-text-color))'}; // Sass breaks on this for some reason
 
-    --theme-color:                                   var(--inverse-global-color);
-    --theme-emphasis-color:                          var(--inverse-global-emphasis-color);
-    --theme-muted-color:                             var(--inverse-global-muted-color);
+    --theme-color:                                   var(--invert-text-color);
+    --theme-emphasis-color:                          var(--invert-text-emphasis);
+    --theme-muted-color:                             var(--invert-text-muted);
 
-    --theme-link-color:                              var(--inverse-global-emphasis-color);
-    --theme-link-hover-color:                        var(--inverse-global-emphasis-color);
+    --theme-link-color:                              var(--invert-link-color);
+    --theme-link-hover-color:                        var(--invert-link-hover);
 
     --theme-background:                              var(--invert-surface-default);
     --theme-muted-background:                        var(--invert-surface-muted);
     --theme-primary-background:                      var(--invert-surface-primary);
     --theme-secondary-background:                    var(--surface-default);
 
-    --theme-border:                                  var(--inverse-global-border);
+    --theme-border:                                  var(--invert-border-color);
 
     // inverse
 
-    --inverse-theme-color:                           var(--global-color);
-    --inverse-theme-emphasis-color:                  var(--global-emphasis-color);
-    --inverse-theme-muted-color:                     var(--global-muted-color);
+    --inverse-theme-color:                           var(--text-color);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis);
+    --inverse-theme-muted-color:                     var(--text-muted);
 
-    --inverse-theme-link-color:                      var(--global-color);
-    --inverse-theme-link-hover-color:                var(--global-emphasis-color);
+    //--inverse-theme-link-color:                      var(--global-color);
+    //--inverse-theme-link-hover-color:                var(--global-emphasis-color);
 
     --inverse-theme-background:                      var(--surface-default);
     --inverse-theme-muted-background:                var(--surface-muted);
     --inverse-theme-primary-background:              var(--surface-primary);
-    --inverse-theme-secondary-background:            var(--inverse-surface-default);
+    --inverse-theme-secondary-background:            var(--invert-surface-default);
 
-    --inverse-theme-border:                          var(--global-border);
+    --inverse-theme-border:                          var(--border-color);
 
 }
-*/
+

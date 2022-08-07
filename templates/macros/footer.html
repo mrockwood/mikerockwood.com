@@ -1,7 +1,7 @@
 {% macro footer() %}
 <footer class="uk-section uk-section-small uk-section-muted">
     <div class="uk-container">
-        <div class="uk-text-center uk-margin-large">
+        <!--<div class="uk-text-center uk-margin-large">
             <p class="uk-margin-remove" style="font-size: clamp(1rem, 0.875rem + 0.4167vw, 1.25rem);">
                 Get in touch
             </p>
@@ -9,10 +9,10 @@
                 <script type="text/javascript">var first = 'rockwood'; var last = 'gmail.com'; document.write('<a href="mailto:'+first+'@'+last+'">'+first+'@'+last+'</a>');</script><noscript>den☀︎talala.info</noscript>
             </div>
         </div>
-        <hr class="uk-margin-medium" />
+        <hr class="uk-margin-medium" />-->
         <div class="uk-flex uk-flex-between">
-            <p style="font-size: clamp(1rem, 0.875rem + 0.4167vw, 1.25rem);">&copy; {{ now() | date(format="%Y") }} Mike Rockwood</p>
-            <p class="uk-flex uk-margin-remove-top" style="font-size: clamp(1rem, 0.875rem + 0.4167vw, 1.25rem);">
+            <p class="uk-margin-remove">&copy; {{ now() | date(format="%Y") }} Mike Rockwood</p>
+            <p class="uk-flex uk-margin-remove">
                 <a class="uk-link-text" href="https://hotlinewebring.club/interrobang/previous" target="_blank" aria-label="Previous Hotline Webring Site">←</a>
                 <span class="uk-margin-left uk-margin-right">IndieWeb</span>
                 <a class="uk-link-text" href="https://hotlinewebring.club/interrobang/next" target="_blank" aria-label="Next Hotline Webring Site">→</a>
@@ -31,14 +31,14 @@
     </div>
 </div>
 {% endmacro themeMenu %}
-  
+
 {# This is the full-screen mobile navigation modal #}
 {% macro mobileMenu() %}
 <div id="js-mobile-menu" class="uk-modal-full" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-height-viewport">
         <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-        <div class="uk-margin-auto-vertical uk-width-1-1">                    
-            <ul class="uk-nav uk-nav-primary uk-nav-center">                
+        <div class="uk-margin-auto-vertical uk-width-1-1">
+            <ul class="uk-nav uk-nav-primary uk-nav-center">
                 {%- for i in config.extra.menu -%}
                 {% set link_url = i.url | replace(from="$BASE_URL", to=config.base_url) %}
                 <li {% if current_path and current_path == link_url %}class="uk-active"{% endif %}><a href="{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- if i.slash and config.extra.uglyurls %}index.html{%- endif %}">{{ i.name | safe }}</a></li>

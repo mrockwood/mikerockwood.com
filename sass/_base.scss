@@ -11,7 +11,8 @@
 // Variables
 // ========================================================================
 
-:where(html) {
+// :where(html) {
+:where(html *) {
 
     --base-body-background:                           hsl(var(--global-background));
     --base-body-font-family:                          var(--global-font-family);
@@ -162,17 +163,16 @@
     /* 3 */
     margin: 0;
     /* 4 */
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+    min-block-size: 100vh;
     /* 5 */
     background: var(--base-body-background);
     color: var(--base-body-color);
 }
 
 /* 4 */
-:where(main) {
-    flex: 1;
+:where(body > footer) {
+	position: sticky;
+	top: 100vh;
 }
 
 
