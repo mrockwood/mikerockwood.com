@@ -504,7 +504,7 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 --global-link-color:                              var(--link-color, 210 88% 53%);
 --global-link-hover-color:                        var(--link-hover, 210 86% 43%);
 
---global-inverse-color:                           var(--invert-text-color, 220 10% 100%);
+--global-inverse-color:                           var(--invert-text-emphasis, 220 10% 100%);
 
 //
 // Backgrounds
@@ -594,31 +594,12 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 
 .uk-light {
 
-	// --global-color:                           		  var(--text-color-light);
-	// --global-emphasis-color:                  		  var(--text-emphasis-light);
-	// --global-muted-color:                     		  var(--text-muted-light);
-
-	// --global-background:                      		  var(--surface-default-light);
-	// --global-muted-background:                		  var(--surface-muted-light);
-	// --global-primary-background:             		  var(--surface-primary-light);
-
-	// --global-border:                          		  var(--border-color-light);
-
-	// --inverse-global-color:                           var(--text-color-light);
-	// --inverse-global-emphasis-color:                  var(--text-emphasis-light);
-	// --inverse-global-muted-color:                     var(--text-muted-light);
-
-	// --inverse-global-background:                      var(--surface-default-light);
-	// --inverse-global-muted-background:                var(--surface-muted-light);
-	// --inverse-global-primary-background:              var(--surface-primary-light);
-
-	// --inverse-global-border:                          var(--border-color-light);
-
-	// --
-
 	--theme-color:                                   var(--text-color-dark);
     --theme-emphasis-color:                          var(--text-emphasis-dark);
     --theme-muted-color:                             var(--text-muted-dark);
+
+	--theme-link-color:                              var(--link-color-dark);
+    --theme-link-hover-color:                        var(--link-hover-dark);
 
     --theme-background:                              var(--surface-default-dark);
     --theme-muted-background:                        var(--surface-muted-dark);
@@ -633,6 +614,9 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
     --inverse-theme-emphasis-color:                  var(--text-emphasis-light);
     --inverse-theme-muted-color:                     var(--text-muted-light);
 
+	--inverse-theme-link-color:                      var(--link-color-light);
+    --inverse-theme-link-hover-color:                var(--link-hover-light);
+
     --inverse-theme-background:                      var(--surface-default-light);
     --inverse-theme-muted-background:                var(--surface-muted-light);
     --inverse-theme-primary-background:              var(--surface-primary-light);
@@ -644,19 +628,12 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 
 .uk-dark {
 
-	// --inverse-global-color:                           var(--text-color-dark);
-	// --inverse-global-emphasis-color:                  var(--text-emphasis-dark);
-	// --inverse-global-muted-color:                     var(--text-muted-dark);
-
-	// --inverse-global-background:                      var(--surface-default-dark);
-	// --inverse-global-muted-background:                var(--surface-muted-dark);
-	// --inverse-global-primary-background:              var(--surface-primary-dark);
-
-	// --inverse-global-border:                          var(--border-color-dark);
-
 	--theme-color:                                   var(--text-color-light);
     --theme-emphasis-color:                          var(--text-emphasis-light);
     --theme-muted-color:                             var(--text-muted-light);
+
+	--theme-link-color:                              var(--link-color-light);
+    --theme-link-hover-color:                        var(--link-hover-light);
 
     --theme-background:                              var(--surface-default-light);
     --theme-muted-background:                        var(--surface-muted-light);
@@ -670,6 +647,9 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
     --inverse-theme-color:                           var(--text-color-dark);
     --inverse-theme-emphasis-color:                  var(--text-emphasis-dark);
     --inverse-theme-muted-color:                     var(--text-muted-dark);
+
+	--inverse-theme-link-color:                      var(--link-color-dark);
+    --inverse-theme-link-hover-color:                var(--link-hover-dark);
 
     --inverse-theme-background:                      var(--surface-default-dark);
     --inverse-theme-muted-background:                var(--surface-muted-dark);
@@ -774,10 +754,10 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
     .uk-section-secondary:not(.uk-preserve-color),
     .uk-tile-primary:not(.uk-preserve-color),
     .uk-tile-secondary:not(.uk-preserve-color),
-    // .uk-card-primary.uk-card-body,
-    // .uk-card-primary > :not([class*='uk-card-media']),
-    // .uk-card-secondary.uk-card-body,
-    // .uk-card-secondary > :not([class*='uk-card-media']),
+    .uk-card-primary.uk-card-body,
+    .uk-card-primary > :not([class*='uk-card-media']),
+    .uk-card-secondary.uk-card-body,
+    .uk-card-secondary > :not([class*='uk-card-media']),
     .uk-overlay-primary,
     .uk-offcanvas-bar
 ) {
@@ -791,10 +771,10 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
     --theme-link-color:                              var(--invert-link-color);
     --theme-link-hover-color:                        var(--invert-link-hover);
 
-    --theme-background:                              var(--invert-surface-default);
-    --theme-muted-background:                        var(--invert-surface-muted);
-    --theme-primary-background:                      var(--invert-surface-primary);
-    --theme-secondary-background:                    var(--surface-default);
+    // --theme-background:                              var(--invert-surface-default);
+    // --theme-muted-background:                        var(--invert-surface-muted);
+    // --theme-primary-background:                      var(--invert-surface-primary);
+    // --theme-secondary-background:                    var(--surface-default);
 
     --theme-border:                                  var(--invert-border-color);
 
@@ -804,15 +784,37 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
     --inverse-theme-emphasis-color:                  var(--text-emphasis);
     --inverse-theme-muted-color:                     var(--text-muted);
 
-    //--inverse-theme-link-color:                      var(--global-color);
-    //--inverse-theme-link-hover-color:                var(--global-emphasis-color);
+	--inverse-theme-link-color:                      var(--link-color); // var(--global-color);
+    --inverse-theme-link-hover-color:                var(--link-hover); // var(--global-emphasis-color);
+
+    // --inverse-theme-background:                      var(--surface-default);
+    // --inverse-theme-muted-background:                var(--surface-muted);
+    // --inverse-theme-primary-background:              var(--surface-primary);
+    // --inverse-theme-secondary-background:            var(--invert-surface-default);
+
+    --inverse-theme-border:                          var(--border-color);
+
+}
+
+:where(
+    .uk-section-primary:not(.uk-preserve-color),
+    .uk-section-secondary:not(.uk-preserve-color),
+    .uk-tile-primary:not(.uk-preserve-color),
+    .uk-tile-secondary:not(.uk-preserve-color),
+    .uk-card-primary,
+    .uk-card-secondary,
+    .uk-overlay-primary,
+    .uk-offcanvas-bar
+) :where([class*='uk-']) {
+
+    --theme-background:                              var(--invert-surface-default);
+    --theme-muted-background:                        var(--invert-surface-muted);
+    --theme-primary-background:                      var(--invert-surface-primary);
+    --theme-secondary-background:                    var(--surface-default);
 
     --inverse-theme-background:                      var(--surface-default);
     --inverse-theme-muted-background:                var(--surface-muted);
     --inverse-theme-primary-background:              var(--surface-primary);
     --inverse-theme-secondary-background:            var(--invert-surface-default);
 
-    --inverse-theme-border:                          var(--border-color);
-
 }
-

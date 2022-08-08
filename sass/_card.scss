@@ -55,13 +55,13 @@
     --card-default-hover-background:                 hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.9 ); // hsl(var(--global-muted-background) / 0.9);
 
     --card-primary-background:                       hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
-    --card-primary-color:                            hsl( var(--inverse-theme-color, var(--inverse-global-color) ) ); // hsl(var(--global-inverse-color));
-    --card-primary-title-color:                      hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --card-primary-color:                            hsl( var(--theme-color, var(--inverse-global-color) ) ); // hsl(var(--global-inverse-color));
+    --card-primary-title-color:                      hsl( var(--theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
     --card-primary-hover-background:                 hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.9 ); // hsl(var(--global-primary-background) / 0.9);
 
     --card-secondary-background:                     hsl( var(--theme-secondary-background, var(--global-secondary-background) ) ); // hsl(var(--global-secondary-background));
-    --card-secondary-color:                          hsl( var(--inverse-theme-color, var(--inverse-global-color) ) ); // hsl(var(--global-inverse-color));
-    --card-secondary-title-color:                    hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --card-secondary-color:                          hsl( var(--theme-color, var(--inverse-global-color) ) ); // hsl(var(--global-inverse-color));
+    --card-secondary-title-color:                    hsl( var(--theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
     --card-secondary-hover-background:               hsl( var(--theme-secondary-background, var(--global-secondary-background) ) / 0.9 ); // hsl(var(--global-secondary-background) / 0.9);
 
     --card-small-body-padding-horizontal:            var(--global-margin);
