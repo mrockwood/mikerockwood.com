@@ -26,17 +26,17 @@
     --dropdown-margin:                                var(--global-small-margin);
     --dropdown-min-width:                             200px;
     --dropdown-padding:                               15px;
-    --dropdown-background:                            hsl(var(--global-muted-background));
-    --dropdown-color:                                 hsl(var(--global-color));
+    --dropdown-background:                            hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
+    --dropdown-color:                                 hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
 
-    --dropdown-nav-item-color:                        hsl(var(--global-muted-color));
-    --dropdown-nav-item-hover-color:                  hsl(var(--global-color));
+    --dropdown-nav-item-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --dropdown-nav-item-hover-color:                  hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
     --dropdown-nav-subtitle-font-size:                var(--global-small-font-size);
-    --dropdown-nav-header-color:                      hsl(var(--global-emphasis-color));
+    --dropdown-nav-header-color:                      hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
     --dropdown-nav-divider-border-width:              var(--global-border-width);
-    --dropdown-nav-divider-border:                    hsl(var(--global-border));
-    --dropdown-nav-sublist-item-color:                hsl(var(--global-muted-color));
-    --dropdown-nav-sublist-item-hover-color:          hsl(var(--global-color));
+    --dropdown-nav-divider-border:                    hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+    --dropdown-nav-sublist-item-color:                hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --dropdown-nav-sublist-item-hover-color:          hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
 
 }
 

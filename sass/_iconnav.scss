@@ -18,11 +18,11 @@
     --iconnav-margin-horizontal:                       var(--global-small-margin);
     --iconnav-margin-vertical:                         var(--iconnav-margin-horizontal);
 
-    --iconnav-item-color:                              hsl(var(--global-muted-color));
+    --iconnav-item-color:                              hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
 
-    --iconnav-item-hover-color:                        hsl(var(--global-color));
+    --iconnav-item-hover-color:                        hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
 
-    --iconnav-item-active-color:                       hsl(var(--global-color));
+    --iconnav-item-active-color:                       hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
 
 }
 

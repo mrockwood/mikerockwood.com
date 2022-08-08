@@ -26,7 +26,7 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-grid']) { 
+:where([class*='uk-grid']) {
 
     --grid-gutter-horizontal:                         var(--global-gutter);
     --grid-gutter-vertical:                           var(--grid-gutter-horizontal);
@@ -41,14 +41,14 @@
     --grid-large-gutter-vertical:                     var(--grid-large-gutter-horizontal);
 
     --grid-divider-border-width:                      var(--global-border-width);
-    --grid-divider-border:                            hsl(var(--global-border));
+    --grid-divider-border:                            hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
 
 }
 
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    :where([class*='uk-grid']) { 
+    :where([class*='uk-grid']) {
 
         --grid-gutter-horizontal:                     var(--global-medium-gutter);
 
@@ -69,7 +69,7 @@
  * 2. Reset list
  */
 
-.uk-grid {    
+.uk-grid {
     display: flex;
     /* 1 */
     flex-wrap: wrap;

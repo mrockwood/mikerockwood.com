@@ -14,15 +14,15 @@
 :where([class*='uk-breadcrumb']) {
 
     --breadcrumb-item-font-size:                          var(--global-small-font-size);
-    --breadcrumb-item-color:                              hsl(var(--global-muted-color));
-    --breadcrumb-item-hover-color:                        hsl(var(--global-color));
+    --breadcrumb-item-color:                              hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --breadcrumb-item-hover-color:                        hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
     --breadcrumb-item-hover-text-decoration:              none;
-    --breadcrumb-item-active-color:                       hsl(var(--global-color));
+    --breadcrumb-item-active-color:                       hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
 
     --breadcrumb-divider:                                 "/";
     --breadcrumb-divider-margin-horizontal:               20px;
     --breadcrumb-divider-font-size:                       var(--breadcrumb-item-font-size);
-    --breadcrumb-divider-color:                           hsl(var(--global-muted-color));
+    --breadcrumb-divider-color:                           hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
 
 }
 

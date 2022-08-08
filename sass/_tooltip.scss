@@ -27,9 +27,9 @@
     --tooltip-max-width:                              200px;
     --tooltip-padding-vertical:                       3px;
     --tooltip-padding-horizontal:                     6px;
-    --tooltip-background:                             hsl(var(--inverse-global-background) / 0.8);
+    --tooltip-background:                             hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.8 );
     --tooltip-border-radius:                          2px;
-    --tooltip-color:                                  hsl(var(--global-inverse-color));
+    --tooltip-color:                                  hsl( var(--inverse-theme-color, var(--global-inverse-color) ) );
     --tooltip-font-size:                              12px;
 
 }

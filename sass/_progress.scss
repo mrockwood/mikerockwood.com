@@ -13,9 +13,9 @@
 
     --progress-height:                                15px;
     --progress-margin-vertical:                       var(--global-margin);
-    --progress-background:                            hsl(var(--global-muted-background));
+    --progress-background:                            hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
 
-    --progress-bar-background:                        hsl(var(--global-primary-background));
+    --progress-bar-background:                        hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
 
 }
 

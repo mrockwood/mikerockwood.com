@@ -22,11 +22,11 @@
 
     --tab-item-padding-horizontal:             10px;
     --tab-item-padding-vertical:               5px;
-    --tab-item-color:                          hsl(var(--global-muted-color));
-    --tab-item-hover-color:                    hsl(var(--global-color));
+    --tab-item-color:                          hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --tab-item-hover-color:                    hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
     --tab-item-hover-text-decoration:          none;
-    --tab-item-active-color:                   hsl(var(--global-emphasis-color));
-    --tab-item-disabled-color:                 hsl(var(--global-muted-color));
+    --tab-item-active-color:                   hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --tab-item-disabled-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
 
 }
 

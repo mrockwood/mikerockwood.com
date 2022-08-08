@@ -16,12 +16,12 @@
 
 :where([class*='uk-link']) {
 
-    --link-muted-color:                               hsl(var(--global-muted-color));
-    --link-muted-hover-color:                         hsl(var(--global-color));
+    --link-muted-color:                               hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --link-muted-hover-color:                         hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
 
-    --link-text-hover-color:                          hsl(var(--global-muted-color));
+    --link-text-hover-color:                          hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
 
-    --link-heading-hover-color:                       hsl(var(--global-primary-background));
+    --link-heading-hover-color:                       hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
     --link-heading-hover-text-decoration:             none;
 
 }

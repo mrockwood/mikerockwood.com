@@ -18,7 +18,7 @@
 
     --column-gutter:                                  var(--global-gutter);
 
-    --column-divider-rule-color:                      hsl(var(--global-border));
+    --column-divider-rule-color:                      hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
     --column-divider-rule-width:                      1px;
 
 }

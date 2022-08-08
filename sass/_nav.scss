@@ -62,16 +62,16 @@
 
     --nav-primary-item-font-size:                     var(--global-large-font-size);
     --nav-primary-item-line-height:                   var(--global-line-height);
-    --nav-primary-item-color:                         hsl(var(--global-muted-color));
-    --nav-primary-item-hover-color:                   hsl(var(--global-color));
-    --nav-primary-item-active-color:                  hsl(var(--global-emphasis-color));
+    --nav-primary-item-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --nav-primary-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --nav-primary-item-active-color:                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
     --nav-primary-subtitle-font-size:                 var(--global-medium-font-size);
-    --nav-primary-header-color:                       hsl(var(--global-emphasis-color));
+    --nav-primary-header-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
     --nav-primary-divider-border-width:               var(--global-border-width);
-    --nav-primary-divider-border:                     hsl(var(--global-border));
-    --nav-primary-sublist-item-color:                 hsl(var(--global-muted-color));
-    --nav-primary-sublist-item-hover-color:           hsl(var(--global-color));
-    --nav-primary-sublist-item-active-color:          hsl(var(--global-emphasis-color));
+    --nav-primary-divider-border:                     hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+    --nav-primary-sublist-item-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --nav-primary-sublist-item-hover-color:           hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --nav-primary-sublist-item-active-color:          hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
 
     --nav-dividers-margin-top:                        0px;
     --nav-dividers-border-width:                      var(--global-border-width);
@@ -159,9 +159,9 @@ ul.uk-nav-sub {
     transform: rotate(45deg);
 }
 
-.uk-nav-parent-icon > .uk-parent.uk-open > a::after { 
+.uk-nav-parent-icon > .uk-parent.uk-open > a::after {
     margin-block-start: calc( var(--nav-parent-icon-height) / 2 );
-    transform: rotate(-135deg); 
+    transform: rotate(-135deg);
 }
 
 

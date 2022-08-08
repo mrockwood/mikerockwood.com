@@ -31,19 +31,19 @@
 
     --table-header-cell-font-size: var(--global-font-size);
     --table-header-cell-font-weight: bold;
-    --table-header-cell-color: hsl(var(--global-color));
+    --table-header-cell-color: hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
 
     --table-footer-font-size: var(--global-small-font-size);
 
     --table-caption-font-size: var(--global-small-font-size);
-    --table-caption-color: hsl(var(--global-muted-color));
+    --table-caption-color: hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
 
     --table-row-active-background: hsla(50,100%,50%,0.12);
 
     --table-divider-border-width: var(--global-border-width);
-    --table-divider-border: hsl(var(--global-border));
+    --table-divider-border: hsl( var(--theme-border, var(--global-border) ) );
 
-    --table-striped-row-background: hsl(var(--global-muted-background));
+    --table-striped-row-background: hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
 
     --table-hover-row-background: var(--table-row-active-background);
 

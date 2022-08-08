@@ -14,7 +14,7 @@
 // :where(html) {
 :where(html *) {
 
-    --base-body-background:                           hsl(var(--global-background));
+    --base-body-background:                           hsl( var(--theme-background, var(--global-background) ) ); // hsl(var(--global-background));
     --base-body-font-family:                          var(--global-font-family);
     --base-body-font-weight:                          normal;
     --base-body-font-size:                            var(--global-font-size);
@@ -29,12 +29,12 @@
     --base-strong-font-weight:                        bolder;
     --base-code-font-size:                            var(--global-small-font-size);
     --base-code-font-family:                          Consolas, monaco, monospace;
-    --base-code-color:                                hsl(var(--global-danger-background));
-    --base-em-color:                                  hsl(var(--global-emphasis-color));
+    --base-code-color:                                hsl( var(--theme-danger-background, var(--global-danger-background) ) ); // hsl(var(--global-danger-background));
+    --base-em-color:                                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
     --base-ins-background:                            hsla(50,100%,50%,0.2);
-    --base-ins-color:                                 hsl(var(--global-color));
+    --base-ins-color:                                 hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
     --base-mark-background:                           hsla(50,100%,50%,0.2);
-    --base-mark-color:                                hsl(var(--global-color));
+    --base-mark-color:                                hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
     --base-quote-font-style:                          italic;
     --base-small-font-size:                           80%;
 
