@@ -10,37 +10,162 @@
 // Variables
 // ========================================================================
 
-// $inverse-global-color-mode:                      light !default;
+:where(html) {
 
-// $inverse-global-color:                           rgba($global-inverse-color, 0.7) !default;
-// $inverse-global-emphasis-color:                  $global-inverse-color !default;
-// $inverse-global-muted-color:                     rgba($global-inverse-color, 0.5) !default;
-// $inverse-global-inverse-color:                   $global-color !default;
+    --inverse-global-color:                           var(--invert-text-color, 220 10% 100% / 0.7);
+	--inverse-global-emphasis-color:                  var(--invert-text-emphasis, 220 10% 100%);
+	--inverse-global-muted-color:                     var(--invert-text-muted, 220 10% 100% / 0.5);
 
-// $inverse-global-primary-background:              $global-inverse-color !default;
-// $inverse-global-muted-background:                rgba($global-inverse-color, 0.1) !default;
+	--inverse-global-background:                      var(--invert-surface-default, 0 0% 13%);
+	--inverse-global-muted-background:                var(--invert-surface-muted, 220 10% 100% / 0.1);
+	--inverse-global-primary-background:              var(--invert-surface-primary, 220 10% 100%);
 
-// $inverse-global-border:                          rgba($global-inverse-color, 0.2) !default;
+	--inverse-global-border:                          var(--invert-border-color, 220 10% 100% / 0.2);
+
+}
 
 
 /* ========================================================================
    Component: Inverse
  ========================================================================== */
 
-
-
 /*
- * Implemented class depends on the general theme color
  * `uk-light` is for light colors on dark backgrounds
  * `uk-dark` is or dark colors on light backgrounds
  */
 
-@if ($inverse-global-color-mode == light) { .uk-light { @if (mixin-exists(hook-inverse)) {@include hook-inverse();}}}
+.uk-light {
 
-@if ($inverse-global-color-mode == dark) { .uk-dark { @if (mixin-exists(hook-inverse)) {@include hook-inverse();}}}
+	--theme-color:                                   var(--text-color-dark);
+    --theme-emphasis-color:                          var(--text-emphasis-dark);
+    --theme-muted-color:                             var(--text-muted-dark);
+
+	--theme-link-color:                              var(--link-color-dark);
+    --theme-link-hover-color:                        var(--link-hover-dark);
+
+    --theme-background:                              var(--surface-default-dark);
+    --theme-muted-background:                        var(--surface-muted-dark);
+    --theme-primary-background:                      var(--surface-primary-dark);
+    --theme-secondary-background:                    var(--surface-default-light);
+
+    --theme-border:                                  var(--border-color-dark);
+
+    // inverse
+
+    --inverse-theme-color:                           var(--text-color-light);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis-light);
+    --inverse-theme-muted-color:                     var(--text-muted-light);
+
+	--inverse-theme-link-color:                      var(--link-color-light);
+    --inverse-theme-link-hover-color:                var(--link-hover-light);
+
+    --inverse-theme-background:                      var(--surface-default-light);
+    --inverse-theme-muted-background:                var(--surface-muted-light);
+    --inverse-theme-primary-background:              var(--surface-primary-light);
+    --inverse-theme-secondary-background:            var(--surface-default-dark);
+
+    --inverse-theme-border:                          var(--border-color-light);
+
+}
+
+.uk-dark {
+
+	--theme-color:                                   var(--text-color-light);
+    --theme-emphasis-color:                          var(--text-emphasis-light);
+    --theme-muted-color:                             var(--text-muted-light);
+
+	--theme-link-color:                              var(--link-color-light);
+    --theme-link-hover-color:                        var(--link-hover-light);
+
+    --theme-background:                              var(--surface-default-light);
+    --theme-muted-background:                        var(--surface-muted-light);
+    --theme-primary-background:                      var(--surface-primary-light);
+    --theme-secondary-background:                    var(--surface-default-dark);
+
+    --theme-border:                                  var(--border-color-light);
+
+    // inverse
+
+    --inverse-theme-color:                           var(--text-color-dark);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis-dark);
+    --inverse-theme-muted-color:                     var(--text-muted-dark);
+
+	--inverse-theme-link-color:                      var(--link-color-dark);
+    --inverse-theme-link-hover-color:                var(--link-hover-dark);
+
+    --inverse-theme-background:                      var(--surface-default-dark);
+    --inverse-theme-muted-background:                var(--surface-muted-dark);
+    --inverse-theme-primary-background:              var(--surface-primary-dark);
+    --inverse-theme-secondary-background:            var(--surface-default-light);
+
+    --inverse-theme-border:                          var(--border-color-dark);
+
+}
 
 
-// Hooks
-// ========================================================================
+/* Inverted components
+ ========================================================================== */
 
-// @mixin hook-inverse(){}
+:where(
+    .uk-section-primary:not(.uk-preserve-color),
+    .uk-section-secondary:not(.uk-preserve-color),
+    .uk-tile-primary:not(.uk-preserve-color),
+    .uk-tile-secondary:not(.uk-preserve-color),
+    .uk-card-primary.uk-card-body,
+    .uk-card-primary > :not([class*='uk-card-media']),
+    .uk-card-secondary.uk-card-body,
+    .uk-card-secondary > :not([class*='uk-card-media']),
+    .uk-overlay-primary,
+    .uk-offcanvas-bar
+) {
+
+    color: #{'hsl(var(--invert-text-color))'}; // Sass breaks on this for some reason
+
+    --theme-color:                                   var(--invert-text-color);
+    --theme-emphasis-color:                          var(--invert-text-emphasis);
+    --theme-muted-color:                             var(--invert-text-muted);
+
+    --theme-link-color:                              var(--invert-link-color);
+    --theme-link-hover-color:                        var(--invert-link-hover);
+
+    --theme-border:                                  var(--invert-border-color);
+
+    // inverse
+
+    --inverse-theme-color:                           var(--text-color);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis);
+    --inverse-theme-muted-color:                     var(--text-muted);
+
+	--inverse-theme-link-color:                      var(--link-color); // var(--global-color);
+    --inverse-theme-link-hover-color:                var(--link-hover); // var(--global-emphasis-color);
+
+    --inverse-theme-border:                          var(--border-color);
+
+}
+
+/*
+ * Move background colors to children of inverted components
+ */
+
+:where(
+    .uk-section-primary:not(.uk-preserve-color),
+    .uk-section-secondary:not(.uk-preserve-color),
+    .uk-tile-primary:not(.uk-preserve-color),
+    .uk-tile-secondary:not(.uk-preserve-color),
+    .uk-card-primary,
+    .uk-card-secondary,
+    .uk-overlay-primary,
+    .uk-offcanvas-bar
+) :where([class*='uk-']) {
+
+    --theme-background:                              var(--invert-surface-default);
+    --theme-muted-background:                        var(--invert-surface-muted);
+    --theme-primary-background:                      var(--invert-surface-primary);
+    --theme-secondary-background:                    var(--surface-default);
+
+    --inverse-theme-background:                      var(--surface-default);
+    --inverse-theme-muted-background:                var(--surface-muted);
+    --inverse-theme-primary-background:              var(--surface-primary);
+    --inverse-theme-secondary-background:            var(--invert-surface-default);
+
+}

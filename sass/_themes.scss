@@ -1,0 +1,216 @@
+//
+// Component:       Themes
+// Description:     Defines light and dark themes
+//
+// ========================================================================
+
+
+* {
+
+    //
+    // Light
+    //
+
+    // --text-color-light: var(--gray-7-hsl);
+    // --text-emphasis-light: var(--gray-9-hsl);
+    // --text-muted-light: var(--gray-6-hsl);
+
+    --text-color-light: 0 0% 0% / 0.7;
+    --text-emphasis-light: var(--gray-9-hsl);
+    --text-muted-light: 0 0% 0% / 0.5;
+
+    --link-color-light: var(--violet-7-hsl);
+    --link-hover-light: var(--violet-9-hsl);
+
+    --surface-default-light: var(--white-hsl);
+    --surface-muted-light: var(--gray-1-hsl);
+    --surface-primary-light: var(--violet-7-hsl);
+
+    --surface-success-light: var(--green-7-hsl);
+    --surface-warning-light: var(--orange-7-hsl);
+    --surface-danger-light: var(--red-7-hsl);
+
+    // --border-color-light: var(--gray-2-hsl);
+
+    --border-color-light: 0 0% 0% / 0.08;
+
+    //
+    // Dark
+    //
+
+    // --text-color-dark: var(--gray-2-hsl);
+    // --text-emphasis-dark: var(--white-hsl);
+    // --text-muted-dark: var(--gray-5-hsl);
+
+    --text-color-dark: 0 0% 100% / 0.7;
+    --text-emphasis-dark: var(--white-hsl);
+    --text-muted-dark: 0 0% 100% / 0.5;
+
+    --link-color-dark: var(--violet-3-hsl);
+    --link-hover-dark: var(--violet-1-hsl);
+
+    --surface-default-dark: var(--gray-9-hsl);
+    --surface-muted-dark: var(--gray-8-hsl);
+    --surface-primary-dark: var(--violet-3-hsl);
+
+    --surface-success-dark: var(--green-3-hsl);
+    --surface-warning-dark: var(--orange-3-hsl);
+    --surface-danger-dark: var(--red-3-hsl);
+
+    // --border-color-dark: var(--gray-7-hsl);
+
+    --border-color-dark: 0 0% 100% / 0.1;
+
+}
+
+:root {
+
+    color-scheme: light;
+
+    //
+    // Defaults
+    //
+
+    --text-color: var(--text-color-light);
+    --text-emphasis: var(--text-emphasis-light);
+    --text-muted: var(--text-muted-light);
+
+    --link-color: var(--link-color-light);
+    --link-hover: var(--link-hover-light);
+
+    --surface-default: var(--surface-default-light);
+    --surface-muted: var(--surface-muted-light);
+    --surface-primary: var(--surface-primary-light);
+
+    --surface-success: var(--surface-success-light);
+    --surface-warning: var(--surface-warning-light);
+    --surface-danger: var(--surface-danger-light);
+
+    --border-color: var(--border-color-light);
+
+    --invert-text-color: var(--text-color-dark);
+    --invert-text-emphasis: var(--text-emphasis-dark);
+    --invert-text-muted: var(--text-muted-dark);
+
+    --invert-link-color: var(--link-color-dark);
+    --invert-link-hover: var(--link-hover-dark);
+
+    --invert-surface-default: var(--surface-default-dark);
+    --invert-surface-muted: var(--surface-muted-dark);
+    --invert-surface-primary: var(--surface-primary-dark);
+
+    --invert-border-color: var(--border-color-dark);
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        color-scheme: dark;
+
+        --text-color: var(--text-color-dark);
+        --text-emphasis: var(--text-emphasis-dark);
+        --text-muted: var(--text-muted-dark);
+
+        --link-color: var(--link-color-dark);
+        --link-hover: var(--link-hover-dark);
+
+        --surface-default: var(--surface-default-dark);
+        --surface-muted: var(--surface-muted-dark);
+        --surface-primary: var(--surface-primary-dark);
+
+        --surface-success: var(--surface-success-dark);
+        --surface-warning: var(--surface-warning-dark);
+        --surface-danger: var(--surface-danger-dark);
+
+        --border-color: var(--border-color-dark);
+
+        --invert-text-color: var(--text-color-light);
+        --invert-text-emphasis: var(--text-emphasis-light);
+        --invert-text-muted: var(--text-muted-light);
+
+        --invert-link-color: var(--link-color-light);
+        --invert-link-hover: var(--link-hover-light);
+
+        --invert-surface-default: var(--surface-default-light);
+        --invert-surface-muted: var(--surface-muted-light);
+        --invert-surface-primary: var(--surface-primary-light);
+
+        --invert-border-color: var(--border-color-light);
+
+    }
+
+}
+
+.uk-theme-light {
+
+    color-scheme: light;
+
+    --text-color: var(--text-color-light);
+    --text-emphasis: var(--text-emphasis-light);
+    --text-muted: var(--text-muted-light);
+
+    --link-color: var(--link-color-light);
+    --link-hover: var(--link-hover-light);
+
+    --surface-default: var(--surface-default-light);
+    --surface-muted: var(--surface-muted-light);
+    --surface-primary: var(--surface-primary-light);
+
+    --surface-success: var(--surface-success-light);
+    --surface-warning: var(--surface-warning-light);
+    --surface-danger: var(--surface-danger-light);
+
+    --border-color: var(--border-color-light);
+
+    --invert-text-color: var(--text-color-dark);
+    --invert-text-emphasis: var(--text-emphasis-dark);
+    --invert-text-muted: var(--text-muted-dark);
+
+    --invert-link-color: var(--link-color-dark);
+    --invert-link-hover: var(--link-hover-dark);
+
+    --invert-surface-default: var(--surface-default-dark);
+    --invert-surface-muted: var(--surface-muted-dark);
+    --invert-surface-primary: var(--surface-primary-dark);
+
+    --invert-border-color: var(--border-color-dark);
+
+}
+
+.uk-theme-dark {
+
+    color-scheme: dark;
+
+    --text-color: var(--text-color-dark);
+    --text-emphasis: var(--text-emphasis-dark);
+    --text-muted: var(--text-muted-dark);
+
+    --link-color: var(--link-color-dark);
+    --link-hover: var(--link-hover-dark);
+
+    --surface-default: var(--surface-default-dark);
+    --surface-muted: var(--surface-muted-dark);
+    --surface-primary: var(--surface-primary-dark);
+
+    --surface-success: var(--surface-success-dark);
+    --surface-warning: var(--surface-warning-dark);
+    --surface-danger: var(--surface-danger-dark);
+
+    --border-color: var(--border-color-dark);
+
+    --invert-text-color: var(--text-color-light);
+    --invert-text-emphasis: var(--text-emphasis-light);
+    --invert-text-muted: var(--text-muted-light);
+
+    --invert-link-color: var(--link-color-light);
+    --invert-link-hover: var(--link-hover-light);
+
+    --invert-surface-default: var(--surface-default-light);
+    --invert-surface-muted: var(--surface-muted-light);
+    --invert-surface-primary: var(--surface-primary-light);
+
+    --invert-border-color: var(--border-color-light);
+
+}
