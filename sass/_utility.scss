@@ -380,13 +380,13 @@
 .uk-logo {
     --logo-font-size: var(--global-font-size);
     --logo-font-family: var(--global-font-family);
-	--logo-font-weight: 500;
-    --logo-color: hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
-    --logo-hover-color: hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+	// --logo-font-weight: 400;
+    --logo-color: hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --logo-hover-color: hsl( var(--theme-color, var(--global-color) ) );
 
     font-size: var(--logo-font-size);
     font-family: var(--logo-font-family);
-	font-weight: var(--logo-font-weight);
+	// font-weight: var(--logo-font-weight);
     color: var(--logo-color);
     /* 1 */
     text-decoration: none;
