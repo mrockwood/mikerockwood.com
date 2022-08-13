@@ -44,7 +44,23 @@
 			<div class="uk-width-3-5@l">
 				<div class="uk-margin uk-container-item-padding-remove-right">
 					<div class="uk-panel uk-margin-remove-first-child">
-						<img class="" alt data-src="https://dummyimage.com/1200x600" data-sizes="(min-width: 1200px) 1200px" data-width="1200" data-height="600" uk-img>
+						{%- set feature_image = "/images/claudio-schwarz-bRejy-aKxv8-unsplash.jpg" %}
+						{%- set feature_image_640 = resize_image(path=feature_image, width=640, height=320, format="webp", quality=80) %}
+						{%- set feature_image_960 = resize_image(path=feature_image, width=960, height=480, format="webp", quality=80) %}
+						{%- set feature_image_1200 = resize_image(path=feature_image, width=1200, height=600, format="webp", quality=80) %}
+						{%- set feature_image_1600 = resize_image(path=feature_image, width=1600, height=800, format="webp", quality=80) %}
+
+						<img class="" loading="lazy" alt=""
+						srcset="{{ feature_image_640.url | safe }} 640w,
+								{{ feature_image_960.url | safe }} 960w,
+								{{ feature_image_1200.url | safe }} 1200w,
+								{{ feature_image_1600.url | safe }} 1600w"
+						sizes="(max-width: 640px) 640px,
+								(max-width: 960px) 960px,
+								(max-width: 1200px) 1200px,
+								1600px">
+
+						<!--<img class="" alt data-src="{{ config.base_url | safe }}/images/nartan-buyukyildiz-hr_feH2URs0-unsplash.jpg" data-sizes="(min-width: 1200px) 1200px" data-width="1200" data-height="600" uk-img>-->
 						<div class="uk-h4 uk-margin-top uk-margin-remove-bottom">Mike Rockwood</div>
 						<div class="uk-text-meta uk-text-emphasis">Founder</div>
 					</div>
