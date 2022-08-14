@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{%- block content %}
+
+<article class="h-entry">
+
+	<header>
+
+		{# include "time.njk" #}
+
+	</header>
+
+	<div class="p-name e-content">
+
+		<img class="u-photo" src="{{ page.extra.photo }}" alt="{{ page.extra.alt }}">
+
+		{{ page.content | safe }}
+
+	</div>
+
+	<footer>
+
+		{# include "h-card.njk" #}
+
+	</footer>
+
+</article>
+
+{% include "webmentions.njk" %}
+
+{%- endblock content %}

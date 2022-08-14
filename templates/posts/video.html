@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{%- block content %}
+
+<article class="h-entry">
+
+	<header>
+
+		<h1 class="p-name">{{ page.title }}</h1>
+
+		{# include "time.njk" #}
+
+	</header>
+
+	<div class="e-content">
+
+		{%- if page.extra.service == "youtube" -%}
+		<iframe
+			class="embed-youtube"
+			src="https://www.youtube-nocookie.com/embed/{{ page.extra.id }}"
+			style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
+			frameborder="0"
+			allowfullscreen
+		></iframe>
+		{%- endif -%}
+
+		{{ page.content | safe }}
+
+	</div>
+
+	<footer>
+
+		{# include "h-card.njk" #}
+
+	</footer>
+
+</article>
+
+{%- endblock content %}
