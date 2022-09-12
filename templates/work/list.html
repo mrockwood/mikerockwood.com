@@ -19,17 +19,29 @@
         <div class="uk-width-1-2@m">
             <h2 class="uk-h1" uk-scrollspy-class>Featured Projects</h2>
             <div class="uk-panel uk-margin" uk-scrollspy-class>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.</div>
-        </div>
+		</div>
     </div>
 	<div class="uk-container uk-container-large">
 		<div class="uk-grid-large uk-margin-top uk-grid uk-grid-stack" uk-grid>
-			<div class="uk-first-column">
+
+		{% for project in section.pages %}
+			{% if project.extra.featured and project.extra.featuredImg %}
+
+			{% set project_relative_path_array = project.relative_path | split(pat="/")  %}
+			{% set feature_image = project_relative_path_array[0] ~ "/" ~ project_relative_path_array[1] ~ "/" ~ project.extra.featuredImg %}
+			{% set image = resize_image(path=feature_image, width=1200, op='fit_width', format='webp', quality=75) %}
+
+			{% if project.extra.externalLink %}
+				{% set link = project.extra.externalLink %}
+			{% endif %}
+
+			<div>
 				<div class="uk-card uk-card-default">
 					<div class="uk-grid-collapse uk-grid-match uk-grid uk-flex-middle" uk-grid>
 						<div class="uk-width-expand@m">
 							<div class="uk-panel uk-overflow-hidden">
-								<canvas width="784" height="588"></canvas>
-								<img src="{{ config.base_url | safe }}/images/architect-01.jpg" alt="image" data-uk-cover="" class="uk-cover" style="height: 646px; width: 646px;">
+								<canvas width="600" height="500"></canvas>
+								<img src="{{ image.url }}" alt="image" data-uk-cover="" class="uk-cover">
 								<div class="uk-position-cover uk-position-z-index uk-visible@m" style="background-image: linear-gradient(to right, var(--card-default-background) 8.33%, transparent);"></div>
 								<div class="uk-position-cover uk-position-z-index uk-hidden@m" style="background-image: linear-gradient(to top, var(--card-default-background) 8.33%, transparent);"></div>
 							</div>
@@ -38,90 +50,30 @@
 							<div class="uk-panel uk-card uk-card-body uk-card-large uk-padding-remove-right@m uk-flex-column uk-flex-between">
 								<div class="uk-panel">
 									<div class="uk-text-small">
-										<span class="uk-label">Front-End</span> <span class="uk-label">Design</span>
+										{% for task in project.taxonomies.tasks %}
+										<span class="uk-label">{{ task }}</span>
+										{% endfor -%}
 									</div>
-									<h3 class="uk-h1 uk-margin-large-top@m">Note x vester.</h3>
-									<p class="">Netus libero sem amet tortor integer nibh ut sit euismod faucibus.</p>
+									<h3 class="uk-h1 uk-margin-large-top@m">{{ project.title }}</h3>
+									{% if project.description %}<p class="">{{ project.description }}</p>{% endif %}
 								</div>
-								<div class="uk-margin-top">
-									<a href="https://www.behance.net/gallery/32365357/Envato-Studio-T-Shirt" class="uk-button uk-button-large uk-button-primary">
+								{% if link %}
+								<div class="uk-margin-medium-top">
+									<a href="{{ link }}" class="uk-button uk-button-large uk-button-primary">
 										<span>View case study</span>
 									</a>
 								</div>
+								{% endif %}
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="uk-first-column">
-				<div class="uk-card uk-card-default">
-					<div class="uk-grid-collapse uk-grid-match uk-grid uk-flex-middle" uk-grid>
-						<div class="uk-width-expand@m">
-							<div class="uk-panel uk-overflow-hidden">
-								<canvas width="784" height="588"></canvas>
-								<img src="{{ config.base_url | safe }}/images/architect-02.jpg" alt="image" data-uk-cover="" class="uk-cover" style="height: 646px; width: 646px;">
-								<div class="uk-position-cover uk-position-z-index uk-visible@m" style="background-image: linear-gradient(to right, var(--card-default-background) 8.33%, transparent);"></div>
-								<div class="uk-position-cover uk-position-z-index uk-hidden@m" style="background-image: linear-gradient(to top, var(--card-default-background) 8.33%, transparent);"></div>
-							</div>
-						</div>
-						<div class="uk-width-1-2@m uk-flex-first@m uk-first-column">
-							<div class="uk-panel uk-card uk-card-body uk-card-large uk-padding-remove-right@m uk-flex-column uk-flex-between">
-								<div class="uk-panel">
-									<div class="uk-text-small">
-										<span class="uk-label">Branding</span> <span class="uk-label">Strategy</span>
-									</div>
-									<h3 class="uk-h1 uk-margin-large-top@m">Realkit.</h3>
-									<p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem doloremque eum dolore voluptate est dolorem.</p>
-								</div>
-								<div class="uk-margin-top">
-									<a href="https://www.behance.net/gallery/32365357/Envato-Studio-T-Shirt" class="uk-button uk-button-large uk-button-primary">
-										<span>View case study</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="uk-first-column">
-				<div class="uk-card uk-card-default">
-					<div class="uk-grid-collapse uk-grid-match uk-grid uk-flex-middle" uk-grid>
-						<div class="uk-width-expand@m">
-							<div class="uk-panel uk-overflow-hidden">
-								<canvas width="784" height="588"></canvas>
-								<img src="{{ config.base_url | safe }}/images/architect-03.jpg" alt="image" data-uk-cover="" class="uk-cover" style="height: 646px; width: 646px;">
-								<div class="uk-position-cover uk-position-z-index uk-visible@m" style="background-image: linear-gradient(to right, var(--card-default-background) 8.33%, transparent);"></div>
-								<div class="uk-position-cover uk-position-z-index uk-hidden@m" style="background-image: linear-gradient(to top, var(--card-default-background) 8.33%, transparent);"></div>
-							</div>
-						</div>
-						<div class="uk-width-1-2@m uk-flex-first@m uk-first-column">
-							<div class="uk-panel uk-card uk-card-body uk-card-large uk-padding-remove-right@m uk-flex-column uk-flex-between">
-								<div class="uk-panel">
-									<div class="uk-text-small">
-										<span class="uk-label">Design Design</span>
-									</div>
-									<h3 class="uk-h1 uk-margin-large-top@m">Doors of Dublin.</h3>
-									<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque tenetur enim expedita sunt a.</p>
-								</div>
-								<div class="uk-margin-top">
-									<a href="https://www.behance.net/gallery/32365357/Envato-Studio-T-Shirt" class="uk-button uk-button-large uk-button-primary">
-										<span>View case study</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
+			{% endif %}
+		{% endfor %}
+
 	</div>
-    <!--<div class="uk-container">
-        <ul>
-            {% for page in section.pages %}
-            <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>-->
 </section>
 
 
@@ -184,7 +136,7 @@
 						<div class="js-filter uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l" uk-grid="masonry: 1;">
 
 							{% for project in section.pages %}
-								{% if project.extra.featuredImg %}
+								{% if project.extra.featuredImg and project.extra.featured != true %}
 									{% set project_relative_path_array = project.relative_path | split(pat="/")  %}
 									{% set feature_image = project_relative_path_array[0] ~ "/" ~ project_relative_path_array[1] ~ "/" ~ project.extra.featuredImg %}
 									{% set image = resize_image(path=feature_image, width=640, op='fit_width', format='webp', quality=75) %}
