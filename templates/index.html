@@ -43,7 +43,7 @@
 									for design
 								</h2>
 								<div class="uk-margin uk-text-left@m uk-text-center" uk-parallax="y: 0,300; opacity: 1,0; easing: 0.3; target: !.uk-section; media: @s;">
-									<a class="uk-icon-link" href="#services" uk-scroll><span uk-icon="icon: arrow-down; width: 30; height: 30;"></span></a>
+									<a class="uk-icon-link" href="#works" uk-scroll><span uk-icon="icon: arrow-down; width: 30; height: 30;"></span></a>
 								</div>
 
 							</div>
@@ -205,35 +205,37 @@
 </div>
 
 
+{%- set currentYear = now() | date(format="%Y") | int() %}
+
 <div class="uk-overflow-hidden uk-section uk-section-large">
-	<div class="uk-container">
+	<div class="uk-container uk-container-large">
 		<div class="uk-grid uk-grid-large uk-flex-between" uk-grid>
 			<div class="uk-width-2-5@m uk-first-column">
 				<p class="uk-text-lead uk-margin-remove">As a full-service UX design agency, we work closely with our clients to define, design and develop transformative user experiences across all platforms and brand’s touchpoints.</p>
 				<div class="uk-margin-top uk-margin-large-top@m">
-					<a href="studio-about.html" class="uk-link-expand uk-link-underline uk-text-large@m">
-						<span>About dannel</span>
+					<a href="{{ config.base_url | safe }}/about/" class="uk-link-expand uk-link-underline uk-text-large@m">
+						<span>More about</span>
 					</a>
 				</div>
 			</div>
 			<div class="uk-width-2-5@m">
-				<div class="uk-grid uk-grid-medium uk-child-width-1-2" uk-grid>
+				<div class="uk-grid uk-grid-large uk-child-width-1-2" uk-grid>
 					<div class="">
 						<div class="uk-panel">
-							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">24</h3>
-							<p class="uk-margin-xsmall-top">Designers <br> and developers</p>
-						</div>
-					</div>
-					<div>
-						<div class="uk-panel">
-							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">12k</h3>
-							<p class="uk-margin-xsmall-top">Happy <br> customers</p>
+							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">25+</h3>
+							<p class="uk-margin-xsmall-top">Products <br> launched</p>
 						</div>
 					</div>
 					<div class="uk-grid-margin">
 						<div class="uk-panel">
-							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">7</h3>
-							<p class="uk-margin-xsmall-top">Years <br> in business</p>
+							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">{{ currentYear - 2009 }}</h3>
+							<p class="uk-margin-xsmall-top">Years <br> experience</p>
+						</div>
+					</div>
+					<div>
+						<div class="uk-panel">
+							<h3 class="uk-heading-medium uk-text-bold uk-margin-remove">40k</h3>
+							<p class="uk-margin-xsmall-top">Pages <br> managed</p>
 						</div>
 					</div>
 					<div class="uk-grid-margin">
@@ -250,7 +252,7 @@
 
 
 <section class="uk-section">
-	<div class="uk-container">
+	<div class="uk-container uk-container-large">
 		{% set articles = get_section(path="posts/articles/_index.md") %}
 		{% for year, pages in articles.pages | group_by(attribute="year") %}
 		<div class="posts-group">
