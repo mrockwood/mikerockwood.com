@@ -31,6 +31,7 @@
 	</div>
 </header>
 
+
 {% for subsection in section.subsections | sort %}
 <section class="uk-section">
 	<div class="uk-container">
@@ -46,5 +47,45 @@
 	</div>
 </section>
 {% endfor %}
+
+
+
+<!-- Notes -->
+
+{%- set notes = get_section(path="posts/notes/_index.md") %}
+{% if notes.pages %}
+
+<section class="uk-section">
+	<div class="uk-container uk-container-large">
+
+		<h2>Notes</h2>
+
+		<div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
+
+
+		{% for note in notes.pages %}
+			{% if loop.index < 5 %}
+
+			<div>
+				<article class="uk-card uk-card-body uk-card-default">
+
+					<p class="uk-text-meta">
+						{{ note.date | date(format="%d %b %Y at %H:%M") }}
+					</p>
+
+					{{ note.content | safe }}
+
+				</article>
+			</div>
+
+			{% endif %}
+		{% endfor %}
+
+		</div>
+
+	</div>
+</section>
+
+{% endif %}
 
 {%- endblock content %}

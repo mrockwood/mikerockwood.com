@@ -1,6 +1,7 @@
 +++
 title = "About"
 path = "about"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
 template = "pages/about.html"
 +++
 
