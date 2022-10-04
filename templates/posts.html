@@ -75,12 +75,32 @@
 
 		<h2>Bookmarks</h2>
 
-		<div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
+		<div class="uk-grid uk-child-width-1-2@m" uk-grid>
 
 		{% for bookmark in bookmarks.pages %}
 			{% if loop.index < 5 %}
 
-			<p>test</p>
+			<div>
+
+				<div class="uk-card uk-card-default uk-card-hover">
+					<div class="uk-card-body">
+						<h3 class="uk-card-title uk-margin-small">{{ bookmark.title }}</h3>
+						<p class="uk-text-meta uk-margin-small">
+							{{ bookmark.extra.bookmarkOf }}
+						</p>
+						{{ bookmark.content | safe }}
+					</div>
+				</div>
+
+				<!-- <h3 class="uk-h4">{{ bookmark.title }}</h3>
+
+				{{ bookmark.content | safe }}
+
+				<p class="uk-text-meta">
+					{{ bookmark.date | date(format="%d %b %Y") }}
+				</p>				 -->
+
+			</div>
 
 			{% endif %}
 		{% endfor %}
