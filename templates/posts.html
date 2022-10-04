@@ -32,36 +32,15 @@
 </header>
 
 
-{% for subsection in section.subsections | sort %}
-<section class="uk-section">
-	<div class="uk-container">
-		{% set subsection_item = get_section(path=subsection) %}
-		<h2>{{ subsection_item.title  }}</h2>
-
-		{% for post in subsection_item.pages %}
-		<article class="uk-article">
-			<h3 class="uk-article-title"><a href="{{ post.path }}">{{ post.title }}</a></h3>
-			<p class="uk-article-meta">{{ post.date }}</p>
-		</article>
-		{% endfor %}
-	</div>
-</section>
-{% endfor %}
-
-
-
 <!-- Notes -->
-
 {%- set notes = get_section(path="posts/notes/_index.md") %}
 {% if notes.pages %}
-
 <section class="uk-section">
 	<div class="uk-container uk-container-large">
 
 		<h2>Notes</h2>
 
 		<div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
-
 
 		{% for note in notes.pages %}
 			{% if loop.index < 5 %}
@@ -85,7 +64,49 @@
 
 	</div>
 </section>
-
 {% endif %}
+
+
+<!-- Bookmarks -->
+{%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
+{% if bookmarks.pages %}
+<section class="uk-section">
+	<div class="uk-container uk-container-large">
+
+		<h2>Bookmarks</h2>
+
+		<div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
+
+		{% for bookmark in bookmarks.pages %}
+			{% if loop.index < 5 %}
+
+			<p>test</p>
+
+			{% endif %}
+		{% endfor %}
+
+		</div>
+
+	</div>
+</section>
+{% endif %}
+
+
+{% for subsection in section.subsections | sort %}
+<section class="uk-section">
+	<div class="uk-container">
+		{% set subsection_item = get_section(path=subsection) %}
+		<h2>{{ subsection_item.title  }}</h2>
+
+		{% for post in subsection_item.pages %}
+		<article class="uk-article">
+			<h3 class="uk-article-title"><a href="{{ post.path }}">{{ post.title }}</a></h3>
+			<p class="uk-article-meta">{{ post.date }}</p>
+		</article>
+		{% endfor %}
+	</div>
+</section>
+{% endfor %}
+
 
 {%- endblock content %}
