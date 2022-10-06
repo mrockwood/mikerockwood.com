@@ -1,5 +1,5 @@
 +++
-path = "test"
+path = "articles"
 title = "Articles"
 # template = "index.html"
 paginate_by = 2
