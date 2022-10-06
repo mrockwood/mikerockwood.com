@@ -18,6 +18,7 @@
 :where([class*='uk-margin']) {
 
     --margin-margin:                                         var(--global-margin);
+	--margin-xsmall-margin:                                   var(--global-xsmall-margin);
     --margin-small-margin:                                   var(--global-small-margin);
     --margin-medium-margin:                                  var(--global-medium-margin);
     --margin-large-margin:                                   var(--global-medium-margin);
@@ -32,7 +33,7 @@
 
         --margin-large-margin:                               var(--global-large-margin);
         --margin-xlarge-margin:                              var(--global-xlarge-margin);
-        
+
     }
 
 }
@@ -53,6 +54,18 @@
 .uk-margin-bottom { margin-block-end: var(--margin-margin) !important; }
 .uk-margin-left { margin-inline-start: var(--margin-margin) !important; }
 .uk-margin-right { margin-inline-end: var(--margin-margin) !important; }
+
+
+/* XSmall
+ ========================================================================== */
+
+.uk-margin-xsmall { margin-block-end: var(--margin-xsmall-margin); }
+* + .uk-margin-xsmall { margin-block-start: var(--margin-xsmall-margin) !important; }
+
+.uk-margin-xsmall-top { margin-block-start: var(--margin-xsmall-margin) !important; }
+.uk-margin-xsmall-bottom { margin-block-end: var(--margin-xsmall-margin) !important; }
+.uk-margin-xsmall-left { margin-inline-start: var(--margin-xsmall-margin) !important; }
+.uk-margin-xsmall-right { margin-inline-end: var(--margin-xsmall-margin) !important; }
 
 
 /* Small

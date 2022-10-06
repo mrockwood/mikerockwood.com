@@ -32,13 +32,61 @@
 </header>
 
 
+<!-- Bookmarks -->
+{%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
+{% if bookmarks.pages %}
+<section class="uk-section">
+	<div class="uk-container uk-container-large">
+
+		<h2 class="uk-text-uppercase uk-text-bold">Bookmarks</h2>
+
+		<div class="uk-grid uk-child-width-1-2@m" uk-grid >
+
+		{% for bookmark in bookmarks.pages %}
+			{% if loop.index < 5 %}
+
+			<div>
+
+				<div class="uk-card uk-card-default uk-card-hover">
+					<a href="{{ bookmark.extra.bookmarkOf }}" class="uk-card-body uk-link-reset">
+						<div class="uk-grid uk-flex-middle">
+							<div class="uk-width-expand">
+								<h3 class="uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
+								<p class="uk-text-meta uk-margin-xsmall">
+									{{ bookmark.extra.bookmarkOf }}
+								</p>
+							</div>
+							<div class="uk-width-auto">
+								<span class="uk-icon-button" uk-icon="link" style="--icon-button-background: hsl( var(--global-background));"></span>
+							</div>
+						</div>
+						{# bookmark.content | safe #}
+					</a>
+				</div>
+
+				<!-- <p class="uk-text-meta">
+					{{ bookmark.date | date(format="%d %b %Y") }}
+				</p> -->
+
+			</div>
+
+			{% endif %}
+		{% endfor %}
+
+		</div>
+
+	</div>
+</section>
+{% endif %}
+
+
 <!-- Notes -->
 {%- set notes = get_section(path="posts/notes/_index.md") %}
 {% if notes.pages %}
 <section class="uk-section">
 	<div class="uk-container uk-container-large">
 
-		<h2>Notes</h2>
+		<h2 class="uk-text-uppercase uk-text-bold">Notes</h2>
 
 		<div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
 
@@ -55,47 +103,6 @@
 					{{ note.content | safe }}
 
 				</article>
-			</div>
-
-			{% endif %}
-		{% endfor %}
-
-		</div>
-
-	</div>
-</section>
-{% endif %}
-
-
-<!-- Bookmarks -->
-{%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
-{% if bookmarks.pages %}
-<section class="uk-section">
-	<div class="uk-container uk-container-large">
-
-		<h2>Bookmarks</h2>
-
-		<div class="uk-grid uk-child-width-1-2@m" uk-grid>
-
-		{% for bookmark in bookmarks.pages %}
-			{% if loop.index < 5 %}
-
-			<div>
-
-				<div class="uk-card uk-card-default uk-card-hover">
-					<div class="uk-card-body">
-						<h3 class="uk-card-title uk-margin-small">{{ bookmark.title }}</h3>
-						<p class="uk-text-meta uk-margin-small">
-							{{ bookmark.extra.bookmarkOf }}
-						</p>
-						{{ bookmark.content | safe }}
-					</div>
-				</div>
-
-				<!-- <p class="uk-text-meta">
-					{{ bookmark.date | date(format="%d %b %Y") }}
-				</p> -->
-
 			</div>
 
 			{% endif %}
