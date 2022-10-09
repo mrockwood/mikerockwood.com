@@ -88,6 +88,19 @@
 {% endif %}
 
 
+<!-- Jams -->
+{%- set jams = get_section(path="posts/jams/_index.md") %}
+{% if jams.pages %}
+<section class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-large">
+
+		<h2 class="uk-h1">Jams</h2>
+
+	</div>
+</section>
+{% endif %}
+
+
 <!-- Notes -->
 {%- set notes = get_section(path="posts/notes/_index.md") %}
 {% if notes.pages %}
