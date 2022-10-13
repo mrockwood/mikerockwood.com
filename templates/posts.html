@@ -32,6 +32,60 @@
 </header>
 
 
+<!-- Articles -->
+{%- set articles = get_section(path="posts/articles/_index.md") %}
+{% if articles.pages %}
+<section class="uk-section">
+	<div class="uk-container uk-container-large">
+
+		<h2 class="uk-h1">Articles</h2>
+
+		<div class="uk-child-width-1-1 uk-grid-column-medium uk-grid-match uk-grid uk-grid-stack" uk-grid>
+
+		{% for article in articles.pages %}
+			{% if loop.index < 5 %}
+
+			<div>
+				{% if loop.index > 1 %}<hr class="uk-margin-medium" />{% endif %}
+				<article class="uk-panel uk-margin-remove-first-child">
+					<div class="uk-child-width-expand uk-grid-column-large uk-grid-row-small uk-grid" uk-grid="">
+						<div class="uk-width-1-3@s uk-flex-last@s">
+							<a href="{{ article.permalink }}" aria-label="{{ article.title }}">
+								<!-- <picture>
+									<source type="image/webp" srcset="/wordpress/wp-content/themes/yootheme/cache/91/news-post-hometown-season-3-shooting-has-begun-intro-91cac910.webp 610w, /wordpress/wp-content/themes/yootheme/cache/ec/news-post-hometown-season-3-shooting-has-begun-intro-ec789ca8.webp 768w, /wordpress/wp-content/themes/yootheme/cache/cb/news-post-hometown-season-3-shooting-has-begun-intro-cbb6c6ee.webp 1024w, /wordpress/wp-content/themes/yootheme/cache/c7/news-post-hometown-season-3-shooting-has-begun-intro-c7833452.webp 1220w" sizes="(min-width: 610px) 610px">
+									<img src="/wordpress/wp-content/themes/yootheme/cache/54/news-post-hometown-season-3-shooting-has-begun-intro-545731b7.jpeg" alt="" loading="lazy" width="610" height="365">
+								</picture> -->
+							</a>
+						</div>
+						<div class="uk-margin-remove-first-child">
+							<div class="uk-child-width-expand uk-grid-column-large uk-grid-row-small uk-grid" uk-grid>
+								<div class="uk-width-1-2@m uk-margin-remove-first-child">
+									<h3 class="uk-margin-top uk-margin-remove-bottom">
+										<a href="{{ article.permalink }}" class="uk-link-reset">{{ article.title }}</a>
+									</h3>
+									<div class="uk-margin-small-top">
+										<time datetime="{{ article.date }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+									</div>
+								</div>
+								<div class="uk-margin-remove-first-child">
+									<div class="uk-panel uk-margin-top">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat officia deserunt.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			{% endif %}
+		{% endfor %}
+
+		</div>
+
+	</div>
+</section>
+{% endif %}
+
+
 <!-- Bookmarks -->
 {%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
 {% if bookmarks.pages %}
@@ -40,14 +94,14 @@
 
 		<h2 class="uk-h1">Bookmarks</h2>
 
-		<div class="uk-grid uk-child-width-1-2@m" uk-grid >
+		<div class="uk-grid uk-child-width-1-2@m" uk-grid>
 
 		{% for bookmark in bookmarks.pages %}
 			{% if loop.index < 5 %}
 
 			<div>
 
-				<div class="uk-card uk-card-default uk-card-hover">
+				<article class="uk-card uk-card-default uk-card-hover">
 					<a href="{{ bookmark.extra.bookmarkOf }}" class="uk-card-body uk-link-reset">
 						<div class="uk-grid uk-flex-middle">
 							<div class="uk-width-expand">
@@ -70,7 +124,7 @@
 						</div>
 						{# bookmark.content | safe #}
 					</a>
-				</div>
+				</article>
 
 				<!-- <p class="uk-text-meta">
 					{{ bookmark.date | date(format="%d %b %Y") }}
@@ -95,6 +149,32 @@
 	<div class="uk-container uk-container-large">
 
 		<h2 class="uk-h1">Jams</h2>
+
+		<div class="uk-grid" uk-grid>
+
+			<div class="uk-width-1-3@m uk-flex-last@m">
+                <ul class="uk-tab-right" uk-tab="connect: #component-tab-right; animation: uk-animation-fade">
+				{% for jam in jams.pages %}
+					{% if loop.index < 5 %}
+                    <li><a href="#">{{ jam.title }}</a></li>
+					{% endif %}
+				{% endfor %}
+                </ul>
+            </div>
+
+			<div class="uk-width-expand@m">
+                <ul id="component-tab-right" class="uk-switcher">
+				{% for jam in jams.pages %}
+					{% if loop.index < 5 %}
+                    <li>
+						{{ jam.title }}
+					</li>
+					{% endif %}
+				{% endfor %}
+                </ul>
+            </div>
+
+		</div>
 
 	</div>
 </section>
