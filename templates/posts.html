@@ -40,46 +40,31 @@
 
 		<h2 class="uk-h1">Articles</h2>
 
-		<div class="uk-child-width-1-1 uk-grid-column-medium uk-grid-match uk-grid uk-grid-stack" uk-grid>
+		<uk class="uk-list uk-list-large uk-list-divider">
 
 		{% for article in articles.pages %}
-			{% if loop.index < 5 %}
+			{% if loop.index < 6 %}
 
-			<div>
-				{% if loop.index > 1 %}<hr class="uk-margin-medium" />{% endif %}
-				<article class="uk-panel uk-margin-remove-first-child">
-					<div class="uk-child-width-expand uk-grid-column-large uk-grid-row-small uk-grid" uk-grid="">
-						<div class="uk-width-1-3@s uk-flex-last@s">
-							<a href="{{ article.permalink }}" aria-label="{{ article.title }}">
-								<!-- <picture>
-									<source type="image/webp" srcset="/wordpress/wp-content/themes/yootheme/cache/91/news-post-hometown-season-3-shooting-has-begun-intro-91cac910.webp 610w, /wordpress/wp-content/themes/yootheme/cache/ec/news-post-hometown-season-3-shooting-has-begun-intro-ec789ca8.webp 768w, /wordpress/wp-content/themes/yootheme/cache/cb/news-post-hometown-season-3-shooting-has-begun-intro-cbb6c6ee.webp 1024w, /wordpress/wp-content/themes/yootheme/cache/c7/news-post-hometown-season-3-shooting-has-begun-intro-c7833452.webp 1220w" sizes="(min-width: 610px) 610px">
-									<img src="/wordpress/wp-content/themes/yootheme/cache/54/news-post-hometown-season-3-shooting-has-begun-intro-545731b7.jpeg" alt="" loading="lazy" width="610" height="365">
-								</picture> -->
-							</a>
+			<li class="">
+				<!-- {% if loop.index > 1 %}<hr class="uk-margin-medium" />{% endif %} -->
+				<article class="uk-panel">
+					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-grid uk-flex-middle" uk-grid>
+						<div class="uk-width-1-4@m">
+							<time datetime="{{ article.date }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
 						</div>
-						<div class="uk-margin-remove-first-child">
-							<div class="uk-child-width-expand uk-grid-column-large uk-grid-row-small uk-grid" uk-grid>
-								<div class="uk-width-1-2@m uk-margin-remove-first-child">
-									<h3 class="uk-margin-top uk-margin-remove-bottom">
-										<a href="{{ article.permalink }}" class="uk-link-reset">{{ article.title }}</a>
-									</h3>
-									<div class="uk-margin-small-top">
-										<time datetime="{{ article.date }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
-									</div>
-								</div>
-								<div class="uk-margin-remove-first-child">
-									<div class="uk-panel uk-margin-top">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat officia deserunt.</div>
-								</div>
-							</div>
+						<div>
+							<h3 class="uk-h2 uk-margin-remove">
+								<a href="{{ article.permalink }}" class="uk-link-reset">{{ article.title }}</a>
+							</h3>
 						</div>
 					</div>
 				</article>
-			</div>
+			</li>
 
 			{% endif %}
 		{% endfor %}
 
-		</div>
+		</ul>
 
 	</div>
 </section>
