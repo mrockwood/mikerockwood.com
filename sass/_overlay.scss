@@ -20,8 +20,9 @@
     --overlay-padding-vertical:                       var(--global-gutter);
 
     --overlay-default-background:                     hsl(var(--global-background) / 0.8);
-
     --overlay-primary-background:                     hsl(var(--global-secondary-background) / 0.8);
+	--overlay-light-background:                       hsl(var(--surface-default-light) / 0.8);
+    --overlay-dark-background:                        hsl(var(--surface-default-dark) / 0.8);
 
 }
 
@@ -64,4 +65,20 @@
 
 .uk-overlay-primary {
     background: var(--overlay-primary-background);
+}
+
+/*
+ * Light
+ */
+
+.uk-overlay-light {
+    background: var(--overlay-light-background);
+}
+
+/*
+ * Dark
+ */
+
+.uk-overlay-dark {
+    background: var(--overlay-dark-background);
 }

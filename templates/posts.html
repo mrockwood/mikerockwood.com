@@ -137,11 +137,24 @@
 
 		<div class="uk-grid" uk-grid>
 
-			<div class="uk-width-1-3@m uk-flex-last@m">
-                <ul class="uk-tab-right" uk-tab="connect: #component-tab-right; animation: uk-animation-fade">
+			<div class="uk-width-1-3@m uk-flex-last">
+                <ul class="uk-tab-right uk-list-large" uk-tab="connect: #component-tab-right; animation: uk-animation-fade">
 				{% for jam in jams.pages %}
 					{% if loop.index < 5 %}
-                    <li><a href="#">{{ jam.title }}</a></li>
+                    <li>
+						<a href="#">
+							<div class="uk-grid uk-grid-medium uk-flex-middle">
+								{% if jam.extra.thumbnail %}
+								<div class="uk-width-small">
+									<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
+								</div>
+								{% endif %}
+								<div class="uk-visible@m uk-width-expand">
+									{{ jam.title }}
+								</div>
+							</div>
+						</a>
+					</li>
 					{% endif %}
 				{% endfor %}
                 </ul>
@@ -152,7 +165,11 @@
 				{% for jam in jams.pages %}
 					{% if loop.index < 5 %}
                     <li>
-						{{ jam.title }}
+						{% if jam.extra.thumbnail %}
+							<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
+						{% else %}
+							{{ jam.title }}
+						{% endif %}
 					</li>
 					{% endif %}
 				{% endfor %}
