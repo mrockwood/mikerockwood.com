@@ -16,6 +16,7 @@
 //                  `uk-list-divider`
 //                  `uk-list-striped`
 //                  `uk-list-large`
+//                  `uk-list-xlarge`
 //                  `uk-list-collapse`
 //
 // ========================================================================
@@ -49,6 +50,11 @@
     --list-large-divider-margin-top:                  var(--global-margin);
     --list-large-striped-padding-vertical:            var(--global-margin);
     --list-large-striped-padding-horizontal:          var(--global-small-margin);
+
+	--list-xlarge-margin-top:                         calc( ( var(--global-margin) + var(--global-medium-margin) ) / 2 );
+    --list-xlarge-divider-margin-top:                 calc( ( var(--global-margin) + var(--global-medium-margin) ) / 2 );
+    --list-xlarge-striped-padding-vertical:           calc( ( var(--global-margin) + var(--global-medium-margin) ) / 2 );
+    --list-xlarge-striped-padding-horizontal:         var(--global-margin);
 
 }
 
@@ -158,6 +164,9 @@
 .uk-list-large > :nth-child(n+2),
 .uk-list-large > * > ul { margin-block-start: var(--list-large-margin-top); }
 
+.uk-list-xlarge > :nth-child(n+2),
+.uk-list-xlarge > * > ul { margin-block-start: var(--list-xlarge-margin-top); }
+
 .uk-list-collapse > :nth-child(n+2),
 .uk-list-collapse > * > ul { margin-block-start: 0; }
 
@@ -168,6 +177,11 @@
 .uk-list-large.uk-list-divider > :nth-child(n+2) {
     margin-block-start: var(--list-large-divider-margin-top);
     padding-block-start: var(--list-large-divider-margin-top);
+}
+
+.uk-list-xlarge.uk-list-divider > :nth-child(n+2) {
+    margin-block-start: var(--list-xlarge-divider-margin-top);
+    padding-block-start: var(--list-xlarge-divider-margin-top);
 }
 
 .uk-list-collapse.uk-list-divider > :nth-child(n+2) {
@@ -181,10 +195,13 @@
 
 .uk-list-large.uk-list-striped > * { padding: var(--list-large-striped-padding-vertical) var(--list-large-striped-padding-horizontal); }
 
+.uk-list-xlarge.uk-list-striped > * { padding: var(--list-xlarge-striped-padding-vertical) var(--list-xlarge-striped-padding-horizontal); }
+
 .uk-list-collapse.uk-list-striped > * {
     padding-block-start: 0;
     padding-block-end: 0;
 }
 
 .uk-list-large.uk-list-striped > :nth-child(n+2),
+.uk-list-xlarge.uk-list-striped > :nth-child(n+2),
 .uk-list-collapse.uk-list-striped > :nth-child(n+2) { margin-block-start: 0; }
