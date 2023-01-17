@@ -51,7 +51,6 @@
 		width='100%'
 		height='100%'
 		class="uk-position-cover uk-height-1-1"
-		uk-parallax="x: 0,-100; media: @m;"
 	>
 		<style>
 			circle {
@@ -198,7 +197,8 @@
 								{% if link %}
 								<div class="uk-margin-medium-top">
 									<a href="{{ link }}" class="uk-button uk-button-large uk-button-primary">
-										<span>View case study</span>
+										<span>View documentation</span>
+										<span uk-icon="link" class="uk-margin-xsmall-left"></span>
 									</a>
 								</div>
 								{% endif %}

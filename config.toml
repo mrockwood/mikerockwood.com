@@ -202,32 +202,21 @@ twitter = "your-user-name" # used for twitter related
 seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twitter
 
 [extra.author]
-name = "Test Author"
+name = "Mike Rockwood"
 #nickname = "T-Bone"
-email = "test@test.com"
+email = "rockwood+website@gmail.com"
 avatar = "favicon-96.png"
 bio = "Web developer, I like reading and explore the internet, so I have collected queit a few notes in my blog."
 
 # Footer social links; full options listed in macros/social.html
 [extra.social]
-feed = true
-mail = "name@example.com"
-mastodon = "@your-user-name"
-element = "matrix.example.com"
-#matrix = "matrix.example.com"
-buymeacoffee = "your-user-name"
-twitter = "your-user-name"
-facebook = "your-user-name"
-linkedin = "your-user-name"
-gitlab = "your-user-name"
-github = "your-user-name"
-github_sponsor = "your-user-name"
-bitbucket = "your-user-name"
-python = "your-user-name"
-docker = "your-user-name"
-stack = "your-user-name"
-instagram = "your-user-name"
-pinterest = "your-user-name"
-twitch = "your-user-name"
-youtube = "channel/your-channel-id"
-researchgate = "your-profile-id"
+#feed = true
+#mastodon = "@your-user-name"
+#twitter = "your-user-name"
+#facebook = "your-user-name"
+linkedin = "mikerockwood"
+github = "mrockwood"
+#github_sponsor = "your-user-name"
+#stack = "your-user-name"
+#twitch = "your-user-name"
+#youtube = "channel/your-channel-id"
