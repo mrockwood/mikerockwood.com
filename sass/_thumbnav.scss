@@ -18,6 +18,10 @@
     --thumbnav-margin-horizontal: 15px;
     --thumbnav-margin-vertical: var(--thumbnav-margin-horizontal);
 
+	--thumbnav-item-gradient: linear-gradient(180deg, hsl( var(--theme-background, var(--global-background) ) / 0 ), hsl( var(--theme-background, var(--global-background) ) / 0.5 ) );
+	--thumbnav-item-hover-opacity: 0;
+	--thumbnav-item-active-opacity: 0;
+
 }
 
 
@@ -63,13 +67,29 @@
 
 .uk-thumbnav > * > * {
     display: inline-block;
+	position: relative;
+}
+
+.uk-thumbnav > * > *::after {
+	content: "";
+	position: absolute;
+	inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+	background-image: var(--thumbnav-item-gradient);
+	transition: opacity 0.1s ease-in-out;
 }
 
 /* Hover */
 .uk-thumbnav > * > :hover {}
 
+.uk-thumbnav > * > :hover::after { opacity: var(--thumbnav-item-hover-opacity); }
+
 /* Active */
 .uk-thumbnav > .uk-active > * {}
+
+.uk-thumbnav > .uk-active > *::after { opacity: var(--thumbnav-item-active-opacity); }
 
 
 /* Modifier: 'uk-thumbnav-vertical'

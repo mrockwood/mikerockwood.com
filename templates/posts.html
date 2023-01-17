@@ -135,47 +135,62 @@
 
 		<h2 class="uk-h1">Jams</h2>
 
-		<div class="uk-grid" uk-grid>
+		<div class="uk-margin-large-bottom">
+			<ul class="uk-thumbnav" uk-switcher="connect: #jam-tabs; animation: uk-animation-fade">
+			{% for jam in jams.pages %}
+				{% if loop.index < 6 %}
+				<li class="uk-width-1-5">
+					<a href="#">
+						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
+					</a>
+				</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		</div>
 
-			<div class="uk-width-1-3@m uk-flex-last">
-                <ul class="uk-tab-right uk-list-large" uk-tab="connect: #component-tab-right; animation: uk-animation-fade">
-				{% for jam in jams.pages %}
-					{% if loop.index < 5 %}
-                    <li>
-						<a href="#">
-							<div class="uk-grid uk-grid-medium uk-flex-middle">
-								{% if jam.extra.thumbnail %}
-								<div class="uk-width-small">
-									<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
-								</div>
-								{% endif %}
-								<div class="uk-visible@m uk-width-expand">
-									{{ jam.title }}
-								</div>
-							</div>
-						</a>
-					</li>
+		<div>
+			<ul id="jam-tabs" class="uk-switcher">
+			{% for jam in jams.pages %}
+				{% if loop.index < 6 %}
+				<li>
+					{%- if jam.extra.service == "bandcamp" -%}
+					<iframe
+						class="embed-bandcamp"
+						src="https://bandcamp.com/EmbeddedPlayer/track={{ jam.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+						style="border: 0; width: 100%; height: 120px;"
+						seamless
+					></iframe>
+					{%- elif jam.extra.service == "soundcloud" -%}
+					<iframe
+						class="embed-soundcloud"
+						src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ jam.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+						width="100%"
+						height="166"
+						scrolling="no"
+						frameborder="no"
+					></iframe>
+					{%- elif jam.extra.service == "youtube" -%}
+					<iframe
+						class="embed-youtube"
+						src="https://www.youtube-nocookie.com/embed/{{ jam.extra.id }}"
+						style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
+						frameborder="0"
+						allowfullscreen
+					></iframe>
+					{%- endif -%}
+
+					{#
+					{% if jam.extra.thumbnail %}
+						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
+					{% else %}
+						{{ jam.title }}
 					{% endif %}
-				{% endfor %}
-                </ul>
-            </div>
-
-			<div class="uk-width-expand@m">
-                <ul id="component-tab-right" class="uk-switcher">
-				{% for jam in jams.pages %}
-					{% if loop.index < 5 %}
-                    <li>
-						{% if jam.extra.thumbnail %}
-							<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
-						{% else %}
-							{{ jam.title }}
-						{% endif %}
-					</li>
-					{% endif %}
-				{% endfor %}
-                </ul>
-            </div>
-
+					#}
+				</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
 		</div>
 
 	</div>

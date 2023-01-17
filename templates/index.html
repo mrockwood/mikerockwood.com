@@ -26,33 +26,80 @@
 
 {%- block content %}
 
-<div class="demo uk-section-default">
-	<div style="padding-block-start: calc( var(--section-large-padding-vertical) - ( var(--navbar-padding-vertical) * 2 + var(--navbar-nav-item-height) ) );" data-src="/wordpress/wp-content/themes/yootheme/cache/home-hero-05c7289f.webp" data-srcset="https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzc2OCw0MzIsNzY4LDQzMl1dLFsiZG9Dcm9wIixbNzY4LDQzMiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=9f70f4294394640fd629d7138d2ba1bb 768w, https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzEwMjQsNTc2LDEwMjQsNTc2XV0sWyJkb0Nyb3AiLFsxMDI0LDU3NiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=ad0aeefc149e952106b1097da6381a14 1024w, /wordpress/wp-content/themes/yootheme/cache/home-hero-fe1a4ae8.webp 1366w, /wordpress/wp-content/themes/yootheme/cache/home-hero-76ef0dd3.webp 1600w, /wordpress/wp-content/themes/yootheme/cache/home-hero-b7df0736.webp 1920w, /wordpress/wp-content/themes/yootheme/cache/home-hero-05c7289f.webp 2560w" data-sizes="(max-aspect-ratio: 2560/1440) 178vh" uk-img class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-image@s uk-section uk-section-large uk-flex uk-flex-middle" uk-parallax="bgx: 0,-60" uk-height-viewport="offset-top: true;">
-		<div class="uk-width-1-1">
-			<div class="uk-container uk-container-large">
-				<div class="uk-child-width-1-1 uk-grid-margin" uk-grid>
-					<div class="uk-grid-item-match uk-width-1-1@m">
-						<div class="uk-flex">
-							<div class="uk-tile uk-width-1-1 uk-background-norepeat uk-background-center-center" data-src="{{ config.base_url | safe }}/images/home-hero-texture.svg" uk-img uk-parallax="bgy: -10,-90">
+{# style="padding-block-start: calc( var(--section-large-padding-vertical) - ( var(--navbar-padding-vertical) * 2 + var(--navbar-nav-item-height) ) );" #}
 
-								<h1 class="uk-h6 uk-heading-line uk-margin-small uk-width-medium@m uk-text-left@m uk-text-center uk-text-uppercase uk-text-tracking-small" uk-parallax="opacity: 1,0; media: @s; viewport: 0.95;">
-									<span>Front-End Developer</span>
-								</h1>
-								<h2 class="uk-heading-large uk-text-bold uk-margin-small uk-text-left@m uk-text-center uk-text-uppercase uk-text-bold" uk-parallax="y: 0,60; opacity: 1,0; easing: 0.8; media: @s; viewport: 0.95;">
-									With an eye<br class="uk-visible@l">
-									for design
-								</h2>
-								<div class="uk-margin uk-text-left@m uk-text-center" uk-parallax="y: 0,300; opacity: 1,0; easing: 0.3; target: !.uk-section; media: @s;">
-									<a class="uk-icon-link" href="#works" uk-scroll><span uk-icon="icon: arrow-down; width: 30; height: 30;"></span></a>
-								</div>
+<!--
+<div
+	style=""
+	data-src="{{ config.base_url | safe }}/images/home-hero-svg.svg"
+	data-srcset="https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzc2OCw0MzIsNzY4LDQzMl1dLFsiZG9Dcm9wIixbNzY4LDQzMiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=9f70f4294394640fd629d7138d2ba1bb 768w, https://demo.yootheme.com/wordpress/themes/vision.white-yellow/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvdmlzaW9uXC9pbWFnZXNcL3N0eWxlc1wvd2hpdGUteWVsbG93XC9ob21lLWhlcm8uanBnIixbWyJkb1Jlc2l6ZSIsWzEwMjQsNTc2LDEwMjQsNTc2XV0sWyJkb0Nyb3AiLFsxMDI0LDU3NiwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&amp;hash=ad0aeefc149e952106b1097da6381a14 1024w, /wordpress/wp-content/themes/yootheme/cache/home-hero-fe1a4ae8.webp 1366w, /wordpress/wp-content/themes/yootheme/cache/home-hero-76ef0dd3.webp 1600w, /wordpress/wp-content/themes/yootheme/cache/home-hero-b7df0736.webp 1920w, /wordpress/wp-content/themes/yootheme/cache/home-hero-05c7289f.webp 2560w"
+	data-sizes="(max-aspect-ratio: 2560/1440) 178vh"
+	uk-img
+	class="uk-section-default uk-background-norepeat uk-background-cover uk-background-center-right uk-background-image@s uk-section uk-section-large uk-flex uk-flex-middle"
+	uk-parallax="bgx: 0,-60"
+	uk-height-viewport="offset-top: true;"
+>
+-->
 
+<div
+	class="uk-section uk-section-large uk-flex uk-flex-middle uk-position-relative"
+	uk-height-viewport="offset-top: true;"
+>
+
+	<svg
+		xmlns='http://www.w3.org/2000/svg'
+		width='100%'
+		height='100%'
+		class="uk-position-cover uk-height-1-1"
+		uk-parallax="x: 0,-100; media: @m;"
+	>
+		<style>
+			circle {
+				filter: drop-shadow( 0 0 10vw hsla( var(--surface-default) / 0.5 ));
+				cx: 50%;
+				cy: 100%;
+			}
+			@media (min-width: 640px) {
+				circle {
+					cx: 0%;
+					cy: 50%;
+				}
+			}
+		</style>
+		<g>
+			<circle fill='hsla(var(--surface-primary) / 0.05)' cx='0%' cy='50%' r='clamp(375px, 50vw, 750px)'/>
+			<circle fill='hsla(var(--surface-primary) / 0.10)' cx='0%' cy='50%' r='clamp(300px, 40vw, 600px)'/>
+			<circle fill='hsla(var(--surface-primary) / 0.15)' cx='0%' cy='50%' r='clamp(225px, 30vw, 450px)'/>
+			<circle fill='hsla(var(--surface-primary) / 0.20)' cx='0%' cy='50%' r='clamp(150px, 20vw, 300px)'/>
+			<circle fill='hsla(var(--surface-primary) / 0.25)' cx='0%' cy='50%' r='clamp(75px, 10vw, 150px)'/>
+		</g>
+	</svg>
+
+	<div class="uk-width-1-1">
+		<div class="uk-container uk-container-large">
+			<div class="uk-child-width-1-1 uk-grid-margin" uk-grid>
+				<div class="uk-grid-item-match uk-width-1-1@m">
+					<div class="uk-flex">
+						<div class="uk-tile uk-width-1-1 uk-background-norepeat uk-background-center-center" data-src="{{ config.base_url | safe }}/images/home-hero-texture.svg" uk-img uk-parallax="bgy: -10,-90">
+
+							<h1 class="uk-h6 uk-heading-line uk-margin-small uk-width-medium@m uk-text-left@m uk-text-center uk-text-uppercase uk-text-tracking-small" uk-parallax="opacity: 1,0; media: @s; viewport: 0.95;">
+								<span>Front-End Developer</span>
+							</h1>
+							<h2 class="uk-heading-large uk-text-bold uk-margin-small uk-text-left@m uk-text-center uk-text-uppercase uk-text-bold" uk-parallax="y: 0,60; opacity: 1,0; easing: 0.8; media: @s; viewport: 0.95;">
+								With an eye<br class="uk-visible@l">
+								for design
+							</h2>
+							<div class="uk-margin uk-text-left@m uk-text-center" uk-parallax="y: 0,300; opacity: 1,0; easing: 0.3; target: !.uk-section; media: @s;">
+								<a class="uk-icon-link" href="#works" uk-scroll><span uk-icon="icon: arrow-down; width: 30; height: 30;"></span></a>
 							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
 
 

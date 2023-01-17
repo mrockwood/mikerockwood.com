@@ -1,5 +1,5 @@
 {% macro header() %}
-<div class="uk-header">
+<div class="uk-header {% if current_path and current_path == '/' %} uk-position-absolute uk-width-1-1 uk-position-z-index {% endif %}">
     <div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
         <nav class="uk-navbar">
             <div class="uk-navbar-left">
