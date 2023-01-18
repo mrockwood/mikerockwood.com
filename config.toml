@@ -1,6 +1,6 @@
-base_url = "https://example.com" # do NOT include a trailing slash on the base URL for web urls
+base_url = "https://mikerockwood.com" # do NOT include a trailing slash on the base URL for web urls
 #base_url = "/home/jieiku/.dev/abridge/public/" # used for locally usable build directly from disk, also set below extra.uglyurls = true
-title = "Abridge"
+title = "Mike Rockwood"
 description = "Abridge is a fast and lightweight Zola theme using semantic html, abridge.css class-light CSS, and No JS."
 default_language = "en"
 output_dir = "public"
@@ -20,7 +20,7 @@ taxonomies = [
 #theme = "abridge"
 
 [markdown]
-#extra_syntaxes_and_themes = ["themes/abridge/highlight_themes"] # Abridge's config.toml    
+#extra_syntaxes_and_themes = ["themes/abridge/highlight_themes"] # Abridge's config.toml
 highlight_code = true
 highlight_theme = "css"
 
@@ -69,15 +69,15 @@ sitedesc = false # enables or disables the display of the site description below
 headhr = false # show or hide horizontal rule below header
 foothr = false # show or hide horizontal rule above footer
 
-menu = [    
+menu = [
     {url = "/", name = "Home", slash = true},
     {url = "/work/", name = "Work", slash = true},
     {url = "/posts/", name = "Posts", slash = true},
-    {url = "/about/", name = "About", slash = true},  
+    {url = "/about/", name = "About", slash = true},
 ]
 menu_footer = [
     {url = "/categories/", name = "Categories", slash = true},
-    {url = "/tags/", name = "Tags", slash = true},    
+    {url = "/tags/", name = "Tags", slash = true},
     {url = "/privacy/", name = "Privacy", slash = true},
     {url = "/sitemap.xml", name = "Sitemap", slash = false},
 ]
