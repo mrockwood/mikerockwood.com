@@ -53,19 +53,19 @@
 		class="uk-position-cover uk-height-1-1"
 	>
 		<style>
-			circle {
+			.home-hero-bg circle {
 				filter: drop-shadow( 0 0 10vw hsla( var(--surface-default) / 0.5 ));
 				cx: 50%;
 				cy: 100%;
 			}
 			@media (min-width: 640px) {
-				circle {
+				.home-hero-bg circle {
 					cx: 0%;
 					cy: 50%;
 				}
 			}
 		</style>
-		<g>
+		<g class="home-hero-bg">
 			<circle fill='hsla(var(--surface-primary) / 0.05)' cx='0%' cy='50%' r='clamp(375px, 50vw, 750px)'/>
 			<circle fill='hsla(var(--surface-primary) / 0.10)' cx='0%' cy='50%' r='clamp(300px, 40vw, 600px)'/>
 			<circle fill='hsla(var(--surface-primary) / 0.15)' cx='0%' cy='50%' r='clamp(225px, 30vw, 450px)'/>

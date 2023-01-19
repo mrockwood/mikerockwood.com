@@ -33,6 +33,7 @@
 
 
 <!-- Articles -->
+{#
 {%- set articles = get_section(path="posts/articles/_index.md") %}
 {% if articles.pages %}
 <section class="uk-section">
@@ -69,7 +70,7 @@
 	</div>
 </section>
 {% endif %}
-
+#}
 
 <!-- Bookmarks -->
 {%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
@@ -135,7 +136,7 @@
 
 		<h2 class="uk-h1">Jams</h2>
 
-		<div class="uk-margin-large-bottom">
+		<div class="uk-margin-medium-bottom uk-width-2-3@m">
 			<ul class="uk-thumbnav" uk-switcher="connect: #jam-tabs; animation: uk-animation-fade">
 			{% for jam in jams.pages %}
 				{% if loop.index < 6 %}
