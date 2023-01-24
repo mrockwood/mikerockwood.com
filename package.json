@@ -1,4 +1,8 @@
 {
-  "name": " mikerockwood.com",
-  "version": "1.0.0"
+  "name": "mikerockwood.com",
+  "version": "1.0.0",
+  "scripts": { 
+    "start": "zola serve --drafts --open",
+    "build": "zola build"
+  } 
 }
