@@ -78,6 +78,7 @@ static/processed_images/
 
 # Node
 node_modules/
+
 # Local Netlify folder
 .netlify
 
