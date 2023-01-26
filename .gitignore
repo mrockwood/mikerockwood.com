@@ -76,6 +76,9 @@ $RECYCLE.BIN/
 public
 static/processed_images/
 
+# env
+**/.env
+
 # Node
 node_modules/
 

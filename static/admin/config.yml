@@ -1,0 +1,153 @@
+backend:
+  name: proxy
+  proxy_url: http://127.0.0.1:1112/api/v1
+  branch: main
+
+local_backend:
+  # when using a custom proxy server port
+  url: http://127.0.0.1:1112/api/v1
+  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+  allowed_hosts: ['192.168.0.1']
+
+media_folder: "static/images"
+public_folder: "images"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "content/posts/articles/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "bookmarks"
+    label: "Bookmarks"
+    label_singular: "Bookmark"
+    folder: "content/posts/bookmarks/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    editor:
+      preview: false
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "bookmarkOf", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "favorites"
+    label: "Favorites"
+    label_singular: "Favorite"
+    folder: "content/posts/favorites/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Link", name: "likeOf", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "jams"
+    label: "Jams"
+    label_singular: "Jam"
+    folder: "content/posts/jams/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Service", name: "service", widget: "select", options: ['bandcamp','soundcloud','youtube']}
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "notes"
+    label: "Notes"
+    label_singular: "Note"
+    folder: "content/posts/notes/"
+    create: true
+    identifier_field: "body"
+    slug: "{{year}}-{{month}}-{{day}}-{{body}}"
+    fields:
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "src/content/pages/"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Permalink", name: "permalink", widget: "string" }
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "replies"
+    label: "Replies"
+    label_singular: "Reply"
+    folder: "content/posts/replies/"
+    create: true
+    identifier_field: "body"
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Reply to URL", name: "inReplyTo", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "hidden"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "reposts"
+    label: "Reposts"
+    label_singular: "Repost"
+    folder: "content/posts/reposts/"
+    create: true
+    filter: {field: "type", value: "repost"}
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Link", name: "repostOf", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "rsvps"
+    label: "RSVPs"
+    label_singular: "RSVP"
+    folder: "content/posts/rsvps/"
+    create: true
+    identifier_field: "body"
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Event URL", name: "inReplyTo", widget: "string"}
+      - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested']}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "hidden"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "work"
+    label: "Work"
+    label_singular: "Work Project"
+    folder: "src/content/work/"
+    path: "{{slug}}/{{slug}}"
+    create: true
+    slug: "{{title}}"
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - label: "Launch Year"
+        name: "year"
+        widget: "datetime"
+        date_format: "YYYY" # e.g. 2021
+        time_format: false
+      - {label: "Project URL", name: "projectUrl", widget: "string", required: false}
+      - {label: "Role", name: "role", widget: "string"}
+      - label: "Tech"
+        name: "tech"
+        widget: "list"
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Body", name: "body", widget: "markdown"}
