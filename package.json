@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "zola serve --drafts --open",
+    "admin": "open http://127.0.0.1:1111/admin/ && npx @staticcms/proxy-server",
     "build": "zola build"
   },
   "dependencies": {
