@@ -240,12 +240,12 @@
     --invert-text-emphasis: var(--text-emphasis-dark);
     --invert-text-muted: var(--text-muted-dark);
 
-    --invert-link-color: var(--link-color-dark);
-    --invert-link-hover: var(--link-hover-dark);
+    --invert-link-color: var(--pink-4-hsl);
+    --invert-link-hover: var(--pink-2-hsl);
 
     --invert-surface-default: var(--black-hsl);
-    --invert-surface-muted: var(--surface-muted-dark);
-    --invert-surface-primary: var(--surface-primary-dark);
+    --invert-surface-muted: 220 10% 18%;
+    --invert-surface-primary: var(--pink-4-hsl);
 
     --invert-border-color: var(--border-color-dark);
 
