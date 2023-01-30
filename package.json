@@ -7,6 +7,6 @@
     "build": "zola build"
   },
   "dependencies": {
-    "@staticcms/core": "^1.2.2"
+    "@staticcms/core": "^1.2.6"
   }
 }
