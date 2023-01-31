@@ -12,6 +12,8 @@ local_backend:
 media_folder: "static/images"
 public_folder: "images"
 
+
+
 collections:
   - name: "articles"
     label: "Articles"
@@ -29,6 +31,8 @@ collections:
     folder: "content/posts/bookmarks/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    format: "toml-frontmatter"
+    frontmatter_delimiter: "+++"
     editor:
       preview: false
     fields:
@@ -39,11 +43,11 @@ collections:
         widget: "object"
         fields:
           - {label: "Link", name: "bookmarkOf", widget: "string"}
-      - label: "Taxonomies"
-        name: "taxonomies"
-        widget: "object"
-        fields:
-          - {label: "Tags", name: "tags", widget: "list"}
+    #   - label: "Taxonomies"
+    #     name: "taxonomies"
+    #     widget: "object"
+    #     fields:
+    #       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "favorites"
     label: "Favorites"
