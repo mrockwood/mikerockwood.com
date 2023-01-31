@@ -43,11 +43,11 @@ collections:
         widget: "object"
         fields:
           - {label: "Link", name: "bookmarkOf", widget: "string"}
-    #   - label: "Taxonomies"
-    #     name: "taxonomies"
-    #     widget: "object"
-    #     fields:
-    #       - {label: "Tags", name: "tags", widget: "list"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "favorites"
     label: "Favorites"
