@@ -1,6 +1,6 @@
 +++
 title = "Gloss Design System"
-description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis."
+description = "Gloss is a highly flexible, user-centric, and unified design system used across a wide range of clinical and academic sites."
 date = 2020-01-01
 
 [taxonomies]
