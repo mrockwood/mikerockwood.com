@@ -27,7 +27,7 @@
 {%- block content %}
 <header class="uk-section uk-text-center">
   <div class="uk-container uk-container-large">
-      <h1 class="uk-heading-xlarge uk-text-bold uk-text-uppercase">
+      <h1 class="uk-heading-large uk-text-bold uk-text-uppercase">
           {{ page.title }}
       </h1>
       {% if page.description %}
@@ -35,12 +35,12 @@
           {{ page.description }}
       </p>
       {% endif %}
-  </div>    
+  </div>
 </header>
 
 <div class="uk-section">
-  
+
     {{ page.content | safe }}
- 
+
 </div>
 {%- endblock content %}

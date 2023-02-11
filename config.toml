@@ -72,8 +72,8 @@ foothr = false # show or hide horizontal rule above footer
 menu = [
     {url = "/", name = "Home", slash = true},
     {url = "/work/", name = "Work", slash = true},
+	{url = "/about/", name = "About", slash = true},
     {url = "/posts/", name = "Posts", slash = true},
-    {url = "/about/", name = "About", slash = true},
 ]
 menu_footer = [
     {url = "/categories/", name = "Categories", slash = true},

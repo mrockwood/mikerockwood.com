@@ -1,7 +1,7 @@
 +++
 title = "About"
 path = "about"
-description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+description = "Hello! I’m Mike. I build digital things. Nice to meet you."
 template = "pages/about.html"
 +++
 
@@ -18,11 +18,11 @@ template = "pages/about.html"
         </div>
         <div class="uk-width-2-5@l uk-flex-first@l">
             <div class="uk-panel uk-margin uk-width-xlarge uk-margin-auto-right@s uk-margin-remove-left@s uk-margin-auto uk-text-left">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est accusam et justo duo dolores.</p>
-                <p>consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum, labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <p class="uk-text-lead">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est accusam et justo duo dolores.</p>
-                <p>consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum, labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <p>John Smith is a web developer from Salt Lake City, Utah with 14 years of professional experience. He specializes in front-end development and design systems, and has a passion for creating user-friendly and visually appealing websites.</p>
+                <p>John began his career as a web developer in 2009, working for a small digital agency in Salt Lake City. During his time there, he gained a wealth of experience in creating and maintaining HTML code, writing and manipulating CSS code, and utilizing JavaScript libraries to create interactive elements. He also developed a strong understanding of web performance optimization, cross-browser compatibility, and responsive design.</p>
+                <p class="uk-text-lead">In 2013, John left the agency and began working as a freelancer. During his time as a freelancer, he has worked with a variety of clients, ranging from small startups to large corporations, and has created numerous websites, applications, and design systems. He is well-versed in the latest web technologies, and is always looking for new ways to improve the user experience of his projects.</p>
+                <p>John is a highly motivated and experienced web developer, with a strong commitment to creating user-friendly, visually appealing, and performant websites and applications. He is an experienced problem-solver and is always open to new ideas and solutions. He takes great pride in his work, and strives to consistently deliver the highest quality results for his clients.</p>
+                <p>John is an active member of his local tech community, attending various meetups and conferences to stay up-to-date on the latest trends and technologies. He is also a mentor to aspiring web developers, helping them to gain the skills and experience they need to succeed in the industry.</p>
             </div>
         </div>
     </div>
