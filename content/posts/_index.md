@@ -1,7 +1,7 @@
 +++
 path = "posts"
 title = "Posts"
-description = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+description = "Short thoughts, inspirational links, kick-ass songs, and other malarkey."
 template = "posts.html"
 paginate_by = 20
 sort_by = "date"
