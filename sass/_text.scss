@@ -90,9 +90,15 @@
 /* Weight modifier
  ========================================================================== */
 
+.uk-text-thin { font-weight: 100; }
+.uk-text-extralight { font-weight: 200; }
 .uk-text-light { font-weight: 300; }
 .uk-text-normal { font-weight: 400; }
+.uk-text-medium { font-weight: 500; }
+.uk-text-semibold { font-weight: 600; }
 .uk-text-bold { font-weight: 700; }
+.uk-text-extrabold { font-weight: 800; }
+.uk-text-black { font-weight: 900; }
 
 .uk-text-lighter { font-weight: lighter; }
 .uk-text-bolder { font-weight: bolder; }
