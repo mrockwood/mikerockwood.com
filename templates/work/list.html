@@ -133,7 +133,7 @@
 							</li>
 							{% endfor -%}
 						</ul>
-						<div class="js-filter uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l" uk-grid="masonry: 1;">
+						<div class="js-filter uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l" uk-grid="masonry: 1;" uk-lightbox="toggle: a[data-type];">
 
 							{% for project in section.pages %}
 								{% if project.extra.featuredImg and project.extra.featured != true %}
@@ -143,7 +143,7 @@
 
 									<div data-tag="{% for task in project.taxonomies.tasks %}{{ task }} {% endfor %}">
 										<div class="uk-light">
-											<a class="uk-inline-clip uk-transition-toggle uk-link-toggle" href="" uk-scrollspy-class>
+											<a class="uk-inline-clip uk-transition-toggle uk-link-toggle" href="{{ config.base_url }}/{{ feature_image }}" data-type="image" data-caption="&lt;h4 class='uk-margin-remove'&gt;{{ project.title }}&lt;/h4&gt;" uk-scrollspy-class>
 												<img alt class="uk-transition-opaque" data-src="{{ image.url }}" data-sizes="(min-width: 720px) 720px" data-width="720" data-height="1360" uk-img>
 												<div class="uk-overlay-dark uk-transition-slide-bottom-small uk-position-cover">
 												</div>
