@@ -9,48 +9,38 @@
 	<div class="uk-section uk-section-small uk-section-muted">
 		<div class="uk-container uk-container-large">
 
-			<nav class="uk-navbar uk-flex-wrap">
-				<div class="uk-navbar-left uk-width-1-1 uk-width-expand@s">
-					{# Check if there are menu items to render, yes if > 0 #}
-					{%- set num = config.extra.menu | length -%}
-					{% if num > 0 -%}
-					<ul class="uk-navbar-nav" style="margin-inline-start: calc(-1 * var(--navbar-nav-item-padding-horizontal))">
-						{%- for i in config.extra.menu -%}
-						{% set link_url = i.url | replace(from="$BASE_URL", to=config.base_url) %}
-						<li {% if current_path and current_path == link_url %}class="uk-active"{% endif %}><a href="{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- if i.slash and config.extra.uglyurls %}index.html{%- endif %}">{{ i.name | safe }}</a></li>
-						{%- endfor -%}
-					</ul>
-					{% endif -%}
-				</div>
-				<div class="uk-navbar-right uk-margin-remove-left uk-margin-left-auto@s">
-					<ul class="uk-child-width-auto uk-grid-small uk-flex-inline" uk-grid>
-						<li>
-							<a href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noreferrer">
-								<span
-									class="uk-icon-button"
-									uk-icon="icon: linkedin;"
-									style="
-										--icon-button-size: 38px;
-										--icon-button-background: hsl( var(--global-background));
-										--icon-button-hover-background: hsl( var(--global-background));
-								"></span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.github.com/{{ config.extra.social.github }}" aria-label="Github" target="_blank" rel="noreferrer">
-								<span
-									class="uk-icon-button"
-									uk-icon="icon: github;"
-									style="
-										--icon-button-size: 38px;
-										--icon-button-background: hsl( var(--global-background));
-										--icon-button-hover-background: hsl( var(--global-background));
-								"></span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
+			<div class="uk-text-center uk-padding-small">
+				<ul class="uk-child-width-auto uk-grid-small uk-flex-inline" uk-grid>
+					<li>
+						<a href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+							<span
+								class="uk-icon-button"
+								uk-icon="
+									icon: linkedin;
+									ratio: 1.2;"
+								style="
+									--icon-button-size: 44px;
+									--icon-button-background: hsl( var(--global-background));
+									--icon-button-hover-background: hsl( var(--global-background));"
+							></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.github.com/{{ config.extra.social.github }}" aria-label="Github" target="_blank" rel="noreferrer">
+							<span
+								class="uk-icon-button"
+								uk-icon="
+									icon: github;
+									ratio: 1.2;"
+								style="
+									--icon-button-size: 44px;
+									--icon-button-background: hsl( var(--global-background));
+									--icon-button-hover-background: hsl( var(--global-background));"
+							></span>
+						</a>
+					</li>
+				</ul>
+			</div>
 
 			<hr class="uk-margin-medium" />
 
