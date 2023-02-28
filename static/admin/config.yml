@@ -12,8 +12,6 @@ local_backend:
 media_folder: "static/images"
 public_folder: "images"
 
-
-
 collections:
   - name: "articles"
     label: "Articles"
@@ -24,6 +22,11 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "bookmarks"
     label: "Bookmarks"
@@ -64,11 +67,17 @@ collections:
     folder: "content/posts/jams/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    editor:
+      preview: false
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Service", name: "service", widget: "select", options: ['bandcamp','soundcloud','youtube']}
-      - {label: "ID", name: "id", widget: "string"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Service", name: "service", widget: "select", options: ['bandcamp','soundcloud','youtube']}
+          - {label: "ID", name: "id", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "notes"
     label: "Notes"
@@ -76,6 +85,8 @@ collections:
     folder: "content/posts/notes/"
     create: true
     identifier_field: "body"
+    editor:
+      preview: false
     slug: "{{year}}-{{month}}-{{day}}-{{body}}"
     fields:
       - {label: "Date", name: "date", widget: "datetime"}
