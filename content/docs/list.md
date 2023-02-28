@@ -1,7 +1,7 @@
-+++
-title = "List"
-description = "Easily create nice looking lists, which come in different styles."
-+++
+---
+title: List
+description: Easily create nice looking lists, which come in different styles.
+---
 
 # List
 

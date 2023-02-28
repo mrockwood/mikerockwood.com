@@ -1,7 +1,7 @@
-+++
-title = "Margin"
-description = "A collection of utility classes to add spacing between elements."
-+++
+---
+title: Margin
+description: A collection of utility classes to add spacing between elements.
+---
 
 # Margin
 

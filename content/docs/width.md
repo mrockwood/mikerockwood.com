@@ -1,7 +1,7 @@
-+++
-title = "Width"
-description = "Define the width of elements for different viewport sizes."
-+++
+---
+title: Width
+description: Define the width of elements for different viewport sizes.
+---
 
 # Width
 

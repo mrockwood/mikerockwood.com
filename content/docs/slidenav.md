@@ -1,7 +1,7 @@
-+++
-title = "Slidenav"
-description = "Defines a navigation with previous and next buttons to flip through slideshows."
-+++
+---
+title: Slidenav
+description: Defines a navigation with previous and next buttons to flip through slideshows.
+---
 
 # Slidenav
 

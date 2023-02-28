@@ -1,7 +1,7 @@
-+++
-title = "Heading"
-description = "Define different styles for headings."
-+++
+---
+title: Heading
+description: Define different styles for headings.
+---
 
 # Heading
 

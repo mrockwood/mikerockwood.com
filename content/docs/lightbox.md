@@ -1,7 +1,7 @@
-+++
-title = "Lightbox"
-description = "Create a responsive lightbox gallery with images and videos."
-+++
+---
+title: Lightbox
+description: Create a responsive lightbox gallery with images and videos.
+---
 
 # Lightbox
 

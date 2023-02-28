@@ -1,7 +1,7 @@
-+++
-title = "Thumbnav"
-description = "Create a flexible thumbnail navigation."
-+++
+---
+title: Thumbnav
+description: Create a flexible thumbnail navigation.
+---
 
 # Thumbnav
 

@@ -1,7 +1,7 @@
-+++
-title = "Dropbar"
-description = "Create a toggleable, full-width section called dropbar."
-+++
+---
+title: Dropbar
+description: Create a toggleable, full-width section called dropbar.
+---
 
 # Dropbar
 

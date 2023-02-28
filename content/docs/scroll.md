@@ -1,7 +1,7 @@
-+++
-title = "Scroll"
-description = "Scroll smoothly when jumping to different sections on a page."
-+++
+---
+title: Scroll
+description: Scroll smoothly when jumping to different sections on a page.
+---
 
 # Scroll
 

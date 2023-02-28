@@ -1,7 +1,7 @@
-+++
-title = "Card"
-description = "Create layout boxes with different styles."
-+++
+---
+title: Card
+description: Create layout boxes with different styles.
+---
 
 # Card
 

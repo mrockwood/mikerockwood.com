@@ -1,7 +1,7 @@
-+++
-title = "Spinner"
-description = "Create an animated loading spinner."
-+++
+---
+title: Spinner
+description: Create an animated loading spinner.
+---
 
 # Spinner
 

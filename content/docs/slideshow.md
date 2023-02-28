@@ -1,7 +1,7 @@
-+++
-title = "Slideshow"
-description = "Create a responsive slideshow with images and videos."
-+++
+---
+title: Slideshow
+description: Create a responsive slideshow with images and videos.
+---
 
 # Slideshow
 

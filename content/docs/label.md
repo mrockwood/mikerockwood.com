@@ -1,7 +1,7 @@
-+++
-title = "Label"
-description = "Indicate important notes and highlight parts of your content."
-+++
+---
+title: Label
+description: Indicate important notes and highlight parts of your content.
+---
 
 # Label
 

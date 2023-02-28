@@ -1,7 +1,7 @@
-+++
-title = "Slider"
-description = "Create a responsive carousel slider."
-+++
+---
+title: Slider
+description: Create a responsive carousel slider.
+---
 
 # Slider
 

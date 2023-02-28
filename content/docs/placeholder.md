@@ -1,7 +1,7 @@
-+++
-title = "Placeholder"
-description = "Create a placeholder space that can be used for uploading files via drag and drop."
-+++
+---
+title: Placeholder
+description: Create a placeholder space that can be used for uploading files via drag and drop.
+---
 
 # Placeholder
 

@@ -1,7 +1,7 @@
-+++
-title = "Cover"
-description = "Expand images, videos or iframes to cover their entire container and place your own content on top."
-+++
+---
+title: Cover
+description: Expand images, videos or iframes to cover their entire container and place your own content on top.
+---
 
 # Cover
 

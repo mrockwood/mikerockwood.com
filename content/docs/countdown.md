@@ -1,7 +1,7 @@
-+++
-title = "Countdown"
-description = "Create a simple countdown timer."
-+++
+---
+title: Countdown
+description: Create a simple countdown timer.
+---
 
 # Countdown
 

@@ -1,7 +1,7 @@
-+++
-title = "Table"
-description = "Easily create nice looking tables, which come in different styles."
-+++
+---
+title: Table
+description: Easily create nice looking tables, which come in different styles.
+---
 
 # Table
 

@@ -1,7 +1,7 @@
-+++
-title = "Upload"
-description = "Upload files through a file input form element or a placeholder area."
-+++
+---
+title: Upload
+description: Upload files through a file input form element or a placeholder area.
+---
 
 # Upload
 

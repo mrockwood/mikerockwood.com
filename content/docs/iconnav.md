@@ -1,7 +1,7 @@
-+++
-title = "Iconnav"
-description = "Create a navigation consisting of icons."
-+++
+---
+title: Iconnav
+description: Create a navigation consisting of icons.
+---
 
 # Iconnav
 

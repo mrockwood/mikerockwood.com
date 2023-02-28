@@ -1,7 +1,7 @@
-+++
-title = "Nav"
-description = "Defines different styles for list navigations."
-+++
+---
+title: Nav
+description: Defines different styles for list navigations.
+---
 
 # Nav
 

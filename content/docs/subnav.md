@@ -1,7 +1,7 @@
-+++
-title = "Subnav"
-description = "Defines different styles for a sub navigation."
-+++
+---
+title: Subnav
+description: Defines different styles for a sub navigation.
+---
 
 # Subnav
 

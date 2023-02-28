@@ -1,7 +1,7 @@
-+++
-title = "Button"
-description = "Easily create nice looking buttons, which come in different styles."
-+++
+---
+title: Button
+description: Easily create nice looking buttons, which come in different styles.
+---
 
 # Button
 

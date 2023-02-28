@@ -1,7 +1,7 @@
-+++
-title = "Grid"
-description = "Create a fully responsive, fluid and nestable grid layout."
-+++
+---
+title: Grid
+description: Create a fully responsive, fluid and nestable grid layout.
+---
 
 # Grid
 

@@ -1,7 +1,7 @@
-+++
-title = "Utility"
-description = "A collection of useful utility classes to style your content."
-+++
+---
+title: Utility
+description: A collection of useful utility classes to style your content.
+---
 
 # Utility
 

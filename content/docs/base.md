@@ -1,7 +1,7 @@
-+++
-title = "Base"
-description = "This component provides the default style for all HTML elements."
-+++
+---
+title: Base
+description: This component provides the default style for all HTML elements.
+---
 
 # Base
 

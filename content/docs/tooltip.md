@@ -1,7 +1,7 @@
-+++
-title = "Tooltip"
-description = "Easily create a nice looking tooltip."
-+++
+---
+title: Tooltip
+description: Easily create a nice looking tooltip.
+---
 
 # Tooltip
 

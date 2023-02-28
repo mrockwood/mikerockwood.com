@@ -1,7 +1,7 @@
-+++
-title = "Article"
-description = "Create articles within your page."
-+++
+---
+title: Article
+description: Create articles within your page.
+---
 
 # Article
 

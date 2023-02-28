@@ -1,10 +1,12 @@
-+++
-title = "Terminimal Theme for Zola"
-date = 2019-02-04
-
-[taxonomies]
-tags = ["zola", "theme", "showcase"]
-+++
+---
+title: Terminimal Theme for Zola
+date: 2019-02-04
+taxonomies:
+  tags:
+    - zola
+    - theme
+    - showcase
+---
 
 Welcome to Terminimal! This is a theme showcase post.
 

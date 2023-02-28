@@ -1,7 +1,7 @@
-+++
-title = "Form"
-description = "Easily create nice looking forms with different styles and layouts."
-+++
+---
+title: Form
+description: Easily create nice looking forms with different styles and layouts.
+---
 
 # Form
 

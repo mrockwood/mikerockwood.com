@@ -1,7 +1,7 @@
-+++
-title = "Icon"
-description = "Place scalable vector icons anywhere in your content."
-+++
+---
+title: Icon
+description: Place scalable vector icons anywhere in your content.
+---
 
 # Icon
 

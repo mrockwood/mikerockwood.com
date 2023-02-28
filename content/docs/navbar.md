@@ -1,7 +1,7 @@
-+++
-title = "Navbar"
-description = "Create a navigation bar that can be used for your main site navigation."
-+++
+---
+title: Navbar
+description: Create a navigation bar that can be used for your main site navigation.
+---
 
 # Navbar
 

@@ -1,7 +1,7 @@
-+++
-title = "Section"
-description = "Create horizontal layout sections with different background colors and styles."
-+++
+---
+title: Section
+description: Create horizontal layout sections with different background colors and styles.
+---
 
 # Section
 

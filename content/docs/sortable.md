@@ -1,7 +1,7 @@
-+++
-title = "Sortable"
-description = "Create sortable grids and lists to rearrange the order of its elements."
-+++
+---
+title: Sortable
+description: Create sortable grids and lists to rearrange the order of its elements.
+---
 
 # Sortable
 

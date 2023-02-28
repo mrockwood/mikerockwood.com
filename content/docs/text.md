@@ -1,7 +1,7 @@
-+++
-title = "Text"
-description = "A collection of utility classes to style text."
-+++
+---
+title: Text
+description: A collection of utility classes to style text.
+---
 
 # Text
 

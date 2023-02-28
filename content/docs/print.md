@@ -1,7 +1,7 @@
-+++
-title = "Print"
-description = "Optimize your pages for legible and economic printing."
-+++
+---
+title: Print
+description: Optimize your pages for legible and economic printing.
+---
 
 # Print
 

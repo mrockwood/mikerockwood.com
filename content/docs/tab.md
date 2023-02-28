@@ -1,7 +1,7 @@
-+++
-title = "Tab"
-description = "Create a tabbed navigation with different styles."
-+++
+---
+title: Tab
+description: Create a tabbed navigation with different styles.
+---
 
 # Tab
 

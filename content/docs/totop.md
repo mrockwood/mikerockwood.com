@@ -1,7 +1,7 @@
-+++
-title = "Totop"
-description = "Create a simple to-top scroller."
-+++
+---
+title: Totop
+description: Create a simple to-top scroller.
+---
 
 # Totop
 

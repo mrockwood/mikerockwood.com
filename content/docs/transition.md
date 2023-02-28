@@ -1,7 +1,7 @@
-+++
-title = "Transition"
-description = "Create smooth transitions between two states when hovering an element."
-+++
+---
+title: Transition
+description: Create smooth transitions between two states when hovering an element.
+---
 
 # Transition
 

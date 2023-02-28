@@ -1,7 +1,7 @@
-+++
-title = "Switcher"
-description = "Dynamically transition through different content panes."
-+++
+---
+title: Switcher
+description: Dynamically transition through different content panes.
+---
 
 # Switcher
 

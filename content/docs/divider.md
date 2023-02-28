@@ -1,7 +1,7 @@
-+++
-title = "Divider"
-description = "Create dividers to separate content and apply different styles to them."
-+++
+---
+title: Divider
+description: Create dividers to separate content and apply different styles to them.
+---
 
 # Divider
 

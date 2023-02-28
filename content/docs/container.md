@@ -1,7 +1,7 @@
-+++
-title = "Container"
-description = "This component allows you to align and center your page content."
-+++
+---
+title: Container
+description: This component allows you to align and center your page content.
+---
 
 # Container
 

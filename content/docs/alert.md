@@ -1,7 +1,7 @@
-+++
-title = "Alert"
-description = "Display success, warning and error messages."
-+++
+---
+title: Alert
+description: Display success, warning and error messages.
+---
 
 # Alert
 

@@ -1,9 +1,9 @@
-+++
-title = "About"
-path = "about"
-description = "Hello! I’m Mike. I build digital things. Nice to meet you."
-template = "pages/about.html"
-+++
+---
+title: About
+path: about
+description: Hello! I’m Mike. I build digital things. Nice to meet you.
+template: pages/about.html
+---
 
 <div class="uk-grid-margin uk-container uk-container-expand-right">
     <div class="grid-expand uk-grid-column-large uk-grid" uk-grid>

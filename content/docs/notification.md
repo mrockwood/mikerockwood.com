@@ -1,7 +1,7 @@
-+++
-title = "Notification"
-description = "Create toggleable notifications that fade out automatically."
-+++
+---
+title: Notification
+description: Create toggleable notifications that fade out automatically.
+---
 
 # Notification
 

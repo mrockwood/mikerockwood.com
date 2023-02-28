@@ -1,7 +1,7 @@
-+++
-title = "SVG"
-description = "Inject inline SVG images into the page markup and style them with CSS."
-+++
+---
+title: SVG
+description: Inject inline SVG images into the page markup and style them with CSS.
+---
 
 # SVG
 

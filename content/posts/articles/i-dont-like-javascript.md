@@ -1,10 +1,11 @@
-+++
-title = "I don't like JavaScript"
-date = 2019-02-02
-
-[taxonomies]
-tags = ["javascript", "rant"]
-+++
+---
+title: I don't like JavaScript
+date: 2019-02-02
+taxonomies:
+  tags:
+    - javascript
+    - rant
+---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu feugiat sapien.
 

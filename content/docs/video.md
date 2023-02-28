@@ -1,7 +1,7 @@
-+++
-title = "Video"
-description = "Start playing videos as they are shown or enter the viewport."
-+++
+---
+title: Video
+description: Start playing videos as they are shown or enter the viewport.
+---
 
 # Video
 

@@ -1,7 +1,7 @@
-+++
-title = "Inverse"
-description = "Inverse the style of any component for light or dark backgrounds."
-+++
+---
+title: Inverse
+description: Inverse the style of any component for light or dark backgrounds.
+---
 
 # Inverse
 

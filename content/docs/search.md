@@ -1,7 +1,7 @@
-+++
-title = "Search"
-description = "Easily create a nice looking search."
-+++
+---
+title: Search
+description: Easily create a nice looking search.
+---
 
 # Search
 

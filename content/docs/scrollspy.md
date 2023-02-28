@@ -1,7 +1,7 @@
-+++
-title = "Scrollspy"
-description = "Trigger events and animations while scrolling your page."
-+++
+---
+title: Scrollspy
+description: Trigger events and animations while scrolling your page.
+---
 
 # Scrollspy
 

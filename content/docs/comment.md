@@ -1,7 +1,7 @@
-+++
-title = "Comment"
-description = "Includes styles for comments, for example for a blog section on your site."
-+++
+---
+title: Comment
+description: Includes styles for comments, for example for a blog section on your site.
+---
 
 # Comment
 

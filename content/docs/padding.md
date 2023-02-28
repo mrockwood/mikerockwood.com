@@ -1,7 +1,7 @@
-+++
-title = "Padding"
-description = "A collection of utility classes to add spacing between elements and their content."
-+++
+---
+title: Padding
+description: A collection of utility classes to add spacing between elements and their content.
+---
 
 # Padding
 

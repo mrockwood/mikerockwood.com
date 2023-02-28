@@ -1,7 +1,7 @@
-+++
-title = "Position"
-description = "A collection of utility classes to position content."
-+++
+---
+title: Position
+description: A collection of utility classes to position content.
+---
 
 # Position
 

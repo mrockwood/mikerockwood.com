@@ -1,7 +1,7 @@
-+++
-title = "Leader"
-description = "Create dot leaders for pricing menus or tables of contents."
-+++
+---
+title: Leader
+description: Create dot leaders for pricing menus or tables of contents.
+---
 
 # Leader
 

@@ -1,7 +1,7 @@
-+++
-title = "Overlay"
-description = "Create an image overlay, which comes in different styles."
-+++
+---
+title: Overlay
+description: Create an image overlay, which comes in different styles.
+---
 
 # Overlay
 

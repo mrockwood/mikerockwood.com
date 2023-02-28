@@ -1,7 +1,7 @@
-+++
-title = "Badge"
-description = "Easily create nice looking notification badges."
-+++
+---
+title: Badge
+description: Easily create nice looking notification badges.
+---
 
 # Badge
 

@@ -1,7 +1,7 @@
-+++
-title = "Link"
-description = "Define different styles to integrate links into specific content."
-+++
+---
+title: Link
+description: Define different styles to integrate links into specific content.
+---
 
 # Link
 

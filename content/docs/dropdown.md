@@ -1,7 +1,7 @@
-+++
-title = "Dropdown"
-description = "Defines different styles for a toggleable dropdown."
-+++
+---
+title: Dropdown
+description: Defines different styles for a toggleable dropdown.
+---
 
 # Dropdown
 

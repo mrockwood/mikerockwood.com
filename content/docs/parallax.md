@@ -1,7 +1,7 @@
-+++
-title = "Parallax"
-description = "Animate CSS properties depending on the scroll position of the document."
-+++
+---
+title: Parallax
+description: Animate CSS properties depending on the scroll position of the document.
+---
 
 # Parallax
 

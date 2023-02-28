@@ -1,7 +1,7 @@
-+++
-title = "Filter"
-description = "Filter or sort items in any given layout by metadata."
-+++
+---
+title: Filter
+description: Filter or sort items in any given layout by metadata.
+---
 
 # Filter
 

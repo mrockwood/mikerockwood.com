@@ -1,7 +1,7 @@
-+++
-title = "Sticky"
-description = "Make elements remain at the top of the viewport, like a sticky navigation."
-+++
+---
+title: Sticky
+description: Make elements remain at the top of the viewport, like a sticky navigation.
+---
 
 # Sticky
 

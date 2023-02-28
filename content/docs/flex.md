@@ -1,7 +1,7 @@
-+++
-title = "Flex"
-description = "Utilize the power of flexbox to create a wide range of layouts."
-+++
+---
+title: Flex
+description: Utilize the power of flexbox to create a wide range of layouts.
+---
 
 # Flex
 

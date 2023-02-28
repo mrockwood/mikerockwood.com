@@ -1,7 +1,7 @@
-+++
-title = "Dotnav"
-description = "Create a dot navigation to operate slideshows or to scroll to different page sections."
-+++
+---
+title: Dotnav
+description: Create a dot navigation to operate slideshows or to scroll to different page sections.
+---
 
 # Dotnav
 

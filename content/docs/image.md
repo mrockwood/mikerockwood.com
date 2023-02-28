@@ -1,7 +1,7 @@
-+++
-title = "Image"
-description = "Use background images with lazy loading, responsive images and different image sources."
-+++
+---
+title: Image
+description: Use background images with lazy loading, responsive images and different image sources.
+---
 
 # Image
 
