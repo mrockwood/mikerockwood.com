@@ -31,8 +31,6 @@ collections:
     folder: "content/posts/bookmarks/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
-    format: "toml-frontmatter"
-    frontmatter_delimiter: "+++"
     editor:
       preview: false
     fields:
