@@ -19,9 +19,18 @@
 
 {%- block content %}
 
+
+{%- set articles = get_section(path="posts/articles/_index.md") %}
 {%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
 {%- set jams = get_section(path="posts/jams/_index.md") %}
+{%- set likes = get_section(path="posts/likes/_index.md") %}
 {%- set notes = get_section(path="posts/notes/_index.md") %}
+{%- set photos = get_section(path="posts/photos/_index.md") %}
+{%- set replies = get_section(path="posts/replies/_index.md") %}
+{%- set reposts = get_section(path="posts/reposts/_index.md") %}
+{%- set rsvps = get_section(path="posts/rsvps/_index.md") %}
+{%- set videos = get_section(path="posts/videos/_index.md") %}
+
 
 <header class="uk-section uk-text-center">
 	<div class="uk-container uk-container-large">
@@ -34,9 +43,9 @@
 		</p>
 		{% endif %}
 		<div class="uk-margin-medium" uk-margin>
-			{% if bookmarks.pages %}<a class="uk-button uk-button-primary" href="bookmarks/">Bookmarks</a>{% endif %}
-			{% if jams.pages %}<a class="uk-button uk-button-primary" href="jams/">Jams</a>{% endif %}
-			{% if notes.pages %}<a class="uk-button uk-button-primary" href="notes/">Notes</a>{% endif %}
+			{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="bookmarks/">Bookmarks</a>{% endif %}
+			{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="jams/">Jams</a>{% endif %}
+			{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="notes/">Notes</a>{% endif %}
 		</div>
 	</div>
 </header>
@@ -44,7 +53,6 @@
 
 <!-- Articles -->
 {#
-{%- set articles = get_section(path="posts/articles/_index.md") %}
 {% if articles.pages %}
 <section class="uk-section">
 	<div class="uk-container uk-container-large">
