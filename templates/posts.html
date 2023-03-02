@@ -18,6 +18,11 @@
 {%- endblock seo %}
 
 {%- block content %}
+
+{%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
+{%- set jams = get_section(path="posts/jams/_index.md") %}
+{%- set notes = get_section(path="posts/notes/_index.md") %}
+
 <header class="uk-section uk-text-center">
 	<div class="uk-container uk-container-large">
 		<h1 class="uk-heading-large uk-text-bold uk-text-uppercase">
@@ -28,6 +33,11 @@
 			{{ section.description }}
 		</p>
 		{% endif %}
+		<div class="uk-margin-medium" uk-margin>
+			{% if bookmarks.pages %}<a class="uk-button uk-button-primary" href="bookmarks/">Bookmarks</a>{% endif %}
+			{% if jams.pages %}<a class="uk-button uk-button-primary" href="jams/">Jams</a>{% endif %}
+			{% if notes.pages %}<a class="uk-button uk-button-primary" href="notes/">Notes</a>{% endif %}
+		</div>
 	</div>
 </header>
 
@@ -73,7 +83,6 @@
 #}
 
 <!-- Bookmarks -->
-{%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
 {% if bookmarks.pages %}
 <section class="uk-section">
 	<div class="uk-container uk-container-large">
@@ -129,7 +138,6 @@
 
 
 <!-- Jams -->
-{%- set jams = get_section(path="posts/jams/_index.md") %}
 {% if jams.pages %}
 <section class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-large">
@@ -200,7 +208,6 @@
 
 
 <!-- Notes -->
-{%- set notes = get_section(path="posts/notes/_index.md") %}
 {% if notes.pages %}
 <section class="uk-section">
 	<div class="uk-container uk-container-large">
