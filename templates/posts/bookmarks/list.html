@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{%- block seo %}
+	{{- super() }}
+	{%- set title = "Bookmarks" %}
+
+	{%- if config.title %}
+		{%- set title_addition = title_separator ~ config.title %}
+	{%- else %}
+		{%- set title_addition = "" %}
+	{%- endif %}
+
+	{%- set description = config.description %}
+
+	{{- macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
+{%- endblock seo %}
+
+{%- block content %}
+<header class="uk-section uk-text-center">
+	<div class="uk-container uk-container-large">
+		<h1 class="uk-heading-large uk-text-bold uk-text-uppercase">
+			{{ section.title }}
+		</h1>
+		{% if section.description %}
+		<p class="uk-width-large uk-margin-auto">
+			{{ section.description }}
+		</p>
+		{% endif %}
+	</div>
+</header>
+
+
+<section class="uk-section">
+	<div class="uk-container uk-container-small">
+
+		{% for bookmark in paginator.pages %}
+
+			<article class="uk-card uk-card-default uk-card-hover uk-margin-medium">
+				<a href="{{ bookmark.extra.bookmarkOf }}" class="uk-card-body uk-link-reset">
+					<div class="uk-grid uk-flex-middle">
+						<div class="uk-width-expand">
+							<h3 class="uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
+							<p class="uk-text-meta uk-margin-xsmall">
+								{{ bookmark.extra.bookmarkOf }}
+							</p>
+						</div>
+						<div class="uk-width-auto">
+							<span
+								class="uk-icon-button"
+								uk-icon="link"
+								style="
+									--icon-button-background: hsl( var(--global-background));
+									--icon-button-hover-background: hsl( var(--global-background));
+								"
+							>
+							</span>
+						</div>
+					</div>
+
+					{# bookmark.content | safe #}
+
+				</a>
+			</article>
+
+			<!-- <p class="uk-text-meta">
+				{{ bookmark.date | date(format="%d %b %Y") }}
+			</p> -->
+
+		{% endfor %}
+
+		{% if paginator.previous or paginator.next %}
+		<ul class="uk-pagination">
+			{% if paginator.previous %}
+			<li><a href="{{ paginator.previous }}"><span class="uk-margin-xsmall-right" uk-pagination-previous></span> Previous</a></li>
+			{% endif %}
+			{% if paginator.next %}
+			<li class="uk-margin-auto-left"><a href="{{ paginator.next }}">Next <span class="uk-margin-xsmall-left" uk-pagination-next></a></li>
+			{% endif %}
+		</ul>
+		{% endif %}
+
+	</div>
+</section>
+
+{%- endblock content %}

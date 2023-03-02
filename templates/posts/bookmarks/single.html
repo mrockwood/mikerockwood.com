@@ -7,7 +7,7 @@
 	<header>
 
 		<h1 class="p-name">
-			<a class="u-bookmark-of" href="{{ page.extra.bookmark-of }}">{{ page.title }}</a>
+			<a class="u-bookmark-of" href="{{ page.extra.bookmarkOf }}">{{ page.title }}</a>
 		</h1>
 
 		{# include "time.njk" #}
@@ -28,6 +28,6 @@
 
 </article>
 
-{% include "webmentions.njk" %}
+{# include "webmentions.njk" #}
 
 {%- endblock content %}
