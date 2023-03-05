@@ -91,7 +91,7 @@
 							{% set experience = load_data(path="content/work/_experience.json") %}
 							{% for job in experience.jobs %}
                             <div>
-                                <div class="uk-panel uk-margin-remove-first-child">
+                                <div class="uk-panel uk-margin-remove-first-child" uk-parallax="opacity: 0.2,1; viewport: 0.2;">
                                     <div class="uk-child-width-expand uk-margin-top" uk-grid>
                                         <div class="uk-width-2-5@s uk-margin-remove-first-child">
                                             <div class="uk-text-meta uk-h6 uk-margin-top uk-margin-remove-bottom">{{ job.years }}</div>
