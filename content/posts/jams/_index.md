@@ -1,7 +1,7 @@
 ---
 title: Jams
-page_template: posts/jam.html
-paginate_by: 5
+template: posts/jams/list.html
+page_template: posts/jams/single.html
+paginate_by: 10
 sort_by: date
-transparent: true
 ---

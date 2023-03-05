@@ -17,7 +17,7 @@
 
 <head>
   {%- block title -%}
-    <title>{{ config.title }}</title>
+    <title>{{ config.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
   {%- endblock title -%}
 
   {%- block general_meta -%}

@@ -35,7 +35,7 @@
 				{% set link = project.extra.externalLink %}
 			{% endif %}
 
-			<div uk-parallax="y: 10vh,0; easing: 0.5; end: 100vh + 50%; media: @m;">
+			<div>
 				<div class="uk-card uk-card-default">
 					<div class="uk-grid-collapse uk-grid-match uk-grid uk-flex-middle" uk-grid>
 						<div class="uk-width-expand@m">
@@ -78,7 +78,7 @@
 </section>
 
 
-<div class="uk-section uk-section-default uk-section-large">
+<section class="uk-section uk-section-default uk-section-large">
     <div class="uk-position-relative">
         <div class="uk-grid-margin uk-container uk-container-large">
             <div class="uk-grid-column-large" uk-grid>
@@ -110,11 +110,19 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+
+
+<!-- Buzzwords -->
+<section class="uk-section uk-section-muted uk-overflow-hidden">
+	<h2 class="uk-heading-small uk-visible@m uk-position-relative uk-text-center uk-text-nowrap" uk-parallax="x: -15vw; easing: 0; media: @m" style="left: 10vw; z-index: 0; transform: translateX(-7.26351vw) translateY(18.4234px); will-change: transform;">Angular &bull;&nbsp;Bootstrap &bull;&nbsp;Django &bull;&nbsp;Drupal &bull;&nbsp;Eleventy &bull;&nbsp;Hugo</h2>
+	<h2 class="uk-heading-small uk-visible@m uk-position-relative uk-margin-remove-vertical uk-text-center" uk-parallax="x: 15vw; easing: 0; media: @m" style="right: 10vw; z-index: 0; transform: translateX(4.83108vw) translateY(2.20721px); will-change: transform;">Jekyll &bull;&nbsp;Svelte &bull;&nbsp;Tailwind &bull;&nbsp;UIkit &bull;&nbsp;Wordpress &bull;&nbsp;Zola</h2>
+	<h2 class="uk-heading-xsmall uk-hidden@m uk-width-xlarge uk-margin-auto uk-margin-remove-vertical uk-text-center">Angular &bull;&nbsp;Bootstrap &bull;&nbsp;Django &bull;&nbsp;Drupal &bull;&nbsp;Eleventy &bull;&nbsp;Hugo &bull;&nbsp;Jekyll &bull;&nbsp;Svelte &bull;&nbsp;Tailwind &bull;&nbsp;UIkit &bull;&nbsp;Wordpress &bull;&nbsp;Zola</h2>
+</section>
 
 
 <!-- Graveyard -->
-<div class="uk-section uk-section-default" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small;">
+<section class="uk-section uk-section-default uk-section-large" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small;">
     <div class="uk-margin-medium uk-container uk-container-large">
         <div class="uk-width-1-2@m">
             <h2 class="uk-h1" uk-scrollspy-class>Old Stuff</h2>
@@ -182,6 +190,6 @@
 			</div>
 		</div>
     </div>
-</div>
+</section>
 
 {% endblock content %}
