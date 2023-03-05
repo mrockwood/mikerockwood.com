@@ -5,7 +5,7 @@ taxonomies:
   tags:
     - css
 extra:
-  bookmarkOf: https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/
+  bookmarkOf: https://wpengine.com/resources/combine-flexbox-and-css-grids-for-layouts-how-to/
 ---
 
 Learn how to combine CSS Grid and Flexbox to create efficient and interesting designs.

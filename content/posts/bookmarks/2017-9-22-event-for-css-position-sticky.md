@@ -6,7 +6,7 @@ taxonomies:
     - css
     - javascript
 extra:
-  bookmarkOf: https://developers.google.com/web/updates/2017/09/sticky-headers
+  bookmarkOf: https://developer.chrome.com/blog/sticky-headers/
 ---
 
 Use IntersectionObserver to fire a custom event when position:sticky elements become fixed or when they stop sticking.
