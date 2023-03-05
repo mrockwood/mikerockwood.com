@@ -1,5 +1,5 @@
 ---
-title: Why I'm not the biggest fan of Single Page Applications"
+title: Why I'm not the biggest fan of Single Page Applications
 date: 2023-02-15T00:48:51.891Z
 taxonomies:
   tags:
