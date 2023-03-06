@@ -88,7 +88,7 @@ collections:
     identifier_field: "body"
     editor:
       preview: false
-    slug: "{{year}}-{{month}}-{{day}}-{{body}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
     fields:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
