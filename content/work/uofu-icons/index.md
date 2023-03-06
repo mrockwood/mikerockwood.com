@@ -1,6 +1,6 @@
 ---
 title: University of Utah Health - Icon System
-description: Design and curation was needed to build an consistent, intuitive, and scalable icon system for multiple audiences.
+description: Design and curation was needed to build a consistent, intuitive, and scalable icon system for multiple audiences.
 date: 2019-04-01
 taxonomies:
   tasks:

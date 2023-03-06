@@ -78,6 +78,7 @@ collections:
         fields:
           - {label: "Service", name: "service", widget: "select", options: ['bandcamp','soundcloud','youtube']}
           - {label: "ID", name: "id", widget: "string"}
+          - {label: "Thumbnail", name: "thumbnail", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "notes"
     label: "Notes"
