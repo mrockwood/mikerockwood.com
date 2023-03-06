@@ -157,7 +157,7 @@
 			{% for jam in jams.pages %}
 				{% if loop.index < 6 %}
 				<li class="uk-width-1-5">
-					<a href="#">
+					<a href="#" uk-tooltip="title: {{ jam.title }}; pos: top-left">
 						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
 					</a>
 				</li>
