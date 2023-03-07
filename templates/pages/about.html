@@ -49,11 +49,11 @@
 			<div class="uk-width-3-5@l">
 				<div class="uk-margin uk-container-item-padding-remove-right">
 					<div class="uk-panel uk-margin-remove-first-child">
-						{%- set feature_image = "/images/claudio-schwarz-bRejy-aKxv8-unsplash.jpg" %}
-						{%- set feature_image_640 = resize_image(path=feature_image, width=640, height=320, format="webp", quality=80) %}
-						{%- set feature_image_960 = resize_image(path=feature_image, width=960, height=480, format="webp", quality=80) %}
-						{%- set feature_image_1200 = resize_image(path=feature_image, width=1200, height=600, format="webp", quality=80) %}
-						{%- set feature_image_1600 = resize_image(path=feature_image, width=1600, height=800, format="webp", quality=80) %}
+						{%- set feature_image = "/images/chris-ried-ieic5Tq8YMk-unsplash.jpg" %}
+						{%- set feature_image_640 = resize_image(path=feature_image, width=640, height=420, format="webp", quality=80) %}
+						{%- set feature_image_960 = resize_image(path=feature_image, width=960, height=640, format="webp", quality=80) %}
+						{%- set feature_image_1200 = resize_image(path=feature_image, width=1200, height=800, format="webp", quality=80) %}
+						{%- set feature_image_1600 = resize_image(path=feature_image, width=1600, height=1060, format="webp", quality=80) %}
 
 						<img class="" loading="lazy" alt=""
 						srcset="{{ feature_image_640.url | safe }} 640w,
@@ -85,15 +85,6 @@
 </section>
 
 
-<!-- <section class="uk-section uk-section-small">
-    <div class="uk-grid uk-child-width-1-2 uk-child-width-1-4@m uk-grid-collapse" uk-grid>
-        <div><img src="https://source.unsplash.com/ieic5Tq8YMk"></div>
-        <div><img src="https://source.unsplash.com/pzzHdzlFFXE"></div>
-        <div><img src="https://source.unsplash.com/v6aIiHkNTMo"></div>
-        <div><img src="https://source.unsplash.com/Ql4Y26OsEoY"></div>
-    </div>
-</section> -->
-
 <div class="uk-section">
 	<div class="uk-child-width-1-1 uk-grid-margin" uk-grid>
 		<div class="uk-width-1-1@m">
@@ -103,11 +94,30 @@
 						<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
 							<div class="uk-cover-container">
 								<picture>
+									<!-- <source type="image/webp" srcset="https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDMuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbNzY5LDUxNCw3NjksNTE0XV0sWyJkb0Nyb3AiLFs3NjgsNTE0LDAsMF1dXV0%3D&amp;hash=93eb00c0 768w, https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDMuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbMTAyNCw2ODUsMTAyNCw2ODVdXSxbImRvQ3JvcCIsWzEwMjQsNjg1LDAsMF1dXV0%3D&amp;hash=fc218b9f 1024w, /wordpress/wp-content/themes/yootheme/cache/89/catering-hero-slider-03-8997e828.webp 1260w, https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDMuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbMTM2Nyw5MTQsMTM2Nyw5MTRdXSxbImRvQ3JvcCIsWzEzNjYsOTE0LDAsMF1dXV0%3D&amp;hash=bb3dc741 1366w, /wordpress/wp-content/themes/yootheme/cache/34/catering-hero-slider-03-34fd91a1.webp 1599w, /wordpress/wp-content/themes/yootheme/cache/c5/catering-hero-slider-03-c511cd7c.webp 1600w" sizes="(min-width: 1260px) 1260px"> -->
+									<!-- <img loading="lazy" src="https://source.unsplash.com/v6aIiHkNTMo" alt class="uk-transition-opaque"> -->
+									<!-- <img loading="lazy" src="{{ config.base_url | safe }}/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg" alt class="uk-transition-opaque"> -->
+
+									{%- set slider_image3 = "/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg" %}
+									{%- set slider_image3_600 = resize_image(path=slider_image3, width=600, height=400, format="webp", quality=80) %}
+									{%- set slider_image3_1200 = resize_image(path=slider_image3, width=1200, height=800, format="webp", quality=80) %}
+
+									<img class="uk-transition-opaque" loading="lazy" alt=""
+										srcset="{{ slider_image3_600.url | safe }} 600w,
+												{{ slider_image3_1200.url | safe }} 1200w"
+										sizes="(max-width: 600px) 600px,
+												1200px">
+								</picture>
+							</div>
+						</li>
+						<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
+							<div class="uk-cover-container">
+								<picture>
 									<!-- <source type="image/webp" srcset="https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDEuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbNzY5LDUxNCw3NjksNTE0XV0sWyJkb0Nyb3AiLFs3NjgsNTE0LDAsMF1dXV0%3D&amp;hash=7a45f7a3 768w, https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDEuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbMTAyNCw2ODUsMTAyNCw2ODVdXSxbImRvQ3JvcCIsWzEwMjQsNjg1LDAsMF1dXV0%3D&amp;hash=c5f14f7e 1024w, /wordpress/wp-content/themes/yootheme/cache/53/catering-hero-slider-01-53324ba5.webp 1260w, https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDEuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbMTM2Nyw5MTQsMTM2Nyw5MTRdXSxbImRvQ3JvcCIsWzEzNjYsOTE0LDAsMF1dXV0%3D&amp;hash=2a713a19 1366w, /wordpress/wp-content/themes/yootheme/cache/fc/catering-hero-slider-01-fc895c15.webp 1599w, /wordpress/wp-content/themes/yootheme/cache/0d/catering-hero-slider-01-0d6500c8.webp 1600w" sizes="(min-width: 1260px) 1260px"> -->
 									<!-- <img loading="lazy" src="https://source.unsplash.com/ieic5Tq8YMk" alt class="uk-transition-opaque"> -->
 									<!-- <img loading="lazy" src="{{ config.base_url | safe }}/images/chris-ried-ieic5Tq8YMk-unsplash.jpg" alt class="uk-transition-opaque"> -->
 
-									{%- set slider_image1 = "/images/chris-ried-ieic5Tq8YMk-unsplash.jpg" %}
+									{%- set slider_image1 = "/images/mitchell-johnson-CZRNxAIYLzI-unsplash.jpg" %}
 									{%- set slider_image1_600 = resize_image(path=slider_image1, width=600, height=400, format="webp", quality=80) %}
 									{%- set slider_image1_1200 = resize_image(path=slider_image1, width=1200, height=800, format="webp", quality=80) %}
 
@@ -133,25 +143,6 @@
 									<img class="uk-transition-opaque" loading="lazy" alt=""
 										srcset="{{ slider_image2_600.url | safe }} 600w,
 												{{ slider_image2_1200.url | safe }} 1200w"
-										sizes="(max-width: 600px) 600px,
-												1200px">
-								</picture>
-							</div>
-						</li>
-						<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
-							<div class="uk-cover-container">
-								<picture>
-									<!-- <source type="image/webp" srcset="https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDMuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbNzY5LDUxNCw3NjksNTE0XV0sWyJkb0Nyb3AiLFs3NjgsNTE0LDAsMF1dXV0%3D&amp;hash=93eb00c0 768w, https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDMuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbMTAyNCw2ODUsMTAyNCw2ODVdXSxbImRvQ3JvcCIsWzEwMjQsNjg1LDAsMF1dXV0%3D&amp;hash=fc218b9f 1024w, /wordpress/wp-content/themes/yootheme/cache/89/catering-hero-slider-03-8997e828.webp 1260w, https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=WyIuLlwvZGVtb1wvZGlzdHJpY3RcL2ltYWdlc1wvY2F0ZXJpbmctaGVyby1zbGlkZXItMDMuanBnIixbWyJ0eXBlIixbIndlYnAiLCI4NSJdXSxbImRvUmVzaXplIixbMTM2Nyw5MTQsMTM2Nyw5MTRdXSxbImRvQ3JvcCIsWzEzNjYsOTE0LDAsMF1dXV0%3D&amp;hash=bb3dc741 1366w, /wordpress/wp-content/themes/yootheme/cache/34/catering-hero-slider-03-34fd91a1.webp 1599w, /wordpress/wp-content/themes/yootheme/cache/c5/catering-hero-slider-03-c511cd7c.webp 1600w" sizes="(min-width: 1260px) 1260px"> -->
-									<!-- <img loading="lazy" src="https://source.unsplash.com/v6aIiHkNTMo" alt class="uk-transition-opaque"> -->
-									<!-- <img loading="lazy" src="{{ config.base_url | safe }}/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg" alt class="uk-transition-opaque"> -->
-
-									{%- set slider_image3 = "/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg" %}
-									{%- set slider_image3_600 = resize_image(path=slider_image3, width=600, height=400, format="webp", quality=80) %}
-									{%- set slider_image3_1200 = resize_image(path=slider_image3, width=1200, height=800, format="webp", quality=80) %}
-
-									<img class="uk-transition-opaque" loading="lazy" alt=""
-										srcset="{{ slider_image3_600.url | safe }} 600w,
-												{{ slider_image3_1200.url | safe }} 1200w"
 										sizes="(max-width: 600px) 600px,
 												1200px">
 								</picture>
