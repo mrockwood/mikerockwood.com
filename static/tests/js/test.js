@@ -423,15 +423,15 @@
     request.send(null);
     const themes = request.status === 200 ? JSON.parse(request.responseText) : {};
     const styles = {
-      core: { css: "../dist/css/uikit-core.css" },
-      theme: { css: "../dist/css/uikit.css" },
+      core: { css: '../../style.css' },
+	    // theme: { css: '../dist/css/uikit.css' },
       ...themes
     };
     const component = location.pathname.split("/").pop().replace(/.html$/, "");
     const variations = {
-      "": "Default",
-      light: "Dark",
-      dark: "Light"
+      "": "System",
+      "theme-dark": "Dark",
+      "theme-light": "Light"
     };
     if (getParam("style") && getParam("style").match(/\.(json|css)$/)) {
       styles.custom = getParam("style");
@@ -442,11 +442,11 @@
     docEl.dir = dir;
     const style = styles[storage[key]] || styles.theme;
     document.writeln(
-      `<link rel="stylesheet" href="${dir !== "rtl" ? style.css : style.css.replace(".css", "-rtl.css")}">`
+      `<link rel="stylesheet" href="${dir !== "rtl" ? style.css : style.css.replace(".css", ".css")}">`
     );
-    document.writeln('<script src="../dist/js/uikit.js"><\/script>');
+    document.writeln('<script src="../../scripts/uikit.js"><\/script>');
     document.writeln(
-      `<script src="${style.icons ? style.icons : "../dist/js/uikit-icons.js"}"><\/script>`
+      `<script src="${style.icons ? style.icons : "../../scripts/uikit-icons.js"}"><\/script>`
     );
     on(
       window,
@@ -476,24 +476,25 @@
           if ($inverse.value) {
             removeClass(
               document.querySelectorAll("*"),
-              "uk-navbar-container",
-              "uk-card-default",
-              "uk-card-muted",
-              "uk-card-primary",
-              "uk-card-secondary",
-              "uk-tile-default",
-              "uk-tile-muted",
-              "uk-tile-primary",
-              "uk-tile-secondary",
-              "uk-section-default",
-              "uk-section-muted",
-              "uk-section-primary",
-              "uk-section-secondary",
-              "uk-overlay-default",
-              "uk-overlay-primary"
+              // "uk-navbar-container",
+              // "uk-card-default",
+              // "uk-card-muted",
+              // "uk-card-primary",
+              // "uk-card-secondary",
+              // "uk-tile-default",
+              // "uk-tile-muted",
+              // "uk-tile-primary",
+              // "uk-tile-secondary",
+              // "uk-section-default",
+              // "uk-section-muted",
+              // "uk-section-primary",
+              // "uk-section-secondary",
+              // "uk-overlay-default",
+              // "uk-overlay-primary"
             );
-            css(docEl, "background", $inverse.value === "dark" ? "#fff" : "#222");
-            addClass($body, `uk-${$inverse.value}`);
+            //css(docEl, "background", $inverse.value === "dark" ? "#fff" : "#222");
+            //addClass($body, `uk-${$inverse.value}`);
+            addClass(docEl, "uk-" + $inverse.value);
           }
           on($inverse, "change", () => {
             storage[keyinverse] = $inverse.value;
