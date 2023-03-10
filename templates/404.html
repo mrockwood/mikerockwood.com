@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}{{ title }} | {{ super() }}{% endblock title %}
+{% block title %}404 | {{ super() }}{% endblock title %}
 
 {%- block seo %}
   {{ super() }}
-  {%- set title = "404 Page not found" %}
 
   {%- if config.title %}
     {%- set title_addition = title_separator ~ config.title %}
