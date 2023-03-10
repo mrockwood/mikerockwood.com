@@ -15,7 +15,7 @@
 - [ ] update form.scss
 - [ ] update modal.scss
 - [ ] update nav.scss
-- [ ] update navbar.scss
+- [x] update navbar.scss
 - [x] update offcanvas.scss
 - [x] update spinner.scss
 - [x] update sticky.scss
