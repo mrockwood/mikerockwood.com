@@ -18,7 +18,7 @@
 - [ ] update navbar.scss
 - [ ] update offcanvas.scss
 - [ ] update spinner.scss
-- [ ] update sticky.scss
+- [x] update sticky.scss
 - [x] update subnav.scss
 - [x] update utility.scss
 
