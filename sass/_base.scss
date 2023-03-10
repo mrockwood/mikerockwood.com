@@ -14,27 +14,27 @@
 // :where(html) {
 :where(html *) {
 
-    --base-body-background:                           hsl( var(--theme-background, var(--global-background) ) ); // hsl(var(--global-background));
+    --base-body-background:                           hsl( var(--theme-background, var(--global-background) ) );
     --base-body-font-family:                          var(--global-font-family);
     --base-body-font-weight:                          normal;
     --base-body-font-size:                            var(--global-font-size);
     --base-body-line-height:                          var(--global-line-height);
-    --base-body-color:                                hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --base-body-color:                                hsl( var(--theme-color, var(--global-color) ) );
 
-    --base-link-color:                                hsl( var(--theme-link-color, var(--global-link-color) ) ); // hsl(var(--global-link-color));
+    --base-link-color:                                hsl( var(--theme-link-color, var(--global-link-color) ) );
     --base-link-text-decoration:                      none;
-    --base-link-hover-color:                          hsl( var(--theme-link-hover-color, var(--global-link-hover-color) ) ); // hsl(var(--global-link-hover-color));
+    --base-link-hover-color:                          hsl( var(--theme-link-hover-color, var(--global-link-hover-color) ) );
     --base-link-hover-text-decoration:                underline;
 
     --base-strong-font-weight:                        bolder;
     --base-code-font-size:                            var(--global-small-font-size);
     --base-code-font-family:                          Consolas, monaco, monospace;
-    --base-code-color:                                hsl( var(--theme-danger-background, var(--global-danger-background) ) ); // hsl(var(--global-danger-background));
-    --base-em-color:                                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --base-code-color:                                hsl( var(--theme-danger-background, var(--global-danger-background) ) );
+    --base-em-color:                                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --base-ins-background:                            hsla(50,100%,50%,0.2);
-    --base-ins-color:                                 hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --base-ins-color:                                 hsl( var(--theme-color, var(--global-color) ) );
     --base-mark-background:                           hsla(50,100%,50%,0.2);
-    --base-mark-color:                                hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --base-mark-color:                                hsl( var(--theme-color, var(--global-color) ) );
     --base-quote-font-style:                          italic;
     --base-small-font-size:                           80%;
 
@@ -42,7 +42,7 @@
 
     --base-heading-font-family:                       var(--global-font-family);
     --base-heading-font-weight:                       normal;
-    --base-heading-color:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --base-heading-color:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --base-heading-text-transform:                    none;
     --base-heading-margin-top:                        var(--global-medium-margin);
     --base-h1-font-size:                              calc( var(--global-2xlarge-font-size) * 0.85 );
@@ -62,7 +62,7 @@
 
     --base-hr-margin-vertical:                        var(--global-margin);
     --base-hr-border-width:                           var(--global-border-width);
-    --base-hr-border:                                 hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+    --base-hr-border:                                 hsl( var(--theme-border, var(--global-border) ) );
 
     --base-blockquote-font-size:                      var(--global-medium-font-size);
     --base-blockquote-line-height:                    1.5;
@@ -75,11 +75,11 @@
     --base-pre-font-size:                             var(--global-small-font-size);
     --base-pre-line-height:                           1.5;
     --base-pre-font-family:                           var(--base-code-font-family);
-    --base-pre-color:                                 hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --base-pre-color:                                 hsl( var(--theme-color, var(--global-color) ) );
 
     --base-focus-outline-width:                       2px;
     --base-focus-outline-style:                       dotted;
-    --base-focus-outline:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --base-focus-outline:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --base-focus-outline-offset:                      1px;
 
     --base-selection-background:                      #39f;
@@ -98,31 +98,6 @@
     }
 
 }
-
-/*.uk-light,
-.uk-section-primary:not(.uk-preserve-color),
-.uk-section-secondary:not(.uk-preserve-color),
-.uk-tile-primary:not(.uk-preserve-color),
-.uk-tile-secondary:not(.uk-preserve-color),
-.uk-card-primary.uk-card-body,
-.uk-card-primary > :not([class*='uk-card-media']),
-.uk-card-secondary.uk-card-body,
-.uk-card-secondary > :not([class*='uk-card-media']),
-.uk-overlay-primary,
-.uk-offcanvas-bar {
-
-    --base-body-background:                           #222;
-    --base-body-color:                                hsl(var(--inverse-global-color));
-    --base-link-color:                                hsl(var(--inverse-global-emphasis-color));
-    --base-link-hover-color:                          hsl(var(--inverse-global-emphasis-color));
-    --base-code-color:                                hsl(var(--inverse-global-color));
-    --base-em-color:                                  hsl(var(--inverse-global-emphasis-color));
-    --base-heading-color:                             hsl(var(--inverse-global-emphasis-color));
-    --base-hr-border:                                 hsl(var(--inverse-global-border));
-    --base-pre-color:                                 hsl(var(--inverse-global-color));
-    --base-focus-outline:                             hsl(var(--inverse-global-emphasis-color));
-
-}*/
 
 
 /* Pass media breakpoints to JS
@@ -149,7 +124,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  * 3. Remove the margin in all browsers.
  * 4. 'Sticky' footer
- * 4. Style
+ * 5. Style
  */
 
 :where(body) {
