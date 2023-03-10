@@ -13,7 +13,7 @@
 - [ ] update flex.scss
 - [ ] update form-range.scss
 - [ ] update form.scss
-- [ ] update modal.scss
+- [x] update modal.scss
 - [x] update nav.scss
 - [x] update navbar.scss
 - [x] update offcanvas.scss

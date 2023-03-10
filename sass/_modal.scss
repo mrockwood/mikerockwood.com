@@ -39,14 +39,14 @@
 
     --modal-container-width:                          1200px;
 
-    --modal-body-padding-horizontal:                  var(--global-gutter);
-    --modal-body-padding-vertical:                    var(--global-gutter);
+    --modal-body-padding-horizontal:                  20px;
+    --modal-body-padding-vertical:                    20px;
 
-    --modal-header-padding-horizontal:                var(--global-gutter);
+    --modal-header-padding-horizontal:                20px;
     --modal-header-padding-vertical:                  calc( var(--modal-header-padding-horizontal) * 0.5 );
     --modal-header-background:                        hsl(var(--global-muted-background));
 
-    --modal-footer-padding-horizontal:                var(--global-gutter);
+    --modal-footer-padding-horizontal:                20px;
     --modal-footer-padding-vertical:                  calc( var(--modal-footer-padding-horizontal) * 0.5 );
     --modal-footer-background:                        hsl(var(--global-muted-background));
 
@@ -70,6 +70,13 @@
 
         --modal-padding-horizontal:                   var(--global-gutter);
         --modal-padding-vertical:                     50px;
+
+        --modal-body-padding-horizontal:              var(--global-gutter);
+        --modal-body-padding-vertical:                var(--global-gutter);
+
+        --modal-header-padding-horizontal:            var(--global-gutter);
+
+        --modal-footer-padding-horizontal:            var(--global-gutter);
 
     }
 
@@ -112,7 +119,6 @@
     z-index: var(--modal-z-index);
     /* 3 */
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     /* 4 */
     padding: var(--modal-padding-vertical) var(--modal-padding-horizontal);
     /* 5 */
@@ -294,17 +300,6 @@
 
 .uk-modal-close-outside:hover {
     color: var(--modal-close-outside-hover-color);
-}
-
-/* Tablet landscape and bigger */
-@media (min-width: $breakpoint-medium) {
-
-    /* 1 */
-    .uk-modal-close-outside {
-        inset-inline-end: var(--modal-close-outside-position);
-        transform: translate(var(--modal-close-outside-translate), calc( -1 * var(--modal-close-outside-translate)));
-    }
-
 }
 
 /*
