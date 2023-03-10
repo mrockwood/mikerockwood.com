@@ -86,6 +86,6 @@
 {% endmacro mobileMenu %}
 
 {% macro script() %}
-<script src="{{ get_url(path="/scripts/uikit.min.js", cachebust=true) }}"></script>
-<script src="{{ get_url(path="/scripts/uikit-icons.min.js", cachebust=true) }}"></script>
+<script src="{{ get_url(path="/scripts/uikit.min.js", cachebust=true) }}" defer="defer"></script>
+<script src="{{ get_url(path="/scripts/uikit-icons.min.js", cachebust=true) }}" defer="defer"></script>
 {% endmacro script %}
