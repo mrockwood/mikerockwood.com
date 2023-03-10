@@ -1,5 +1,5 @@
 /* global TESTS */
-import { addClass, css, fastdom, on, prepend, removeClass, ucfirst } from 'uikit-util';
+import { addClass, css, on, prepend, removeClass, ucfirst } from 'uikit-util';
 
 const tests = TESTS;
 const storage = window.sessionStorage;
@@ -59,13 +59,13 @@ document.writeln(
 on(window, 'load', () =>
     setTimeout(
         () =>
-            fastdom.write(() => {
+            requestAnimationFrame(() => {
                 const $body = document.body;
                 const $container = prepend(
                     $body,
                     `
         <div class="uk-container">
-            <select class="uk-select uk-form-width-small" style="margin: 20px 20px 20px 0">
+            <select class="uk-select uk-form-width-small" style="margin: 20px 20px 20px 0" aria-label="Component switcher">
                 <option value="index.html">Overview</option>
                 ${tests
                     .map(
@@ -77,12 +77,12 @@ on(window, 'load', () =>
                     )
                     .join('')}
             </select>
-            <select class="uk-select uk-form-width-small" style="margin: 20px">
+            <select class="uk-select uk-form-width-small" style="margin: 20px" aria-label="Theme switcher">
                 ${Object.keys(styles)
                     .map((style) => `<option value="${style}">${ucfirst(style)}</option>`)
                     .join('')}
             </select>
-            <select class="uk-select uk-form-width-small" style="margin: 20px">
+            <select class="uk-select uk-form-width-small" style="margin: 20px" aria-label="Inverse switcher">
                 ${Object.keys(variations)
                     .map((name) => `<option value="${name}">${variations[name]}</option>`)
                     .join('')}
