@@ -24,7 +24,10 @@
 
     --drop-z-index:                               calc( var(--global-z-index) + 20 );
     --drop-margin:                                var(--global-margin);
+    --drop-viewport-margin:                       15px;
     --drop-width:                                 300px;
+
+    --drop-parent-icon-margin-left:               0.25em;
 
 }
 
@@ -39,14 +42,14 @@
  * 3. Set a default width
  */
 
-.uk-drop {
+ .uk-drop {
     /* 1 */
     display: none;
     /* 2 */
     position: absolute;
     z-index: var(--drop-z-index);
     --uk-position-offset: var(--drop-margin);
-    --uk-position-viewport-offset: 10;
+    --uk-position-viewport-offset: var(--drop-viewport-margin);
     /* 3 */
     box-sizing: border-box;
     inline-size: var(--drop-width);
@@ -59,4 +62,15 @@
 /* Grid modifiers
  ========================================================================== */
 
-.uk-drop-stack .uk-drop-grid > * { width: 100% !important; }
+.uk-drop-stack .uk-drop-grid > * { inline-size: 100% !important; }
+
+
+/* Parent icon
+ ========================================================================== */
+
+.uk-drop-parent-icon {
+    margin-inline-start: var(--drop-parent-icon-margin-left);
+    transition: transform 0.3s ease-out;
+}
+
+[aria-expanded="true"] > .uk-drop-parent-icon { transform: rotateX(180deg); }
