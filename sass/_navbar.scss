@@ -40,6 +40,7 @@
 
     --navbar-background:                              hsl(var(--global-muted-background));
     --navbar-gap:                                     0px; // Must have a unit because of `calc`
+    --navbar-padding-vertical:                        12px;
 
     --navbar-nav-gap:                                 0px; // Must have a unit because of `calc`
 
@@ -105,6 +106,10 @@
 
     :where(.uk-navbar,[class*='uk-navbar']) {
 
+        --navbar-padding-vertical:                    20px;
+
+        --navbar-nav-item-padding-horizontal:         20px;
+
         --navbar-dropdown-dropbar-viewport-margin:    var(--global-gutter);
 
     }
@@ -143,6 +148,8 @@
 .uk-navbar-container:not(.uk-navbar-transparent) {
     background: var(--navbar-background);
 }
+
+.uk-navbar-container { padding-block: var(--navbar-padding-vertical); }
 
 
 /* Groups
@@ -256,6 +263,9 @@
     /* 4 */
     font-size: var(--navbar-nav-item-font-size);
     font-family: var(--navbar-nav-item-font-family);
+    font-weight: var(--navbar-nav-item-font-weight);
+    letter-spacing: var(--navbar-nav-item-letter-spacing);
+    text-transform: var(--navbar-nav-item-text-transform);
     /* 5 */
     text-decoration: none;
 }
