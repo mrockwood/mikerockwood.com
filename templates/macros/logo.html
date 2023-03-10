@@ -1,6 +1,7 @@
 {%- macro logo() -%}
 <a href="{{ config.base_url }}" class="uk-navbar-item uk-logo">
-	<img src="{{ config.base_url | safe }}/images/headshot-cutout.jpg" alt="image" class="uk-border-circle uk-margin-small-right" width="48" height="48" />
+	{%- set headshot = resize_image(path="/images/headshot-cutout.jpg", width=192, height=192, format='webp', quality=75) %}
+	<img src="{{ headshot.url }}" alt="" class="uk-border-circle uk-margin-small-right" width="48" height="48" />
 	<!-- <svg class="uk-margin-xsmall-right" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
 		<g class="logo">
 			<circle fill='hsl(var(--surface-default))' cx='50%' cy='50%' r='50%' />
