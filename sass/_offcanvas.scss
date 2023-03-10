@@ -106,7 +106,6 @@
     background: var(--offcanvas-bar-background);
     /* 3 */
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* Flip modifier */
@@ -239,10 +238,15 @@
 /*
  * Prevent horizontal scrollbar when the content is slide-out
  * Has to be on the `html` element too to make it work on the `body`
+ * 1. `clip` is needed for `position: sticky` elements to keep their position
  */
 
 .uk-offcanvas-page,
-.uk-offcanvas-container { overflow-x: hidden; }
+.uk-offcanvas-container {
+    overflow-x: hidden;
+    /* 1 */
+    overflow-x: clip;
+}
 
 
 /* Container
