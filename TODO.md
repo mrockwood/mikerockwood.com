@@ -7,7 +7,7 @@
 ## Development
 
 - [x] update drop.scss
-- [ ] update dropbar.scss
+- [x] update dropbar.scss
 - [x] update dropdown.scss
 - [ ] update dropnav.scss
 - [x] update form.scss
