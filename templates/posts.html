@@ -67,7 +67,7 @@
 			<li class="">
 				<!-- {% if loop.index > 1 %}<hr class="uk-margin-medium" />{% endif %} -->
 				<article class="uk-panel">
-					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-grid uk-flex-middle" uk-grid>
+					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-flex-middle" uk-grid>
 						<div class="uk-width-1-4@m">
 							<time datetime="{{ article.date }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
 						</div>
@@ -97,7 +97,7 @@
 
 		<h2 class="uk-h1">Bookmarks</h2>
 
-		<div class="uk-grid uk-child-width-1-2@m" uk-grid>
+		<div class="uk-child-width-1-2@m" uk-grid>
 
 		{% for bookmark in bookmarks.pages %}
 			{% if loop.index < 5 %}
@@ -222,7 +222,7 @@
 
 		<h2 class="uk-h1">Notes</h2>
 
-		<div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
+		<div class="uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
 
 		{% for note in notes.pages %}
 			{% if loop.index < 5 %}
