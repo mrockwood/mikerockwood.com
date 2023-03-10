@@ -69,6 +69,12 @@
 }
 
 /*
+ * Avoid column break within the list item, when using `column-count`
+ */
+
+.uk-list > * { break-inside: avoid-column; }
+
+/*
  * Remove margin from the last-child
  */
 
@@ -130,6 +136,24 @@
 .uk-list-emphasis > ::before { color: var(--list-emphasis-color) !important; }
 .uk-list-primary > ::before { color: var(--list-primary-color) !important; }
 .uk-list-secondary > ::before { color: var(--list-secondary-color) !important; }
+
+
+/* Image bullet modifier
+ ========================================================================== */
+
+.uk-list-bullet > * { padding-left: var(--list-padding-left); }
+
+.uk-list-bullet > ::before {
+    content: "";
+    display: list-item;
+    position: relative;
+    left: var(--list-padding-left);
+    width: var(--list-padding-left);
+    height: var(--list-marker-height);
+    margin-bottom: var(--list-marker-height);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
 
 
 /* Style modifiers
