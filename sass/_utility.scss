@@ -390,10 +390,10 @@
     --logo-hover-color: hsl( var(--theme-color, var(--global-color) ) );
 
     /* 1 */
-    font-size: $logo-font-size;
-    font-family: $logo-font-family;
+    font-size: var(--logo-font-size);
+    font-family: var(--logo-font-family);
     // font-weight: var(--logo-font-weight);
-    color: $logo-color;
+    color: var(--logo-color);
     /* 2 */
     text-decoration: none;
 }
