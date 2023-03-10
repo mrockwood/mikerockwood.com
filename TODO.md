@@ -9,8 +9,7 @@
 - [ ] update drop.scss
 - [ ] update dropbar.scss
 - [ ] update dropdown.scss
-- [ ] update dropnav.scss 
-- [ ] update flex.scss
+- [ ] update dropnav.scss
 - [x] update form.scss
 - [x] update modal.scss
 - [x] update nav.scss
