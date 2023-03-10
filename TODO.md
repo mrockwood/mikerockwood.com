@@ -14,7 +14,7 @@
 - [ ] update form-range.scss
 - [ ] update form.scss
 - [ ] update modal.scss
-- [ ] update nav.scss
+- [x] update nav.scss
 - [x] update navbar.scss
 - [x] update offcanvas.scss
 - [x] update spinner.scss
