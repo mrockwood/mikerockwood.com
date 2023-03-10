@@ -11,8 +11,7 @@
 - [ ] update dropdown.scss
 - [ ] update dropnav.scss 
 - [ ] update flex.scss
-- [ ] update form-range.scss
-- [ ] update form.scss
+- [x] update form.scss
 - [x] update modal.scss
 - [x] update nav.scss
 - [x] update navbar.scss
