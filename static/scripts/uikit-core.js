@@ -1,4 +1,4 @@
-/*! UIkit 3.14.3 | https://www.getuikit.com | (c) 2014 - 2022 YOOtheme | MIT License */
+/*! UIkit 3.16.6 | https://www.getuikit.com | (c) 2014 - 2023 YOOtheme | MIT License */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -7,158 +7,109 @@
 })(this, (function () { 'use strict';
 
     const { hasOwnProperty, toString } = Object.prototype;
-
     function hasOwn(obj, key) {
       return hasOwnProperty.call(obj, key);
     }
-
     const hyphenateRe = /\B([A-Z])/g;
-
-    const hyphenate = memoize((str) => str.replace(hyphenateRe, '-$1').toLowerCase());
-
+    const hyphenate = memoize((str) => str.replace(hyphenateRe, "-$1").toLowerCase());
     const camelizeRe = /-(\w)/g;
-
-    const camelize = memoize((str) => str.replace(camelizeRe, toUpper));
-
-    const ucfirst = memoize((str) =>
-    str.length ? toUpper(null, str.charAt(0)) + str.slice(1) : '');
-
-
-    function toUpper(_, c) {
-      return c ? c.toUpperCase() : '';
-    }
-
+    const camelize = memoize(
+      (str) => (str.charAt(0).toLowerCase() + str.slice(1)).replace(camelizeRe, (_, c) => c.toUpperCase())
+    );
+    const ucfirst = memoize((str) => str.charAt(0).toUpperCase() + str.slice(1));
     function startsWith(str, search) {
-      return str == null ? void 0 : str.startsWith == null ? void 0 : str.startsWith(search);
+      var _a;
+      return (_a = str == null ? void 0 : str.startsWith) == null ? void 0 : _a.call(str, search);
     }
-
     function endsWith(str, search) {
-      return str == null ? void 0 : str.endsWith == null ? void 0 : str.endsWith(search);
+      var _a;
+      return (_a = str == null ? void 0 : str.endsWith) == null ? void 0 : _a.call(str, search);
     }
-
     function includes(obj, search) {
-      return obj == null ? void 0 : obj.includes == null ? void 0 : obj.includes(search);
+      var _a;
+      return (_a = obj == null ? void 0 : obj.includes) == null ? void 0 : _a.call(obj, search);
     }
-
     function findIndex(array, predicate) {
-      return array == null ? void 0 : array.findIndex == null ? void 0 : array.findIndex(predicate);
+      var _a;
+      return (_a = array == null ? void 0 : array.findIndex) == null ? void 0 : _a.call(array, predicate);
     }
-
     const { isArray, from: toArray } = Array;
     const { assign } = Object;
-
     function isFunction(obj) {
-      return typeof obj === 'function';
+      return typeof obj === "function";
     }
-
     function isObject(obj) {
-      return obj !== null && typeof obj === 'object';
+      return obj !== null && typeof obj === "object";
     }
-
     function isPlainObject(obj) {
-      return toString.call(obj) === '[object Object]';
+      return toString.call(obj) === "[object Object]";
     }
-
     function isWindow(obj) {
       return isObject(obj) && obj === obj.window;
     }
-
     function isDocument(obj) {
       return nodeType(obj) === 9;
     }
-
     function isNode(obj) {
       return nodeType(obj) >= 1;
     }
-
     function isElement(obj) {
       return nodeType(obj) === 1;
     }
-
     function nodeType(obj) {
       return !isWindow(obj) && isObject(obj) && obj.nodeType;
     }
-
     function isBoolean(value) {
-      return typeof value === 'boolean';
+      return typeof value === "boolean";
     }
-
     function isString(value) {
-      return typeof value === 'string';
+      return typeof value === "string";
     }
-
     function isNumber(value) {
-      return typeof value === 'number';
+      return typeof value === "number";
     }
-
     function isNumeric(value) {
       return isNumber(value) || isString(value) && !isNaN(value - parseFloat(value));
     }
-
     function isEmpty(obj) {
       return !(isArray(obj) ? obj.length : isObject(obj) ? Object.keys(obj).length : false);
     }
-
     function isUndefined(value) {
       return value === void 0;
     }
-
     function toBoolean(value) {
-      return isBoolean(value) ?
-      value :
-      value === 'true' || value === '1' || value === '' ?
-      true :
-      value === 'false' || value === '0' ?
-      false :
-      value;
+      return isBoolean(value) ? value : value === "true" || value === "1" || value === "" ? true : value === "false" || value === "0" ? false : value;
     }
-
     function toNumber(value) {
       const number = Number(value);
       return isNaN(number) ? false : number;
     }
-
     function toFloat(value) {
       return parseFloat(value) || 0;
     }
-
     function toNode(element) {
       return toNodes(element)[0];
     }
-
     function toNodes(element) {
-      return element && (isNode(element) ? [element] : Array.from(element).filter(isNode)) || [];
+      return isNode(element) ? [element] : Array.from(element || []).filter(isNode);
     }
-
-    function toWindow(element) {var _element;
+    function toWindow(element) {
       if (isWindow(element)) {
         return element;
       }
-
       element = toNode(element);
-      const document = isDocument(element) ? element : (_element = element) == null ? void 0 : _element.ownerDocument;
-
+      const document = isDocument(element) ? element : element == null ? void 0 : element.ownerDocument;
       return (document == null ? void 0 : document.defaultView) || window;
     }
-
     function isEqual(value, other) {
-      return (
-        value === other ||
-        isObject(value) &&
-        isObject(other) &&
-        Object.keys(value).length === Object.keys(other).length &&
-        each(value, (val, key) => val === other[key]));
-
+      return value === other || isObject(value) && isObject(other) && Object.keys(value).length === Object.keys(other).length && each(value, (val, key) => val === other[key]);
     }
-
     function swap(value, a, b) {
-      return value.replace(new RegExp(a + "|" + b, 'g'), (match) => match === a ? b : a);
+      return value.replace(new RegExp(`${a}|${b}`, "g"), (match) => match === a ? b : a);
     }
-
     function last(array) {
       return array[array.length - 1];
     }
-
     function each(obj, cb) {
       for (const key in obj) {
         if (false === cb(obj[key], key)) {
@@ -167,141 +118,103 @@
       }
       return true;
     }
-
     function sortBy$1(array, prop) {
-      return array.
-      slice().
-      sort((_ref, _ref2) => {let { [prop]: propA = 0 } = _ref;let { [prop]: propB = 0 } = _ref2;return (
-          propA > propB ? 1 : propB > propA ? -1 : 0);});
-
+      return array.slice().sort(
+        ({ [prop]: propA = 0 }, { [prop]: propB = 0 }) => propA > propB ? 1 : propB > propA ? -1 : 0
+      );
     }
-
+    function sumBy(array, iteratee) {
+      return array.reduce(
+        (sum, item) => sum + toFloat(isFunction(iteratee) ? iteratee(item) : item[iteratee]),
+        0
+      );
+    }
     function uniqueBy(array, prop) {
-      const seen = new Set();
-      return array.filter((_ref3) => {let { [prop]: check } = _ref3;return seen.has(check) ? false : seen.add(check);});
+      const seen = /* @__PURE__ */ new Set();
+      return array.filter(({ [prop]: check }) => seen.has(check) ? false : seen.add(check));
     }
-
-    function clamp(number, min, max) {if (min === void 0) {min = 0;}if (max === void 0) {max = 1;}
+    function pick(obj, props) {
+      return props.reduce((res, prop) => ({ ...res, [prop]: obj[prop] }), {});
+    }
+    function clamp(number, min = 0, max = 1) {
       return Math.min(Math.max(toNumber(number) || 0, min), max);
     }
-
-    function noop() {}
-
-    function intersectRect() {for (var _len = arguments.length, rects = new Array(_len), _key = 0; _key < _len; _key++) {rects[_key] = arguments[_key];}
+    function noop() {
+    }
+    function intersectRect(...rects) {
       return [
-      ['bottom', 'top'],
-      ['right', 'left']].
-      every(
-      (_ref4) => {let [minProp, maxProp] = _ref4;return (
-          Math.min(...rects.map((_ref5) => {let { [minProp]: min } = _ref5;return min;})) -
-          Math.max(...rects.map((_ref6) => {let { [maxProp]: max } = _ref6;return max;})) >
-          0);});
-
+        ["bottom", "top"],
+        ["right", "left"]
+      ].every(
+        ([minProp, maxProp]) => Math.min(...rects.map(({ [minProp]: min }) => min)) - Math.max(...rects.map(({ [maxProp]: max }) => max)) > 0
+      );
     }
-
     function pointInRect(point, rect) {
-      return (
-        point.x <= rect.right &&
-        point.x >= rect.left &&
-        point.y <= rect.bottom &&
-        point.y >= rect.top);
-
+      return point.x <= rect.right && point.x >= rect.left && point.y <= rect.bottom && point.y >= rect.top;
     }
-
     function ratio(dimensions, prop, value) {
-      const aProp = prop === 'width' ? 'height' : 'width';
-
+      const aProp = prop === "width" ? "height" : "width";
       return {
-        [aProp]: dimensions[prop] ?
-        Math.round(value * dimensions[aProp] / dimensions[prop]) :
-        dimensions[aProp],
-        [prop]: value };
-
+        [aProp]: dimensions[prop] ? Math.round(value * dimensions[aProp] / dimensions[prop]) : dimensions[aProp],
+        [prop]: value
+      };
     }
-
     function contain(dimensions, maxDimensions) {
       dimensions = { ...dimensions };
-
       for (const prop in dimensions) {
-        dimensions =
-        dimensions[prop] > maxDimensions[prop] ?
-        ratio(dimensions, prop, maxDimensions[prop]) :
-        dimensions;
+        dimensions = dimensions[prop] > maxDimensions[prop] ? ratio(dimensions, prop, maxDimensions[prop]) : dimensions;
       }
-
       return dimensions;
     }
-
     function cover$1(dimensions, maxDimensions) {
       dimensions = contain(dimensions, maxDimensions);
-
       for (const prop in dimensions) {
-        dimensions =
-        dimensions[prop] < maxDimensions[prop] ?
-        ratio(dimensions, prop, maxDimensions[prop]) :
-        dimensions;
+        dimensions = dimensions[prop] < maxDimensions[prop] ? ratio(dimensions, prop, maxDimensions[prop]) : dimensions;
       }
-
       return dimensions;
     }
-
     const Dimensions = { ratio, contain, cover: cover$1 };
-
-    function getIndex(i, elements, current, finite) {if (current === void 0) {current = 0;}if (finite === void 0) {finite = false;}
+    function getIndex(i, elements, current = 0, finite = false) {
       elements = toNodes(elements);
-
       const { length } = elements;
-
       if (!length) {
         return -1;
       }
-
-      i = isNumeric(i) ?
-      toNumber(i) :
-      i === 'next' ?
-      current + 1 :
-      i === 'previous' ?
-      current - 1 :
-      elements.indexOf(toNode(i));
-
+      i = isNumeric(i) ? toNumber(i) : i === "next" ? current + 1 : i === "previous" ? current - 1 : i === "last" ? length - 1 : elements.indexOf(toNode(i));
       if (finite) {
         return clamp(i, 0, length - 1);
       }
-
       i %= length;
-
       return i < 0 ? i + length : i;
     }
-
     function memoize(fn) {
-      const cache = Object.create(null);
+      const cache = /* @__PURE__ */ Object.create(null);
       return (key) => cache[key] || (cache[key] = fn(key));
     }
-
     class Deferred {
       constructor() {
         this.promise = new Promise((resolve, reject) => {
           this.reject = reject;
           this.resolve = resolve;
         });
-      }}
+      }
+    }
 
     function attr(element, name, value) {
+      var _a;
       if (isObject(name)) {
         for (const key in name) {
           attr(element, key, name[key]);
         }
         return;
       }
-
-      if (isUndefined(value)) {var _toNode;
-        return (_toNode = toNode(element)) == null ? void 0 : _toNode.getAttribute(name);
+      if (isUndefined(value)) {
+        return (_a = toNode(element)) == null ? void 0 : _a.getAttribute(name);
       } else {
         for (const el of toNodes(element)) {
           if (isFunction(value)) {
             value = value.call(el, attr(el, name));
           }
-
           if (value === null) {
             removeAttr(el, name);
           } else {
@@ -310,22 +223,14 @@
         }
       }
     }
-
     function hasAttr(element, name) {
-      return toNodes(element).some((element) => element.hasAttribute(name));
+      return toNodes(element).some((element2) => element2.hasAttribute(name));
     }
-
     function removeAttr(element, name) {
-      const elements = toNodes(element);
-      for (const attribute of name.split(' ')) {
-        for (const element of elements) {
-          element.removeAttribute(attribute);
-        }
-      }
+      toNodes(element).forEach((element2) => element2.removeAttribute(name));
     }
-
     function data(element, attribute) {
-      for (const name of [attribute, "data-" + attribute]) {
+      for (const name of [attribute, `data-${attribute}`]) {
         if (hasAttr(element, name)) {
           return attr(element, name);
         }
@@ -343,775 +248,654 @@
       input: true,
       keygen: true,
       link: true,
-      menuitem: true,
       meta: true,
       param: true,
       source: true,
       track: true,
-      wbr: true };
-
+      wbr: true
+    };
     function isVoidElement(element) {
-      return toNodes(element).some((element) => voidElements[element.tagName.toLowerCase()]);
+      return toNodes(element).some((element2) => voidElements[element2.tagName.toLowerCase()]);
     }
-
     function isVisible(element) {
       return toNodes(element).some(
-      (element) => element.offsetWidth || element.offsetHeight || element.getClientRects().length);
-
+        (element2) => element2.offsetWidth || element2.offsetHeight || element2.getClientRects().length
+      );
     }
-
-    const selInput = 'input,select,textarea,button';
+    const selInput = "input,select,textarea,button";
     function isInput(element) {
-      return toNodes(element).some((element) => matches(element, selInput));
+      return toNodes(element).some((element2) => matches(element2, selInput));
     }
-
-    const selFocusable = selInput + ",a[href],[tabindex]";
+    const selFocusable = `${selInput},a[href],[tabindex]`;
     function isFocusable(element) {
       return matches(element, selFocusable);
     }
-
-    function parent(element) {var _toNode;
-      return (_toNode = toNode(element)) == null ? void 0 : _toNode.parentElement;
+    function parent(element) {
+      var _a;
+      return (_a = toNode(element)) == null ? void 0 : _a.parentElement;
     }
-
     function filter(element, selector) {
-      return toNodes(element).filter((element) => matches(element, selector));
+      return toNodes(element).filter((element2) => matches(element2, selector));
     }
-
     function matches(element, selector) {
-      return toNodes(element).some((element) => element.matches(selector));
+      return toNodes(element).some((element2) => element2.matches(selector));
     }
-
     function closest(element, selector) {
-      return isElement(element) ?
-      element.closest(startsWith(selector, '>') ? selector.slice(1) : selector) :
-      toNodes(element).
-      map((element) => closest(element, selector)).
-      filter(Boolean);
+      return isElement(element) ? element.closest(startsWith(selector, ">") ? selector.slice(1) : selector) : toNodes(element).map((element2) => closest(element2, selector)).filter(Boolean);
     }
-
     function within(element, selector) {
-      return isString(selector) ?
-      !!closest(element, selector) :
-      toNode(selector).contains(toNode(element));
+      return isString(selector) ? !!closest(element, selector) : toNode(selector).contains(toNode(element));
     }
-
     function parents(element, selector) {
       const elements = [];
-
       while (element = parent(element)) {
         if (!selector || matches(element, selector)) {
           elements.push(element);
         }
       }
-
       return elements;
     }
-
     function children(element, selector) {
       element = toNode(element);
-      const children = element ? toNodes(element.children) : [];
-      return selector ? filter(children, selector) : children;
+      const children2 = element ? toNodes(element.children) : [];
+      return selector ? filter(children2, selector) : children2;
     }
-
     function index(element, ref) {
       return ref ? toNodes(element).indexOf(toNode(ref)) : children(parent(element)).indexOf(element);
+    }
+    function isSameSiteAnchor(el) {
+      el = toNode(el);
+      return el && ["origin", "pathname", "search"].every((part) => el[part] === location[part]);
+    }
+    function getTargetedElement(el) {
+      if (isSameSiteAnchor(el)) {
+        el = toNode(el);
+        const id = decodeURIComponent(el.hash).substring(1);
+        return document.getElementById(id) || document.getElementsByName(id)[0];
+      }
     }
 
     function query(selector, context) {
       return find(selector, getContext(selector, context));
     }
-
     function queryAll(selector, context) {
       return findAll(selector, getContext(selector, context));
     }
-
     function find(selector, context) {
-      return toNode(_query(selector, context, 'querySelector'));
+      return toNode(_query(selector, toNode(context), "querySelector"));
     }
-
     function findAll(selector, context) {
-      return toNodes(_query(selector, context, 'querySelectorAll'));
+      return toNodes(_query(selector, toNode(context), "querySelectorAll"));
     }
-
     const contextSelectorRe = /(^|[^\\],)\s*[!>+~-]/;
     const isContextSelector = memoize((selector) => selector.match(contextSelectorRe));
-
-    function getContext(selector, context) {if (context === void 0) {context = document;}
-      return isString(selector) && isContextSelector(selector) || isDocument(context) ?
-      context :
-      context.ownerDocument;
+    function getContext(selector, context = document) {
+      return isString(selector) && isContextSelector(selector) || isDocument(context) ? context : context.ownerDocument;
     }
-
     const contextSanitizeRe = /([!>+~-])(?=\s+[!>+~-]|\s*$)/g;
-    const sanatize = memoize((selector) => selector.replace(contextSanitizeRe, '$1 *'));
-
-    function _query(selector, context, queryFn) {if (context === void 0) {context = document;}
+    const sanatize = memoize((selector) => selector.replace(contextSanitizeRe, "$1 *"));
+    function _query(selector, context = document, queryFn) {
       if (!selector || !isString(selector)) {
         return selector;
       }
-
       selector = sanatize(selector);
-
       if (isContextSelector(selector)) {
         const split = splitSelector(selector);
-        selector = '';
+        selector = "";
         for (let sel of split) {
           let ctx = context;
-
-          if (sel[0] === '!') {
-            const selectors = sel.substr(1).trim().split(' ');
+          if (sel[0] === "!") {
+            const selectors = sel.substr(1).trim().split(" ");
             ctx = closest(parent(context), selectors[0]);
-            sel = selectors.slice(1).join(' ').trim();
+            sel = selectors.slice(1).join(" ").trim();
             if (!sel.length && split.length === 1) {
               return ctx;
             }
           }
-
-          if (sel[0] === '-') {
-            const selectors = sel.substr(1).trim().split(' ');
+          if (sel[0] === "-") {
+            const selectors = sel.substr(1).trim().split(" ");
             const prev = (ctx || context).previousElementSibling;
             ctx = matches(prev, sel.substr(1)) ? prev : null;
-            sel = selectors.slice(1).join(' ');
+            sel = selectors.slice(1).join(" ");
           }
-
           if (ctx) {
-            selector += "" + (selector ? ',' : '') + domPath(ctx) + " " + sel;
+            selector += `${selector ? "," : ""}${domPath(ctx)} ${sel}`;
           }
         }
-
         context = document;
       }
-
       try {
         return context[queryFn](selector);
       } catch (e) {
         return null;
       }
     }
-
     const selectorRe = /.*?[^\\](?:,|$)/g;
-
-    const splitSelector = memoize((selector) =>
-    selector.match(selectorRe).map((selector) => selector.replace(/,$/, '').trim()));
-
-
+    const splitSelector = memoize(
+      (selector) => selector.match(selectorRe).map((selector2) => selector2.replace(/,$/, "").trim())
+    );
     function domPath(element) {
       const names = [];
       while (element.parentNode) {
-        const id = attr(element, 'id');
+        const id = attr(element, "id");
         if (id) {
-          names.unshift("#" + escape(id));
+          names.unshift(`#${escape(id)}`);
           break;
         } else {
           let { tagName } = element;
-          if (tagName !== 'HTML') {
-            tagName += ":nth-child(" + (index(element) + 1) + ")";
+          if (tagName !== "HTML") {
+            tagName += `:nth-child(${index(element) + 1})`;
           }
           names.unshift(tagName);
           element = element.parentNode;
         }
       }
-      return names.join(' > ');
+      return names.join(" > ");
     }
-
     function escape(css) {
-      return isString(css) ? CSS.escape(css) : '';
+      return isString(css) ? CSS.escape(css) : "";
     }
 
-    function on() {for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
+    function on(...args) {
       let [targets, types, selector, listener, useCapture = false] = getArgs(args);
-
       if (listener.length > 1) {
         listener = detail(listener);
       }
-
-      if (useCapture != null && useCapture.self) {
+      if (useCapture == null ? void 0 : useCapture.self) {
         listener = selfFilter(listener);
       }
-
       if (selector) {
         listener = delegate(selector, listener);
       }
-
       for (const type of types) {
         for (const target of targets) {
           target.addEventListener(type, listener, useCapture);
         }
       }
-
       return () => off(targets, types, listener, useCapture);
     }
-
-    function off() {for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {args[_key2] = arguments[_key2];}
-      let [targets, types,, listener, useCapture = false] = getArgs(args);
+    function off(...args) {
+      let [targets, types, , listener, useCapture = false] = getArgs(args);
       for (const type of types) {
         for (const target of targets) {
           target.removeEventListener(type, listener, useCapture);
         }
       }
     }
-
-    function once() {for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {args[_key3] = arguments[_key3];}
+    function once(...args) {
       const [element, types, selector, listener, useCapture = false, condition] = getArgs(args);
-      const off = on(
-      element,
-      types,
-      selector,
-      (e) => {
-        const result = !condition || condition(e);
-        if (result) {
-          off();
-          listener(e, result);
-        }
-      },
-      useCapture);
-
-
-      return off;
+      const off2 = on(
+        element,
+        types,
+        selector,
+        (e) => {
+          const result = !condition || condition(e);
+          if (result) {
+            off2();
+            listener(e, result);
+          }
+        },
+        useCapture
+      );
+      return off2;
     }
-
-    function trigger(targets, event, detail) {
-      return toEventTargets(targets).every((target) =>
-      target.dispatchEvent(createEvent(event, true, true, detail)));
-
+    function trigger(targets, event, detail2) {
+      return toEventTargets(targets).every(
+        (target) => target.dispatchEvent(createEvent(event, true, true, detail2))
+      );
     }
-
-    function createEvent(e, bubbles, cancelable, detail) {if (bubbles === void 0) {bubbles = true;}if (cancelable === void 0) {cancelable = false;}
+    function createEvent(e, bubbles = true, cancelable = false, detail2) {
       if (isString(e)) {
-        e = new CustomEvent(e, { bubbles, cancelable, detail });
+        e = new CustomEvent(e, { bubbles, cancelable, detail: detail2 });
       }
-
       return e;
     }
-
     function getArgs(args) {
-      // Event targets
       args[0] = toEventTargets(args[0]);
-
-      // Event types
       if (isString(args[1])) {
-        args[1] = args[1].split(' ');
+        args[1] = args[1].split(" ");
       }
-
-      // Delegate?
       if (isFunction(args[2])) {
         args.splice(2, 0, false);
       }
-
       return args;
     }
-
     function delegate(selector, listener) {
       return (e) => {
-        const current =
-        selector[0] === '>' ?
-        findAll(selector, e.currentTarget).
-        reverse().
-        filter((element) => within(e.target, element))[0] :
-        closest(e.target, selector);
-
+        const current = selector[0] === ">" ? findAll(selector, e.currentTarget).reverse().filter((element) => within(e.target, element))[0] : closest(e.target, selector);
         if (current) {
           e.current = current;
           listener.call(this, e);
+          delete e.current;
         }
       };
     }
-
     function detail(listener) {
       return (e) => isArray(e.detail) ? listener(e, ...e.detail) : listener(e);
     }
-
     function selfFilter(listener) {
-      return function (e) {
+      return function(e) {
         if (e.target === e.currentTarget || e.target === e.current) {
           return listener.call(null, e);
         }
       };
     }
-
     function isEventTarget(target) {
-      return target && 'addEventListener' in target;
+      return target && "addEventListener" in target;
     }
-
     function toEventTarget(target) {
       return isEventTarget(target) ? target : toNode(target);
     }
-
     function toEventTargets(target) {
-      return isArray(target) ?
-      target.map(toEventTarget).filter(Boolean) :
-      isString(target) ?
-      findAll(target) :
-      isEventTarget(target) ?
-      [target] :
-      toNodes(target);
+      return isArray(target) ? target.map(toEventTarget).filter(Boolean) : isString(target) ? findAll(target) : isEventTarget(target) ? [target] : toNodes(target);
     }
-
     function isTouch(e) {
-      return e.pointerType === 'touch' || !!e.touches;
+      return e.pointerType === "touch" || !!e.touches;
     }
-
-    function getEventPos(e) {var _e$touches, _e$changedTouches;
-      const { clientX: x, clientY: y } = ((_e$touches = e.touches) == null ? void 0 : _e$touches[0]) || ((_e$changedTouches = e.changedTouches) == null ? void 0 : _e$changedTouches[0]) || e;
-
+    function getEventPos(e) {
+      var _a, _b;
+      const { clientX: x, clientY: y } = ((_a = e.touches) == null ? void 0 : _a[0]) || ((_b = e.changedTouches) == null ? void 0 : _b[0]) || e;
       return { x, y };
     }
 
-    function ajax(url, options) {
-      const env = {
-        data: null,
-        method: 'GET',
-        headers: {},
-        xhr: new XMLHttpRequest(),
-        beforeSend: noop,
-        responseType: '',
-        ...options };
-
-      return Promise.resolve().
-      then(() => env.beforeSend(env)).
-      then(() => send(url, env));
-    }
-
-    function send(url, env) {
-      return new Promise((resolve, reject) => {
-        const { xhr } = env;
-
-        for (const prop in env) {
-          if (prop in xhr) {
-            try {
-              xhr[prop] = env[prop];
-            } catch (e) {
-              // noop
-            }
-          }
-        }
-
-        xhr.open(env.method.toUpperCase(), url);
-
-        for (const header in env.headers) {
-          xhr.setRequestHeader(header, env.headers[header]);
-        }
-
-        on(xhr, 'load', () => {
-          if (xhr.status === 0 || xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
-            resolve(xhr);
-          } else {
-            reject(
-            assign(Error(xhr.statusText), {
-              xhr,
-              status: xhr.status }));
-
-
-          }
-        });
-
-        on(xhr, 'error', () => reject(assign(Error('Network Error'), { xhr })));
-        on(xhr, 'timeout', () => reject(assign(Error('Network Timeout'), { xhr })));
-
-        xhr.send(env.data);
-      });
-    }
-
-    function getImage(src, srcset, sizes) {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-
-        img.onerror = (e) => {
-          reject(e);
-        };
-        img.onload = () => {
-          resolve(img);
-        };
-
-        sizes && (img.sizes = sizes);
-        srcset && (img.srcset = srcset);
-        img.src = src;
-      });
-    }
-
     const cssNumber = {
-      'animation-iteration-count': true,
-      'column-count': true,
-      'fill-opacity': true,
-      'flex-grow': true,
-      'flex-shrink': true,
-      'font-weight': true,
-      'line-height': true,
+      "animation-iteration-count": true,
+      "column-count": true,
+      "fill-opacity": true,
+      "flex-grow": true,
+      "flex-shrink": true,
+      "font-weight": true,
+      "line-height": true,
       opacity: true,
       order: true,
       orphans: true,
-      'stroke-dasharray': true,
-      'stroke-dashoffset': true,
+      "stroke-dasharray": true,
+      "stroke-dashoffset": true,
       widows: true,
-      'z-index': true,
-      zoom: true };
-
-
-    function css(element, property, value, priority) {if (priority === void 0) {priority = '';}
+      "z-index": true,
+      zoom: true
+    };
+    function css(element, property, value, priority) {
       const elements = toNodes(element);
-      for (const element of elements) {
+      for (const element2 of elements) {
         if (isString(property)) {
           property = propName(property);
-
           if (isUndefined(value)) {
-            return getComputedStyle(element).getPropertyValue(property);
+            return getComputedStyle(element2).getPropertyValue(property);
           } else {
-            element.style.setProperty(
-            property,
-            isNumeric(value) && !cssNumber[property] ?
-            value + "px" :
-            value || isNumber(value) ?
-            value :
-            '',
-            priority);
-
+            element2.style.setProperty(
+              property,
+              isNumeric(value) && !cssNumber[property] ? `${value}px` : value || isNumber(value) ? value : "",
+              priority
+            );
           }
         } else if (isArray(property)) {
           const props = {};
           for (const prop of property) {
-            props[prop] = css(element, prop);
+            props[prop] = css(element2, prop);
           }
           return props;
         } else if (isObject(property)) {
           priority = value;
-          each(property, (value, property) => css(element, property, value, priority));
+          each(property, (value2, property2) => css(element2, property2, value2, priority));
         }
       }
       return elements[0];
     }
-
-    // https://drafts.csswg.org/cssom/#dom-cssstyledeclaration-setproperty
     const propName = memoize((name) => vendorPropName(name));
-
     function vendorPropName(name) {
-      if (startsWith(name, '--')) {
+      if (startsWith(name, "--")) {
         return name;
       }
-
       name = hyphenate(name);
-
       const { style } = document.documentElement;
-
       if (name in style) {
         return name;
       }
-
-      for (const prefix of ['webkit', 'moz']) {
-        const prefixedName = "-" + prefix + "-" + name;
+      for (const prefix of ["webkit", "moz"]) {
+        const prefixedName = `-${prefix}-${name}`;
         if (prefixedName in style) {
           return prefixedName;
         }
       }
     }
 
-    function addClass(element) {for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {args[_key - 1] = arguments[_key];}
-      apply$1(element, args, 'add');
+    function addClass(element, ...args) {
+      apply$1(element, args, "add");
     }
-
-    function removeClass(element) {for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {args[_key2 - 1] = arguments[_key2];}
-      apply$1(element, args, 'remove');
+    function removeClass(element, ...args) {
+      apply$1(element, args, "remove");
     }
-
     function removeClasses(element, cls) {
-      attr(element, 'class', (value) => (value || '').replace(new RegExp("\\b" + cls + "\\b", 'g'), ''));
+      attr(
+        element,
+        "class",
+        (value) => (value || "").replace(new RegExp(`\\b${cls}\\b\\s?`, "g"), "")
+      );
     }
-
-    function replaceClass(element) {
-      (arguments.length <= 1 ? undefined : arguments[1]) && removeClass(element, arguments.length <= 1 ? undefined : arguments[1]);
-      (arguments.length <= 2 ? undefined : arguments[2]) && addClass(element, arguments.length <= 2 ? undefined : arguments[2]);
+    function replaceClass(element, ...args) {
+      args[0] && removeClass(element, args[0]);
+      args[1] && addClass(element, args[1]);
     }
-
     function hasClass(element, cls) {
       [cls] = getClasses(cls);
       return !!cls && toNodes(element).some((node) => node.classList.contains(cls));
     }
-
     function toggleClass(element, cls, force) {
       const classes = getClasses(cls);
-
       if (!isUndefined(force)) {
         force = !!force;
       }
-
       for (const node of toNodes(element)) {
-        for (const cls of classes) {
-          node.classList.toggle(cls, force);
+        for (const cls2 of classes) {
+          node.classList.toggle(cls2, force);
         }
       }
     }
-
     function apply$1(element, args, fn) {
-      args = args.reduce((args, arg) => args.concat(getClasses(arg)), []);
-
+      args = args.reduce((args2, arg) => args2.concat(getClasses(arg)), []);
       for (const node of toNodes(element)) {
         node.classList[fn](...args);
       }
     }
-
     function getClasses(str) {
-      return String(str).split(/\s|,/).filter(Boolean);
+      return String(str).split(/[ ,]/).filter(Boolean);
     }
 
-    function transition(element, props, duration, timing) {if (duration === void 0) {duration = 400;}if (timing === void 0) {timing = 'linear';}
+    function transition$1(element, props, duration = 400, timing = "linear") {
       duration = Math.round(duration);
       return Promise.all(
-      toNodes(element).map(
-      (element) =>
-      new Promise((resolve, reject) => {
-        for (const name in props) {
-          const value = css(element, name);
-          if (value === '') {
-            css(element, name, value);
-          }
-        }
-
-        const timer = setTimeout(() => trigger(element, 'transitionend'), duration);
-
-        once(
-        element,
-        'transitionend transitioncanceled',
-        (_ref) => {let { type } = _ref;
-          clearTimeout(timer);
-          removeClass(element, 'uk-transition');
-          css(element, {
-            transitionProperty: '',
-            transitionDuration: '',
-            transitionTimingFunction: '' });
-
-          type === 'transitioncanceled' ? reject() : resolve(element);
-        },
-        { self: true });
-
-
-        addClass(element, 'uk-transition');
-        css(element, {
-          transitionProperty: Object.keys(props).map(propName).join(','),
-          transitionDuration: duration + "ms",
-          transitionTimingFunction: timing,
-          ...props });
-
-      })));
-
-
+        toNodes(element).map(
+          (element2) => new Promise((resolve, reject) => {
+            for (const name in props) {
+              const value = css(element2, name);
+              if (value === "") {
+                css(element2, name, value);
+              }
+            }
+            const timer = setTimeout(() => trigger(element2, "transitionend"), duration);
+            once(
+              element2,
+              "transitionend transitioncanceled",
+              ({ type }) => {
+                clearTimeout(timer);
+                removeClass(element2, "uk-transition");
+                css(element2, {
+                  transitionProperty: "",
+                  transitionDuration: "",
+                  transitionTimingFunction: ""
+                });
+                type === "transitioncanceled" ? reject() : resolve(element2);
+              },
+              { self: true }
+            );
+            addClass(element2, "uk-transition");
+            css(element2, {
+              transitionProperty: Object.keys(props).map(propName).join(","),
+              transitionDuration: `${duration}ms`,
+              transitionTimingFunction: timing,
+              ...props
+            });
+          })
+        )
+      );
     }
-
     const Transition = {
-      start: transition,
-
+      start: transition$1,
       async stop(element) {
-        trigger(element, 'transitionend');
+        trigger(element, "transitionend");
         await Promise.resolve();
       },
-
       async cancel(element) {
-        trigger(element, 'transitioncanceled');
+        trigger(element, "transitioncanceled");
         await Promise.resolve();
       },
-
       inProgress(element) {
-        return hasClass(element, 'uk-transition');
-      } };
-
-
-    const animationPrefix = 'uk-animation-';
-
-    function animate$2(element, animation, duration, origin, out) {if (duration === void 0) {duration = 200;}
+        return hasClass(element, "uk-transition");
+      }
+    };
+    const animationPrefix = "uk-animation-";
+    function animate$2(element, animation, duration = 200, origin, out) {
       return Promise.all(
-      toNodes(element).map(
-      (element) =>
-      new Promise((resolve, reject) => {
-        trigger(element, 'animationcanceled');
-        const timer = setTimeout(() => trigger(element, 'animationend'), duration);
-
-        once(
-        element,
-        'animationend animationcanceled',
-        (_ref2) => {let { type } = _ref2;
-          clearTimeout(timer);
-
-          type === 'animationcanceled' ? reject() : resolve(element);
-
-          css(element, 'animationDuration', '');
-          removeClasses(element, animationPrefix + "\\S*");
-        },
-        { self: true });
-
-
-        css(element, 'animationDuration', duration + "ms");
-        addClass(element, animation, animationPrefix + (out ? 'leave' : 'enter'));
-
-        if (startsWith(animation, animationPrefix)) {
-          origin && addClass(element, "uk-transform-origin-" + origin);
-          out && addClass(element, animationPrefix + "reverse");
-        }
-      })));
-
-
+        toNodes(element).map(
+          (element2) => new Promise((resolve, reject) => {
+            trigger(element2, "animationcanceled");
+            const timer = setTimeout(() => trigger(element2, "animationend"), duration);
+            once(
+              element2,
+              "animationend animationcanceled",
+              ({ type }) => {
+                clearTimeout(timer);
+                type === "animationcanceled" ? reject() : resolve(element2);
+                css(element2, "animationDuration", "");
+                removeClasses(element2, `${animationPrefix}\\S*`);
+              },
+              { self: true }
+            );
+            css(element2, "animationDuration", `${duration}ms`);
+            addClass(element2, animation, animationPrefix + (out ? "leave" : "enter"));
+            if (startsWith(animation, animationPrefix)) {
+              origin && addClass(element2, `uk-transform-origin-${origin}`);
+              out && addClass(element2, `${animationPrefix}reverse`);
+            }
+          })
+        )
+      );
     }
-
-    const inProgress = new RegExp(animationPrefix + "(enter|leave)");
+    const inProgressRe = new RegExp(`${animationPrefix}(enter|leave)`);
     const Animation = {
       in: animate$2,
-
       out(element, animation, duration, origin) {
         return animate$2(element, animation, duration, origin, true);
       },
-
       inProgress(element) {
-        return inProgress.test(attr(element, 'class'));
+        return inProgressRe.test(attr(element, "class"));
       },
-
       cancel(element) {
-        trigger(element, 'animationcanceled');
-      } };
+        trigger(element, "animationcanceled");
+      }
+    };
+
+    function ready(fn) {
+      if (document.readyState !== "loading") {
+        fn();
+        return;
+      }
+      once(document, "DOMContentLoaded", fn);
+    }
+    function isTag(element, ...tagNames) {
+      return tagNames.some((tagName) => {
+        var _a;
+        return ((_a = element == null ? void 0 : element.tagName) == null ? void 0 : _a.toLowerCase()) === tagName.toLowerCase();
+      });
+    }
+    function empty(element) {
+      element = $(element);
+      element.innerHTML = "";
+      return element;
+    }
+    function html(parent2, html2) {
+      return isUndefined(html2) ? $(parent2).innerHTML : append(empty(parent2), html2);
+    }
+    const prepend = applyFn("prepend");
+    const append = applyFn("append");
+    const before = applyFn("before");
+    const after = applyFn("after");
+    function applyFn(fn) {
+      return function(ref, element) {
+        var _a;
+        const nodes = toNodes(isString(element) ? fragment(element) : element);
+        (_a = $(ref)) == null ? void 0 : _a[fn](...nodes);
+        return unwrapSingle(nodes);
+      };
+    }
+    function remove$1(element) {
+      toNodes(element).forEach((element2) => element2.remove());
+    }
+    function wrapAll(element, structure) {
+      structure = toNode(before(element, structure));
+      while (structure.firstChild) {
+        structure = structure.firstChild;
+      }
+      append(structure, element);
+      return structure;
+    }
+    function wrapInner(element, structure) {
+      return toNodes(
+        toNodes(element).map(
+          (element2) => element2.hasChildNodes() ? wrapAll(toNodes(element2.childNodes), structure) : append(element2, structure)
+        )
+      );
+    }
+    function unwrap(element) {
+      toNodes(element).map(parent).filter((value, index, self) => self.indexOf(value) === index).forEach((parent2) => parent2.replaceWith(...parent2.childNodes));
+    }
+    const fragmentRe = /^\s*<(\w+|!)[^>]*>/;
+    const singleTagRe = /^<(\w+)\s*\/?>(?:<\/\1>)?$/;
+    function fragment(html2) {
+      const matches = singleTagRe.exec(html2);
+      if (matches) {
+        return document.createElement(matches[1]);
+      }
+      const container = document.createElement("div");
+      if (fragmentRe.test(html2)) {
+        container.insertAdjacentHTML("beforeend", html2.trim());
+      } else {
+        container.textContent = html2;
+      }
+      return unwrapSingle(container.childNodes);
+    }
+    function unwrapSingle(nodes) {
+      return nodes.length > 1 ? nodes : nodes[0];
+    }
+    function apply(node, fn) {
+      if (!isElement(node)) {
+        return;
+      }
+      fn(node);
+      node = node.firstElementChild;
+      while (node) {
+        const next = node.nextElementSibling;
+        apply(node, fn);
+        node = next;
+      }
+    }
+    function $(selector, context) {
+      return isHtml(selector) ? toNode(fragment(selector)) : find(selector, context);
+    }
+    function $$(selector, context) {
+      return isHtml(selector) ? toNodes(fragment(selector)) : findAll(selector, context);
+    }
+    function isHtml(str) {
+      return isString(str) && startsWith(str.trim(), "<");
+    }
 
     const dirs$1 = {
-      width: ['left', 'right'],
-      height: ['top', 'bottom'] };
-
-
+      width: ["left", "right"],
+      height: ["top", "bottom"]
+    };
     function dimensions(element) {
-      const rect = isElement(element) ?
-      toNode(element).getBoundingClientRect() :
-      { height: height(element), width: width(element), top: 0, left: 0 };
-
+      const rect = isElement(element) ? toNode(element).getBoundingClientRect() : { height: height(element), width: width(element), top: 0, left: 0 };
       return {
         height: rect.height,
         width: rect.width,
         top: rect.top,
         left: rect.left,
         bottom: rect.top + rect.height,
-        right: rect.left + rect.width };
-
+        right: rect.left + rect.width
+      };
     }
-
     function offset(element, coordinates) {
       const currentOffset = dimensions(element);
-
       if (element) {
         const { scrollY, scrollX } = toWindow(element);
         const offsetBy = { height: scrollY, width: scrollX };
-
         for (const dir in dirs$1) {
           for (const prop of dirs$1[dir]) {
             currentOffset[prop] += offsetBy[dir];
           }
         }
       }
-
       if (!coordinates) {
         return currentOffset;
       }
-
-      const pos = css(element, 'position');
-
-      each(css(element, ['left', 'top']), (value, prop) =>
-      css(
-      element,
-      prop,
-      coordinates[prop] -
-      currentOffset[prop] +
-      toFloat(pos === 'absolute' && value === 'auto' ? position(element)[prop] : value)));
-
-
+      const pos = css(element, "position");
+      each(
+        css(element, ["left", "top"]),
+        (value, prop) => css(
+          element,
+          prop,
+          coordinates[prop] - currentOffset[prop] + toFloat(pos === "absolute" && value === "auto" ? position(element)[prop] : value)
+        )
+      );
     }
-
     function position(element) {
       let { top, left } = offset(element);
-
       const {
         ownerDocument: { body, documentElement },
-        offsetParent } =
-      toNode(element);
+        offsetParent
+      } = toNode(element);
       let parent = offsetParent || documentElement;
-
-      while (
-      parent && (
-      parent === body || parent === documentElement) &&
-      css(parent, 'position') === 'static')
-      {
+      while (parent && (parent === body || parent === documentElement) && css(parent, "position") === "static") {
         parent = parent.parentNode;
       }
-
       if (isElement(parent)) {
         const parentOffset = offset(parent);
-        top -= parentOffset.top + toFloat(css(parent, 'borderTopWidth'));
-        left -= parentOffset.left + toFloat(css(parent, 'borderLeftWidth'));
+        top -= parentOffset.top + toFloat(css(parent, "borderTopWidth"));
+        left -= parentOffset.left + toFloat(css(parent, "borderLeftWidth"));
       }
-
       return {
-        top: top - toFloat(css(element, 'marginTop')),
-        left: left - toFloat(css(element, 'marginLeft')) };
-
+        top: top - toFloat(css(element, "marginTop")),
+        left: left - toFloat(css(element, "marginLeft"))
+      };
     }
-
     function offsetPosition(element) {
       element = toNode(element);
-
-      const offset = [element.offsetTop, element.offsetLeft];
-
+      const offset2 = [element.offsetTop, element.offsetLeft];
       while (element = element.offsetParent) {
-        offset[0] += element.offsetTop + toFloat(css(element, "borderTopWidth"));
-        offset[1] += element.offsetLeft + toFloat(css(element, "borderLeftWidth"));
-
-        if (css(element, 'position') === 'fixed') {
+        offset2[0] += element.offsetTop + toFloat(css(element, `borderTopWidth`));
+        offset2[1] += element.offsetLeft + toFloat(css(element, `borderLeftWidth`));
+        if (css(element, "position") === "fixed") {
           const win = toWindow(element);
-          offset[0] += win.scrollY;
-          offset[1] += win.scrollX;
-          return offset;
+          offset2[0] += win.scrollY;
+          offset2[1] += win.scrollX;
+          return offset2;
         }
       }
-
-      return offset;
+      return offset2;
     }
-
-    const height = dimension('height');
-    const width = dimension('width');
-
+    const height = dimension("height");
+    const width = dimension("width");
     function dimension(prop) {
       const propName = ucfirst(prop);
       return (element, value) => {
         if (isUndefined(value)) {
           if (isWindow(element)) {
-            return element["inner" + propName];
+            return element[`inner${propName}`];
           }
-
           if (isDocument(element)) {
             const doc = element.documentElement;
-            return Math.max(doc["offset" + propName], doc["scroll" + propName]);
+            return Math.max(doc[`offset${propName}`], doc[`scroll${propName}`]);
           }
-
           element = toNode(element);
-
           value = css(element, prop);
-          value = value === 'auto' ? element["offset" + propName] : toFloat(value) || 0;
-
+          value = value === "auto" ? element[`offset${propName}`] : toFloat(value) || 0;
           return value - boxModelAdjust(element, prop);
         } else {
           return css(
-          element,
-          prop,
-          !value && value !== 0 ? '' : +value + boxModelAdjust(element, prop) + 'px');
-
+            element,
+            prop,
+            !value && value !== 0 ? "" : +value + boxModelAdjust(element, prop) + "px"
+          );
         }
       };
     }
-
-    function boxModelAdjust(element, prop, sizing) {if (sizing === void 0) {sizing = 'border-box';}
-      return css(element, 'boxSizing') === sizing ?
-      dirs$1[prop].
-      map(ucfirst).
-      reduce(
-      (value, prop) =>
-      value +
-      toFloat(css(element, "padding" + prop)) +
-      toFloat(css(element, "border" + prop + "Width")),
-      0) :
-
-      0;
+    function boxModelAdjust(element, prop, sizing = "border-box") {
+      return css(element, "boxSizing") === sizing ? sumBy(
+        dirs$1[prop].map(ucfirst),
+        (prop2) => toFloat(css(element, `padding${prop2}`)) + toFloat(css(element, `border${prop2}Width`))
+      ) : 0;
     }
-
     function flipPosition(pos) {
       for (const dir in dirs$1) {
         for (const i in dirs$1[dir]) {
@@ -1122,218 +906,88 @@
       }
       return pos;
     }
-
-    function toPx(value, property, element, offsetDim) {if (property === void 0) {property = 'width';}if (element === void 0) {element = window;}if (offsetDim === void 0) {offsetDim = false;}
+    function toPx(value, property = "width", element = window, offsetDim = false) {
       if (!isString(value)) {
         return toFloat(value);
       }
-
-      return parseCalc(value).reduce((result, value) => {
-        const unit = parseUnit(value);
-        if (unit) {
-          value = percent(
-          unit === 'vh' ?
-          height(toWindow(element)) :
-          unit === 'vw' ?
-          width(toWindow(element)) :
-          offsetDim ?
-          element["offset" + ucfirst(property)] :
-          dimensions(element)[property],
-          value);
-
-        }
-
-        return result + toFloat(value);
-      }, 0);
+      return sumBy(parseCalc(value), (value2) => {
+        const unit = parseUnit(value2);
+        return unit ? percent(
+          unit === "vh" ? getViewportHeight() : unit === "vw" ? width(toWindow(element)) : offsetDim ? element[`offset${ucfirst(property)}`] : dimensions(element)[property],
+          value2
+        ) : value2;
+      });
     }
-
     const calcRe = /-?\d+(?:\.\d+)?(?:v[wh]|%|px)?/g;
-    const parseCalc = memoize((calc) => calc.toString().replace(/\s/g, '').match(calcRe) || []);
+    const parseCalc = memoize((calc) => calc.toString().replace(/\s/g, "").match(calcRe) || []);
     const unitRe = /(?:v[hw]|%)$/;
     const parseUnit = memoize((str) => (str.match(unitRe) || [])[0]);
-
     function percent(base, value) {
       return base * toFloat(value) / 100;
     }
-
-    function ready(fn) {
-      if (document.readyState !== 'loading') {
-        fn();
-        return;
+    let vh;
+    let vhEl;
+    function getViewportHeight() {
+      if (vh) {
+        return vh;
       }
-
-      once(document, 'DOMContentLoaded', fn);
-    }
-
-    function isTag(element, tagName) {var _element$tagName;
-      return (element == null ? void 0 : (_element$tagName = element.tagName) == null ? void 0 : _element$tagName.toLowerCase()) === tagName.toLowerCase();
-    }
-
-    function empty(element) {
-      element = $(element);
-      element.innerHTML = '';
-      return element;
-    }
-
-    function html(parent, html) {
-      return isUndefined(html) ? $(parent).innerHTML : append(empty(parent), html);
-    }
-
-    const prepend = applyFn('prepend');
-    const append = applyFn('append');
-    const before = applyFn('before');
-    const after = applyFn('after');
-
-    function applyFn(fn) {
-      return function (ref, element) {var _$;
-        const nodes = toNodes(isString(element) ? fragment(element) : element);
-        (_$ = $(ref)) == null ? void 0 : _$[fn](...nodes);
-        return unwrapSingle(nodes);
-      };
-    }
-
-    function remove$1(element) {
-      toNodes(element).forEach((element) => element.remove());
-    }
-
-    function wrapAll(element, structure) {
-      structure = toNode(before(element, structure));
-
-      while (structure.firstChild) {
-        structure = structure.firstChild;
+      if (!vhEl) {
+        vhEl = $("<div>");
+        css(vhEl, {
+          height: "100vh",
+          position: "fixed"
+        });
+        on(window, "resize", () => vh = null);
       }
-
-      append(structure, element);
-
-      return structure;
+      append(document.body, vhEl);
+      vh = vhEl.clientHeight;
+      remove$1(vhEl);
+      return vh;
     }
 
-    function wrapInner(element, structure) {
-      return toNodes(
-      toNodes(element).map((element) =>
-      element.hasChildNodes() ?
-      wrapAll(toNodes(element.childNodes), structure) :
-      append(element, structure)));
-
-
-    }
-
-    function unwrap(element) {
-      toNodes(element).
-      map(parent).
-      filter((value, index, self) => self.indexOf(value) === index).
-      forEach((parent) => parent.replaceWith(...parent.childNodes));
-    }
-
-    const fragmentRe = /^\s*<(\w+|!)[^>]*>/;
-    const singleTagRe = /^<(\w+)\s*\/?>(?:<\/\1>)?$/;
-
-    function fragment(html) {
-      const matches = singleTagRe.exec(html);
-      if (matches) {
-        return document.createElement(matches[1]);
-      }
-
-      const container = document.createElement('div');
-      if (fragmentRe.test(html)) {
-        container.insertAdjacentHTML('beforeend', html.trim());
-      } else {
-        container.textContent = html;
-      }
-
-      return unwrapSingle(container.childNodes);
-    }
-
-    function unwrapSingle(nodes) {
-      return nodes.length > 1 ? nodes : nodes[0];
-    }
-
-    function apply(node, fn) {
-      if (!isElement(node)) {
-        return;
-      }
-
-      fn(node);
-      node = node.firstElementChild;
-      while (node) {
-        const next = node.nextElementSibling;
-        apply(node, fn);
-        node = next;
-      }
-    }
-
-    function $(selector, context) {
-      return isHtml(selector) ? toNode(fragment(selector)) : find(selector, context);
-    }
-
-    function $$(selector, context) {
-      return isHtml(selector) ? toNodes(fragment(selector)) : findAll(selector, context);
-    }
-
-    function isHtml(str) {
-      return isString(str) && startsWith(str.trim(), '<');
-    }
-
-    const inBrowser = typeof window !== 'undefined';
-    const isRtl = inBrowser && attr(document.documentElement, 'dir') === 'rtl';
-
-    const hasTouch = inBrowser && 'ontouchstart' in window;
+    const inBrowser = typeof window !== "undefined";
+    const isRtl = inBrowser && document.dir === "rtl";
+    const hasTouch = inBrowser && "ontouchstart" in window;
     const hasPointerEvents = inBrowser && window.PointerEvent;
-
-    const pointerDown = hasPointerEvents ? 'pointerdown' : hasTouch ? 'touchstart' : 'mousedown';
-    const pointerMove = hasPointerEvents ? 'pointermove' : hasTouch ? 'touchmove' : 'mousemove';
-    const pointerUp = hasPointerEvents ? 'pointerup' : hasTouch ? 'touchend' : 'mouseup';
-    const pointerEnter = hasPointerEvents ? 'pointerenter' : hasTouch ? '' : 'mouseenter';
-    const pointerLeave = hasPointerEvents ? 'pointerleave' : hasTouch ? '' : 'mouseleave';
-    const pointerCancel = hasPointerEvents ? 'pointercancel' : 'touchcancel';
-
-    /*
-        Based on:
-        Copyright (c) 2016 Wilson Page wilsonpage@me.com
-        https://github.com/wilsonpage/fastdom
-    */
+    const pointerDown = hasPointerEvents ? "pointerdown" : hasTouch ? "touchstart" : "mousedown";
+    const pointerMove = hasPointerEvents ? "pointermove" : hasTouch ? "touchmove" : "mousemove";
+    const pointerUp = hasPointerEvents ? "pointerup" : hasTouch ? "touchend" : "mouseup";
+    const pointerEnter = hasPointerEvents ? "pointerenter" : hasTouch ? "" : "mouseenter";
+    const pointerLeave = hasPointerEvents ? "pointerleave" : hasTouch ? "" : "mouseleave";
+    const pointerCancel = hasPointerEvents ? "pointercancel" : "touchcancel";
 
     const fastdom = {
       reads: [],
       writes: [],
-
       read(task) {
         this.reads.push(task);
         scheduleFlush();
         return task;
       },
-
       write(task) {
         this.writes.push(task);
         scheduleFlush();
         return task;
       },
-
       clear(task) {
         remove(this.reads, task);
         remove(this.writes, task);
       },
-
-      flush };
-
-
+      flush
+    };
     function flush(recursion) {
       runTasks(fastdom.reads);
       runTasks(fastdom.writes.splice(0));
-
       fastdom.scheduled = false;
-
       if (fastdom.reads.length || fastdom.writes.length) {
         scheduleFlush(recursion + 1);
       }
     }
-
     const RECURSION_LIMIT = 4;
     function scheduleFlush(recursion) {
       if (fastdom.scheduled) {
         return;
       }
-
       fastdom.scheduled = true;
       if (recursion && recursion < RECURSION_LIMIT) {
         Promise.resolve().then(() => flush(recursion));
@@ -1341,7 +995,6 @@
         requestAnimationFrame(() => flush(1));
       }
     }
-
     function runTasks(tasks) {
       let task;
       while (task = tasks.shift()) {
@@ -1352,480 +1005,264 @@
         }
       }
     }
-
     function remove(array, item) {
       const index = array.indexOf(item);
       return ~index && array.splice(index, 1);
     }
 
-    function MouseTracker() {}
-
+    function MouseTracker() {
+    }
     MouseTracker.prototype = {
       positions: [],
-
       init() {
         this.positions = [];
-
         let position;
-        this.unbind = on(document, 'mousemove', (e) => position = getEventPos(e));
+        this.unbind = on(document, "mousemove", (e) => position = getEventPos(e));
         this.interval = setInterval(() => {
           if (!position) {
             return;
           }
-
           this.positions.push(position);
-
           if (this.positions.length > 5) {
             this.positions.shift();
           }
         }, 50);
       },
-
-      cancel() {var _this$unbind;
-        (_this$unbind = this.unbind) == null ? void 0 : _this$unbind.call(this);
-        this.interval && clearInterval(this.interval);
+      cancel() {
+        var _a;
+        (_a = this.unbind) == null ? void 0 : _a.call(this);
+        clearInterval(this.interval);
       },
-
       movesTo(target) {
         if (this.positions.length < 2) {
           return false;
         }
-
         const p = target.getBoundingClientRect();
         const { left, right, top, bottom } = p;
-
         const [prevPosition] = this.positions;
         const position = last(this.positions);
         const path = [prevPosition, position];
-
         if (pointInRect(position, p)) {
           return false;
         }
-
         const diagonals = [
-        [
-        { x: left, y: top },
-        { x: right, y: bottom }],
-
-        [
-        { x: left, y: bottom },
-        { x: right, y: top }]];
-
-
-
+          [
+            { x: left, y: top },
+            { x: right, y: bottom }
+          ],
+          [
+            { x: left, y: bottom },
+            { x: right, y: top }
+          ]
+        ];
         return diagonals.some((diagonal) => {
           const intersection = intersect(path, diagonal);
           return intersection && pointInRect(intersection, p);
         });
-      } };
-
-
-    // Inspired by http://paulbourke.net/geometry/pointlineplane/
-    function intersect(_ref, _ref2) {let [{ x: x1, y: y1 }, { x: x2, y: y2 }] = _ref;let [{ x: x3, y: y3 }, { x: x4, y: y4 }] = _ref2;
+      }
+    };
+    function intersect([{ x: x1, y: y1 }, { x: x2, y: y2 }], [{ x: x3, y: y3 }, { x: x4, y: y4 }]) {
       const denominator = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
-
-      // Lines are parallel
       if (denominator === 0) {
         return false;
       }
-
       const ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denominator;
-
       if (ua < 0) {
         return false;
       }
-
-      // Return an object with the x and y coordinates of the intersection
       return { x: x1 + ua * (x2 - x1), y: y1 + ua * (y2 - y1) };
     }
 
-    function observeIntersection(targets, cb, options, intersecting) {if (intersecting === void 0) {intersecting = true;}
+    function observeIntersection(targets, cb, options = {}, intersecting = true) {
       const observer = new IntersectionObserver(
-      intersecting ?
-      (entries, observer) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          cb(entries, observer);
-        }
-      } :
-      cb,
-      options);
-
+        intersecting ? (entries, observer2) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            cb(entries, observer2);
+          }
+        } : cb,
+        options
+      );
       for (const el of toNodes(targets)) {
         observer.observe(el);
       }
-
       return observer;
     }
-
     const hasResizeObserver = inBrowser && window.ResizeObserver;
-    function observeResize(targets, cb, options) {if (options === void 0) {options = { box: 'border-box' };}
+    function observeResize(targets, cb, options = { box: "border-box" }) {
       if (hasResizeObserver) {
-        return observe(ResizeObserver, targets, cb, options);
+        return observe$1(ResizeObserver, targets, cb, options);
       }
-
-      // Fallback Safari < 13.1
       initResizeListener();
       listeners.add(cb);
-
       return {
+        observe: noop,
+        unobserve: noop,
         disconnect() {
           listeners.delete(cb);
-        } };
-
+        }
+      };
     }
-
     let listeners;
     function initResizeListener() {
       if (listeners) {
         return;
       }
-
-      listeners = new Set();
-
-      // throttle 'resize'
+      listeners = /* @__PURE__ */ new Set();
       let pendingResize;
       const handleResize = () => {
         if (pendingResize) {
           return;
         }
         pendingResize = true;
-        fastdom.read(() => pendingResize = false);
+        requestAnimationFrame(() => pendingResize = false);
         for (const listener of listeners) {
           listener();
         }
       };
-
-      on(window, 'load resize', handleResize);
-      on(document, 'loadedmetadata load', handleResize, true);
+      on(window, "load resize", handleResize);
+      on(document, "loadedmetadata load", handleResize, true);
     }
-
     function observeMutation(targets, cb, options) {
-      return observe(MutationObserver, targets, cb, options);
+      return observe$1(MutationObserver, targets, cb, options);
     }
-
-    function observe(Observer, targets, cb, options) {
+    function observe$1(Observer, targets, cb, options) {
       const observer = new Observer(cb);
       for (const el of toNodes(targets)) {
         observer.observe(el, options);
       }
-
       return observer;
-    }
-
-    const strats = {};
-
-    strats.events =
-    strats.created =
-    strats.beforeConnect =
-    strats.connected =
-    strats.beforeDisconnect =
-    strats.disconnected =
-    strats.destroy =
-    concatStrat;
-
-    // args strategy
-    strats.args = function (parentVal, childVal) {
-      return childVal !== false && concatStrat(childVal || parentVal);
-    };
-
-    // update strategy
-    strats.update = function (parentVal, childVal) {
-      return sortBy$1(
-      concatStrat(parentVal, isFunction(childVal) ? { read: childVal } : childVal),
-      'order');
-
-    };
-
-    // property strategy
-    strats.props = function (parentVal, childVal) {
-      if (isArray(childVal)) {
-        const value = {};
-        for (const key of childVal) {
-          value[key] = String;
-        }
-        childVal = value;
-      }
-
-      return strats.methods(parentVal, childVal);
-    };
-
-    // extend strategy
-    strats.computed = strats.methods = function (parentVal, childVal) {
-      return childVal ? parentVal ? { ...parentVal, ...childVal } : childVal : parentVal;
-    };
-
-    // data strategy
-    strats.data = function (parentVal, childVal, vm) {
-      if (!vm) {
-        if (!childVal) {
-          return parentVal;
-        }
-
-        if (!parentVal) {
-          return childVal;
-        }
-
-        return function (vm) {
-          return mergeFnData(parentVal, childVal, vm);
-        };
-      }
-
-      return mergeFnData(parentVal, childVal, vm);
-    };
-
-    function mergeFnData(parentVal, childVal, vm) {
-      return strats.computed(
-      isFunction(parentVal) ? parentVal.call(vm, vm) : parentVal,
-      isFunction(childVal) ? childVal.call(vm, vm) : childVal);
-
-    }
-
-    // concat strategy
-    function concatStrat(parentVal, childVal) {
-      parentVal = parentVal && !isArray(parentVal) ? [parentVal] : parentVal;
-
-      return childVal ?
-      parentVal ?
-      parentVal.concat(childVal) :
-      isArray(childVal) ?
-      childVal :
-      [childVal] :
-      parentVal;
-    }
-
-    // default strategy
-    function defaultStrat(parentVal, childVal) {
-      return isUndefined(childVal) ? parentVal : childVal;
-    }
-
-    function mergeOptions(parent, child, vm) {
-      const options = {};
-
-      if (isFunction(child)) {
-        child = child.options;
-      }
-
-      if (child.extends) {
-        parent = mergeOptions(parent, child.extends, vm);
-      }
-
-      if (child.mixins) {
-        for (const mixin of child.mixins) {
-          parent = mergeOptions(parent, mixin, vm);
-        }
-      }
-
-      for (const key in parent) {
-        mergeKey(key);
-      }
-
-      for (const key in child) {
-        if (!hasOwn(parent, key)) {
-          mergeKey(key);
-        }
-      }
-
-      function mergeKey(key) {
-        options[key] = (strats[key] || defaultStrat)(parent[key], child[key], vm);
-      }
-
-      return options;
-    }
-
-    function parseOptions(options, args) {if (args === void 0) {args = [];}
-      try {
-        return options ?
-        startsWith(options, '{') ?
-        JSON.parse(options) :
-        args.length && !includes(options, ':') ?
-        { [args[0]]: options } :
-        options.split(';').reduce((options, option) => {
-          const [key, value] = option.split(/:(.*)/);
-          if (key && !isUndefined(value)) {
-            options[key.trim()] = value.trim();
-          }
-          return options;
-        }, {}) :
-        {};
-      } catch (e) {
-        return {};
-      }
     }
 
     function play(el) {
       if (isIFrame(el)) {
-        call(el, { func: 'playVideo', method: 'play' });
+        call(el, { func: "playVideo", method: "play" });
       }
-
       if (isHTML5(el)) {
         try {
           el.play().catch(noop);
         } catch (e) {
-          // noop
         }
       }
     }
-
     function pause(el) {
       if (isIFrame(el)) {
-        call(el, { func: 'pauseVideo', method: 'pause' });
+        call(el, { func: "pauseVideo", method: "pause" });
       }
-
       if (isHTML5(el)) {
         el.pause();
       }
     }
-
     function mute(el) {
       if (isIFrame(el)) {
-        call(el, { func: 'mute', method: 'setVolume', value: 0 });
+        call(el, { func: "mute", method: "setVolume", value: 0 });
       }
-
       if (isHTML5(el)) {
         el.muted = true;
       }
     }
-
     function isVideo(el) {
       return isHTML5(el) || isIFrame(el);
     }
-
     function isHTML5(el) {
-      return isTag(el, 'video');
+      return isTag(el, "video");
     }
-
     function isIFrame(el) {
-      return isTag(el, 'iframe') && (isYoutube(el) || isVimeo(el));
+      return isTag(el, "iframe") && (isYoutube(el) || isVimeo(el));
     }
-
     function isYoutube(el) {
       return !!el.src.match(
-      /\/\/.*?youtube(-nocookie)?\.[a-z]+\/(watch\?v=[^&\s]+|embed)|youtu\.be\/.*/);
-
+        /\/\/.*?youtube(-nocookie)?\.[a-z]+\/(watch\?v=[^&\s]+|embed)|youtu\.be\/.*/
+      );
     }
-
     function isVimeo(el) {
       return !!el.src.match(/vimeo\.com\/video\/.*/);
     }
-
     async function call(el, cmd) {
       await enableApi(el);
       post(el, cmd);
     }
-
     function post(el, cmd) {
       try {
-        el.contentWindow.postMessage(JSON.stringify({ event: 'command', ...cmd }), '*');
+        el.contentWindow.postMessage(JSON.stringify({ event: "command", ...cmd }), "*");
       } catch (e) {
-        // noop
       }
     }
-
-    const stateKey = '_ukPlayer';
+    const stateKey = "_ukPlayer";
     let counter = 0;
     function enableApi(el) {
       if (el[stateKey]) {
         return el[stateKey];
       }
-
       const youtube = isYoutube(el);
       const vimeo = isVimeo(el);
-
       const id = ++counter;
       let poller;
-
       return el[stateKey] = new Promise((resolve) => {
-        youtube &&
-        once(el, 'load', () => {
-          const listener = () => post(el, { event: 'listening', id });
+        youtube && once(el, "load", () => {
+          const listener = () => post(el, { event: "listening", id });
           poller = setInterval(listener, 100);
           listener();
         });
-
-        once(window, 'message', resolve, false, (_ref) => {let { data } = _ref;
+        once(window, "message", resolve, false, ({ data }) => {
           try {
             data = JSON.parse(data);
-            return (
-              data && (
-              youtube && data.id === id && data.event === 'onReady' ||
-              vimeo && Number(data.player_id) === id));
-
+            return youtube && (data == null ? void 0 : data.id) === id && data.event === "onReady" || vimeo && Number(data == null ? void 0 : data.player_id) === id;
           } catch (e) {
-            // noop
           }
         });
-
-        el.src = "" + el.src + (includes(el.src, '?') ? '&' : '?') + (
-        youtube ? 'enablejsapi=1' : "api=1&player_id=" + id);
-
+        el.src = `${el.src}${includes(el.src, "?") ? "&" : "?"}${youtube ? "enablejsapi=1" : `api=1&player_id=${id}`}`;
       }).then(() => clearInterval(poller));
     }
 
-    function isInView(element, offsetTop, offsetLeft) {if (offsetTop === void 0) {offsetTop = 0;}if (offsetLeft === void 0) {offsetLeft = 0;}
+    function isInView(element, offsetTop = 0, offsetLeft = 0) {
       if (!isVisible(element)) {
         return false;
       }
-
       return intersectRect(
-      ...scrollParents(element).
-      map((parent) => {
-        const { top, left, bottom, right } = offsetViewport(parent);
-
-        return {
-          top: top - offsetTop,
-          left: left - offsetLeft,
-          bottom: bottom + offsetTop,
-          right: right + offsetLeft };
-
-      }).
-      concat(offset(element)));
-
+        ...overflowParents(element).map((parent) => {
+          const { top, left, bottom, right } = offsetViewport(parent);
+          return {
+            top: top - offsetTop,
+            left: left - offsetLeft,
+            bottom: bottom + offsetTop,
+            right: right + offsetLeft
+          };
+        }).concat(offset(element))
+      );
     }
-
-    function scrollIntoView(element, _temp) {let { offset: offsetBy = 0 } = _temp === void 0 ? {} : _temp;
-      const parents = isVisible(element) ? scrollParents(element) : [];
-      return parents.reduce(
-      (fn, scrollElement, i) => {
-        const { scrollTop, scrollHeight, offsetHeight } = scrollElement;
-        const viewport = offsetViewport(scrollElement);
-        const maxScroll = scrollHeight - viewport.height;
-        const { height: elHeight, top: elTop } = parents[i - 1] ?
-        offsetViewport(parents[i - 1]) :
-        offset(element);
-
-        let top = Math.ceil(elTop - viewport.top - offsetBy + scrollTop);
-
-        if (offsetBy > 0 && offsetHeight < elHeight + offsetBy) {
-          top += offsetBy;
-        } else {
-          offsetBy = 0;
-        }
-
-        if (top > maxScroll) {
-          offsetBy -= top - maxScroll;
-          top = maxScroll;
-        } else if (top < 0) {
-          offsetBy -= top;
-          top = 0;
-        }
-
-        return () => scrollTo(scrollElement, top - scrollTop).then(fn);
-      },
-      () => Promise.resolve())();
-
-
-      function scrollTo(element, top) {
+    function scrollIntoView(element, { offset: offsetBy = 0 } = {}) {
+      const parents2 = isVisible(element) ? scrollParents(element, false, ["hidden"]) : [];
+      return parents2.reduce(
+        (fn, scrollElement, i) => {
+          const { scrollTop, scrollHeight, offsetHeight } = scrollElement;
+          const viewport = offsetViewport(scrollElement);
+          const maxScroll = scrollHeight - viewport.height;
+          const { height: elHeight, top: elTop } = parents2[i - 1] ? offsetViewport(parents2[i - 1]) : offset(element);
+          let top = Math.ceil(elTop - viewport.top - offsetBy + scrollTop);
+          if (offsetBy > 0 && offsetHeight < elHeight + offsetBy) {
+            top += offsetBy;
+          } else {
+            offsetBy = 0;
+          }
+          if (top > maxScroll) {
+            offsetBy -= top - maxScroll;
+            top = maxScroll;
+          } else if (top < 0) {
+            offsetBy -= top;
+            top = 0;
+          }
+          return () => scrollTo(scrollElement, top - scrollTop).then(fn);
+        },
+        () => Promise.resolve()
+      )();
+      function scrollTo(element2, top) {
         return new Promise((resolve) => {
-          const scroll = element.scrollTop;
+          const scroll = element2.scrollTop;
           const duration = getDuration(Math.abs(top));
           const start = Date.now();
-
           (function step() {
             const percent = ease(clamp((Date.now() - start) / duration));
-
-            element.scrollTop = scroll + top * percent;
-
-            // scroll more if we have not reached our destination
+            element2.scrollTop = scroll + top * percent;
             if (percent === 1) {
               resolve();
             } else {
@@ -1834,279 +1271,236 @@
           })();
         });
       }
-
       function getDuration(dist) {
         return 40 * Math.pow(dist, 0.375);
       }
-
       function ease(k) {
         return 0.5 * (1 - Math.cos(Math.PI * k));
       }
     }
-
-    function scrolledOver(element, startOffset, endOffset) {if (startOffset === void 0) {startOffset = 0;}if (endOffset === void 0) {endOffset = 0;}
+    function scrolledOver(element, startOffset = 0, endOffset = 0) {
       if (!isVisible(element)) {
         return 0;
       }
-
-      const [scrollElement] = scrollParents(element, /auto|scroll/, true);
+      const [scrollElement] = scrollParents(element, true);
       const { scrollHeight, scrollTop } = scrollElement;
       const { height: viewportHeight } = offsetViewport(scrollElement);
       const maxScroll = scrollHeight - viewportHeight;
       const elementOffsetTop = offsetPosition(element)[0] - offsetPosition(scrollElement)[0];
-
       const start = Math.max(0, elementOffsetTop - viewportHeight + startOffset);
       const end = Math.min(maxScroll, elementOffsetTop + element.offsetHeight - endOffset);
-
       return clamp((scrollTop - start) / (end - start));
     }
-
-    function scrollParents(element, overflowRe, scrollable) {if (overflowRe === void 0) {overflowRe = /auto|scroll|hidden|clip/;}if (scrollable === void 0) {scrollable = false;}
+    function scrollParents(element, scrollable = false, props = []) {
       const scrollEl = scrollingElement(element);
-
       let ancestors = parents(element).reverse();
       ancestors = ancestors.slice(ancestors.indexOf(scrollEl) + 1);
-
-      const fixedIndex = findIndex(ancestors, (el) => css(el, 'position') === 'fixed');
+      const fixedIndex = findIndex(ancestors, (el) => css(el, "position") === "fixed");
       if (~fixedIndex) {
         ancestors = ancestors.slice(fixedIndex);
       }
-
-      return [scrollEl].
-      concat(
-      ancestors.filter(
-      (parent) =>
-      overflowRe.test(css(parent, 'overflow')) && (
-      !scrollable || parent.scrollHeight > offsetViewport(parent).height))).
-
-
-      reverse();
+      return [scrollEl].concat(
+        ancestors.filter(
+          (parent) => css(parent, "overflow").split(" ").some((prop) => includes(["auto", "scroll", ...props], prop)) && (!scrollable || parent.scrollHeight > offsetViewport(parent).height)
+        )
+      ).reverse();
     }
-
+    function overflowParents(element) {
+      return scrollParents(element, false, ["hidden", "clip"]);
+    }
     function offsetViewport(scrollElement) {
       const window = toWindow(scrollElement);
       const {
-        document: { documentElement } } =
-      window;
-      let viewportElement =
-      scrollElement === scrollingElement(scrollElement) ? window : scrollElement;
-
-      const { visualViewport } = window;
+        visualViewport,
+        document: { documentElement }
+      } = window;
+      let viewportElement = scrollElement === scrollingElement(scrollElement) ? window : scrollElement;
       if (isWindow(viewportElement) && visualViewport) {
         let { height, width, scale, pageTop: top, pageLeft: left } = visualViewport;
         height = Math.round(height * scale);
         width = Math.round(width * scale);
         return { height, width, top, left, bottom: top + height, right: left + width };
       }
-
       let rect = offset(viewportElement);
+      if (css(viewportElement, "display") === "inline") {
+        return rect;
+      }
       for (let [prop, dir, start, end] of [
-      ['width', 'x', 'left', 'right'],
-      ['height', 'y', 'top', 'bottom']])
-      {
+        ["width", "x", "left", "right"],
+        ["height", "y", "top", "bottom"]
+      ]) {
         if (isWindow(viewportElement)) {
-          // iOS 12 returns <body> as scrollingElement
           viewportElement = documentElement;
         } else {
-          rect[start] += toFloat(css(viewportElement, "border-" + start + "-width"));
+          rect[start] += toFloat(css(viewportElement, `border-${start}-width`));
         }
-        rect[prop] = rect[dir] = viewportElement["client" + ucfirst(prop)];
+        rect[prop] = rect[dir] = viewportElement[`client${ucfirst(prop)}`];
         rect[end] = rect[prop] + rect[start];
       }
       return rect;
     }
-
     function scrollingElement(element) {
       return toWindow(element).document.scrollingElement;
     }
 
     const dirs = [
-    ['width', 'x', 'left', 'right'],
-    ['height', 'y', 'top', 'bottom']];
-
-
+      ["width", "x", "left", "right"],
+      ["height", "y", "top", "bottom"]
+    ];
     function positionAt(element, target, options) {
       options = {
         attach: {
-          element: ['left', 'top'],
-          target: ['left', 'top'],
-          ...options.attach },
-
+          element: ["left", "top"],
+          target: ["left", "top"],
+          ...options.attach
+        },
         offset: [0, 0],
         placement: [],
-        ...options };
-
-
+        ...options
+      };
       if (!isArray(target)) {
         target = [target, target];
       }
-
       offset(element, getPosition(element, target, options));
     }
-
     function getPosition(element, target, options) {
       const position = attachTo(element, target, options);
-
-      let {
-        attach: { element: elAttach, target: targetAttach },
-        offset: elOffset,
-        boundary,
-        viewportOffset,
-        placement } =
-      options;
-
+      const { boundary, viewportOffset = 0, placement } = options;
       let offsetPosition = position;
-      for (const [i, [prop,, start, end]] of Object.entries(dirs)) {
-        let viewports = scrollParents(target[i]);
-        const [scrollElement] = viewports;
-
-        let viewport = getIntersectionArea(...viewports.map(offsetViewport));
-
-        if (viewportOffset) {
-          viewport[start] += viewportOffset;
-          viewport[end] -= viewportOffset;
-        }
-
-        if (boundary) {
-          viewport = getIntersectionArea(viewport, offsetViewport(boundary));
-        }
-
-        const isInStartViewport = position[start] >= viewport[start];
-        const isInEndViewport = position[end] <= viewport[end];
-
-        if (isInStartViewport && isInEndViewport) {
+      for (const [i, [prop, , start, end]] of Object.entries(dirs)) {
+        const viewport = getViewport$2(element, target[i], viewportOffset, boundary, i);
+        if (isWithin(position, viewport, i)) {
           continue;
         }
-
         let offsetBy = 0;
-
-        // Flip
-        if (placement[i] === 'flip') {
-          if (
-          targetAttach[i] === end && isInEndViewport ||
-          targetAttach[i] === start && isInStartViewport)
-          {
+        if (placement[i] === "flip") {
+          const attach = options.attach.target[i];
+          if (attach === end && position[end] <= viewport[end] || attach === start && position[start] >= viewport[start]) {
             continue;
           }
-
           offsetBy = flip(element, target, options, i)[start] - position[start];
-
-          if (!isInScrollArea(applyOffset(position, offsetBy, i), scrollElement, i)) {
-            if (isInScrollArea(position, scrollElement, i)) {
+          const scrollArea = getScrollArea(element, target[i], viewportOffset, i);
+          if (!isWithin(applyOffset(position, offsetBy, i), scrollArea, i)) {
+            if (isWithin(position, scrollArea, i)) {
               continue;
             }
-
             if (options.recursion) {
               return false;
             }
-
-            const newPos = getPosition(element, target, {
-              ...options,
-              attach: {
-                element: elAttach.map(flipAxis).reverse(),
-                target: targetAttach.map(flipAxis).reverse() },
-
-              offset: elOffset.reverse(),
-              placement: placement.reverse(),
-              recursion: true });
-
-
-            if (newPos && isInScrollArea(newPos, scrollElement, 1 - i)) {
+            const newPos = flipAxis(element, target, options);
+            if (newPos && isWithin(newPos, scrollArea, 1 - i)) {
               return newPos;
             }
-
             continue;
           }
-
-          // Shift
-        } else if (placement[i] === 'shift') {
+        } else if (placement[i] === "shift") {
           const targetDim = offset(target[i]);
-          offsetBy =
-          clamp(
-          clamp(position[start], viewport[start], viewport[end] - position[prop]),
-          targetDim[start] - position[prop] + elOffset[i],
-          targetDim[end] - elOffset[i]) -
-          position[start];
+          const { offset: elOffset } = options;
+          offsetBy = clamp(
+            clamp(position[start], viewport[start], viewport[end] - position[prop]),
+            targetDim[start] - position[prop] + elOffset[i],
+            targetDim[end] - elOffset[i]
+          ) - position[start];
         }
-
         offsetPosition = applyOffset(offsetPosition, offsetBy, i);
       }
-
       return offsetPosition;
     }
-
     function attachTo(element, target, options) {
       let { attach, offset: offsetBy } = {
         attach: {
-          element: ['left', 'top'],
-          target: ['left', 'top'],
-          ...options.attach },
-
+          element: ["left", "top"],
+          target: ["left", "top"],
+          ...options.attach
+        },
         offset: [0, 0],
-        ...options };
-
-
+        ...options
+      };
       let elOffset = offset(element);
-
-      for (const [i, [prop,, start, end]] of Object.entries(dirs)) {
-        const targetOffset =
-        attach.target[i] === attach.element[i] ? offsetViewport(target[i]) : offset(target[i]);
-
+      for (const [i, [prop, , start, end]] of Object.entries(dirs)) {
+        const targetOffset = attach.target[i] === attach.element[i] ? offsetViewport(target[i]) : offset(target[i]);
         elOffset = applyOffset(
-        elOffset,
-        targetOffset[start] -
-        elOffset[start] +
-        moveBy(attach.target[i], end, targetOffset[prop]) -
-        moveBy(attach.element[i], end, elOffset[prop]) +
-        +offsetBy[i],
-        i);
-
+          elOffset,
+          targetOffset[start] - elOffset[start] + moveBy(attach.target[i], end, targetOffset[prop]) - moveBy(attach.element[i], end, elOffset[prop]) + +offsetBy[i],
+          i
+        );
       }
       return elOffset;
     }
-
-    function applyOffset(position, offset, i) {
+    function applyOffset(position, offset2, i) {
       const [, dir, start, end] = dirs[i];
       const newPos = { ...position };
-      newPos[start] = position[dir] = position[start] + offset;
-      newPos[end] += offset;
+      newPos[start] = position[dir] = position[start] + offset2;
+      newPos[end] += offset2;
       return newPos;
     }
-
     function moveBy(attach, end, dim) {
-      return attach === 'center' ? dim / 2 : attach === end ? dim : 0;
+      return attach === "center" ? dim / 2 : attach === end ? dim : 0;
     }
-
-    function getIntersectionArea() {
-      let area = {};for (var _len = arguments.length, rects = new Array(_len), _key = 0; _key < _len; _key++) {rects[_key] = arguments[_key];}
+    function getViewport$2(element, target, viewportOffset, boundary, i) {
+      let viewport = getIntersectionArea(...commonScrollParents(element, target).map(offsetViewport));
+      if (viewportOffset) {
+        viewport[dirs[i][2]] += viewportOffset;
+        viewport[dirs[i][3]] -= viewportOffset;
+      }
+      if (boundary) {
+        viewport = getIntersectionArea(
+          viewport,
+          offset(isArray(boundary) ? boundary[i] : boundary)
+        );
+      }
+      return viewport;
+    }
+    function getScrollArea(element, target, viewportOffset, i) {
+      const [prop, axis, start, end] = dirs[i];
+      const [scrollElement] = commonScrollParents(element, target);
+      const viewport = offsetViewport(scrollElement);
+      if (["auto", "scroll"].includes(css(scrollElement, `overflow-${axis}`))) {
+        viewport[start] -= scrollElement[`scroll${ucfirst(start)}`];
+        viewport[end] = viewport[start] + scrollElement[`scroll${ucfirst(prop)}`];
+      }
+      viewport[start] += viewportOffset;
+      viewport[end] -= viewportOffset;
+      return viewport;
+    }
+    function commonScrollParents(element, target) {
+      return overflowParents(target).filter((parent) => within(element, parent));
+    }
+    function getIntersectionArea(...rects) {
+      let area = {};
       for (const rect of rects) {
-        for (const [,, start, end] of dirs) {
+        for (const [, , start, end] of dirs) {
           area[start] = Math.max(area[start] || 0, rect[start]);
           area[end] = Math.min(...[area[end], rect[end]].filter(Boolean));
         }
       }
       return area;
     }
-
-    function isInScrollArea(position, scrollElement, dir) {
-      const viewport = offsetViewport(scrollElement);
-      const [prop,, start, end] = dirs[dir];
-      viewport[start] -= scrollElement["scroll" + ucfirst(start)];
-      viewport[end] = viewport[start] + scrollElement["scroll" + ucfirst(prop)];
-
-      return position[start] >= viewport[start] && position[end] <= viewport[end];
+    function isWithin(positionA, positionB, i) {
+      const [, , start, end] = dirs[i];
+      return positionA[start] >= positionB[start] && positionA[end] <= positionB[end];
     }
-
-    function flip(element, target, _ref, i) {let { offset, attach } = _ref;
+    function flip(element, target, { offset: offset2, attach }, i) {
       return attachTo(element, target, {
         attach: {
           element: flipAttach(attach.element, i),
-          target: flipAttach(attach.target, i) },
-
-        offset: flipOffset(offset, i) });
-
+          target: flipAttach(attach.target, i)
+        },
+        offset: flipOffset(offset2, i)
+      });
     }
-
+    function flipAxis(element, target, options) {
+      return getPosition(element, target, {
+        ...options,
+        attach: {
+          element: options.attach.element.map(flipAttachAxis).reverse(),
+          target: options.attach.target.map(flipAttachAxis).reverse()
+        },
+        offset: options.offset.reverse(),
+        placement: options.placement.reverse(),
+        recursion: true
+      });
+    }
     function flipAttach(attach, i) {
       const newAttach = [...attach];
       const index = dirs[i].indexOf(attach[i]);
@@ -2115,14 +1509,7 @@
       }
       return newAttach;
     }
-
-    function flipOffset(offset, i) {
-      offset = [...offset];
-      offset[i] *= -1;
-      return offset;
-    }
-
-    function flipAxis(prop) {
+    function flipAttachAxis(prop) {
       for (let i = 0; i < dirs.length; i++) {
         const index = dirs[i].indexOf(prop);
         if (~index) {
@@ -2130,578 +1517,614 @@
         }
       }
     }
+    function flipOffset(offset2, i) {
+      offset2 = [...offset2];
+      offset2[i] *= -1;
+      return offset2;
+    }
 
     var util = /*#__PURE__*/Object.freeze({
         __proto__: null,
-        ajax: ajax,
-        getImage: getImage,
-        transition: transition,
-        Transition: Transition,
-        animate: animate$2,
+        $: $,
+        $$: $$,
         Animation: Animation,
-        attr: attr,
-        hasAttr: hasAttr,
-        removeAttr: removeAttr,
-        data: data,
+        Deferred: Deferred,
+        Dimensions: Dimensions,
+        MouseTracker: MouseTracker,
+        Transition: Transition,
         addClass: addClass,
+        after: after,
+        append: append,
+        apply: apply,
+        assign: assign,
+        attr: attr,
+        before: before,
+        boxModelAdjust: boxModelAdjust,
+        camelize: camelize,
+        children: children,
+        clamp: clamp,
+        closest: closest,
+        createEvent: createEvent,
+        css: css,
+        data: data,
+        dimensions: dimensions,
+        each: each,
+        empty: empty,
+        endsWith: endsWith,
+        escape: escape,
+        fastdom: fastdom,
+        filter: filter,
+        find: find,
+        findAll: findAll,
+        findIndex: findIndex,
+        flipPosition: flipPosition,
+        fragment: fragment,
+        getEventPos: getEventPos,
+        getIndex: getIndex,
+        getTargetedElement: getTargetedElement,
+        hasAttr: hasAttr,
+        hasClass: hasClass,
+        hasOwn: hasOwn,
+        hasTouch: hasTouch,
+        height: height,
+        html: html,
+        hyphenate: hyphenate,
+        inBrowser: inBrowser,
+        includes: includes,
+        index: index,
+        intersectRect: intersectRect,
+        isArray: isArray,
+        isBoolean: isBoolean,
+        isDocument: isDocument,
+        isElement: isElement,
+        isEmpty: isEmpty,
+        isEqual: isEqual,
+        isFocusable: isFocusable,
+        isFunction: isFunction,
+        isInView: isInView,
+        isInput: isInput,
+        isNode: isNode,
+        isNumber: isNumber,
+        isNumeric: isNumeric,
+        isObject: isObject,
+        isPlainObject: isPlainObject,
+        isRtl: isRtl,
+        isSameSiteAnchor: isSameSiteAnchor,
+        isString: isString,
+        isTag: isTag,
+        isTouch: isTouch,
+        isUndefined: isUndefined,
+        isVideo: isVideo,
+        isVisible: isVisible,
+        isVoidElement: isVoidElement,
+        isWindow: isWindow,
+        last: last,
+        matches: matches,
+        memoize: memoize,
+        mute: mute,
+        noop: noop,
+        observeIntersection: observeIntersection,
+        observeMutation: observeMutation,
+        observeResize: observeResize,
+        off: off,
+        offset: offset,
+        offsetPosition: offsetPosition,
+        offsetViewport: offsetViewport,
+        on: on,
+        once: once,
+        overflowParents: overflowParents,
+        parent: parent,
+        parents: parents,
+        pause: pause,
+        pick: pick,
+        play: play,
+        pointInRect: pointInRect,
+        pointerCancel: pointerCancel,
+        pointerDown: pointerDown,
+        pointerEnter: pointerEnter,
+        pointerLeave: pointerLeave,
+        pointerMove: pointerMove,
+        pointerUp: pointerUp,
+        position: position,
+        positionAt: positionAt,
+        prepend: prepend,
+        propName: propName,
+        query: query,
+        queryAll: queryAll,
+        ready: ready,
+        remove: remove$1,
+        removeAttr: removeAttr,
         removeClass: removeClass,
         removeClasses: removeClasses,
         replaceClass: replaceClass,
-        hasClass: hasClass,
-        toggleClass: toggleClass,
-        dimensions: dimensions,
-        offset: offset,
-        position: position,
-        offsetPosition: offsetPosition,
-        height: height,
-        width: width,
-        boxModelAdjust: boxModelAdjust,
-        flipPosition: flipPosition,
-        toPx: toPx,
-        ready: ready,
-        isTag: isTag,
-        empty: empty,
-        html: html,
-        prepend: prepend,
-        append: append,
-        before: before,
-        after: after,
-        remove: remove$1,
-        wrapAll: wrapAll,
-        wrapInner: wrapInner,
-        unwrap: unwrap,
-        fragment: fragment,
-        apply: apply,
-        $: $,
-        $$: $$,
-        inBrowser: inBrowser,
-        isRtl: isRtl,
-        hasTouch: hasTouch,
-        pointerDown: pointerDown,
-        pointerMove: pointerMove,
-        pointerUp: pointerUp,
-        pointerEnter: pointerEnter,
-        pointerLeave: pointerLeave,
-        pointerCancel: pointerCancel,
-        on: on,
-        off: off,
-        once: once,
-        trigger: trigger,
-        createEvent: createEvent,
-        toEventTargets: toEventTargets,
-        isTouch: isTouch,
-        getEventPos: getEventPos,
-        fastdom: fastdom,
-        isVoidElement: isVoidElement,
-        isVisible: isVisible,
-        selInput: selInput,
-        isInput: isInput,
+        scrollIntoView: scrollIntoView,
+        scrollParents: scrollParents,
+        scrolledOver: scrolledOver,
         selFocusable: selFocusable,
-        isFocusable: isFocusable,
-        parent: parent,
-        filter: filter,
-        matches: matches,
-        closest: closest,
-        within: within,
-        parents: parents,
-        children: children,
-        index: index,
-        hasOwn: hasOwn,
-        hyphenate: hyphenate,
-        camelize: camelize,
-        ucfirst: ucfirst,
+        selInput: selInput,
+        sortBy: sortBy$1,
         startsWith: startsWith,
-        endsWith: endsWith,
-        includes: includes,
-        findIndex: findIndex,
-        isArray: isArray,
+        sumBy: sumBy,
+        swap: swap,
         toArray: toArray,
-        assign: assign,
-        isFunction: isFunction,
-        isObject: isObject,
-        isPlainObject: isPlainObject,
-        isWindow: isWindow,
-        isDocument: isDocument,
-        isNode: isNode,
-        isElement: isElement,
-        isBoolean: isBoolean,
-        isString: isString,
-        isNumber: isNumber,
-        isNumeric: isNumeric,
-        isEmpty: isEmpty,
-        isUndefined: isUndefined,
         toBoolean: toBoolean,
-        toNumber: toNumber,
+        toEventTargets: toEventTargets,
         toFloat: toFloat,
         toNode: toNode,
         toNodes: toNodes,
+        toNumber: toNumber,
+        toPx: toPx,
         toWindow: toWindow,
-        isEqual: isEqual,
-        swap: swap,
-        last: last,
-        each: each,
-        sortBy: sortBy$1,
+        toggleClass: toggleClass,
+        trigger: trigger,
+        ucfirst: ucfirst,
         uniqueBy: uniqueBy,
-        clamp: clamp,
-        noop: noop,
-        intersectRect: intersectRect,
-        pointInRect: pointInRect,
-        Dimensions: Dimensions,
-        getIndex: getIndex,
-        memoize: memoize,
-        Deferred: Deferred,
-        MouseTracker: MouseTracker,
-        observeIntersection: observeIntersection,
-        observeResize: observeResize,
-        observeMutation: observeMutation,
-        mergeOptions: mergeOptions,
-        parseOptions: parseOptions,
-        play: play,
-        pause: pause,
-        mute: mute,
-        isVideo: isVideo,
-        positionAt: positionAt,
-        query: query,
-        queryAll: queryAll,
-        find: find,
-        findAll: findAll,
-        escape: escape,
-        css: css,
-        propName: propName,
-        isInView: isInView,
-        scrollIntoView: scrollIntoView,
-        scrolledOver: scrolledOver,
-        scrollParents: scrollParents,
-        offsetViewport: offsetViewport
+        unwrap: unwrap,
+        width: width,
+        within: within,
+        wrapAll: wrapAll,
+        wrapInner: wrapInner
     });
 
-    function globalAPI (UIkit) {
-      const DATA = UIkit.data;
-
-      UIkit.use = function (plugin) {
-        if (plugin.installed) {
-          return;
-        }
-
-        plugin.call(null, this);
-        plugin.installed = true;
-
-        return this;
-      };
-
-      UIkit.mixin = function (mixin, component) {
-        component = (isString(component) ? UIkit.component(component) : component) || this;
-        component.options = mergeOptions(component.options, mixin);
-      };
-
-      UIkit.extend = function (options) {
-        options = options || {};
-
-        const Super = this;
-        const Sub = function UIkitComponent(options) {
-          this._init(options);
-        };
-
-        Sub.prototype = Object.create(Super.prototype);
-        Sub.prototype.constructor = Sub;
-        Sub.options = mergeOptions(Super.options, options);
-
-        Sub.super = Super;
-        Sub.extend = Super.extend;
-
-        return Sub;
-      };
-
-      UIkit.update = function (element, e) {
-        element = element ? toNode(element) : document.body;
-
-        for (const parentEl of parents(element).reverse()) {
-          update(parentEl[DATA], e);
-        }
-
-        apply(element, (element) => update(element[DATA], e));
-      };
-
-      let container;
-      Object.defineProperty(UIkit, 'container', {
-        get() {
-          return container || document.body;
-        },
-
-        set(element) {
-          container = $(element);
-        } });
-
-
-      function update(data, e) {
-        if (!data) {
-          return;
-        }
-
-        for (const name in data) {
-          if (data[name]._connected) {
-            data[name]._callUpdate(e);
+    function initObservers(instance) {
+      instance._observers = [];
+      instance._observerUpdates = /* @__PURE__ */ new Map();
+      for (const observer of instance.$options.observe || []) {
+        if (hasOwn(observer, "handler")) {
+          registerObservable(instance, observer);
+        } else {
+          for (const key in observer) {
+            registerObservable(instance, observer[key], key);
           }
         }
       }
     }
-
-    function hooksAPI (UIkit) {
-      UIkit.prototype._callHook = function (hook) {var _this$$options$hook;
-        (_this$$options$hook = this.$options[hook]) == null ? void 0 : _this$$options$hook.forEach((handler) => handler.call(this));
+    function registerObserver(instance, ...observer) {
+      instance._observers.push(...observer);
+    }
+    function disconnectObservers(instance) {
+      for (const observer of instance._observers) {
+        observer == null ? void 0 : observer.disconnect();
+        instance._observerUpdates.delete(observer);
+      }
+    }
+    function callObserverUpdates(instance) {
+      for (const [observer, update] of instance._observerUpdates) {
+        update(observer);
+      }
+    }
+    function registerObservable(instance, observable, key) {
+      let {
+        observe,
+        target = instance.$el,
+        handler,
+        options,
+        filter,
+        args
+      } = isPlainObject(observable) ? observable : { type: key, handler: observable };
+      if (filter && !filter.call(instance, instance)) {
+        return;
+      }
+      const targets = isFunction(target) ? target.call(instance, instance) : target;
+      handler = isString(handler) ? instance[handler] : handler.bind(instance);
+      if (isFunction(options)) {
+        options = options.call(instance, instance);
+      }
+      const observer = observe(targets, handler, options, args);
+      if (isFunction(target) && isArray(targets) && observer.unobserve) {
+        instance._observerUpdates.set(observer, watchChange(instance, target, targets));
+      }
+      registerObserver(instance, observer);
+    }
+    function watchChange(instance, targetFn, targets) {
+      return (observer) => {
+        const newTargets = targetFn.call(instance, instance);
+        if (isEqual(targets, newTargets)) {
+          return;
+        }
+        targets.forEach((target) => !includes(newTargets, target) && observer.unobserve(target));
+        newTargets.forEach((target) => !includes(targets, target) && observer.observe(target));
+        targets.splice(0, targets.length, ...newTargets);
       };
+    }
 
-      UIkit.prototype._callConnected = function () {
-        if (this._connected) {
-          return;
+    function callWatches(instance) {
+      if (instance._watch) {
+        return;
+      }
+      const initial = !hasOwn(instance, "_watch");
+      instance._watch = fastdom.read(() => {
+        if (instance._connected) {
+          runWatches(instance, initial);
         }
-
-        this._data = {};
-        this._computed = {};
-
-        this._initProps();
-
-        this._callHook('beforeConnect');
-        this._connected = true;
-
-        this._initEvents();
-        this._initObservers();
-
-        this._callHook('connected');
-        this._callUpdate();
-      };
-
-      UIkit.prototype._callDisconnected = function () {
-        if (!this._connected) {
-          return;
+        instance._watch = null;
+      });
+    }
+    function runWatches(instance, initial) {
+      const values = { ...instance._computed };
+      instance._computed = {};
+      for (const [key, { watch, immediate }] of Object.entries(instance.$options.computed || {})) {
+        if (watch && (initial && immediate || hasOwn(values, key) && !isEqual(values[key], instance[key]))) {
+          watch.call(instance, instance[key], initial ? void 0 : values[key]);
         }
+      }
+      callObserverUpdates(instance);
+    }
 
-        this._callHook('beforeDisconnect');
-        this._disconnectObservers();
-        this._unbindEvents();
-        this._callHook('disconnected');
-
-        this._connected = false;
-        delete this._watch;
-      };
-
-      UIkit.prototype._callUpdate = function (e) {if (e === void 0) {e = 'update';}
-        if (!this._connected) {
-          return;
+    function callUpdate(instance, e = "update") {
+      if (!instance._connected) {
+        return;
+      }
+      if (e === "update" || e === "resize") {
+        callWatches(instance);
+      }
+      if (!instance.$options.update) {
+        return;
+      }
+      if (!instance._updates) {
+        instance._updates = /* @__PURE__ */ new Set();
+        fastdom.read(() => {
+          if (instance._connected) {
+            runUpdates(instance, instance._updates);
+          }
+          delete instance._updates;
+        });
+      }
+      instance._updates.add(e.type || e);
+    }
+    function runUpdates(instance, types) {
+      for (const { read, write, events = [] } of instance.$options.update) {
+        if (!types.has("update") && !events.some((type) => types.has(type))) {
+          continue;
         }
-
-        if (e === 'update' || e === 'resize') {
-          this._callWatches();
+        let result;
+        if (read) {
+          result = read.call(instance, instance._data, types);
+          if (result && isPlainObject(result)) {
+            assign(instance._data, result);
+          }
         }
-
-        if (!this.$options.update) {
-          return;
-        }
-
-        if (!this._updates) {
-          this._updates = new Set();
-          fastdom.read(() => {
-            if (this._connected) {
-              runUpdates.call(this, this._updates);
+        if (write && result !== false) {
+          fastdom.write(() => {
+            if (instance._connected) {
+              write.call(instance, instance._data, types);
             }
-            delete this._updates;
           });
         }
-
-        this._updates.add(e.type || e);
-      };
-
-      UIkit.prototype._callWatches = function () {
-        if (this._watch) {
-          return;
-        }
-
-        const initial = !hasOwn(this, '_watch');
-
-        this._watch = fastdom.read(() => {
-          if (this._connected) {
-            runWatches.call(this, initial);
-          }
-          this._watch = null;
-        });
-      };
-
-      function runUpdates(types) {
-        for (const { read, write, events = [] } of this.$options.update) {
-          if (!types.has('update') && !events.some((type) => types.has(type))) {
-            continue;
-          }
-
-          let result;
-          if (read) {
-            result = read.call(this, this._data, types);
-
-            if (result && isPlainObject(result)) {
-              assign(this._data, result);
-            }
-          }
-
-          if (write && result !== false) {
-            fastdom.write(() => write.call(this, this._data, types));
-          }
+      }
+    }
+    function initUpdateObserver(instance) {
+      let { el, computed, observe } = instance.$options;
+      if (!computed && !(observe == null ? void 0 : observe.some((options) => isFunction(options.target)))) {
+        return;
+      }
+      for (const key in computed || {}) {
+        if (computed[key].document) {
+          el = el.ownerDocument;
+          break;
         }
       }
+      const observer = new MutationObserver(() => callWatches(instance));
+      observer.observe(el, {
+        childList: true,
+        subtree: true
+      });
+      registerObserver(instance, observer);
+    }
 
-      function runWatches(initial) {
-        const {
-          $options: { computed } } =
-        this;
-        const values = { ...this._computed };
-        this._computed = {};
-
-        for (const key in computed) {
-          const { watch, immediate } = computed[key];
-          if (
-          watch && (
-          initial && immediate ||
-          hasOwn(values, key) && !isEqual(values[key], this[key])))
-          {
-            watch.call(this, this[key], values[key]);
+    function initEvents(instance) {
+      instance._events = [];
+      for (const event of instance.$options.events || []) {
+        if (hasOwn(event, "handler")) {
+          registerEvent(instance, event);
+        } else {
+          for (const key in event) {
+            registerEvent(instance, event[key], key);
           }
         }
       }
     }
-
-    function stateAPI (UIkit) {
-      let uid = 0;
-
-      UIkit.prototype._init = function (options) {
-        options = options || {};
-        options.data = normalizeData(options, this.constructor.options);
-
-        this.$options = mergeOptions(this.constructor.options, options, this);
-        this.$el = null;
-        this.$props = {};
-
-        this._uid = uid++;
-        this._initData();
-        this._initMethods();
-        this._initComputeds();
-        this._callHook('created');
-
-        if (options.el) {
-          this.$mount(options.el);
-        }
-      };
-
-      UIkit.prototype._initData = function () {
-        const { data = {} } = this.$options;
-
-        for (const key in data) {
-          this.$props[key] = this[key] = data[key];
-        }
-      };
-
-      UIkit.prototype._initMethods = function () {
-        const { methods } = this.$options;
-
-        if (methods) {
-          for (const key in methods) {
-            this[key] = methods[key].bind(this);
-          }
-        }
-      };
-
-      UIkit.prototype._initComputeds = function () {
-        const { computed } = this.$options;
-
-        this._computed = {};
-
-        if (computed) {
-          for (const key in computed) {
-            registerComputed(this, key, computed[key]);
-          }
-        }
-      };
-
-      UIkit.prototype._initProps = function (props) {
-        let key;
-
-        props = props || getProps(this.$options, this.$name);
-
-        for (key in props) {
-          if (!isUndefined(props[key])) {
-            this.$props[key] = props[key];
-          }
-        }
-
-        const exclude = [this.$options.computed, this.$options.methods];
-        for (key in this.$props) {
-          if (key in props && notIn(exclude, key)) {
-            this[key] = this.$props[key];
-          }
-        }
-      };
-
-      UIkit.prototype._initEvents = function () {
-        this._events = [];
-        for (const event of this.$options.events || []) {
-          if (hasOwn(event, 'handler')) {
-            registerEvent(this, event);
-          } else {
-            for (const key in event) {
-              registerEvent(this, event[key], key);
-            }
-          }
-        }
-      };
-
-      UIkit.prototype._unbindEvents = function () {
-        this._events.forEach((unbind) => unbind());
-        delete this._events;
-      };
-
-      UIkit.prototype._initObservers = function () {
-        this._observers = [initPropsObserver(this)];
-
-        if (this.$options.computed) {
-          this.registerObserver(initChildListObserver(this));
-        }
-      };
-
-      UIkit.prototype.registerObserver = function (observer) {
-        this._observers.push(observer);
-      };
-
-      UIkit.prototype._disconnectObservers = function () {
-        this._observers.forEach((observer) => observer == null ? void 0 : observer.disconnect());
-      };
+    function unbindEvents(instance) {
+      instance._events.forEach((unbind) => unbind());
+      delete instance._events;
+    }
+    function registerEvent(instance, event, key) {
+      let { name, el, handler, capture, passive, delegate, filter, self } = isPlainObject(event) ? event : { name: key, handler: event };
+      el = isFunction(el) ? el.call(instance, instance) : el || instance.$el;
+      if (isArray(el)) {
+        el.forEach((el2) => registerEvent(instance, { ...event, el: el2 }, key));
+        return;
+      }
+      if (!el || filter && !filter.call(instance)) {
+        return;
+      }
+      instance._events.push(
+        on(
+          el,
+          name,
+          delegate ? isString(delegate) ? delegate : delegate.call(instance, instance) : null,
+          isString(handler) ? instance[handler] : handler.bind(instance),
+          { passive, capture, self }
+        )
+      );
     }
 
-    function getProps(opts, name) {
+    const strats = {};
+    strats.events = strats.observe = strats.created = strats.beforeConnect = strats.connected = strats.beforeDisconnect = strats.disconnected = strats.destroy = concatStrat;
+    strats.args = function(parentVal, childVal) {
+      return childVal !== false && concatStrat(childVal || parentVal);
+    };
+    strats.update = function(parentVal, childVal) {
+      return sortBy$1(
+        concatStrat(parentVal, isFunction(childVal) ? { read: childVal } : childVal),
+        "order"
+      );
+    };
+    strats.props = function(parentVal, childVal) {
+      if (isArray(childVal)) {
+        const value = {};
+        for (const key of childVal) {
+          value[key] = String;
+        }
+        childVal = value;
+      }
+      return strats.methods(parentVal, childVal);
+    };
+    strats.computed = strats.methods = function(parentVal, childVal) {
+      return childVal ? parentVal ? { ...parentVal, ...childVal } : childVal : parentVal;
+    };
+    strats.i18n = strats.data = function(parentVal, childVal, vm) {
+      if (!vm) {
+        if (!childVal) {
+          return parentVal;
+        }
+        if (!parentVal) {
+          return childVal;
+        }
+        return function(vm2) {
+          return mergeFnData(parentVal, childVal, vm2);
+        };
+      }
+      return mergeFnData(parentVal, childVal, vm);
+    };
+    function mergeFnData(parentVal, childVal, vm) {
+      return strats.computed(
+        isFunction(parentVal) ? parentVal.call(vm, vm) : parentVal,
+        isFunction(childVal) ? childVal.call(vm, vm) : childVal
+      );
+    }
+    function concatStrat(parentVal, childVal) {
+      parentVal = parentVal && !isArray(parentVal) ? [parentVal] : parentVal;
+      return childVal ? parentVal ? parentVal.concat(childVal) : isArray(childVal) ? childVal : [childVal] : parentVal;
+    }
+    function defaultStrat(parentVal, childVal) {
+      return isUndefined(childVal) ? parentVal : childVal;
+    }
+    function mergeOptions(parent, child, vm) {
+      const options = {};
+      if (isFunction(child)) {
+        child = child.options;
+      }
+      if (child.extends) {
+        parent = mergeOptions(parent, child.extends, vm);
+      }
+      if (child.mixins) {
+        for (const mixin of child.mixins) {
+          parent = mergeOptions(parent, mixin, vm);
+        }
+      }
+      for (const key in parent) {
+        mergeKey(key);
+      }
+      for (const key in child) {
+        if (!hasOwn(parent, key)) {
+          mergeKey(key);
+        }
+      }
+      function mergeKey(key) {
+        options[key] = (strats[key] || defaultStrat)(parent[key], child[key], vm);
+      }
+      return options;
+    }
+    function parseOptions(options, args = []) {
+      try {
+        return options ? startsWith(options, "{") ? JSON.parse(options) : args.length && !includes(options, ":") ? { [args[0]]: options } : options.split(";").reduce((options2, option) => {
+          const [key, value] = option.split(/:(.*)/);
+          if (key && !isUndefined(value)) {
+            options2[key.trim()] = value.trim();
+          }
+          return options2;
+        }, {}) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+    function coerce$1(type, value) {
+      if (type === Boolean) {
+        return toBoolean(value);
+      } else if (type === Number) {
+        return toNumber(value);
+      } else if (type === "list") {
+        return toList(value);
+      } else if (type === Object && isString(value)) {
+        return parseOptions(value);
+      }
+      return type ? type(value) : value;
+    }
+    function toList(value) {
+      return isArray(value) ? value : isString(value) ? value.split(/,(?![^(]*\))/).map((value2) => isNumeric(value2) ? toNumber(value2) : toBoolean(value2.trim())) : [value];
+    }
+
+    function initProps(instance) {
+      const props = getProps(instance.$options);
+      for (let key in props) {
+        if (!isUndefined(props[key])) {
+          instance.$props[key] = props[key];
+        }
+      }
+      const exclude = [instance.$options.computed, instance.$options.methods];
+      for (let key in instance.$props) {
+        if (key in props && notIn(exclude, key)) {
+          instance[key] = instance.$props[key];
+        }
+      }
+    }
+    function getProps(opts) {
       const data$1 = {};
-      const { args = [], props = {}, el } = opts;
-
+      const { args = [], props = {}, el, id } = opts;
       if (!props) {
         return data$1;
       }
-
       for (const key in props) {
         const prop = hyphenate(key);
         let value = data(el, prop);
-
         if (isUndefined(value)) {
           continue;
         }
-
-        value = props[key] === Boolean && value === '' ? true : coerce$1(props[key], value);
-
-        if (prop === 'target' && startsWith(value, '_')) {
+        value = props[key] === Boolean && value === "" ? true : coerce$1(props[key], value);
+        if (prop === "target" && startsWith(value, "_")) {
           continue;
         }
-
         data$1[key] = value;
       }
-
-      const options = parseOptions(data(el, name), args);
-
+      const options = parseOptions(data(el, id), args);
       for (const key in options) {
         const prop = camelize(key);
         if (!isUndefined(props[prop])) {
           data$1[prop] = coerce$1(props[prop], options[key]);
         }
       }
-
       return data$1;
     }
-
-    function registerComputed(component, key, cb) {
-      Object.defineProperty(component, key, {
-        enumerable: true,
-
-        get() {
-          const { _computed, $props, $el } = component;
-
-          if (!hasOwn(_computed, key)) {
-            _computed[key] = (cb.get || cb).call(component, $props, $el);
-          }
-
-          return _computed[key];
-        },
-
-        set(value) {
-          const { _computed } = component;
-
-          _computed[key] = cb.set ? cb.set.call(component, value) : value;
-
-          if (isUndefined(_computed[key])) {
-            delete _computed[key];
-          }
-        } });
-
-    }
-
-    function registerEvent(component, event, key) {
-      if (!isPlainObject(event)) {
-        event = { name: key, handler: event };
-      }
-
-      let { name, el, handler, capture, passive, delegate, filter, self } = event;
-      el = isFunction(el) ? el.call(component) : el || component.$el;
-
-      if (isArray(el)) {
-        el.forEach((el) => registerEvent(component, { ...event, el }, key));
-        return;
-      }
-
-      if (!el || filter && !filter.call(component)) {
-        return;
-      }
-
-      component._events.push(
-      on(
-      el,
-      name,
-      delegate ? isString(delegate) ? delegate : delegate.call(component) : null,
-      isString(handler) ? component[handler] : handler.bind(component),
-      { passive, capture, self }));
-
-
-    }
-
     function notIn(options, key) {
       return options.every((arr) => !arr || !hasOwn(arr, key));
     }
-
-    function coerce$1(type, value) {
-      if (type === Boolean) {
-        return toBoolean(value);
-      } else if (type === Number) {
-        return toNumber(value);
-      } else if (type === 'list') {
-        return toList(value);
+    function initPropsObserver(instance) {
+      const { $options, $props } = instance;
+      const { id, attrs, props, el } = $options;
+      if (!props || attrs === false) {
+        return;
       }
-
-      return type ? type(value) : value;
+      const attributes = isArray(attrs) ? attrs : Object.keys(props);
+      const filter = attributes.map((key) => hyphenate(key)).concat(id);
+      const observer = new MutationObserver((records) => {
+        const data = getProps($options);
+        if (records.some(({ attributeName }) => {
+          const prop = attributeName.replace("data-", "");
+          return (prop === id ? attributes : [camelize(prop), camelize(attributeName)]).some(
+            (prop2) => !isUndefined(data[prop2]) && data[prop2] !== $props[prop2]
+          );
+        })) {
+          instance.$reset();
+        }
+      });
+      observer.observe(el, {
+        attributes: true,
+        attributeFilter: filter.concat(filter.map((key) => `data-${key}`))
+      });
+      registerObserver(instance, observer);
     }
 
-    function toList(value) {
-      return isArray(value) ?
-      value :
-      isString(value) ?
-      value.
-      split(/,(?![^(]*\))/).
-      map((value) => isNumeric(value) ? toNumber(value) : toBoolean(value.trim())) :
-      [value];
+    function callHook(instance, hook) {
+      var _a;
+      (_a = instance.$options[hook]) == null ? void 0 : _a.forEach((handler) => handler.call(instance));
+    }
+    function callConnected(instance) {
+      if (instance._connected) {
+        return;
+      }
+      instance._data = {};
+      instance._computed = {};
+      initProps(instance);
+      callHook(instance, "beforeConnect");
+      instance._connected = true;
+      initEvents(instance);
+      initObservers(instance);
+      initPropsObserver(instance);
+      initUpdateObserver(instance);
+      callHook(instance, "connected");
+      callUpdate(instance);
+    }
+    function callDisconnected(instance) {
+      if (!instance._connected) {
+        return;
+      }
+      callHook(instance, "beforeDisconnect");
+      disconnectObservers(instance);
+      unbindEvents(instance);
+      callHook(instance, "disconnected");
+      instance._connected = false;
+      delete instance._watch;
     }
 
-    function normalizeData(_ref, _ref2) {let { data = {} } = _ref;let { args = [], props = {} } = _ref2;
-      if (isArray(data)) {
-        data = data.slice(0, args.length).reduce((data, value, index) => {
-          if (isPlainObject(value)) {
-            assign(data, value);
-          } else {
-            data[args[index]] = value;
+    function initComputed(instance) {
+      const { computed } = instance.$options;
+      instance._computed = {};
+      if (computed) {
+        for (const key in computed) {
+          registerComputed(instance, key, computed[key]);
+        }
+      }
+    }
+    function registerComputed(instance, key, cb) {
+      Object.defineProperty(instance, key, {
+        enumerable: true,
+        get() {
+          const { _computed, $props, $el } = instance;
+          if (!hasOwn(_computed, key)) {
+            _computed[key] = (cb.get || cb).call(instance, $props, $el);
           }
-          return data;
+          return _computed[key];
+        },
+        set(value) {
+          const { _computed } = instance;
+          _computed[key] = cb.set ? cb.set.call(instance, value) : value;
+          if (isUndefined(_computed[key])) {
+            delete _computed[key];
+          }
+        }
+      });
+    }
+
+    let uid = 0;
+    function init$1(instance, options = {}) {
+      options.data = normalizeData(options, instance.constructor.options);
+      instance.$options = mergeOptions(instance.constructor.options, options, instance);
+      instance.$props = {};
+      instance._uid = uid++;
+      initData(instance);
+      initMethods(instance);
+      initComputed(instance);
+      callHook(instance, "created");
+      if (options.el) {
+        instance.$mount(options.el);
+      }
+    }
+    function initData(instance) {
+      const { data = {} } = instance.$options;
+      for (const key in data) {
+        instance.$props[key] = instance[key] = data[key];
+      }
+    }
+    function initMethods(instance) {
+      const { methods } = instance.$options;
+      if (methods) {
+        for (const key in methods) {
+          instance[key] = methods[key].bind(instance);
+        }
+      }
+    }
+    function normalizeData({ data = {} }, { args = [], props = {} }) {
+      if (isArray(data)) {
+        data = data.slice(0, args.length).reduce((data2, value, index) => {
+          if (isPlainObject(value)) {
+            assign(data2, value);
+          } else {
+            data2[args[index]] = value;
+          }
+          return data2;
         }, {});
       }
-
       for (const key in data) {
         if (isUndefined(data[key])) {
           delete data[key];
@@ -2709,549 +2132,522 @@
           data[key] = coerce$1(props[key], data[key]);
         }
       }
-
       return data;
     }
 
-    function initChildListObserver(component) {
-      const { el } = component.$options;
+    const App = function(options) {
+      init$1(this, options);
+    };
+    App.util = util;
+    App.options = {};
+    App.version = "3.16.6";
 
-      const observer = new MutationObserver(() => component.$emit());
-      observer.observe(el, {
-        childList: true,
-        subtree: true });
-
-
-      return observer;
+    const PREFIX = "uk-";
+    const DATA = "__uikit__";
+    const components$1 = {};
+    function component(name, options) {
+      var _a;
+      const id = PREFIX + hyphenate(name);
+      if (!options) {
+        if (isPlainObject(components$1[id])) {
+          components$1[id] = App.extend(components$1[id]);
+        }
+        return components$1[id];
+      }
+      name = camelize(name);
+      App[name] = (element, data) => createComponent(name, element, data);
+      const opt = isPlainObject(options) ? { ...options } : options.options;
+      opt.id = id;
+      opt.name = name;
+      (_a = opt.install) == null ? void 0 : _a.call(opt, App, opt, name);
+      if (App._initialized && !opt.functional) {
+        requestAnimationFrame(() => createComponent(name, `[${id}],[data-${id}]`));
+      }
+      return components$1[id] = opt;
+    }
+    function createComponent(name, element, data, ...args) {
+      const Component = component(name);
+      return Component.options.functional ? new Component({ data: isPlainObject(element) ? element : [element, data, ...args] }) : element ? $$(element).map(init)[0] : init();
+      function init(element2) {
+        const instance = getComponent(element2, name);
+        if (instance) {
+          if (data) {
+            instance.$destroy();
+          } else {
+            return instance;
+          }
+        }
+        return new Component({ el: element2, data });
+      }
+    }
+    function getComponents(element) {
+      return (element == null ? void 0 : element[DATA]) || {};
+    }
+    function getComponent(element, name) {
+      return getComponents(element)[name];
+    }
+    function attachToElement(element, instance) {
+      if (!element[DATA]) {
+        element[DATA] = {};
+      }
+      element[DATA][instance.$options.name] = instance;
+    }
+    function detachFromElement(element, instance) {
+      var _a;
+      (_a = element[DATA]) == null ? true : delete _a[instance.$options.name];
+      if (!isEmpty(element[DATA])) {
+        delete element[DATA];
+      }
     }
 
-    function initPropsObserver(component) {
-      const { $name, $options, $props } = component;
-      const { attrs, props, el } = $options;
-
-      if (!props || attrs === false) {
+    App.component = component;
+    App.getComponents = getComponents;
+    App.getComponent = getComponent;
+    App.use = function(plugin) {
+      if (plugin.installed) {
         return;
       }
-
-      const attributes = isArray(attrs) ? attrs : Object.keys(props);
-      const filter = attributes.map((key) => hyphenate(key)).concat($name);
-
-      const observer = new MutationObserver((records) => {
-        const data = getProps($options, $name);
-        if (
-        records.some((_ref3) => {let { attributeName } = _ref3;
-          const prop = attributeName.replace('data-', '');
-          return (
-          prop === $name ? attributes : [camelize(prop), camelize(attributeName)]).
-          some((prop) => !isUndefined(data[prop]) && data[prop] !== $props[prop]);
-        }))
-        {
-          component.$reset();
-        }
-      });
-
-      observer.observe(el, {
-        attributes: true,
-        attributeFilter: filter.concat(filter.map((key) => "data-" + key)) });
-
-
-      return observer;
+      plugin.call(null, this);
+      plugin.installed = true;
+      return this;
+    };
+    App.mixin = function(mixin, component2) {
+      component2 = (isString(component2) ? this.component(component2) : component2) || this;
+      component2.options = mergeOptions(component2.options, mixin);
+    };
+    App.extend = function(options) {
+      options = options || {};
+      const Super = this;
+      const Sub = function UIkitComponent(options2) {
+        init$1(this, options2);
+      };
+      Sub.prototype = Object.create(Super.prototype);
+      Sub.prototype.constructor = Sub;
+      Sub.options = mergeOptions(Super.options, options);
+      Sub.super = Super;
+      Sub.extend = Super.extend;
+      return Sub;
+    };
+    function update(element, e) {
+      element = element ? toNode(element) : document.body;
+      for (const parentEl of parents(element).reverse()) {
+        updateElement(parentEl, e);
+      }
+      apply(element, (element2) => updateElement(element2, e));
     }
-
-    function instanceAPI (UIkit) {
-      const DATA = UIkit.data;
-
-      UIkit.prototype.$create = function (component, element, data) {
-        return UIkit[component](element, data);
-      };
-
-      UIkit.prototype.$mount = function (el) {
-        const { name } = this.$options;
-
-        if (!el[DATA]) {
-          el[DATA] = {};
-        }
-
-        if (el[DATA][name]) {
-          return;
-        }
-
-        el[DATA][name] = this;
-
-        this.$el = this.$options.el = this.$options.el || el;
-
-        if (within(el, document)) {
-          this._callConnected();
-        }
-      };
-
-      UIkit.prototype.$reset = function () {
-        this._callDisconnected();
-        this._callConnected();
-      };
-
-      UIkit.prototype.$destroy = function (removeEl) {if (removeEl === void 0) {removeEl = false;}
-        const { el, name } = this.$options;
-
-        if (el) {
-          this._callDisconnected();
-        }
-
-        this._callHook('destroy');
-
-        if (!(el != null && el[DATA])) {
-          return;
-        }
-
-        delete el[DATA][name];
-
-        if (!isEmpty(el[DATA])) {
-          delete el[DATA];
-        }
-
-        if (removeEl) {
-          remove$1(this.$el);
-        }
-      };
-
-      UIkit.prototype.$emit = function (e) {
-        this._callUpdate(e);
-      };
-
-      UIkit.prototype.$update = function (element, e) {if (element === void 0) {element = this.$el;}
-        UIkit.update(element, e);
-      };
-
-      UIkit.prototype.$getComponent = UIkit.getComponent;
-
-      const componentName = memoize((name) => UIkit.prefix + hyphenate(name));
-      Object.defineProperties(UIkit.prototype, {
-        $container: Object.getOwnPropertyDescriptor(UIkit, 'container'),
-
-        $name: {
-          get() {
-            return componentName(this.$options.name);
-          } } });
-
-
+    App.update = update;
+    function updateElement(element, e) {
+      const components = getComponents(element);
+      for (const name in components) {
+        callUpdate(components[name], e);
+      }
     }
-
-    function componentAPI (UIkit) {
-      const DATA = UIkit.data;
-
-      const components = {};
-
-      UIkit.component = function (name, options) {
-        const id = hyphenate(name);
-
-        name = camelize(id);
-
-        if (!options) {
-          if (isPlainObject(components[name])) {
-            components[name] = UIkit.extend(components[name]);
-          }
-
-          return components[name];
-        }
-
-        UIkit[name] = function (element, data) {
-          const component = UIkit.component(name);
-
-          return component.options.functional ?
-          new component({ data: isPlainObject(element) ? element : [...arguments] }) :
-          element ?
-          $$(element).map(init)[0] :
-          init();
-
-          function init(element) {
-            const instance = UIkit.getComponent(element, name);
-
-            if (instance) {
-              if (data) {
-                instance.$destroy();
-              } else {
-                return instance;
-              }
-            }
-
-            return new component({ el: element, data });
-          }
-        };
-
-        const opt = isPlainObject(options) ? { ...options } : options.options;
-
-        opt.name = name;
-
-        opt.install == null ? void 0 : opt.install(UIkit, opt, name);
-
-        if (UIkit._initialized && !opt.functional) {
-          fastdom.read(() => UIkit[name]("[uk-" + id + "],[data-uk-" + id + "]"));
-        }
-
-        return components[name] = isPlainObject(options) ? opt : options;
-      };
-
-      UIkit.getComponents = (element) => (element == null ? void 0 : element[DATA]) || {};
-      UIkit.getComponent = (element, name) => UIkit.getComponents(element)[name];
-
-      UIkit.connect = (node) => {
-        if (node[DATA]) {
-          for (const name in node[DATA]) {
-            node[DATA][name]._callConnected();
-          }
-        }
-
-        for (const attribute of node.attributes) {
-          const name = getComponentName(attribute.name);
-
-          if (name && name in components) {
-            UIkit[name](node);
-          }
-        }
-      };
-
-      UIkit.disconnect = (node) => {
-        for (const name in node[DATA]) {
-          node[DATA][name]._callDisconnected();
-        }
-      };
-    }
-
-    const getComponentName = memoize((attribute) => {
-      return startsWith(attribute, 'uk-') || startsWith(attribute, 'data-uk-') ?
-      camelize(attribute.replace('data-uk-', '').replace('uk-', '')) :
-      false;
+    let container;
+    Object.defineProperty(App, "container", {
+      get() {
+        return container || document.body;
+      },
+      set(element) {
+        container = $(element);
+      }
     });
 
-    const UIkit = function (options) {
-      this._init(options);
+    App.prototype.$mount = function(el) {
+      const instance = this;
+      attachToElement(el, instance);
+      instance.$options.el = el;
+      if (within(el, document)) {
+        callConnected(instance);
+      }
     };
-
-    UIkit.util = util;
-    UIkit.data = '__uikit__';
-    UIkit.prefix = 'uk-';
-    UIkit.options = {};
-    UIkit.version = '3.14.3';
-
-    globalAPI(UIkit);
-    hooksAPI(UIkit);
-    stateAPI(UIkit);
-    componentAPI(UIkit);
-    instanceAPI(UIkit);
-
-    function boot (UIkit) {
-      const { connect, disconnect } = UIkit;
-
-      if (!inBrowser || !window.MutationObserver) {
-        return;
+    App.prototype.$destroy = function(removeEl = false) {
+      const instance = this;
+      const { el } = instance.$options;
+      if (el) {
+        callDisconnected(instance);
       }
-
-      fastdom.read(function () {
-        if (document.body) {
-          apply(document.body, connect);
+      callHook(instance, "destroy");
+      detachFromElement(el, instance);
+      if (removeEl) {
+        remove$1(instance.$el);
+      }
+    };
+    App.prototype.$create = createComponent;
+    App.prototype.$emit = function(e) {
+      callUpdate(this, e);
+    };
+    App.prototype.$update = function(element = this.$el, e) {
+      update(element, e);
+    };
+    App.prototype.$reset = function() {
+      callDisconnected(this);
+      callConnected(this);
+    };
+    App.prototype.$getComponent = getComponent;
+    Object.defineProperties(App.prototype, {
+      $el: {
+        get() {
+          return this.$options.el;
         }
+      },
+      $container: Object.getOwnPropertyDescriptor(App, "container")
+    });
+    function generateId(instance, el = instance.$el, postfix = "") {
+      if (el.id) {
+        return el.id;
+      }
+      let id = `${instance.$options.id}-${instance._uid}${postfix}`;
+      if ($(`#${id}`)) {
+        id = generateId(instance, el, `${postfix}-2`);
+      }
+      return id;
+    }
 
-        new MutationObserver((records) => records.forEach(applyChildListMutation)).observe(
-        document,
-        {
-          childList: true,
-          subtree: true });
-
-
-
-        new MutationObserver((records) => records.forEach(applyAttributeMutation)).observe(
-        document,
-        {
-          attributes: true,
-          subtree: true });
-
-
-
-        UIkit._initialized = true;
+    function boot(App) {
+      if (inBrowser && window.MutationObserver) {
+        requestAnimationFrame(() => init(App));
+      }
+    }
+    function init(App) {
+      trigger(document, "uikit:init", App);
+      if (document.body) {
+        apply(document.body, connect);
+      }
+      new MutationObserver((records) => records.forEach(applyChildListMutation)).observe(document, {
+        childList: true,
+        subtree: true
       });
-
-      function applyChildListMutation(_ref) {let { addedNodes, removedNodes } = _ref;
-        for (const node of addedNodes) {
-          apply(node, connect);
-        }
-
-        for (const node of removedNodes) {
-          apply(node, disconnect);
-        }
+      new MutationObserver((records) => records.forEach(applyAttributeMutation)).observe(document, {
+        attributes: true,
+        subtree: true
+      });
+      App._initialized = true;
+    }
+    function applyChildListMutation({ addedNodes, removedNodes }) {
+      for (const node of addedNodes) {
+        apply(node, connect);
       }
-
-      function applyAttributeMutation(_ref2) {var _UIkit$getComponent;let { target, attributeName } = _ref2;
-        const name = getComponentName(attributeName);
-
-        if (!name || !(name in UIkit)) {
-          return;
-        }
-
+      for (const node of removedNodes) {
+        apply(node, disconnect);
+      }
+    }
+    function applyAttributeMutation({ target, attributeName }) {
+      var _a;
+      const name = getComponentName(attributeName);
+      if (name) {
         if (hasAttr(target, attributeName)) {
-          UIkit[name](target);
+          createComponent(name, target);
           return;
         }
-
-        (_UIkit$getComponent = UIkit.getComponent(target, name)) == null ? void 0 : _UIkit$getComponent.$destroy();
+        (_a = getComponent(target, name)) == null ? void 0 : _a.$destroy();
       }
+    }
+    function connect(node) {
+      const components2 = getComponents(node);
+      for (const name in getComponents(node)) {
+        callConnected(components2[name]);
+      }
+      for (const attributeName of node.getAttributeNames()) {
+        const name = getComponentName(attributeName);
+        name && createComponent(name, node);
+      }
+    }
+    function disconnect(node) {
+      const components2 = getComponents(node);
+      for (const name in getComponents(node)) {
+        callDisconnected(components2[name]);
+      }
+    }
+    function getComponentName(attribute) {
+      if (startsWith(attribute, "data-")) {
+        attribute = attribute.slice(5);
+      }
+      const cmp = components$1[attribute];
+      return cmp && (isPlainObject(cmp) ? cmp : cmp.options).name;
     }
 
     var Class = {
       connected() {
-        !hasClass(this.$el, this.$name) && addClass(this.$el, this.$name);
-      } };
-
-    var Lazyload = {
-      methods: {
-        lazyload(observeTargets, targets) {if (observeTargets === void 0) {observeTargets = this.$el;}if (targets === void 0) {targets = this.$el;}
-          this.registerObserver(
-          observeIntersection(observeTargets, (entries, observer) => {
-            for (const el of toNodes(isFunction(targets) ? targets() : targets)) {
-              $$('[loading="lazy"]', el).forEach((el) => removeAttr(el, 'loading'));
-            }
-            for (const el of entries.
-            filter((_ref) => {let { isIntersecting } = _ref;return isIntersecting;}).
-            map((_ref2) => {let { target } = _ref2;return target;})) {
-              observer.unobserve(el);
-            }
-          }));
-
-        } } };
+        addClass(this.$el, this.$options.id);
+      }
+    };
 
     var Togglable = {
       props: {
         cls: Boolean,
-        animation: 'list',
+        animation: "list",
         duration: Number,
         velocity: Number,
         origin: String,
-        transition: String },
-
-
+        transition: String
+      },
       data: {
         cls: false,
         animation: [false],
         duration: 200,
         velocity: 0.2,
         origin: false,
-        transition: 'ease',
-        clsEnter: 'uk-togglabe-enter',
-        clsLeave: 'uk-togglabe-leave' },
-
-
+        transition: "ease",
+        clsEnter: "uk-togglabe-enter",
+        clsLeave: "uk-togglabe-leave"
+      },
       computed: {
-        hasAnimation(_ref) {let { animation } = _ref;
+        hasAnimation({ animation }) {
           return !!animation[0];
         },
-
-        hasTransition(_ref2) {let { animation } = _ref2;
-          return ['slide', 'reveal'].some((transition) => startsWith(animation[0], transition));
-        } },
-
-
+        hasTransition({ animation }) {
+          return ["slide", "reveal"].some((transition) => startsWith(animation[0], transition));
+        }
+      },
       methods: {
         toggleElement(targets, toggle, animate) {
-          return new Promise((resolve) =>
-          Promise.all(
-          toNodes(targets).map((el) => {
-            const show = isBoolean(toggle) ? toggle : !this.isToggled(el);
-
-            if (!trigger(el, "before" + (show ? 'show' : 'hide'), [this])) {
-              return Promise.reject();
-            }
-
-            const promise = (
-            isFunction(animate) ?
-            animate :
-            animate === false || !this.hasAnimation ?
-            toggleInstant(this) :
-            this.hasTransition ?
-            toggleTransition(this) :
-            toggleAnimation(this))(
-            el, show);
-
-            const cls = show ? this.clsEnter : this.clsLeave;
-
-            addClass(el, cls);
-
-            trigger(el, show ? 'show' : 'hide', [this]);
-
-            const done = () => {
-              removeClass(el, cls);
-              trigger(el, show ? 'shown' : 'hidden', [this]);
-              this.$update(el);
-            };
-
-            return promise ?
-            promise.then(done, () => {
-              removeClass(el, cls);
-              return Promise.reject();
-            }) :
-            done();
-          })).
-          then(resolve, noop));
-
+          return new Promise(
+            (resolve) => Promise.all(
+              toNodes(targets).map((el) => {
+                const show = isBoolean(toggle) ? toggle : !this.isToggled(el);
+                if (!trigger(el, `before${show ? "show" : "hide"}`, [this])) {
+                  return Promise.reject();
+                }
+                const promise = (isFunction(animate) ? animate : animate === false || !this.hasAnimation ? toggleInstant : this.hasTransition ? toggleTransition : toggleAnimation)(el, show, this);
+                const cls = show ? this.clsEnter : this.clsLeave;
+                addClass(el, cls);
+                trigger(el, show ? "show" : "hide", [this]);
+                const done = () => {
+                  removeClass(el, cls);
+                  trigger(el, show ? "shown" : "hidden", [this]);
+                };
+                return promise ? promise.then(done, () => {
+                  removeClass(el, cls);
+                  return Promise.reject();
+                }) : done();
+              })
+            ).then(resolve, noop)
+          );
         },
-
-        isToggled(el) {if (el === void 0) {el = this.$el;}
+        isToggled(el = this.$el) {
           [el] = toNodes(el);
-          return hasClass(el, this.clsEnter) ?
-          true :
-          hasClass(el, this.clsLeave) ?
-          false :
-          this.cls ?
-          hasClass(el, this.cls.split(' ')[0]) :
-          isVisible(el);
+          return hasClass(el, this.clsEnter) ? true : hasClass(el, this.clsLeave) ? false : this.cls ? hasClass(el, this.cls.split(" ")[0]) : isVisible(el);
         },
-
         _toggle(el, toggled) {
           if (!el) {
             return;
           }
-
           toggled = Boolean(toggled);
-
           let changed;
           if (this.cls) {
-            changed = includes(this.cls, ' ') || toggled !== hasClass(el, this.cls);
-            changed && toggleClass(el, this.cls, includes(this.cls, ' ') ? undefined : toggled);
+            changed = includes(this.cls, " ") || toggled !== hasClass(el, this.cls);
+            changed && toggleClass(el, this.cls, includes(this.cls, " ") ? void 0 : toggled);
           } else {
             changed = toggled === el.hidden;
             changed && (el.hidden = !toggled);
           }
-
-          $$('[autofocus]', el).some((el) => isVisible(el) ? el.focus() || true : el.blur());
-
+          $$("[autofocus]", el).some((el2) => isVisible(el2) ? el2.focus() || true : el2.blur());
           if (changed) {
-            trigger(el, 'toggled', [toggled, this]);
-            this.$update(el);
+            trigger(el, "toggled", [toggled, this]);
           }
-        } } };
-
-
-
-    function toggleInstant(_ref3) {let { _toggle } = _ref3;
-      return (el, show) => {
-        Animation.cancel(el);
-        Transition.cancel(el);
-        return _toggle(el, show);
-      };
+        }
+      }
+    };
+    function toggleInstant(el, show, { _toggle }) {
+      Animation.cancel(el);
+      Transition.cancel(el);
+      return _toggle(el, show);
     }
-
-    function toggleTransition(cmp) {var _cmp$animation$;
-      const [mode = 'reveal', startProp = 'top'] = ((_cmp$animation$ = cmp.animation[0]) == null ? void 0 : _cmp$animation$.split('-')) || [];
-
+    async function toggleTransition(el, show, { animation, duration, velocity, transition, _toggle }) {
+      var _a;
+      const [mode = "reveal", startProp = "top"] = ((_a = animation[0]) == null ? void 0 : _a.split("-")) || [];
       const dirs = [
-      ['left', 'right'],
-      ['top', 'bottom']];
-
+        ["left", "right"],
+        ["top", "bottom"]
+      ];
       const dir = dirs[includes(dirs[0], startProp) ? 0 : 1];
       const end = dir[1] === startProp;
-      const props = ['width', 'height'];
+      const props = ["width", "height"];
       const dimProp = props[dirs.indexOf(dir)];
-      const marginProp = "margin-" + dir[0];
-      const marginStartProp = "margin-" + startProp;
-
-      return async (el, show) => {
-        let { duration, velocity, transition, _toggle } = cmp;
-
-        let currentDim = dimensions(el)[dimProp];
-
-        const inProgress = Transition.inProgress(el);
-        await Transition.cancel(el);
-
-        if (show) {
-          _toggle(el, true);
+      const marginProp = `margin-${dir[0]}`;
+      const marginStartProp = `margin-${startProp}`;
+      let currentDim = dimensions(el)[dimProp];
+      const inProgress = Transition.inProgress(el);
+      await Transition.cancel(el);
+      if (show) {
+        _toggle(el, true);
+      }
+      const prevProps = Object.fromEntries(
+        [
+          "padding",
+          "border",
+          "width",
+          "height",
+          "minWidth",
+          "minHeight",
+          "overflowY",
+          "overflowX",
+          marginProp,
+          marginStartProp
+        ].map((key) => [key, el.style[key]])
+      );
+      const dim = dimensions(el);
+      const currentMargin = toFloat(css(el, marginProp));
+      const marginStart = toFloat(css(el, marginStartProp));
+      const endDim = dim[dimProp] + marginStart;
+      if (!inProgress && !show) {
+        currentDim += marginStart;
+      }
+      const [wrapper] = wrapInner(el, "<div>");
+      css(wrapper, {
+        boxSizing: "border-box",
+        height: dim.height,
+        width: dim.width,
+        ...css(el, [
+          "overflow",
+          "padding",
+          "borderTop",
+          "borderRight",
+          "borderBottom",
+          "borderLeft",
+          "borderImage",
+          marginStartProp
+        ])
+      });
+      css(el, {
+        padding: 0,
+        border: 0,
+        minWidth: 0,
+        minHeight: 0,
+        [marginStartProp]: 0,
+        width: dim.width,
+        height: dim.height,
+        overflow: "hidden",
+        [dimProp]: currentDim
+      });
+      const percent = currentDim / endDim;
+      duration = (velocity * endDim + duration) * (show ? 1 - percent : percent);
+      const endProps = { [dimProp]: show ? endDim : 0 };
+      if (end) {
+        css(el, marginProp, endDim - currentDim + currentMargin);
+        endProps[marginProp] = show ? currentMargin : endDim + currentMargin;
+      }
+      if (!end ^ mode === "reveal") {
+        css(wrapper, marginProp, -endDim + currentDim);
+        Transition.start(wrapper, { [marginProp]: show ? 0 : -endDim }, duration, transition);
+      }
+      try {
+        await Transition.start(el, endProps, duration, transition);
+      } finally {
+        css(el, prevProps);
+        unwrap(wrapper.firstChild);
+        if (!show) {
+          _toggle(el, false);
         }
-
-        const prevProps = Object.fromEntries(
-        ['padding', 'border', 'width', 'height', 'overflow', marginProp, marginStartProp].map(
-        (key) => [key, el.style[key]]));
-
-
-
-        const dim = dimensions(el);
-        const currentMargin = toFloat(css(el, marginProp));
-        const marginStart = toFloat(css(el, marginStartProp));
-        const endDim = dim[dimProp] + marginStart;
-
-        if (!inProgress && !show) {
-          currentDim += marginStart;
-        }
-
-        const [wrapper] = wrapInner(el, '<div>');
-        css(wrapper, {
-          boxSizing: 'border-box',
-          height: dim.height,
-          width: dim.width,
-          ...css(el, [
-          'padding',
-          'borderTop',
-          'borderRight',
-          'borderBottom',
-          'borderLeft',
-          'borderImage',
-          marginStartProp]) });
-
-
-
-        css(el, {
-          padding: 0,
-          border: 0,
-          [marginStartProp]: 0,
-          width: dim.width,
-          height: dim.height,
-          overflow: 'hidden',
-          [dimProp]: currentDim });
-
-
-        const percent = currentDim / endDim;
-        duration = (velocity * endDim + duration) * (show ? 1 - percent : percent);
-        const endProps = { [dimProp]: show ? endDim : 0 };
-
-        if (end) {
-          css(el, marginProp, endDim - currentDim + currentMargin);
-          endProps[marginProp] = show ? currentMargin : endDim + currentMargin;
-        }
-
-        if (!end ^ mode === 'reveal') {
-          css(wrapper, marginProp, -endDim + currentDim);
-          Transition.start(wrapper, { [marginProp]: show ? 0 : -endDim }, duration, transition);
-        }
-
-        try {
-          await Transition.start(el, endProps, duration, transition);
-        } finally {
-          css(el, prevProps);
-          unwrap(wrapper.firstChild);
-
-          if (!show) {
-            _toggle(el, false);
-          }
-        }
-      };
+      }
+    }
+    function toggleAnimation(el, show, cmp) {
+      Animation.cancel(el);
+      const { animation, duration, _toggle } = cmp;
+      if (show) {
+        _toggle(el, true);
+        return Animation.in(el, animation[0], duration, cmp.origin);
+      }
+      return Animation.out(el, animation[1] || animation[0], duration, cmp.origin).then(
+        () => _toggle(el, false)
+      );
     }
 
-    function toggleAnimation(cmp) {
-      return (el, show) => {
-        Animation.cancel(el);
+    const keyMap = {
+      TAB: 9,
+      ESC: 27,
+      SPACE: 32,
+      END: 35,
+      HOME: 36,
+      LEFT: 37,
+      UP: 38,
+      RIGHT: 39,
+      DOWN: 40
+    };
 
-        const { animation, duration, _toggle } = cmp;
-
-        if (show) {
-          _toggle(el, true);
-          return Animation.in(el, animation[0], duration, cmp.origin);
-        }
-
-        return Animation.out(el, animation[1] || animation[0], duration, cmp.origin).then(() =>
-        _toggle(el, false));
-
+    function resize(options) {
+      return observe(observeResize, options, "resize");
+    }
+    function intersection(options) {
+      return observe(observeIntersection, options);
+    }
+    function mutation(options) {
+      return observe(observeMutation, options);
+    }
+    function lazyload(options = {}) {
+      return intersection({
+        handler: function(entries, observer) {
+          const { targets = this.$el, preload = 5 } = options;
+          for (const el of toNodes(isFunction(targets) ? targets(this) : targets)) {
+            $$('[loading="lazy"]', el).slice(0, preload - 1).forEach((el2) => removeAttr(el2, "loading"));
+          }
+          for (const el of entries.filter(({ isIntersecting }) => isIntersecting).map(({ target }) => target)) {
+            observer.unobserve(el);
+          }
+        },
+        ...options
+      });
+    }
+    function scroll$1(options) {
+      return observe(
+        function(target, handler) {
+          return {
+            disconnect: on(target, "scroll", handler, {
+              passive: true,
+              capture: true
+            })
+          };
+        },
+        {
+          target: window,
+          ...options
+        },
+        "scroll"
+      );
+    }
+    function swipe(options) {
+      return {
+        observe(target, handler) {
+          return {
+            observe: noop,
+            unobserve: noop,
+            disconnect: on(target, pointerDown, handler, { passive: true })
+          };
+        },
+        handler(e) {
+          if (!isTouch(e)) {
+            return;
+          }
+          const pos = getEventPos(e);
+          const target = "tagName" in e.target ? e.target : parent(e.target);
+          once(document, `${pointerUp} ${pointerCancel} scroll`, (e2) => {
+            const { x, y } = getEventPos(e2);
+            if (e2.type !== "scroll" && target && x && Math.abs(pos.x - x) > 100 || y && Math.abs(pos.y - y) > 100) {
+              setTimeout(() => {
+                trigger(target, "swipe");
+                trigger(target, `swipe${swipeDirection(pos.x, pos.y, x, y)}`);
+              });
+            }
+          });
+        },
+        ...options
       };
+    }
+    function observe(observe2, options, emit) {
+      return {
+        observe: observe2,
+        handler() {
+          this.$emit(emit);
+        },
+        ...options
+      };
+    }
+    function swipeDirection(x1, y1, x2, y2) {
+      return Math.abs(x1 - x2) >= Math.abs(y1 - y2) ? x1 - x2 > 0 ? "Left" : "Right" : y1 - y2 > 0 ? "Up" : "Down";
     }
 
     var Accordion = {
-      mixins: [Class, Lazyload, Togglable],
-
+      mixins: [Class, Togglable],
       props: {
         animation: Boolean,
         targets: String,
@@ -3260,180 +2656,217 @@
         multiple: Boolean,
         toggle: String,
         content: String,
-        offset: Number },
-
-
+        offset: Number
+      },
       data: {
-        targets: '> *',
+        targets: "> *",
         active: false,
         animation: true,
         collapsible: true,
         multiple: false,
-        clsOpen: 'uk-open',
-        toggle: '> .uk-accordion-title',
-        content: '> .uk-accordion-content',
-        offset: 0 },
-
-
+        clsOpen: "uk-open",
+        toggle: "> .uk-accordion-title",
+        content: "> .uk-accordion-content",
+        offset: 0
+      },
       computed: {
         items: {
-          get(_ref, $el) {let { targets } = _ref;
+          get({ targets }, $el) {
             return $$(targets, $el);
           },
-
           watch(items, prev) {
             if (prev || hasClass(items, this.clsOpen)) {
               return;
             }
-
-            const active =
-            this.active !== false && items[Number(this.active)] ||
-            !this.collapsible && items[0];
-
+            const active = this.active !== false && items[Number(this.active)] || !this.collapsible && items[0];
             if (active) {
               this.toggle(active, false);
             }
           },
-
-          immediate: true },
-
-
-        toggles(_ref2) {let { toggle } = _ref2;
-          return this.items.map((item) => $(toggle, item));
+          immediate: true
         },
-
-        contents: {
-          get(_ref3) {let { content } = _ref3;
-            return this.items.map((item) => $(content, item));
+        toggles: {
+          get({ toggle }) {
+            return this.items.map((item) => $(toggle, item));
           },
-
+          watch() {
+            this.$emit();
+          },
+          immediate: true
+        },
+        contents: {
+          get({ content }) {
+            return this.items.map(
+              (item) => {
+                var _a;
+                return ((_a = item._wrapper) == null ? void 0 : _a.firstElementChild) || $(content, item);
+              }
+            );
+          },
           watch(items) {
             for (const el of items) {
               hide(
-              el,
-              !hasClass(
-              this.items.find((item) => within(el, item)),
-              this.clsOpen));
-
-
+                el,
+                !hasClass(
+                  this.items.find((item) => within(el, item)),
+                  this.clsOpen
+                )
+              );
             }
+            this.$emit();
           },
-
-          immediate: true } },
-
-
-
-      connected() {
-        this.lazyload();
+          immediate: true
+        }
       },
-
+      observe: lazyload(),
       events: [
-      {
-        name: 'click',
-
-        delegate() {
-          return this.targets + " " + this.$props.toggle;
+        {
+          name: "click keydown",
+          delegate() {
+            return `${this.targets} ${this.$props.toggle}`;
+          },
+          async handler(e) {
+            var _a;
+            if (e.type === "keydown" && e.keyCode !== keyMap.SPACE) {
+              return;
+            }
+            e.preventDefault();
+            (_a = this._off) == null ? void 0 : _a.call(this);
+            this._off = keepScrollPosition(e.target);
+            await this.toggle(index(this.toggles, e.current));
+            this._off();
+          }
         },
-
-        handler(e) {
-          e.preventDefault();
-          this.toggle(index(this.toggles, e.current));
-        } }],
-
-
-
+        {
+          name: "shown hidden",
+          self: true,
+          delegate() {
+            return this.targets;
+          },
+          handler() {
+            this.$emit();
+          }
+        }
+      ],
+      update() {
+        const activeItems = filter(this.items, `.${this.clsOpen}`);
+        for (const index2 in this.items) {
+          const toggle = this.toggles[index2];
+          const content = this.contents[index2];
+          if (!toggle || !content) {
+            continue;
+          }
+          toggle.id = generateId(this, toggle, `-title-${index2}`);
+          content.id = generateId(this, content, `-content-${index2}`);
+          const active = includes(activeItems, this.items[index2]);
+          attr(toggle, {
+            role: isTag(toggle, "a") ? "button" : null,
+            "aria-controls": content.id,
+            "aria-expanded": active,
+            "aria-disabled": !this.collapsible && activeItems.length < 2 && active
+          });
+          attr(content, { role: "region", "aria-labelledby": toggle.id });
+        }
+      },
       methods: {
-        toggle(item, animate) {
-          let items = [this.items[getIndex(item, this.items)]];
-          const activeItems = filter(this.items, "." + this.clsOpen);
-
+        async toggle(item, animate) {
+          item = this.items[getIndex(item, this.items)];
+          let items = [item];
+          const activeItems = filter(this.items, `.${this.clsOpen}`);
           if (!this.multiple && !includes(activeItems, items[0])) {
             items = items.concat(activeItems);
           }
-
-          if (
-          !this.collapsible &&
-          activeItems.length < 2 &&
-          !filter(items, ":not(." + this.clsOpen + ")").length)
-          {
+          if (!this.collapsible && activeItems.length < 2 && includes(activeItems, item)) {
             return;
           }
-
-          for (const el of items) {
-            this.toggleElement(el, !hasClass(el, this.clsOpen), async (el, show) => {
-              toggleClass(el, this.clsOpen, show);
-              attr($(this.$props.toggle, el), 'aria-expanded', show);
-
-              const content = $(this.content, el);
-
-              if (animate === false || !this.animation) {
-                content.hidden = !show;
-                hide(content, !show);
-                return;
-              }
-
-              await toggleTransition(this)(content, show);
-
-              if (show) {
-                const toggle = $(this.$props.toggle, el);
-                fastdom.read(() => {
-                  if (!isInView(toggle)) {
-                    scrollIntoView(toggle, { offset: this.offset });
-                  }
-                });
-              }
-            });
+          await Promise.all(
+            items.map(
+              (el) => this.toggleElement(el, !includes(activeItems, el), (el2, show) => {
+                toggleClass(el2, this.clsOpen, show);
+                if (animate === false || !this.animation) {
+                  hide($(this.content, el2), !show);
+                  return;
+                }
+                return transition(el2, show, this);
+              })
+            )
+          );
+        }
+      }
+    };
+    function hide(el, hide2) {
+      el && (el.hidden = hide2);
+    }
+    async function transition(el, show, { content, duration, velocity, transition: transition2 }) {
+      var _a;
+      content = ((_a = el._wrapper) == null ? void 0 : _a.firstElementChild) || $(content, el);
+      if (!el._wrapper) {
+        el._wrapper = wrapAll(content, "<div>");
+      }
+      const wrapper = el._wrapper;
+      css(wrapper, "overflow", "hidden");
+      const currentHeight = toFloat(css(wrapper, "height"));
+      await Transition.cancel(wrapper);
+      hide(content, false);
+      const endHeight = sumBy(["marginTop", "marginBottom"], (prop) => css(content, prop)) + dimensions(content).height;
+      const percent = currentHeight / endHeight;
+      duration = (velocity * endHeight + duration) * (show ? 1 - percent : percent);
+      css(wrapper, "height", currentHeight);
+      await Transition.start(wrapper, { height: show ? endHeight : 0 }, duration, transition2);
+      unwrap(content);
+      delete el._wrapper;
+      if (!show) {
+        hide(content, true);
+      }
+    }
+    function keepScrollPosition(el) {
+      const [scrollParent] = scrollParents(el, true);
+      let frame;
+      (function scroll() {
+        frame = requestAnimationFrame(() => {
+          const { top } = el.getBoundingClientRect();
+          if (top < 0) {
+            scrollParent.scrollTop += top;
           }
-        } } };
-
-
-
-    function hide(el, hide) {
-      el && (el.hidden = hide);
+          scroll();
+        });
+      })();
+      return () => requestAnimationFrame(() => cancelAnimationFrame(frame));
     }
 
     var alert = {
       mixins: [Class, Togglable],
-
-      args: 'animation',
-
+      args: "animation",
       props: {
         animation: Boolean,
-        close: String },
-
-
+        close: String
+      },
       data: {
         animation: true,
-        selClose: '.uk-alert-close',
-        duration: 150 },
-
-
+        selClose: ".uk-alert-close",
+        duration: 150
+      },
       events: {
-        name: 'click',
-
+        name: "click",
         delegate() {
           return this.selClose;
         },
-
         handler(e) {
           e.preventDefault();
           this.close();
-        } },
-
-
+        }
+      },
       methods: {
         async close() {
-          await this.toggleElement(this.$el, false, animate$1(this));
+          await this.toggleElement(this.$el, false, animate$1);
           this.$destroy(true);
-        } } };
-
-
-
-    function animate$1(_ref) {let { duration, transition, velocity } = _ref;
-      return (el) => {
-        const height = toFloat(css(el, 'height'));
-        css(el, 'height', height);
-        return Transition.start(
+        }
+      }
+    };
+    function animate$1(el, show, { duration, transition, velocity }) {
+      const height = toFloat(css(el, "height"));
+      css(el, "height", height);
+      return Transition.start(
         el,
         {
           height: 0,
@@ -3443,157 +2876,117 @@
           paddingBottom: 0,
           borderTop: 0,
           borderBottom: 0,
-          opacity: 0 },
-
+          opacity: 0
+        },
         velocity * height + duration,
-        transition);
-
-      };
+        transition
+      );
     }
 
     var Video = {
-      args: 'autoplay',
-
+      args: "autoplay",
       props: {
         automute: Boolean,
-        autoplay: Boolean },
-
-
+        autoplay: Boolean
+      },
       data: {
         automute: false,
-        autoplay: true },
-
-
+        autoplay: true
+      },
       connected() {
-        this.inView = this.autoplay === 'inview';
-
-        if (this.inView && !hasAttr(this.$el, 'preload')) {
-          this.$el.preload = 'none';
+        this.inView = this.autoplay === "inview";
+        if (this.inView && !hasAttr(this.$el, "preload")) {
+          this.$el.preload = "none";
         }
-
+        if (isTag(this.$el, "iframe") && !hasAttr(this.$el, "allow")) {
+          this.$el.allow = "autoplay";
+        }
         if (this.automute) {
           mute(this.$el);
         }
-
-        this.registerObserver(observeIntersection(this.$el, () => this.$emit(), {}, false));
       },
-
+      observe: intersection({
+        args: { intersecting: false }
+      }),
       update: {
-        read() {
+        read({ visible }) {
           if (!isVideo(this.$el)) {
             return false;
           }
-
           return {
-            visible: isVisible(this.$el) && css(this.$el, 'visibility') !== 'hidden',
-            inView: this.inView && isInView(this.$el) };
-
+            prev: visible,
+            visible: isVisible(this.$el) && css(this.$el, "visibility") !== "hidden",
+            inView: this.inView && isInView(this.$el)
+          };
         },
-
-        write(_ref) {let { visible, inView } = _ref;
+        write({ prev, visible, inView }) {
           if (!visible || this.inView && !inView) {
             pause(this.$el);
-          } else if (this.autoplay === true || this.inView && inView) {
+          } else if (this.autoplay === true && !prev || this.inView && inView) {
             play(this.$el);
           }
-        } } };
-
-    var Resize = {
-      connected() {var _this$$options$resize;
-        this.registerObserver(
-        observeResize(((_this$$options$resize = this.$options.resizeTargets) == null ? void 0 : _this$$options$resize.call(this)) || this.$el, () =>
-        this.$emit('resize')));
-
-
-      } };
+        }
+      }
+    };
 
     var cover = {
-      mixins: [Resize, Video],
-
+      mixins: [Video],
       props: {
         width: Number,
-        height: Number },
-
-
-      data: {
-        automute: true },
-
-
-      events: {
-        'load loadedmetadata'() {
-          this.$emit('resize');
-        } },
-
-
-      resizeTargets() {
-        return [this.$el, parent(this.$el)];
+        height: Number
       },
-
+      data: {
+        automute: true
+      },
+      events: {
+        "load loadedmetadata"() {
+          this.$emit("resize");
+        }
+      },
+      observe: resize({
+        target: ({ $el }) => [$el, getPositionedParent($el) || parent($el)]
+      }),
       update: {
         read() {
           const { ratio, cover } = Dimensions;
           const { $el, width, height } = this;
-
           let dim = { width, height };
-
-          if (!dim.width || !dim.height) {
+          if (!width || !height) {
             const intrinsic = {
               width: $el.naturalWidth || $el.videoWidth || $el.clientWidth,
-              height: $el.naturalHeight || $el.videoHeight || $el.clientHeight };
-
-
-            if (dim.width) {
-              dim = ratio(intrinsic, 'width', dim.width);
+              height: $el.naturalHeight || $el.videoHeight || $el.clientHeight
+            };
+            if (width) {
+              dim = ratio(intrinsic, "width", width);
             } else if (height) {
-              dim = ratio(intrinsic, 'height', dim.height);
+              dim = ratio(intrinsic, "height", height);
             } else {
               dim = intrinsic;
             }
           }
-
-          const { offsetHeight: coverHeight, offsetWidth: coverWidth } =
-          getPositionedParent($el) || parent($el);
+          const { offsetHeight: coverHeight, offsetWidth: coverWidth } = getPositionedParent($el) || parent($el);
           const coverDim = cover(dim, {
             width: coverWidth + (coverWidth % 2 ? 1 : 0),
-            height: coverHeight + (coverHeight % 2 ? 1 : 0) });
-
-
+            height: coverHeight + (coverHeight % 2 ? 1 : 0)
+          });
           if (!coverDim.width || !coverDim.height) {
             return false;
           }
-
           return coverDim;
         },
-
-        write(_ref) {let { height, width } = _ref;
+        write({ height, width }) {
           css(this.$el, { height, width });
         },
-
-        events: ['resize'] } };
-
-
-
+        events: ["resize"]
+      }
+    };
     function getPositionedParent(el) {
       while (el = parent(el)) {
-        if (css(el, 'position') !== 'static') {
+        if (css(el, "position") !== "static") {
           return el;
         }
       }
     }
-
-    var Container = {
-      props: {
-        container: Boolean },
-
-
-      data: {
-        container: true },
-
-
-      computed: {
-        container(_ref) {let { container } = _ref;
-          return container === true && this.$container || container && $(container);
-        } } };
 
     var Position = {
       props: {
@@ -3601,780 +2994,376 @@
         offset: null,
         flip: Boolean,
         shift: Boolean,
-        inset: Boolean },
-
-
+        inset: Boolean
+      },
       data: {
-        pos: "bottom-" + (isRtl ? 'right' : 'left'),
+        pos: `bottom-${isRtl ? "right" : "left"}`,
         offset: false,
         flip: true,
         shift: true,
-        inset: false },
-
-
-      connected() {
-        this.pos = this.$props.pos.split('-').concat('center').slice(0, 2);
-        [this.dir, this.align] = this.pos;
-        this.axis = includes(['top', 'bottom'], this.dir) ? 'y' : 'x';
+        inset: false
       },
-
+      connected() {
+        this.pos = this.$props.pos.split("-").concat("center").slice(0, 2);
+        [this.dir, this.align] = this.pos;
+        this.axis = includes(["top", "bottom"], this.dir) ? "y" : "x";
+      },
       methods: {
         positionAt(element, target, boundary) {
           let offset = [this.getPositionOffset(element), this.getShiftOffset(element)];
-          const placement = [this.flip && 'flip', this.shift && 'shift'];
-
+          const placement = [this.flip && "flip", this.shift && "shift"];
           const attach = {
             element: [this.inset ? this.dir : flipPosition(this.dir), this.align],
-            target: [this.dir, this.align] };
-
-
-          if (this.axis === 'y') {
+            target: [this.dir, this.align]
+          };
+          if (this.axis === "y") {
             for (const prop in attach) {
               attach[prop].reverse();
             }
             offset.reverse();
             placement.reverse();
           }
-
-          const [scrollElement] = scrollParents(element, /auto|scroll/);
-          const { scrollTop, scrollLeft } = scrollElement;
-
-          // Ensure none positioned element does not generate scrollbars
+          const restoreScrollPosition = storeScrollPosition(element);
           const elDim = dimensions(element);
           css(element, { top: -elDim.height, left: -elDim.width });
-
           positionAt(element, target, {
             attach,
             offset,
             boundary,
             placement,
-            viewportOffset: this.getViewportOffset(element) });
-
-
-          // Restore scroll position
-          scrollElement.scrollTop = scrollTop;
-          scrollElement.scrollLeft = scrollLeft;
+            viewportOffset: this.getViewportOffset(element)
+          });
+          restoreScrollPosition();
         },
-
         getPositionOffset(element) {
-          return (
-            toPx(
-            this.offset === false ? css(element, '--uk-position-offset') : this.offset,
-            this.axis === 'x' ? 'width' : 'height',
-            element) * (
-
-            includes(['left', 'top'], this.dir) ? -1 : 1) * (
-            this.inset ? -1 : 1));
-
+          return toPx(
+            this.offset === false ? css(element, "--uk-position-offset") : this.offset,
+            this.axis === "x" ? "width" : "height",
+            element
+          ) * (includes(["left", "top"], this.dir) ? -1 : 1) * (this.inset ? -1 : 1);
         },
-
         getShiftOffset(element) {
-          return this.align === 'center' ?
-          0 :
-          toPx(
-          css(element, '--uk-position-shift-offset'),
-          this.axis === 'y' ? 'width' : 'height',
-          element) * (
-          includes(['left', 'top'], this.align) ? 1 : -1);
+          return this.align === "center" ? 0 : toPx(
+            css(element, "--uk-position-shift-offset"),
+            this.axis === "y" ? "width" : "height",
+            element
+          ) * (includes(["left", "top"], this.align) ? 1 : -1);
         },
-
         getViewportOffset(element) {
-          return toPx(css(element, '--uk-position-viewport-offset'));
-        } } };
-
-    var Style = {
-      beforeConnect() {
-        this._style = attr(this.$el, 'style');
-      },
-
-      disconnected() {
-        attr(this.$el, 'style', this._style);
-      } };
-
-    const active$1 = [];
-
-    var Modal = {
-      mixins: [Class, Container, Togglable],
-
-      props: {
-        selPanel: String,
-        selClose: String,
-        escClose: Boolean,
-        bgClose: Boolean,
-        stack: Boolean },
-
-
-      data: {
-        cls: 'uk-open',
-        escClose: true,
-        bgClose: true,
-        overlay: true,
-        stack: false },
-
-
-      computed: {
-        panel(_ref, $el) {let { selPanel } = _ref;
-          return $(selPanel, $el);
-        },
-
-        transitionElement() {
-          return this.panel;
-        },
-
-        bgClose(_ref2) {let { bgClose } = _ref2;
-          return bgClose && this.panel;
-        } },
-
-
-      beforeDisconnect() {
-        if (includes(active$1, this)) {
-          this.toggleElement(this.$el, false, false);
+          return toPx(css(element, "--uk-position-viewport-offset"));
         }
-      },
-
-      events: [
-      {
-        name: 'click',
-
-        delegate() {
-          return this.selClose;
-        },
-
-        handler(e) {
-          e.preventDefault();
-          this.hide();
-        } },
-
-
-      {
-        name: 'toggle',
-
-        self: true,
-
-        handler(e) {
-          if (e.defaultPrevented) {
-            return;
-          }
-
-          e.preventDefault();
-
-          if (this.isToggled() === includes(active$1, this)) {
-            this.toggle();
-          }
-        } },
-
-
-      {
-        name: 'beforeshow',
-
-        self: true,
-
-        handler(e) {
-          if (includes(active$1, this)) {
-            return false;
-          }
-
-          if (!this.stack && active$1.length) {
-            Promise.all(active$1.map((modal) => modal.hide())).then(this.show);
-            e.preventDefault();
-          } else {
-            active$1.push(this);
-          }
-        } },
-
-
-      {
-        name: 'show',
-
-        self: true,
-
-        handler() {
-          once(
-          this.$el,
-          'hide',
-          on(document, 'focusin', (e) => {
-            if (last(active$1) === this && !within(e.target, this.$el)) {
-              this.$el.focus();
-            }
-          }));
-
-
-          if (this.overlay) {
-            once(this.$el, 'hidden', preventOverscroll(this.$el));
-            once(this.$el, 'hidden', preventBackgroundScroll());
-          }
-
-          if (this.stack) {
-            css(this.$el, 'zIndex', toFloat(css(this.$el, 'zIndex')) + active$1.length);
-          }
-
-          addClass(document.documentElement, this.clsPage);
-
-          if (this.bgClose) {
-            once(
-            this.$el,
-            'hide',
-            on(document, pointerDown, (_ref3) => {let { target } = _ref3;
-              if (
-              last(active$1) !== this ||
-              this.overlay && !within(target, this.$el) ||
-              within(target, this.panel))
-              {
-                return;
-              }
-
-              once(
-              document,
-              pointerUp + " " + pointerCancel + " scroll",
-              (_ref4) => {let { defaultPrevented, type, target: newTarget } = _ref4;
-                if (
-                !defaultPrevented &&
-                type === pointerUp &&
-                target === newTarget)
-                {
-                  this.hide();
-                }
-              },
-              true);
-
-            }),
-            { self: true });
-
-          }
-
-          if (this.escClose) {
-            once(
-            this.$el,
-            'hide',
-            on(document, 'keydown', (e) => {
-              if (e.keyCode === 27 && last(active$1) === this) {
-                this.hide();
-              }
-            }),
-            { self: true });
-
-          }
-        } },
-
-
-      {
-        name: 'shown',
-
-        self: true,
-
-        handler() {
-          if (!isFocusable(this.$el)) {
-            attr(this.$el, 'tabindex', '-1');
-          }
-
-          if (!$(':focus', this.$el)) {
-            this.$el.focus();
-          }
-        } },
-
-
-      {
-        name: 'hidden',
-
-        self: true,
-
-        handler() {
-          if (includes(active$1, this)) {
-            active$1.splice(active$1.indexOf(this), 1);
-          }
-
-          css(this.$el, 'zIndex', '');
-
-          if (!active$1.some((modal) => modal.clsPage === this.clsPage)) {
-            removeClass(document.documentElement, this.clsPage);
-          }
-        } }],
-
-
-
-      methods: {
-        toggle() {
-          return this.isToggled() ? this.hide() : this.show();
-        },
-
-        show() {
-          if (this.container && parent(this.$el) !== this.container) {
-            append(this.container, this.$el);
-            return new Promise((resolve) =>
-            requestAnimationFrame(() => this.show().then(resolve)));
-
-          }
-
-          return this.toggleElement(this.$el, true, animate(this));
-        },
-
-        hide() {
-          return this.toggleElement(this.$el, false, animate(this));
-        } } };
-
-
-
-    function animate(_ref5) {let { transitionElement, _toggle } = _ref5;
-      return (el, show) =>
-      new Promise((resolve, reject) =>
-      once(el, 'show hide', () => {
-        el._reject == null ? void 0 : el._reject();
-        el._reject = reject;
-
-        _toggle(el, show);
-
-        const off = once(
-        transitionElement,
-        'transitionstart',
-        () => {
-          once(transitionElement, 'transitionend transitioncancel', resolve, {
-            self: true });
-
-          clearTimeout(timer);
-        },
-        { self: true });
-
-
-        const timer = setTimeout(() => {
-          off();
-          resolve();
-        }, toMs(css(transitionElement, 'transitionDuration')));
-      })).
-      then(() => delete el._reject);
-    }
-
-    function toMs(time) {
-      return time ? endsWith(time, 'ms') ? toFloat(time) : toFloat(time) * 1000 : 0;
-    }
-
-    function preventOverscroll(el) {
-      if (CSS.supports('overscroll-behavior', 'contain')) {
-        const elements = filterChildren(el, (child) => /auto|scroll/.test(css(child, 'overflow')));
-        css(elements, 'overscrollBehavior', 'contain');
-        return () => css(elements, 'overscrollBehavior', '');
       }
-
-      let startClientY;
-
-      const events = [
-      on(
-      el,
-      'touchstart',
-      (_ref6) => {let { targetTouches } = _ref6;
-        if (targetTouches.length === 1) {
-          startClientY = targetTouches[0].clientY;
-        }
-      },
-      { passive: true }),
-
-
-      on(
-      el,
-      'touchmove',
-      (e) => {
-        if (e.targetTouches.length !== 1) {
-          return;
-        }
-
-        let [scrollParent] = scrollParents(e.target, /auto|scroll/);
-        if (!within(scrollParent, el)) {
-          scrollParent = el;
-        }
-
-        const clientY = e.targetTouches[0].clientY - startClientY;
-        const { scrollTop, scrollHeight, clientHeight } = scrollParent;
-
-        if (
-        clientHeight >= scrollHeight ||
-        scrollTop === 0 && clientY > 0 ||
-        scrollHeight - scrollTop <= clientHeight && clientY < 0)
-        {
-          e.cancelable && e.preventDefault();
-        }
-      },
-      { passive: false })];
-
-
-
-      return () => events.forEach((fn) => fn());
-    }
-
-    let prevented;
-    function preventBackgroundScroll() {
-      if (prevented) {
-        return noop;
-      }
-      prevented = true;
-      const { body, documentElement } = document;
-      css(body, {
-        overflowY: width(window) > documentElement.clientWidth ? 'scroll' : '',
-        touchAction: 'none' });
-
-      css(documentElement, 'overflowY', 'hidden');
+    };
+    function storeScrollPosition(element) {
+      const [scrollElement] = scrollParents(element);
+      const { scrollTop } = scrollElement;
       return () => {
-        prevented = false;
-        css(documentElement, 'overflowY', '');
-        css(body, { overflowY: '', touchAction: '' });
+        if (scrollTop !== scrollElement.scrollTop) {
+          scrollElement.scrollTop = scrollTop;
+        }
       };
     }
 
-    function filterChildren(el, fn) {
-      const children = [];
-      apply(el, (node) => {
-        if (fn(node)) {
-          children.push(node);
+    var Container = {
+      props: {
+        container: Boolean
+      },
+      data: {
+        container: true
+      },
+      computed: {
+        container({ container }) {
+          return container === true && this.$container || container && $(container);
         }
+      }
+    };
+
+    let prevented;
+    function preventBackgroundScroll(el) {
+      const off = on(
+        el,
+        "touchmove",
+        (e) => {
+          if (e.targetTouches.length !== 1) {
+            return;
+          }
+          let [{ scrollHeight, clientHeight }] = scrollParents(e.target);
+          if (clientHeight >= scrollHeight && e.cancelable) {
+            e.preventDefault();
+          }
+        },
+        { passive: false }
+      );
+      if (prevented) {
+        return off;
+      }
+      prevented = true;
+      const { scrollingElement } = document;
+      css(scrollingElement, {
+        overflowY: CSS.supports("overflow", "clip") ? "clip" : "hidden",
+        touchAction: "none",
+        paddingRight: width(window) - scrollingElement.clientWidth || ""
       });
-      return children;
+      return () => {
+        prevented = false;
+        off();
+        css(scrollingElement, { overflowY: "", touchAction: "", paddingRight: "" });
+      };
     }
 
-    let active;
-
+    let active$1;
     var drop = {
-      mixins: [Container, Lazyload, Position, Style, Togglable],
-
-      args: 'pos',
-
+      mixins: [Container, Position, Togglable],
+      args: "pos",
       props: {
-        mode: 'list',
+        mode: "list",
         toggle: Boolean,
         boundary: Boolean,
+        boundaryX: Boolean,
+        boundaryY: Boolean,
         target: Boolean,
         targetX: Boolean,
         targetY: Boolean,
         stretch: Boolean,
         delayShow: Number,
         delayHide: Number,
-        display: String,
+        autoUpdate: Boolean,
         clsDrop: String,
         animateOut: Boolean,
-        bgScroll: Boolean },
-
-
+        bgScroll: Boolean
+      },
       data: {
-        mode: ['click', 'hover'],
-        toggle: '- *',
+        mode: ["click", "hover"],
+        toggle: "- *",
         boundary: false,
+        boundaryX: false,
+        boundaryY: false,
         target: false,
         targetX: false,
         targetY: false,
         stretch: false,
         delayShow: 0,
         delayHide: 800,
-        display: null,
+        autoUpdate: true,
         clsDrop: false,
         animateOut: false,
         bgScroll: true,
-        animation: ['uk-animation-fade'],
-        cls: 'uk-open',
-        container: false },
-
-
+        animation: ["uk-animation-fade"],
+        cls: "uk-open",
+        container: false
+      },
       computed: {
-        target(_ref, $el) {let { target, targetX, targetY } = _ref;
+        boundary({ boundary, boundaryX, boundaryY }, $el) {
+          return [
+            query(boundaryX || boundary, $el) || window,
+            query(boundaryY || boundary, $el) || window
+          ];
+        },
+        target({ target, targetX, targetY }, $el) {
           targetX = targetX || target || this.targetEl;
           targetY = targetY || target || this.targetEl;
-
           return [
-          targetX === true ? window : query(targetX, $el),
-          targetY === true ? window : query(targetY, $el)];
-
-        } },
-
-
+            targetX === true ? window : query(targetX, $el),
+            targetY === true ? window : query(targetY, $el)
+          ];
+        }
+      },
       created() {
         this.tracker = new MouseTracker();
       },
-
       beforeConnect() {
-        this.clsDrop = this.$props.clsDrop || "uk-" + this.$options.name;
+        this.clsDrop = this.$props.clsDrop || `uk-${this.$options.name}`;
       },
-
       connected() {
-        addClass(this.$el, this.clsDrop);
-
+        addClass(this.$el, "uk-drop", this.clsDrop);
         if (this.toggle && !this.targetEl) {
-          this.targetEl = this.$create('toggle', query(this.toggle, this.$el), {
-            target: this.$el,
-            mode: this.mode }).
-          $el;
-          attr(this.targetEl, 'aria-haspopup', true);
-          this.lazyload(this.targetEl);
+          this.targetEl = createToggleComponent(this);
         }
+        this._style = pick(this.$el.style, ["width", "height"]);
       },
-
       disconnected() {
         if (this.isActive()) {
-          active = null;
+          this.hide(false);
+          active$1 = null;
         }
+        css(this.$el, this._style);
       },
-
+      observe: lazyload({
+        target: ({ toggle, $el }) => query(toggle, $el),
+        targets: ({ $el }) => $el
+      }),
       events: [
-      {
-        name: 'click',
-
-        delegate() {
-          return "." + this.clsDrop + "-close";
-        },
-
-        handler(e) {
-          e.preventDefault();
-          this.hide(false);
-        } },
-
-
-      {
-        name: 'click',
-
-        delegate() {
-          return 'a[href^="#"]';
-        },
-
-        handler(_ref2) {let { defaultPrevented, current: { hash } } = _ref2;
-          if (!defaultPrevented && hash && !within(hash, this.$el)) {
+        {
+          name: "click",
+          delegate() {
+            return ".uk-drop-close";
+          },
+          handler(e) {
+            e.preventDefault();
             this.hide(false);
           }
-        } },
-
-
-      {
-        name: 'beforescroll',
-
-        handler() {
-          this.hide(false);
-        } },
-
-
-      {
-        name: 'toggle',
-
-        self: true,
-
-        handler(e, toggle) {
-          e.preventDefault();
-
-          if (this.isToggled()) {
-            this.hide(false);
-          } else {
-            this.show(toggle == null ? void 0 : toggle.$el, false);
-          }
-        } },
-
-
-      {
-        name: 'toggleshow',
-
-        self: true,
-
-        handler(e, toggle) {
-          e.preventDefault();
-          this.show(toggle == null ? void 0 : toggle.$el);
-        } },
-
-
-      {
-        name: 'togglehide',
-
-        self: true,
-
-        handler(e) {
-          e.preventDefault();
-          if (!matches(this.$el, ':focus,:hover')) {
-            this.hide();
-          }
-        } },
-
-
-      {
-        name: pointerEnter + " focusin",
-
-        filter() {
-          return includes(this.mode, 'hover');
         },
-
-        handler(e) {
-          if (!isTouch(e)) {
-            this.clearTimers();
-          }
-        } },
-
-
-      {
-        name: pointerLeave + " focusout",
-
-        filter() {
-          return includes(this.mode, 'hover');
-        },
-
-        handler(e) {
-          if (!isTouch(e) && e.relatedTarget) {
-            this.hide();
-          }
-        } },
-
-
-      {
-        name: 'toggled',
-
-        self: true,
-
-        handler(e, toggled) {
-          if (!toggled) {
-            return;
-          }
-
-          this.clearTimers();
-          this.position();
-        } },
-
-
-      {
-        name: 'show',
-
-        self: true,
-
-        handler() {
-          active = this;
-
-          this.tracker.init();
-
-          for (const handler of [
-          on(
-          document,
-          pointerDown,
-          (_ref3) => {let { target } = _ref3;return (
-              !within(target, this.$el) &&
-              once(
-              document,
-              pointerUp + " " + pointerCancel + " scroll",
-              (_ref4) => {let { defaultPrevented, type, target: newTarget } = _ref4;
-                if (
-                !defaultPrevented &&
-                type === pointerUp &&
-                target === newTarget &&
-                !(this.targetEl && within(target, this.targetEl)))
-                {
-                  this.hide(false);
-                }
-              },
-              true));}),
-
-
-
-          on(document, 'keydown', (e) => {
-            if (e.keyCode === 27) {
+        {
+          name: "click",
+          delegate() {
+            return 'a[href*="#"]';
+          },
+          handler({ defaultPrevented, current }) {
+            const { hash } = current;
+            if (!defaultPrevented && hash && isSameSiteAnchor(current) && !within(hash, this.$el)) {
               this.hide(false);
             }
-          }),
-
-          ...(this.bgScroll ?
-          [] :
-          [preventOverscroll(this.$el), preventBackgroundScroll()]),
-
-          ...(this.display === 'static' ?
-          [] :
-          (() => {
-            const handler = () => this.$emit();
-            return [
-            on(window, 'resize', handler),
-            on([document, scrollParents(this.$el)], 'scroll', handler),
-            (() => {
-              const observer = observeResize(
-              scrollParents(this.$el),
-              handler);
-
-              return () => observer.disconnect();
-            })()];
-
-          })())])
-          {
-            once(this.$el, 'hide', handler, { self: true });
           }
-        } },
-
-
-      {
-        name: 'beforehide',
-
-        self: true,
-
-        handler() {
-          this.clearTimers();
-        } },
-
-
-      {
-        name: 'hide',
-
-        handler(_ref5) {let { target } = _ref5;
-          if (this.$el !== target) {
-            active =
-            active === null && within(target, this.$el) && this.isToggled() ?
-            this :
-            active;
-            return;
+        },
+        {
+          name: "beforescroll",
+          handler() {
+            this.hide(false);
           }
-
-          active = this.isActive() ? null : active;
-          this.tracker.cancel();
-        } }],
-
-
-
+        },
+        {
+          name: "toggle",
+          self: true,
+          handler(e, toggle) {
+            e.preventDefault();
+            if (this.isToggled()) {
+              this.hide(false);
+            } else {
+              this.show(toggle == null ? void 0 : toggle.$el, false);
+            }
+          }
+        },
+        {
+          name: "toggleshow",
+          self: true,
+          handler(e, toggle) {
+            e.preventDefault();
+            this.show(toggle == null ? void 0 : toggle.$el);
+          }
+        },
+        {
+          name: "togglehide",
+          self: true,
+          handler(e) {
+            e.preventDefault();
+            if (!matches(this.$el, ":focus,:hover")) {
+              this.hide();
+            }
+          }
+        },
+        {
+          name: `${pointerEnter} focusin`,
+          filter() {
+            return includes(this.mode, "hover");
+          },
+          handler(e) {
+            if (!isTouch(e)) {
+              this.clearTimers();
+            }
+          }
+        },
+        {
+          name: `${pointerLeave} focusout`,
+          filter() {
+            return includes(this.mode, "hover");
+          },
+          handler(e) {
+            if (!isTouch(e) && e.relatedTarget) {
+              this.hide();
+            }
+          }
+        },
+        {
+          name: "toggled",
+          self: true,
+          handler(e, toggled) {
+            attr(this.targetEl, "aria-expanded", toggled ? true : null);
+            if (!toggled) {
+              return;
+            }
+            this.clearTimers();
+            this.position();
+          }
+        },
+        {
+          name: "show",
+          self: true,
+          handler() {
+            active$1 = this;
+            this.tracker.init();
+            const handlers = [
+              listenForResize(this),
+              listenForEscClose$1(this),
+              listenForBackgroundClose$1(this),
+              this.autoUpdate && listenForScroll(this),
+              !this.bgScroll && preventBackgroundScroll(this.$el)
+            ];
+            once(this.$el, "hide", () => handlers.forEach((handler) => handler && handler()), {
+              self: true
+            });
+          }
+        },
+        {
+          name: "beforehide",
+          self: true,
+          handler() {
+            this.clearTimers();
+          }
+        },
+        {
+          name: "hide",
+          handler({ target }) {
+            if (this.$el !== target) {
+              active$1 = active$1 === null && within(target, this.$el) && this.isToggled() ? this : active$1;
+              return;
+            }
+            active$1 = this.isActive() ? null : active$1;
+            this.tracker.cancel();
+          }
+        }
+      ],
       update: {
         write() {
           if (this.isToggled() && !hasClass(this.$el, this.clsEnter)) {
             this.position();
           }
-        } },
-
-
+        }
+      },
       methods: {
-        show(target, delay) {if (target === void 0) {target = this.targetEl;}if (delay === void 0) {delay = true;}
+        show(target = this.targetEl, delay = true) {
           if (this.isToggled() && target && this.targetEl && target !== this.targetEl) {
             this.hide(false, false);
           }
-
           this.targetEl = target;
-
           this.clearTimers();
-
           if (this.isActive()) {
             return;
           }
-
-          if (active) {
-            if (delay && active.isDelaying) {
-              this.showTimer = setTimeout(() => matches(target, ':hover') && this.show(), 10);
+          if (active$1) {
+            if (delay && active$1.isDelaying) {
+              this.showTimer = setTimeout(() => matches(target, ":hover") && this.show(), 10);
               return;
             }
-
             let prev;
-            while (active && prev !== active && !within(this.$el, active.$el)) {
-              prev = active;
-              active.hide(false, false);
+            while (active$1 && prev !== active$1 && !within(this.$el, active$1.$el)) {
+              prev = active$1;
+              active$1.hide(false, false);
             }
           }
-
           if (this.container && parent(this.$el) !== this.container) {
             append(this.container, this.$el);
           }
-
           this.showTimer = setTimeout(
-          () => this.toggleElement(this.$el, true),
-          delay && this.delayShow || 0);
-
+            () => this.toggleElement(this.$el, true),
+            delay && this.delayShow || 0
+          );
         },
-
-        hide(delay, animate) {if (delay === void 0) {delay = true;}if (animate === void 0) {animate = true;}
+        hide(delay = true, animate = true) {
           const hide = () => this.toggleElement(this.$el, false, this.animateOut && animate);
-
           this.clearTimers();
-
-          this.isDelaying = getPositionedElements(this.$el).some((el) =>
-          this.tracker.movesTo(el));
-
-
+          this.isDelaying = getPositionedElements(this.$el).some(
+            (el) => this.tracker.movesTo(el)
+          );
           if (delay && this.isDelaying) {
             this.hideTimer = setTimeout(this.hide, 50);
           } else if (delay && this.delayHide) {
@@ -4383,7 +3372,6 @@
             hide();
           }
         },
-
         clearTimers() {
           clearTimeout(this.showTimer);
           clearTimeout(this.hideTimer);
@@ -4391,195 +3379,540 @@
           this.hideTimer = null;
           this.isDelaying = false;
         },
-
         isActive() {
-          return active === this;
+          return active$1 === this;
         },
-
         position() {
-          removeClass(this.$el, this.clsDrop + "-stack");
-          attr(this.$el, 'style', this._style);
-
-          // Ensure none positioned element does not generate scrollbars
+          removeClass(this.$el, "uk-drop-stack");
+          css(this.$el, this._style);
           this.$el.hidden = true;
-
-          const boundary = query(this.boundary, this.$el);
-          const boundaryOffset = offsetViewport(boundary || window);
-          const viewports = this.target.map((target) => offsetViewport(scrollParents(target)[0]));
+          const viewports = this.target.map((target) => getViewport$1(this.$el, target));
           const viewportOffset = this.getViewportOffset(this.$el);
-
           const dirs = [
-          [0, ['x', 'width', 'left', 'right']],
-          [1, ['y', 'height', 'top', 'bottom']]];
-
-
+            [0, ["x", "width", "left", "right"]],
+            [1, ["y", "height", "top", "bottom"]]
+          ];
           for (const [i, [axis, prop]] of dirs) {
             if (this.axis !== axis && includes([axis, true], this.stretch)) {
               css(this.$el, {
                 [prop]: Math.min(
-                boundaryOffset[prop],
-                viewports[i][prop] - 2 * viewportOffset),
-
-                ["overflow-" + axis]: 'auto' });
-
+                  offset(this.boundary[i])[prop],
+                  viewports[i][prop] - 2 * viewportOffset
+                ),
+                [`overflow-${axis}`]: "auto"
+              });
             }
           }
-
           const maxWidth = viewports[0].width - 2 * viewportOffset;
-
-          if (this.$el.offsetWidth > maxWidth) {
-            addClass(this.$el, this.clsDrop + "-stack");
-          }
-
-          css(this.$el, 'maxWidth', maxWidth);
-
           this.$el.hidden = false;
-
-          this.positionAt(this.$el, this.target, boundary);
-
+          css(this.$el, "maxWidth", "");
+          if (this.$el.offsetWidth > maxWidth) {
+            addClass(this.$el, "uk-drop-stack");
+          }
+          css(this.$el, "maxWidth", maxWidth);
+          this.positionAt(this.$el, this.target, this.boundary);
           for (const [i, [axis, prop, start, end]] of dirs) {
             if (this.axis === axis && includes([axis, true], this.stretch)) {
               const positionOffset = Math.abs(this.getPositionOffset(this.$el));
               const targetOffset = offset(this.target[i]);
               const elOffset = offset(this.$el);
-
               css(this.$el, {
-                [prop]:
-                (targetOffset[start] > elOffset[start] ?
-                targetOffset[start] -
-                Math.max(
-                boundaryOffset[start],
-                viewports[i][start] + viewportOffset) :
-
-                Math.min(
-                boundaryOffset[end],
-                viewports[i][end] - viewportOffset) -
-                targetOffset[end]) - positionOffset,
-                ["overflow-" + axis]: 'auto' });
-
-
-              this.positionAt(this.$el, this.target, boundary);
+                [prop]: (targetOffset[start] > elOffset[start] ? targetOffset[start] - Math.max(
+                  offset(this.boundary[i])[start],
+                  viewports[i][start] + viewportOffset
+                ) : Math.min(
+                  offset(this.boundary[i])[end],
+                  viewports[i][end] - viewportOffset
+                ) - targetOffset[end]) - positionOffset,
+                [`overflow-${axis}`]: "auto"
+              });
+              this.positionAt(this.$el, this.target, this.boundary);
             }
           }
-        } } };
-
-
-
+        }
+      }
+    };
     function getPositionedElements(el) {
       const result = [];
-      apply(el, (el) => css(el, 'position') !== 'static' && result.push(el));
+      apply(el, (el2) => css(el2, "position") !== "static" && result.push(el2));
       return result;
+    }
+    function getViewport$1(el, target) {
+      return offsetViewport(overflowParents(target).find((parent2) => within(el, parent2)));
+    }
+    function createToggleComponent(drop) {
+      const { $el } = drop.$create("toggle", query(drop.toggle, drop.$el), {
+        target: drop.$el,
+        mode: drop.mode
+      });
+      attr($el, "aria-haspopup", true);
+      return $el;
+    }
+    function listenForResize(drop) {
+      const update = () => drop.$emit();
+      const off = on(window, "resize", update);
+      const observer = observeResize(overflowParents(drop.$el).concat(drop.target), update);
+      return () => {
+        observer.disconnect();
+        off();
+      };
+    }
+    function listenForScroll(drop) {
+      return on([document, ...overflowParents(drop.$el)], "scroll", () => drop.$emit(), {
+        passive: true
+      });
+    }
+    function listenForEscClose$1(drop) {
+      return on(document, "keydown", (e) => {
+        if (e.keyCode === keyMap.ESC) {
+          drop.hide(false);
+        }
+      });
+    }
+    function listenForBackgroundClose$1(drop) {
+      return on(document, pointerDown, ({ target }) => {
+        if (!within(target, drop.$el)) {
+          once(
+            document,
+            `${pointerUp} ${pointerCancel} scroll`,
+            ({ defaultPrevented, type, target: newTarget }) => {
+              if (!defaultPrevented && type === pointerUp && target === newTarget && !(drop.targetEl && within(target, drop.targetEl))) {
+                drop.hide(false);
+              }
+            },
+            true
+          );
+        }
+      });
+    }
+
+    var Dropnav = {
+      mixins: [Class, Container],
+      props: {
+        dropdown: String,
+        align: String,
+        clsDrop: String,
+        boundary: Boolean,
+        dropbar: Boolean,
+        dropbarAnchor: Boolean,
+        duration: Number,
+        mode: Boolean,
+        offset: Boolean,
+        stretch: Boolean,
+        delayShow: Boolean,
+        delayHide: Boolean,
+        target: Boolean,
+        targetX: Boolean,
+        targetY: Boolean,
+        animation: Boolean,
+        animateOut: Boolean
+      },
+      data: {
+        dropdown: "> li > a, > ul > li > a",
+        align: isRtl ? "right" : "left",
+        clsDrop: "uk-dropdown",
+        clsDropbar: "uk-dropnav-dropbar",
+        boundary: true,
+        dropbar: false,
+        dropbarAnchor: false,
+        duration: 200,
+        container: false
+      },
+      computed: {
+        dropbarAnchor({ dropbarAnchor }, $el) {
+          return query(dropbarAnchor, $el) || $el;
+        },
+        dropbar: {
+          get({ dropbar }) {
+            if (!dropbar) {
+              return null;
+            }
+            dropbar = this._dropbar || query(dropbar, this.$el) || $(`+ .${this.clsDropbar}`, this.$el);
+            return dropbar ? dropbar : this._dropbar = $("<div></div>");
+          },
+          watch(dropbar) {
+            addClass(
+              dropbar,
+              "uk-dropbar",
+              "uk-dropbar-top",
+              this.clsDropbar,
+              `uk-${this.$options.name}-dropbar`
+            );
+          },
+          immediate: true
+        },
+        dropContainer(_, $el) {
+          return this.container || $el;
+        },
+        dropdowns: {
+          get({ clsDrop }, $el) {
+            var _a;
+            const dropdowns = $$(`.${clsDrop}`, $el);
+            if (this.dropContainer !== $el) {
+              for (const el of $$(`.${clsDrop}`, this.dropContainer)) {
+                const target = (_a = this.getDropdown(el)) == null ? void 0 : _a.targetEl;
+                if (!includes(dropdowns, el) && target && within(target, this.$el)) {
+                  dropdowns.push(el);
+                }
+              }
+            }
+            return dropdowns;
+          },
+          watch(dropdowns) {
+            this.$create(
+              "drop",
+              dropdowns.filter((el) => !this.getDropdown(el)),
+              {
+                ...this.$props,
+                flip: false,
+                shift: true,
+                pos: `bottom-${this.align}`,
+                boundary: this.boundary === true ? this.$el : this.boundary
+              }
+            );
+          },
+          immediate: true
+        },
+        items: {
+          get({ dropdown }, $el) {
+            return $$(dropdown, $el);
+          },
+          watch(items) {
+            attr(children(this.$el), "role", "presentation");
+            attr(items, { tabindex: -1, role: "menuitem" });
+            attr(items[0], "tabindex", 0);
+          },
+          immediate: true
+        }
+      },
+      connected() {
+        attr(this.$el, "role", "menubar");
+      },
+      disconnected() {
+        remove$1(this._dropbar);
+        delete this._dropbar;
+      },
+      events: [
+        {
+          name: "mouseover focusin",
+          delegate() {
+            return this.dropdown;
+          },
+          handler({ current, type }) {
+            const active2 = this.getActive();
+            if (active2 && includes(active2.mode, "hover") && active2.targetEl && !within(active2.targetEl, current) && !active2.isDelaying) {
+              active2.hide(false);
+            }
+            if (type === "focusin") {
+              for (const toggle of this.items) {
+                attr(toggle, "tabindex", current === toggle ? 0 : -1);
+              }
+            }
+          }
+        },
+        {
+          name: "keydown",
+          delegate() {
+            return this.dropdown;
+          },
+          handler(e) {
+            const { current, keyCode } = e;
+            const active2 = this.getActive();
+            if (keyCode === keyMap.DOWN && hasAttr(current, "aria-expanded")) {
+              e.preventDefault();
+              if (!active2 || active2.targetEl !== current) {
+                current.click();
+                once(
+                  this.dropContainer,
+                  "show",
+                  ({ target }) => focusFirstFocusableElement(target)
+                );
+              } else {
+                focusFirstFocusableElement(active2.$el);
+              }
+            }
+            handleNavItemNavigation(e, this.items, active2);
+          }
+        },
+        {
+          name: "keydown",
+          el() {
+            return this.dropContainer;
+          },
+          delegate() {
+            return `.${this.clsDrop}`;
+          },
+          handler(e) {
+            var _a;
+            const { current, keyCode } = e;
+            if (!includes(this.dropdowns, current)) {
+              return;
+            }
+            const active2 = this.getActive();
+            let next = -1;
+            if (keyCode === keyMap.HOME) {
+              next = 0;
+            } else if (keyCode === keyMap.END) {
+              next = "last";
+            } else if (keyCode === keyMap.UP) {
+              next = "previous";
+            } else if (keyCode === keyMap.DOWN) {
+              next = "next";
+            } else if (keyCode === keyMap.ESC) {
+              (_a = active2.targetEl) == null ? void 0 : _a.focus();
+            }
+            if (~next) {
+              e.preventDefault();
+              const elements = $$(selFocusable, current);
+              elements[getIndex(
+                next,
+                elements,
+                findIndex(elements, (el) => matches(el, ":focus"))
+              )].focus();
+            }
+            handleNavItemNavigation(e, this.items, active2);
+          }
+        },
+        {
+          name: "mouseleave",
+          el() {
+            return this.dropbar;
+          },
+          filter() {
+            return this.dropbar;
+          },
+          handler() {
+            const active2 = this.getActive();
+            if (active2 && includes(active2.mode, "hover") && !this.dropdowns.some((el) => matches(el, ":hover"))) {
+              active2.hide();
+            }
+          }
+        },
+        {
+          name: "beforeshow",
+          el() {
+            return this.dropContainer;
+          },
+          filter() {
+            return this.dropbar;
+          },
+          handler({ target }) {
+            if (!this.isDropbarDrop(target)) {
+              return;
+            }
+            if (this.dropbar.previousElementSibling !== this.dropbarAnchor) {
+              after(this.dropbarAnchor, this.dropbar);
+            }
+            addClass(target, `${this.clsDrop}-dropbar`);
+          }
+        },
+        {
+          name: "show",
+          el() {
+            return this.dropContainer;
+          },
+          filter() {
+            return this.dropbar;
+          },
+          handler({ target }) {
+            if (!this.isDropbarDrop(target)) {
+              return;
+            }
+            const drop = this.getDropdown(target);
+            const adjustHeight = () => {
+              const targetOffsets = parents(target, `.${this.clsDrop}`).concat(target).map((el) => offset(el));
+              const minTop = Math.min(...targetOffsets.map(({ top }) => top));
+              const maxBottom = Math.max(...targetOffsets.map(({ bottom }) => bottom));
+              const dropbarOffset = offset(this.dropbar);
+              css(this.dropbar, "top", this.dropbar.offsetTop - (dropbarOffset.top - minTop));
+              this.transitionTo(
+                maxBottom - minTop + toFloat(css(target, "marginBottom")),
+                target
+              );
+            };
+            this._observer = observeResize([drop.$el, ...drop.target], adjustHeight);
+            adjustHeight();
+          }
+        },
+        {
+          name: "beforehide",
+          el() {
+            return this.dropContainer;
+          },
+          filter() {
+            return this.dropbar;
+          },
+          handler(e) {
+            const active2 = this.getActive();
+            if (matches(this.dropbar, ":hover") && active2.$el === e.target && !this.items.some((el) => active2.targetEl !== el && matches(el, ":focus"))) {
+              e.preventDefault();
+            }
+          }
+        },
+        {
+          name: "hide",
+          el() {
+            return this.dropContainer;
+          },
+          filter() {
+            return this.dropbar;
+          },
+          handler({ target }) {
+            var _a;
+            if (!this.isDropbarDrop(target)) {
+              return;
+            }
+            (_a = this._observer) == null ? void 0 : _a.disconnect();
+            const active2 = this.getActive();
+            if (!active2 || active2.$el === target) {
+              this.transitionTo(0);
+            }
+          }
+        }
+      ],
+      methods: {
+        getActive() {
+          var _a;
+          return includes(this.dropdowns, (_a = active$1) == null ? void 0 : _a.$el) && active$1;
+        },
+        async transitionTo(newHeight, el) {
+          const { dropbar } = this;
+          const oldHeight = height(dropbar);
+          el = oldHeight < newHeight && el;
+          await Transition.cancel([el, dropbar]);
+          css(el, "clipPath", `polygon(0 0,100% 0,100% ${oldHeight}px,0 ${oldHeight}px)`);
+          height(dropbar, oldHeight);
+          await Promise.all([
+            Transition.start(dropbar, { height: newHeight }, this.duration),
+            Transition.start(
+              el,
+              {
+                clipPath: `polygon(0 0,100% 0,100% ${newHeight}px,0 ${newHeight}px)`
+              },
+              this.duration
+            ).finally(() => css(el, { clipPath: "" }))
+          ]).catch(noop);
+        },
+        getDropdown(el) {
+          return this.$getComponent(el, "drop") || this.$getComponent(el, "dropdown");
+        },
+        isDropbarDrop(el) {
+          return this.getDropdown(el) && hasClass(el, this.clsDrop);
+        }
+      }
+    };
+    function handleNavItemNavigation(e, toggles, active2) {
+      var _a, _b, _c;
+      const { current, keyCode } = e;
+      let next = -1;
+      if (keyCode === keyMap.HOME) {
+        next = 0;
+      } else if (keyCode === keyMap.END) {
+        next = "last";
+      } else if (keyCode === keyMap.LEFT) {
+        next = "previous";
+      } else if (keyCode === keyMap.RIGHT) {
+        next = "next";
+      } else if (keyCode === keyMap.TAB) {
+        (_a = active2.targetEl) == null ? void 0 : _a.focus();
+        (_b = active2.hide) == null ? void 0 : _b.call(active2, false);
+      }
+      if (~next) {
+        e.preventDefault();
+        (_c = active2.hide) == null ? void 0 : _c.call(active2, false);
+        toggles[getIndex(next, toggles, toggles.indexOf(active2.targetEl || current))].focus();
+      }
+    }
+    function focusFirstFocusableElement(el) {
+      var _a;
+      if (!$(":focus", el)) {
+        (_a = $(selFocusable, el)) == null ? void 0 : _a.focus();
+      }
     }
 
     var formCustom = {
       mixins: [Class],
-
-      args: 'target',
-
+      args: "target",
       props: {
-        target: Boolean },
-
-
+        target: Boolean
+      },
       data: {
-        target: false },
-
-
+        target: false
+      },
       computed: {
         input(_, $el) {
           return $(selInput, $el);
         },
-
         state() {
           return this.input.nextElementSibling;
         },
-
-        target(_ref, $el) {let { target } = _ref;
-          return (
-            target && (
-            target === true && parent(this.input) === $el && this.input.nextElementSibling ||
-            $(target, $el)));
-
-        } },
-
-
-      update() {var _input$files;
+        target({ target }, $el) {
+          return target && (target === true && parent(this.input) === $el && this.input.nextElementSibling || $(target, $el));
+        }
+      },
+      update() {
+        var _a;
         const { target, input } = this;
-
         if (!target) {
           return;
         }
-
         let option;
-        const prop = isInput(target) ? 'value' : 'textContent';
+        const prop = isInput(target) ? "value" : "textContent";
         const prev = target[prop];
-        const value = (_input$files = input.files) != null && _input$files[0] ?
-        input.files[0].name :
-        matches(input, 'select') && (
-        option = $$('option', input).filter((el) => el.selected)[0]) // eslint-disable-line prefer-destructuring
-        ? option.textContent :
-        input.value;
-
+        const value = ((_a = input.files) == null ? void 0 : _a[0]) ? input.files[0].name : matches(input, "select") && (option = $$("option", input).filter((el) => el.selected)[0]) ? option.textContent : input.value;
         if (prev !== value) {
           target[prop] = value;
         }
       },
-
       events: [
-      {
-        name: 'change',
-
-        handler() {
-          this.$emit();
-        } },
-
-
-      {
-        name: 'reset',
-
-        el() {
-          return closest(this.$el, 'form');
+        {
+          name: "change",
+          handler() {
+            this.$emit();
+          }
         },
-
-        handler() {
-          this.$emit();
-        } }] };
+        {
+          name: "reset",
+          el() {
+            return closest(this.$el, "form");
+          },
+          handler() {
+            this.$emit();
+          }
+        }
+      ]
+    };
 
     var Margin = {
-      mixins: [Resize],
-
       props: {
         margin: String,
-        firstColumn: Boolean },
-
-
+        firstColumn: Boolean
+      },
       data: {
-        margin: 'uk-margin-small-top',
-        firstColumn: 'uk-first-column' },
-
-
-      resizeTargets() {
-        return [this.$el, ...toArray(this.$el.children)];
+        margin: "uk-margin-small-top",
+        firstColumn: "uk-first-column"
       },
-
-      connected() {
-        this.registerObserver(
-        observeMutation(this.$el, () => this.$reset(), {
-          childList: true }));
-
-
-      },
-
+      observe: [
+        mutation({
+          options: {
+            childList: true,
+            attributes: true,
+            attributeFilter: ["style"]
+          }
+        }),
+        resize({
+          target: ({ $el }) => [$el, ...toArray($el.children)]
+        })
+      ],
       update: {
         read() {
           const rows = getRows(this.$el.children);
-
           return {
             rows,
-            columns: getColumns(rows) };
-
+            columns: getColumns(rows)
+          };
         },
-
-        write(_ref) {let { columns, rows } = _ref;
+        write({ columns, rows }) {
           for (const row of rows) {
             for (const column of row) {
               toggleClass(column, this.margin, rows[0] !== row);
@@ -4587,46 +3920,35 @@
             }
           }
         },
-
-        events: ['resize'] } };
-
-
-
+        events: ["resize"]
+      }
+    };
     function getRows(items) {
-      return sortBy(items, 'top', 'bottom');
+      return sortBy(items, "top", "bottom");
     }
-
     function getColumns(rows) {
       const columns = [];
-
       for (const row of rows) {
-        const sorted = sortBy(row, 'left', 'right');
+        const sorted = sortBy(row, "left", "right");
         for (let j = 0; j < sorted.length; j++) {
           columns[j] = columns[j] ? columns[j].concat(sorted[j]) : sorted[j];
         }
       }
-
       return isRtl ? columns.reverse() : columns;
     }
-
     function sortBy(items, startProp, endProp) {
       const sorted = [[]];
-
       for (const el of items) {
         if (!isVisible(el)) {
           continue;
         }
-
         let dim = getOffset(el);
-
         for (let i = sorted.length - 1; i >= 0; i--) {
           const current = sorted[i];
-
           if (!current[0]) {
             current.push(el);
             break;
           }
-
           let startDim;
           if (current[0].offsetParent === el.offsetParent) {
             startDim = getOffset(current[0]);
@@ -4634,387 +3956,282 @@
             dim = getOffset(el, true);
             startDim = getOffset(current[0], true);
           }
-
           if (dim[startProp] >= startDim[endProp] - 1 && dim[startProp] !== startDim[startProp]) {
             sorted.push([el]);
             break;
           }
-
           if (dim[endProp] - 1 > startDim[startProp] || dim[startProp] === startDim[startProp]) {
             current.push(el);
             break;
           }
-
           if (i === 0) {
             sorted.unshift([el]);
             break;
           }
         }
       }
-
       return sorted;
     }
-
-    function getOffset(element, offset) {if (offset === void 0) {offset = false;}
+    function getOffset(element, offset = false) {
       let { offsetTop, offsetLeft, offsetHeight, offsetWidth } = element;
-
       if (offset) {
         [offsetTop, offsetLeft] = offsetPosition(element);
       }
-
       return {
         top: offsetTop,
         left: offsetLeft,
         bottom: offsetTop + offsetHeight,
-        right: offsetLeft + offsetWidth };
-
-    }
-
-    var Scroll = {
-      connected() {
-        registerScrollListener(this._uid, () => this.$emit('scroll'));
-      },
-
-      disconnected() {
-        unregisterScrollListener(this._uid);
-      } };
-
-
-    const scrollListeners = new Map();
-    let unbindScrollListener;
-    function registerScrollListener(id, listener) {
-      unbindScrollListener =
-      unbindScrollListener ||
-      on(window, 'scroll', () => scrollListeners.forEach((listener) => listener()), {
-        passive: true,
-        capture: true });
-
-
-      scrollListeners.set(id, listener);
-    }
-
-    function unregisterScrollListener(id) {
-      scrollListeners.delete(id);
-      if (unbindScrollListener && !scrollListeners.size) {
-        unbindScrollListener();
-        unbindScrollListener = null;
-      }
+        right: offsetLeft + offsetWidth
+      };
     }
 
     var grid = {
       extends: Margin,
-
-      mixins: [Class, Scroll],
-
-      name: 'grid',
-
+      mixins: [Class],
+      name: "grid",
       props: {
         masonry: Boolean,
-        parallax: Number },
-
-
-      data: {
-        margin: 'uk-grid-margin',
-        clsStack: 'uk-grid-stack',
-        masonry: false,
-        parallax: 0 },
-
-
-      connected() {
-        this.masonry && addClass(this.$el, 'uk-flex-top uk-flex-wrap-top');
+        parallax: Number
       },
-
+      data: {
+        margin: "uk-grid-margin",
+        clsStack: "uk-grid-stack",
+        masonry: false,
+        parallax: 0
+      },
+      connected() {
+        this.masonry && addClass(this.$el, "uk-flex-top uk-flex-wrap-top");
+      },
+      observe: scroll$1({ filter: ({ parallax }) => parallax }),
       update: [
-      {
-        write(_ref) {let { columns } = _ref;
-          toggleClass(this.$el, this.clsStack, columns.length < 2);
+        {
+          write({ columns }) {
+            toggleClass(this.$el, this.clsStack, columns.length < 2);
+          },
+          events: ["resize"]
         },
-
-        events: ['resize'] },
-
-
-      {
-        read(data) {
-          let { columns, rows } = data;
-
-          // Filter component makes elements positioned absolute
-          if (
-          !columns.length ||
-          !this.masonry && !this.parallax ||
-          positionedAbsolute(this.$el))
-          {
-            data.translates = false;
-            return false;
-          }
-
-          let translates = false;
-
-          const nodes = children(this.$el);
-          const columnHeights = getColumnHeights(columns);
-          const margin = getMarginTop(nodes, this.margin) * (rows.length - 1);
-          const elHeight = Math.max(...columnHeights) + margin;
-
-          if (this.masonry) {
-            columns = columns.map((column) => sortBy$1(column, 'offsetTop'));
-            translates = getTranslates(rows, columns);
-          }
-
-          let padding = Math.abs(this.parallax);
-          if (padding) {
-            padding = columnHeights.reduce(
-            (newPadding, hgt, i) =>
-            Math.max(
-            newPadding,
-            hgt + margin + (i % 2 ? padding : padding / 8) - elHeight),
-
-            0);
-
-          }
-
-          return { padding, columns, translates, height: translates ? elHeight : '' };
+        {
+          read(data) {
+            let { columns, rows } = data;
+            if (!columns.length || !this.masonry && !this.parallax || positionedAbsolute(this.$el)) {
+              data.translates = false;
+              return false;
+            }
+            let translates = false;
+            const nodes = children(this.$el);
+            const columnHeights = columns.map((column) => sumBy(column, "offsetHeight"));
+            const margin = getMarginTop(nodes, this.margin) * (rows.length - 1);
+            const elHeight = Math.max(...columnHeights) + margin;
+            if (this.masonry) {
+              columns = columns.map((column) => sortBy$1(column, "offsetTop"));
+              translates = getTranslates(rows, columns);
+            }
+            let padding = Math.abs(this.parallax);
+            if (padding) {
+              padding = columnHeights.reduce(
+                (newPadding, hgt, i) => Math.max(
+                  newPadding,
+                  hgt + margin + (i % 2 ? padding : padding / 8) - elHeight
+                ),
+                0
+              );
+            }
+            return { padding, columns, translates, height: translates ? elHeight : "" };
+          },
+          write({ height, padding }) {
+            css(this.$el, "paddingBottom", padding || "");
+            height !== false && css(this.$el, "height", height);
+          },
+          events: ["resize"]
         },
-
-        write(_ref2) {let { height, padding } = _ref2;
-          css(this.$el, 'paddingBottom', padding || '');
-          height !== false && css(this.$el, 'height', height);
-        },
-
-        events: ['resize'] },
-
-
-      {
-        read() {
-          if (this.parallax && positionedAbsolute(this.$el)) {
-            return false;
-          }
-
-          return {
-            scrolled: this.parallax ?
-            scrolledOver(this.$el) * Math.abs(this.parallax) :
-            false };
-
-        },
-
-        write(_ref3) {let { columns, scrolled, translates } = _ref3;
-          if (scrolled === false && !translates) {
-            return;
-          }
-
-          columns.forEach((column, i) =>
-          column.forEach((el, j) =>
-          css(
-          el,
-          'transform',
-          !scrolled && !translates ?
-          '' : "translateY(" + (
-
-          (translates && -translates[i][j]) + (
-          scrolled ? i % 2 ? scrolled : scrolled / 8 : 0)) + "px)")));
-
-
-
-
-        },
-
-        events: ['scroll', 'resize'] }] };
-
-
-
-
+        {
+          read() {
+            if (this.parallax && positionedAbsolute(this.$el)) {
+              return false;
+            }
+            return {
+              scrolled: this.parallax ? scrolledOver(this.$el) * Math.abs(this.parallax) : false
+            };
+          },
+          write({ columns, scrolled, translates }) {
+            if (scrolled === false && !translates) {
+              return;
+            }
+            columns.forEach(
+              (column, i) => column.forEach(
+                (el, j) => css(
+                  el,
+                  "transform",
+                  !scrolled && !translates ? "" : `translateY(${(translates && -translates[i][j]) + (scrolled ? i % 2 ? scrolled : scrolled / 8 : 0)}px)`
+                )
+              )
+            );
+          },
+          events: ["scroll", "resize"]
+        }
+      ]
+    };
     function positionedAbsolute(el) {
-      return children(el).some((el) => css(el, 'position') === 'absolute');
+      return children(el).some((el2) => css(el2, "position") === "absolute");
     }
-
     function getTranslates(rows, columns) {
       const rowHeights = rows.map((row) => Math.max(...row.map((el) => el.offsetHeight)));
-
       return columns.map((elements) => {
         let prev = 0;
         return elements.map(
-        (element, row) =>
-        prev += row ? rowHeights[row - 1] - elements[row - 1].offsetHeight : 0);
-
+          (element, row) => prev += row ? rowHeights[row - 1] - elements[row - 1].offsetHeight : 0
+        );
       });
     }
-
     function getMarginTop(nodes, cls) {
       const [node] = nodes.filter((el) => hasClass(el, cls));
-
-      return toFloat(node ? css(node, 'marginTop') : css(nodes[0], 'paddingLeft'));
-    }
-
-    function getColumnHeights(columns) {
-      return columns.map((column) => column.reduce((sum, el) => sum + el.offsetHeight, 0));
+      return toFloat(node ? css(node, "marginTop") : css(nodes[0], "paddingLeft"));
     }
 
     var heightMatch = {
-      mixins: [Resize],
-
-      args: 'target',
-
+      args: "target",
       props: {
         target: String,
-        row: Boolean },
-
-
+        row: Boolean
+      },
       data: {
-        target: '> *',
-        row: true },
-
-
+        target: "> *",
+        row: true
+      },
       computed: {
         elements: {
-          get(_ref, $el) {let { target } = _ref;
+          get({ target }, $el) {
             return $$(target, $el);
           },
-
           watch() {
             this.$reset();
-          } } },
-
-
-
-      resizeTargets() {
-        return [this.$el, ...this.elements];
+          }
+        }
       },
-
+      observe: resize({
+        target: ({ $el, elements }) => [$el, ...elements]
+      }),
       update: {
         read() {
           return {
-            rows: (this.row ? getRows(this.elements) : [this.elements]).map(match) };
-
+            rows: (this.row ? getRows(this.elements) : [this.elements]).map(match)
+          };
         },
-
-        write(_ref2) {let { rows } = _ref2;
+        write({ rows }) {
           for (const { heights, elements } of rows) {
-            elements.forEach((el, i) => css(el, 'minHeight', heights[i]));
+            elements.forEach((el, i) => css(el, "minHeight", heights[i]));
           }
         },
-
-        events: ['resize'] } };
-
-
-
+        events: ["resize"]
+      }
+    };
     function match(elements) {
       if (elements.length < 2) {
-        return { heights: [''], elements };
+        return { heights: [""], elements };
       }
-
-      css(elements, 'minHeight', '');
       let heights = elements.map(getHeight);
       const max = Math.max(...heights);
-
       return {
-        heights: elements.map((el, i) => heights[i].toFixed(2) === max.toFixed(2) ? '' : max),
-        elements };
-
+        heights: elements.map((el, i) => heights[i].toFixed(2) === max.toFixed(2) ? "" : max),
+        elements
+      };
     }
-
     function getHeight(element) {
-      let style = false;
+      const style = pick(element.style, ["display", "minHeight"]);
       if (!isVisible(element)) {
-        style = element.style.display;
-        css(element, 'display', 'block', 'important');
+        css(element, "display", "block", "important");
       }
-
-      const height = dimensions(element).height - boxModelAdjust(element, 'height', 'content-box');
-
-      if (style !== false) {
-        css(element, 'display', style);
-      }
-
+      css(element, "minHeight", "");
+      const height = dimensions(element).height - boxModelAdjust(element, "height", "content-box");
+      css(element, style);
       return height;
     }
 
     var heightViewport = {
-      mixins: [Resize],
-
       props: {
         expand: Boolean,
         offsetTop: Boolean,
         offsetBottom: Boolean,
-        minHeight: Number },
-
-
+        minHeight: Number
+      },
       data: {
         expand: false,
         offsetTop: false,
         offsetBottom: false,
-        minHeight: 0 },
-
-
-      resizeTargets() {
-        // check for offsetTop change
-        return [this.$el, ...scrollParents(this.$el, /auto|scroll/)];
+        minHeight: 0
       },
-
+      // check for offsetTop change
+      observe: resize({
+        target: ({ $el }) => [$el, ...scrollParents($el)]
+      }),
       update: {
-        read(_ref) {let { minHeight: prev } = _ref;
+        read({ minHeight: prev }) {
           if (!isVisible(this.$el)) {
             return false;
           }
-
-          let minHeight = '';
-          const box = boxModelAdjust(this.$el, 'height', 'content-box');
-
+          let minHeight = "";
+          const box = boxModelAdjust(this.$el, "height", "content-box");
           const { body, scrollingElement } = document;
-          const [scrollElement] = scrollParents(this.$el, /auto|scroll/);
+          const [scrollElement] = scrollParents(this.$el);
           const { height: viewportHeight } = offsetViewport(
-          scrollElement === body ? scrollingElement : scrollElement);
-
-
+            scrollElement === body ? scrollingElement : scrollElement
+          );
           if (this.expand) {
             minHeight = Math.max(
-            viewportHeight - (
-            dimensions(scrollElement).height - dimensions(this.$el).height) -
-            box,
-            0);
-
+              viewportHeight - (dimensions(scrollElement).height - dimensions(this.$el).height) - box,
+              0
+            );
           } else {
-            const isScrollingElement =
-            scrollingElement === scrollElement || body === scrollElement;
-
-            // on mobile devices (iOS and Android) window.innerHeight !== 100vh
-            minHeight = "calc(" + (isScrollingElement ? '100vh' : viewportHeight + "px");
-
+            const isScrollingElement = scrollingElement === scrollElement || body === scrollElement;
+            minHeight = `calc(${isScrollingElement ? "100vh" : `${viewportHeight}px`}`;
             if (this.offsetTop) {
               if (isScrollingElement) {
                 const top = offsetPosition(this.$el)[0] - offsetPosition(scrollElement)[0];
-                minHeight += top > 0 && top < viewportHeight / 2 ? " - " + top + "px" : '';
+                minHeight += top > 0 && top < viewportHeight / 2 ? ` - ${top}px` : "";
               } else {
-                minHeight += " - " + css(scrollElement, 'paddingTop');
+                minHeight += ` - ${css(scrollElement, "paddingTop")}`;
               }
             }
-
             if (this.offsetBottom === true) {
-              minHeight += " - " + dimensions(this.$el.nextElementSibling).height + "px";
+              minHeight += ` - ${dimensions(this.$el.nextElementSibling).height}px`;
             } else if (isNumeric(this.offsetBottom)) {
-              minHeight += " - " + this.offsetBottom + "vh";
-            } else if (this.offsetBottom && endsWith(this.offsetBottom, 'px')) {
-              minHeight += " - " + toFloat(this.offsetBottom) + "px";
+              minHeight += ` - ${this.offsetBottom}vh`;
+            } else if (this.offsetBottom && endsWith(this.offsetBottom, "px")) {
+              minHeight += ` - ${toFloat(this.offsetBottom)}px`;
             } else if (isString(this.offsetBottom)) {
-              minHeight += " - " + dimensions(query(this.offsetBottom, this.$el)).height + "px";
+              minHeight += ` - ${dimensions(query(this.offsetBottom, this.$el)).height}px`;
             }
-
-            minHeight += (box ? " - " + box + "px" : '') + ")";
+            minHeight += `${box ? ` - ${box}px` : ""})`;
           }
-
           return { minHeight, prev };
         },
-
-        write(_ref2) {let { minHeight } = _ref2;
+        write({ minHeight }) {
           css(this.$el, { minHeight });
-
-          if (this.minHeight && toFloat(css(this.$el, 'minHeight')) < this.minHeight) {
-            css(this.$el, 'minHeight', this.minHeight);
+          if (this.minHeight && toFloat(css(this.$el, "minHeight")) < this.minHeight) {
+            css(this.$el, "minHeight", this.minHeight);
           }
         },
+        events: ["resize"]
+      }
+    };
 
-        events: ['resize'] } };
+    function getMaxPathLength(el) {
+      return Math.ceil(
+        Math.max(
+          0,
+          ...$$("[stroke]", el).map((stroke) => {
+            try {
+              return stroke.getTotalLength();
+            } catch (e) {
+              return 0;
+            }
+          })
+        )
+      );
+    }
 
     var SVG = {
-      args: 'src',
-
+      args: "src",
       props: {
         id: Boolean,
         icon: String,
@@ -5025,120 +4242,98 @@
         ratio: Number,
         class: String,
         strokeAnimation: Boolean,
-        focusable: Boolean, // IE 11
-        attributes: 'list' },
-
-
+        attributes: "list"
+      },
       data: {
         ratio: 1,
-        include: ['style', 'class', 'focusable'],
-        class: '',
-        strokeAnimation: false },
-
-
-      beforeConnect() {
-        this.class += ' uk-svg';
+        include: ["style", "class"],
+        class: "",
+        strokeAnimation: false
       },
-
+      beforeConnect() {
+        this.class += " uk-svg";
+      },
       connected() {
-        if (!this.icon && includes(this.src, '#')) {
-          [this.src, this.icon] = this.src.split('#');
+        if (!this.icon && includes(this.src, "#")) {
+          [this.src, this.icon] = this.src.split("#");
         }
-
         this.svg = this.getSvg().then((el) => {
           if (this._connected) {
             const svg = insertSVG(el, this.$el);
-
             if (this.svgEl && svg !== this.svgEl) {
               remove$1(this.svgEl);
             }
-
             this.applyAttributes(svg, el);
-
             return this.svgEl = svg;
           }
         }, noop);
-
         if (this.strokeAnimation) {
           this.svg.then((el) => {
-            if (this._connected) {
+            if (this._connected && el) {
               applyAnimation(el);
-              this.registerObserver(
-              observeIntersection(el, (records, observer) => {
-                applyAnimation(el);
-                observer.disconnect();
-              }));
-
+              registerObserver(
+                this,
+                observeIntersection(el, (records, observer) => {
+                  applyAnimation(el);
+                  observer.disconnect();
+                })
+              );
             }
           });
         }
       },
-
       disconnected() {
         this.svg.then((svg) => {
           if (this._connected) {
             return;
           }
-
           if (isVoidElement(this.$el)) {
             this.$el.hidden = false;
           }
-
           remove$1(svg);
           this.svgEl = null;
         });
-
         this.svg = null;
       },
-
       methods: {
         async getSvg() {
-          if (isTag(this.$el, 'img') && !this.$el.complete && this.$el.loading === 'lazy') {
-            return new Promise((resolve) =>
-            once(this.$el, 'load', () => resolve(this.getSvg())));
-
+          if (isTag(this.$el, "img") && !this.$el.complete && this.$el.loading === "lazy") {
+            return new Promise(
+              (resolve) => once(this.$el, "load", () => resolve(this.getSvg()))
+            );
           }
-
-          return parseSVG(await loadSVG(this.src), this.icon) || Promise.reject('SVG not found.');
+          return parseSVG(await loadSVG(this.src), this.icon) || Promise.reject("SVG not found.");
         },
-
         applyAttributes(el, ref) {
           for (const prop in this.$options.props) {
             if (includes(this.include, prop) && prop in this) {
               attr(el, prop, this[prop]);
             }
           }
-
           for (const attribute in this.attributes) {
-            const [prop, value] = this.attributes[attribute].split(':', 2);
+            const [prop, value] = this.attributes[attribute].split(":", 2);
             attr(el, prop, value);
           }
-
           if (!this.id) {
-            removeAttr(el, 'id');
+            removeAttr(el, "id");
           }
-
-          const props = ['width', 'height'];
+          const props = ["width", "height"];
           let dimensions = props.map((prop) => this[prop]);
-
           if (!dimensions.some((val) => val)) {
             dimensions = props.map((prop) => attr(ref, prop));
           }
-
-          const viewBox = attr(ref, 'viewBox');
+          const viewBox = attr(ref, "viewBox");
           if (viewBox && !dimensions.some((val) => val)) {
-            dimensions = viewBox.split(' ').slice(2);
+            dimensions = viewBox.split(" ").slice(2);
           }
-
           dimensions.forEach((val, i) => attr(el, props[i], toFloat(val) * this.ratio || null));
-        } } };
-
-
-
+        }
+      }
+    };
     const loadSVG = memoize(async (src) => {
       if (src) {
-        if (startsWith(src, 'data:')) {
-          return decodeURIComponent(src.split(',')[1]);
+        if (startsWith(src, "data:")) {
+          return decodeURIComponent(src.split(",")[1]);
         } else {
           return (await fetch(src)).text();
         }
@@ -5146,83 +4341,69 @@
         return Promise.reject();
       }
     });
-
-    function parseSVG(svg, icon) {var _svg;
-      if (icon && includes(svg, '<symbol')) {
+    function parseSVG(svg, icon) {
+      if (icon && includes(svg, "<symbol")) {
         svg = parseSymbols(svg, icon) || svg;
       }
-
-      svg = $(svg.substr(svg.indexOf('<svg')));
-      return ((_svg = svg) == null ? void 0 : _svg.hasChildNodes()) && svg;
+      svg = $(svg.substr(svg.indexOf("<svg")));
+      return (svg == null ? void 0 : svg.hasChildNodes()) && svg;
     }
-
     const symbolRe = /<symbol([^]*?id=(['"])(.+?)\2[^]*?<\/)symbol>/g;
     const symbols = {};
-
     function parseSymbols(svg, icon) {
       if (!symbols[svg]) {
         symbols[svg] = {};
-
         symbolRe.lastIndex = 0;
-
         let match;
         while (match = symbolRe.exec(svg)) {
-          symbols[svg][match[3]] = "<svg xmlns=\"http://www.w3.org/2000/svg\"" + match[1] + "svg>";
+          symbols[svg][match[3]] = `<svg xmlns="http://www.w3.org/2000/svg"${match[1]}svg>`;
         }
       }
-
       return symbols[svg][icon];
     }
-
     function applyAnimation(el) {
       const length = getMaxPathLength(el);
-
       if (length) {
-        el.style.setProperty('--uk-animation-stroke', length);
+        el.style.setProperty("--uk-animation-stroke", length);
       }
     }
-
-    function getMaxPathLength(el) {
-      return Math.ceil(
-      Math.max(
-      0,
-      ...$$('[stroke]', el).map((stroke) => {
-        try {
-          return stroke.getTotalLength();
-        } catch (e) {
-          return 0;
-        }
-      })));
-
-
-    }
-
     function insertSVG(el, root) {
-      if (isVoidElement(root) || isTag(root, 'canvas')) {
+      if (isVoidElement(root) || isTag(root, "canvas")) {
         root.hidden = true;
-
         const next = root.nextElementSibling;
         return equals(el, next) ? next : after(root, el);
       }
-
       const last = root.lastElementChild;
       return equals(el, last) ? last : append(root, el);
     }
-
     function equals(el, other) {
-      return isTag(el, 'svg') && isTag(other, 'svg') && innerHTML(el) === innerHTML(other);
+      return isTag(el, "svg") && isTag(other, "svg") && el.innerHTML === other.innerHTML;
     }
 
-    function innerHTML(el) {
-      return (
-      el.innerHTML ||
-      new XMLSerializer().serializeToString(el).replace(/<svg.*?>(.*?)<\/svg>/g, '$1')).
-      replace(/\s/g, '');
-    }
+    var I18n = {
+      props: {
+        i18n: Object
+      },
+      data: {
+        i18n: null
+      },
+      methods: {
+        t(key, ...params) {
+          var _a, _b, _c;
+          let i = 0;
+          return ((_c = ((_a = this.i18n) == null ? void 0 : _a[key]) || ((_b = this.$options.i18n) == null ? void 0 : _b[key])) == null ? void 0 : _c.replace(
+            /%s/g,
+            () => params[i++] || ""
+          )) || "";
+        }
+      }
+    };
 
     var closeIcon = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"1\" y1=\"1\" x2=\"13\" y2=\"13\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"13\" y1=\"1\" x2=\"1\" y2=\"13\"/></svg>";
 
     var closeLarge = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" x1=\"1\" y1=\"1\" x2=\"19\" y2=\"19\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" x1=\"19\" y1=\"1\" x2=\"1\" y2=\"19\"/></svg>";
+
+    var dropParentIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
 
     var marker = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"9\" y=\"4\" width=\"1\" height=\"11\"/><rect x=\"4\" y=\"9\" width=\"11\" height=\"1\"/></svg>";
 
@@ -5232,7 +4413,7 @@
 
     var navbarParentIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
 
-    var navbarToggleIcon = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><style>.uk-navbar-toggle svg > [class*='line-'] {\n        transition: 0.2s ease-in-out;\n        transition-property: transform, opacity,;\n        transform-origin: center;\n        opacity: 1;\n    }\n\n    .uk-navbar-toggle[aria-expanded=\"true\"] svg > .line-2 { transform: rotate(45deg); }\n    .uk-navbar-toggle[aria-expanded=\"true\"] svg > .line-3 { transform: rotate(-45deg); }\n\n    .uk-navbar-toggle[aria-expanded=\"true\"] svg > .line-1,\n    .uk-navbar-toggle[aria-expanded=\"true\"] svg > .line-4 { opacity: 0; }\n    .uk-navbar-toggle[aria-expanded=\"true\"] svg > .line-1 { transform: translateY(6px) scaleX(0); }\n    .uk-navbar-toggle[aria-expanded=\"true\"] svg > .line-4 { transform: translateY(-6px) scaleX(0); }</style><rect class=\"line-1\" y=\"3\" width=\"20\" height=\"2\"/><rect class=\"line-2\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-3\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-4\" y=\"15\" width=\"20\" height=\"2\"/></svg>";
+    var navbarToggleIcon = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><style>.uk-navbar-toggle-animate svg>[class*=line-]{transition:.2s ease-in-out;transition-property:transform,opacity;transform-origin:center;opacity:1}.uk-navbar-toggle svg>.line-3{opacity:0}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-3{opacity:1}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-2{transform:rotate(45deg)}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-3{transform:rotate(-45deg)}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-1,.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-4{opacity:0}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-1{transform:translateY(6px) scaleX(0)}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-4{transform:translateY(-6px) scaleX(0)}</style><rect class=\"line-1\" y=\"3\" width=\"20\" height=\"2\"/><rect class=\"line-2\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-3\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-4\" y=\"15\" width=\"20\" height=\"2\"/></svg>";
 
     var overlayIcon = "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"19\" y=\"0\" width=\"1\" height=\"40\"/><rect x=\"0\" y=\"19\" width=\"40\" height=\"1\"/></svg>";
 
@@ -5262,297 +4443,265 @@
       spinner,
       totop,
       marker,
-      'close-icon': closeIcon,
-      'close-large': closeLarge,
-      'nav-parent-icon': navParentIcon,
-      'nav-parent-icon-large': navParentIconLarge,
-      'navbar-parent-icon': navbarParentIcon,
-      'navbar-toggle-icon': navbarToggleIcon,
-      'overlay-icon': overlayIcon,
-      'pagination-next': paginationNext,
-      'pagination-previous': paginationPrevious,
-      'search-icon': searchIcon,
-      'search-large': searchLarge,
-      'search-navbar': searchNavbar,
-      'slidenav-next': slidenavNext,
-      'slidenav-next-large': slidenavNextLarge,
-      'slidenav-previous': slidenavPrevious,
-      'slidenav-previous-large': slidenavPreviousLarge };
-
-
+      "close-icon": closeIcon,
+      "close-large": closeLarge,
+      "drop-parent-icon": dropParentIcon,
+      "nav-parent-icon": navParentIcon,
+      "nav-parent-icon-large": navParentIconLarge,
+      "navbar-parent-icon": navbarParentIcon,
+      "navbar-toggle-icon": navbarToggleIcon,
+      "overlay-icon": overlayIcon,
+      "pagination-next": paginationNext,
+      "pagination-previous": paginationPrevious,
+      "search-icon": searchIcon,
+      "search-large": searchLarge,
+      "search-navbar": searchNavbar,
+      "slidenav-next": slidenavNext,
+      "slidenav-next-large": slidenavNextLarge,
+      "slidenav-previous": slidenavPrevious,
+      "slidenav-previous-large": slidenavPreviousLarge
+    };
     const Icon = {
       install: install$1,
-
       extends: SVG,
-
-      args: 'icon',
-
-      props: ['icon'],
-
-      data: {
-        include: ['focusable'] },
-
-
+      args: "icon",
+      props: ["icon"],
+      data: { include: [] },
       isIcon: true,
-
       beforeConnect() {
-        addClass(this.$el, 'uk-icon');
+        addClass(this.$el, "uk-icon");
       },
-
       methods: {
         async getSvg() {
           const icon = getIcon(this.icon);
-
           if (!icon) {
-            throw 'Icon not found.';
+            throw "Icon not found.";
           }
-
           return icon;
-        } } };
-
+        }
+      }
+    };
     const IconComponent = {
       args: false,
-
       extends: Icon,
-
       data: (vm) => ({
-        icon: hyphenate(vm.constructor.options.name) }),
-
-
+        icon: hyphenate(vm.constructor.options.name)
+      }),
       beforeConnect() {
-        addClass(this.$el, this.$name);
-      } };
-
-
+        addClass(this.$el, this.$options.id);
+      }
+    };
     const NavParentIcon = {
       extends: IconComponent,
-
       beforeConnect() {
         const icon = this.$props.icon;
-        this.icon = closest(this.$el, '.uk-nav-primary') ? icon + "-large" : icon;
-      } };
-
-
-    const Slidenav = {
-      extends: IconComponent,
-
-      beforeConnect() {
-        addClass(this.$el, 'uk-slidenav');
-        const icon = this.$props.icon;
-        this.icon = hasClass(this.$el, 'uk-slidenav-large') ? icon + "-large" : icon;
-      } };
-
-
+        this.icon = closest(this.$el, ".uk-nav-primary") ? `${icon}-large` : icon;
+      }
+    };
     const Search = {
       extends: IconComponent,
-
       beforeConnect() {
-        this.icon =
-        hasClass(this.$el, 'uk-search-icon') && parents(this.$el, '.uk-search-large').length ?
-        'search-large' :
-        parents(this.$el, '.uk-search-navbar').length ?
-        'search-navbar' :
-        this.$props.icon;
-      } };
-
-
-    const Close = {
-      extends: IconComponent,
-
-      beforeConnect() {
-        this.icon = "close-" + (hasClass(this.$el, 'uk-close-large') ? 'large' : 'icon');
-      } };
-
-
+        this.icon = hasClass(this.$el, "uk-search-icon") && parents(this.$el, ".uk-search-large").length ? "search-large" : parents(this.$el, ".uk-search-navbar").length ? "search-navbar" : this.$props.icon;
+      }
+    };
     const Spinner = {
       extends: IconComponent,
-
+      beforeConnect() {
+        attr(this.$el, "role", "status");
+      },
       methods: {
         async getSvg() {
           const icon = await Icon.methods.getSvg.call(this);
-
           if (this.ratio !== 1) {
-            css($('circle', icon), 'strokeWidth', 1 / this.ratio);
+            css($("circle", icon), "strokeWidth", 1 / this.ratio);
           }
-
           return icon;
-        } } };
-
-
-
+        }
+      }
+    };
+    const ButtonComponent = {
+      extends: IconComponent,
+      mixins: [I18n],
+      beforeConnect() {
+        const button = closest(this.$el, "a,button");
+        attr(button, "role", this.role !== null && isTag(button, "a") ? "button" : this.role);
+        const label = this.t("label");
+        if (label && !hasAttr(button, "aria-label")) {
+          attr(button, "aria-label", label);
+        }
+      }
+    };
+    const Slidenav = {
+      extends: ButtonComponent,
+      beforeConnect() {
+        addClass(this.$el, "uk-slidenav");
+        const icon = this.$props.icon;
+        this.icon = hasClass(this.$el, "uk-slidenav-large") ? `${icon}-large` : icon;
+      }
+    };
+    const NavbarToggleIcon = {
+      extends: ButtonComponent,
+      i18n: { label: "Open menu" }
+    };
+    const Close = {
+      extends: ButtonComponent,
+      i18n: { label: "Close" },
+      beforeConnect() {
+        this.icon = `close-${hasClass(this.$el, "uk-close-large") ? "large" : "icon"}`;
+      }
+    };
+    const Marker = {
+      extends: ButtonComponent,
+      i18n: { label: "Open" }
+    };
+    const Totop = {
+      extends: ButtonComponent,
+      i18n: { label: "Back to top" }
+    };
+    const PaginationNext = {
+      extends: ButtonComponent,
+      i18n: { label: "Next page" },
+      data: { role: null }
+    };
+    const PaginationPrevious = {
+      extends: ButtonComponent,
+      i18n: { label: "Previous page" },
+      data: { role: null }
+    };
     const parsed = {};
     function install$1(UIkit) {
       UIkit.icon.add = (name, svg) => {
         const added = isString(name) ? { [name]: svg } : name;
-        each(added, (svg, name) => {
-          icons[name] = svg;
-          delete parsed[name];
+        each(added, (svg2, name2) => {
+          icons[name2] = svg2;
+          delete parsed[name2];
         });
-
         if (UIkit._initialized) {
-          apply(document.body, (el) =>
-          each(UIkit.getComponents(el), (cmp) => {
-            cmp.$options.isIcon && cmp.icon in added && cmp.$reset();
-          }));
-
+          apply(
+            document.body,
+            (el) => each(UIkit.getComponents(el), (cmp) => {
+              cmp.$options.isIcon && cmp.icon in added && cmp.$reset();
+            })
+          );
         }
       };
     }
-
     function getIcon(icon) {
       if (!icons[icon]) {
         return null;
       }
-
       if (!parsed[icon]) {
         parsed[icon] = $((icons[applyRtl(icon)] || icons[icon]).trim());
       }
-
       return parsed[icon].cloneNode(true);
     }
-
     function applyRtl(icon) {
-      return isRtl ? swap(swap(icon, 'left', 'right'), 'previous', 'next') : icon;
+      return isRtl ? swap(swap(icon, "left", "right"), "previous", "next") : icon;
     }
 
-    const nativeLazyLoad = inBrowser && 'loading' in HTMLImageElement.prototype;
-
+    const nativeLazyLoad = inBrowser && "loading" in HTMLImageElement.prototype;
     var img = {
-      args: 'dataSrc',
-
+      args: "dataSrc",
       props: {
         dataSrc: String,
         sources: String,
-        offsetTop: String,
-        offsetLeft: String,
+        margin: String,
         target: String,
-        loading: String },
-
-
+        loading: String
+      },
       data: {
-        dataSrc: '',
+        dataSrc: "",
         sources: false,
-        offsetTop: '50vh',
-        offsetLeft: '50vw',
+        margin: "50%",
         target: false,
-        loading: 'lazy' },
-
-
+        loading: "lazy"
+      },
       connected() {
-        if (this.loading !== 'lazy') {
+        if (this.loading !== "lazy") {
           this.load();
           return;
         }
-
-        const target = [this.$el, ...queryAll(this.$props.target, this.$el)];
-
         if (nativeLazyLoad && isImg(this.$el)) {
-          this.$el.loading = 'lazy';
+          this.$el.loading = "lazy";
           setSrcAttrs(this.$el);
-
-          if (target.length === 1) {
-            return;
-          }
         }
-
         ensureSrcAttribute(this.$el);
-
-        this.registerObserver(
-        observeIntersection(
-        target,
-        (entries, observer) => {
+      },
+      disconnected() {
+        if (this._data.image) {
+          this._data.image.onload = "";
+        }
+      },
+      observe: intersection({
+        target: ({ $el, $props }) => [$el, ...queryAll($props.target, $el)],
+        handler(entries, observer) {
           this.load();
           observer.disconnect();
         },
-        {
-          rootMargin: toPx(this.offsetTop, 'height') + "px " + toPx(
-          this.offsetLeft,
-          'width') + "px" }));
-
-
-
-
-      },
-
-      disconnected() {
-        if (this._data.image) {
-          this._data.image.onload = '';
-        }
-      },
-
+        options: ({ margin }) => ({ rootMargin: margin }),
+        filter: ({ loading }) => loading === "lazy"
+      }),
       methods: {
         load() {
           if (this._data.image) {
             return this._data.image;
           }
-
-          const image = isImg(this.$el) ?
-          this.$el :
-          getImageFromElement(this.$el, this.dataSrc, this.sources);
-
-          removeAttr(image, 'loading');
+          const image = isImg(this.$el) ? this.$el : getImageFromElement(this.$el, this.dataSrc, this.sources);
+          removeAttr(image, "loading");
           setSrcAttrs(this.$el, image.currentSrc);
           return this._data.image = image;
-        } } };
-
-
-
+        }
+      }
+    };
     function setSrcAttrs(el, src) {
       if (isImg(el)) {
         const parentNode = parent(el);
-        const elements = isPicture(parentNode) ? children(parentNode) : [el];
-        elements.forEach((el) => setSourceProps(el, el));
+        const elements = isTag(parentNode, "picture") ? children(parentNode) : [el];
+        elements.forEach((el2) => setSourceProps(el2, el2));
       } else if (src) {
         const change = !includes(el.style.backgroundImage, src);
         if (change) {
-          css(el, 'backgroundImage', "url(" + escape(src) + ")");
-          trigger(el, createEvent('load', false));
+          css(el, "backgroundImage", `url(${escape(src)})`);
+          trigger(el, createEvent("load", false));
         }
       }
     }
-
-    const srcProps = ['data-src', 'data-srcset', 'sizes'];
+    const srcProps = ["data-src", "data-srcset", "sizes"];
     function setSourceProps(sourceEl, targetEl) {
       srcProps.forEach((prop) => {
         const value = data(sourceEl, prop);
         if (value) {
-          attr(targetEl, prop.replace(/^(data-)+/, ''), value);
+          attr(targetEl, prop.replace(/^(data-)+/, ""), value);
         }
       });
     }
-
     function getImageFromElement(el, src, sources) {
       const img = new Image();
-
       wrapInPicture(img, sources);
       setSourceProps(el, img);
       img.onload = () => {
         setSrcAttrs(el, img.currentSrc);
       };
-      attr(img, 'src', src);
+      attr(img, "src", src);
       return img;
     }
-
     function wrapInPicture(img, sources) {
       sources = parseSources(sources);
-
       if (sources.length) {
-        const picture = fragment('<picture>');
+        const picture = fragment("<picture>");
         for (const attrs of sources) {
-          const source = fragment('<source>');
+          const source = fragment("<source>");
           attr(source, attrs);
           append(picture, source);
         }
         append(picture, img);
       }
     }
-
     function parseSources(sources) {
       if (!sources) {
         return [];
       }
-
-      if (startsWith(sources, '[')) {
+      if (startsWith(sources, "[")) {
         try {
           sources = JSON.parse(sources);
         } catch (e) {
@@ -5561,37 +4710,27 @@
       } else {
         sources = parseOptions(sources);
       }
-
       if (!isArray(sources)) {
         sources = [sources];
       }
-
       return sources.filter((source) => !isEmpty(source));
     }
-
     function ensureSrcAttribute(el) {
-      if (isImg(el) && !hasAttr(el, 'src')) {
-        attr(el, 'src', 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"></svg>');
+      if (isImg(el) && !hasAttr(el, "src")) {
+        attr(el, "src", 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"></svg>');
       }
     }
-
-    function isPicture(el) {
-      return isTag(el, 'picture');
-    }
-
     function isImg(el) {
-      return isTag(el, 'img');
+      return isTag(el, "img");
     }
 
     var Media = {
       props: {
-        media: Boolean },
-
-
+        media: Boolean
+      },
       data: {
-        media: false },
-
-
+        media: false
+      },
       connected() {
         const media = toMedia(this.media, this.$el);
         this.matchMedia = true;
@@ -5599,1285 +4738,856 @@
           this.mediaObj = window.matchMedia(media);
           const handler = () => {
             this.matchMedia = this.mediaObj.matches;
-            trigger(this.$el, createEvent('mediachange', false, true, [this.mediaObj]));
+            trigger(this.$el, createEvent("mediachange", false, true, [this.mediaObj]));
           };
-          this.offMediaObj = on(this.mediaObj, 'change', () => {
+          this.offMediaObj = on(this.mediaObj, "change", () => {
             handler();
-            this.$emit('resize');
+            this.$emit("resize");
           });
           handler();
         }
       },
-
-      disconnected() {var _this$offMediaObj;
-        (_this$offMediaObj = this.offMediaObj) == null ? void 0 : _this$offMediaObj.call(this);
-      } };
-
-
+      disconnected() {
+        var _a;
+        (_a = this.offMediaObj) == null ? void 0 : _a.call(this);
+      }
+    };
     function toMedia(value, element) {
       if (isString(value)) {
-        if (startsWith(value, '@')) {
-          value = toFloat(css(element, "--uk-breakpoint-" + value.substr(1)));
+        if (startsWith(value, "@")) {
+          value = toFloat(css(element, `--uk-breakpoint-${value.substr(1)}`));
         } else if (isNaN(value)) {
           return value;
         }
       }
-
-      return value && isNumeric(value) ? "(min-width: " + value + "px)" : '';
+      return value && isNumeric(value) ? `(min-width: ${value}px)` : "";
     }
 
     var leader = {
-      mixins: [Class, Media, Resize],
-
+      mixins: [Class, Media],
       props: {
-        fill: String },
-
-
-      data: {
-        fill: '',
-        clsWrapper: 'uk-leader-fill',
-        clsHide: 'uk-leader-hide',
-        attrFill: 'data-fill' },
-
-
-      computed: {
-        fill(_ref) {let { fill } = _ref;
-          return fill || css(this.$el, '--uk-leader-fill-content');
-        } },
-
-
-      connected() {
-        [this.wrapper] = wrapInner(this.$el, "<span class=\"" + this.clsWrapper + "\">");
+        fill: String
       },
-
+      data: {
+        fill: "",
+        clsWrapper: "uk-leader-fill",
+        clsHide: "uk-leader-hide",
+        attrFill: "data-fill"
+      },
+      computed: {
+        fill({ fill }) {
+          return fill || css(this.$el, "--uk-leader-fill-content");
+        }
+      },
+      connected() {
+        [this.wrapper] = wrapInner(this.$el, `<span class="${this.clsWrapper}">`);
+      },
       disconnected() {
         unwrap(this.wrapper.childNodes);
       },
-
+      observe: resize(),
       update: {
         read() {
           const width = Math.trunc(this.$el.offsetWidth / 2);
-
           return {
             width,
             fill: this.fill,
-            hide: !this.matchMedia };
-
+            hide: !this.matchMedia
+          };
         },
-
-        write(_ref2) {let { width, fill, hide } = _ref2;
+        write({ width, fill, hide }) {
           toggleClass(this.wrapper, this.clsHide, hide);
           attr(this.wrapper, this.attrFill, new Array(width).join(fill));
         },
+        events: ["resize"]
+      }
+    };
 
-        events: ['resize'] } };
+    const active = [];
+    var Modal = {
+      mixins: [Class, Container, Togglable],
+      props: {
+        selPanel: String,
+        selClose: String,
+        escClose: Boolean,
+        bgClose: Boolean,
+        stack: Boolean,
+        role: String
+      },
+      data: {
+        cls: "uk-open",
+        escClose: true,
+        bgClose: true,
+        overlay: true,
+        stack: false,
+        role: "dialog"
+      },
+      computed: {
+        panel({ selPanel }, $el) {
+          return $(selPanel, $el);
+        },
+        transitionElement() {
+          return this.panel;
+        },
+        bgClose({ bgClose }) {
+          return bgClose && this.panel;
+        }
+      },
+      connected() {
+        attr(this.panel || this.$el, "role", this.role);
+        if (this.overlay) {
+          attr(this.panel || this.$el, "aria-modal", true);
+        }
+      },
+      beforeDisconnect() {
+        if (includes(active, this)) {
+          this.toggleElement(this.$el, false, false);
+        }
+      },
+      events: [
+        {
+          name: "click",
+          delegate() {
+            return `${this.selClose},a[href*="#"]`;
+          },
+          handler(e) {
+            const { current, defaultPrevented } = e;
+            const { hash } = current;
+            if (!defaultPrevented && hash && isSameSiteAnchor(current) && !within(hash, this.$el) && $(hash, document.body)) {
+              this.hide();
+            } else if (matches(current, this.selClose)) {
+              e.preventDefault();
+              this.hide();
+            }
+          }
+        },
+        {
+          name: "toggle",
+          self: true,
+          handler(e) {
+            if (e.defaultPrevented) {
+              return;
+            }
+            e.preventDefault();
+            if (this.isToggled() === includes(active, this)) {
+              this.toggle();
+            }
+          }
+        },
+        {
+          name: "beforeshow",
+          self: true,
+          handler(e) {
+            if (includes(active, this)) {
+              return false;
+            }
+            if (!this.stack && active.length) {
+              Promise.all(active.map((modal) => modal.hide())).then(this.show);
+              e.preventDefault();
+            } else {
+              active.push(this);
+            }
+          }
+        },
+        {
+          name: "show",
+          self: true,
+          handler() {
+            if (this.stack) {
+              css(this.$el, "zIndex", toFloat(css(this.$el, "zIndex")) + active.length);
+            }
+            const handlers = [
+              this.overlay && preventBackgroundFocus(this),
+              this.overlay && preventBackgroundScroll(this.$el),
+              this.bgClose && listenForBackgroundClose(this),
+              this.escClose && listenForEscClose(this)
+            ];
+            once(
+              this.$el,
+              "hidden",
+              () => handlers.forEach((handler) => handler && handler()),
+              { self: true }
+            );
+            addClass(document.documentElement, this.clsPage);
+          }
+        },
+        {
+          name: "shown",
+          self: true,
+          handler() {
+            if (!isFocusable(this.$el)) {
+              attr(this.$el, "tabindex", "-1");
+            }
+            if (!matches(this.$el, ":focus-within")) {
+              this.$el.focus();
+            }
+          }
+        },
+        {
+          name: "hidden",
+          self: true,
+          handler() {
+            if (includes(active, this)) {
+              active.splice(active.indexOf(this), 1);
+            }
+            css(this.$el, "zIndex", "");
+            if (!active.some((modal) => modal.clsPage === this.clsPage)) {
+              removeClass(document.documentElement, this.clsPage);
+            }
+          }
+        }
+      ],
+      methods: {
+        toggle() {
+          return this.isToggled() ? this.hide() : this.show();
+        },
+        show() {
+          if (this.container && parent(this.$el) !== this.container) {
+            append(this.container, this.$el);
+            return new Promise(
+              (resolve) => requestAnimationFrame(() => this.show().then(resolve))
+            );
+          }
+          return this.toggleElement(this.$el, true, animate);
+        },
+        hide() {
+          return this.toggleElement(this.$el, false, animate);
+        }
+      }
+    };
+    function animate(el, show, { transitionElement, _toggle }) {
+      return new Promise(
+        (resolve, reject) => once(el, "show hide", () => {
+          var _a;
+          (_a = el._reject) == null ? void 0 : _a.call(el);
+          el._reject = reject;
+          _toggle(el, show);
+          const off = once(
+            transitionElement,
+            "transitionstart",
+            () => {
+              once(transitionElement, "transitionend transitioncancel", resolve, {
+                self: true
+              });
+              clearTimeout(timer);
+            },
+            { self: true }
+          );
+          const timer = setTimeout(() => {
+            off();
+            resolve();
+          }, toMs(css(transitionElement, "transitionDuration")));
+        })
+      ).then(() => delete el._reject);
+    }
+    function toMs(time) {
+      return time ? endsWith(time, "ms") ? toFloat(time) : toFloat(time) * 1e3 : 0;
+    }
+    function preventBackgroundFocus(modal) {
+      return on(document, "focusin", (e) => {
+        if (last(active) === modal && !within(e.target, modal.$el)) {
+          modal.$el.focus();
+        }
+      });
+    }
+    function listenForBackgroundClose(modal) {
+      return on(document, pointerDown, ({ target }) => {
+        if (last(active) !== modal || modal.overlay && !within(target, modal.$el) || within(target, modal.panel)) {
+          return;
+        }
+        once(
+          document,
+          `${pointerUp} ${pointerCancel} scroll`,
+          ({ defaultPrevented, type, target: newTarget }) => {
+            if (!defaultPrevented && type === pointerUp && target === newTarget) {
+              modal.hide();
+            }
+          },
+          true
+        );
+      });
+    }
+    function listenForEscClose(modal) {
+      return on(document, "keydown", (e) => {
+        if (e.keyCode === 27 && last(active) === modal) {
+          modal.hide();
+        }
+      });
+    }
 
     var modal = {
       install,
-
       mixins: [Modal],
-
       data: {
-        clsPage: 'uk-modal-page',
-        selPanel: '.uk-modal-dialog',
-        selClose:
-        '.uk-modal-close, .uk-modal-close-default, .uk-modal-close-outside, .uk-modal-close-full' },
-
-
+        clsPage: "uk-modal-page",
+        selPanel: ".uk-modal-dialog",
+        selClose: ".uk-modal-close, .uk-modal-close-default, .uk-modal-close-outside, .uk-modal-close-full"
+      },
       events: [
-      {
-        name: 'show',
-
-        self: true,
-
-        handler() {
-          if (hasClass(this.panel, 'uk-margin-auto-vertical')) {
-            addClass(this.$el, 'uk-flex');
-          } else {
-            css(this.$el, 'display', 'block');
+        {
+          name: "show",
+          self: true,
+          handler() {
+            if (hasClass(this.panel, "uk-margin-auto-vertical")) {
+              addClass(this.$el, "uk-flex");
+            } else {
+              css(this.$el, "display", "block");
+            }
+            height(this.$el);
           }
-
-          height(this.$el); // force reflow
-        } },
-
-
-      {
-        name: 'hidden',
-
-        self: true,
-
-        handler() {
-          css(this.$el, 'display', '');
-          removeClass(this.$el, 'uk-flex');
-        } }] };
-
-
-
-
-    function install(_ref) {let { modal } = _ref;
-      modal.dialog = function (content, options) {
-        const dialog = modal("<div class=\"uk-modal\"> <div class=\"uk-modal-dialog\">" +
-
-        content + "</div> </div>",
-
-        options);
-
-
-        dialog.show();
-
-        on(
-        dialog.$el,
-        'hidden',
-        async () => {
-          await Promise.resolve();
-          dialog.$destroy(true);
         },
-        { self: true });
-
-
+        {
+          name: "hidden",
+          self: true,
+          handler() {
+            css(this.$el, "display", "");
+            removeClass(this.$el, "uk-flex");
+          }
+        }
+      ]
+    };
+    function install({ modal }) {
+      modal.dialog = function(content, options) {
+        const dialog = modal(
+          `<div class="uk-modal"> <div class="uk-modal-dialog">${content}</div> </div>`,
+          options
+        );
+        dialog.show();
+        on(
+          dialog.$el,
+          "hidden",
+          async () => {
+            await Promise.resolve();
+            dialog.$destroy(true);
+          },
+          { self: true }
+        );
         return dialog;
       };
-
-      modal.alert = function (message, options) {
+      modal.alert = function(message, options) {
         return openDialog(
-        (_ref2) => {let { labels } = _ref2;return "<div class=\"uk-modal-body\">" + (
-          isString(message) ? message : html(message)) + "</div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-primary uk-modal-close\" autofocus>" +
-
-
-
-          labels.ok + "</button> </div>";},
-
-
-        options,
-        (deferred) => deferred.resolve());
-
+          ({ i18n }) => `<div class="uk-modal-body">${isString(message) ? message : html(message)}</div> <div class="uk-modal-footer uk-text-right"> <button class="uk-button uk-button-primary uk-modal-close" autofocus>${i18n.ok}</button> </div>`,
+          options,
+          (deferred) => deferred.resolve()
+        );
       };
-
-      modal.confirm = function (message, options) {
+      modal.confirm = function(message, options) {
         return openDialog(
-        (_ref3) => {let { labels } = _ref3;return "<form> <div class=\"uk-modal-body\">" + (
-          isString(message) ? message : html(message)) + "</div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\" type=\"button\">" +
-
-
-          labels.cancel + "</button> <button class=\"uk-button uk-button-primary\" autofocus>" +
-
-          labels.ok + "</button> </div> </form>";},
-
-
-        options,
-        (deferred) => deferred.reject());
-
+          ({ i18n }) => `<form> <div class="uk-modal-body">${isString(message) ? message : html(message)}</div> <div class="uk-modal-footer uk-text-right"> <button class="uk-button uk-button-default uk-modal-close" type="button">${i18n.cancel}</button> <button class="uk-button uk-button-primary" autofocus>${i18n.ok}</button> </div> </form>`,
+          options,
+          (deferred) => deferred.reject()
+        );
       };
-
-      modal.prompt = function (message, value, options) {
+      modal.prompt = function(message, value, options) {
         return openDialog(
-        (_ref4) => {let { labels } = _ref4;return "<form class=\"uk-form-stacked\"> <div class=\"uk-modal-body\"> <label>" + (
-
-          isString(message) ? message : html(message)) + "</label> <input class=\"uk-input\" value=\"" + (
-          value || '') + "\" autofocus> </div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\" type=\"button\">" +
-
-
-
-          labels.cancel + "</button> <button class=\"uk-button uk-button-primary\">" +
-
-          labels.ok + "</button> </div> </form>";},
-
-
-        options,
-        (deferred) => deferred.resolve(null),
-        (dialog) => $('input', dialog.$el).value);
-
+          ({ i18n }) => `<form class="uk-form-stacked"> <div class="uk-modal-body"> <label>${isString(message) ? message : html(message)}</label> <input class="uk-input" value="${value || ""}" autofocus> </div> <div class="uk-modal-footer uk-text-right"> <button class="uk-button uk-button-default uk-modal-close" type="button">${i18n.cancel}</button> <button class="uk-button uk-button-primary">${i18n.ok}</button> </div> </form>`,
+          options,
+          (deferred) => deferred.resolve(null),
+          (dialog) => $("input", dialog.$el).value
+        );
       };
-
-      modal.labels = {
-        ok: 'Ok',
-        cancel: 'Cancel' };
-
-
+      modal.i18n = {
+        ok: "Ok",
+        cancel: "Cancel"
+      };
       function openDialog(tmpl, options, hideFn, submitFn) {
-        options = { bgClose: false, escClose: true, labels: modal.labels, ...options };
-
+        options = {
+          bgClose: false,
+          escClose: true,
+          role: "alertdialog",
+          ...options,
+          i18n: { ...modal.i18n, ...options == null ? void 0 : options.i18n }
+        };
         const dialog = modal.dialog(tmpl(options), options);
         const deferred = new Deferred();
-
         let resolved = false;
-
-        on(dialog.$el, 'submit', 'form', (e) => {
+        on(dialog.$el, "submit", "form", (e) => {
           e.preventDefault();
           deferred.resolve(submitFn == null ? void 0 : submitFn(dialog));
           resolved = true;
           dialog.hide();
         });
-
-        on(dialog.$el, 'hide', () => !resolved && hideFn(deferred));
-
+        on(dialog.$el, "hide", () => !resolved && hideFn(deferred));
         deferred.promise.dialog = dialog;
-
         return deferred.promise;
       }
     }
 
     var nav = {
       extends: Accordion,
-
       data: {
-        targets: '> .uk-parent',
-        toggle: '> a',
-        content: '> ul' } };
+        targets: "> .uk-parent",
+        toggle: "> a",
+        content: "> ul"
+      }
+    };
 
     var navbar = {
-      mixins: [Class, Container],
-
-      props: {
-        dropdown: String,
-        mode: 'list',
-        align: String,
-        offset: Number,
-        boundary: Boolean,
-        target: Boolean,
-        clsDrop: String,
-        delayShow: Number,
-        delayHide: Number,
-        dropbar: Boolean,
-        dropbarAnchor: Boolean,
-        duration: Number },
-
-
+      extends: Dropnav,
       data: {
-        dropdown: '.uk-navbar-nav > li > a, .uk-navbar-item, .uk-navbar-toggle',
-        align: isRtl ? 'right' : 'left',
-        clsDrop: 'uk-navbar-dropdown',
-        mode: undefined,
-        offset: undefined,
-        delayShow: undefined,
-        delayHide: undefined,
-        flip: false,
-        shift: true,
-        boundary: true,
-        target: false,
-        targetX: false,
-        targetY: false,
-        dropbar: false,
-        dropbarAnchor: false,
-        duration: 200,
-        container: false },
-
-
+        dropdown: ".uk-navbar-nav > li > a, .uk-navbar-item, .uk-navbar-toggle",
+        clsDrop: "uk-navbar-dropdown"
+      },
       computed: {
-        boundary(_ref, $el) {let { boundary } = _ref;
-          return boundary === true ? $el : boundary;
-        },
-
-        dropbarAnchor(_ref2, $el) {let { dropbarAnchor } = _ref2;
-          return query(dropbarAnchor, $el);
-        },
-
-        pos(_ref3) {let { align } = _ref3;
-          return "bottom-" + align;
-        },
-
-        dropbar: {
-          get(_ref4) {let { dropbar } = _ref4;
-            if (!dropbar) {
-              return null;
-            }
-
-            dropbar =
-            this._dropbar ||
-            query(dropbar, this.$el) ||
-            $('+ .uk-navbar-dropbar', this.$el);
-
-            return dropbar ? dropbar : this._dropbar = $('<div></div>');
-          },
-
-          watch(dropbar) {
-            addClass(dropbar, 'uk-dropbar', 'uk-dropbar-top', 'uk-navbar-dropbar');
-          },
-
-          immediate: true },
-
-
-        dropContainer(_, $el) {
-          return this.container || $el;
-        },
-
-        dropdowns: {
-          get(_ref5, $el) {let { clsDrop } = _ref5;
-            const dropdowns = $$("." + clsDrop, $el);
-
-            if (this.dropContainer !== $el) {
-              for (const el of $$("." + clsDrop, this.dropContainer)) {var _this$getDropdown;
-                const target = (_this$getDropdown = this.getDropdown(el)) == null ? void 0 : _this$getDropdown.targetEl;
-                if (!includes(dropdowns, el) && target && within(target, this.$el)) {
-                  dropdowns.push(el);
-                }
-              }
-            }
-
-            return dropdowns;
-          },
-
-          watch(dropdowns) {
-            this.$create(
-            'drop',
-            dropdowns.filter((el) => !this.getDropdown(el)),
-            {
-              ...this.$props,
-              boundary: this.boundary,
-              pos: this.pos });
-
-
-          },
-
-          immediate: true },
-
-
-        toggles: {
-          get(_ref6, $el) {let { dropdown } = _ref6;
+        items: {
+          get({ dropdown }, $el) {
             return $$(dropdown, $el);
           },
-
-          watch() {
-            const justify = hasClass(this.$el, 'uk-navbar-justify');
+          watch(items) {
+            const justify = hasClass(this.$el, "uk-navbar-justify");
             for (const container of $$(
-            '.uk-navbar-nav, .uk-navbar-left, .uk-navbar-right',
-            this.$el))
-            {
-              css(container, 'flexGrow', justify ? $$(this.dropdown, container).length : '');
+              ".uk-navbar-nav, .uk-navbar-left, .uk-navbar-right",
+              this.$el
+            )) {
+              css(container, "flexGrow", justify ? $$(this.dropdown, container).length : "");
             }
+            attr($$(".uk-navbar-nav", this.$el), "role", "group");
+            attr($$(".uk-navbar-nav > *", this.$el), "role", "presentation");
+            attr(items, { tabindex: -1, role: "menuitem" });
+            attr(items[0], "tabindex", 0);
           },
-
-          immediate: true } },
-
-
-
-      disconnected() {
-        this.dropbar && remove$1(this.dropbar);
-        delete this._dropbar;
-      },
-
-      events: [
-      {
-        name: 'mouseover focusin',
-
-        delegate() {
-          return this.dropdown;
-        },
-
-        handler(_ref7) {let { current } = _ref7;
-          const active = this.getActive();
-          if (
-          active &&
-          includes(active.mode, 'hover') &&
-          active.targetEl &&
-          !within(active.targetEl, current) &&
-          !active.isDelaying)
-          {
-            active.hide(false);
-          }
-        } },
-
-
-      {
-        name: 'keydown',
-
-        delegate() {
-          return this.dropdown;
-        },
-
-        handler(e) {
-          const { current, keyCode } = e;
-          const active = this.getActive();
-
-          if (keyCode === keyMap.DOWN && hasAttr(current, 'aria-expanded')) {
-            e.preventDefault();
-
-            if (!active || active.targetEl !== current) {
-              current.click();
-              once(this.dropContainer, 'show', (_ref8) => {let { target } = _ref8;return (
-                  focusFirstFocusableElement(target));});
-
-            } else {
-              focusFirstFocusableElement(active.$el);
-            }
-          }
-
-          handleNavItemNavigation(e, this.toggles, active);
-        } },
-
-
-      {
-        name: 'keydown',
-
-        el() {
-          return this.dropContainer;
-        },
-
-        delegate() {
-          return "." + this.clsDrop;
-        },
-
-        handler(e) {
-          const { current, keyCode } = e;
-
-          if (!includes(this.dropdowns, current)) {
-            return;
-          }
-
-          const active = this.getActive();
-          const elements = $$(selFocusable, current);
-          const i = findIndex(elements, (el) => matches(el, ':focus'));
-
-          if (keyCode === keyMap.UP) {
-            e.preventDefault();
-            if (i > 0) {
-              elements[i - 1].focus();
-            }
-          }
-
-          if (keyCode === keyMap.DOWN) {
-            e.preventDefault();
-            if (i < elements.length - 1) {
-              elements[i + 1].focus();
-            }
-          }
-
-          if (keyCode === keyMap.ESC) {var _active$targetEl;
-            active == null ? void 0 : (_active$targetEl = active.targetEl) == null ? void 0 : _active$targetEl.focus();
-          }
-
-          handleNavItemNavigation(e, this.toggles, active);
-        } },
-
-
-      {
-        name: 'mouseleave',
-
-        el() {
-          return this.dropbar;
-        },
-
-        filter() {
-          return this.dropbar;
-        },
-
-        handler() {
-          const active = this.getActive();
-
-          if (
-          active &&
-          includes(active.mode, 'hover') &&
-          !this.dropdowns.some((el) => matches(el, ':hover')))
-          {
-            active.hide();
-          }
-        } },
-
-
-      {
-        name: 'beforeshow',
-
-        el() {
-          return this.dropContainer;
-        },
-
-        filter() {
-          return this.dropbar;
-        },
-
-        handler(_ref9) {let { target } = _ref9;
-          if (!this.isDropbarDrop(target)) {
-            return;
-          }
-
-          if (!parent(this.dropbar)) {
-            after(this.dropbarAnchor || this.$el, this.dropbar);
-          }
-
-          addClass(target, this.clsDrop + "-dropbar");
-        } },
-
-
-      {
-        name: 'show',
-
-        el() {
-          return this.dropContainer;
-        },
-
-        filter() {
-          return this.dropbar;
-        },
-
-        handler(_ref10) {let { target } = _ref10;
-          if (!this.isDropbarDrop(target)) {
-            return;
-          }
-
-          this._observer = observeResize(target, () => {
-            const targetOffsets = parents(target, "." + this.clsDrop).
-            concat(target).
-            map((el) => offset(el));
-            const minTop = Math.min(...targetOffsets.map((_ref11) => {let { top } = _ref11;return top;}));
-            const maxBottom = Math.max(...targetOffsets.map((_ref12) => {let { bottom } = _ref12;return bottom;}));
-            const dropbarOffset = offset(this.dropbar);
-            css(this.dropbar, 'top', this.dropbar.offsetTop - (dropbarOffset.top - minTop));
-            this.transitionTo(
-            maxBottom - minTop + toFloat(css(target, 'marginBottom')),
-            target);
-
-          });
-        } },
-
-
-      {
-        name: 'beforehide',
-
-        el() {
-          return this.dropContainer;
-        },
-
-        filter() {
-          return this.dropbar;
-        },
-
-        handler(e) {
-          const active = this.getActive();
-
-          if (
-          matches(this.dropbar, ':hover') &&
-          (active == null ? void 0 : active.$el) === e.target &&
-          !this.toggles.some((el) => active.targetEl !== el && matches(el, ':focus')))
-          {
-            e.preventDefault();
-          }
-        } },
-
-
-      {
-        name: 'hide',
-
-        el() {
-          return this.dropContainer;
-        },
-
-        filter() {
-          return this.dropbar;
-        },
-
-        handler(_ref13) {let { target } = _ref13;
-          if (!this.isDropbarDrop(target)) {
-            return;
-          }
-
-          this._observer.disconnect();
-
-          const active = this.getActive();
-
-          if (!active || (active == null ? void 0 : active.$el) === target) {
-            this.transitionTo(0);
-          }
-        } }],
-
-
-
-      methods: {
-        getActive() {
-          return active && within(active.targetEl, this.$el) && active;
-        },
-
-        transitionTo(newHeight, el) {
-          const { dropbar } = this;
-          const oldHeight = height(dropbar);
-
-          el = oldHeight < newHeight && el;
-
-          css(el, 'clipPath', "polygon(0 0,100% 0,100% " + oldHeight + "px,0 " + oldHeight + "px)");
-
-          height(dropbar, oldHeight);
-
-          Transition.cancel([el, dropbar]);
-          Promise.all([
-          Transition.start(dropbar, { height: newHeight }, this.duration),
-          Transition.start(
-          el,
-          {
-            clipPath: "polygon(0 0,100% 0,100% " + newHeight + "px,0 " + newHeight + "px)" },
-
-          this.duration)]).
-
-
-          catch(noop).
-          then(() => css(el, { clipPath: '' }));
-        },
-
-        getDropdown(el) {
-          return this.$getComponent(el, 'drop') || this.$getComponent(el, 'dropdown');
-        },
-
-        isDropbarDrop(el) {
-          return this.getDropdown(el) && hasClass(el, this.clsDrop);
-        } } };
-
-
-
-    function handleNavItemNavigation(e, toggles, active) {
-      const { current, keyCode } = e;
-      const target = (active == null ? void 0 : active.targetEl) || current;
-      const i = toggles.indexOf(target);
-
-      // Left
-      if (keyCode === keyMap.LEFT && i > 0) {
-        active == null ? void 0 : active.hide(false);
-        toggles[i - 1].focus();
-      }
-
-      // Right
-      if (keyCode === keyMap.RIGHT && i < toggles.length - 1) {
-        active == null ? void 0 : active.hide(false);
-        toggles[i + 1].focus();
-      }
-
-      if (keyCode === keyMap.TAB) {
-        target.focus();
-        active == null ? void 0 : active.hide(false);
-      }
-    }
-
-    function focusFirstFocusableElement(el) {
-      if (!$(':focus', el)) {var _$;
-        (_$ = $(selFocusable, el)) == null ? void 0 : _$.focus();
-      }
-    }
-
-    const keyMap = {
-      TAB: 9,
-      ESC: 27,
-      LEFT: 37,
-      UP: 38,
-      RIGHT: 39,
-      DOWN: 40 };
-
-    var Swipe = {
-      props: {
-        swiping: Boolean },
-
-
-      data: {
-        swiping: true },
-
-
-      computed: {
-        swipeTarget(props, $el) {
-          return $el;
-        } },
-
-
-      connected() {
-        if (!this.swiping) {
-          return;
+          immediate: true
         }
-
-        registerEvent(this, {
-          el: this.swipeTarget,
-          name: pointerDown,
-          passive: true,
-          handler(e) {
-            if (!isTouch(e)) {
-              return;
-            }
-
-            // Handle Swipe Gesture
-            const pos = getEventPos(e);
-            const target = 'tagName' in e.target ? e.target : parent(e.target);
-            once(document, pointerUp + " " + pointerCancel + " scroll", (e) => {
-              const { x, y } = getEventPos(e);
-
-              // swipe
-              if (
-              e.type !== 'scroll' && target && x && Math.abs(pos.x - x) > 100 ||
-              y && Math.abs(pos.y - y) > 100)
-              {
-                setTimeout(() => {
-                  trigger(target, 'swipe');
-                  trigger(target, "swipe" + swipeDirection(pos.x, pos.y, x, y));
-                });
-              }
-            });
-          } });
-
-      } };
-
-
-    function swipeDirection(x1, y1, x2, y2) {
-      return Math.abs(x1 - x2) >= Math.abs(y1 - y2) ?
-      x1 - x2 > 0 ?
-      'Left' :
-      'Right' :
-      y1 - y2 > 0 ?
-      'Up' :
-      'Down';
-    }
+      }
+    };
 
     var offcanvas = {
-      mixins: [Modal, Swipe],
-
-      args: 'mode',
-
+      mixins: [Modal],
+      args: "mode",
       props: {
         mode: String,
         flip: Boolean,
-        overlay: Boolean },
-
-
+        overlay: Boolean,
+        swiping: Boolean
+      },
       data: {
-        mode: 'slide',
+        mode: "slide",
         flip: false,
         overlay: false,
-        clsPage: 'uk-offcanvas-page',
-        clsContainer: 'uk-offcanvas-container',
-        selPanel: '.uk-offcanvas-bar',
-        clsFlip: 'uk-offcanvas-flip',
-        clsContainerAnimation: 'uk-offcanvas-container-animation',
-        clsSidebarAnimation: 'uk-offcanvas-bar-animation',
-        clsMode: 'uk-offcanvas',
-        clsOverlay: 'uk-offcanvas-overlay',
-        selClose: '.uk-offcanvas-close',
-        container: false },
-
-
+        clsPage: "uk-offcanvas-page",
+        clsContainer: "uk-offcanvas-container",
+        selPanel: ".uk-offcanvas-bar",
+        clsFlip: "uk-offcanvas-flip",
+        clsContainerAnimation: "uk-offcanvas-container-animation",
+        clsSidebarAnimation: "uk-offcanvas-bar-animation",
+        clsMode: "uk-offcanvas",
+        clsOverlay: "uk-offcanvas-overlay",
+        selClose: ".uk-offcanvas-close",
+        container: false,
+        swiping: true
+      },
       computed: {
-        clsFlip(_ref) {let { flip, clsFlip } = _ref;
-          return flip ? clsFlip : '';
+        clsFlip({ flip, clsFlip }) {
+          return flip ? clsFlip : "";
         },
-
-        clsOverlay(_ref2) {let { overlay, clsOverlay } = _ref2;
-          return overlay ? clsOverlay : '';
+        clsOverlay({ overlay, clsOverlay }) {
+          return overlay ? clsOverlay : "";
         },
-
-        clsMode(_ref3) {let { mode, clsMode } = _ref3;
-          return clsMode + "-" + mode;
+        clsMode({ mode, clsMode }) {
+          return `${clsMode}-${mode}`;
         },
-
-        clsSidebarAnimation(_ref4) {let { mode, clsSidebarAnimation } = _ref4;
-          return mode === 'none' || mode === 'reveal' ? '' : clsSidebarAnimation;
+        clsSidebarAnimation({ mode, clsSidebarAnimation }) {
+          return mode === "none" || mode === "reveal" ? "" : clsSidebarAnimation;
         },
-
-        clsContainerAnimation(_ref5) {let { mode, clsContainerAnimation } = _ref5;
-          return mode !== 'push' && mode !== 'reveal' ? '' : clsContainerAnimation;
+        clsContainerAnimation({ mode, clsContainerAnimation }) {
+          return mode !== "push" && mode !== "reveal" ? "" : clsContainerAnimation;
         },
-
-        transitionElement(_ref6) {let { mode } = _ref6;
-          return mode === 'reveal' ? parent(this.panel) : this.panel;
-        } },
-
-
+        transitionElement({ mode }) {
+          return mode === "reveal" ? parent(this.panel) : this.panel;
+        }
+      },
+      observe: swipe({ filter: ({ swiping }) => swiping }),
       update: {
         read() {
           if (this.isToggled() && !isVisible(this.$el)) {
             this.hide();
           }
         },
-
-        events: ['resize'] },
-
-
+        events: ["resize"]
+      },
       events: [
-      {
-        name: 'click',
-
-        delegate() {
-          return 'a[href^="#"]';
+        {
+          name: "touchmove",
+          self: true,
+          passive: false,
+          filter() {
+            return this.overlay;
+          },
+          handler(e) {
+            e.cancelable && e.preventDefault();
+          }
         },
-
-        handler(_ref7) {let { current: { hash }, defaultPrevented } = _ref7;
-          if (!defaultPrevented && hash && $(hash, document.body)) {
-            this.hide();
+        {
+          name: "show",
+          self: true,
+          handler() {
+            if (this.mode === "reveal" && !hasClass(parent(this.panel), this.clsMode)) {
+              wrapAll(this.panel, "<div>");
+              addClass(parent(this.panel), this.clsMode);
+            }
+            const { body, scrollingElement } = document;
+            addClass(body, this.clsContainer, this.clsFlip);
+            css(body, "touch-action", "pan-y pinch-zoom");
+            css(this.$el, "display", "block");
+            css(this.panel, "maxWidth", scrollingElement.clientWidth);
+            addClass(this.$el, this.clsOverlay);
+            addClass(
+              this.panel,
+              this.clsSidebarAnimation,
+              this.mode === "reveal" ? "" : this.clsMode
+            );
+            height(body);
+            addClass(body, this.clsContainerAnimation);
+            this.clsContainerAnimation && suppressUserScale();
           }
-        } },
-
-
-      {
-        name: 'touchmove',
-
-        self: true,
-        passive: false,
-
-        filter() {
-          return this.overlay;
         },
-
-        handler(e) {
-          e.cancelable && e.preventDefault();
-        } },
-
-
-      {
-        name: 'show',
-
-        self: true,
-
-        handler() {
-          if (this.mode === 'reveal' && !hasClass(parent(this.panel), this.clsMode)) {
-            wrapAll(this.panel, '<div>');
-            addClass(parent(this.panel), this.clsMode);
+        {
+          name: "hide",
+          self: true,
+          handler() {
+            removeClass(document.body, this.clsContainerAnimation);
+            css(document.body, "touch-action", "");
           }
-
-          addClass(document.body, this.clsContainer, this.clsFlip);
-          css(document.body, 'touch-action', 'pan-y pinch-zoom');
-          css(this.$el, 'display', 'block');
-          addClass(this.$el, this.clsOverlay);
-          addClass(
-          this.panel,
-          this.clsSidebarAnimation,
-          this.mode === 'reveal' ? '' : this.clsMode);
-
-
-          height(document.body); // force reflow
-          addClass(document.body, this.clsContainerAnimation);
-
-          this.clsContainerAnimation && suppressUserScale();
-        } },
-
-
-      {
-        name: 'hide',
-
-        self: true,
-
-        handler() {
-          removeClass(document.body, this.clsContainerAnimation);
-          css(document.body, 'touch-action', '');
-        } },
-
-
-      {
-        name: 'hidden',
-
-        self: true,
-
-        handler() {
-          this.clsContainerAnimation && resumeUserScale();
-
-          if (this.mode === 'reveal') {
-            unwrap(this.panel);
+        },
+        {
+          name: "hidden",
+          self: true,
+          handler() {
+            this.clsContainerAnimation && resumeUserScale();
+            if (this.mode === "reveal") {
+              unwrap(this.panel);
+            }
+            removeClass(this.panel, this.clsSidebarAnimation, this.clsMode);
+            removeClass(this.$el, this.clsOverlay);
+            css(this.$el, "display", "");
+            css(this.panel, "maxWidth", "");
+            removeClass(document.body, this.clsContainer, this.clsFlip);
           }
-
-          removeClass(this.panel, this.clsSidebarAnimation, this.clsMode);
-          removeClass(this.$el, this.clsOverlay);
-          css(this.$el, 'display', '');
-          removeClass(document.body, this.clsContainer, this.clsFlip);
-        } },
-
-
-      {
-        name: 'swipeLeft swipeRight',
-
-        handler(e) {
-          if (this.isToggled() && endsWith(e.type, 'Left') ^ this.flip) {
-            this.hide();
+        },
+        {
+          name: "swipeLeft swipeRight",
+          handler(e) {
+            if (this.isToggled() && endsWith(e.type, "Left") ^ this.flip) {
+              this.hide();
+            }
           }
-        } }] };
-
-
-
-
-    // Chrome in responsive mode zooms page upon opening offcanvas
+        }
+      ]
+    };
     function suppressUserScale() {
-      getViewport().content += ',user-scalable=0';
+      getViewport().content += ",user-scalable=0";
     }
-
     function resumeUserScale() {
       const viewport = getViewport();
-      viewport.content = viewport.content.replace(/,user-scalable=0$/, '');
+      viewport.content = viewport.content.replace(/,user-scalable=0$/, "");
     }
-
     function getViewport() {
-      return (
-        $('meta[name="viewport"]', document.head) || append(document.head, '<meta name="viewport">'));
-
+      return $('meta[name="viewport"]', document.head) || append(document.head, '<meta name="viewport">');
     }
 
     var overflowAuto = {
-      mixins: [Class, Resize],
-
+      mixins: [Class],
       props: {
         selContainer: String,
         selContent: String,
-        minHeight: Number },
-
-
+        minHeight: Number
+      },
       data: {
-        selContainer: '.uk-modal',
-        selContent: '.uk-modal-dialog',
-        minHeight: 150 },
-
-
+        selContainer: ".uk-modal",
+        selContent: ".uk-modal-dialog",
+        minHeight: 150
+      },
       computed: {
-        container(_ref, $el) {let { selContainer } = _ref;
+        container({ selContainer }, $el) {
           return closest($el, selContainer);
         },
-
-        content(_ref2, $el) {let { selContent } = _ref2;
+        content({ selContent }, $el) {
           return closest($el, selContent);
-        } },
-
-
-      resizeTargets() {
-        return [this.container, this.content];
+        }
       },
-
+      observe: resize({
+        target: ({ container, content }) => [container, content]
+      }),
       update: {
         read() {
           if (!this.content || !this.container || !isVisible(this.$el)) {
             return false;
           }
-
           return {
             max: Math.max(
-            this.minHeight,
-            height(this.container) - (dimensions(this.content).height - height(this.$el))) };
-
-
+              this.minHeight,
+              height(this.container) - (dimensions(this.content).height - height(this.$el))
+            )
+          };
         },
-
-        write(_ref3) {let { max } = _ref3;
+        write({ max }) {
           css(this.$el, { minHeight: this.minHeight, maxHeight: max });
         },
-
-        events: ['resize'] } };
+        events: ["resize"]
+      }
+    };
 
     var responsive = {
-      mixins: [Resize],
-
-      props: ['width', 'height'],
-
-      resizeTargets() {
-        return [this.$el, parent(this.$el)];
-      },
-
+      props: ["width", "height"],
       connected() {
-        addClass(this.$el, 'uk-responsive-width');
+        addClass(this.$el, "uk-responsive-width");
       },
-
+      observe: resize({
+        target: ({ $el }) => [$el, parent($el)]
+      }),
       update: {
         read() {
-          return isVisible(this.$el) && this.width && this.height ?
-          { width: width(parent(this.$el)), height: this.height } :
-          false;
+          return isVisible(this.$el) && this.width && this.height ? { width: width(parent(this.$el)), height: this.height } : false;
         },
-
         write(dim) {
           height(
-          this.$el,
-          Dimensions.contain(
-          {
-            height: this.height,
-            width: this.width },
-
-          dim).
-          height);
-
+            this.$el,
+            Dimensions.contain(
+              {
+                height: this.height,
+                width: this.width
+              },
+              dim
+            ).height
+          );
         },
-
-        events: ['resize'] } };
+        events: ["resize"]
+      }
+    };
 
     var scroll = {
       props: {
-        offset: Number },
-
-
+        offset: Number
+      },
       data: {
-        offset: 0 },
-
-
+        offset: 0
+      },
       connected() {
         registerClick(this);
       },
-
       disconnected() {
         unregisterClick(this);
       },
-
       methods: {
         async scrollTo(el) {
           el = el && $(el) || document.body;
-
-          if (trigger(this.$el, 'beforescroll', [this, el])) {
+          if (trigger(this.$el, "beforescroll", [this, el])) {
             await scrollIntoView(el, { offset: this.offset });
-            trigger(this.$el, 'scrolled', [this, el]);
+            trigger(this.$el, "scrolled", [this, el]);
           }
-        } } };
-
-
-
-    const components$1 = new Set();
+        }
+      }
+    };
+    const instances = /* @__PURE__ */ new Set();
     function registerClick(cmp) {
-      if (!components$1.size) {
-        on(document, 'click', clickHandler);
+      if (!instances.size) {
+        on(document, "click", clickHandler);
       }
-
-      components$1.add(cmp);
+      instances.add(cmp);
     }
-
     function unregisterClick(cmp) {
-      components$1.delete(cmp);
-
-      if (!components$1.length) {
-        off(document, 'click', clickHandler);
+      instances.delete(cmp);
+      if (!instances.size) {
+        off(document, "click", clickHandler);
       }
     }
-
     function clickHandler(e) {
       if (e.defaultPrevented) {
         return;
       }
-
-      for (const component of components$1) {
-        if (within(e.target, component.$el)) {
+      for (const instance of instances) {
+        if (within(e.target, instance.$el) && isSameSiteAnchor(instance.$el)) {
           e.preventDefault();
-          component.scrollTo(getTargetElement(component.$el));
+          window.history.pushState({}, "", instance.$el.href);
+          instance.scrollTo(getTargetedElement(instance.$el));
         }
       }
     }
 
-    function getTargetElement(el) {
-      return document.getElementById(decodeURIComponent(el.hash).substring(1));
-    }
-
     var scrollspy = {
-      mixins: [Scroll],
-
-      args: 'cls',
-
+      args: "cls",
       props: {
         cls: String,
         target: String,
         hidden: Boolean,
-        offsetTop: Number,
-        offsetLeft: Number,
+        margin: String,
         repeat: Boolean,
-        delay: Number },
-
-
+        delay: Number
+      },
       data: () => ({
-        cls: '',
+        cls: "",
         target: false,
         hidden: true,
-        offsetTop: 0,
-        offsetLeft: 0,
+        margin: "-1px",
         repeat: false,
         delay: 0,
-        inViewClass: 'uk-scrollspy-inview' }),
-
-
+        inViewClass: "uk-scrollspy-inview"
+      }),
       computed: {
         elements: {
-          get(_ref, $el) {let { target } = _ref;
+          get({ target }, $el) {
             return target ? $$(target, $el) : [$el];
           },
-
-          watch(elements, prev) {
+          watch(elements) {
             if (this.hidden) {
-              css(filter(elements, ":not(." + this.inViewClass + ")"), 'visibility', 'hidden');
-            }
-
-            if (!isEqual(elements, prev)) {
-              this.$reset();
+              css(filter(elements, `:not(.${this.inViewClass})`), "opacity", 0);
             }
           },
-
-          immediate: true } },
-
-
-
+          immediate: true
+        }
+      },
       connected() {
-        this._data.elements = new Map();
-        this.registerObserver(
-        observeIntersection(
-        this.elements,
-        (records) => {
+        this._data.elements = /* @__PURE__ */ new Map();
+      },
+      disconnected() {
+        for (const [el, state] of this._data.elements.entries()) {
+          removeClass(el, this.inViewClass, (state == null ? void 0 : state.cls) || "");
+        }
+      },
+      observe: intersection({
+        target: ({ elements }) => elements,
+        handler(records) {
           const elements = this._data.elements;
           for (const { target: el, isIntersecting } of records) {
             if (!elements.has(el)) {
               elements.set(el, {
-                cls: data(el, 'uk-scrollspy-class') || this.cls });
-
+                cls: data(el, "uk-scrollspy-class") || this.cls
+              });
             }
-
             const state = elements.get(el);
             if (!this.repeat && state.show) {
               continue;
             }
-
             state.show = isIntersecting;
           }
-
           this.$emit();
         },
-        {
-          rootMargin: toPx(this.offsetTop, 'height') - 1 + "px " + (
-          toPx(this.offsetLeft, 'width') - 1) + "px" },
-
-
-        false));
-
-
-      },
-
-      disconnected() {
-        for (const [el, state] of this._data.elements.entries()) {
-          removeClass(el, this.inViewClass, (state == null ? void 0 : state.cls) || '');
-        }
-      },
-
+        options: (instance) => ({ rootMargin: instance.margin }),
+        args: { intersecting: false }
+      }),
       update: [
-      {
-        write(data) {
-          for (const [el, state] of data.elements.entries()) {
-            if (state.show && !state.inview && !state.queued) {
-              state.queued = true;
-
-              data.promise = (data.promise || Promise.resolve()).
-              then(() => new Promise((resolve) => setTimeout(resolve, this.delay))).
-              then(() => {
-                this.toggle(el, true);
-                setTimeout(() => {
-                  state.queued = false;
-                  this.$emit();
-                }, 300);
-              });
-            } else if (!state.show && state.inview && !state.queued && this.repeat) {
-              this.toggle(el, false);
+        {
+          write(data) {
+            for (const [el, state] of data.elements.entries()) {
+              if (state.show && !state.inview && !state.queued) {
+                state.queued = true;
+                data.promise = (data.promise || Promise.resolve()).then(() => new Promise((resolve) => setTimeout(resolve, this.delay))).then(() => {
+                  this.toggle(el, true);
+                  setTimeout(() => {
+                    state.queued = false;
+                    this.$emit();
+                  }, 300);
+                });
+              } else if (!state.show && state.inview && !state.queued && this.repeat) {
+                this.toggle(el, false);
+              }
             }
           }
-        } }],
-
-
-
+        }
+      ],
       methods: {
         toggle(el, inview) {
+          var _a;
           const state = this._data.elements.get(el);
-
           if (!state) {
             return;
           }
-
-          state.off == null ? void 0 : state.off();
-
-          css(el, 'visibility', !inview && this.hidden ? 'hidden' : '');
-
+          (_a = state.off) == null ? void 0 : _a.call(state);
+          css(el, "opacity", !inview && this.hidden ? 0 : "");
           toggleClass(el, this.inViewClass, inview);
           toggleClass(el, state.cls);
-
           if (/\buk-animation-/.test(state.cls)) {
-            const removeAnimationClasses = () => removeClasses(el, 'uk-animation-[\\w-]+');
+            const removeAnimationClasses = () => removeClasses(el, "uk-animation-[\\w-]+");
             if (inview) {
-              state.off = once(el, 'animationcancel animationend', removeAnimationClasses);
+              state.off = once(el, "animationcancel animationend", removeAnimationClasses);
             } else {
               removeAnimationClasses();
             }
           }
-
-          trigger(el, inview ? 'inview' : 'outview');
-
+          trigger(el, inview ? "inview" : "outview");
           state.inview = inview;
-
           this.$update(el);
-        } } };
+        }
+      }
+    };
 
     var scrollspyNav = {
-      mixins: [Scroll],
-
       props: {
         cls: String,
         closest: String,
         scroll: Boolean,
         overflow: Boolean,
-        offset: Number },
-
-
+        offset: Number
+      },
       data: {
-        cls: 'uk-active',
+        cls: "uk-active",
         closest: false,
         scroll: false,
         overflow: true,
-        offset: 0 },
-
-
+        offset: 0
+      },
       computed: {
         links: {
           get(_, $el) {
-            return $$('a[href^="#"]', $el).filter((el) => el.hash);
+            return $$('a[href*="#"]', $el).filter((el) => el.hash && isSameSiteAnchor(el));
           },
-
           watch(links) {
             if (this.scroll) {
-              this.$create('scroll', links, { offset: this.offset || 0 });
+              this.$create("scroll", links, { offset: this.offset || 0 });
             }
           },
-
-          immediate: true },
-
-
-        elements(_ref) {let { closest: selector } = _ref;
-          return closest(this.links, selector || '*');
-        } },
-
-
+          immediate: true
+        },
+        elements({ closest: selector }) {
+          return closest(this.links, selector || "*");
+        }
+      },
+      observe: scroll$1(),
       update: [
-      {
-        read() {
-          const targets = this.links.map(getTargetElement).filter(Boolean);
-
-          const { length } = targets;
-
-          if (!length || !isVisible(this.$el)) {
-            return false;
-          }
-
-          const [scrollElement] = scrollParents(targets, /auto|scroll/, true);
-          const { scrollTop, scrollHeight } = scrollElement;
-          const viewport = offsetViewport(scrollElement);
-          const max = scrollHeight - viewport.height;
-          let active = false;
-
-          if (scrollTop === max) {
-            active = length - 1;
-          } else {
-            for (let i = 0; i < targets.length; i++) {
-              if (offset(targets[i]).top - viewport.top - this.offset > 0) {
-                break;
+        {
+          read() {
+            const targets = this.links.map(getTargetedElement).filter(Boolean);
+            const { length } = targets;
+            if (!length || !isVisible(this.$el)) {
+              return false;
+            }
+            const [scrollElement] = scrollParents(targets, true);
+            const { scrollTop, scrollHeight } = scrollElement;
+            const viewport = offsetViewport(scrollElement);
+            const max = scrollHeight - viewport.height;
+            let active = false;
+            if (scrollTop === max) {
+              active = length - 1;
+            } else {
+              for (let i = 0; i < targets.length; i++) {
+                if (offset(targets[i]).top - viewport.top - this.offset > 0) {
+                  break;
+                }
+                active = +i;
               }
-              active = +i;
+              if (active === false && this.overflow) {
+                active = 0;
+              }
             }
-
-            if (active === false && this.overflow) {
-              active = 0;
+            return { active };
+          },
+          write({ active }) {
+            const changed = active !== false && !hasClass(this.elements[active], this.cls);
+            this.links.forEach((el) => el.blur());
+            for (let i = 0; i < this.elements.length; i++) {
+              toggleClass(this.elements[i], this.cls, +i === active);
             }
-          }
-
-          return { active };
-        },
-
-        write(_ref2) {let { active } = _ref2;
-          const changed = active !== false && !hasClass(this.elements[active], this.cls);
-
-          this.links.forEach((el) => el.blur());
-          for (let i = 0; i < this.elements.length; i++) {
-            toggleClass(this.elements[i], this.cls, +i === active);
-          }
-
-          if (changed) {
-            trigger(this.$el, 'active', [active, this.elements[active]]);
-          }
-        },
-
-        events: ['scroll', 'resize'] }] };
+            if (changed) {
+              trigger(this.$el, "active", [active, this.elements[active]]);
+            }
+          },
+          events: ["scroll", "resize"]
+        }
+      ]
+    };
 
     var sticky = {
-      mixins: [Class, Media, Resize, Scroll],
-
+      mixins: [Class, Media],
       props: {
         position: String,
         top: null,
@@ -6893,309 +5603,270 @@
         clsBelow: String,
         selTarget: String,
         showOnUp: Boolean,
-        targetOffset: Number },
-
-
+        targetOffset: Number
+      },
       data: {
-        position: 'top',
+        position: "top",
         top: false,
         bottom: false,
         start: false,
         end: false,
         offset: 0,
         overflowFlip: false,
-        animation: '',
-        clsActive: 'uk-active',
-        clsInactive: '',
-        clsFixed: 'uk-sticky-fixed',
-        clsBelow: 'uk-sticky-below',
-        selTarget: '',
+        animation: "",
+        clsActive: "uk-active",
+        clsInactive: "",
+        clsFixed: "uk-sticky-fixed",
+        clsBelow: "uk-sticky-below",
+        selTarget: "",
         showOnUp: false,
-        targetOffset: false },
-
-
-      computed: {
-        selTarget(_ref, $el) {let { selTarget } = _ref;
-          return selTarget && $(selTarget, $el) || $el;
-        } },
-
-
-      resizeTargets() {
-        return document.documentElement;
+        targetOffset: false
       },
-
+      computed: {
+        selTarget({ selTarget }, $el) {
+          return selTarget && $(selTarget, $el) || $el;
+        }
+      },
       connected() {
         this.start = coerce(this.start || this.top);
         this.end = coerce(this.end || this.bottom);
-
-        this.placeholder =
-        $('+ .uk-sticky-placeholder', this.$el) ||
-        $('<div class="uk-sticky-placeholder"></div>');
+        this.placeholder = $("+ .uk-sticky-placeholder", this.$el) || $('<div class="uk-sticky-placeholder"></div>');
         this.isFixed = false;
         this.setActive(false);
       },
-
       disconnected() {
         if (this.isFixed) {
           this.hide();
           removeClass(this.selTarget, this.clsInactive);
         }
-
+        reset(this.$el);
         remove$1(this.placeholder);
         this.placeholder = null;
       },
-
+      observe: [
+        resize({
+          handler() {
+            !this.isFixed && this.$emit("resize");
+          }
+        }),
+        resize({ target: () => [document.documentElement] }),
+        scroll$1()
+      ],
       events: [
-      {
-        name: 'resize',
-
-        el() {
-          return window;
-        },
-
-        handler() {
-          this.$emit('resize');
-        } },
-
-      {
-        name: 'load hashchange popstate',
-
-        el() {
-          return window;
-        },
-
-        filter() {
-          return this.targetOffset !== false;
-        },
-
-        handler() {
-          const { scrollingElement } = document;
-
-          if (!location.hash || scrollingElement.scrollTop === 0) {
-            return;
-          }
-
-          setTimeout(() => {
-            const targetOffset = offset($(location.hash));
-            const elOffset = offset(this.$el);
-
-            if (this.isFixed && intersectRect(targetOffset, elOffset)) {
-              scrollingElement.scrollTop =
-              targetOffset.top -
-              elOffset.height -
-              toPx(this.targetOffset, 'height', this.placeholder) -
-              toPx(this.offset, 'height', this.placeholder);
-            }
-          });
-        } }],
-
-
-
-      update: [
-      {
-        read(_ref2, types) {let { height: height$1, margin } = _ref2;
-          this.inactive = !this.matchMedia || !isVisible(this.$el);
-
-          if (this.inactive) {
-            return false;
-          }
-
-          const hide = this.active && types.has('resize');
-          if (hide) {
-            css(this.selTarget, 'transition', '0s');
-            this.hide();
-          }
-
-          if (!this.active) {
-            height$1 = offset(this.$el).height;
-            margin = css(this.$el, 'margin');
-          }
-
-          if (hide) {
-            this.show();
-            requestAnimationFrame(() => css(this.selTarget, 'transition', ''));
-          }
-
-          const referenceElement = this.isFixed ? this.placeholder : this.$el;
-          const windowHeight = height(window);
-
-          let position = this.position;
-          if (this.overflowFlip && height$1 > windowHeight) {
-            position = position === 'top' ? 'bottom' : 'top';
-          }
-
-          let offset$1 = toPx(this.offset, 'height', referenceElement);
-          if (position === 'bottom' && (height$1 < windowHeight || this.overflowFlip)) {
-            offset$1 += windowHeight - height$1;
-          }
-
-          const overflow = this.overflowFlip ?
-          0 :
-          Math.max(0, height$1 + offset$1 - windowHeight);
-          const topOffset = offset(referenceElement).top;
-
-          const start =
-          (this.start === false ?
-          topOffset :
-          parseProp(this.start, this.$el, topOffset)) - offset$1;
-          const end =
-          this.end === false ?
-          document.scrollingElement.scrollHeight - windowHeight :
-          parseProp(this.end, this.$el, topOffset + height$1, true) -
-          offset(this.$el).height +
-          overflow -
-          offset$1;
-
-          return {
-            start,
-            end,
-            offset: offset$1,
-            overflow,
-            topOffset,
-            height: height$1,
-            margin,
-            width: dimensions(referenceElement).width,
-            top: offsetPosition(referenceElement)[0] };
-
-        },
-
-        write(_ref3) {let { height, margin } = _ref3;
-          const { placeholder } = this;
-
-          css(placeholder, { height, margin });
-
-          if (!within(placeholder, document)) {
-            after(this.$el, placeholder);
-            placeholder.hidden = true;
+        {
+          name: "resize",
+          el() {
+            return [window, window.visualViewport];
+          },
+          handler() {
+            this.$emit("resizeViewport");
           }
         },
-
-        events: ['resize'] },
-
-
-      {
-        read(_ref4)
-
-
-
-
-
-
-        {let { scroll: prevScroll = 0, dir: prevDir = 'down', overflow, overflowScroll = 0, start, end } = _ref4;
-          const scroll = document.scrollingElement.scrollTop;
-          const dir = prevScroll <= scroll ? 'down' : 'up';
-
-          return {
-            dir,
-            prevDir,
-            scroll,
-            prevScroll,
-            offsetParentTop: offset(
-            (this.isFixed ? this.placeholder : this.$el).offsetParent).
-            top,
-            overflowScroll: clamp(
-            overflowScroll + clamp(scroll, start, end) - clamp(prevScroll, start, end),
-            0,
-            overflow) };
-
-
-        },
-
-        write(data, types) {
-          const isScrollUpdate = types.has('scroll');
-          const {
-            initTimestamp = 0,
-            dir,
-            prevDir,
-            scroll,
-            prevScroll = 0,
-            top,
-            start,
-            topOffset,
-            height } =
-          data;
-
-          if (
-          scroll < 0 ||
-          scroll === prevScroll && isScrollUpdate ||
-          this.showOnUp && !isScrollUpdate && !this.isFixed)
-          {
-            return;
-          }
-
-          const now = Date.now();
-          if (now - initTimestamp > 300 || dir !== prevDir) {
-            data.initScroll = scroll;
-            data.initTimestamp = now;
-          }
-
-          if (
-          this.showOnUp &&
-          !this.isFixed &&
-          Math.abs(data.initScroll - scroll) <= 30 &&
-          Math.abs(prevScroll - scroll) <= 10)
-          {
-            return;
-          }
-
-          if (
-          this.inactive ||
-          scroll < start ||
-          this.showOnUp && (
-          scroll <= start ||
-          dir === 'down' && isScrollUpdate ||
-          dir === 'up' && !this.isFixed && scroll <= topOffset + height))
-          {
-            if (!this.isFixed) {
-              if (Animation.inProgress(this.$el) && top > scroll) {
-                Animation.cancel(this.$el);
-                this.hide();
-              }
-
+        {
+          name: "load hashchange popstate",
+          el() {
+            return window;
+          },
+          filter() {
+            return this.targetOffset !== false;
+          },
+          handler() {
+            const { scrollingElement } = document;
+            if (!location.hash || scrollingElement.scrollTop === 0) {
               return;
             }
-
-            this.isFixed = false;
-
-            if (this.animation && scroll > topOffset) {
-              Animation.cancel(this.$el);
-              Animation.out(this.$el, this.animation).then(() => this.hide(), noop);
-            } else {
+            setTimeout(() => {
+              const targetOffset = offset($(location.hash));
+              const elOffset = offset(this.$el);
+              if (this.isFixed && intersectRect(targetOffset, elOffset)) {
+                scrollingElement.scrollTop = targetOffset.top - elOffset.height - toPx(this.targetOffset, "height", this.placeholder) - toPx(this.offset, "height", this.placeholder);
+              }
+            });
+          }
+        }
+      ],
+      update: [
+        {
+          read({ height: height$1, width, margin, sticky }, types) {
+            this.inactive = !this.matchMedia || !isVisible(this.$el);
+            if (this.inactive) {
+              return;
+            }
+            const hide = this.isFixed && types.has("resize") && !sticky;
+            if (hide) {
+              css(this.selTarget, "transition", "0s");
               this.hide();
             }
-          } else if (this.isFixed) {
-            this.update();
-          } else if (this.animation && scroll > topOffset) {
-            Animation.cancel(this.$el);
-            this.show();
-            Animation.in(this.$el, this.animation).catch(noop);
-          } else {
-            this.show();
-          }
+            if (!this.active) {
+              ({ height: height$1, width } = offset(this.$el));
+              margin = css(this.$el, "margin");
+            }
+            if (hide) {
+              this.show();
+              requestAnimationFrame(() => css(this.selTarget, "transition", ""));
+            }
+            const viewport = toPx("100vh", "height");
+            const dynamicViewport = height(window);
+            const maxScrollHeight = document.scrollingElement.scrollHeight - viewport;
+            let position = this.position;
+            if (this.overflowFlip && height$1 > viewport) {
+              position = position === "top" ? "bottom" : "top";
+            }
+            const referenceElement = this.isFixed ? this.placeholder : this.$el;
+            let offset$1 = toPx(this.offset, "height", sticky ? this.$el : referenceElement);
+            if (position === "bottom" && (height$1 < dynamicViewport || this.overflowFlip)) {
+              offset$1 += dynamicViewport - height$1;
+            }
+            const overflow = this.overflowFlip ? 0 : Math.max(0, height$1 + offset$1 - viewport);
+            const topOffset = offset(referenceElement).top;
+            const elHeight = offset(this.$el).height;
+            const start = (this.start === false ? topOffset : parseProp(this.start, this.$el, topOffset)) - offset$1;
+            const end = this.end === false ? maxScrollHeight : Math.min(
+              maxScrollHeight,
+              parseProp(this.end, this.$el, topOffset + height$1, true) - elHeight - offset$1 + overflow
+            );
+            sticky = maxScrollHeight && !this.showOnUp && start + offset$1 === topOffset && end === Math.min(
+              maxScrollHeight,
+              parseProp("!*", this.$el, 0, true) - elHeight - offset$1 + overflow
+            ) && css(parent(this.$el), "overflowY") === "visible";
+            return {
+              start,
+              end,
+              offset: offset$1,
+              overflow,
+              topOffset,
+              height: height$1,
+              elHeight,
+              width,
+              margin,
+              top: offsetPosition(referenceElement)[0],
+              sticky
+            };
+          },
+          write({ height, width, margin, offset, sticky }) {
+            if (this.inactive || sticky || !this.isFixed) {
+              reset(this.$el);
+            }
+            if (this.inactive) {
+              return;
+            }
+            if (sticky) {
+              height = width = margin = 0;
+              css(this.$el, { position: "sticky", top: offset });
+            }
+            const { placeholder } = this;
+            css(placeholder, { height, width, margin });
+            if (!within(placeholder, document)) {
+              placeholder.hidden = true;
+            }
+            (sticky ? before : after)(this.$el, placeholder);
+          },
+          events: ["resize", "resizeViewport"]
         },
-
-        events: ['resize', 'scroll'] }],
-
-
-
+        {
+          read({
+            scroll: prevScroll = 0,
+            dir: prevDir = "down",
+            overflow,
+            overflowScroll = 0,
+            start,
+            end
+          }) {
+            const scroll2 = document.scrollingElement.scrollTop;
+            const dir = prevScroll <= scroll2 ? "down" : "up";
+            return {
+              dir,
+              prevDir,
+              scroll: scroll2,
+              prevScroll,
+              offsetParentTop: offset(
+                (this.isFixed ? this.placeholder : this.$el).offsetParent
+              ).top,
+              overflowScroll: clamp(
+                overflowScroll + clamp(scroll2, start, end) - clamp(prevScroll, start, end),
+                0,
+                overflow
+              )
+            };
+          },
+          write(data, types) {
+            const isScrollUpdate = types.has("scroll");
+            const {
+              initTimestamp = 0,
+              dir,
+              prevDir,
+              scroll: scroll2,
+              prevScroll = 0,
+              top,
+              start,
+              topOffset,
+              height
+            } = data;
+            if (scroll2 < 0 || scroll2 === prevScroll && isScrollUpdate || this.showOnUp && !isScrollUpdate && !this.isFixed) {
+              return;
+            }
+            const now = Date.now();
+            if (now - initTimestamp > 300 || dir !== prevDir) {
+              data.initScroll = scroll2;
+              data.initTimestamp = now;
+            }
+            if (this.showOnUp && !this.isFixed && Math.abs(data.initScroll - scroll2) <= 30 && Math.abs(prevScroll - scroll2) <= 10) {
+              return;
+            }
+            if (this.inactive || scroll2 < start || this.showOnUp && (scroll2 <= start || dir === "down" && isScrollUpdate || dir === "up" && !this.isFixed && scroll2 <= topOffset + height)) {
+              if (!this.isFixed) {
+                if (Animation.inProgress(this.$el) && top > scroll2) {
+                  Animation.cancel(this.$el);
+                  this.hide();
+                }
+                return;
+              }
+              if (this.animation && scroll2 > topOffset) {
+                Animation.cancel(this.$el);
+                Animation.out(this.$el, this.animation).then(() => this.hide(), noop);
+              } else {
+                this.hide();
+              }
+            } else if (this.isFixed) {
+              this.update();
+            } else if (this.animation && scroll2 > topOffset) {
+              Animation.cancel(this.$el);
+              this.show();
+              Animation.in(this.$el, this.animation).catch(noop);
+            } else {
+              this.show();
+            }
+          },
+          events: ["resize", "resizeViewport", "scroll"]
+        }
+      ],
       methods: {
         show() {
           this.isFixed = true;
           this.update();
           this.placeholder.hidden = false;
         },
-
         hide() {
+          const { offset, sticky } = this._data;
           this.setActive(false);
           removeClass(this.$el, this.clsFixed, this.clsBelow);
-          css(this.$el, { position: '', top: '', width: '' });
+          if (sticky) {
+            css(this.$el, "top", offset);
+          } else {
+            css(this.$el, {
+              position: "",
+              top: "",
+              width: "",
+              marginTop: ""
+            });
+          }
           this.placeholder.hidden = true;
+          this.isFixed = false;
         },
-
         update() {
           let {
             width,
-            scroll = 0,
+            scroll: scroll2 = 0,
             overflow,
             overflowScroll = 0,
             start,
@@ -7203,449 +5874,408 @@
             offset,
             topOffset,
             height,
-            offsetParentTop } =
-          this._data;
-          const active = start !== 0 || scroll > start;
-          let position = 'fixed';
-
-          if (scroll > end) {
-            offset += end - offsetParentTop;
-            position = 'absolute';
+            elHeight,
+            offsetParentTop,
+            sticky
+          } = this._data;
+          const active = start !== 0 || scroll2 > start;
+          if (!sticky) {
+            let position = "fixed";
+            if (scroll2 > end) {
+              offset += end - offsetParentTop;
+              position = "absolute";
+            }
+            css(this.$el, { position, width });
+            css(this.$el, "marginTop", 0, "important");
           }
-
           if (overflow) {
             offset -= overflowScroll;
           }
-
-          css(this.$el, {
-            position,
-            top: offset + "px",
-            width });
-
-
+          css(this.$el, "top", offset);
           this.setActive(active);
-          toggleClass(this.$el, this.clsBelow, scroll > topOffset + height);
+          toggleClass(
+            this.$el,
+            this.clsBelow,
+            scroll2 > topOffset + (sticky ? Math.min(height, elHeight) : height)
+          );
           addClass(this.$el, this.clsFixed);
         },
-
         setActive(active) {
           const prev = this.active;
           this.active = active;
           if (active) {
             replaceClass(this.selTarget, this.clsInactive, this.clsActive);
-            prev !== active && trigger(this.$el, 'active');
+            prev !== active && trigger(this.$el, "active");
           } else {
             replaceClass(this.selTarget, this.clsActive, this.clsInactive);
-            prev !== active && trigger(this.$el, 'inactive');
+            prev !== active && trigger(this.$el, "inactive");
           }
-        } } };
-
-
-
+        }
+      }
+    };
     function parseProp(value, el, propOffset, padding) {
       if (!value) {
         return 0;
       }
-
       if (isNumeric(value) || isString(value) && value.match(/^-?\d/)) {
-        return propOffset + toPx(value, 'height', el, true);
+        return propOffset + toPx(value, "height", el, true);
       } else {
         const refElement = value === true ? parent(el) : query(value, el);
-        return (
-          offset(refElement).bottom - (
-          padding && refElement && within(el, refElement) ?
-          toFloat(css(refElement, 'paddingBottom')) :
-          0));
-
+        return offset(refElement).bottom - (padding && refElement && within(el, refElement) ? toFloat(css(refElement, "paddingBottom")) : 0);
       }
     }
-
     function coerce(value) {
-      if (value === 'true') {
+      if (value === "true") {
         return true;
-      } else if (value === 'false') {
+      } else if (value === "false") {
         return false;
       }
       return value;
     }
+    function reset(el) {
+      css(el, { position: "", top: "", marginTop: "", width: "" });
+    }
 
+    const selDisabled = ".uk-disabled *, .uk-disabled, [disabled]";
     var Switcher = {
-      mixins: [Lazyload, Swipe, Togglable],
-
-      args: 'connect',
-
+      mixins: [Togglable],
+      args: "connect",
       props: {
         connect: String,
         toggle: String,
         itemNav: String,
-        active: Number },
-
-
+        active: Number,
+        followFocus: Boolean,
+        swiping: Boolean
+      },
       data: {
-        connect: '~.uk-switcher',
-        toggle: '> * > :first-child',
+        connect: "~.uk-switcher",
+        toggle: "> * > :first-child",
         itemNav: false,
         active: 0,
-        cls: 'uk-active',
-        attrItem: 'uk-switcher-item' },
-
-
+        cls: "uk-active",
+        attrItem: "uk-switcher-item",
+        selVertical: ".uk-nav",
+        followFocus: false,
+        swiping: true
+      },
       computed: {
         connects: {
-          get(_ref, $el) {let { connect } = _ref;
+          get({ connect }, $el) {
             return queryAll(connect, $el);
           },
-
           watch(connects) {
             if (this.swiping) {
-              css(connects, 'touchAction', 'pan-y pinch-zoom');
+              css(connects, "touchAction", "pan-y pinch-zoom");
             }
-
+            this.$emit();
+          },
+          document: true,
+          immediate: true
+        },
+        connectChildren: {
+          get() {
+            return this.connects.map((el) => children(el)).flat();
+          },
+          watch() {
             const index = this.index();
-            this.connects.forEach((el) =>
-            children(el).forEach((child, i) => toggleClass(child, this.cls, i === index)));
-
+            for (const el of this.connects) {
+              children(el).forEach((child, i) => toggleClass(child, this.cls, i === index));
+            }
+            this.$emit();
           },
-
-          immediate: true },
-
-
+          immediate: true
+        },
         toggles: {
-          get(_ref2, $el) {let { toggle } = _ref2;
-            return $$(toggle, $el).filter(
-            (el) => !matches(el, '.uk-disabled *, .uk-disabled, [disabled]'));
-
+          get({ toggle }, $el) {
+            return $$(toggle, $el);
           },
-
           watch(toggles) {
+            this.$emit();
             const active = this.index();
             this.show(~active ? active : toggles[this.active] || toggles[0]);
           },
-
-          immediate: true },
-
-
+          immediate: true
+        },
         children() {
-          return children(this.$el).filter((child) =>
-          this.toggles.some((toggle) => within(toggle, child)));
-
-        },
-
-        swipeTarget() {
-          return this.connects;
-        } },
-
-
-      connected() {
-        this.lazyload(this.$el, this.connects);
-
-        // check for connects
-        ready(() => this.$emit());
+          return children(this.$el).filter(
+            (child) => this.toggles.some((toggle) => within(toggle, child))
+          );
+        }
       },
-
+      connected() {
+        attr(this.$el, "role", "tablist");
+      },
+      observe: [
+        lazyload({ targets: ({ connectChildren }) => connectChildren }),
+        swipe({ target: ({ connects }) => connects, filter: ({ swiping }) => swiping })
+      ],
       events: [
-      {
-        name: 'click',
-
-        delegate() {
-          return this.toggle;
+        {
+          name: "click keydown",
+          delegate() {
+            return this.toggle;
+          },
+          handler(e) {
+            if (!matches(e.current, selDisabled) && (e.type === "click" || e.keyCode === keyMap.SPACE)) {
+              e.preventDefault();
+              this.show(e.current);
+            }
+          }
         },
-
-        handler(e) {
-          e.preventDefault();
-          this.show(e.current);
-        } },
-
-
-      {
-        name: 'click',
-
-        el() {
-          return this.connects.concat(this.itemNav ? queryAll(this.itemNav, this.$el) : []);
+        {
+          name: "keydown",
+          delegate() {
+            return this.toggle;
+          },
+          handler(e) {
+            const { current, keyCode } = e;
+            const isVertical = matches(this.$el, this.selVertical);
+            let i = keyCode === keyMap.HOME ? 0 : keyCode === keyMap.END ? "last" : keyCode === keyMap.LEFT && !isVertical || keyCode === keyMap.UP && isVertical ? "previous" : keyCode === keyMap.RIGHT && !isVertical || keyCode === keyMap.DOWN && isVertical ? "next" : -1;
+            if (~i) {
+              e.preventDefault();
+              const toggles = this.toggles.filter((el) => !matches(el, selDisabled));
+              const next = toggles[getIndex(i, toggles, toggles.indexOf(current))];
+              next.focus();
+              if (this.followFocus) {
+                this.show(next);
+              }
+            }
+          }
         },
-
-        delegate() {
-          return "[" + this.attrItem + "],[data-" + this.attrItem + "]";
+        {
+          name: "click",
+          el() {
+            return this.connects.concat(this.itemNav ? queryAll(this.itemNav, this.$el) : []);
+          },
+          delegate() {
+            return `[${this.attrItem}],[data-${this.attrItem}]`;
+          },
+          handler(e) {
+            if (closest(e.target, "a,button")) {
+              e.preventDefault();
+              this.show(data(e.current, this.attrItem));
+            }
+          }
         },
-
-        handler(e) {
-          e.preventDefault();
-          this.show(data(e.current, this.attrItem));
-        } },
-
-
-      {
-        name: 'swipeRight swipeLeft',
-
-        filter() {
-          return this.swiping;
-        },
-
-        el() {
-          return this.connects;
-        },
-
-        handler(_ref3) {let { type } = _ref3;
-          this.show(endsWith(type, 'Left') ? 'next' : 'previous');
-        } }],
-
-
-
+        {
+          name: "swipeRight swipeLeft",
+          filter() {
+            return this.swiping;
+          },
+          el() {
+            return this.connects;
+          },
+          handler({ type }) {
+            this.show(endsWith(type, "Left") ? "next" : "previous");
+          }
+        }
+      ],
+      update() {
+        var _a;
+        attr(this.connects, "role", "presentation");
+        attr(children(this.$el), "role", "presentation");
+        for (const index in this.toggles) {
+          const toggle = this.toggles[index];
+          const item = (_a = this.connects[0]) == null ? void 0 : _a.children[index];
+          attr(toggle, "role", "tab");
+          if (!item) {
+            continue;
+          }
+          toggle.id = generateId(this, toggle, `-tab-${index}`);
+          item.id = generateId(this, item, `-tabpanel-${index}`);
+          attr(toggle, "aria-controls", item.id);
+          attr(item, { role: "tabpanel", "aria-labelledby": toggle.id });
+        }
+        attr(this.$el, "aria-orientation", matches(this.$el, this.selVertical) ? "vertical" : null);
+      },
       methods: {
         index() {
           return findIndex(this.children, (el) => hasClass(el, this.cls));
         },
-
         show(item) {
+          const toggles = this.toggles.filter((el) => !matches(el, selDisabled));
           const prev = this.index();
-          const next = getIndex(item, this.toggles, prev);
-          const active = getIndex(this.children[next], children(this.$el));
-          children(this.$el).forEach((child, i) => {
+          const next = getIndex(
+            !isNode(item) || includes(toggles, item) ? item : 0,
+            toggles,
+            getIndex(this.toggles[prev], toggles)
+          );
+          const active = getIndex(toggles[next], this.toggles);
+          this.children.forEach((child, i) => {
             toggleClass(child, this.cls, active === i);
-            attr(this.toggles[i], 'aria-expanded', active === i);
+            attr(this.toggles[i], {
+              "aria-selected": active === i,
+              tabindex: active === i ? null : -1
+            });
           });
-
           const animate = prev >= 0 && prev !== next;
-          this.connects.forEach(async (_ref4) => {let { children } = _ref4;
+          this.connects.forEach(async ({ children: children2 }) => {
             await this.toggleElement(
-            toNodes(children).filter((child) => hasClass(child, this.cls)),
-            false,
-            animate);
-
-            await this.toggleElement(children[active], true, animate);
+              toNodes(children2).filter((child) => hasClass(child, this.cls)),
+              false,
+              animate
+            );
+            await this.toggleElement(children2[active], true, animate);
           });
-        } } };
+        }
+      }
+    };
 
     var tab = {
       mixins: [Class],
-
       extends: Switcher,
-
       props: {
-        media: Boolean },
-
-
+        media: Boolean
+      },
       data: {
         media: 960,
-        attrItem: 'uk-tab-item' },
-
-
+        attrItem: "uk-tab-item",
+        selVertical: ".uk-tab-left,.uk-tab-right"
+      },
       connected() {
-        const cls = hasClass(this.$el, 'uk-tab-left') ?
-        'uk-tab-left' :
-        hasClass(this.$el, 'uk-tab-right') ?
-        'uk-tab-right' :
-        false;
-
+        const cls = hasClass(this.$el, "uk-tab-left") ? "uk-tab-left" : hasClass(this.$el, "uk-tab-right") ? "uk-tab-right" : false;
         if (cls) {
-          this.$create('toggle', this.$el, { cls, mode: 'media', media: this.media });
+          this.$create("toggle", this.$el, { cls, mode: "media", media: this.media });
         }
-      } };
+      }
+    };
 
     const KEY_SPACE = 32;
-
     var toggle = {
-      mixins: [Lazyload, Media, Togglable],
-
-      args: 'target',
-
+      mixins: [Media, Togglable],
+      args: "target",
       props: {
         href: String,
         target: null,
-        mode: 'list',
-        queued: Boolean },
-
-
+        mode: "list",
+        queued: Boolean
+      },
       data: {
         href: false,
         target: false,
-        mode: 'click',
-        queued: true },
-
-
-      computed: {
-        target: {
-          get(_ref, $el) {let { href, target } = _ref;
-            target = queryAll(target || href, $el);
-            return target.length && target || [$el];
-          },
-
-          watch() {
-            this.updateAria();
-          },
-
-          immediate: true } },
-
-
-
-      connected() {
-        if (!includes(this.mode, 'media') && !isFocusable(this.$el)) {
-          attr(this.$el, 'tabindex', '0');
-        }
-
-        this.lazyload(this.$el, this.target);
-
-        // check for target
-        ready(() => this.$emit());
+        mode: "click",
+        queued: true
       },
-
+      computed: {
+        target({ href, target }, $el) {
+          target = queryAll(target || href, $el);
+          return target.length && target || [$el];
+        }
+      },
+      connected() {
+        if (!includes(this.mode, "media")) {
+          if (!isFocusable(this.$el)) {
+            attr(this.$el, "tabindex", "0");
+          }
+          if (!this.cls && isTag(this.$el, "a")) {
+            attr(this.$el, "role", "button");
+          }
+        }
+      },
+      observe: lazyload({ target: ({ target }) => target }),
       events: [
-      {
-        name: pointerDown,
-
-        filter() {
-          return includes(this.mode, 'hover');
-        },
-
-        handler(e) {
-          this._preventClick = null;
-
-          if (!isTouch(e) || this._showState) {
-            return;
-          }
-
-          // Clicking a button does not give it focus on all browsers and platforms
-          // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#clicking_and_focus
-          trigger(this.$el, 'focus');
-          once(
-          document,
-          pointerDown,
-          () => trigger(this.$el, 'blur'),
-          true,
-          (e) => !within(e.target, this.$el));
-
-
-          // Prevent initial click to prevent double toggle through focus + click
-          if (includes(this.mode, 'click')) {
-            this._preventClick = true;
-          }
-        } },
-
-
-      {
-        name: pointerEnter + " " + pointerLeave + " focus blur",
-
-        filter() {
-          return includes(this.mode, 'hover');
-        },
-
-        handler(e) {
-          if (isTouch(e)) {
-            return;
-          }
-
-          const show = includes([pointerEnter, 'focus'], e.type);
-          const expanded = attr(this.$el, 'aria-expanded');
-
-          // Skip hide if still hovered or focused
-          if (
-          !show && (
-          e.type === pointerLeave && matches(this.$el, ':focus') ||
-          e.type === 'blur' && matches(this.$el, ':hover')))
-          {
-            return;
-          }
-
-          // Skip if state does not change e.g. hover + focus received
-          if (this._showState && show && expanded !== this._showState) {
-            // Ensure reset if state has changed through click
-            if (!show) {
-              this._showState = null;
+        {
+          name: pointerDown,
+          filter() {
+            return includes(this.mode, "hover");
+          },
+          handler(e) {
+            this._preventClick = null;
+            if (!isTouch(e) || this._showState || this.$el.disabled) {
+              return;
             }
-            return;
+            trigger(this.$el, "focus");
+            once(
+              document,
+              pointerDown,
+              () => trigger(this.$el, "blur"),
+              true,
+              (e2) => !within(e2.target, this.$el)
+            );
+            if (includes(this.mode, "click")) {
+              this._preventClick = true;
+            }
           }
-
-          this._showState = show ? expanded : null;
-
-          this.toggle("toggle" + (show ? 'show' : 'hide'));
-        } },
-
-
-      {
-        name: 'keydown',
-
-        filter() {
-          return includes(this.mode, 'click') && !isTag(this.$el, 'input');
         },
-
-        handler(e) {
-          if (e.keyCode === KEY_SPACE) {
-            e.preventDefault();
-            this.$el.click();
+        {
+          name: `${pointerEnter} ${pointerLeave} focus blur`,
+          filter() {
+            return includes(this.mode, "hover");
+          },
+          handler(e) {
+            if (isTouch(e) || this.$el.disabled) {
+              return;
+            }
+            const show = includes([pointerEnter, "focus"], e.type);
+            const expanded = this.isToggled(this.target);
+            if (!show && (e.type === pointerLeave && matches(this.$el, ":focus") || e.type === "blur" && matches(this.$el, ":hover"))) {
+              return;
+            }
+            if (this._showState && show && expanded !== this._showState) {
+              if (!show) {
+                this._showState = null;
+              }
+              return;
+            }
+            this._showState = show ? expanded : null;
+            this.toggle(`toggle${show ? "show" : "hide"}`);
           }
-        } },
-
-
-      {
-        name: 'click',
-
-        filter() {
-          return ['click', 'hover'].some((mode) => includes(this.mode, mode));
         },
-
-        handler(e) {
-          let link;
-          if (
-          this._preventClick ||
-          closest(e.target, 'a[href="#"], a[href=""]') ||
-          (link = closest(e.target, 'a[href]')) && (
-          attr(this.$el, 'aria-expanded') !== 'true' ||
-          link.hash && matches(this.target, link.hash)))
-          {
-            e.preventDefault();
+        {
+          name: "keydown",
+          filter() {
+            return includes(this.mode, "click") && !isTag(this.$el, "input");
+          },
+          handler(e) {
+            if (e.keyCode === KEY_SPACE) {
+              e.preventDefault();
+              this.$el.click();
+            }
           }
-
-          if (!this._preventClick && includes(this.mode, 'click')) {
-            this.toggle();
+        },
+        {
+          name: "click",
+          filter() {
+            return ["click", "hover"].some((mode) => includes(this.mode, mode));
+          },
+          handler(e) {
+            let link;
+            if (this._preventClick || closest(e.target, 'a[href="#"], a[href=""]') || (link = closest(e.target, "a[href]")) && (!this.isToggled(this.target) || link.hash && matches(this.target, link.hash))) {
+              e.preventDefault();
+            }
+            if (!this._preventClick && includes(this.mode, "click")) {
+              this.toggle();
+            }
           }
-        } },
-
-
-      {
-        name: 'hide show',
-
-        self: true,
-
-        el() {
-          return this.target;
         },
-
-        handler(_ref2) {let { type } = _ref2;
-          this.updateAria(type === 'show');
-        } },
-
-
-      {
-        name: 'mediachange',
-
-        filter() {
-          return includes(this.mode, 'media');
-        },
-
-        el() {
-          return this.target;
-        },
-
-        handler(e, mediaObj) {
-          if (mediaObj.matches ^ this.isToggled(this.target)) {
-            this.toggle();
+        {
+          name: "mediachange",
+          filter() {
+            return includes(this.mode, "media");
+          },
+          el() {
+            return this.target;
+          },
+          handler(e, mediaObj) {
+            if (mediaObj.matches ^ this.isToggled(this.target)) {
+              this.toggle();
+            }
           }
-        } }],
-
-
-
+        }
+      ],
       methods: {
         async toggle(type) {
-          if (!trigger(this.target, type || 'toggle', [this])) {
+          if (!trigger(this.target, type || "toggle", [this])) {
             return;
           }
-
+          if (hasAttr(this.$el, "aria-expanded")) {
+            attr(this.$el, "aria-expanded", !this.isToggled(this.target));
+          }
           if (!this.queued) {
             return this.toggleElement(this.target);
           }
-
           const leaving = this.target.filter((el) => hasClass(el, this.clsLeave));
-
           if (leaving.length) {
             for (const el of this.target) {
               const isLeaving = includes(leaving, el);
@@ -7653,34 +6283,26 @@
             }
             return;
           }
-
           const toggled = this.target.filter(this.isToggled);
           await this.toggleElement(toggled, false);
           await this.toggleElement(
-          this.target.filter((el) => !includes(toggled, el)),
-          true);
-
-        },
-
-        updateAria(toggled) {
-          if (includes(this.mode, 'media')) {
-            return;
-          }
-
-          attr(
-          this.$el,
-          'aria-expanded',
-          isBoolean(toggled) ? toggled : this.isToggled(this.target));
-
-        } } };
+            this.target.filter((el) => !includes(toggled, el)),
+            true
+          );
+        }
+      }
+    };
 
     var components = /*#__PURE__*/Object.freeze({
         __proto__: null,
         Accordion: Accordion,
         Alert: alert,
+        Close: Close,
         Cover: cover,
         Drop: drop,
+        DropParentIcon: IconComponent,
         Dropdown: drop,
+        Dropnav: Dropnav,
         FormCustom: formCustom,
         Grid: grid,
         HeightMatch: heightMatch,
@@ -7689,41 +6311,38 @@
         Img: img,
         Leader: leader,
         Margin: Margin,
+        Marker: Marker,
         Modal: modal,
         Nav: nav,
+        NavParentIcon: NavParentIcon,
         Navbar: navbar,
+        NavbarParentIcon: IconComponent,
+        NavbarToggleIcon: NavbarToggleIcon,
         Offcanvas: offcanvas,
         OverflowAuto: overflowAuto,
+        OverlayIcon: IconComponent,
+        PaginationNext: PaginationNext,
+        PaginationPrevious: PaginationPrevious,
         Responsive: responsive,
         Scroll: scroll,
         Scrollspy: scrollspy,
         ScrollspyNav: scrollspyNav,
+        SearchIcon: Search,
+        SlidenavNext: Slidenav,
+        SlidenavPrevious: Slidenav,
+        Spinner: Spinner,
         Sticky: sticky,
         Svg: SVG,
         Switcher: Switcher,
         Tab: tab,
         Toggle: toggle,
-        Video: Video,
-        Close: Close,
-        Spinner: Spinner,
-        NavParentIcon: NavParentIcon,
-        SlidenavNext: Slidenav,
-        SlidenavPrevious: Slidenav,
-        SearchIcon: Search,
-        Marker: IconComponent,
-        NavbarParentIcon: IconComponent,
-        NavbarToggleIcon: IconComponent,
-        OverlayIcon: IconComponent,
-        PaginationNext: IconComponent,
-        PaginationPrevious: IconComponent,
-        Totop: IconComponent
+        Totop: Totop,
+        Video: Video
     });
 
-    // register components
-    each(components, (component, name) => UIkit.component(name, component));
+    each(components, (component, name) => App.component(name, component));
+    boot(App);
 
-    boot(UIkit);
-
-    return UIkit;
+    return App;
 
 }));
