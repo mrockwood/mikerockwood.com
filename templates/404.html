@@ -16,7 +16,32 @@
 {%- endblock seo %}
 
 {%- block content %}
-<div class="uk-section uk-section-2xlarge@m uk-flex-middle uk-flex-center">
+<header class="uk-section uk-text-center">
+	<div class="uk-container uk-container-large">
+		<h1 class="uk-heading-large uk-text-bold uk-text-uppercase">
+			404
+		</h1>
+		<p class="uk-width-large uk-margin-auto">
+			Page not found!
+		</p>
+	</div>
+</header>
+
+<section class="uk-section">
+	<div class="uk-container uk-text-center">
+
+		<p>The page you are looking for does not exist or has been moved!</p>
+		<p class="uk-margin-medium">
+			<a href="{{ config.base_url | safe }}{%- if config.extra.uglyurls %}index.html{%- endif %}" class="">
+				<span uk-icon="icon: arrow-left"></span>
+				<span>Back to homepage</span>
+			</a>
+		</p>
+
+	</div>
+</section>
+
+<!-- <div class="uk-section uk-section-2xlarge@m uk-flex-middle uk-flex-center">
   <div class="uk-container">
       <div class="uk-width-2xlarge@m uk-margin-auto uk-text-center">
           <h3 class="uk-heading-xlarge">404</h3>
@@ -30,5 +55,5 @@
           </p>
       </div>
   </div>
-</div>
+</div> -->
 {%- endblock content %}

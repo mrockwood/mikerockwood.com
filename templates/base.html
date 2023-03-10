@@ -16,9 +16,7 @@
 <html lang="{{ lang | default(value='en-US') }}" class="">
 
 <head>
-  {%- block title -%}
-    <title>{{ config.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
-  {%- endblock title -%}
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
   {%- block general_meta -%}
     {{ head::general_meta() }}
