@@ -19,8 +19,8 @@
 - [ ] update offcanvas.scss
 - [ ] update spinner.scss
 - [ ] update sticky.scss
-- [ ] update subnav.scss
-- [ ] update utility.scss
+- [x] update subnav.scss
+- [x] update utility.scss
 
 ## Content
 
