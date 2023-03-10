@@ -1,9 +1,7 @@
 {% extends "index.html" -%}
 
 {%- block title %}
-    <title>{{ section.title }} - {{ config.extra.author }}</title>
-    {# TODO: make some kind of social media linking, i guess? #}
-    {#%- include "snippets/social.html" %#}
+    {{ section.title }} - {{ config.extra.author }}
 {%- endblock title -%}
 
 {%- block main -%}

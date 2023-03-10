@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}{{ section.title }} | {{ super() }} {% endblock title %}
+
 {%- block seo %}
 	{{- super() }}
 	{%- set title = "Bookmarks" %}

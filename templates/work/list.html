@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 
+{% block title %}{{ section.title }} | {{ super() }} {% endblock title %}
+
 {% block content %}
 <header class="uk-section uk-text-center">
     <div class="uk-container uk-container-large">
