@@ -58,7 +58,7 @@
 
     --navbar-parent-icon-margin-left:                 4px;
 
-    --navbar-item-padding-horizontal:                 15px;
+    --navbar-item-padding-horizontal:                 20px;
     --navbar-item-color:                              hsl(var(--global-color));
 
     --navbar-toggle-color:                            hsl(var(--global-muted-color));
@@ -102,9 +102,10 @@
 
 }
 
+
 @media (min-width: $breakpoint-small) {
 
-    :where(.uk-navbar,[class*='uk-navbar']) {
+    :where(html) {
 
         --navbar-padding-vertical:                    20px;
 
@@ -118,7 +119,7 @@
 
 @media (min-width: $breakpoint-medium) {
 
-    :where(.uk-navbar,[class*='uk-navbar']) {
+    :where(html) {
 
         --navbar-dropdown-dropbar-viewport-margin:    var(--global-medium-gutter);
 
