@@ -44,7 +44,6 @@ menu = [
 menu_footer = [
     {url = "/categories/", name = "Categories", slash = true},
     {url = "/tags/", name = "Tags", slash = true},
-    {url = "/privacy/", name = "Privacy", slash = true},
     {url = "/sitemap.xml", name = "Sitemap", slash = false},
 ]
 
