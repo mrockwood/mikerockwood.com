@@ -22,21 +22,54 @@
 
 :where(.uk-dropdown) {
 
-    --dropdown-z-index:                               calc( var(--global-z-index) + 20 );
     --dropdown-margin:                                var(--global-small-margin);
+    --dropdown-viewport-margin:                       15px;
     --dropdown-min-width:                             200px;
     --dropdown-padding:                               15px;
-    --dropdown-background:                            hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
-    --dropdown-color:                                 hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --dropdown-background:                            hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --dropdown-color:                                 hsl( var(--theme-color, var(--global-color) ) );
 
-    --dropdown-nav-item-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --dropdown-nav-item-hover-color:                  hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --dropdown-large-padding:                         40px;
+
+    --dropdown-dropbar-padding-top:                   var(--dropdown-padding);
+    --dropdown-dropbar-padding-bottom:                var(--dropdown-dropbar-padding-top);
+    --dropdown-dropbar-viewport-margin:               15px;
+    --dropdown-dropbar-viewport-margin-s:             var(--global-gutter);
+    --dropdown-dropbar-viewport-margin-m:             var(--global-medium-gutter);
+
+    --dropdown-dropbar-large-padding-top:             var(--dropdown-large-padding);
+    --dropdown-dropbar-large-padding-bottom:          var(--dropdown-dropbar-large-padding-top);
+
+    --dropdown-nav-item-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --dropdown-nav-item-hover-color:                  hsl( var(--theme-color, var(--global-color) ) );
     --dropdown-nav-subtitle-font-size:                var(--global-small-font-size);
-    --dropdown-nav-header-color:                      hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --dropdown-nav-header-color:                      hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --dropdown-nav-divider-border-width:              var(--global-border-width);
-    --dropdown-nav-divider-border:                    hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
-    --dropdown-nav-sublist-item-color:                hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --dropdown-nav-sublist-item-hover-color:          hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --dropdown-nav-divider-border:                    hsl( var(--theme-border, var(--global-border) ) );
+    --dropdown-nav-sublist-item-color:                hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --dropdown-nav-sublist-item-hover-color:          hsl( var(--theme-color, var(--global-color) ) );
+
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    :where(.uk-dropdown) {
+
+        --dropdown-dropbar-viewport-margin:           var(--global-gutter);
+
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    :where(.uk-dropdown) {
+
+        --dropdown-dropbar-viewport-margin:           var(--global-medium-gutter);
+    
+    }
 
 }
 
@@ -46,32 +79,61 @@
  ========================================================================== */
 
 /*
- * 1. Hide by default
- * 2. Set position
- * 3. Set a default width
- * 4. Style
+ * Adopts `uk-drop`
+ * 1. Reset drop and let text expand the width instead of wrapping
+ * 2. Set a default width
+ * 3. Style
  */
 
 .uk-dropdown {
-    /* 1 */
-    display: none;
-    /* 2 */
-    position: absolute;
-    z-index: var(--dropdown-z-index);
     --uk-position-offset: var(--dropdown-margin);
-    --uk-position-viewport-offset: 10;
-    /* 3 */
-    box-sizing: border-box;
+    --uk-position-viewport-offset: var(--dropdown-viewport-margin);
+    /* 1 */
+    inline-size: auto;
+    /* 2 */
     min-inline-size: var(--dropdown-min-width);
-    max-inline-size: 100vw;
-    /* 4 */
+    /* 3 */
     padding: var(--dropdown-padding);
     background: var(--dropdown-background);
     color: var(--dropdown-color);
 }
 
-/* Show */
-.uk-dropdown.uk-open { display: block; }
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-dropdown > :last-child { margin-block-end: 0; }
+
+
+/* Size modifier
+ ========================================================================== */
+
+.uk-dropdown-large { padding: var(--dropdown-large-padding); }
+
+
+/* Dropbar modifier
+ ========================================================================== */
+
+/*
+ * 1. Reset dropdown width to prevent to early shifting
+ * 2. Reset style
+ * 3. Padding
+ */
+
+.uk-dropdown-dropbar {
+    /* 1 */
+    inline-size: auto;
+    /* 2 */
+    background: transparent;
+    /* 3 */
+    padding: var(--dropdown-dropbar-padding-top) 0 var(--dropdown-dropbar-padding-bottom) 0;
+    --uk-position-viewport-offset: var(--dropdown-dropbar-viewport-margin);
+}
+
+.uk-dropdown-dropbar-large {
+    padding-block-start: var(--dropdown-dropbar-large-padding-top);
+    padding-block-end: var(--dropdown-dropbar-large-padding-bottom);
+}
 
 
 /* Nav
@@ -126,9 +188,3 @@
 
 .uk-dropdown-nav .uk-nav-sub a:hover,
 .uk-dropdown-nav .uk-nav-sub li.uk-active > a { color: var(--dropdown-nav-sublist-item-hover-color); }
-
-
-/* Grid modifiers
- ========================================================================== */
-
-.uk-dropdown-stack .uk-dropdown-grid > * { width: 100% !important; }

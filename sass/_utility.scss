@@ -58,7 +58,6 @@
     padding: var(--panel-scrollable-padding);
     border: var(--panel-scrollable-border-width) solid var(--panel-scrollable-border);
     overflow: auto;
-    -webkit-overflow-scrolling: touch;
     resize: both;
 }
 
@@ -110,12 +109,16 @@
  * Note: Firefox ignores `padding-bottom` for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
  */
 
-.uk-overflow-auto {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
+.uk-overflow-auto { overflow: auto; }
 
 .uk-overflow-auto > :last-child { margin-block-end: 0; }
+
+
+/* Box Sizing
+ ========================================================================== */
+
+.uk-box-sizing-content { box-sizing: content-box; }
+.uk-box-sizing-border { box-sizing: border-box; }
 
 
 /* Resize
@@ -365,7 +368,7 @@
 @-moz-document url-prefix() {
 
   .uk-dropcap::first-letter,
-  .uk-dropcap > p:first-of-type::first-letter { margin-block-start: 2%; }
+  .uk-dropcap > p:first-of-type::first-letter { margin-block-start: 1.1%; }
 
 }
 
@@ -374,7 +377,9 @@
  ========================================================================== */
 
 /*
- * 1. Required for `a`
+ * 1. Style
+ * 2. Required for `a`
+ * 3. Behave like image but can be overridden through flex utility classes
  */
 
 .uk-logo {
@@ -384,12 +389,19 @@
     --logo-color: hsl( var(--theme-muted-color, var(--global-muted-color) ) );
     --logo-hover-color: hsl( var(--theme-color, var(--global-color) ) );
 
+    /* 1 */
     font-size: var(--logo-font-size);
     font-family: var(--logo-font-family);
-	// font-weight: var(--logo-font-weight);
+    // font-weight: var(--logo-font-weight);
     color: var(--logo-color);
-    /* 1 */
+    /* 2 */
     text-decoration: none;
+}
+
+/* 3 */
+:where(.uk-logo) {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* Hover */
@@ -399,7 +411,7 @@
     text-decoration: none;
 }
 
-.uk-logo > :where(img, svg, video) { display: inline-block; }
+.uk-logo > :where(img, svg, video) { display: block; }
 
 .uk-logo-inverse { display: none; }
 

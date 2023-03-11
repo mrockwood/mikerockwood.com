@@ -3,13 +3,13 @@
 //
 // Component:       `uk-nav`
 //
-// Sub-objects:     `uk-nav-header`
+// Sub-objects:     `uk-nav-parent-icon`
+//                  `uk-nav-header`
 //                  `uk-nav-divider`
 //                  `uk-nav-subtitle`
 //                  `uk-nav-sub`
 //
-// Modifiers:       `uk-nav-parent-icon`
-//                  `uk-nav-default`
+// Modifiers:       `uk-nav-default`
 //                  `uk-nav-primary`
 //                  `uk-nav-center`,
 //                  `uk-nav-divider`
@@ -35,10 +35,7 @@
     --nav-sublist-deeper-padding-left:                15px;
     --nav-sublist-item-padding-vertical:              2px;
 
-    --nav-parent-icon-width:                          .4em;
-    --nav-parent-icon-height:                         var(--nav-parent-icon-width);
-    --nav-parent-icon-border-width:                   var(--global-border-width);
-    --nav-parent-icon-color:                          hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --nav-parent-icon-margin-left:                    0.25em;
 
     --nav-header-padding-vertical:                    var(--nav-item-padding-vertical);
     --nav-header-padding-horizontal:                  var(--nav-item-padding-horizontal);
@@ -49,33 +46,57 @@
     --nav-divider-margin-vertical:                    5px;
     --nav-divider-margin-horizontal:                  0px;
 
-    --nav-default-item-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --nav-default-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
-    --nav-default-item-active-color:                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --nav-default-font-size:                          var(--global-font-size);
+    --nav-default-line-height:                        var(--global-line-height);
+    --nav-default-item-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --nav-default-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) );
+    --nav-default-item-active-color:                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --nav-default-subtitle-font-size:                 var(--global-small-font-size);
-    --nav-default-header-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --nav-default-header-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --nav-default-divider-border-width:               var(--global-border-width);
-    --nav-default-divider-border:                     hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
-    --nav-default-sublist-item-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --nav-default-sublist-item-hover-color:           hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
-    --nav-default-sublist-item-active-color:          hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --nav-default-divider-border:                     hsl( var(--theme-border, var(--global-border) ) );
+    --nav-default-sublist-font-size:                  var(--nav-default-font-size);
+    --nav-default-sublist-line-height:                var(--nav-default-line-height);
+    --nav-default-sublist-item-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --nav-default-sublist-item-hover-color:           hsl( var(--theme-color, var(--global-color) ) );
+    --nav-default-sublist-item-active-color:          hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
 
-    --nav-primary-item-font-size:                     var(--global-large-font-size);
-    --nav-primary-item-line-height:                   var(--global-line-height);
-    --nav-primary-item-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --nav-primary-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
-    --nav-primary-item-active-color:                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --nav-primary-font-size:                          var(--global-large-font-size);
+    --nav-primary-line-height:                        var(--global-line-height);
+    --nav-primary-item-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --nav-primary-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) );
+    --nav-primary-item-active-color:                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --nav-primary-subtitle-font-size:                 var(--global-medium-font-size);
-    --nav-primary-header-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --nav-primary-header-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --nav-primary-divider-border-width:               var(--global-border-width);
-    --nav-primary-divider-border:                     hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
-    --nav-primary-sublist-item-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --nav-primary-sublist-item-hover-color:           hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
-    --nav-primary-sublist-item-active-color:          hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --nav-primary-divider-border:                     hsl( var(--theme-border, var(--global-border) ) );
+    --nav-primary-sublist-font-size:                  var(--global-medium-font-size);
+    --nav-primary-sublist-line-height:                var(--global-line-height);
+    --nav-primary-sublist-item-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --nav-primary-sublist-item-hover-color:           hsl( var(--theme-color, var(--global-color) ) );
+    --nav-primary-sublist-item-active-color:          hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
 
-    --nav-dividers-margin-top:                        0px;
+    --nav-secondary-font-size:                        var(--global-font-size);
+    --nav-secondary-line-height:                      var(--global-line-height);
+    --nav-secondary-item-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-item-hover-color:                 hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-item-active-color:                hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-subtitle-font-size:               var(--global-small-font-size);
+    --nav-secondary-subtitle-color:                   hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --nav-secondary-subtitle-hover-color:             hsl( var(--theme-color, var(--global-color) ) );
+    --nav-secondary-subtitle-active-color:            hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-header-color:                     hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-divider-border-width:             var(--global-border-width);
+    --nav-secondary-divider-border:                   hsl( var(--theme-border, var(--global-border) ) );
+    --nav-secondary-sublist-font-size:                var(--global-small-font-size);
+    --nav-secondary-sublist-line-height:              var(--global-line-height);
+    --nav-secondary-sublist-item-color:               hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --nav-secondary-sublist-item-hover-color:         hsl( var(--theme-color, var(--global-color) ) );
+    --nav-secondary-sublist-item-active-color:        hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+
+    --nav-dividers-margin-top:                        5px;
     --nav-dividers-border-width:                      var(--global-border-width);
-    --nav-dividers-border:                            hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+    --nav-dividers-border:                            hsl( var(--theme-border, var(--global-border) ) );
 
 }
 
@@ -144,25 +165,15 @@ ul.uk-nav-sub {
 .uk-nav-sub a { padding: var(--nav-sublist-item-padding-vertical) 0; }
 
 
-/* Parent icon modifier
+/* Parent icon
  ========================================================================== */
 
-.uk-nav-parent-icon > .uk-parent > a::after {
-    content: "";
-    inline-size: var(--nav-parent-icon-width);
-    block-size: var(--nav-parent-icon-height);
-    margin-block-start: calc( -1 * ( var(--nav-parent-icon-height) / 2 ) );
+.uk-nav-parent-icon {
     margin-inline-start: auto;
-    display: inline-block;
-    border-right: var(--nav-parent-icon-border-width) solid var(--nav-parent-icon-color);
-    border-bottom: var(--nav-parent-icon-border-width) solid var(--nav-parent-icon-color);
-    transform: rotate(45deg);
+    transition: transform 0.3s ease-out;
 }
 
-.uk-nav-parent-icon > .uk-parent.uk-open > a::after {
-    margin-block-start: calc( var(--nav-parent-icon-height) / 2 );
-    transform: rotate(-135deg);
-}
+.uk-nav > li.uk-open > a .uk-nav-parent-icon { transform: rotateX(180deg); }
 
 
 /* Header
@@ -188,7 +199,10 @@ ul.uk-nav-sub {
 /* Default modifier
  ========================================================================== */
 
-.uk-nav-default {}
+.uk-nav-default {
+    font-size: var(--nav-default-font-size);
+    line-height: var(--nav-default-line-height);
+}
 
 /*
  * Items
@@ -236,6 +250,11 @@ ul.uk-nav-sub {
  * Sublists
  */
 
+.uk-nav-default .uk-nav-sub {
+    font-size: var(--nav-default-sublist-font-size);
+    line-height: var(--nav-default-sublist-line-height);
+}
+
 .uk-nav-default .uk-nav-sub a { color: var(--nav-default-sublist-item-color); }
 
 .uk-nav-default .uk-nav-sub a:hover { color: var(--nav-default-sublist-item-hover-color); }
@@ -246,15 +265,16 @@ ul.uk-nav-sub {
 /* Primary modifier
  ========================================================================== */
 
-.uk-nav-primary {}
+.uk-nav-primary {
+    font-size: var(--nav-primary-font-size);
+    line-height: var(--nav-primary-line-height);
+}
 
 /*
  * Items
  */
 
 .uk-nav-primary > li > a {
-    font-size: var(--nav-primary-item-font-size);
-    line-height: var(--nav-primary-item-line-height);
     color: var(--nav-primary-item-color);
 }
 
@@ -272,7 +292,7 @@ ul.uk-nav-sub {
  * Subtitle
  */
 
- .uk-nav-primary .uk-nav-subtitle {
+.uk-nav-primary .uk-nav-subtitle {
     font-size: var(--nav-primary-subtitle-font-size);
 }
 
@@ -296,11 +316,93 @@ ul.uk-nav-sub {
  * Sublists
  */
 
+.uk-nav-primary .uk-nav-sub {
+    font-size: var(--nav-primary-sublist-font-size);
+    line-height: var(--nav-primary-sublist-line-height);
+}
+
 .uk-nav-primary .uk-nav-sub a { color: var(--nav-primary-sublist-item-color); }
 
 .uk-nav-primary .uk-nav-sub a:hover { color: var(--nav-primary-sublist-item-hover-color); }
 
 .uk-nav-primary .uk-nav-sub li.uk-active > a { color: var(--nav-primary-sublist-item-active-color); }
+
+
+/* Secondary modifier
+ ========================================================================== */
+
+.uk-nav-secondary {
+    font-size: var(--nav-secondary-font-size);
+    line-height: var(--nav-secondary-line-height);
+}
+
+/*
+ * Items
+ */
+
+.uk-nav-secondary > li > a {
+    color: var(--nav-secondary-item-color);
+}
+
+/* Hover */
+.uk-nav-secondary > li > a:hover {
+    color: var(--nav-secondary-item-hover-color);
+}
+
+/* Active */
+.uk-nav-secondary > li.uk-active > a {
+    color: var(--nav-secondary-item-active-color);
+}
+
+/*
+ * Subtitle
+ */
+
+.uk-nav-secondary .uk-nav-subtitle {
+    font-size: var(--nav-secondary-subtitle-font-size);
+    color: var(--nav-secondary-subtitle-color);
+}
+
+/* Hover */
+.uk-nav-secondary > li > a:hover .uk-nav-subtitle {
+    color: var(--nav-secondary-subtitle-hover-color);
+}
+
+/* Active */
+.uk-nav-secondary > li.uk-active > a .uk-nav-subtitle {
+    color: var(--nav-secondary-subtitle-active-color);
+}
+
+/*
+ * Header
+ */
+
+.uk-nav-secondary .uk-nav-header {
+    color: var(--nav-secondary-header-color);
+}
+
+/*
+ * Divider
+ */
+
+.uk-nav-secondary .uk-nav-divider {
+    border-block-start: var(--nav-secondary-divider-border-width) solid var(--nav-secondary-divider-border);
+}
+
+/*
+ * Sublists
+ */
+
+.uk-nav-secondary .uk-nav-sub {
+    font-size: var(--nav-secondary-sublist-font-size);
+    line-height: var(--nav-secondary-sublist-line-height);
+}
+
+.uk-nav-secondary .uk-nav-sub a { color: var(--nav-secondary-sublist-item-color); }
+
+.uk-nav-secondary .uk-nav-sub a:hover { color: var(--nav-secondary-sublist-item-hover-color); }
+
+.uk-nav-secondary .uk-nav-sub li.uk-active > a { color: var(--nav-secondary-sublist-item-active-color); }
 
 
 /* Alignment modifier
@@ -320,14 +422,19 @@ ul.uk-nav-sub {
 .uk-nav-center .uk-nav-sub,
 .uk-nav-center .uk-nav-sub ul { padding-inline-start: 0; }
 
-/* Parent icon modifier  */
-.uk-nav-center.uk-nav-parent-icon > .uk-parent > a::after { margin-inline-start: 0; }
+/* Parent icon  */
+.uk-nav-center .uk-nav-parent-icon { margin-inline-start: var(--nav-parent-icon-margin-left); }
 
 
 /* Style modifier
  ========================================================================== */
 
-.uk-nav.uk-nav-divider > :not(.uk-nav-divider) + :not(.uk-nav-header, .uk-nav-divider) {
+/*
+ * Divider
+ * Naming is in plural to prevent conflicts with divider sub object.
+ */
+
+.uk-nav.uk-nav-divider > :not(.uk-nav-header, .uk-nav-divider) + :not(.uk-nav-header, .uk-nav-divider) {
     margin-block-start: var(--nav-dividers-margin-top);
     padding-block-start: var(--nav-dividers-margin-top);
     border-block-start: var(--nav-dividers-border-width) solid var(--nav-dividers-border);
