@@ -5,6 +5,10 @@ description: Create a list of items that can be shown individually by clicking a
 
 # Accordion
 
+{% alert(style="primary", close=true) %}
+This is an alert
+{% end %}
+
 <p class="uk-text-lead">Create a list of items that can be shown individually by clicking an item's header.</p>
 
 ## Usage

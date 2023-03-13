@@ -1,0 +1,4 @@
+<div class="{% if style %}uk-alert-{{ style }}{% endif %}" uk-alert>
+    {% if close %}<a class="uk-alert-close" uk-close></a>{% endif %}
+    {{ body | markdown | safe }}
+</div>
