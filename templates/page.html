@@ -33,8 +33,8 @@
 
         {{ page.content | safe }}
 
-        {{ comments::comments() }}
+        {# {{ comments::comments() }} #}
         {# TODO: Decide if any sort of commenting functionality is desired? #}
-        {#%- include "snippets/comments.html"  -%#}
+
     </article>
 {%- endblock main -%}

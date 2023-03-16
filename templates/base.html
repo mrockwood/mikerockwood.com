@@ -1,3 +1,4 @@
+{#- Macros -#}
 {% import "macros/head.html" as head -%}
 {% import "macros/logo.html" as logo -%}
 {% import "macros/header.html" as header -%}
@@ -11,60 +12,279 @@
 {% import "macros/extended_footer.html" as extended_footer -%}
 {% import "macros/comments.html" as comments -%}
 
+{#- Title -#}
+{%- if section -%}
+	{%- if section.title -%}
+		{% set title = section.title | striptags %}
+	{%- endif -%}
+{%- elif page -%}
+	{%- if page.title -%}
+		{% set title = page.title | striptags %}
+	{%- endif -%}
+{%- endif -%}
+
+{#- Description -#}
+{%- if section -%}
+	{%- if section.description -%}
+		{% set description = section.description %}
+	{%- endif -%}
+{%- elif page -%}
+	{%- if page.summary | string -%}
+		{% set description = page.summary | striptags | truncate(length=200) %}
+	{%- elif page.description -%}
+		{% set description = page.description %}
+	{%- endif -%}
+{%- endif -%}
+
+{#- Image -#}
+{%- if section -%}
+	{%- if section.extra.image -%}
+		{% set image = section.extra.image %}
+	{%- endif -%}
+{%- elif page -%}
+	{%- if page.extra.image -%}
+		{% set image = page.extra.image %}
+	{%- endif -%}
+{%- endif -%}
+
 <!DOCTYPE html>
 
-<html lang="{{ lang | default(value='en-US') }}" class="">
+<html lang="en" class="no-js">
 
 <head>
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
-  {%- block general_meta -%}
-    {{ head::general_meta() }}
-  {%- endblock general_meta -%}
+	{#- General Meta -#}
+	{% block head_general_meta %}
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	{%- endblock head_general_meta %}
 
-  {%- block og_preview -%}
-    {{ social::og_preview() }}
-  {%- endblock og_preview -%}
+	{#- Page Meta -#}
+	{% block head_page_meta %}
+	<title>{% if title %}{{ title }} - {{ config.title }}{% else %}{{ config.title }}{% endif %}</title>
+	<meta name="description" content="{{ description | default(value=config.description) }}">
+	{% if current_url %}<link rel="canonical" href="{{ current_url | safe }}" />{% endif %}
+	{%- endblock head_page_meta %}
 
-  {%- block fonts -%}
-    {{ head::fonts() }}
-  {%- endblock fonts -%}
+	{#- Scripts -#}
+	{% block head_scripts %}
+	<script type="module">
+		document.documentElement.classList.remove('no-js');
+		document.documentElement.classList.add('js');
+	</script>
+	{%- endblock head_scripts %}
 
-  {%- block css -%}
-    {{ head::styling() }}
-  {%- endblock css -%}
+	{#- Fonts -#}
+	{% block head_fonts %}
+	<link rel="preload" href="{{ get_url(path='/fonts/Rubik[wght].woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+	{%- endblock head_fonts %}
 
-  {%- block favicon -%}
-    {{ head::favicon() }}
-  {%- endblock favicon -%}
+	{#- Styles -#}
+	{% block head_styles %}
+	<link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
+	{%- endblock head_styles %}
 
-  {%- block rss -%}
-    {{ head::rss() }}
-  {%- endblock rss -%}
+	{#- Favicons -#}
+	{% block head_favicons %}
+	{#- <link rel="shortcut icon" href="{{ get_url(path='/images/favicon.ico') }}" type="image/x-icon"> #}
+	<link rel="shortcut icon" href="{{ get_url(path='/images/favicon.svg') }}" type="image/svg+xml">
+	{#- <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png"> #}
+	{%- endblock head_favicons %}
+
+	{#- Feeds -#}
+	{% block head_feeds %}
+	<link rel="alternate" title="Posts by {{ config.extra.author.name }}" href="{{ get_url(path=config.feed_filename) }}" type="application/atom+xml" />
+	{%- endblock head_feeds %}
+
+	{#- Indie Auth -#}
+	{% block head_auth %}
+	{#- <link rel="authorization_endpoint" href="https://indieauth.com/auth"> #}
+	{#- <link rel="token_endpoint" href="https://tokens.indieauth.com/token"> #}
+	{%- endblock head_auth %}
+
+	{#- Webmentions -#}
+	{% block head_webmentions %}
+	{#- <link rel="preconnect" href="https://webmention.io"> #}
+	{#- <link rel="pingback" href="https://webmention.io/mikerockwood.com/xmlrpc"> #}
+	{#- <link rel="webmention" href="https://webmention.io/mikerockwood.com/webmention"> #}
+	{%- endblock head_webmentions %}
+
+	{#- Me -#}
+	{% block head_me %}
+	<link rel=me href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}">
+	<link rel=me href="https://www.github.com/{{ config.extra.social.github }}">
+	{%- endblock head_me %}
+
+	{#- SEO -#}
+	{% block head_seo %}
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="{{ title | default(value=config.title) }}" />
+	<meta property="og:description" content="{{ description | default(value=config.description) }}"/>
+	{% if current_url %}<meta property="og:url" content="{{ current_url | safe }}"/>{%- endif %}
+	{% if image -%}
+		<meta property="og:image" content="{{ get_url(path=image) }}"/>
+	{%- else -%}
+		<meta property="og:image" content="{{ get_url(path=config.extra.author.avatar) }}"/>
+	{%- endif -%}
+	{%- endblock head_seo %}
+
 </head>
 
 <body>
 
-{%- block header -%}
-  {{ header::header() }}
-{%- endblock header -%}
 
-{%- block main %}
-<main>
-  {%- block content %}
-  {%- endblock content %}
-</main>
-{%- endblock main %}
+	{#- Header -#}
+	{% block header %}
+	<div class="uk-header {% if current_path and current_path == '/' %} uk-position-absolute uk-width-1-1 uk-position-z-index {% endif %}">
+		<div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
+			<nav class="uk-navbar">
+				<div class="uk-navbar-left">
+					<a href="{{ config.base_url }}" class="uk-navbar-item uk-logo">
+						{%- set headshot = resize_image(path="/images/headshot-cutout.jpg", width=192, height=192, format='webp', quality=75) %}
+						<img src="{{ headshot.url }}" alt="" class="uk-border-circle uk-margin-small-right" width="48" height="48" />
+						{# <svg class="uk-margin-xsmall-right" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+							<g class="logo">
+								<circle fill='hsl(var(--surface-default))' cx='50%' cy='50%' r='50%' />
+								<path fill='hsl(var(--surface-primary))' style="transform: scale(80%); transform-origin: center;" d="m 33.752727,16.018291 v 16.366988 h 2.869828 v 3.049192 H 27.96823 v -3.049192 h 2.152371 V 15.704404 l -8.205915,5.111881 v 11.568994 h 2.197212 v 3.049192 h -8.02655 v -3.049192 h 2.152371 l 0.04484,-0.179364 V 15.659563 l -8.250754,5.156722 v 11.568994 h 2.197211 v 3.049192 H 3.5746915 v -3.049192 h 2.824987 V 16.018291 H 3.5746915 V 13.01394 h 6.4571135 v 4.259901 l 6.771,-4.259901 c 0.466909,-0.290377 1.005255,-0.445454 1.555088,-0.447962 0.01973,-3.14e-4 0.03946,-4.63e-4 0.05919,-4.49e-4 1.840875,0 2.955026,0.717308 3.342453,2.151923 0.108593,0.424923 0.160758,0.862296 0.15515,1.300839 V 17.229 l 6.72616,-4.21506 c 0.466908,-0.290377 1.005255,-0.445454 1.555088,-0.447962 0.01973,-3.14e-4 0.03946,-4.63e-4 0.05919,-4.49e-4 1.840875,0 2.955026,0.717308 3.342453,2.151923 0.108593,0.424923 0.160758,0.862296 0.15515,1.300839 z M 44.4249,16.466702 v 3.990854 h -3.632127 v -4.349583 l -6.995205,4.439266 v -3.632126 l 5.51545,-3.452762 c 0.466908,-0.290377 1.005256,-0.445454 1.555088,-0.447963 0.01973,-3.13e-4 0.03946,-4.61e-4 0.05919,-4.48e-4 1.840873,0 2.955026,0.717308 3.342452,2.151923 0.108592,0.424923 0.16076,0.862295 0.155152,1.300839 z" />
+							</g>
+						</svg> #}
+						{{ config.title }}
+					</a>
+				</div>
+				<div class="uk-navbar-right">
+					{# Check if there are menu items to render, yes if > 0 #}
+					{%- set num = config.extra.menu | length -%}
+					{% if num > 0 -%}
+					<ul class="uk-navbar-nav uk-visible@m">
+						{%- for i in config.extra.menu -%}
+						{% set link_url = i.url | replace(from="$BASE_URL", to=config.base_url) %}
+						<li {% if current_path and current_path == link_url %}class="uk-active"{% endif %}><a href="{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- if i.slash and config.extra.uglyurls %}index.html{%- endif %}">{{ i.name | safe }}</a></li>
+						{%- endfor -%}
+					</ul>
+					{% endif -%}
+					<div class="uk-navbar-item uk-hidden@m">
+						<button uk-toggle="target: #js-mobile-menu" uk-navbar-toggle-icon class="uk-icon-button" aria-label="Menu"></button>
+					</div>
+					{# <div class="uk-navbar-item">
+						<button uk-toggle="target: #js-theme-menu" class="uk-icon-button uk-icon">
+							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
+							</svg>
+						</button>
+					</div> #}
+				</div>
+			</nav>
+		</div>
+	</div>
+	{% endblock header %}
 
-{%- block footer -%}
-  {{ footer::footer() }}
-  {{ footer::themeMenu() }}
-  {{ footer::mobileMenu() }}
-  {{ footer::script() }}
-{%- endblock footer -%}
 
-{%- block gotop %}
-{%- endblock gotop %}
+	{#- Main -#}
+	{% block main %}
+	<main>
+		{% block content %}{% endblock content %}
+	</main>
+	{% endblock main %}
+
+
+	{#- Footer -#}
+	{% block footer %}
+	<footer>
+		<a href="mailto:{{ config.extra.author.email }}" class="uk-section uk-section-small uk-button uk-button-primary uk-margin-large-top">
+			<div class="uk-container uk-text-center uk-text-large">
+				<span>Want to chat?</span>
+				<span>Drop me a line.</span>
+			</div>
+		</a>
+		<div class="uk-section uk-section-small uk-section-muted">
+			<div class="uk-container uk-container-large">
+
+				<div class="uk-text-center uk-padding-small">
+					<ul class="uk-child-width-auto uk-grid-small uk-flex-inline" uk-grid>
+						<li>
+							<a href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+								<span
+									class="uk-icon-button"
+									uk-icon="
+										icon: linkedin;
+										ratio: 1.2;"
+									style="
+										--icon-button-size: 44px;
+										--icon-button-background: hsl( var(--global-background));
+										--icon-button-hover-background: hsl( var(--global-background));"
+								></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.github.com/{{ config.extra.social.github }}" aria-label="Github" target="_blank" rel="noreferrer">
+								<span
+									class="uk-icon-button"
+									uk-icon="
+										icon: github;
+										ratio: 1.2;"
+									style="
+										--icon-button-size: 44px;
+										--icon-button-background: hsl( var(--global-background));
+										--icon-button-hover-background: hsl( var(--global-background));"
+								></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<hr class="uk-margin-medium" />
+
+				<div class="uk-grid uk-grid-small uk-flex-between uk-flex-wrap" uk-grid>
+					<p class="uk-width-1-1 uk-text-center uk-text-left@s uk-width-expand@s">&copy; {{ now() | date(format="%Y") }} Mike Rockwood</p>
+					{# <p class="uk-flex uk-margin-auto">
+						<a class="uk-link-text" href="https://hotlinewebring.club/interrobang/previous" target="_blank" aria-label="Previous Hotline Webring Site">←</a>
+						<span class="uk-margin-left uk-margin-right">IndieWeb</span>
+						<a class="uk-link-text" href="https://hotlinewebring.club/interrobang/next" target="_blank" aria-label="Next Hotline Webring Site">→</a>
+					</p> #}
+				</div>
+
+			</div>
+		</div>
+	</footer>
+	{% endblock footer %}
+
+
+	{#- Mobile Menu -#}
+	{% block foot_menu %}
+	<div id="js-mobile-menu" class="uk-modal-full" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-height-viewport">
+			<button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+			<div class="uk-margin-auto-vertical uk-width-1-1">
+				<ul class="uk-nav uk-nav-primary uk-nav-center uk-text-uppercase">
+					{%- for i in config.extra.menu -%}
+					{% set link_url = i.url | replace(from="$BASE_URL", to=config.base_url) %}
+					<li {% if current_path and current_path == link_url %}class="uk-active"{% endif %}><a href="{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- if i.slash and config.extra.uglyurls %}index.html{%- endif %}">{{ i.name | safe }}</a></li>
+					{%- endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	{% endblock foot_menu %}
+
+
+	{#- Theme Menu -#}
+	{# {% block foot_theme %}
+	<div id="js-theme-menu" uk-offcanvas="flip: true; mode: push;">
+		<div class="uk-offcanvas-bar">
+			<button class="uk-offcanvas-close" type="button" uk-close></button>
+			test
+		</div>
+	</div>
+	{% endblock foot_theme %} #}
+
+
+	{#- Scripts -#}
+	{% block foot_scripts %}
+	<script src="{{ get_url(path="/scripts/uikit.min.js", cachebust=true) }}" defer="defer"></script>
+	<script src="{{ get_url(path="/scripts/uikit-icons.min.js", cachebust=true) }}" defer="defer"></script>
+	{% endblock foot_scripts %}
+
 
 </body>
+
 </html>

@@ -1,28 +1,28 @@
 {% macro header() %}
 <div class="uk-header {% if current_path and current_path == '/' %} uk-position-absolute uk-width-1-1 uk-position-z-index {% endif %}">
-    <div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
-        <nav class="uk-navbar">
-            <div class="uk-navbar-left">
-                {{ logo::logo() }}
-            </div>
-            <div class="uk-navbar-right">
-                {# Check if there are menu items to render, yes if > 0 #}
-                {%- set num = config.extra.menu | length -%}
-                {% if num > 0 -%}
-                    {{ menu::menu() }}
-                {% endif -%}
-                <div class="uk-navbar-item uk-hidden@m">
-                    <button uk-toggle="target: #js-mobile-menu" uk-navbar-toggle-icon class="uk-icon-button" aria-label="Menu"></button>
-                </div>
-                <!-- <div class="uk-navbar-item">
-                    <button uk-toggle="target: #js-theme-menu" class="uk-icon-button uk-icon">
+	<div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
+		<nav class="uk-navbar">
+			<div class="uk-navbar-left">
+				{{ logo::logo() }}
+			</div>
+			<div class="uk-navbar-right">
+				{# Check if there are menu items to render, yes if > 0 #}
+				{%- set num = config.extra.menu | length -%}
+				{% if num > 0 -%}
+					{{ menu::menu() }}
+				{% endif -%}
+				<div class="uk-navbar-item uk-hidden@m">
+					<button uk-toggle="target: #js-mobile-menu" uk-navbar-toggle-icon class="uk-icon-button" aria-label="Menu"></button>
+				</div>
+				{# <div class="uk-navbar-item">
+					<button uk-toggle="target: #js-theme-menu" class="uk-icon-button uk-icon">
 						<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
 						</svg>
 					</button>
-                </div> -->
-            </div>
-        </nav>
-    </div>
+				</div> #}
+			</div>
+		</nav>
+	</div>
 </div>
 {% endmacro header %}
