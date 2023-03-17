@@ -87,7 +87,7 @@
 	{#- Favicons -#}
 	{% block head_favicons %}
 	{#- <link rel="shortcut icon" href="{{ get_url(path='/images/favicon.ico') }}" type="image/x-icon"> #}
-	<link rel="shortcut icon" href="{{ get_url(path='/images/favicon.svg') }}" type="image/svg+xml">
+	<link rel="shortcut icon" href="{{ get_url(path='/images/favicon.svg', cachebust=true) }}" type="image/svg+xml">
 	{#- <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png"> #}
 	{%- endblock head_favicons %}
 

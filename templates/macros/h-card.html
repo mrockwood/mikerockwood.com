@@ -1,14 +1,14 @@
-<!-- representative h-card: https://microformats.org/wiki/h-card -->
+{#- representative h-card: https://microformats.org/wiki/h-card -#}
 <div class="h-card vcard" rel="author">
 
-  <img 
-    class="u-photo" 
+  <img
+    class="u-photo"
     alt="{% if config.extra.author.name %}{{ config.extra.author.name }}{% else %}author photo{% endif %}"
     src="{% if config.extra.author.avatar %}{{ config.extra.author.avatar }}{% else %}https://picsum.photos/120.webp{% endif %}"
   >
 
   <div class="">
-        
+
     <h1 class="p-name fn">
       {% if config.extra.author.name %}
         {{ config.extra.author.name }}
@@ -16,7 +16,7 @@
         {{ config.title }}
       {% endif %}
     </h1>
-        
+
     <div class="properties">
 
       <a class="u-url u-uid" href="{{ config.base_url }}">
@@ -75,7 +75,7 @@
       <a rel="me" href="https://github.com/sponsors/{{ config.extra.social.github_sponsor }}/">GitHub Sponsor</a>{% endif -%}
 
     </div>
-        
+
     <p class="p-note">
       {% if config.extra.bio %}
         {{ config.extra.bio }}
@@ -83,7 +83,7 @@
         {{ config.description }}
       {% endif %}
     </p>
-        
+
   </div>
 
 </div>
