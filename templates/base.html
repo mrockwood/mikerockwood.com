@@ -63,7 +63,6 @@
 	{% block head_page_meta %}
 	<title>{% if title %}{{ title }} - {{ config.title }}{% else %}{{ config.title }}{% endif %}</title>
 	<meta name="description" content="{{ description | default(value=config.description) }}">
-	{% if current_url %}<link rel="canonical" href="{{ current_url | safe }}" />{% endif %}
 	{%- endblock head_page_meta %}
 
 	{#- Scripts -#}
@@ -81,7 +80,7 @@
 
 	{#- Styles -#}
 	{% block head_styles %}
-	<link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
+	<link rel="preload stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
 	{%- endblock head_styles %}
 
 	{#- Favicons -#}
@@ -114,6 +113,11 @@
 	<link rel=me href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}">
 	<link rel=me href="https://www.github.com/{{ config.extra.social.github }}">
 	{%- endblock head_me %}
+
+	{#- Canonical -#}
+	{% block head_canonical %}
+	{% if current_url %}<link rel="canonical" href="{{ current_url | safe }}" />{% endif %}
+	{%- endblock head_canonical %}
 
 	{#- SEO -#}
 	{% block head_seo %}

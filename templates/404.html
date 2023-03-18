@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
-{% set title = "404" %}
-{% set description = "Page not found!" %}
+
+{#- Page Meta -#}
+{% block head_page_meta %}
+	<title>404 - {{ config.title }}</title>
+	<meta name="description" content="Page not found!">
+{%- endblock head_page_meta %}
+
 
 {%- block content %}
 <header class="uk-section uk-text-center">
