@@ -1,13 +1,7 @@
 backend:
-  name: proxy
-  proxy_url: http://127.0.0.1:1112/api/v1
+  name: github
+  repo: mrockwood/mikerockwood.com
   branch: main
-
-local_backend:
-  # when using a custom proxy server port
-  url: http://127.0.0.1:1112/api/v1
-  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
-  allowed_hosts: ['192.168.0.1']
 
 media_folder: "static/images"
 public_folder: "images"
