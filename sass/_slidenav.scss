@@ -20,9 +20,9 @@
     --slidenav-padding-vertical:                      5px;
     --slidenav-padding-horizontal:                    10px;
 
-    --slidenav-color:                                 hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.5 ); // hsl( var(--inverse-global-background) / 0.5 );
-    --slidenav-hover-color:                           hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.9 ); // hsl( var(--inverse-global-background) / 0.9 );
-    --slidenav-active-color:                          hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.5 ); // hsl( var(--inverse-global-background) / 0.5 );
+    --slidenav-color:                                 hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.5 );
+    --slidenav-hover-color:                           hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.9 );
+    --slidenav-active-color:                          hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.5 );
 
     --slidenav-large-padding-vertical:                10px;
     --slidenav-large-padding-horizontal:              var(--slidenav-large-padding-vertical);

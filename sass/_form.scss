@@ -44,23 +44,23 @@
     .uk-checkbox
 ) {
 
-    --form-accent-color:                              hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
+    --form-accent-color:                              hsl( var(--theme-primary-background, var(--global-primary-background) ) );
 
     --form-height:                                    var(--global-control-height);
     --form-line-height:                               var(--form-height);
     --form-padding-horizontal:                        10px;
     --form-padding-vertical:                          calc( var(--form-padding-horizontal) * 0.6 );
 
-    --form-background:                                hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 ); // hsl(var(--global-muted-background) / 0.8);
-    --form-color:                                     hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --form-background:                                hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 );
+    --form-color:                                     hsl( var(--theme-color, var(--global-color) ) );
 
-    --form-focus-background:                          hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
-    --form-focus-color:                               hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --form-focus-background:                          hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --form-focus-color:                               hsl( var(--theme-color, var(--global-color) ) );
 
-    --form-disabled-background:                       hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
-    --form-disabled-color:                            hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --form-disabled-background:                       hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --form-disabled-color:                            hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
-    --form-placeholder-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --form-placeholder-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
     --form-small-height:                              var(--global-control-small-height);
     --form-small-padding-horizontal:                  8px;
@@ -74,8 +74,8 @@
     --form-large-line-height:                         --form-large-height;
     --form-large-font-size:                           var(--global-medium-font-size);
 
-    --form-danger-color:                              hsl( var(--theme-danger-background, var(--global-danger-background) ) ); // hsl(var(--global-danger-background));
-    --form-success-color:                             hsl( var(--theme-success-background, var(--global-success-background) ) ); // hsl(var(--global-success-background));
+    --form-danger-color:                              hsl( var(--theme-danger-background, var(--global-danger-background) ) );
+    --form-success-color:                             hsl( var(--theme-success-background, var(--global-success-background) ) );
 
     --form-width-xsmall:                              50px;
     --form-width-small:                               130px;
@@ -83,26 +83,26 @@
     --form-width-large:                               500px;
 
     --form-select-padding-right:                      20px;
-    --form-select-icon-color:                         hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
-    --form-select-option-color:                       hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
-    --form-select-disabled-icon-color:                hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --form-select-icon-color:                         hsl( var(--theme-color, var(--global-color) ) );
+    --form-select-option-color:                       hsl( var(--theme-color, var(--global-color) ) );
+    --form-select-disabled-icon-color:                hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
     --form-datalist-padding-right:                    20px;
-    --form-datalist-icon-color:                       hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --form-datalist-icon-color:                       hsl( var(--theme-color, var(--global-color) ) );
 
     --form-radio-size:                                16px;
     --form-radio-margin-top:                          -4px;
-    --form-radio-background:                          hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
+    --form-radio-background:                          hsl( var(--theme-muted-background, var(--global-muted-background) ) );
 
-    --form-radio-focus-background:                    hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
+    --form-radio-focus-background:                    hsl( var(--theme-muted-background, var(--global-muted-background) ) );
 
-    --form-radio-checked-background:                  hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
-    --form-radio-checked-icon-color:                  hsl( var(--inverse-theme-emphasis-color, var(--global-inverse-color) ) ); // hsl(var(--global-inverse-color));
+    --form-radio-checked-background:                  hsl( var(--theme-primary-background, var(--global-primary-background) ) );
+    --form-radio-checked-icon-color:                  hsl( var(--inverse-theme-emphasis-color, var(--global-inverse-color) ) );
 
-    --form-radio-checked-focus-background:            hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
+    --form-radio-checked-focus-background:            hsl( var(--theme-primary-background, var(--global-primary-background) ) );
 
-    --form-radio-disabled-background:                 hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
-    --form-radio-disabled-icon-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --form-radio-disabled-background:                 hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --form-radio-disabled-icon-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
     --form-legend-font-size:                          var(--global-large-font-size);
     --form-legend-line-height:                        1.4;
@@ -115,8 +115,8 @@
     --form-horizontal-controls-text-padding-top:      7px;
 
     --form-icon-width:                                var(--form-height);
-    --form-icon-color:                                hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --form-icon-hover-color:                          hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --form-icon-color:                                hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --form-icon-hover-color:                          hsl( var(--theme-color, var(--global-color) ) );
 
 }
 

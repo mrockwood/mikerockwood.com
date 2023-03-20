@@ -12,11 +12,11 @@
 :where([class*='uk-totop']) {
 
     --totop-padding:                                  5px;
-    --totop-color:                                    hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --totop-color:                                    hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
-    --totop-hover-color:                              hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --totop-hover-color:                              hsl( var(--theme-color, var(--global-color) ) );
 
-    --totop-active-color:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --totop-active-color:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
 
 }
 

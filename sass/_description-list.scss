@@ -13,12 +13,12 @@
 
 :where([class*='uk-description-list']) {
 
-    --description-list-term-color:                    hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --description-list-term-color:                    hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
     --description-list-term-margin-top:               var(--global-margin);
 
     --description-list-divider-term-margin-top:       var(--global-margin);
     --description-list-divider-term-border-width:     var(--global-border-width);
-    --description-list-divider-term-border:           hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+    --description-list-divider-term-border:           hsl( var(--theme-border, var(--global-border) ) );
 
 }
 

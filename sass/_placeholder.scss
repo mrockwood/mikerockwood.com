@@ -14,7 +14,7 @@
     --placeholder-margin-vertical:                    var(--global-margin);
     --placeholder-padding-vertical:                   var(--global-gutter);
     --placeholder-padding-horizontal:                 var(--global-gutter);
-    --placeholder-background:                         hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
+    --placeholder-background:                         hsl( var(--theme-muted-background, var(--global-muted-background) ) );
 
 }
 
