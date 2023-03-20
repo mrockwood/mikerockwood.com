@@ -8,7 +8,7 @@
 {%- endblock head_page_meta %}
 
 
-{%- block content %}
+{%- block masthead -%}
 <header class="uk-section uk-text-center">
 	<div class="uk-container uk-container-large">
 		<h1 class="uk-heading-large uk-text-bold uk-text-uppercase">
@@ -19,8 +19,11 @@
 		</p>
 	</div>
 </header>
+{%- endblock masthead -%}
 
-<section class="uk-section">
+
+{%- block content %}
+<section class="uk-section uk-section-small">
 	<div class="uk-container uk-text-center">
 
 		<p>The page you are looking for does not exist or has been moved!</p>
@@ -33,20 +36,4 @@
 
 	</div>
 </section>
-
-{# <div class="uk-section uk-section-2xlarge@m uk-flex-middle uk-flex-center">
-<div class="uk-container">
-	<div class="uk-width-2xlarge@m uk-margin-auto uk-text-center">
-		<h3 class="uk-heading-xlarge">404</h3>
-		<h1 class="uk-heading-medium">Page not found!</h1>
-		<p>The page you are looking for does not exist or has been moved!</p>
-		<p class="uk-margin-large-top">
-			<a href="{{ config.base_url | safe }}{%- if config.extra.uglyurls %}index.html{%- endif %}" class="">
-				<span uk-icon="icon: arrow-left"></span>
-				<span>Back to homepage</span>
-			</a>
-		</p>
-	</div>
-</div>
-</div> #}
 {%- endblock content %}

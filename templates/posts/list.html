@@ -1,54 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} | {{ super() }}{% endblock title %}
 
-{%- block seo %}
-  {{- super() }}
-  {%- set title = "Posts" %}
+{% block subnav %}
+<div class="uk-margin-small" uk-margin>
+	{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="bookmarks/">Bookmarks</a>{% endif %}
+	{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="jams/">Jams</a>{% endif %}
+	{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="notes/">Notes</a>{% endif %}
+</div>
+{% endblock subnav %}
 
-  {%- if config.title %}
-    {%- set title_addition = title_separator ~ config.title %}
-  {%- else %}
-    {%- set title_addition = "" %}
-  {%- endif %}
-
-  {%- set description = config.description %}
-
-  {{- macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
-{%- endblock seo %}
 
 {%- block content %}
-
-
-{%- set articles = get_section(path="posts/articles/_index.md") %}
-{%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
-{%- set jams = get_section(path="posts/jams/_index.md") %}
-{%- set likes = get_section(path="posts/likes/_index.md") %}
-{%- set notes = get_section(path="posts/notes/_index.md") %}
-{%- set photos = get_section(path="posts/photos/_index.md") %}
-{%- set replies = get_section(path="posts/replies/_index.md") %}
-{%- set reposts = get_section(path="posts/reposts/_index.md") %}
-{%- set rsvps = get_section(path="posts/rsvps/_index.md") %}
-{%- set videos = get_section(path="posts/videos/_index.md") %}
-
-
-<header class="uk-section uk-text-center">
-	<div class="uk-container uk-container-large">
-		<h1 class="uk-heading-large uk-text-bold uk-text-uppercase">
-			{{ section.title }}
-		</h1>
-		{% if section.description %}
-		<p class="uk-width-large uk-margin-auto">
-			{{ section.description }}
-		</p>
-		{% endif %}
-		<div class="uk-margin-small" uk-margin>
-			{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="bookmarks/">Bookmarks</a>{% endif %}
-			{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="jams/">Jams</a>{% endif %}
-			{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="notes/">Notes</a>{% endif %}
-		</div>
-	</div>
-</header>
 
 
 <!-- Articles -->
