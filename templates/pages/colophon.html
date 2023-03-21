@@ -68,9 +68,9 @@
 				<button class="uk-slidenav-large" href="#" uk-slidenav-previous uk-slider-item="previous" aria-label="Previous slide"></button>
 				<button class="uk-slidenav-large" uk-slidenav-next uk-slider-item="next" aria-label="Next slide"></button>
 			</div>
-		</div>		
+		</div>
 		<div class="uk-margin-medium uk-container-item-padding-remove-right">
-			<div class="uk-position-relative">				
+			<div class="uk-position-relative">
 				<ul class="uk-slider-items uk-grid uk-grid-large">
 					<li class="uk-width-1-1 uk-width-3-4@m uk-width-1-2@xl">
 						<div class="">
@@ -78,59 +78,83 @@
 							<h3 class="uk-h2 uk-margin-bottom uk-margin-remove-top">Version 4</h3>
 							<div class="uk-cover-container">
 								<picture>
-									<!-- <source
-										type="image/webp"
-										srcset="
-											https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=file%3D..%252Fdemo%252Fdistrict%252Fimages%252Fgallery-slider-01.jpg%26type%3Dwebp%2C85%26thumbnail%3D768%2C528&amp;hash=c532b06c  768w,
-											/wordpress/wp-content/themes/yootheme/cache/bc/gallery-slider-01-bcb6ca1a.webp                                                                                                                                                                  1024w,
-											/wordpress/wp-content/themes/yootheme/cache/d5/gallery-slider-01-d577ffcf.webp                                                                                                                                                                  1366w,
-											/wordpress/wp-content/themes/yootheme/cache/8b/gallery-slider-01-8b80cafb.webp                                                                                                                                                                  1600w
-										"
-										sizes="(min-width: 1600px) 1600px"
-									/> -->
-									<img decoding="async" src="http://via.placeholder.com/1600x1100" width="1600" height="1100" alt loading="eager" class="uk-transition-opaque" />
+									{%- set mr_v4_image = "/content/work/mr-v4/mr-v4_cropped.png" %}
+									{%- set mr_v4_image_640 = resize_image(path=mr_v4_image, width=640, height=480, format="webp", quality=75) %}
+									{%- set mr_v4_image_960 = resize_image(path=mr_v4_image, width=960, height=720, format="webp", quality=75) %}
+									{%- set mr_v4_image_1200 = resize_image(path=mr_v4_image, width=1200, height=900, format="webp", quality=75) %}
+									{%- set mr_v4_image_1600 = resize_image(path=mr_v4_image, width=1600, height=1200, format="webp", quality=75) %}
+
+									<img
+										class=""
+										loading="lazy"
+										alt=""
+										srcset="{{ mr_v4_image_640.url | safe }} 640w,
+												{{ mr_v4_image_960.url | safe }} 960w,
+												{{ mr_v4_image_1200.url | safe }} 1200w,
+												{{ mr_v4_image_1600.url | safe }} 1600w"
+										sizes="(max-width: 640px) 640px,
+												(max-width: 960px) 960px,
+												(max-width: 1200px) 1200px,
+												1600px"
+									>
 								</picture>
 							</div>
 						</div>
 					</li>
 					<li class="uk-width-1-1 uk-width-3-4@m uk-width-1-2@xl">
 						<div class="">
-							<div class="uk-h6 uk-text-muted uk-text-uppercase uk-margin-top uk-margin-small-bottom">2013 - 2017</div>
+							<div class="uk-h6 uk-text-muted uk-text-uppercase uk-margin-top uk-margin-small-bottom">2014 - 2017</div>
 							<h3 class="uk-h2 uk-margin-bottom uk-margin-remove-top">Version 3</h3>
 							<div class="uk-cover-container">
 								<picture>
-									<!-- <source
-										type="image/webp"
-										srcset="
-											https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=file%3D..%252Fdemo%252Fdistrict%252Fimages%252Fgallery-slider-02.jpg%26type%3Dwebp%2C85%26thumbnail%3D768%2C528&amp;hash=0ae0577e  768w,
-											/wordpress/wp-content/themes/yootheme/cache/07/gallery-slider-02-073dd7b5.webp                                                                                                                                                                  1024w,
-											/wordpress/wp-content/themes/yootheme/cache/6e/gallery-slider-02-6efce260.webp                                                                                                                                                                  1366w,
-											/wordpress/wp-content/themes/yootheme/cache/a1/gallery-slider-02-a13c7a73.webp                                                                                                                                                                  1600w
-										"
-										sizes="(min-width: 1600px) 1600px"
-									/> -->
-									<img decoding="async" src="http://via.placeholder.com/1600x1100" width="1600" height="1100" alt loading="eager" class="uk-transition-opaque" />
+									{%- set mr_v3_image = "/content/work/mr-v3/mr-v3_cropped.png" %}
+									{%- set mr_v3_image_640 = resize_image(path=mr_v3_image, width=640, height=480, format="webp", quality=75) %}
+									{%- set mr_v3_image_960 = resize_image(path=mr_v3_image, width=960, height=720, format="webp", quality=75) %}
+									{%- set mr_v3_image_1200 = resize_image(path=mr_v3_image, width=1200, height=900, format="webp", quality=75) %}
+									{%- set mr_v3_image_1600 = resize_image(path=mr_v3_image, width=1600, height=1200, format="webp", quality=75) %}
+
+									<img
+										class=""
+										loading="lazy"
+										alt=""
+										srcset="{{ mr_v3_image_640.url | safe }} 640w,
+												{{ mr_v3_image_960.url | safe }} 960w,
+												{{ mr_v3_image_1200.url | safe }} 1200w,
+												{{ mr_v3_image_1600.url | safe }} 1600w"
+										sizes="(max-width: 640px) 640px,
+												(max-width: 960px) 960px,
+												(max-width: 1200px) 1200px,
+												1600px"
+									>
 								</picture>
 							</div>
 						</div>
 					</li>
 					<li class="uk-width-1-1 uk-width-3-4@m uk-width-1-2@xl">
 						<div class="">
-							<div class="uk-h6 uk-text-muted uk-text-uppercase uk-margin-top uk-margin-small-bottom">2011 - 2013</div>
+							<div class="uk-h6 uk-text-muted uk-text-uppercase uk-margin-top uk-margin-small-bottom">2011 - 2014</div>
 							<h3 class="uk-h2 uk-margin-bottom uk-margin-remove-top">Version 2</h3>
 							<div class="uk-cover-container">
 								<picture>
-									<!-- <source
-										type="image/webp"
-										srcset="
-											https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=file%3D..%252Fdemo%252Fdistrict%252Fimages%252Fgallery-slider-03.jpg%26type%3Dwebp%2C85%26thumbnail%3D768%2C528&amp;hash=4ff85c13  768w,
-											/wordpress/wp-content/themes/yootheme/cache/6e/gallery-slider-03-6e44dcd0.webp                                                                                                                                                                  1024w,
-											/wordpress/wp-content/themes/yootheme/cache/07/gallery-slider-03-0785e905.webp                                                                                                                                                                  1366w,
-											/wordpress/wp-content/themes/yootheme/cache/0e/gallery-slider-03-0e78e834.webp                                                                                                                                                                  1600w
-										"
-										sizes="(min-width: 1600px) 1600px"
-									/> -->
-									<img decoding="async" src="http://via.placeholder.com/1600x1100" width="1600" height="1100" alt loading="eager" class="uk-transition-opaque" />
+									{%- set mr_v2_image = "/content/work/mr-v2/mr-v2_cropped.png" %}
+									{%- set mr_v2_image_640 = resize_image(path=mr_v2_image, width=640, height=480, format="webp", quality=75) %}
+									{%- set mr_v2_image_960 = resize_image(path=mr_v2_image, width=960, height=720, format="webp", quality=75) %}
+									{%- set mr_v2_image_1200 = resize_image(path=mr_v2_image, width=1200, height=900, format="webp", quality=75) %}
+									{%- set mr_v2_image_1600 = resize_image(path=mr_v2_image, width=1600, height=1200, format="webp", quality=75) %}
+
+									<img
+										class=""
+										loading="lazy"
+										alt=""
+										srcset="{{ mr_v2_image_640.url | safe }} 640w,
+												{{ mr_v2_image_960.url | safe }} 960w,
+												{{ mr_v2_image_1200.url | safe }} 1200w,
+												{{ mr_v2_image_1600.url | safe }} 1600w"
+										sizes="(max-width: 640px) 640px,
+												(max-width: 960px) 960px,
+												(max-width: 1200px) 1200px,
+												1600px"
+									>
 								</picture>
 							</div>
 						</div>
@@ -141,17 +165,25 @@
 							<h3 class="uk-h2 uk-margin-bottom uk-margin-remove-top">Version 1</h3>
 							<div class="uk-cover-container">
 								<picture>
-									<!-- <source
-										type="image/webp"
-										srcset="
-											https://demo.yootheme.com/wordpress/themes/district/wp-admin/admin-ajax.php?action=kernel&amp;p=image&amp;src=file%3D..%252Fdemo%252Fdistrict%252Fimages%252Fgallery-slider-04.jpg%26type%3Dwebp%2C85%26thumbnail%3D768%2C528&amp;hash=bb08612c  768w,
-											/wordpress/wp-content/themes/yootheme/cache/ab/gallery-slider-04-ab5aeaaa.webp                                                                                                                                                                  1024w,
-											/wordpress/wp-content/themes/yootheme/cache/c2/gallery-slider-04-c29bdf7f.webp                                                                                                                                                                  1366w,
-											/wordpress/wp-content/themes/yootheme/cache/f4/gallery-slider-04-f4451b63.webp                                                                                                                                                                  1600w
-										"
-										sizes="(min-width: 1600px) 1600px"
-									/> -->
-									<img decoding="async" src="http://via.placeholder.com/1600x1100" width="1600" height="1100" alt loading="eager" class="uk-transition-opaque" />
+									{%- set mr_v1_image = "/content/work/mr-v1/mr-v1_cropped.png" %}
+									{%- set mr_v1_image_640 = resize_image(path=mr_v1_image, width=640, height=480, format="webp", quality=75) %}
+									{%- set mr_v1_image_960 = resize_image(path=mr_v1_image, width=960, height=720, format="webp", quality=75) %}
+									{%- set mr_v1_image_1200 = resize_image(path=mr_v1_image, width=1200, height=900, format="webp", quality=75) %}
+									{%- set mr_v1_image_1600 = resize_image(path=mr_v1_image, width=1600, height=1200, format="webp", quality=75) %}
+
+									<img
+										class=""
+										loading="lazy"
+										alt=""
+										srcset="{{ mr_v1_image_640.url | safe }} 640w,
+												{{ mr_v1_image_960.url | safe }} 960w,
+												{{ mr_v1_image_1200.url | safe }} 1200w,
+												{{ mr_v1_image_1600.url | safe }} 1600w"
+										sizes="(max-width: 640px) 640px,
+												(max-width: 960px) 960px,
+												(max-width: 1200px) 1200px,
+												1600px"
+									>
 								</picture>
 							</div>
 						</div>
