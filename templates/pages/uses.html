@@ -6,9 +6,72 @@
 	<div class="uk-inline">
 		{%- set desk_image = resize_image(path="/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg", width=2000, height=1500, format='webp', quality=90) %}
 		<img src="{{ desk_image.url }}" width="2000" height="auto" alt="">
-		<a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
+		<!-- <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
 		<a class="uk-position-absolute uk-transform-center" style="left: 74%; top: 47%" href="#" uk-marker></a>
-		<a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a>
+		<a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a> -->
+	</div>
+	<div class="uk-container uk-container-large uk-margin">
+		<p class="uk-text-meta">This isn't my actual desk, but my setup is very similar.</p>
+	</div>
+</div>
+
+<div class="uk-section">
+	<div class="uk-container uk-container-large">
+		<h2>Computers</h2>
+		<table class="uk-table uk-table-large uk-table-divider uk-table-justify uk-table-middle">
+			<!-- <caption hidden>Hardware</caption> -->
+			<tr>
+				<td></td>
+				<th class="uk-table-expand" scope="col">Desktop</th>
+				<th class="uk-table-expand" scope="col">Laptop, work</th>
+				<th class="uk-table-expand" scope="col">Laptop, personal</th>
+			</tr>
+			<tr>
+				<th scope="row">Model</th>
+				<td>HP Pavilion 510-p136</td>
+				<td>Macbook Pro 16" (2019)</td>
+				<td>Dell Latitude 7370</td>
+			</tr>
+			<tr>
+				<th scope="row">CPU</th>
+				<td>Intel i7-6700T</td>
+				<td>Intel i7-9750H</td>
+				<td>Intel m7-6Y75</td>
+			</tr>
+			<tr>
+				<th scope="row">GPU</th>
+				<td>Sapphire Nitro+ Radeon RX 580</td>
+				<td>
+					AMD Radeon Pro 5300M<br>
+					Intel UHD Graphics 630
+				</td>
+				<td>Intel HD Graphics 515</td>
+			</tr>
+			<tr>
+				<th scope="row">Storage</th>
+				<td>
+					1 TB<br>
+					256 GB
+				</td>
+				<td>500 GB</td>
+				<td>500 GB</td>
+			</tr>
+			<tr>
+				<th scope="row">Memory</th>
+				<td>16 GB</td>
+				<td>16 GB</td>
+				<td>8 GB</td>
+			</tr>
+			<tr>
+				<th scope="row"><abbr title="Operating System">OS</abbr></th>
+				<td>
+					macOS Big Sur<br>
+					Nobara Linux
+				</td>
+				<td>macOS Big Sur</td>
+				<td>macOS Monterey</td>
+			</tr>
+		</table>
 	</div>
 </div>
 
@@ -47,7 +110,7 @@
 <div class="uk-section uk-section-small">
 	<div class="uk-container uk-container-xsmall">
 		<hr>
-		<p class="uk-text-small">Last updated: {{ page.date | date(format="%d %b %Y") }}</p>
+		<p class="uk-text-small">Last updated: {{ page.date | date(format="%B %Y") }}</p>
 	</div>
 </div>
 
