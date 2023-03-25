@@ -93,6 +93,11 @@
 	{#- Styles -#}
 	{% block head_styles %}
 	<link rel="preload stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
+	<script>
+        // if there's a theme id in localstorage, use it on the <html>
+        localStorage.getItem('theme') && 
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+    </script>
 	{%- endblock head_styles %}
 
 	{#- Favicons -#}
@@ -185,13 +190,13 @@
 							</svg>
 						</button>
 					</div>
-					{# <div class="uk-navbar-item">
+					<div class="uk-navbar-item">
 						<button uk-toggle="target: #js-theme-menu" class="uk-icon-button uk-icon" aria-label="Theme Menu">
 							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
 							</svg>
 						</button>
-					</div> #}
+					</div>
 				</div>
 			</nav>
 		</div>
@@ -308,20 +313,42 @@
 
 
 	{#- Theme Menu -#}
-	{# {% block foot_theme %}
+	{% block foot_theme %}
 	<div id="js-theme-menu" uk-offcanvas="flip: true; mode: push;">
 		<div class="uk-offcanvas-bar">
 			<button class="uk-offcanvas-close" type="button" uk-close></button>
-			test
+			<ul class="themeswitcher">
+				<li class="themeswitcher__item">
+					<button class="themepicker__btn js-themepicker-themeselect" data-theme="default" aria-label="select color theme 1">
+						system
+					</button>
+				</li>
+				<li class="themeswitcher__item">
+					<button class="themepicker__btn js-themepicker-themeselect" data-theme="uk-theme-light" aria-label="select color theme 1">
+						light
+					</button>
+				</li>
+				<li class="themeswitcher__item">
+					<button class="themepicker__btn js-themepicker-themeselect" data-theme="uk-theme-dark" aria-label="select color theme 1">
+						dark
+					</button>
+				</li>
+				<li class="themeswitcher__item">
+					<button class="themepicker__btn js-themepicker-themeselect" data-theme="uk-theme-bold" aria-label="select color theme 2">
+						theme 2
+					</button>
+				</li>
+			</ul>
 		</div>
 	</div>
-	{% endblock foot_theme %} #}
+	{% endblock foot_theme %}
 
 
 	{#- Scripts -#}
 	{% block foot_scripts %}
 	<script src="{{ get_url(path="/scripts/uikit.min.js", cachebust=true) }}" defer="defer"></script>
 	<script src="{{ get_url(path="/scripts/uikit-icons.min.js", cachebust=true) }}" defer="defer"></script>
+	<script src="{{ get_url(path="/scripts/theme-picker.js", cachebust=true) }}" defer="defer"></script>
 	{% endblock foot_scripts %}
 
 

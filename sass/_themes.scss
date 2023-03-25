@@ -143,7 +143,8 @@
 
 }
 
-.uk-theme-light {
+.uk-theme-light,
+[data-theme='uk-theme-light'] {
 
     color-scheme: light;
 
@@ -179,7 +180,8 @@
 
 }
 
-.uk-theme-dark {
+.uk-theme-dark,
+[data-theme='uk-theme-dark'] {
 
     color-scheme: dark;
 
@@ -215,7 +217,8 @@
 
 }
 
-.uk-theme-bold {
+.uk-theme-bold,
+[data-theme='uk-theme-bold'] {
 
     color-scheme: light;
 
