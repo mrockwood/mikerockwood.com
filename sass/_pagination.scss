@@ -21,11 +21,11 @@
 
     --pagination-item-padding-vertical:               5px;
     --pagination-item-padding-horizontal:             10px;
-    --pagination-item-color:                          hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --pagination-item-hover-color:                    hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --pagination-item-color:                          hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --pagination-item-hover-color:                    hsl( var(--theme-color, var(--global-color) ) );
     --pagination-item-hover-text-decoration:          none;
-    --pagination-item-active-color:                   hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
-    --pagination-item-disabled-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --pagination-item-active-color:                   hsl( var(--theme-color, var(--global-color) ) );
+    --pagination-item-disabled-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
 }
 

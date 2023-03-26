@@ -17,11 +17,11 @@
 
     --divider-small-width:                            100px;
     --divider-small-border-width:                     var(--global-border-width);
-    --divider-small-border:                           hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+    --divider-small-border:                           hsl( var(--theme-border, var(--global-border) ) );
 
     --divider-vertical-height:                        100px;
     --divider-vertical-border-width:                  var(--global-border-width);
-    --divider-vertical-border:                        hsl( var(--theme-border, var(--global-border) ) ); // hsl(var(--global-border));
+    --divider-vertical-border:                        hsl( var(--theme-border, var(--global-border) ) );
 
 }
 

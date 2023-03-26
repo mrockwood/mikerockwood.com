@@ -21,23 +21,23 @@
     --alert-margin-vertical:                          var(--global-margin);
     --alert-padding:                                  15px;
     --alert-padding-right:                            calc( var(--alert-padding) + 14px );
-    --alert-background:                               hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
-    --alert-color:                                    hsl( var(--theme-color, var(--global-color) ) ); // hsl(var(--global-color));
+    --alert-background:                               hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --alert-color:                                    hsl( var(--theme-color, var(--global-color) ) );
 
     --alert-close-top:                                calc( var(--alert-padding) + 5px );
     --alert-close-right:                              var(--alert-padding);
 
     --alert-primary-background:                       hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.16);
-    --alert-primary-color:                            hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
+    --alert-primary-color:                            hsl( var(--theme-primary-background, var(--global-primary-background) ) );
 
-    --alert-success-background:                       hsl( var(--theme-success-background, var(--global-success-background) ) / 0.1); // hsl(var(--global-success-background) / 0.1);
-    --alert-success-color:                            hsl( var(--theme-success-background, var(--global-success-background) ) ); // hsl(var(--global-success-background));
+    --alert-success-background:                       hsl( var(--theme-success-background, var(--global-success-background) ) / 0.1);
+    --alert-success-color:                            hsl( var(--theme-success-background, var(--global-success-background) ) );
 
-    --alert-warning-background:                       hsl( var(--theme-warning-background, var(--global-warning-background) ) / 0.1); // hsl(var(--global-warning-background) / 0.1);
-    --alert-warning-color:                            hsl( var(--theme-warning-background, var(--global-warning-background) ) ); // hsl(var(--global-warning-background));
+    --alert-warning-background:                       hsl( var(--theme-warning-background, var(--global-warning-background) ) / 0.1);
+    --alert-warning-color:                            hsl( var(--theme-warning-background, var(--global-warning-background) ) );
 
-    --alert-danger-background:                        hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.1); // hsl(var(--global-danger-background) / 0.1);
-    --alert-danger-color:                             hsl( var(--theme-danger-background, var(--global-danger-background) ) ); // hsl(var(--global-danger-background));
+    --alert-danger-background:                        hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.1);
+    --alert-danger-color:                             hsl( var(--theme-danger-background, var(--global-danger-background) ) );
 
 }
 

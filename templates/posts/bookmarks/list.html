@@ -1,37 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} | {{ super() }} {% endblock title %}
-
-{%- block seo %}
-	{{- super() }}
-	{%- set title = "Bookmarks" %}
-
-	{%- if config.title %}
-		{%- set title_addition = title_separator ~ config.title %}
-	{%- else %}
-		{%- set title_addition = "" %}
-	{%- endif %}
-
-	{%- set description = config.description %}
-
-	{{- macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
-{%- endblock seo %}
-
 {%- block content %}
-<header class="uk-section uk-text-center">
-	<div class="uk-container uk-container-large">
-		<h1 class="uk-heading-large uk-text-bold uk-text-uppercase">
-			{{ section.title }}
-		</h1>
-		{% if section.description %}
-		<p class="uk-width-large uk-margin-auto">
-			{{ section.description }}
-		</p>
-		{% endif %}
-	</div>
-</header>
-
-
 <section class="uk-section">
 	<div class="uk-container uk-container-small">
 
@@ -83,5 +52,4 @@
 
 	</div>
 </section>
-
 {%- endblock content %}

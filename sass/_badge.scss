@@ -15,8 +15,8 @@
     --badge-padding-vertical:                         0;
     --badge-padding-horizontal:                       5px;
     --badge-border-radius:                            500px;
-    --badge-background:                               hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
-    --badge-color:                                    hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--global-inverse-color));
+    --badge-background:                               hsl( var(--theme-primary-background, var(--global-primary-background) ) );
+    --badge-color:                                    hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
     --badge-font-size:                                11px;
 
 }

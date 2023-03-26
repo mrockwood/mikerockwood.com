@@ -36,47 +36,47 @@
     --button-small-padding-horizontal:                var(--global-small-gutter);
     --button-large-padding-horizontal:                var(--global-medium-gutter);
 
-    --button-default-background:                      hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
-    --button-default-color:                           hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
-    --button-default-hover-background:                hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.9 ); // hsl(var(--global-muted-background) / 0.9);
-    --button-default-hover-color:                     hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
-    --button-default-active-background:               hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 ); // hsl(var(--global-muted-background) / 0.8);
-    --button-default-active-color:                    hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
+    --button-default-background:                      hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --button-default-color:                           hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --button-default-hover-background:                hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.9 );
+    --button-default-hover-color:                     hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --button-default-active-background:               hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 );
+    --button-default-active-color:                    hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
 
-    --button-primary-background:                      hsl( var(--theme-primary-background, var(--global-primary-background) ) ); // hsl(var(--global-primary-background));
-    --button-primary-color:                           hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
-    --button-primary-hover-background:                hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.9 ); // hsl(var(--global-primary-background) / 0.9);
-    --button-primary-hover-color:                     hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
-    --button-primary-active-background:               hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.8 ); // hsl(var(--global-primary-background) / 0.8);
-    --button-primary-active-color:                    hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-primary-background:                      hsl( var(--theme-primary-background, var(--global-primary-background) ) );
+    --button-primary-color:                           hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --button-primary-hover-background:                hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.9 );
+    --button-primary-hover-color:                     hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --button-primary-active-background:               hsl( var(--theme-primary-background, var(--global-primary-background) ) / 0.8 );
+    --button-primary-active-color:                    hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
 
-    --button-secondary-background:                    hsl( var(--theme-secondary-background, var(--global-secondary-background) ) ); // hsl(var(--global-secondary-background));
-    --button-secondary-color:                         hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
-    --button-secondary-hover-background:              hsl( var(--theme-secondary-background, var(--global-secondary-background) ) / 0.9 ); // hsl(var(--global-secondary-background) / 0.9);
-    --button-secondary-hover-color:                   hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
-    --button-secondary-active-background:             hsl( var(--theme-secondary-background, var(--global-secondary-background) ) / 0.8 ); // hsl(var(--global-secondary-background) / 0.8);
-    --button-secondary-active-color:                  hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-secondary-background:                    hsl( var(--theme-secondary-background, var(--global-secondary-background) ) );
+    --button-secondary-color:                         hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --button-secondary-hover-background:              hsl( var(--theme-secondary-background, var(--global-secondary-background) ) / 0.9 );
+    --button-secondary-hover-color:                   hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --button-secondary-active-background:             hsl( var(--theme-secondary-background, var(--global-secondary-background) ) / 0.8 );
+    --button-secondary-active-color:                  hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
 
-    --button-danger-background:                       hsl( var(--theme-danger-background, var(--global-danger-background) ) ); // hsl(var(--global-danger-background));
-    --button-danger-color:                            hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
-    --button-danger-hover-background:                 hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.9 ); // hsl(var(--global-danger-background) / 0.9);
-    --button-danger-hover-color:                      hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
-    --button-danger-active-background:                hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.8 ); // hsl(var(--global-danger-background) / 0.8);
-    --button-danger-active-color:                     hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) ); // hsl(var(--inverse-global-emphasis-color));
+    --button-danger-background:                       hsl( var(--theme-danger-background, var(--global-danger-background) ) );
+    --button-danger-color:                            hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --button-danger-hover-background:                 hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.9 );
+    --button-danger-hover-color:                      hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --button-danger-active-background:                hsl( var(--theme-danger-background, var(--global-danger-background) ) / 0.8 );
+    --button-danger-active-color:                     hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
 
-    --button-disabled-background:                     hsl( var(--theme-muted-background, var(--global-muted-background) ) ); // hsl(var(--global-muted-background));
-    --button-disabled-color:                          hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --button-disabled-background:                     hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --button-disabled-color:                          hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
     --button-text-line-height:                        var(--global-line-height);
-    --button-text-color:                              hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
-    --button-text-hover-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
-    --button-text-disabled-color:                     hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --button-text-color:                              hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --button-text-hover-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --button-text-disabled-color:                     hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
     --button-link-line-height:                        var(--global-line-height);
-    --button-link-color:                              hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) ); // hsl(var(--global-emphasis-color));
-    --button-link-hover-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --button-link-color:                              hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --button-link-hover-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) );
     --button-link-hover-text-decoration:              none;
-    --button-link-disabled-color:                     hsl( var(--theme-muted-color, var(--global-muted-color) ) ); // hsl(var(--global-muted-color));
+    --button-link-disabled-color:                     hsl( var(--theme-muted-color, var(--global-muted-color) ) );
 
 }
 
