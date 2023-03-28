@@ -9,37 +9,40 @@
 		<!-- <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
 		<a class="uk-position-absolute uk-transform-center" style="left: 74%; top: 47%" href="#" uk-marker></a>
 		<a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a> -->
+		<div class="uk-position-medium uk-position-bottom uk-light">
+			<p class="uk-text-meta uk-margin-remove">This isn't my actual desk, but my setup is very similar.</p>
+		</div>
 	</div>
-	<div class="uk-container uk-container-large uk-margin">
+	{# <div class="uk-container uk-container-large uk-margin">
 		<p class="uk-text-meta">This isn't my actual desk, but my setup is very similar.</p>
-	</div>
+	</div> #}
 </div>
 
-<div class="uk-section">
+<div class="uk-section uk-section-large uk-section-secondary uk-overflow-auto">
 	<div class="uk-container uk-container-large">
-		<h2>Computers</h2>
-		<table class="uk-table uk-table-large uk-table-divider uk-table-justify uk-table-middle">
+		<h2 class="uk-heading-small uk-margin-remove-vertical">Hardware</h2>
+		<table class="uk-table uk-table-large uk-table-divider uk-table-justify uk-table-middle uk-margin-remove-bottom uk-margin-large">
 			<!-- <caption hidden>Hardware</caption> -->
 			<tr>
 				<td style="inline-size: 10%; min-inline-size: 140px"></td>
-				<th class="uk-table-expand" scope="col" style="inline-size: 30%">Desktop</th>
-				<th class="uk-table-expand" scope="col" style="inline-size: 30%">Laptop, work</th>
-				<th class="uk-table-expand" scope="col" style="inline-size: 30%">Laptop, personal</th>
+				<th class="uk-table-expand" scope="col" style="inline-size: 30%; min-inline-size: 240px">Desktop</th>
+				<th class="uk-table-expand" scope="col" style="inline-size: 30%; min-inline-size: 240px">Laptop, work</th>
+				<th class="uk-table-expand" scope="col" style="inline-size: 30%; min-inline-size: 240px">Laptop, personal</th>
 			</tr>
 			<tr>
-				<th scope="row">Model</th>
+				<th scope="row" style="vertical-align: middle">Model</th>
 				<td>HP Pavilion 510-p136</td>
 				<td>Macbook Pro 16" (2019)</td>
 				<td>Dell Latitude 7370</td>
 			</tr>
 			<tr>
-				<th scope="row">CPU</th>
+				<th scope="row" style="vertical-align: middle"><abbr title="Central Processing Unit">CPU</abbr></th>
 				<td>Intel i7-6700T</td>
 				<td>Intel i7-9750H</td>
 				<td>Intel m7-6Y75</td>
 			</tr>
 			<tr>
-				<th scope="row">GPU</th>
+				<th scope="row" style="vertical-align: middle"><abbr title="Graphics Processing Unit">GPU</abbr></th>
 				<td>Sapphire Nitro+ Radeon RX 580</td>
 				<td>
 					AMD Radeon Pro 5300M<br>
@@ -48,7 +51,7 @@
 				<td>Intel HD Graphics 515</td>
 			</tr>
 			<tr>
-				<th scope="row">Storage</th>
+				<th scope="row" style="vertical-align: middle">Storage</th>
 				<td>
 					1 TB<br>
 					256 GB
@@ -57,13 +60,13 @@
 				<td>500 GB</td>
 			</tr>
 			<tr>
-				<th scope="row">Memory</th>
+				<th scope="row" style="vertical-align: middle">Memory</th>
 				<td>16 GB</td>
 				<td>16 GB</td>
 				<td>8 GB</td>
 			</tr>
 			<tr>
-				<th scope="row"><abbr title="Operating System">OS</abbr></th>
+				<th scope="row" style="vertical-align: middle"><abbr title="Operating System">OS</abbr></th>
 				<td>
 					macOS Big Sur<br>
 					Nobara Linux
@@ -75,10 +78,10 @@
 	</div>
 </div>
 
-<div class="uk-section">
+<div class="uk-section uk-section-large">
 	<div class="uk-container uk-container-xsmall">
-		<h2 class="">Software</h2>
-		<ul class="uk-list uk-list-large uk-list-divider">
+		<h2 class="uk-heading-small uk-margin-remove-vertical">Software</h2>
+		<ul class="uk-list uk-list-large uk-list-divider uk-margin-remove-bottom uk-margin-medium">
 			<li>
 				<div class="uk-grid-small uk-flex-middle" uk-grid>
 					<div class="uk-width-small@s">
@@ -150,7 +153,7 @@
 						</p>
 					</div>
 				</div>
-			</li>			
+			</li>
 			<li>
 				<div class="uk-grid-small uk-flex-middle" uk-grid>
 					<div class="uk-width-small@s">
@@ -191,9 +194,30 @@
 	</div>
 </div>
 
-<div class="uk-section uk-section-small">
-	<div class="uk-container uk-container-xsmall">
-		<hr>
+<div class="uk-section uk-padding-remove">
+	<h2 hidden>Other commonly used items</h2>
+	<div class="uk-child-width-1-2 uk-child-width-1-4@m uk-grid-collapse" uk-grid>
+		{%- set work_bag = resize_image(path='/images/uses/marten-bjork-6dW3xyQvcYE-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
+		<img src="{{ work_bag.url }}" loading="lazy" alt="Work bag">
+		{%- set strat = resize_image(path='/images/uses/maksym-pozniak-haraburda-nNhMKr0ejIw-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}	
+		<img src="{{ strat.url }}" loading="lazy" alt="Fender Stratocaster">
+		{%- set helix = resize_image(path='/images/uses/91244_helix-lt-p.jpg', width=600, height=600, format='webp', quality=75) %}
+		<img src="{{ helix.url }}" loading="lazy" alt="Line 6 Helix">
+		{%- set lgg8 = resize_image(path='/images/uses/hs-yoo-47452643221_54d1a38630_flickr-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
+		<img src="{{ lgg8.url }}" loading="lazy" alt="LG G8 ThinQ">
+		{%- set stadia = resize_image(path='/images/uses/mike-van-den-bos-NJUuTqckplc-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
+		<img src="{{ stadia.url }}" loading="lazy" alt="Stadia controller">
+		{%- set midi = resize_image(path='/images/uses/gvz-42-MSqMNN90sDs-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
+		<img src="{{ midi.url }}" loading="lazy" alt="Nektar Impact LX61+">
+		{%- set wallet = resize_image(path='/images/uses/stephen-phillips-hostreviews-co-uk-em37kS8WJJQ-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
+		<img src="{{ wallet.url }}" loading="lazy" alt="Thin wallet">
+		{%- set mazda6 = resize_image(path='/images/uses/mojtaba-mosayebzadeh-0wRenFA50XE-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
+		<img src="{{ mazda6.url }}" loading="lazy" alt="Mazda6">
+	</div>
+</div>
+
+<div class="uk-section" style="padding-block-start: var(--global-medium-gutter);">
+	<div class="uk-container uk-text-center">
 		<p class="uk-text-small">Last updated: {{ page.date | date(format="%B %Y") }}</p>
 	</div>
 </div>
