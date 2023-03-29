@@ -173,6 +173,7 @@ collections:
     folder: "content/work/"
     create: true
     slug: "{{title}}"
+    path: "{{slug}}/index.md"
     media_folder: ''
     public_folder: ''
     fields:
