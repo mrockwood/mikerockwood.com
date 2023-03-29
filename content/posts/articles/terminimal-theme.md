@@ -1,13 +1,13 @@
 ---
 title: Terminimal Theme for Zola
 date: 2019-02-04
+draft: true
 taxonomies:
   tags:
     - zola
     - theme
     - showcase
 ---
-
 Welcome to Terminimal! This is a theme showcase post.
 
 Code block (using "boron" theme):

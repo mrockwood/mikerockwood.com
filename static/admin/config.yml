@@ -14,13 +14,20 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
           - {label: "Tags", name: "tags", widget: "list"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Featured Image", name: "featuredImg", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "bookmarks"
     label: "Bookmarks"
@@ -31,18 +38,19 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - label: "Extra"
-        name: "extra"
-        widget: "object"
-        fields:
-          - {label: "Link", name: "bookmarkOf", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}      
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
           - {label: "Tags", name: "tags", widget: "list"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "bookmarkOf", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "favorites"
     label: "Favorites"
@@ -51,9 +59,14 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Link", name: "likeOf", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "likeOf", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "jams"
     label: "Jams"
@@ -64,8 +77,9 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -84,18 +98,22 @@ collections:
       preview: false
     slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
     fields:
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
     label_singular: "Page"
-    folder: "src/content/pages/"
+    folder: "content/pages/"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Permalink", name: "permalink", widget: "string" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text" }
+      - {label: "Path", name: "path", widget: "string" }
+      - {label: "Template", name: "template", widget: "string" }
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "replies"
     label: "Replies"
@@ -105,9 +123,14 @@ collections:
     identifier_field: "body"
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Reply to URL", name: "inReplyTo", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Reply to URL", name: "inReplyTo", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "reposts"
     label: "Reposts"
@@ -117,9 +140,14 @@ collections:
     filter: {field: "type", value: "repost"}
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Link", name: "repostOf", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "repostOf", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "rsvps"
     label: "RSVPs"
@@ -129,33 +157,38 @@ collections:
     identifier_field: "body"
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Event URL", name: "inReplyTo", widget: "string"}
-      - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested']}
+      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "hidden"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Event URL", name: "inReplyTo", widget: "string"}
+          - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested']}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "work"
     label: "Work"
     label_singular: "Work Project"
-    folder: "src/content/work/"
-    path: "{{slug}}/{{slug}}"
+    folder: "content/work/"
     create: true
     slug: "{{title}}"
     media_folder: ''
     public_folder: ''
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - label: "Launch Year"
-        name: "year"
-        widget: "datetime"
-        date_format: "YYYY" # e.g. 2021
-        time_format: false
-      - {label: "Project URL", name: "projectUrl", widget: "string", required: false}
-      - {label: "Role", name: "role", widget: "string"}
-      - label: "Tech"
-        name: "tech"
-        widget: "list"
-      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Tasks", name: "tasks", widget: "list"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Featured", name: "featured", widget: "boolean", default: false}
+          - {label: "Featured Image", name: "featuredImg", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
