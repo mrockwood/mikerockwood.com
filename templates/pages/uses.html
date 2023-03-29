@@ -2,15 +2,17 @@
 
 {%- block content %}
 
-<div class="uk-section uk-padding-remove">
-	<div class="uk-inline">
+<div class="uk-section uk-section-muted uk-padding-remove uk-flex">
+	<div class="uk-inline uk-margin-auto">
 		{%- set desk_image = resize_image(path="/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg", width=2000, height=1500, format='webp', quality=90) %}
 		<img src="{{ desk_image.url }}" width="2000" height="auto" alt="">
 		<!-- <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
 		<a class="uk-position-absolute uk-transform-center" style="left: 74%; top: 47%" href="#" uk-marker></a>
 		<a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a> -->
 		<div class="uk-position-medium uk-position-bottom uk-light">
-			<p class="uk-text-meta uk-margin-remove">This isn't my actual desk, but my setup is very similar.</p>
+			<div class="uk-container uk-container-large" style="padding-inline: 0;">
+				<p class="uk-text-meta uk-margin-remove">This isn't my actual desk, but my setup is very similar.</p>
+			</div>
 		</div>
 	</div>
 	{# <div class="uk-container uk-container-large uk-margin">
@@ -199,7 +201,7 @@
 	<div class="uk-child-width-1-2 uk-child-width-1-4@m uk-grid-collapse" uk-grid>
 		{%- set work_bag = resize_image(path='/images/uses/marten-bjork-6dW3xyQvcYE-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
 		<img src="{{ work_bag.url }}" loading="lazy" alt="Work bag">
-		{%- set strat = resize_image(path='/images/uses/maksym-pozniak-haraburda-nNhMKr0ejIw-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}	
+		{%- set strat = resize_image(path='/images/uses/maksym-pozniak-haraburda-nNhMKr0ejIw-unsplash-cropped.jpg', width=600, height=600, format='webp', quality=75) %}
 		<img src="{{ strat.url }}" loading="lazy" alt="Fender Stratocaster">
 		{%- set helix = resize_image(path='/images/uses/91244_helix-lt-p.jpg', width=600, height=600, format='webp', quality=75) %}
 		<img src="{{ helix.url }}" loading="lazy" alt="Line 6 Helix">
