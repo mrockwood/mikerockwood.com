@@ -16,7 +16,7 @@
 <!-- Articles -->
 {#
 {% if articles.pages %}
-<section class="uk-section">
+<section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
 
 		<h2 class="uk-h1">Articles</h2>
@@ -26,7 +26,7 @@
 		{% for article in articles.pages %}
 			{% if loop.index < 6 %}
 
-			<li class="">
+			<li class="h-entry">
 				<!-- {% if loop.index > 1 %}<hr class="uk-margin-medium" />{% endif %} -->
 				<article class="uk-panel">
 					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-flex-middle" uk-grid>
@@ -34,8 +34,8 @@
 							<time datetime="{{ article.date }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
 						</div>
 						<div>
-							<h3 class="uk-h2 uk-margin-remove">
-								<a href="{{ article.permalink }}" class="uk-link-reset">{{ article.title }}</a>
+							<h3 class="p-name uk-h2 uk-margin-remove">
+								<a href="{{ article.permalink }}" class="u-url uk-link-reset">{{ article.title }}</a>
 							</h3>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 
 <!-- Bookmarks -->
 {% if bookmarks.pages %}
-<section class="uk-section">
+<section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
 
 		<h2 class="uk-h1">Bookmarks</h2>
@@ -64,13 +64,13 @@
 		{% for bookmark in bookmarks.pages %}
 			{% if loop.index < 5 %}
 
-			<div>
+			<div class="h-entry">
 
 				<article class="uk-card uk-card-default uk-card-hover">
-					<a href="{{ bookmark.extra.bookmarkOf }}" class="uk-card-body uk-link-reset">
+					<a href="{{ bookmark.extra.bookmarkOf }}" class="u-bookmark-of uk-card-body uk-link-reset">
 						<div class="uk-grid uk-flex-middle">
 							<div class="uk-width-expand">
-								<h3 class="uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
+								<h3 class="p-name uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
 								<p class="uk-text-meta uk-margin-xsmall">
 									{{ bookmark.extra.bookmarkOf }}
 								</p>
@@ -109,7 +109,7 @@
 
 <!-- Jams -->
 {% if jams.pages %}
-<section class="uk-section uk-section-secondary">
+<section class="h-feed uk-section uk-section-secondary">
 	<div class="uk-container uk-container-large">
 
 		<h2 class="uk-h1">Jams</h2>
@@ -179,7 +179,7 @@
 
 <!-- Notes -->
 {% if notes.pages %}
-<section class="uk-section">
+<section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
 
 		<h2 class="uk-h1">Notes</h2>
@@ -189,14 +189,16 @@
 		{% for note in notes.pages %}
 			{% if loop.index < 5 %}
 
-			<div>
+			<div class="h-entry">
 				<article class="uk-card uk-card-body uk-card-default">
 
 					<p class="uk-text-meta">
 						{{ note.date | date(format="%d %b %Y at %H:%M") }}
 					</p>
 
-					{{ note.content | safe }}
+					<div class="p-name e-content">
+						{{ note.content | safe }}
+					</div>
 
 				</article>
 			</div>
