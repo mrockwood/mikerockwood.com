@@ -31,7 +31,7 @@
 				<article class="uk-panel">
 					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-flex-middle" uk-grid>
 						<div class="uk-width-1-4@m">
-							<time datetime="{{ article.date }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+							<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
 						</div>
 						<div>
 							<h3 class="p-name uk-h2 uk-margin-remove">
@@ -71,6 +71,9 @@
 						<div class="uk-grid uk-flex-middle">
 							<div class="uk-width-expand">
 								<h3 class="p-name uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
+								<time class="dt-published uk-text-meta" datetime="{{ bookmark.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
+									{{ bookmark.date | date(format="%d %b %Y at %H:%M") }}
+								</time>
 								<p class="uk-text-meta uk-margin-xsmall">
 									{{ bookmark.extra.bookmarkOf }}
 								</p>
@@ -90,10 +93,6 @@
 						{# bookmark.content | safe #}
 					</a>
 				</article>
-
-				<!-- <p class="uk-text-meta">
-					{{ bookmark.date | date(format="%d %b %Y") }}
-				</p> -->
 
 			</div>
 
@@ -132,32 +131,38 @@
 			<ul id="jam-tabs" class="uk-switcher">
 			{% for jam in jams.pages %}
 				{% if loop.index < 6 %}
-				<li>
-					{%- if jam.extra.service == "bandcamp" -%}
-					<iframe
-						class="embed-bandcamp"
-						src="https://bandcamp.com/EmbeddedPlayer/track={{ jam.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
-						style="border: 0; width: 100%; height: 120px;"
-						seamless
-					></iframe>
-					{%- elif jam.extra.service == "soundcloud" -%}
-					<iframe
-						class="embed-soundcloud"
-						src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ jam.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
-						width="100%"
-						height="166"
-						scrolling="no"
-						frameborder="no"
-					></iframe>
-					{%- elif jam.extra.service == "youtube" -%}
-					<iframe
-						class="embed-youtube"
-						src="https://www.youtube-nocookie.com/embed/{{ jam.extra.id }}"
-						style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
-						frameborder="0"
-						allowfullscreen
-					></iframe>
-					{%- endif -%}
+				<li class="h-entry">
+					<h3 class="p-name" hidden>{{ jam.title }}</h3>
+					<time class="dt-published uk-text-meta" datetime="{{ jam.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
+						{{ jam.date | date(format="%d %b %Y at %H:%M") }}
+					</time>
+					<div class="e-content">
+					{%- if jam.extra.service == "bandcamp" -%}					
+						<iframe
+							class="embed-bandcamp"
+							src="https://bandcamp.com/EmbeddedPlayer/track={{ jam.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+							style="border: 0; width: 100%; height: 120px;"
+							seamless
+						></iframe>
+						{%- elif jam.extra.service == "soundcloud" -%}
+						<iframe
+							class="embed-soundcloud"
+							src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ jam.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+							width="100%"
+							height="166"
+							scrolling="no"
+							frameborder="no"
+						></iframe>
+						{%- elif jam.extra.service == "youtube" -%}
+						<iframe
+							class="embed-youtube"
+							src="https://www.youtube-nocookie.com/embed/{{ jam.extra.id }}"
+							style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
+							frameborder="0"
+							allowfullscreen
+						></iframe>
+						{%- endif -%}
+					</div>
 
 					{#
 					{% if jam.extra.thumbnail %}
@@ -192,8 +197,10 @@
 			<div class="h-entry">
 				<article class="uk-card uk-card-body uk-card-default">
 
-					<p class="uk-text-meta">
-						{{ note.date | date(format="%d %b %Y at %H:%M") }}
+					<p>
+						<time class="dt-published uk-text-meta" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+							{{ note.date | date(format="%d %b %Y at %H:%M") }}
+						</time>
 					</p>
 
 					<div class="p-name e-content">
