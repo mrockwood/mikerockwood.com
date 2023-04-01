@@ -49,9 +49,9 @@ menu_footer = [
 
 [extra.author]
 name = "Mike Rockwood"
-email = "rockwood+website@gmail.com"
-avatar = "favicon-96.png"
-bio = "Web developer, I like reading and exploring the internet."
+email = "rockwood@gmail.com"
+avatar = "/images/headshot-cutout.jpg"
+bio = "Web developer, designer, and guitar player with a passion for all things digital."
 
 [extra.social]
 #feed = true

@@ -23,6 +23,7 @@
 {%- set reposts = get_section(path="posts/reposts/_index.md") %}
 {%- set rsvps = get_section(path="posts/rsvps/_index.md") %}
 {%- set videos = get_section(path="posts/videos/_index.md") %}
+{%- set projects = get_section(path="work/_index.md") %}
 
 {#- Title -#}
 {%- if section -%}
@@ -316,6 +317,36 @@
 		</div>
 	</div>
 	{% endblock foot_theme %} #}
+
+
+	{#- h-card -#}
+	{% if current_path and current_path == '/' %}
+	<section class="h-card" hidden>
+		<ul>
+			<li>
+				<img class="u-photo" rel="me" src="{{ get_url(path=config.extra.author.avatar) }}" alt="headshot of Mike Rockwood">
+			</li>
+			<li class="p-name"><span class="p-given-name">Mike</span> <span class="p-family-name">Rockwood</span></li>
+			<li class="p-note">{{ config.extra.author.bio }}</li>
+			<li class="p-pronouns">
+                <span class="p-x-pronoun-nominative p-pronoun-nominative p-pronoun">he</span>/<span class="p-pronoun-oblique p-x-pronoun-oblique">him</span>/<span class="p-pronoun-possessive p-x-pronoun-possessive">his</span>
+            </li>
+			<li>
+				<a class="u-url u-uid" rel="me" href="{{ config.base_url | safe }}">{{ config.base_url | safe }}</a>
+			</li>
+			<li>
+				<a class="u-email" href="mailto:{{ config.extra.author.email }}">{{ config.extra.author.email }}</a>
+			</li>
+			<li>
+				<address class="p-adr h-adr">
+					<span class="p-locality">Salt Lake City</span>,
+					<span class="p-region">Utah</span>,
+					<span class="p-country-name">United States</span>
+				</address>
+			</li>
+		</ul>
+	</section>
+	{% endif %}
 
 
 	{#- Scripts -#}

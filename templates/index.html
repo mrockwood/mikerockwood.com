@@ -5,8 +5,6 @@
 
 <main id="content">
 
-{# style="padding-block-start: calc( var(--section-large-padding-vertical) - ( var(--navbar-padding-vertical) * 2 + var(--navbar-nav-item-height) ) );" #}
-
 <div class="uk-section uk-section-large uk-flex uk-flex-middle uk-position-relative uk-height-viewport">
 
 	<svg
@@ -70,7 +68,6 @@
 		<h2 class="uk-h1 uk-position-relative" uk-scrollspy-class>Featured Project</h2>
 		<div class="uk-grid-large uk-margin-medium-top uk-grid uk-grid-stack" uk-grid>
 
-		{% set projects = get_section(path="work/_index.md") %}
 		{% for project in projects.pages %}
 			{% if project.extra.featured and project.extra.featuredImg and loop.index0 == 0 %}
 
@@ -179,7 +176,6 @@
 
 {# <section class="uk-section">
 	<div class="uk-container uk-container-large">
-		{% set articles = get_section(path="posts/articles/_index.md") %}
 		{% for year, pages in articles.pages | group_by(attribute="year") %}
 		<div class="posts-group">
 			<div class="post-year">{{ year }}</div>
