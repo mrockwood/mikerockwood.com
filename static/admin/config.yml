@@ -40,7 +40,7 @@ collections:
     fields:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Title", name: "title", widget: "string"}      
+      - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
@@ -109,7 +109,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean"}
-      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Updated", name: "updated", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text" }
       - {label: "Path", name: "path", widget: "string" }
