@@ -10,6 +10,7 @@ collections:
   - name: "articles"
     label: "Articles"
     label_singular: "Article"
+    icon: "article"
     folder: "content/posts/articles/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -32,6 +33,7 @@ collections:
   - name: "bookmarks"
     label: "Bookmarks"
     label_singular: "Bookmark"
+    icon: "bookmark"
     folder: "content/posts/bookmarks/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
@@ -55,6 +57,7 @@ collections:
   - name: "favorites"
     label: "Favorites"
     label_singular: "Favorite"
+    icon: "favorite"
     folder: "content/posts/favorites/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
@@ -71,6 +74,7 @@ collections:
   - name: "jams"
     label: "Jams"
     label_singular: "Jam"
+    icon: "music_note"
     folder: "content/posts/jams/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
@@ -91,6 +95,7 @@ collections:
   - name: "notes"
     label: "Notes"
     label_singular: "Note"
+    icon: "note"
     folder: "content/posts/notes/"
     create: true
     identifier_field: "body"
@@ -104,6 +109,7 @@ collections:
   - name: "pages"
     label: "Pages"
     label_singular: "Page"
+    icon: "web"
     folder: "content/pages/"
     create: true
     slug: "{{slug}}"
@@ -118,6 +124,7 @@ collections:
   - name: "replies"
     label: "Replies"
     label_singular: "Reply"
+    icon: "reply"
     folder: "content/posts/replies/"
     create: true
     identifier_field: "body"
@@ -135,6 +142,7 @@ collections:
   - name: "reposts"
     label: "Reposts"
     label_singular: "Repost"
+    icon: "content_copy"
     folder: "content/posts/reposts/"
     create: true
     filter: {field: "type", value: "repost"}
@@ -152,6 +160,7 @@ collections:
   - name: "rsvps"
     label: "RSVPs"
     label_singular: "RSVP"
+    icon: "rsvp"
     folder: "content/posts/rsvps/"
     create: true
     identifier_field: "body"
@@ -170,6 +179,7 @@ collections:
   - name: "work"
     label: "Work"
     label_singular: "Work Project"
+    icon: "work"
     folder: "content/work/"
     create: true
     slug: "{{title}}"
