@@ -5,7 +5,10 @@
 	<div class="uk-container uk-container-large">
 		<div class="uk-grid uk-grid-large">
 			<div class="uk-width-1-5@m uk-visible@m">
-				<ul class="uk-nav uk-nav-default">
+				<ul 
+					class="uk-nav uk-nav-default"
+					style="--nav-default-font-size: var(--global-small-font-size);"
+				>
 					<li class="uk-nav-header">Components</li>
 					<li class="uk-nav-divider"></li>
 					{% for doc in docs.pages %}
@@ -23,7 +26,11 @@
 				<div uk-sticky="offset: 40; end: main">
 					{% for h1 in page.toc %}
 						{% if h1.children %}
-						<ul class="uk-nav uk-nav-default" uk-scrollspy-nav="closest: li; scroll: true; offset: 100">
+						<ul 
+							class="uk-nav uk-nav-default" 
+							uk-scrollspy-nav="closest: li; scroll: true; offset: 100"
+							style="--nav-default-font-size: var(--global-small-font-size);"
+						>
 							{% for h2 in h1.children %}
 							<li>
 								<a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
@@ -31,13 +38,13 @@
 							{% endfor %}
 							{% if h1.children %}<li class="uk-nav-divider"></li>{% endif %}
 							<li>
-								<a href target="_blank" rel="noreferrer">
+								<a href="{{ current_url | replace(from='docs', to='tests') | trim_end_matches(pat='/') }}.html" target="_blank" rel="noreferrer">
 									<span class="uk-margin-small-right" uk-icon="push"></span>
 									<span class="uk-text-middle">Open test</span>
 								</a>
 							</li>
 							<li>
-								<a href target="_blank" rel="noreferrer">
+								<a href="https://github.com/mrockwood/mikerockwood.com/blob/main/content/{{ current_path  | trim_end_matches(pat='/') }}.md" target="_blank" rel="noreferrer">
 									<span class="uk-margin-small-right" uk-icon="pencil"></span>
 									<span class="uk-text-middle">Edit this page</span>
 								</a>
