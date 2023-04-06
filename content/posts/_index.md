@@ -7,4 +7,5 @@ authors:
 template: posts/list.html
 paginate_by: 0
 sort_by: date
+generate_feed: true
 ---

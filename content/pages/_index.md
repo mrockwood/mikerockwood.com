@@ -1,3 +1,4 @@
 ---
 render: false
+transparent: true
 ---

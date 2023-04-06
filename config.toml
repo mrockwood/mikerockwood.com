@@ -42,8 +42,9 @@ menu = [
     {url = "/posts/", name = "Posts", slash = true},
 ]
 menu_footer = [
-    {url = "/categories/", name = "Categories", slash = true},
-    {url = "/tags/", name = "Tags", slash = true},
+    #{url = "/categories/", name = "Categories", slash = true},
+    #{url = "/tags/", name = "Tags", slash = true},
+    {url = "/atom.xml", name = "Feed", slash = false},
     {url = "/sitemap.xml", name = "Sitemap", slash = false},
 ]
 
