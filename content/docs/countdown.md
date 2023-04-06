@@ -3,10 +3,6 @@ title: Countdown
 description: Create a simple countdown timer.
 ---
 
-# Countdown
-
-<p class="uk-text-lead">Create a simple countdown timer.</p>
-
 ## Usage
 
 To apply this component, add the `uk-countdown` attribute to a container element and define a date when the countdown should expire. Just add `date: YYYY-MM-DDThh:mm:ssTZD` option to the attribute, using the [ISO 8601 format](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/parse#ECMAScript_5_ISO-8601_format_support), e.g. `2017-12-04T22:00:00+00:00` (UTC time).

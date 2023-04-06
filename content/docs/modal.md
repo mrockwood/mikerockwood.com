@@ -3,10 +3,6 @@ title: Modal
 description: Create modal dialogs with different styles and transitions.
 ---
 
-# Modal
-
-<p class="uk-text-lead">Create modal dialogs with different styles and transitions.</p>
-
 ## Usage
 
 The Modal component consists of an overlay, a dialog and an optional close button. You can use any element to toggle a modal dialog. To enable the necessary JavaScript, add the `uk-toggle` attribute. An `<a>` element needs to be linked to the modal's id. If you are using another element, like a button, just add the `uk-toggle="target: #ID"` attribute to target the id of the modal container.

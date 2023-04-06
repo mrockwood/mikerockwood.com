@@ -3,10 +3,6 @@ title: Heading
 description: Define different styles for headings.
 ---
 
-# Heading
-
-<p class="uk-text-lead">Define different styles for headings.</p>
-
 Combine this component with the [Text component](text.md) to style your headings.
 
 ## Size modifiers

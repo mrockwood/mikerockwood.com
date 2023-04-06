@@ -3,10 +3,6 @@ title: Label
 description: Indicate important notes and highlight parts of your content.
 ---
 
-# Label
-
-<p class="uk-text-lead">Indicate important notes and highlight parts of your content.</p>
-
 ## Usage
 
 To create a label, just add the `.uk-label` class to a `<span>` element.

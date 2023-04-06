@@ -3,10 +3,6 @@ title: Thumbnav
 description: Create a flexible thumbnail navigation.
 ---
 
-# Thumbnav
-
-<p class="uk-text-lead">Create a flexible thumbnail navigation.</p>
-
 ## Usage
 
 To create a navigation with thumbnails, use the following classes. This component is built with Flexbox. So to align a thumbnav, you can use [Flex component](flex.md).

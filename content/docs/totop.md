@@ -3,10 +3,6 @@ title: Totop
 description: Create a simple to-top scroller.
 ---
 
-# Totop
-
-<p id="toptext" class="uk-text-lead">Create a simple to-top scroller.</p>
-
 ## Usage
 
 The Totop component allows you to apply an icon to your to-top scroller. Just add the `uk-totop` attribute to an `<a>` element.

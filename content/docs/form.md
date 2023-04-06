@@ -3,10 +3,6 @@ title: Form
 description: Easily create nice looking forms with different styles and layouts.
 ---
 
-# Form
-
-<p class="uk-text-lead">Easily create nice looking forms with different styles and layouts.</p>
-
 ## Usage
 
 Add one of the following classes to form controls inside a `<form>` element to define them.

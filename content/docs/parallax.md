@@ -3,10 +3,6 @@ title: Parallax
 description: Animate CSS properties depending on the scroll position of the document.
 ---
 
-# Parallax
-
-<p class="uk-text-lead">Animate CSS properties depending on the scroll position of the document.</p>
-
 ## Usage
 
 To apply this component, add the `uk-parallax` attribute to any element. Use one of the following options to animate the corresponding CSS property.

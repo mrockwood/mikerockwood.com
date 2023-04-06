@@ -3,10 +3,6 @@ title: Height
 description: Define the height of elements depending on the viewport or match the heights of different elements.
 ---
 
-# Height
-
-<p class="uk-text-lead">Define the height of elements depending on the viewport or match the heights of different elements.</p>
-
 UIkit's Height component offers three options to set heights: using simple fixed height utility classes, depending on the viewport or by matching the heights of different elements.
 
 ***

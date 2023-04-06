@@ -3,10 +3,6 @@ title: Transition
 description: Create smooth transitions between two states when hovering an element.
 ---
 
-# Transition
-
-<p class="uk-text-lead">Create smooth transitions between two states when hovering an element.</p>
-
 ## Usage
 
 To toggle a transition on hover or focus, add the `.uk-transition-toggle` class to a parent element. Also add `tabindex="0"` to make the animation focusable through keyboard navigation and on touch devices. Add one of the `.uk-transition-*` classes to any child element to apply the actual effect.

@@ -3,10 +3,6 @@ title: Search
 description: Easily create a nice looking search.
 ---
 
-# Search
-
-<p class="uk-text-lead">Easily create a nice looking search.</p>
-
 ## Usage
 
 The Search component consists of a search form and the search input itself.

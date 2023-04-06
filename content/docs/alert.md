@@ -3,10 +3,6 @@ title: Alert
 description: Display success, warning and error messages.
 ---
 
-# Alert
-
-<p class="uk-text-lead">Display success, warning and error messages.</p>
-
 ## Usage
 
 To apply this component, add the `uk-alert` attribute to a block element.

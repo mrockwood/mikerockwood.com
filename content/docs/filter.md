@@ -3,10 +3,6 @@ title: Filter
 description: Filter or sort items in any given layout by metadata.
 ---
 
-# Filter
-
-<p class="uk-text-lead">Filter or sort items in any given layout by metadata.</p>
-
 The Filter component is often used together with the [Grid component](grid.md), especially the masonry grid, but it's not bound to it. Any layout can be filtered or sorted no matter how the items are positioned. Items fade and move with smooth transitions between the different filtering and sorting states.
 
 ***

@@ -3,10 +3,6 @@ title: Pagination
 description: Easily create a nice looking pagination to navigate through pages.
 ---
 
-# Pagination
-
-<p class="uk-text-lead">Easily create a nice looking pagination to navigate through pages.</p>
-
 ## Usage
 
 The Pagination component consists of button-like styled links, that are aligned side by side in a horizontal list.

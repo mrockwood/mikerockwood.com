@@ -3,10 +3,6 @@ title: Utility
 description: A collection of useful utility classes to style your content.
 ---
 
-# Utility
-
-<p class="uk-text-lead">A collection of useful utility classes to style your content.</p>
-
 ## Panel
 
 UIkit uses panels to outline certain sections of your content. These can be arranged in grid columns from the [Grid component](grid.md), for example.

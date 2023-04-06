@@ -3,10 +3,6 @@ title: Align
 description: Control the alignment of inline elements depending on the viewport size.
 ---
 
-# Align
-
-<p class="uk-text-lead">Control the alignment of inline elements depending on the viewport size.</p>
-
 ## Usage
 
 To align images or other elements with spacing between the text and the element, add one of these classes.

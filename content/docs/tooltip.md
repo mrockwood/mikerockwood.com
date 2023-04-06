@@ -3,10 +3,6 @@ title: Tooltip
 description: Easily create a nice looking tooltip.
 ---
 
-# Tooltip
-
-<p class="uk-text-lead">Easily create a nice looking tooltip.</p>
-
 ## Usage
 
 To apply this component, add the `uk-tooltip` attribute to an element. You also need to add the `title: TEXT` option to the attribute, whose value will represent your tooltip's text.

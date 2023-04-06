@@ -3,10 +3,6 @@ title: Off-canvas
 description: Create an off-canvas sidebar that slides in and out of the page, which is perfect for creating mobile navigations.
 ---
 
-# Off-canvas
-
-<p class="uk-text-lead">Create an off-canvas sidebar that slides in and out of the page, which is perfect for creating mobile navigations.</p>
-
 ## Usage
 
 To apply this component, add the `uk-offcanvas` attribute to a parent `<div>` element and use the following classes.

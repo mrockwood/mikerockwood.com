@@ -3,10 +3,6 @@ title: Animation
 description: A collection of smooth animations to use within your page.
 ---
 
-# Animation
-
-<p class="uk-text-lead">A collection of smooth animations to use within your page.</p>
-
 ## Usage
 
 Add one of the `.uk-animation-*` classes to any element. The animation is shown when the class is added, so usually immediately on page load. To show the animation at another point, for example when the element enters the viewport, you would add the class using JavaScript — with the [Scrollspy component](scrollspy.md) for instance. This is what happens in many of UIkit's components that make use of animations. All animations themselves are implemented with CSS, so they do not require JavaScript to play.

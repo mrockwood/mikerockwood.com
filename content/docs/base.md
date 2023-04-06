@@ -3,10 +3,6 @@ title: Base
 description: This component provides the default style for all HTML elements.
 ---
 
-# Base
-
-<p class="uk-text-lead">This component provides the default style for all HTML elements.</p>
-
 ## Normalize.css
 
 The Base component utilizes styling of the famous [Normalize.css](http://necolas.github.io/normalize.css/) to render elements consistently across all browsers and applies its default styling like colors, margins, font-sizes and more.

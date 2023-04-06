@@ -24,34 +24,30 @@
 			<div class="uk-width-1-4@m uk-visible@m">
 				{% if page.toc %}
 				<div uk-sticky="offset: 40; end: main">
-					{% for h1 in page.toc %}
-						{% if h1.children %}
-						<ul 
-							class="uk-nav uk-nav-default" 
-							uk-scrollspy-nav="closest: li; scroll: true; offset: 100"
-							style="--nav-default-font-size: var(--global-small-font-size);"
-						>
-							{% for h2 in h1.children %}
-							<li>
-								<a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-							</li>
-							{% endfor %}
-							{% if h1.children %}<li class="uk-nav-divider"></li>{% endif %}
-							<li>
-								<a href="{{ current_url | replace(from='docs', to='tests') | trim_end_matches(pat='/') }}.html" target="_blank" rel="noreferrer">
-									<span class="uk-margin-small-right" uk-icon="push"></span>
-									<span class="uk-text-middle">Open test</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://github.com/mrockwood/mikerockwood.com/blob/main/content/{{ current_path  | trim_end_matches(pat='/') }}.md" target="_blank" rel="noreferrer">
-									<span class="uk-margin-small-right" uk-icon="pencil"></span>
-									<span class="uk-text-middle">Edit this page</span>
-								</a>
-							</li>
-						</ul>
-						{% endif %}
-					{% endfor %}
+					<ul 
+						class="uk-nav uk-nav-default" 
+						uk-scrollspy-nav="closest: li; scroll: true; offset: 100"
+						style="--nav-default-font-size: var(--global-small-font-size);"
+					>
+						{% for h2 in page.toc %}
+						<li>
+							<a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+						</li>
+						{% endfor %}
+						<li class="uk-nav-divider"></li>
+						<li>
+							<a href="{{ current_url | replace(from='docs', to='tests') | trim_end_matches(pat='/') }}.html" target="_blank" rel="noreferrer">
+								<span class="uk-margin-small-right" uk-icon="push"></span>
+								<span class="uk-text-middle">Open test</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/mrockwood/mikerockwood.com/blob/main/content/{{ current_path  | trim_end_matches(pat='/') }}.md" target="_blank" rel="noreferrer">
+								<span class="uk-margin-small-right" uk-icon="pencil"></span>
+								<span class="uk-text-middle">Edit this page</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 				{% endif %}
 			</div>

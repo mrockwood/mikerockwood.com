@@ -3,10 +3,6 @@ title: Progress
 description: Defines progress bars that indicate how far along a process is.
 ---
 
-# Progress
-
-<p class="uk-text-lead">Defines progress bars that indicate how far along a process is.</p>
-
 ## Usage
 
 To apply this component, add the `.uk-progress` class to a `<progress>` element.

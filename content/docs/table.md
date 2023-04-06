@@ -3,10 +3,6 @@ title: Table
 description: Easily create nice looking tables, which come in different styles.
 ---
 
-# Table
-
-<p class="uk-text-lead">Easily create nice looking tables, which come in different styles.</p>
-
 ## Usage
 
 To apply this component, add the `.uk-table` class to a `<table>` element.

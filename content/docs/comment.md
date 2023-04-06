@@ -3,10 +3,6 @@ title: Comment
 description: Includes styles for comments, for example for a blog section on your site.
 ---
 
-# Comment
-
-<p class="uk-text-lead">Includes styles for comments, for example for a blog section on your site.</p>
-
 ## Usage
 
 The Comment component consists of the comment itself, a comment header, including an avatar, a title and metadata, and a comment body.

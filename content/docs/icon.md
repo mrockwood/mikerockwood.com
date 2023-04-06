@@ -3,10 +3,6 @@ title: Icon
 description: Place scalable vector icons anywhere in your content.
 ---
 
-# Icon
-
-<p class="uk-text-lead">Place scalable vector icons anywhere in your content.</p>
-
 UIkit comes with its own SVG icon system and a comprehensive library, which comprises a growing number of elegant outline icons. This component injects SVGs into the site, so that they adopt color and can be styled with CSS.
 
 ***

@@ -3,10 +3,6 @@ title: Drop
 description: Position any element in relation to another element.
 ---
 
-# Drop
-
-<p class="uk-text-lead">Position any element in relation to another element.</p>
-
 ## Usage
 
 Any content, like a button, can toggle the drop component. Just add the `uk-drop` attribute to a block element following the toggle.

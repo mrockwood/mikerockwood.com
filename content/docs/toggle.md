@@ -3,10 +3,6 @@ title: Toggle
 description: Hide, switch or change the appearance of different contents through a toggle.
 ---
 
-# Toggle
-
-<p class="uk-text-lead">Hide, switch or change the appearance of different contents through a toggle.</p>
-
 ## Usage
 
 To apply this component, just add the `uk-toggle="target: #ID"` attribute to a `<button>` or `<a>` element. You can use any selector with the toggle attribute.
