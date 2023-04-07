@@ -160,7 +160,7 @@
 	{% block header %}
 	<div class="uk-header {% if current_path and current_path == '/' %} uk-position-absolute uk-width-1-1 uk-position-z-index {% endif %}">
 		<div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
-			<nav class="uk-navbar">
+			<nav class="uk-navbar" style="margin-inline: calc(-1 * var(--navbar-nav-item-padding-horizontal));">
 				<div class="uk-navbar-left">
 					<a href="{{ config.base_url }}" class="uk-navbar-item uk-logo">
 						{%- set headshot = resize_image(path="/images/headshot-cutout.jpg", width=192, height=192, format='webp', quality=75) %}
