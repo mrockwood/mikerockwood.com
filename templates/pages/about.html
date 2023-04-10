@@ -2,9 +2,9 @@
 
 {% block subnav %}
 <div class="uk-margin-medium" uk-margin>
-	<a class="uk-button uk-button-primary uk-button-small" href="/uses/">Uses</a>
-	{# <a class="uk-button uk-button-primary uk-button-small" href="/now/">Now</a> #}
-	<a class="uk-button uk-button-primary uk-button-small" href="/colophon/">Colophon</a>
+	<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/pages/uses.md') }}">Uses</a>
+	{# <a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/pages/now.md') }}">Now</a> #}
+	<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/pages/colophon.md') }}">Colophon</a>
 </div>
 {% endblock subnav %}
 
