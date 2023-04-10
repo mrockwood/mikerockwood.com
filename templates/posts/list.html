@@ -3,10 +3,10 @@
 
 {% block subnav %}
 <div class="uk-margin-small" uk-margin>
-	{% if articles.pages %}<a class="uk-button uk-button-primary uk-button-small" href="articles/">Articles</a>{% endif %}
-	{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="bookmarks/">Bookmarks</a>{% endif %}
-	{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="jams/">Jams</a>{% endif %}
-	{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="notes/">Notes</a>{% endif %}
+	{% if articles.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/articles/_index.md') }}">Articles</a>{% endif %}
+	{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/bookmarks/_index.md') }}">Bookmarks</a>{% endif %}
+	{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/jams/_index.md') }}">Jams</a>{% endif %}
+	{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/notes/_index.md') }}">Notes</a>{% endif %}
 </div>
 {% endblock subnav %}
 
