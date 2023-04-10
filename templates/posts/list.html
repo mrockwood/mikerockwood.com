@@ -3,6 +3,7 @@
 
 {% block subnav %}
 <div class="uk-margin-small" uk-margin>
+	{% if articles.pages %}<a class="uk-button uk-button-primary uk-button-small" href="articles/">Articles</a>{% endif %}
 	{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="bookmarks/">Bookmarks</a>{% endif %}
 	{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="jams/">Jams</a>{% endif %}
 	{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="notes/">Notes</a>{% endif %}
@@ -14,12 +15,71 @@
 
 
 <!-- Articles -->
-{#
 {% if articles.pages %}
 <section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
 
 		<h2 class="uk-h1">Articles</h2>
+
+		<div class="uk-child-width-1-2@m uk-grid-large" uk-grid>
+
+			{# Latest Article #}
+			<div>
+			{% for article in articles.pages %}
+				{% if loop.index == 1 %}
+				<article class="h-entry uk-article">
+					<a class="" href="{{ article.permalink }}">
+						<img class="uk-margin-small-bottom" src="/images/photo.jpg" alt="" width="1800" height="1200">
+					</a>
+					<p class="uk-article-meta uk-margin-remove-bottom">
+						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+					</p>
+					<h3 class="p-name uk-article-title uk-margin-small-top">
+						<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
+					</h3>
+					{% if article.description %}
+						<p>{{ article.description }}</p>
+					{% elif article.content %}
+						<p>{{ article.content | striptags | truncate(length=150) | safe }}</p>
+					{% endif %}			
+				</article>
+				<hr class="uk-hidden@m uk-margin">
+				{% endif %}
+			{% endfor %}
+			</div>
+
+			
+
+			{# Recent Articles #}
+			<div>
+				<div class="uk-grid-divider uk-child-width-1-1 uk-grid-stack" uk-grid>
+				{% for article in articles.pages %}
+					{% if loop.index > 1 and loop.index < 5 %}
+					<div>
+						<article class="h-entry uk-article uk-flex-middle" uk-grid>
+							<div class="uk-width-2-5@s">
+								<a class="" href="{{ article.permalink }}">
+									<img class="uk-margin-remove" src="/images/photo.jpg" alt="" width="1800" height="1200">
+								</a>
+							</div>
+							<div class="uk-width-expand">
+								<p class="uk-article-meta uk-margin-remove-bottom">
+									<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+								</p>
+								<h3 class="p-name uk-margin-small-top">
+									<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
+								</h3>
+							</div>		
+						</article>
+					</div>
+					{% endif %}
+				{% endfor %}
+				</div>
+			</div>
+
+		</div>
+
+		{#
 
 		<uk class="uk-list uk-list-xlarge uk-list-divider">
 
@@ -47,10 +107,12 @@
 
 		</ul>
 
+		#}
+
 	</div>
 </section>
 {% endif %}
-#}
+
 
 <!-- Bookmarks -->
 {% if bookmarks.pages %}
