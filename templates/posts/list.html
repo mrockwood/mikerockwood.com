@@ -40,15 +40,13 @@
 					{% if article.description %}
 						<p>{{ article.description }}</p>
 					{% elif article.content %}
-						<p>{{ article.content | striptags | truncate(length=150) | safe }}</p>
+						<p>{{ article.content | striptags | truncate(length=200) | safe }}</p>
 					{% endif %}			
 				</article>
 				<hr class="uk-hidden@m uk-margin">
 				{% endif %}
 			{% endfor %}
 			</div>
-
-			
 
 			{# Recent Articles #}
 			<div>
