@@ -6,7 +6,5 @@
     "admin": "open http://127.0.0.1:1111/admin/ && npx @staticcms/proxy-server",
     "build": "zola build"
   },
-  "dependencies": {
-    "@staticcms/core": "^1.2.12"
-  }
+  "dependencies": {}
 }
