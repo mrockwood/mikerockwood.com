@@ -3,6 +3,8 @@ title: Zola is nice
 date: 2019-02-01
 draft: true
 taxonomies:
+  categories:
+    - articles
   tags:
     - zola
     - nice

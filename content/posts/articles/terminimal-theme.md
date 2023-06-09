@@ -3,6 +3,8 @@ title: Terminimal Theme for Zola
 date: 2019-02-04
 draft: true
 taxonomies:
+  categories:
+    - articles
   tags:
     - zola
     - theme
