@@ -1,0 +1,9 @@
+---
+draft: true
+date: 2023-08-12T18:09:00.000Z
+title: Philharmonie - Ouigaa
+extra:
+  service: bandcamp
+  id: "3501591236"
+  thumbnail: https://f4.bcbits.com/img/a0500355915_16.jpg
+---
