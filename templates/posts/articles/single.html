@@ -4,9 +4,9 @@
 {%- block main %}
 
 {# Article #}
-<article class="h-entry uk-section uk-section">
+<article class="h-entry uk-section uk-padding-remove-bottom">
 
-	<header class="uk-container uk-container-large uk-margin-large">
+	<header class="uk-container uk-container-large uk-margin-large uk-text-center">
 
 		<div class="uk-position-relative uk-margin-small">
 
@@ -15,17 +15,28 @@
 				<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
 			{% endif %}
 
-			{%- if page.date %}
-			<time class="dt-published uk-text-meta uk-margin-small-left" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-				{{ page.date | date(format="%d %B, %Y") }}
-			</time>
-			{% endif %}
-
 		</div>
 
-		<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove-top">{{ title }}</h1>
+		<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">{{ title }}</h1>
+
+		{%- if page.date %}
+		<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+			{{ page.date | date(format="%d %B, %Y") }}
+		</time>
+		{% endif %}
 
 	</header>
+
+	{%- if page.extra.hero %}
+	<div
+		class="uk-section uk-padding-remove"
+		style="background: linear-gradient( to bottom, hsl(var(--surface-default)) 0 50%, hsl(var(--invert-surface-default)) 50% 100% );"
+	>
+		<div class="uk-container uk-container-large">
+			<img class="" src="{{ config.base_url | safe }}/images/photo.jpg" alt="" width="1800" height="1200">
+		</div>
+	</div>
+	{% endif %}
 
 	<div class="uk-section uk-section-secondary uk-section-large">
 
@@ -33,26 +44,21 @@
 
 			<div class="js-sticky-container uk-grid-large" uk-grid>
 
-				<div class="e-content uk-width-1-2@m uk-flex-last">
 
-					{{ page.content | safe }}
-
-				</div>
-
-				{% if page.toc | length > 0 %}
-				<div class="uk-width-1-4 uk-visible@m">
+				<div class="uk-width-1-1 uk-width-1-4@m">
+					{% if page.toc | length > 0 %}
 
 					<div uk-sticky="offset: 40; end: .js-sticky-container">
 
 						<ul
-							class="uk-nav uk-nav-default"
+							class="uk-nav uk-nav-default uk-visible@m"
 							uk-scrollspy-nav="closest: li; scroll: true; offset: 100; overflow: false"
 							style="
 								--nav-default-font-size: var(--global-small-font-size);
 							"
 						>
 
-							<li class="uk-nav-header">Table of Contents</li>
+							<li class="uk-nav-header">On This Page</li>
 							<li class="uk-nav-divider"></li>
 
 							{%- for heading in page.toc -%}
@@ -73,8 +79,27 @@
 
 					</div>
 
+					{# <div class="uk-width-1-1 uk-hidden@m">
+
+						<button
+							class="js-toggle-otp uk-button uk-button-default uk-width-1-1"
+							uk-toggle="target: .js-otp; animation: uk-animation-slide-top"
+							type="button"
+						>
+							On This Page
+							<span class="js-otp-icon uk-margin-small-left uk-icon" uk-icon="icon: plus-circle"></span>
+						</button>
+						<p class="js-otp" hidden="">test</p>
+					</div>#}
+
+					{% endif %}
 				</div>
-				{% endif %}
+
+				<div class="e-content uk-width-1-2@m uk-flex-last">
+
+					{{ page.content | safe }}
+
+				</div>
 
 			</div>
 
@@ -86,6 +111,7 @@
 
 
 {# Pagination #}
+{#
 {%- if page.lower or page.higher %}
 <nav class="uk-section uk-section-small">
 
@@ -109,6 +135,6 @@
 
 </nav>
 {% endif %}
+#}
 
 {%- endblock main %}
-

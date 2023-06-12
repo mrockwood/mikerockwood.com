@@ -41,9 +41,9 @@
 						<p>{{ article.description }}</p>
 					{% elif article.content %}
 						<p>{{ article.content | striptags | truncate(length=200) | safe }}</p>
-					{% endif %}			
+					{% endif %}
 				</article>
-				<hr class="uk-hidden@m uk-margin">
+				<hr class="uk-hidden@m uk-grid-margin">
 				{% endif %}
 			{% endfor %}
 			</div>
@@ -67,7 +67,7 @@
 								<h3 class="p-name uk-margin-small-top">
 									<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
 								</h3>
-							</div>		
+							</div>
 						</article>
 					</div>
 					{% endif %}
@@ -197,7 +197,7 @@
 						{{ jam.date | date(format="%d %b %Y at %H:%M") }}
 					</time>
 					<div class="e-content">
-					{%- if jam.extra.service == "bandcamp" -%}					
+					{%- if jam.extra.service == "bandcamp" -%}
 						<iframe
 							class="embed-bandcamp"
 							src="https://bandcamp.com/EmbeddedPlayer/track={{ jam.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
