@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{%- block content %}
+<section class="uk-section">
+	<div class="uk-container uk-container-large">
+
+		{% for article in paginator.pages %}
+
+			<article class="uk-margin-large">
+
+				<div class="uk-grid uk-grid-large">
+
+					<div class="uk-width-1-4@m uk-text-right@m">
+
+						<p class="uk-article-meta">
+							<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+						</p>
+
+					</div>
+
+					<div class="uk-width-1-2@m">
+
+						<h2 class="">
+							<a href="{{ article.permalink }}" class="uk-link-heading">
+								{{ article.title }}
+							</a>
+						</h2>
+
+						{% if article.description %}
+							<p>{{ article.description }}</p>
+						{% elif article.content %}
+							<p>{{ article.content | striptags | truncate(length=200) | safe }}</p>
+						{% endif %}
+
+					</div>
+
+				</div>
+
+			</article>
+
+		{% endfor %}
+
+		{% if paginator.previous or paginator.next %}
+		<ul class="uk-pagination">
+			{% if paginator.previous %}
+			<li><a href="{{ paginator.previous }}"><span class="uk-margin-xsmall-right" uk-pagination-previous></span> Previous</a></li>
+			{% endif %}
+			{% if paginator.next %}
+			<li class="uk-margin-auto-left"><a href="{{ paginator.next }}">Next <span class="uk-margin-xsmall-left" uk-pagination-next></a></li>
+			{% endif %}
+		</ul>
+		{% endif %}
+
+	</div>
+</section>
+{%- endblock content %}

@@ -10,9 +10,10 @@
 
 		<div class="uk-position-relative uk-margin-small">
 
-			{% if page.taxonomies.categories %}
-				{% set category = page.taxonomies.categories[0] %}
-				<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
+			{%- if page.taxonomies.categories %}
+				{% for category in page.taxonomies.categories %}
+					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
+				{% endfor %}
 			{% endif %}
 
 		</div>
