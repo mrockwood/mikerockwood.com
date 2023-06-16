@@ -1,6 +1,9 @@
 ---
 title: Juanita Euka - Mboka Moko
 date: 2023-03-05T01:31:57.746Z
+taxonomies:
+  categories:
+    - jams
 extra:
   service: bandcamp
   id: 2633959409

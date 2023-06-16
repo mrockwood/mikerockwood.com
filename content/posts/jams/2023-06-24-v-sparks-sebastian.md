@@ -2,6 +2,9 @@
 draft: true
 date: 2023-06-24T12:23:00.000Z
 title: V Sparks - Sebastian
+taxonomies:
+  categories:
+    - jams
 extra:
   service: bandcamp
   id: "2053061173"

@@ -1,6 +1,9 @@
 ---
 title: Bryan Scary - Day-Glo Waterfalls
 date: 2022-06-07T06:55:54.000Z
+taxonomies:
+  categories:
+    - jams
 extra:
   service: bandcamp
   id: 3141380262

@@ -2,6 +2,9 @@
 draft: true
 date: 2023-07-29T12:48:00.000Z
 title: Julia Holter - Feel You
+taxonomies:
+  categories:
+    - jams
 extra:
   service: bandcamp
   id: "2069946023"

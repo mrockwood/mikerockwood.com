@@ -2,6 +2,9 @@
 title: Bryan Scary - Day-Glo Waterfalls
 date: 2000-06-07T06:55:54.000Z
 draft: true
+taxonomies:
+  categories:
+    - jams
 extra:
   service: soundcloud
   id: 158267480

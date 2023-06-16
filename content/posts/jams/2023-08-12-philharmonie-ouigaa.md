@@ -2,6 +2,9 @@
 draft: true
 date: 2023-08-12T18:09:00.000Z
 title: Philharmonie - Ouigaa
+taxonomies:
+  categories:
+    - jams
 extra:
   service: bandcamp
   id: "3501591236"
