@@ -65,7 +65,7 @@
 
 <div id="works" class="uk-section uk-section-secondary uk-section-large">
 	<div class="uk-container uk-container-large">
-		<h2 class="uk-h1 uk-position-relative" uk-scrollspy-class>Featured Project</h2>
+		<h2 class="uk-heading-small uk-position-relative" uk-scrollspy-class>Featured Project</h2>
 		<div class="uk-grid-large uk-margin-medium-top uk-grid uk-grid-stack" uk-grid>
 
 		{% for project in projects.pages %}
@@ -98,7 +98,7 @@
 										<span class="uk-label">{{ task }}</span>
 										{% endfor -%}
 									</div>
-									<h3 class="uk-h1 uk-margin-large-top@m">{{ project.title }}</h3>
+									<h3 class="uk-h2 uk-margin-large-top@m">{{ project.title }}</h3>
 									{% if project.description %}<p class="">{{ project.description }}</p>{% endif %}
 								</div>
 								{% if link %}
