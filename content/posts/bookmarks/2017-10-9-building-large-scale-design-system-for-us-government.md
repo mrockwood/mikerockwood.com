@@ -5,6 +5,8 @@ extra:
   bookmarkOf: https://www.smashingmagazine.com/2017/10/large-scale-design-system-us-government/
 draft: false
 taxonomies:
+  categories:
+    - bookmarks
   tags:
     - css
     - design

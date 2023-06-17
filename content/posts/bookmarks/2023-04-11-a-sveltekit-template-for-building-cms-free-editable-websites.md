@@ -5,6 +5,8 @@ title: A SvelteKit template for building CMS-free editable websites
 extra:
   bookmarkOf: https://editable.website/
 taxonomies:
+  categories:
+    - bookmarks
   tags:
     - Svelte
 ---

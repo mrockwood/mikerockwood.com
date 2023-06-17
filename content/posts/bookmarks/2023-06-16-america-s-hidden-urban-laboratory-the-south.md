@@ -5,6 +5,8 @@ title: "America's hidden urban laboratory: the South"
 extra:
   bookmarkOf: https://devonzuegel.com/post/america-s-hidden-urban-laboratory-the-south
 taxonomies:
+  categories:
+    - bookmarks
   tags:
     - urbanism
     - usa
