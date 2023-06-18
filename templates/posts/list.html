@@ -271,9 +271,11 @@
 				<article class="uk-card uk-card-body uk-card-default">
 
 					<p>
-						<time class="dt-published uk-text-meta" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-							{{ note.date | date(format="%d %b %Y at %H:%M") }}
-						</time>
+						<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
+							<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+								{{ note.date | date(format="%d %b %Y at %H:%M") }}
+							</time>
+						</a>
 					</p>
 
 					<div class="p-name e-content uk-margin-remove-last-child">
