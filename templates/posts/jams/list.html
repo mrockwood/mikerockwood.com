@@ -10,18 +10,16 @@
 			<article class="h-entry">
 				<div class="uk-grid uk-flex-middle" uk-grid>
 
-					<div>
+					<div class="uk-width-auto@s">
 						<a class="" href="{{ jam.permalink }}">
 							<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" width="100" />
 						</a>
 					</div>
 
-					<div>
-
+					<div class="uk-width-expand@s">
 						<h3 class="p-name uk-card-title uk-margin-small-bottom">
 							<a class="uk-link-heading" href="{{ jam.permalink }}">{{ jam.title }}</a>
 						</h3>
-
 						{%- if jam.taxonomies.tags %}
 						<div>
 							{% for genre in jam.taxonomies.tags %}
@@ -29,7 +27,6 @@
 							{% endfor %}
 						</div>
 						{% endif %}
-
 					</div>
 
 				</div>
