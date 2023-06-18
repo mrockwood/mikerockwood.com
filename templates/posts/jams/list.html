@@ -4,32 +4,36 @@
 <section class="uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
 	<div class="uk-container uk-container-small">
 
-		{% for jam in paginator.pages %}
+		<div class="uk-grid uk-grid-divider uk-flex-column" uk-grid>
+		{%- for jam in paginator.pages %}
 
-		<article class="h-entry uk-card uk-card-default uk-card-body uk-margin-medium">
-			<div class="uk-grid uk-flex-middle" uk-grid>
+			<article class="h-entry">
+				<div class="uk-grid uk-flex-middle" uk-grid>
 
-				<div>
-					<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" width="100" />
-				</div>
-
-				<div>
-
-					<h3 class="p-name uk-card-title uk-margin-small-bottom">
-						<a class="uk-link-heading" href="{{ jam.permalink }}">{{ jam.title }}</a>
-					</h3>
-
-					{%- if jam.taxonomies.tags %}
 					<div>
-						{% for genre in jam.taxonomies.tags %}
-							<span class="p-category uk-label" rel="tag">{{ genre }}</span>
-						{% endfor %}
+						<a class="" href="{{ jam.permalink }}">
+							<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" width="100" />
+						</a>
 					</div>
-					{% endif %}
+
+					<div>
+
+						<h3 class="p-name uk-card-title uk-margin-small-bottom">
+							<a class="uk-link-heading" href="{{ jam.permalink }}">{{ jam.title }}</a>
+						</h3>
+
+						{%- if jam.taxonomies.tags %}
+						<div>
+							{% for genre in jam.taxonomies.tags %}
+								<span class="p-category uk-label" rel="tag">{{ genre }}</span>
+							{% endfor %}
+						</div>
+						{% endif %}
+
+					</div>
 
 				</div>
-			</div>
-		</article>
+			</article>
 
 		{# <article class="uk-card uk-card-default uk-grid-collapse uk-margin-medium" uk-grid>
 			<div class="uk-width-1-4@s uk-card-media-left uk-cover-container">
@@ -69,6 +73,8 @@
 		</article> #}
 
 		{% endfor %}
+		</div>
+
 
 		{% if paginator.previous or paginator.next %}
 		<ul class="uk-pagination">
