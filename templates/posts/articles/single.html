@@ -45,38 +45,42 @@
 
 			<div class="js-sticky-container uk-grid-large" uk-grid>
 
-
 				<div class="uk-width-1-1 uk-width-1-4@m">
 					{% if page.toc | length > 0 %}
 
-					<div uk-sticky="offset: 40; end: .js-sticky-container">
+					<div uk-sticky="offset: 40; end: .js-sticky-container; media: 960">
 
-						<ul
-							class="uk-nav uk-nav-default uk-visible@m"
-							uk-scrollspy-nav="closest: li; scroll: true; offset: 100; overflow: false"
-							style="
-								--nav-default-font-size: var(--global-small-font-size);
-							"
-						>
+						<details id="toc" open="">
+							<summary class="uk-text-small">Table of Contents</summary>
+							<nav class="uk-toc uk-margin-xsmall">
+								<ol
+									class="uk-nav uk-nav-default"
+									uk-scrollspy-nav="closest: li; scroll: true; offset: 100; overflow: false"
+									style="
+										--nav-default-font-size: var(--global-small-font-size);
+									"
+								>
 
-							<li class="uk-nav-header">On This Page</li>
-							<!-- <li class="uk-nav-divider"></li> -->
+									<!-- <li class="uk-nav-header">On This Page</li>
+									<li class="uk-nav-divider"></li> -->
 
-							{%- for heading in page.toc -%}
-								{% if heading.level == 1 and heading.children %}
-									{% for heading2 in heading.children %}
-										<li>
-											<a href="{{ heading2.permalink | safe }}">{{ heading2.title }}</a>
-										</li>
+									{%- for heading in page.toc -%}
+										{% if heading.level == 1 and heading.children %}
+											{% for heading2 in heading.children %}
+												<li>
+													<a href="{{ heading2.permalink | safe }}">{{ heading2.title }}</a>
+												</li>
+											{% endfor %}
+										{% elif heading.level == 2 %}
+											<li>
+												<a href="{{ heading.permalink | safe }}">{{ heading.title }}</a>
+											</li>
+										{% endif %}
 									{% endfor %}
-								{% elif heading.level == 2 %}
-									<li>
-										<a href="{{ heading.permalink | safe }}">{{ heading.title }}</a>
-									</li>
-								{% endif %}
-							{% endfor %}
 
-						</ul>
+								</ol>
+							</nav>
+						</details>
 
 					</div>
 
