@@ -1,37 +1,25 @@
 {% extends "base.html" %}
 
 {%- block content %}
-<section class="uk-section">
-	<div class="uk-container uk-container-large">
+<section class="uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
+	<div class="uk-container">
 
 		{% for article in paginator.pages %}
 
-			<article class="uk-margin-large">
+			<article class="uk-margin-medium">
 
-				<div class="uk-grid uk-grid-large">
+				<div class="uk-grid uk-grid-large uk-flex-middle">
 
 					<div class="uk-width-1-4@m uk-text-right@m">
-
-						<p class="uk-article-meta">
-							<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
-						</p>
-
+						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
 					</div>
 
-					<div class="uk-width-1-2@m">
-
+					<div class="uk-width-expand">
 						<h2 class="">
 							<a href="{{ article.permalink }}" class="uk-link-heading">
 								{{ article.title }}
 							</a>
 						</h2>
-
-						{% if article.description %}
-							<p>{{ article.description }}</p>
-						{% elif article.content %}
-							<p>{{ article.content | striptags | truncate(length=200) | safe }}</p>
-						{% endif %}
-
 					</div>
 
 				</div>
