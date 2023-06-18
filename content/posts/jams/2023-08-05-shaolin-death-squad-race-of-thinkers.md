@@ -5,6 +5,9 @@ draft: true
 taxonomies:
   categories:
     - jams
+  tags:
+    - Progressive Metal
+    - Avant-Garde Metal
 extra:
   service: soundcloud
   id: 17653722

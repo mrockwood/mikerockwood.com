@@ -5,6 +5,10 @@ title: Julia Holter - Feel You
 taxonomies:
   categories:
     - jams
+  tags:
+    - Art Pop
+    - Chamber Pop
+    - Modern Classical
 extra:
   service: bandcamp
   id: "2069946023"

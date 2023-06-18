@@ -5,6 +5,10 @@ title: Cornelius  - Micro Disneycal World Tour
 taxonomies:
   categories:
     - jams
+  tags:
+    - Alternative
+    - Electronic
+    - Indie Rock
 extra:
   service: bandcamp
   id: "138954257"

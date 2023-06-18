@@ -5,6 +5,9 @@ title: V Sparks - Sebastian
 taxonomies:
   categories:
     - jams
+  tags:
+    - Glam Rock
+    - Indie Rock
 extra:
   service: bandcamp
   id: "2053061173"

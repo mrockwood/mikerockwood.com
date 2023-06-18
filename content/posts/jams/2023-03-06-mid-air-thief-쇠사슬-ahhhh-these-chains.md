@@ -4,6 +4,9 @@ date: 2023-03-06T06:20:26.265Z
 taxonomies:
   categories:
     - jams
+  tags:
+    - Electronic
+    - Folktronica
 extra:
   service: bandcamp
   id: 431797831

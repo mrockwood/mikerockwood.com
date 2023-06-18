@@ -5,6 +5,10 @@ title: Elizabeth and the Catapult - Wishing Well
 taxonomies:
   categories:
     - jams
+  tags:
+    - Indie Pop
+    - Baroque Pop
+    - Singer-Songwriter
 extra:
   service: bandcamp
   id: "854211460"

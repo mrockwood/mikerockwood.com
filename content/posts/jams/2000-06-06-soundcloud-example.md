@@ -5,6 +5,10 @@ draft: true
 taxonomies:
   categories:
     - jams
+  tags:
+    - Progressive Rock
+    - Power Pop
+    - Indie Rock
 extra:
   service: soundcloud
   id: 158267480

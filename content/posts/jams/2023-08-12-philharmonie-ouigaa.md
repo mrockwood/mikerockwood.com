@@ -5,6 +5,9 @@ title: Philharmonie - Ouigaa
 taxonomies:
   categories:
     - jams
+  tags:
+    - Progressive Rock
+    - Instrumental
 extra:
   service: bandcamp
   id: "3501591236"
