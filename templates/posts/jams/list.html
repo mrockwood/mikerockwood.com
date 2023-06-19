@@ -4,11 +4,11 @@
 <section class="uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
 	<div class="uk-container uk-container-small">
 
-		<div class="uk-grid uk-grid-divider uk-flex-column" uk-grid>
+		<div class="uk-grid uk-grid-stack uk-grid-divider uk-flex-column " uk-grid>
 		{%- for jam in paginator.pages %}
 
 			<article class="h-entry">
-				<div class="uk-grid uk-flex-middle" uk-grid>
+				<div class="uk-grid uk-flex-middle uk-grid-row-small" uk-grid>
 
 					<div class="uk-width-auto@s">
 						<a class="" href="{{ jam.permalink }}">
