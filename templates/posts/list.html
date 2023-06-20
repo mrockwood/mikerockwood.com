@@ -29,7 +29,14 @@
 				{% if loop.index == 1 %}
 				<article class="h-entry uk-article">
 					<a class="" href="{{ article.permalink }}">
-						<img class="uk-margin-small-bottom" src="/images/photo.jpg" alt="" width="1800" height="1200">
+						{%- if article.extra.featuredImg %}
+							{% set featuredImg = resize_image(path=article.extra.featuredImg, width=900, op="fit_width", format="webp", quality=80) %}
+							<img class="uk-margin-remove" src="{{ featuredImg.url }}" alt="featured image for article">
+						{%- else %}
+							{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
+							{% set placeholderImg = resize_image(path=placeholderImg, width=900, op="fit_width", format="webp", quality=80) %}
+							<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="placeholder">
+						{% endif %}
 					</a>
 					<p class="uk-article-meta uk-margin-remove-bottom">
 						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
@@ -57,7 +64,14 @@
 						<article class="h-entry uk-article uk-flex-middle" uk-grid>
 							<div class="uk-width-2-5@s">
 								<a class="" href="{{ article.permalink }}">
-									<img class="uk-margin-remove" src="/images/photo.jpg" alt="" width="1800" height="1200">
+									{%- if article.extra.featuredImg %}
+										{% set featuredImg = resize_image(path=article.extra.featuredImg, width=600, op="fit_width", format="webp", quality=75) %}
+										<img class="uk-margin-remove" src="{{ featuredImg.url }}" alt="featured image for article">
+									{%- else %}
+										{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
+										{% set placeholderImg = resize_image(path=placeholderImg, width=600, op="fit_width", format="webp", quality=75) %}
+										<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="placeholder">
+									{% endif %}
 								</a>
 							</div>
 							<div class="uk-width-expand">

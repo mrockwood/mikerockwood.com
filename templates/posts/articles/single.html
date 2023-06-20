@@ -28,15 +28,37 @@
 
 	</header>
 
-	{%- if page.extra.hero %}
-	<div
-		class="uk-section uk-padding-remove"
-		style="background: linear-gradient( to bottom, hsl(var(--surface-default)) 0 50%, hsl(var(--invert-surface-default)) 50% 100% );"
-	>
-		<div class="uk-container uk-container-large">
-			<img class="" src="{{ config.base_url | safe }}/images/photo.jpg" alt="" width="1800" height="1200">
+	{%- if page.extra.featuredImg %}
+
+		{%- set featuredImg = page.extra.featuredImg %}
+		{%- set featuredImg_640 = resize_image(path=featuredImg, width=640, op="fit_width", format="webp", quality=75) %}
+		{%- set featuredImg_960 = resize_image(path=featuredImg, width=960, op="fit_width", format="webp", quality=75) %}
+		{%- set featuredImg_1200 = resize_image(path=featuredImg, width=1200, op="fit_width", format="webp", quality=75) %}
+		{%- set featuredImg_1600 = resize_image(path=featuredImg, width=1600, op="fit_width", format="webp", quality=75) %}
+
+		<div
+			class="uk-section uk-padding-remove"
+			style="background: linear-gradient( to bottom, hsl(var(--surface-default)) 0 50%, hsl(var(--invert-surface-default)) 50% 100% );"
+		>
+			<div class="uk-container uk-container-large">
+				<picture>
+					<img
+						class=""
+						loading="lazy"
+						alt=""
+						srcset="{{ featuredImg_640.url | safe }} 640w,
+								{{ featuredImg_960.url | safe }} 960w,
+								{{ featuredImg_1200.url | safe }} 1200w,
+								{{ featuredImg_1600.url | safe }} 1600w"
+						sizes="(max-width: 640px) 640px,
+								(max-width: 960px) 960px,
+								(max-width: 1200px) 1200px,
+								1600px"
+					>
+				</picture>
+			</div>
 		</div>
-	</div>
+
 	{% endif %}
 
 	<div class="uk-section uk-section-secondary uk-section-large">
