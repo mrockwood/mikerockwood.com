@@ -101,7 +101,7 @@ collections:
     identifier_field: "body"
     editor:
       preview: false
-    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{{uuid}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
