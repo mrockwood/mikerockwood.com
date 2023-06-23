@@ -45,7 +45,7 @@
 					<img
 						class=""
 						loading="lazy"
-						alt=""
+						alt="{%- if not page.extra.featuredImgCaption %}decorative header image{% endif %}"
 						srcset="{{ featuredImg_640.url | safe }} 640w,
 								{{ featuredImg_960.url | safe }} 960w,
 								{{ featuredImg_1200.url | safe }} 1200w,
