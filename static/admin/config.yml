@@ -29,6 +29,7 @@ collections:
         widget: "object"
         fields:
           - {label: "Featured Image", name: "featuredImg", widget: "string"}
+          - {label: "Featured Image Caption", name: "featuredImgCaption", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "bookmarks"
     label: "Bookmarks"

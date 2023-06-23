@@ -37,10 +37,10 @@
 		{%- set featuredImg_1600 = resize_image(path=featuredImg, width=1600, op="fit_width", format="webp", quality=75) %}
 
 		<div
-			class="uk-section uk-padding-remove"
+			class="uk-section uk-section-secondary uk-padding-remove"
 			style="background: linear-gradient( to bottom, hsl(var(--surface-default)) 0 50%, hsl(var(--invert-surface-default)) 50% 100% );"
 		>
-			<div class="uk-container uk-container-large">
+			<figure class="uk-container uk-container-large">
 				<picture>
 					<img
 						class=""
@@ -56,7 +56,12 @@
 								1600px"
 					>
 				</picture>
-			</div>
+				{%- if page.extra.featuredImgCaption %}
+				<figcaption class="uk-text-small uk-margin-small">
+					{{ page.extra.featuredImgCaption | markdown | safe }}
+				</figcaption>
+				{% endif %}
+			</figure>
 		</div>
 
 	{% endif %}

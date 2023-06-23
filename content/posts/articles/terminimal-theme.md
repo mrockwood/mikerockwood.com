@@ -11,6 +11,7 @@ taxonomies:
     - showcase
 extra:
   featuredImg: images/petri-heiskanen-vqO_1fUCNxg-unsplash.jpg
+  featuredImgCaption: "*This* is a caption."
 ---
 Welcome to Terminimal! This is a theme showcase post.
 
