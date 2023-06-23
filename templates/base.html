@@ -129,8 +129,9 @@
 
 	{#- Me -#}
 	{% block head_me %}
-	<link rel=me href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}">
-	<link rel=me href="https://www.github.com/{{ config.extra.social.github }}">
+	<link rel=me href="https://www.linkedin.com/in/{{ config.extra.social.linkedin | safe }}">
+	<link rel=me href="https://www.github.com/{{ config.extra.social.github | safe }}">
+	<link rel=me href="https://{{ config.extra.social.mastodon | safe }}">
 	{%- endblock head_me %}
 
 	{#- Canonical -#}
@@ -268,6 +269,20 @@
 									class="uk-icon-button"
 									uk-icon="
 										icon: github;
+										ratio: 1.2;"
+									style="
+										--icon-button-size: 44px;
+										--icon-button-background: hsl( var(--global-background));
+										--icon-button-hover-background: hsl( var(--global-background));"
+								></span>
+							</a>
+						</li>
+						<li>
+							<a href="https:/{{ config.extra.social.mastodon | safe }}" aria-label="Mastodon" target="_blank" rel="noreferrer">
+								<span
+									class="uk-icon-button"
+									uk-icon="
+										icon: mastodon;
 										ratio: 1.2;"
 									style="
 										--icon-button-size: 44px;
