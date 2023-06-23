@@ -56,7 +56,7 @@ bio = "Web developer, designer, and guitar player with a passion for all things 
 
 [extra.social]
 #feed = true
-#mastodon = "@your-user-name"
+mastodon = "indieweb.social/@rockwood"
 #twitter = "your-user-name"
 #facebook = "your-user-name"
 linkedin = "mikerockwood"
