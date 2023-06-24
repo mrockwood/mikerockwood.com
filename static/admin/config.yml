@@ -23,6 +23,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "articles"}
           - {label: "Tags", name: "tags", widget: "list"}
       - label: "Extra"
         name: "extra"
@@ -48,6 +49,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "bookmarks"}
           - {label: "Tags", name: "tags", widget: "list"}
       - label: "Extra"
         name: "extra"
@@ -66,6 +68,12 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "favorites"}
+          - {label: "Tags", name: "tags", widget: "list"}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -112,6 +120,12 @@ collections:
     fields:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "notes"}
+          - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
@@ -140,6 +154,12 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "hidden"}
       - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "replies"}
+          - {label: "Tags", name: "tags", widget: "list"}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -158,6 +178,12 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "reposts"}
+          - {label: "Tags", name: "tags", widget: "list"}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -176,6 +202,12 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "rsvps"}
+          - {label: "Tags", name: "tags", widget: "list"}
       - label: "Extra"
         name: "extra"
         widget: "object"
