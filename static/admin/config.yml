@@ -85,6 +85,12 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: "jams"}
+          - {label: "Tags", name: "tags", widget: "list"}
       - label: "Extra"
         name: "extra"
         widget: "object"
