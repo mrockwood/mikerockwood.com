@@ -5,6 +5,8 @@ extra:
   bookmarkOf: https://developer.chrome.com/blog/sticky-headers/
 draft: false
 taxonomies:
+  categories:
+    - bookmarks
   tags:
     - css
     - javascript

@@ -40,6 +40,7 @@
     --nav-header-padding-vertical:                    var(--nav-item-padding-vertical);
     --nav-header-padding-horizontal:                  var(--nav-item-padding-horizontal);
     --nav-header-font-size:                           var(--global-small-font-size);
+	--nav-header-font-weight:                         500;
     --nav-header-text-transform:                      uppercase;
     --nav-header-margin-top:                          var(--global-margin);
 
@@ -183,6 +184,7 @@ ul.uk-nav-sub {
     padding: var(--nav-header-padding-vertical) var(--nav-header-padding-horizontal);
     text-transform: var(--nav-header-text-transform);
     font-size: var(--nav-header-font-size);
+	font-weight: var(--nav-header-font-weight);
 }
 
 .uk-nav-header:not(:first-child) { margin-block-start: var(--nav-header-margin-top); }

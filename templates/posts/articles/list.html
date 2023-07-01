@@ -2,23 +2,29 @@
 
 {%- block content %}
 <section class="uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
-	<div class="uk-container uk-container-small">
+	<div class="uk-container">
 
-		{% for note in paginator.pages %}
+		{% for article in paginator.pages %}
 
-		<article class="uk-card uk-card-body uk-card-default uk-margin-medium">
+			<article class="uk-margin-medium">
 
-			<p>
-				<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
-					<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-						{{ note.date | date(format="%d %b %Y at %H:%M") }}
-					</time>
-				</a>
-			</p>
+				<div class="uk-grid uk-grid-large uk-flex-middle">
 
-			{{ note.content | safe }}
+					<div class="uk-width-1-4@m uk-text-right@m">
+						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+					</div>
 
-		</article>
+					<div class="uk-width-expand">
+						<h2 class="">
+							<a href="{{ article.permalink }}" class="uk-link-heading">
+								{{ article.title }}
+							</a>
+						</h2>
+					</div>
+
+				</div>
+
+			</article>
 
 		{% endfor %}
 

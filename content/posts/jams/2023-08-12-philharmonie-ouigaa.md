@@ -2,6 +2,12 @@
 draft: true
 date: 2023-08-12T18:09:00.000Z
 title: Philharmonie - Ouigaa
+taxonomies:
+  categories:
+    - jams
+  tags:
+    - Progressive Rock
+    - Instrumental
 extra:
   service: bandcamp
   id: "3501591236"

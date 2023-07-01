@@ -5,6 +5,8 @@ extra:
   bookmarkOf: https://www.matuzo.at/blog/2023/single-page-applications-criticism/
 draft: false
 taxonomies:
+  categories:
+    - bookmarks
   tags:
     - spa
 ---

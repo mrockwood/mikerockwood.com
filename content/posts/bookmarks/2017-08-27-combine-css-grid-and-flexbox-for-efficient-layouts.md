@@ -5,6 +5,8 @@ extra:
   bookmarkOf: https://wpengine.com/resources/combine-flexbox-and-css-grids-for-layouts-how-to/
 draft: false
 taxonomies:
+  categories:
+    - bookmarks
   tags:
     - css
 ---

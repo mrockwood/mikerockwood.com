@@ -16,7 +16,7 @@
 
     --article-margin-top:                             var(--global-large-margin);
 
-    --article-title-font-size:                        calc( var(--global-2xlarge-font-size) * 0.85 );
+    --article-title-font-size:                        calc( var(--global-xlarge-font-size) * 0.85 );
     --article-title-line-height:                      1.2;
 
     --article-meta-font-size:                         var(--global-small-font-size);
@@ -29,7 +29,7 @@
 
     :where([class*='uk-article']) {
 
-        --article-title-font-size:                    var(--global-2xlarge-font-size);
+        --article-title-font-size:                    var(--global-xlarge-font-size);
 
     }
 

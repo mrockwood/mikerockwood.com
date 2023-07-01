@@ -15,7 +15,7 @@
 
 :where([class*='uk-heading']) {
 
-    --heading-small-font-size:                        2.375rem;      // 38px
+    --heading-small-font-size:                        2rem;          // 32px
     --heading-medium-font-size:                       2.5rem;        // 40px
     --heading-large-font-size:                        3.125rem;      // 50px
     --heading-xlarge-font-size:                       4rem;          // 64px
@@ -51,7 +51,7 @@
 
     :where([class*='uk-heading']) {
 
-        --heading-small-font-size:                    3.25rem;   // 52px
+        --heading-small-font-size:                    2.75rem;   // 42px
         --heading-medium-font-size:                   3.5rem;    // 56px
         --heading-large-font-size:                    4rem;      // 64px
         --heading-xlarge-font-size:                   6rem;      // 96px
