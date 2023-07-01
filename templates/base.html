@@ -193,8 +193,8 @@
 						{%- endfor -%}
 					</ul>
 					{% endif -%}
-					<div class="uk-navbar-item uk-hidden@m">
-						<button uk-toggle="target: #js-mobile-menu" class="uk-icon-button" uk-icon aria-label="Main Menu">
+					<div class="uk-hidden@m">
+						<button uk-toggle="target: #js-mobile-menu" class="uk-icon-button uk-icon" uk-icon aria-label="Main Menu">
 							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 							</svg>
@@ -341,7 +341,7 @@
 	<div id="js-theme-menu" uk-offcanvas="flip: true; mode: push;">
 		<div class="uk-offcanvas-bar">
 			<button class="uk-offcanvas-close" type="button" uk-close></button>
-			<ul class="themeswitcher uk-nav uk-nav-primary uk-list-large uk-margin-medium-top">
+			<ul class="themeswitcher uk-nav uk-nav-primary uk-list-large uk-margin-top">
 				<li class="uk-nav-header">Select a Theme</li>
 				<li class="uk-nav-divider uk-margin-bottom"></li>
 				<li class="themeswitcher__item">
