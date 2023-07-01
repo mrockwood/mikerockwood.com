@@ -64,7 +64,7 @@
 }
 
 :root,
-[data-theme='uk-theme-system'] {
+[data-theme='uk-theme-auto'] {
 
     color-scheme: light;
 
@@ -107,7 +107,7 @@
 @media (prefers-color-scheme: dark) {
 
     :root,
-	[data-theme='uk-theme-system'] {
+	[data-theme='uk-theme-auto'] {
 
         color-scheme: dark;
 
