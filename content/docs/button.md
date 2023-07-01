@@ -3,10 +3,6 @@ title: Button
 description: Easily create nice looking buttons, which come in different styles.
 ---
 
-# Button
-
-<p class="uk-text-lead">Easily create nice looking buttons, which come in different styles.</p>
-
 ## Usage
 
 To apply this component, add the `.uk-button` class and a modifier such as `.uk-button-default` to an `<a>` or `<button>` element. Add the `disabled` attribute to a `<button>` element to disable the button.

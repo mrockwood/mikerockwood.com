@@ -3,10 +3,6 @@ title: Cover
 description: Expand images, videos or iframes to cover their entire container and place your own content on top.
 ---
 
-# Cover
-
-<p class="uk-text-lead">Expand images, videos or iframes to cover their entire container and place your own content on top.</p>
-
 ## Usage
 
 To have an image cover its parent element, add the `.uk-cover-container` class to the parent and the `uk-cover` attribute to the image.

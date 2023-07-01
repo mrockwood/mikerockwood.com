@@ -3,10 +3,6 @@ title: Sticky
 description: Make elements remain at the top of the viewport, like a sticky navigation.
 ---
 
-# Sticky
-
-<p class="uk-text-lead">Make elements remain at the top of the viewport, like a sticky navigation.</p>
-
 ## Usage
 
 To create an element that remains at the top of the viewport when scrolling down the site, add the `uk-sticky` attribute to that element.

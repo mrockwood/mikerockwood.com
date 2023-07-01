@@ -1,20 +1,64 @@
 {% extends "base.html" %}
 
-{%- block content %}
+{%- block main %}
 
 <article class="h-entry">
 
-	<header>
+	<header class="uk-section uk-section-small">
 
-		{# include "time.njk" #}
+		<div class="uk-container uk-container-large uk-text-center">
+
+			{%- if page.taxonomies.categories %}
+			<div class="uk-position-relative uk-margin-small">
+				{%- for category in page.taxonomies.categories %}
+					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">
+				Note from <time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date | date(format="%d %B, %Y at %H:%M") }}</time>
+			</h1>
+
+			{#
+			{%- if page.date %}
+			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+				{{ page.date | date(format="%d %B, %Y") }}
+			</time>
+			{% endif %}
+			#}
+
+		</div>
 
 	</header>
 
-	<div class="p-name e-content">
+	<!-- <header>
+
+		{# include "time.njk" #}
+
+	</header> -->
+
+	<div class="e-content uk-section-secondary">
+
+		{% if page.content %}
+		<div class="uk-section uk-section-large">
+
+			<div class="uk-container uk-container-xsmall uk-margin-large">
+
+				{{ page.content | safe }}
+
+			</div>
+
+		</div>
+		{% endif %}
+
+	</div>
+
+	<!-- <div class="p-name e-content">
 
 		{{ page.content | safe }}
 
-	</div>
+	</div> -->
 
 	<footer>
 

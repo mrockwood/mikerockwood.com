@@ -11,6 +11,7 @@
 {% import "macros/footer.html" as footer -%}
 {% import "macros/extended_footer.html" as extended_footer -%}
 {% import "macros/comments.html" as comments -%}
+{% import "macros/toc.html" as toc -%}
 
 {#- Posts -#}
 {%- set articles = get_section(path="posts/articles/_index.md") %}
@@ -23,6 +24,12 @@
 {%- set reposts = get_section(path="posts/reposts/_index.md") %}
 {%- set rsvps = get_section(path="posts/rsvps/_index.md") %}
 {%- set videos = get_section(path="posts/videos/_index.md") %}
+
+{#- Work -#}
+{%- set projects = get_section(path="work/_index.md") %}
+
+{#- Documentation -#}
+{%- set docs = get_section(path="docs/_index.md") %}
 
 {#- Title -#}
 {%- if section -%}
@@ -45,6 +52,8 @@
 		{% set description = page.summary | striptags | truncate(length=200) %}
 	{%- elif page.description -%}
 		{% set description = page.description %}
+	{%- else -%}
+		{% set description = page.content | striptags | truncate(length=200) | safe %}
 	{%- endif -%}
 {%- endif -%}
 
@@ -104,7 +113,7 @@
 	{% block head_favicons %}
 	{#- <link rel="shortcut icon" href="{{ get_url(path='/images/favicon.ico') }}" type="image/x-icon"> #}
 	<link rel="shortcut icon" href="{{ get_url(path='/images/favicon.svg', cachebust=true) }}" type="image/svg+xml">
-	{#- <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png"> #}
+	{#- <link rel="apple-touch-icon" href="{{ get_url(path='/images/apple-touch-icon.png') }}"> #}
 	{%- endblock head_favicons %}
 
 	{#- Feeds -#}
@@ -127,8 +136,9 @@
 
 	{#- Me -#}
 	{% block head_me %}
-	<link rel=me href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}">
-	<link rel=me href="https://www.github.com/{{ config.extra.social.github }}">
+	<link rel=me href="https://www.linkedin.com/in/{{ config.extra.social.linkedin | safe }}">
+	<link rel=me href="https://www.github.com/{{ config.extra.social.github | safe }}">
+	<link rel=me href="https://{{ config.extra.social.mastodon | safe }}">
 	{%- endblock head_me %}
 
 	{#- Canonical -#}
@@ -158,7 +168,7 @@
 	{% block header %}
 	<div class="uk-header {% if current_path and current_path == '/' %} uk-position-absolute uk-width-1-1 uk-position-z-index {% endif %}">
 		<div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
-			<nav class="uk-navbar">
+			<nav class="uk-navbar" style="margin-inline: calc(-1 * var(--navbar-nav-item-padding-horizontal));">
 				<div class="uk-navbar-left">
 					<a href="{{ config.base_url }}" class="uk-navbar-item uk-logo">
 						{%- set headshot = resize_image(path="/images/headshot-cutout.jpg", width=192, height=192, format='webp', quality=75) %}
@@ -235,7 +245,7 @@
 	{#- Footer -#}
 	{% block footer %}
 	<footer>
-		<a href="mailto:{{ config.extra.author.email }}" class="uk-section uk-section-small uk-button uk-button-primary uk-margin-large-top">
+		<a href="mailto:{{ config.extra.author.email }}" class="uk-section uk-section-small uk-button uk-button-primary">
 			<div class="uk-container uk-text-center uk-text-large">
 				<span>Want to chat?</span>
 				<span>Drop me a line.</span>
@@ -274,6 +284,20 @@
 								></span>
 							</a>
 						</li>
+						<li>
+							<a href="https://{{ config.extra.social.mastodon | safe }}" aria-label="Mastodon" target="_blank" rel="noreferrer">
+								<span
+									class="uk-icon-button"
+									uk-icon="
+										icon: mastodon;
+										ratio: 1.2;"
+									style="
+										--icon-button-size: 44px;
+										--icon-button-background: hsl( var(--global-background));
+										--icon-button-hover-background: hsl( var(--global-background));"
+								></span>
+							</a>
+						</li>
 					</ul>
 				</div>
 
@@ -281,11 +305,11 @@
 
 				<div class="uk-grid uk-grid-small uk-flex-between uk-flex-wrap" uk-grid>
 					<p class="uk-width-1-1 uk-text-center uk-text-left@s uk-width-expand@s">&copy; {{ now() | date(format="%Y") }} Mike Rockwood</p>
-					{# <p class="uk-flex uk-margin-auto">
-						<a class="uk-link-text" href="https://hotlinewebring.club/interrobang/previous" target="_blank" aria-label="Previous Hotline Webring Site">←</a>
-						<span class="uk-margin-left uk-margin-right">IndieWeb</span>
-						<a class="uk-link-text" href="https://hotlinewebring.club/interrobang/next" target="_blank" aria-label="Next Hotline Webring Site">→</a>
-					</p> #}
+					<p class="uk-flex uk-margin-auto">
+						<a class="uk-link-text" href="https://xn--sr8hvo.ws/%F0%9F%91%A9%E2%80%8D%E2%9D%A4%EF%B8%8F%E2%80%8D%F0%9F%91%A9%F0%9F%95%93%F0%9F%8F%BF/previous" aria-label="Previous IndieWeb Webring Site">←</a>
+						<a class="uk-link-text uk-margin-left uk-margin-right" href="https://xn--sr8hvo.ws">An IndieWeb Webring</a>
+						<a class="uk-link-text" href="https://xn--sr8hvo.ws/%F0%9F%91%A9%E2%80%8D%E2%9D%A4%EF%B8%8F%E2%80%8D%F0%9F%91%A9%F0%9F%95%93%F0%9F%8F%BF/next" aria-label="Next IndieWeb Webring Site">→</a>
+					</p>
 				</div>
 
 			</div>
@@ -342,6 +366,36 @@
 		</div>
 	</div>
 	{% endblock foot_theme %}
+
+
+	{#- h-card -#}
+	{% if current_path and current_path == '/' %}
+	<section class="h-card" hidden>
+		<ul>
+			<li>
+				<img class="u-photo" rel="me" src="{{ get_url(path=config.extra.author.avatar) }}" alt="headshot of Mike Rockwood">
+			</li>
+			<li class="p-name"><span class="p-given-name">Mike</span> <span class="p-family-name">Rockwood</span></li>
+			<li class="p-note">{{ config.extra.author.bio }}</li>
+			<li class="p-pronouns">
+                <span class="p-x-pronoun-nominative p-pronoun-nominative p-pronoun">he</span>/<span class="p-pronoun-oblique p-x-pronoun-oblique">him</span>/<span class="p-pronoun-possessive p-x-pronoun-possessive">his</span>
+            </li>
+			<li>
+				<a class="u-url u-uid" rel="me" href="{{ config.base_url | safe }}">{{ config.base_url | safe }}</a>
+			</li>
+			<li>
+				<a class="u-email" href="mailto:{{ config.extra.author.email }}">{{ config.extra.author.email }}</a>
+			</li>
+			<li>
+				<address class="p-adr h-adr">
+					<span class="p-locality">Salt Lake City</span>,
+					<span class="p-region">Utah</span>,
+					<span class="p-country-name">United States</span>
+				</address>
+			</li>
+		</ul>
+	</section>
+	{% endif %}
 
 
 	{#- Scripts -#}

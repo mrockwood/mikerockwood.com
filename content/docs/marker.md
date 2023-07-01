@@ -3,10 +3,6 @@ title: Marker
 description: Create a marker icon that can be displayed on top of images.
 ---
 
-# Marker
-
-<p id="toptext" class="uk-text-lead">Create a marker icon that can be displayed on top of images.</p>
-
 ## Usage
 
 To apply this component, add the `uk-marker` attribute to any element. You can use the [Position component](position.md) to place the marker on top of an image. Also add the `.uk-transform-center` classes from the [Utility component](utility.md#transform) to center the marker itself to its upper left corner.

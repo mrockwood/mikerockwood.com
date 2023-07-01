@@ -4,16 +4,11 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="noindex" />
-	<title>Content Manager</title>
+	<link rel="dns-prefetch" href="https://unpkg.com">
+	<title>Sveltia CMS</title>
 </head>
 <body>
-	<!-- Include the script that builds the page and powers Static CMS / Netlify CMS -->
-	<!-- <script src="https://unpkg.com/@staticcms/app@latest/dist/static-cms-app.js"></script> -->
-	<!-- <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script> -->
-	<script src="https://unpkg.com/netlify-cms@latest/dist/netlify-cms.js"></script>
-	<script>
-		CMS.registerPreviewStyle("/style.css");
-		CMS.init();
-	</script>
+	<!-- Include the script that powers Sveltia CMS -->
+	<script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
 </body>
 </html>

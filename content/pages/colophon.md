@@ -1,6 +1,8 @@
 ---
 title: Colophon
-path: about/colophon
+path: colophon
+aliases:
+  - about/colophon
 description: About this site.
 template: pages/colophon.html
 ---

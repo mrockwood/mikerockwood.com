@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 
 {%- block content %}
-<section class="uk-section">
+<section class="uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
 	<div class="uk-container uk-container-small">
 
 		{% for note in paginator.pages %}
 
 		<article class="uk-card uk-card-body uk-card-default uk-margin-medium">
 
-			<p class="uk-text-meta">
-				{{ note.date | date(format="%d %b %Y at %H:%M") }}
+			<p>
+				<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
+					<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+						{{ note.date | date(format="%d %b %Y at %H:%M") }}
+					</time>
+				</a>
 			</p>
 
 			{{ note.content | safe }}

@@ -1,31 +1,172 @@
 {% extends "base.html" %}
 
-{%- block content %}
 
-<article class="h-entry">
+{%- block main %}
 
-	<header>
+{# Article #}
+<article class="h-entry uk-section uk-padding-remove-bottom">
 
-		<h1 class="p-name">{{ page.title }}</h1>
+	<header class="uk-container uk-container-large uk-margin-large uk-text-center">
 
-		{# include "time.njk" #}
+		<div class="uk-position-relative uk-margin-small">
+
+			{%- if page.taxonomies.categories %}
+				{% for category in page.taxonomies.categories %}
+					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
+				{% endfor %}
+			{% endif %}
+
+		</div>
+
+		<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">{{ title }}</h1>
+
+		{%- if page.date %}
+		<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+			{{ page.date | date(format="%d %B, %Y") }}
+		</time>
+		{% endif %}
 
 	</header>
 
-	<div class="e-content">
+	{%- if page.extra.featuredImg %}
 
-		{{ page.content | safe }}
+		{%- set featuredImg = page.extra.featuredImg %}
+		{%- set featuredImg_640 = resize_image(path=featuredImg, width=640, op="fit_width", format="webp", quality=75) %}
+		{%- set featuredImg_960 = resize_image(path=featuredImg, width=960, op="fit_width", format="webp", quality=75) %}
+		{%- set featuredImg_1200 = resize_image(path=featuredImg, width=1200, op="fit_width", format="webp", quality=75) %}
+		{%- set featuredImg_1600 = resize_image(path=featuredImg, width=1600, op="fit_width", format="webp", quality=75) %}
+
+		<div
+			class="uk-section uk-section-secondary uk-padding-remove"
+			style="background: linear-gradient( to bottom, hsl(var(--surface-default)) 0 50%, hsl(var(--invert-surface-default)) 50% 100% );"
+		>
+			<figure class="uk-container uk-container-large">
+				<picture>
+					<img
+						class=""
+						loading="lazy"
+						alt="{%- if not page.extra.featuredImgCaption %}decorative header image{% endif %}"
+						srcset="{{ featuredImg_640.url | safe }} 640w,
+								{{ featuredImg_960.url | safe }} 960w,
+								{{ featuredImg_1200.url | safe }} 1200w,
+								{{ featuredImg_1600.url | safe }} 1600w"
+						sizes="(max-width: 640px) 640px,
+								(max-width: 960px) 960px,
+								(max-width: 1200px) 1200px,
+								1600px"
+					>
+				</picture>
+				{%- if page.extra.featuredImgCaption %}
+				<figcaption class="uk-text-small uk-margin-small">
+					{{ page.extra.featuredImgCaption | markdown | safe }}
+				</figcaption>
+				{% endif %}
+			</figure>
+		</div>
+
+	{% endif %}
+
+	<div class="uk-section uk-section-secondary uk-section-large">
+
+		<div class="uk-container uk-container-large">
+
+			<div class="js-sticky-container uk-grid-large" uk-grid>
+
+				<div class="uk-width-1-1 uk-width-1-4@m">
+					{% if page.toc | length > 0 %}
+
+					<div uk-sticky="offset: 40; end: .js-sticky-container; media: 960">
+
+						<details id="toc" open="">
+							<summary class="uk-text-small">Table of Contents</summary>
+							<nav class="uk-toc uk-margin-xsmall">
+								<ol
+									class="uk-nav uk-nav-default"
+									uk-scrollspy-nav="closest: li; scroll: true; offset: 100; overflow: false"
+									style="
+										--nav-default-font-size: var(--global-small-font-size);
+									"
+								>
+
+									<!-- <li class="uk-nav-header">On This Page</li>
+									<li class="uk-nav-divider"></li> -->
+
+									{%- for heading in page.toc -%}
+										{% if heading.level == 1 and heading.children %}
+											{% for heading2 in heading.children %}
+												<li>
+													<a href="{{ heading2.permalink | safe }}">{{ heading2.title }}</a>
+												</li>
+											{% endfor %}
+										{% elif heading.level == 2 %}
+											<li>
+												<a href="{{ heading.permalink | safe }}">{{ heading.title }}</a>
+											</li>
+										{% endif %}
+									{% endfor %}
+
+								</ol>
+							</nav>
+						</details>
+
+					</div>
+
+					{# <div class="uk-width-1-1 uk-hidden@m">
+
+						<button
+							class="js-toggle-otp uk-button uk-button-default uk-width-1-1"
+							uk-toggle="target: .js-otp; animation: uk-animation-slide-top"
+							type="button"
+						>
+							On This Page
+							<span class="js-otp-icon uk-margin-small-left uk-icon" uk-icon="icon: plus-circle"></span>
+						</button>
+						<p class="js-otp" hidden="">test</p>
+					</div>#}
+
+					{% endif %}
+				</div>
+
+				<div class="e-content uk-width-1-2@m uk-flex-last">
+
+					{{ page.content | safe }}
+
+				</div>
+
+			</div>
+
+		</div>
 
 	</div>
 
-	<footer>
-
-		{# include "h-card.njk" #}
-
-	</footer>
-
 </article>
 
-{% include "webmentions.njk" %}
 
-{%- endblock content %}
+{# Pagination #}
+{#
+{%- if page.lower or page.higher %}
+<nav class="uk-section uk-section-small">
+
+	<div class="uk-container uk-container-large">
+
+		<hr>
+
+		<ul class="uk-pagination">
+
+			{% if page.lower %}
+			<li><a href="{{ page.lower.permalink }}"><span class="uk-margin-xsmall-right" uk-pagination-previous></span> Previous</a></li>
+			{% endif %}
+
+			{% if page.higher %}
+			<li class="uk-margin-auto-left"><a href="{{ page.higher.permalink }}">Next <span class="uk-margin-xsmall-left" uk-pagination-next></a></li>
+			{% endif %}
+
+		</ul>
+
+	</div>
+
+</nav>
+{% endif %}
+#}
+
+{%- endblock main %}

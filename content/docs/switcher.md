@@ -3,10 +3,6 @@ title: Switcher
 description: Dynamically transition through different content panes.
 ---
 
-# Switcher
-
-<p class="uk-text-lead">Dynamically transition through different content panes.</p>
-
 ## Usage
 
 The Switcher component consists of a number of toggles and their related content items. Add the `uk-switcher` attribute to a list element which contains the toggles. Add the `.uk-switcher` class to the element containing the content items.

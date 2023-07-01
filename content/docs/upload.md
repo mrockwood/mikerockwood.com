@@ -3,10 +3,6 @@ title: Upload
 description: Upload files through a file input form element or a placeholder area.
 ---
 
-# Upload
-
-<p class="uk-text-lead">Upload files through a file input form element or a placeholder area.</p>
-
 ## Usage
 
 This JavaScript component utilizes the latest XMLHttpRequest Level 2 specification and provides the ability of uploading files via Ajax including tracking of the upload progress. The component provides two ways of uploading files: `select` and `drop`. While the `select` request can only be applied to `<input type="file">` elements, you can basically use any element with `drop`, which enables you to simply drag and drop files from your desktop into the specified element to upload them. Note that this component does not handle your file uploads on the server.

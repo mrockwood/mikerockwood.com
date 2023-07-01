@@ -3,10 +3,6 @@ title: Navbar
 description: Create a navigation bar that can be used for your main site navigation.
 ---
 
-# Navbar
-
-<p class="uk-text-lead">Create a navigation bar that can be used for your main site navigation.</p>
-
 ## Usage
 
 The Navbar component consists of a navbar container, the navbar itself and one or more navigations.

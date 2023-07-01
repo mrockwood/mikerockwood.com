@@ -3,9 +3,10 @@
 
 {% block subnav %}
 <div class="uk-margin-small" uk-margin>
-	{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="bookmarks/">Bookmarks</a>{% endif %}
-	{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="jams/">Jams</a>{% endif %}
-	{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="notes/">Notes</a>{% endif %}
+	{% if articles.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/articles/_index.md') }}">Articles</a>{% endif %}
+	{% if bookmarks.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/bookmarks/_index.md') }}">Bookmarks</a>{% endif %}
+	{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/jams/_index.md') }}">Jams</a>{% endif %}
+	{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/notes/_index.md') }}">Notes</a>{% endif %}
 </div>
 {% endblock subnav %}
 
@@ -14,28 +15,99 @@
 
 
 <!-- Articles -->
-{#
 {% if articles.pages %}
-<section class="uk-section">
+<section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
 
-		<h2 class="uk-h1">Articles</h2>
+		<h2 class="uk-heading-small uk-margin-medium-bottom">Articles</h2>
+
+		<div class="uk-child-width-1-2@m uk-grid-large" uk-grid>
+
+			{# Latest Article #}
+			<div>
+			{% for article in articles.pages %}
+				{% if loop.index == 1 %}
+				<article class="h-entry uk-article">
+					<a class="" href="{{ article.permalink }}">
+						{%- if article.extra.featuredImg %}
+							{% set featuredImg = resize_image(path=article.extra.featuredImg, width=900, op="fit_width", format="webp", quality=80) %}
+							<img class="uk-margin-remove" src="{{ featuredImg.url }}" alt="featured image for article">
+						{%- else %}
+							{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
+							{% set placeholderImg = resize_image(path=placeholderImg, width=900, op="fit_width", format="webp", quality=80) %}
+							<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="placeholder">
+						{% endif %}
+					</a>
+					<p class="uk-article-meta uk-margin-remove-bottom">
+						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+					</p>
+					<h3 class="p-name uk-article-title uk-margin-small-top">
+						<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
+					</h3>
+					{% if article.description %}
+						<p>{{ article.description }}</p>
+					{% elif article.content %}
+						<p>{{ article.content | striptags | truncate(length=200) | safe }}</p>
+					{% endif %}
+				</article>
+				<hr class="uk-hidden@m uk-grid-margin">
+				{% endif %}
+			{% endfor %}
+			</div>
+
+			{# Recent Articles #}
+			<div>
+				<div class="uk-grid-divider uk-child-width-1-1 uk-grid-stack" uk-grid>
+				{% for article in articles.pages %}
+					{% if loop.index > 1 and loop.index < 5 %}
+					<div>
+						<article class="h-entry uk-article uk-flex-middle" uk-grid>
+							<div class="uk-width-2-5@s">
+								<a class="" href="{{ article.permalink }}">
+									{%- if article.extra.featuredImg %}
+										{% set featuredImg = resize_image(path=article.extra.featuredImg, width=600, op="fit_width", format="webp", quality=75) %}
+										<img class="uk-margin-remove" src="{{ featuredImg.url }}" alt="featured image for article">
+									{%- else %}
+										{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
+										{% set placeholderImg = resize_image(path=placeholderImg, width=600, op="fit_width", format="webp", quality=75) %}
+										<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="placeholder">
+									{% endif %}
+								</a>
+							</div>
+							<div class="uk-width-expand">
+								<p class="uk-article-meta uk-margin-remove-bottom">
+									<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+								</p>
+								<h3 class="p-name uk-margin-small-top">
+									<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
+								</h3>
+							</div>
+						</article>
+					</div>
+					{% endif %}
+				{% endfor %}
+				</div>
+			</div>
+
+		</div>
+
+		{#
 
 		<uk class="uk-list uk-list-xlarge uk-list-divider">
 
 		{% for article in articles.pages %}
 			{% if loop.index < 6 %}
 
-			<li class="">
+			<li class="h-entry">
 				<!-- {% if loop.index > 1 %}<hr class="uk-margin-medium" />{% endif %} -->
 				<article class="uk-panel">
 					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-flex-middle" uk-grid>
 						<div class="uk-width-1-4@m">
-							<time datetime="{{ article.date }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+							<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
 						</div>
 						<div>
-							<h3 class="uk-h2 uk-margin-remove">
-								<a href="{{ article.permalink }}" class="uk-link-reset">{{ article.title }}</a>
+							<h3 class="p-name uk-h2 uk-margin-remove">
+								<a href="{{ article.permalink }}" class="u-url uk-link-reset">{{ article.title }}</a>
 							</h3>
 						</div>
 					</div>
@@ -47,30 +119,48 @@
 
 		</ul>
 
+		#}
+
 	</div>
 </section>
 {% endif %}
-#}
+
 
 <!-- Bookmarks -->
 {% if bookmarks.pages %}
-<section class="uk-section">
+<section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
 
-		<h2 class="uk-h1">Bookmarks</h2>
+		<!-- <div class="uk-grid uk-grid-small uk-flex-middle uk-margin-medium-bottom" uk-grid>
+			<div class="uk-width-expand@s">
+				<h2 class="uk-h1 uk-text-uppercase uk-text-semibold uk-text-tracking-2xsmall uk-heading-line">
+					<span>
+						Bookmarks
+					</span>
+				</h2>
+			</div>
+			<div class="uk-width-auto">
+				<a href="{{ get_url(path='@/posts/bookmarks/_index.md') }}">More Bookmarks</a>
+			</div>
+		</div> -->
+
+		<h2 class="uk-heading-small uk-margin-medium-bottom">Bookmarks</h2>
 
 		<div class="uk-child-width-1-2@m" uk-grid>
 
 		{% for bookmark in bookmarks.pages %}
 			{% if loop.index < 5 %}
 
-			<div>
+			<div class="h-entry">
 
 				<article class="uk-card uk-card-default uk-card-hover">
-					<a href="{{ bookmark.extra.bookmarkOf }}" class="uk-card-body uk-link-reset">
+					<a href="{{ bookmark.extra.bookmarkOf }}" class="u-bookmark-of uk-card-body uk-link-reset">
 						<div class="uk-grid uk-flex-middle">
 							<div class="uk-width-expand">
-								<h3 class="uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
+								<h3 class="p-name uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
+								<time class="dt-published uk-text-meta" datetime="{{ bookmark.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
+									{{ bookmark.date | date(format="%d %b %Y at %H:%M") }}
+								</time>
 								<p class="uk-text-meta uk-margin-xsmall">
 									{{ bookmark.extra.bookmarkOf }}
 								</p>
@@ -91,10 +181,6 @@
 					</a>
 				</article>
 
-				<!-- <p class="uk-text-meta">
-					{{ bookmark.date | date(format="%d %b %Y") }}
-				</p> -->
-
 			</div>
 
 			{% endif %}
@@ -109,17 +195,17 @@
 
 <!-- Jams -->
 {% if jams.pages %}
-<section class="uk-section uk-section-secondary">
+<section class="h-feed uk-section uk-section-secondary">
 	<div class="uk-container uk-container-large">
 
-		<h2 class="uk-h1">Jams</h2>
+		<h2 class="uk-heading-small uk-margin-medium-bottom">Jams</h2>
 
 		<div class="uk-margin-medium-bottom uk-width-2-3@m">
 			<ul class="uk-thumbnav" uk-switcher="connect: #jam-tabs; animation: uk-animation-fade">
 			{% for jam in jams.pages %}
 				{% if loop.index < 6 %}
 				<li class="uk-width-1-5">
-					<a href="#" uk-tooltip="title: {{ jam.title }}; pos: bottom-left">
+					<a href="#" uk-tooltip="title: {{ jam.title }}; pos: top-center; cls: uk-active uk-tooltip-primary;">
 						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
 					</a>
 				</li>
@@ -132,32 +218,41 @@
 			<ul id="jam-tabs" class="uk-switcher">
 			{% for jam in jams.pages %}
 				{% if loop.index < 6 %}
-				<li>
+				<li class="h-entry">
+					<h3 class="p-name" hidden>{{ jam.title }}</h3>
+					<time class="dt-published uk-text-meta" datetime="{{ jam.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
+						{{ jam.date | date(format="%d %b %Y at %H:%M") }}
+					</time>
+					<div class="e-content">
 					{%- if jam.extra.service == "bandcamp" -%}
-					<iframe
-						class="embed-bandcamp"
-						src="https://bandcamp.com/EmbeddedPlayer/track={{ jam.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
-						style="border: 0; width: 100%; height: 120px;"
-						seamless
-					></iframe>
-					{%- elif jam.extra.service == "soundcloud" -%}
-					<iframe
-						class="embed-soundcloud"
-						src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ jam.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
-						width="100%"
-						height="166"
-						scrolling="no"
-						frameborder="no"
-					></iframe>
-					{%- elif jam.extra.service == "youtube" -%}
-					<iframe
-						class="embed-youtube"
-						src="https://www.youtube-nocookie.com/embed/{{ jam.extra.id }}"
-						style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
-						frameborder="0"
-						allowfullscreen
-					></iframe>
-					{%- endif -%}
+						<iframe
+							class="embed-bandcamp"
+							src="https://bandcamp.com/EmbeddedPlayer/track={{ jam.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+							style="border: 0; width: 100%; height: 120px;"
+							seamless
+							loading="lazy"
+						></iframe>
+						{%- elif jam.extra.service == "soundcloud" -%}
+						<iframe
+							class="embed-soundcloud"
+							src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ jam.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+							width="100%"
+							height="166"
+							scrolling="no"
+							frameborder="no"
+							loading="lazy"
+						></iframe>
+						{%- elif jam.extra.service == "youtube" -%}
+						<iframe
+							class="embed-youtube"
+							src="https://www.youtube-nocookie.com/embed/{{ jam.extra.id }}"
+							style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
+							frameborder="0"
+							allowfullscreen
+							loading="lazy"
+						></iframe>
+						{%- endif -%}
+					</div>
 
 					{#
 					{% if jam.extra.thumbnail %}
@@ -179,24 +274,30 @@
 
 <!-- Notes -->
 {% if notes.pages %}
-<section class="uk-section">
+<section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
 
-		<h2 class="uk-h1">Notes</h2>
+		<h2 class="uk-heading-small uk-margin-medium-bottom">Notes</h2>
 
 		<div class="uk-child-width-1-2@s uk-child-width-1-4@l" uk-grid>
 
 		{% for note in notes.pages %}
 			{% if loop.index < 5 %}
 
-			<div>
+			<div class="h-entry">
 				<article class="uk-card uk-card-body uk-card-default">
 
-					<p class="uk-text-meta">
-						{{ note.date | date(format="%d %b %Y at %H:%M") }}
+					<p>
+						<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
+							<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+								{{ note.date | date(format="%d %b %Y at %H:%M") }}
+							</time>
+						</a>
 					</p>
 
-					{{ note.content | safe }}
+					<div class="p-name e-content uk-margin-remove-last-child">
+						{{ note.content | safe }}
+					</div>
 
 				</article>
 			</div>

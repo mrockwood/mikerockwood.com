@@ -1,0 +1,84 @@
+//
+// Component:       Syntax highlighting
+// Description:     Determines the color and style of source code 
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where(pre) {
+
+    --syntax-pre-font-size:                            12px;
+    --syntax-pre-padding:                              25px;
+    --syntax-pre-background:                           hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --syntax-pre-border-width:                         0;
+    --syntax-pre-border-radius:                        0;
+
+    --syntx-comment:                                   hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --syntx-name:                                      hsl( var(--theme-success-background, var(--global-success-background) ) );
+    --syntx-variable:                                  hsl( var(--theme-danger-background, var(--global-danger-background) ) );
+    --syntx-title:                                     hsl( var(--theme-link-color, var(--global-link-color) ) );
+
+}
+
+
+/* ========================================================================
+   Component: Syntax
+ ========================================================================== */
+
+
+pre[data-lang] {
+    background-color: var(--syntax-pre-background);
+    border-radius: var(--syntax-pre-border-radius);
+    border-width: var(--syntax-pre-border-width);
+    font-size: var(--syntax-pre-font-size);
+    padding: var(--syntax-pre-padding);
+}
+
+// .z-tag { color: var(--global-color); }
+.z-begin,
+.z-end { color: var(--global-color); }
+
+//.z-meta,
+.z-comment { color: var(--syntax-muted); }
+
+.z-string,
+.z-variable,
+.z-template-variable,
+.z-strong,
+.z-emphasis,
+.z-quote { color: var(--syntx-variable); }
+
+.z-keyword,
+.z-selector-tag,
+.z-type { color: #1f34aa; }
+
+.z-literal,
+.z-symbol,
+.z-bullet,
+.z-attribute { color: #0086b3; }
+
+.z-section,
+.z-name { color: var(--syntx-name); }
+
+.z-title,
+.z-attr,
+.z-attribute-name,
+.z-selector-id,
+.z-selector-class,
+.z-selector-attr,
+.z-selector-pseudo { color: var(--syntx-title); }
+
+.z-addition {
+  color: #55a532;
+  background-color: #eaffea;
+}
+
+.z-deletion {
+  color: #bd2c00;
+  background-color: #ffecec;
+}
+
+.z-link { text-decoration: underline; }

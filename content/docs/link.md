@@ -3,10 +3,6 @@ title: Link
 description: Define different styles to integrate links into specific content.
 ---
 
-# Link
-
-<p class="uk-text-lead">Define different styles to integrate links into specific content.</p>
-
 ## Muted modifier
 
 The [Base component](base.md) determines the default link color. If you want the link to apply a muted style instead, just add the `.uk-link-muted` class to the anchor element. You can also add the class to a parent element, and it will be applied to all `<a>` elements inside it.

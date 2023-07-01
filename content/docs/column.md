@@ -3,10 +3,6 @@ title: Column
 description: Display your content in multiple text columns without having to split it in several containers.
 ---
 
-# Column
-
-<p class="uk-text-lead">Display your content in multiple text columns without having to split it in several containers.</p>
-
 ## Usage
 
 Add one of the `.uk-column-*` classes to an element to display its inline content in multiple columns.

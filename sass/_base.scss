@@ -350,6 +350,7 @@ h6, .uk-h6,
     font-weight: var(--base-heading-font-weight);
     color: var(--base-heading-color);
     text-transform: var(--base-heading-text-transform);
+    text-wrap: balance; /* MR: futureproofing */
 }
 
 /* Add margin if adjacent element */

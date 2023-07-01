@@ -3,10 +3,6 @@ title: Close
 description: Create a close icon that can be combined with different components.
 ---
 
-# Close
-
-<p class="uk-text-lead">Create a close icon that can be combined with different components.</p>
-
 ## Usage
 
 To apply this component, add the `uk-close` attribute to an `<a>` or `<button>` element.

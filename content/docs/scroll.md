@@ -3,10 +3,6 @@ title: Scroll
 description: Scroll smoothly when jumping to different sections on a page.
 ---
 
-# Scroll
-
-<p class="uk-text-lead">Scroll smoothly when jumping to different sections on a page.</p>
-
 ## Usage
 
 Simply add the `uk-scroll` attribute to any page-internal link that contains a URL fragment to add the smooth scrolling behavior.

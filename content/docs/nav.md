@@ -3,10 +3,6 @@ title: Nav
 description: Defines different styles for list navigations.
 ---
 
-# Nav
-
-<p class="uk-text-lead">Defines different styles for list navigations.</p>
-
 ## Usage
 
 To apply this component, use the following classes.

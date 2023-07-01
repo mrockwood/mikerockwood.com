@@ -3,10 +3,6 @@ title: Spinner
 description: Create an animated loading spinner.
 ---
 
-# Spinner
-
-<p class="uk-text-lead">Create an animated loading spinner.</p>
-
 ## Usage
 
 To create a spinner, add the `uk-spinner` attribute to a block element.

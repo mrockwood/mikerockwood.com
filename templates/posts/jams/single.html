@@ -1,48 +1,82 @@
 {% extends "base.html" %}
 
-{%- block content %}
+{%- block main %}
 
 <article class="h-entry">
 
-	<header>
+	<header class="uk-section uk-section-small">
 
-		<h1 class="p-name">♫ {{ page.title }}</h1>
+		<div class="uk-container uk-container-large uk-text-center">
 
-		{# include "time.njk" #}
+			{%- if page.taxonomies.categories %}
+			<div class="uk-position-relative uk-margin-small">
+				{%- for category in page.taxonomies.categories %}
+					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">♫ {{ title }}</h1>
+
+			{%- if page.date %}
+			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+				{{ page.date | date(format="%d %B, %Y") }}
+			</time>
+			{% endif %}
+
+		</div>
 
 	</header>
 
-	<div class="e-content">
+	<div class="e-content uk-section-secondary">
 
-		{%- if page.extra.service == "bandcamp" -%}
-		<iframe
-			class="embed-bandcamp"
-			src="https://bandcamp.com/EmbeddedPlayer/track={{ page.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
-			style="border: 0; width: 100%; height: 120px;"
-			seamless
-		></iframe>
-		{%- elif page.extra.service == "soundcloud" -%}
-		<iframe
-			class="embed-soundcloud"
-			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
-			width="100%"
-			height="166"
-			scrolling="no"
-			frameborder="no"
-		></iframe>
-		{%- elif page.extra.service == "youtube" -%}
-		<iframe
-			class="embed-youtube"
-			src="https://www.youtube-nocookie.com/embed/{{ page.extra.id }}"
-			style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
-			frameborder="0"
-			allowfullscreen
-		></iframe>
-		{%- endif -%}
+		<div class="uk-section uk-container uk-container-xsmall uk-flex uk-flex-column uk-flex-middle">
 
-		{{ page.content | safe }}
+			{%- if page.extra.service == "bandcamp" -%}
+			<iframe
+				class="embed-bandcamp"
+				src="https://bandcamp.com/EmbeddedPlayer/track={{ page.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+				style="border: 0; width: 100%; height: 120px; max-width: 700px;"
+				seamless
+			></iframe>
+			{%- elif page.extra.service == "soundcloud" -%}
+			<iframe
+				class="embed-soundcloud"
+				src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+				width="100%"
+				height="166"
+				scrolling="no"
+				frameborder="no"
+			></iframe>
+			{%- elif page.extra.service == "youtube" -%}
+			<iframe
+				class="embed-youtube"
+				src="https://www.youtube-nocookie.com/embed/{{ page.extra.id }}"
+				style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
+				frameborder="0"
+				allowfullscreen
+			></iframe>
+			{%- endif -%}
+
+		</div>
+
+		{% if page.content %}
+		<hr class="uk-margin-remove">
+
+		<div class="uk-section uk-section-large">
+
+			<div class="uk-container uk-container-xsmall uk-margin-large">
+
+				{{ page.content | safe }}
+
+			</div>
+
+		</div>
+		{% endif %}
 
 	</div>
+
+
 
 	<footer>
 

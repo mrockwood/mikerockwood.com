@@ -1,19 +1,57 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="post">
-        <h1 class="post-title">{{ page.title }}</h1>
-
-        {% if page.description -%}
-            <p class="post-desc">{{ page.description }}</p>
-        {% endif %}
-
-        {% if page.extra.featuredImg -%}
-            <img src="{{ page.extra.featuredImg }}" alt="" />
-        {% endif %}
-
-        <div class="post-content">
-            {{ page.content | safe }}
-        </div>
-    </div>
+<div class="uk-section">
+	<div class="uk-container uk-container-large">
+		<div class="uk-grid uk-grid-large">
+			<div class="uk-width-1-5@m uk-visible@m">
+				<ul 
+					class="uk-nav uk-nav-default"
+					style="--nav-default-font-size: var(--global-small-font-size);"
+				>
+					<li class="uk-nav-header">Components</li>
+					<li class="uk-nav-divider"></li>
+					{% for doc in docs.pages %}
+					<li {% if current_url and current_url == doc.permalink %}class="uk-active"{% endif %}>
+						<a href="{{ doc.permalink | safe }}">{{ doc.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="uk-width-expand">
+				{{ page.content | safe }}
+			</div>
+			<div class="uk-width-1-4@m uk-visible@m">
+				{% if page.toc %}
+				<div uk-sticky="offset: 40; end: main">
+					<ul 
+						class="uk-nav uk-nav-default" 
+						uk-scrollspy-nav="closest: li; scroll: true; offset: 100"
+						style="--nav-default-font-size: var(--global-small-font-size);"
+					>
+						{% for h2 in page.toc %}
+						<li>
+							<a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+						</li>
+						{% endfor %}
+						<li class="uk-nav-divider"></li>
+						<li>
+							<a href="{{ current_url | replace(from='docs', to='tests') | trim_end_matches(pat='/') }}.html" target="_blank" rel="noreferrer">
+								<span class="uk-margin-small-right" uk-icon="push"></span>
+								<span class="uk-text-middle">Open test</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/mrockwood/mikerockwood.com/blob/main/content/{{ current_path  | trim_end_matches(pat='/') }}.md" target="_blank" rel="noreferrer">
+								<span class="uk-margin-small-right" uk-icon="pencil"></span>
+								<span class="uk-text-middle">Edit this page</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock content %}

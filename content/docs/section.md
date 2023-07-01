@@ -3,10 +3,6 @@ title: Section
 description: Create horizontal layout sections with different background colors and styles.
 ---
 
-# Section
-
-<p class="uk-text-lead">Create horizontal layout sections with different background colors and styles.</p>
-
 ## Usage
 
 Sections are used to separate the content of a page into differently styled blocks. To apply this component, just add the `.uk-section` class to a container element. You can place a container from the [Container component](container.md) to modify the width of the content inside sections and add horizontal padding. Note that the padding of a nested container will be reset.

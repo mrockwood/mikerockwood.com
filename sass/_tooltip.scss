@@ -32,6 +32,9 @@
     --tooltip-color:                                  hsl( var(--inverse-theme-color, var(--global-inverse-color) ) );
     --tooltip-font-size:                              12px;
 
+	--tooltip-primary-background:                     hsl( var(--theme-background, var(--global-background) ) / 0.8 );
+	--tooltip-primary-color:                          hsl( var(--theme-color, var(--global-color) ) );
+
 }
 
 
@@ -71,3 +74,22 @@
 
 /* Show */
 .uk-tooltip.uk-active { display: block; }
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.uk-tooltip-default {}
+
+/*
+ * Primary
+ */
+
+.uk-tooltip-primary {
+    background: var(--tooltip-primary-background);
+	color: var(--tooltip-primary-color);
+}

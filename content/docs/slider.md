@@ -3,10 +3,6 @@ title: Slider
 description: Create a responsive carousel slider.
 ---
 
-# Slider
-
-<p class="uk-text-lead">Create a responsive carousel slider.</p>
-
 The Slider component is fully responsive and supports touch and swipe navigation as well as mouse drag for desktops. It even accelerates to keep up with your pace when you click through previous and next navigation. All animations are hardware accelerated for a smoother performance.
 
 ## Usage

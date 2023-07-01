@@ -3,10 +3,6 @@ title: Article
 description: Create articles within your page.
 ---
 
-# Article
-
-<p class="uk-text-lead">Create articles within your page.</p>
-
 ## Usage
 
 The article component consists of the article itself, a title and meta data.

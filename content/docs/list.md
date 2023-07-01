@@ -3,10 +3,6 @@ title: List
 description: Easily create nice looking lists, which come in different styles.
 ---
 
-# List
-
-<p class="uk-text-lead">Easily create nice looking lists, which come in different styles.</p>
-
 ## Usage
 
 To apply this component, add the `.uk-list` class to an unordered or ordered list. The list will now display without any spacing or list-style.

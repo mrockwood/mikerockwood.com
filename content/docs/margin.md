@@ -3,10 +3,6 @@ title: Margin
 description: A collection of utility classes to add spacing between elements.
 ---
 
-# Margin
-
-<p class="uk-text-lead">A collection of utility classes to add spacing between elements.</p>
-
 ## Usage
 
 Add one or more of the following classes to any element to create the same vertical and/or horizontal margin that a paragraph usually has.

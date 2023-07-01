@@ -1,5 +1,6 @@
 ---
 title: Documentation
-template: work/list.html
-page_template: work/single.html
+template: docs/list.html
+page_template: docs/single.html
+sort_by: title
 ---

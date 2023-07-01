@@ -3,10 +3,6 @@ title: Dropbar
 description: Create a toggleable, full-width section called dropbar.
 ---
 
-# Dropbar
-
-<p class="uk-text-lead">Create a toggleable, full-width section called dropbar.</p>
-
 The dropbar provide a section-like style for the [Drop component](drop.md). In opposite to the dropdown which is positioned anywhere on a page with space around, the dropbar extends to the full width or height of the viewport so it perfectly fits three edges without spacing.
 
 ## Usage

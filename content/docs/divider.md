@@ -3,10 +3,6 @@ title: Divider
 description: Create dividers to separate content and apply different styles to them.
 ---
 
-# Divider
-
-<p class="uk-text-lead">Create dividers to separate content and apply different styles to them.</p>
-
 ## Usage
 
 You can use a simple `<hr>` element to illustrate a separation of different content parts on your pages. The Divider component allows you to add different styles to these dividers.

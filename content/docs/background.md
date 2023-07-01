@@ -3,10 +3,6 @@ title: Background
 description: A collection of utility classes to add different backgrounds to elements.
 ---
 
-# Background
-
-<p class="uk-text-lead">A collection of utility classes to add different backgrounds to elements.</p>
-
 ## Usage
 
 To apply a background color to an element, add one of the following classes. The actual color for each modifier is defined by the UIkit style that you have chosen or customized.

@@ -3,10 +3,6 @@ title: Tab
 description: Create a tabbed navigation with different styles.
 ---
 
-# Tab
-
-<p class="uk-text-lead">Create a tabbed navigation with different styles.</p>
-
 ## Usage
 
 The tab component consists of clickable tabs, that are aligned side by side in a list. Its JavaScript functionality extends the [Switcher component](switcher.md) and is necessary to dynamically transition through different contents using the tabbed navigation.

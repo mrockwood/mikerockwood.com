@@ -3,10 +3,6 @@ title: Dropdown
 description: Defines different styles for a toggleable dropdown.
 ---
 
-# Dropdown
-
-<p class="uk-text-lead">Defines different styles for a toggleable dropdown.</p>
-
 ## Usage
 
 A dropdown is an example of the [drop](drop.md) that provides its own styling. Any content, like a button, can toggle a dropdown. Just add the `uk-dropdown` attribute to a block element following the toggle.

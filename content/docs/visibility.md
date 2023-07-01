@@ -3,10 +3,6 @@ title: Visibility
 description: Use responsive visibility classes to display or hide elements on different devices.
 ---
 
-# Visibility
-
-<p class="uk-text-lead">Use responsive visibility classes to display or hide elements on different devices.</p>
-
 ## Usage
 
 Add one of these classes to hide an element.

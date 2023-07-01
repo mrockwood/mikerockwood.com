@@ -3,14 +3,6 @@ title: Accordion
 description: Create a list of items that can be shown individually by clicking an item's header.
 ---
 
-# Accordion
-
-{% alert(style="primary", close=true) %}
-This is an alert
-{% end %}
-
-<p class="uk-text-lead">Create a list of items that can be shown individually by clicking an item's header.</p>
-
 ## Usage
 
 The Accordion component consists of a parent container with the `uk-accordion` attribute, and a title and content part for each accordion item.
