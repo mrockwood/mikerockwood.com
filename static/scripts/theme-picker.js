@@ -6,8 +6,8 @@ const SELECTORS = {
     // navToggleBtn: '.js-nav-toggle'
 }
 const CLASSES = {
-    open: 'is-open',
-    active: 'is-active'
+    open: 'uk-open',
+    active: 'uk-active'
 }
 const THEME_STORAGE_KEY = 'theme'
 
