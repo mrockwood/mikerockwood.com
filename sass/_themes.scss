@@ -228,12 +228,12 @@
     --text-emphasis: var(--black-hsl);
     --text-muted: var(--gray-8-hsl);
 
-    --link-color: var(--pink-5-hsl);
-    --link-hover: var(--pink-7-hsl);
+    --link-color: var(--cyan-7-hsl);
+    --link-hover: var(--cyan-9-hsl);
 
     --surface-default: var(--yellow-3-hsl);
     --surface-muted: var(--yellow-1-hsl);
-    --surface-primary: var(--black-hsl);
+    --surface-primary: var(--pink-5-hsl);
 
     --surface-success: var(--surface-success-light);
     --surface-warning: var(--surface-warning-light);
@@ -245,12 +245,12 @@
     --invert-text-emphasis: var(--text-emphasis-dark);
     --invert-text-muted: var(--text-muted-dark);
 
-    --invert-link-color: var(--pink-4-hsl);
-    --invert-link-hover: var(--pink-2-hsl);
+    --invert-link-color: var(--cyan-3-hsl);
+    --invert-link-hover: var(--cyan-1-hsl);
 
     --invert-surface-default: var(--black-hsl);
     --invert-surface-muted: 220 10% 18%;
-    --invert-surface-primary: var(--pink-4-hsl);
+    --invert-surface-primary: var(--pink-5-hsl);
 
     --invert-border-color: 0 0% 100% / 0.25;
 
