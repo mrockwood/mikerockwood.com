@@ -255,3 +255,40 @@
     --invert-border-color: 0 0% 100% / 0.25;
 
 }
+
+.uk-theme-black-metal,
+[data-theme='uk-theme-black-metal'] {
+
+    color-scheme: dark;
+
+    --text-color: 0 0% 100% / 0.8;
+    --text-emphasis: var(--white-hsl);
+    --text-muted: 0 0% 100% / 0.6;
+
+    --link-color: var(--red-3-hsl);
+    --link-hover: var(--red-1-hsl);
+
+    --surface-default: var(--black-hsl);
+    --surface-muted: var(--gray-9-hsl);
+    --surface-primary: var(--red-7-hsl);
+
+    --surface-success: var(--surface-success-light);
+    --surface-warning: var(--surface-warning-light);
+    --surface-danger: var(--surface-danger-light);
+
+    --border-color: var(--border-color-dark);
+
+    --invert-text-color: var(--text-color-dark);
+    --invert-text-emphasis: var(--text-emphasis-dark);
+    --invert-text-muted: var(--text-muted-dark);
+
+    --invert-link-color: var(--red-3-hsl);
+    --invert-link-hover: var(--red-1-hsl);
+
+    --invert-surface-default: var(--black-hsl);
+    --invert-surface-muted: 220 10% 18%;
+    --invert-surface-primary: var(--red-7-hsl);
+
+    --invert-border-color: 0 0% 100% / 0.25;
+
+}
