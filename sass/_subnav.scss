@@ -19,28 +19,28 @@
 
     --subnav-margin-horizontal:                       20px;
 
-    --subnav-item-color:                              hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --subnav-item-hover-color:                        hsl( var(--theme-color, var(--global-color) ) );
+    --subnav-item-color:                              var(--theme-muted-color, var(--global-muted-color) );
+    --subnav-item-hover-color:                        var(--theme-color, var(--global-color) );
     --subnav-item-hover-text-decoration:              none;
-    --subnav-item-active-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --subnav-item-active-color:                       var(--theme-emphasis-color, var(--global-emphasis-color) );
 
     --subnav-divider-margin-horizontal:               var(--subnav-margin-horizontal);
     --subnav-divider-border-height:                   1.5em;
     --subnav-divider-border-width:                    var(--global-border-width);
-    --subnav-divider-border:                          hsl( var(--theme-border, var(--global-border) ) );
+    --subnav-divider-border:                          var(--theme-border, var(--global-border) );
 
     --subnav-pill-item-padding-vertical:              5px;
     --subnav-pill-item-padding-horizontal:            10px;
     --subnav-pill-item-background:                    transparent;
     --subnav-pill-item-color:                         var(--subnav-item-color);
-    --subnav-pill-item-hover-background:              hsl( var(--theme-muted-background, var(--global-muted-background) ) );
-    --subnav-pill-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) );
+    --subnav-pill-item-hover-background:              var(--theme-muted-background, var(--global-muted-background) );
+    --subnav-pill-item-hover-color:                   var(--theme-color, var(--global-color) );
     --subnav-pill-item-onclick-background:            var(--subnav-pill-item-hover-background);
     --subnav-pill-item-onclick-color:                 var(--subnav-pill-item-hover-color);
-    --subnav-pill-item-active-background:             hsl( var(--theme-primary-background, var(--global-primary-background) ) );
-    --subnav-pill-item-active-color:                  hsl( var(--inverse-theme-emphasis-color, var(--global-inverse-color) ) );
+    --subnav-pill-item-active-background:             var(--theme-primary-background, var(--global-primary-background) );
+    --subnav-pill-item-active-color:                  var(--inverse-theme-emphasis-color, var(--global-inverse-color) );
 
-    --subnav-item-disabled-color:                     hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --subnav-item-disabled-color:                     var(--theme-muted-color, var(--global-muted-color) );
 
 }
 

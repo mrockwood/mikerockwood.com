@@ -52,7 +52,7 @@
     --panel-scrollable-height: 170px;
     --panel-scrollable-padding: 10px;
     --panel-scrollable-border-width: var(--global-border-width);
-    --panel-scrollable-border: hsl( var(--theme-border, var(--global-border) ) );
+    --panel-scrollable-border: var(--theme-border, var(--global-border) );
 
     block-size: var(--panel-scrollable-height);
     padding: var(--panel-scrollable-padding);
@@ -386,8 +386,8 @@
     --logo-font-size: var(--global-font-size);
     --logo-font-family: var(--global-font-family);
 	// --logo-font-weight: 400;
-    --logo-color: hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --logo-hover-color: hsl( var(--theme-color, var(--global-color) ) );
+    --logo-color: var(--theme-muted-color, var(--global-muted-color) );
+    --logo-hover-color: var(--theme-color, var(--global-color) );
 
     /* 1 */
     font-size: var(--logo-font-size);

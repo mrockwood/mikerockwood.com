@@ -11,55 +11,55 @@
     // Light
     //
 
-    // --text-color-light: var(--gray-7-hsl);
-    // --text-emphasis-light: var(--gray-9-hsl);
-    // --text-muted-light: var(--gray-6-hsl);
+    // --text-color-light: var(--gray-7);
+    // --text-emphasis-light: var(--gray-9);
+    // --text-muted-light: var(--gray-6);
 
-    --text-color-light: 0 0% 0% / 0.7;
-    --text-emphasis-light: var(--gray-9-hsl);
-    --text-muted-light: 0 0% 0% / 0.5;
+    --text-color-light: hsl(0 0% 0% / 0.7);
+    --text-emphasis-light: var(--gray-9);
+    --text-muted-light: hsl(0 0% 0% / 0.5);
 
-    --link-color-light: var(--violet-7-hsl);
-    --link-hover-light: var(--violet-9-hsl);
+    --link-color-light: var(--violet-7);
+    --link-hover-light: var(--violet-9);
 
-    --surface-default-light: var(--white-hsl);
-    --surface-muted-light: var(--gray-2-hsl);
-    --surface-primary-light: var(--violet-7-hsl);
+    --surface-default-light: var(--white);
+    --surface-muted-light: var(--gray-2);
+    --surface-primary-light: var(--violet-7);
 
-    --surface-success-light: var(--green-7-hsl);
-    --surface-warning-light: var(--orange-7-hsl);
-    --surface-danger-light: var(--red-7-hsl);
+    --surface-success-light: var(--green-7);
+    --surface-warning-light: var(--orange-7);
+    --surface-danger-light: var(--red-7);
 
-    // --border-color-light: var(--gray-2-hsl);
+    // --border-color-light: var(--gray-2);
 
-    --border-color-light: 0 0% 0% / 0.08;
+    --border-color-light: hsl(0 0% 0% / 0.08);
 
     //
     // Dark
     //
 
-    // --text-color-dark: var(--gray-2-hsl);
-    // --text-emphasis-dark: var(--white-hsl);
-    // --text-muted-dark: var(--gray-5-hsl);
+    // --text-color-dark: var(--gray-2);
+    // --text-emphasis-dark: var(--white);
+    // --text-muted-dark: var(--gray-5);
 
-    --text-color-dark: 0 0% 100% / 0.8;
-    --text-emphasis-dark: var(--white-hsl);
-    --text-muted-dark: 0 0% 100% / 0.6;
+    --text-color-dark: hsl(0 0% 100% / 0.8);
+    --text-emphasis-dark: var(--white);
+    --text-muted-dark: hsl(0 0% 100% / 0.6);
 
-    --link-color-dark: var(--violet-3-hsl);
-    --link-hover-dark: var(--violet-1-hsl);
+    --link-color-dark: var(--violet-3);
+    --link-hover-dark: var(--violet-1);
 
-    --surface-default-dark: var(--gray-9-hsl);
-    --surface-muted-dark: var(--gray-8-hsl);
-    --surface-primary-dark: var(--violet-3-hsl);
+    --surface-default-dark: var(--gray-9);
+    --surface-muted-dark: var(--gray-8);
+    --surface-primary-dark: var(--violet-3);
 
-    --surface-success-dark: var(--green-3-hsl);
-    --surface-warning-dark: var(--orange-3-hsl);
-    --surface-danger-dark: var(--red-3-hsl);
+    --surface-success-dark: var(--green-3);
+    --surface-warning-dark: var(--orange-3);
+    --surface-danger-dark: var(--red-3);
 
-    // --border-color-dark: var(--gray-7-hsl);
+    // --border-color-dark: var(--gray-7);
 
-    --border-color-dark: 0 0% 100% / 0.12;
+    --border-color-dark: hsl(0 0% 100% / 0.12);
 
 }
 
@@ -219,16 +219,16 @@
 
     color-scheme: light;
 
-    --text-color: var(--black-hsl);
-    --text-emphasis: var(--black-hsl);
-    --text-muted: var(--gray-8-hsl);
+    --text-color: var(--black);
+    --text-emphasis: var(--black);
+    --text-muted: var(--gray-8);
 
-    --link-color: var(--pink-7-hsl);
-    --link-hover: var(--pink-9-hsl);
+    --link-color: var(--pink-7);
+    --link-hover: var(--pink-9);
 
-    --surface-default: var(--yellow-3-hsl);
-    --surface-muted: var(--yellow-1-hsl);
-    --surface-primary: var(--black-hsl);
+    --surface-default: var(--yellow-3);
+    --surface-muted: var(--yellow-1);
+    --surface-primary: var(--black);
 
     --surface-success: var(--surface-success-light);
     --surface-warning: var(--surface-warning-light);
@@ -240,12 +240,12 @@
     --invert-text-emphasis: var(--text-emphasis-dark);
     --invert-text-muted: var(--text-muted-dark);
 
-    --invert-link-color: var(--pink-4-hsl);
-    --invert-link-hover: var(--pink-2-hsl);
+    --invert-link-color: var(--pink-4);
+    --invert-link-hover: var(--pink-2);
 
-    --invert-surface-default: var(--black-hsl);
-    --invert-surface-muted: 220 10% 18%;
-    --invert-surface-primary: var(--pink-4-hsl);
+    --invert-surface-default: var(--black);
+    --invert-surface-muted: hsl(220 10% 18%);
+    --invert-surface-primary: var(--pink-4);
 
     --invert-border-color: var(--border-color-dark);
 

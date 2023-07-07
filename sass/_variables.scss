@@ -68,28 +68,28 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 	// Text colors
 	//
 
-	--global-color:                                   var(--text-color, 0 0% 40%);
-	--global-emphasis-color:                          var(--text-emphasis, 0 0% 20%);
-	--global-muted-color:                             var(--text-muted, 0 0% 60%);
+	--global-color:                                   var(--text-color, hsl(0 0% 40%));
+	--global-emphasis-color:                          var(--text-emphasis, hsl(0 0% 20%));
+	--global-muted-color:                             var(--text-muted, hsl(0 0% 60%));
 
-	--global-link-color:                              var(--link-color, 210 88% 53%);
-	--global-link-hover-color:                        var(--link-hover, 210 86% 43%);
+	--global-link-color:                              var(--link-color, hsl(210 88% 53%));
+	--global-link-hover-color:                        var(--link-hover, hsl(210 86% 43%));
 
-	--global-inverse-color:                           var(--invert-text-emphasis, 220 10% 100%);
+	--global-inverse-color:                           var(--invert-text-emphasis, hsl(220 10% 100%));
 
 	//
 	// Backgrounds
 	//
 
-	--global-background:                              var(--surface-default, 220 10% 100%);
+	--global-background:                              var(--surface-default, hsl(220 10% 100%));
 
-	--global-muted-background:                        var(--surface-muted, 0 0% 97%);
-	--global-primary-background:                      var(--surface-primary, 210 88% 53%);
-	--global-secondary-background:                    var(--invert-surface-default, 0 0% 13%);
+	--global-muted-background:                        var(--surface-muted, hsl(0 0% 97%));
+	--global-primary-background:                      var(--surface-primary, hsl(210 88% 53%));
+	--global-secondary-background:                    var(--invert-surface-default, hsl(0 0% 13%));
 
-	--global-success-background:                      var(--surface-success, 158 64% 51%);
-	--global-warning-background:                      var(--surface-warning, 26 94% 67%);
-	--global-danger-background:                       var(--surface-danger, 349 84% 63%);
+	--global-success-background:                      var(--surface-success, hsl(158 64% 51%));
+	--global-warning-background:                      var(--surface-warning, hsl(26 94% 67%));
+	--global-danger-background:                       var(--surface-danger, hsl(349 84% 63%));
 
 	//
 	// Borders
@@ -97,7 +97,7 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 
 	--global-border-width:                            1px;
 	--global-border-style:                            solid;
-	--global-border:                                  var(--border-color, 0 0% 90%);
+	--global-border:                                  var(--border-color, hsl(0 0% 90%));
 
 	//
 	// Box-Shadows

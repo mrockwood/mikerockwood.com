@@ -27,13 +27,13 @@
     --tooltip-max-width:                              200px;
     --tooltip-padding-vertical:                       3px;
     --tooltip-padding-horizontal:                     6px;
-    --tooltip-background:                             hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.8 );
+    --tooltip-background:                             color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 20%);
     --tooltip-border-radius:                          2px;
-    --tooltip-color:                                  hsl( var(--inverse-theme-color, var(--global-inverse-color) ) );
+    --tooltip-color:                                  var(--inverse-theme-color, var(--global-inverse-color) );
     --tooltip-font-size:                              12px;
 
-	--tooltip-primary-background:                     hsl( var(--theme-background, var(--global-background) ) / 0.8 );
-	--tooltip-primary-color:                          hsl( var(--theme-color, var(--global-color) ) );
+	--tooltip-primary-background:                     color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 20%);
+	--tooltip-primary-color:                          var(--theme-color, var(--global-color) );
 
 }
 

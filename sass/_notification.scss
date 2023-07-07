@@ -31,18 +31,18 @@
 
     --notification-message-margin-top:                      10px;
     --notification-message-padding:                         var(--global-small-gutter);
-    --notification-message-background:                      hsl( var(--theme-muted-background, var(--global-muted-background) ) );
-    --notification-message-color:                           hsl( var(--theme-color, var(--global-color) ) );
+    --notification-message-background:                      var(--theme-muted-background, var(--global-muted-background) );
+    --notification-message-color:                           var(--theme-color, var(--global-color) );
     --notification-message-font-size:                       var(--global-medium-font-size);
     --notification-message-line-height:                     1.4;
 
     --notification-close-top:                               calc( var(--notification-message-padding) + 5px );
     --notification-close-right:                             var(--notification-message-padding);
 
-    --notification-message-primary-color:                   hsl( var(--theme-primary-background, var(--global-primary-background) ) );
-    --notification-message-success-color:                   hsl( var(--theme-success-background, var(--global-success-background) ) );
-    --notification-message-warning-color:                   hsl( var(--theme-warning-background, var(--global-warning-background) ) );
-    --notification-message-danger-color:                    hsl( var(--theme-danger-background, var(--global-danger-background) ) );
+    --notification-message-primary-color:                   var(--theme-primary-background, var(--global-primary-background) );
+    --notification-message-success-color:                   var(--theme-success-background, var(--global-success-background) );
+    --notification-message-warning-color:                   var(--theme-warning-background, var(--global-warning-background) );
+    --notification-message-danger-color:                    var(--theme-danger-background, var(--global-danger-background) );
 
 }
 

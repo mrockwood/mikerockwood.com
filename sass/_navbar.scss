@@ -38,7 +38,7 @@
 
 :where(html) {
 
-    --navbar-background:                              hsl(var(--global-muted-background));
+    --navbar-background:                              var(--global-muted-background);
     --navbar-gap:                                     0px; // Must have a unit because of `calc`
     --navbar-padding-vertical:                        12px;
 
@@ -46,23 +46,23 @@
 
     --navbar-nav-item-height:                         80px;
     --navbar-nav-item-padding-horizontal:             12px;
-    --navbar-nav-item-color:                          hsl(var(--global-muted-color));
+    --navbar-nav-item-color:                          var(--global-muted-color);
     --navbar-nav-item-font-size:                      calc( var(--global-font-size) * 0.875 );
     --navbar-nav-item-font-family:                    var(--global-font-family);
     --navbar-nav-item-font-weight:                    400;
     --navbar-nav-item-letter-spacing:                 .05em;
     --navbar-nav-item-text-transform:                 uppercase;
-    --navbar-nav-item-hover-color:                    hsl(var(--global-color));
-    --navbar-nav-item-onclick-color:                  hsl(var(--global-emphasis-color));
-    --navbar-nav-item-active-color:                   hsl(var(--global-emphasis-color));
+    --navbar-nav-item-hover-color:                    var(--global-color);
+    --navbar-nav-item-onclick-color:                  var(--global-emphasis-color);
+    --navbar-nav-item-active-color:                   var(--global-emphasis-color);
 
     --navbar-parent-icon-margin-left:                 4px;
 
     --navbar-item-padding-horizontal:                 20px;
-    --navbar-item-color:                              hsl(var(--global-color));
+    --navbar-item-color:                              var(--global-color);
 
-    --navbar-toggle-color:                            hsl(var(--global-muted-color));
-    --navbar-toggle-hover-color:                      hsl(var(--global-color));
+    --navbar-toggle-color:                            var(--global-muted-color);
+    --navbar-toggle-hover-color:                      var(--global-color);
 
     --navbar-subtitle-font-size:                      var(--global-small-font-size);
 
@@ -71,8 +71,8 @@
     --navbar-dropdown-viewport-margin:                15px;
     --navbar-dropdown-width:                          200px;
     --navbar-dropdown-padding:                        15px;
-    --navbar-dropdown-background:                     hsl(var(--global-muted-background));
-    --navbar-dropdown-color:                          hsl(var(--global-color));
+    --navbar-dropdown-background:                     var(--global-muted-background);
+    --navbar-dropdown-color:                          var(--global-color);
     --navbar-dropdown-grid-gutter-horizontal:         var(--global-gutter);
     --navbar-dropdown-grid-gutter-vertical:           var(--navbar-dropdown-grid-gutter-horizontal);
 
@@ -89,16 +89,16 @@
     --navbar-dropdown-dropbar-large-padding-top:      var(--navbar-dropdown-large-padding);
     --navbar-dropdown-dropbar-large-padding-bottom:   var(--navbar-dropdown-dropbar-large-padding-top);
 
-    --navbar-dropdown-nav-item-color:                 hsl(var(--global-muted-color));
-    --navbar-dropdown-nav-item-hover-color:           hsl(var(--global-color));
-    --navbar-dropdown-nav-item-active-color:          hsl(var(--global-emphasis-color));
+    --navbar-dropdown-nav-item-color:                 var(--global-muted-color);
+    --navbar-dropdown-nav-item-hover-color:           var(--global-color);
+    --navbar-dropdown-nav-item-active-color:          var(--global-emphasis-color);
     --navbar-dropdown-nav-subtitle-font-size:         var(--global-small-font-size);
-    --navbar-dropdown-nav-header-color:               hsl(var(--global-emphasis-color));
+    --navbar-dropdown-nav-header-color:               var(--global-emphasis-color);
     --navbar-dropdown-nav-divider-border-width:       var(--global-border-width);
-    --navbar-dropdown-nav-divider-border:             hsl(var(--global-border));
-    --navbar-dropdown-nav-sublist-item-color:         hsl(var(--global-muted-color));
-    --navbar-dropdown-nav-sublist-item-hover-color:   hsl(var(--global-color));
-    --navbar-dropdown-nav-sublist-item-active-color:  hsl(var(--global-emphasis-color));
+    --navbar-dropdown-nav-divider-border:             var(--global-border);
+    --navbar-dropdown-nav-sublist-item-color:         var(--global-muted-color);
+    --navbar-dropdown-nav-sublist-item-hover-color:   var(--global-color);
+    --navbar-dropdown-nav-sublist-item-active-color:  var(--global-emphasis-color);
 
 }
 

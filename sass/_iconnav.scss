@@ -18,11 +18,11 @@
     --iconnav-margin-horizontal:                       var(--global-small-margin);
     --iconnav-margin-vertical:                         var(--iconnav-margin-horizontal);
 
-    --iconnav-item-color:                              hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --iconnav-item-color:                              var(--theme-muted-color, var(--global-muted-color) );
 
-    --iconnav-item-hover-color:                        hsl( var(--theme-color, var(--global-color) ) );
+    --iconnav-item-hover-color:                        var(--theme-color, var(--global-color) );
 
-    --iconnav-item-active-color:                       hsl( var(--theme-color, var(--global-color) ) );
+    --iconnav-item-active-color:                       var(--theme-color, var(--global-color) );
 
 }
 

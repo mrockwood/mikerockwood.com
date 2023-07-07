@@ -41,7 +41,7 @@
     --grid-large-gutter-vertical:                     var(--grid-large-gutter-horizontal);
 
     --grid-divider-border-width:                      var(--global-border-width);
-    --grid-divider-border:                            hsl( var(--theme-border, var(--global-border) ) );
+    --grid-divider-border:                            var(--theme-border, var(--global-border) );
 
 }
 

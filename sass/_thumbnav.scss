@@ -18,7 +18,7 @@
     --thumbnav-margin-horizontal: 15px;
     --thumbnav-margin-vertical: var(--thumbnav-margin-horizontal);
 
-	--thumbnav-item-gradient: linear-gradient(180deg, hsl( var(--theme-background, var(--global-background) ) / 0 ), hsl( var(--theme-background, var(--global-background) ) / 0.5 ) );
+	--thumbnav-item-gradient: linear-gradient(180deg, color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 100%), color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 50%) );
 	--thumbnav-item-hover-opacity: 0;
 	--thumbnav-item-active-opacity: 0;
 

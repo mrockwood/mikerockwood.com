@@ -20,8 +20,8 @@
 
     --accordion-title-font-size:                     var(--global-medium-font-size);
     --accordion-title-line-height:                   1.4;
-    --accordion-title-color:                         hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
-    --accordion-title-hover-color:                   hsl( var(--theme-color, var(--global-color) ) );
+    --accordion-title-color:                         var(--theme-emphasis-color, var(--global-emphasis-color) );
+    --accordion-title-hover-color:                   var(--theme-color, var(--global-color) );
 
     --accordion-content-margin-top:                  var(--global-margin);
 
