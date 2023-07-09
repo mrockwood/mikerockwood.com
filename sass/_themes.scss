@@ -291,4 +291,23 @@
 
     --invert-border-color: 0 0% 100% / 0.25;
 
+
+	// .uk-heading-small,
+	.uk-heading-medium,
+	.uk-heading-large,
+	.uk-heading-xlarge,
+	.uk-heading-2xlarge {
+
+		--base-heading-font-family: 'Rubik Beastly';
+
+	}
+
+	.uk-slidenav {
+
+		--slidenav-color: rgb( 255 255 255 / 0.5 );
+		--slidenav-hover-color: rgb( 255 255 255 / 0.9 );
+		--slidenav-active-color: rgb( 255 255 255 / 0.5 );
+
+	}
+
 }

@@ -5,8 +5,15 @@
 
 
 @font-face {
-    font-family: 'Rubik';    
+    font-family: 'Rubik';
     font-weight: 100 999;
     src: url('fonts/Rubik[wght].woff2') format('woff2-variations');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik Beastly';
+    font-weight: 100 999;
+    src: url('fonts/RubikBeastly-Regular.woff2') format('woff2-variations');
     font-display: swap;
 }
