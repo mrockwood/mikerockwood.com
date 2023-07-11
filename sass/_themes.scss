@@ -311,3 +311,51 @@
 	}
 
 }
+
+.uk-theme-psychedelic,
+[data-theme='uk-theme-psychedelic'] {
+
+	color-scheme: light;
+
+	--text-color: var(--text-color-light);
+	--text-emphasis: var(--text-emphasis-light);
+	--text-muted: var(--text-muted-light);
+
+	--link-color: var(--link-color-light);
+	--link-hover: var(--link-hover-light);
+
+	--surface-default: var(--orange-0-hsl);
+    --surface-muted: var(--orange-2-hsl);
+    --surface-primary: var(--cyan-6-hsl);
+
+	--surface-success: var(--surface-success-light);
+	--surface-warning: var(--surface-warning-light);
+	--surface-danger: var(--surface-danger-light);
+
+	--border-color: var(--border-color-light);
+
+	--invert-text-color: var(--text-color-dark);
+	--invert-text-emphasis: var(--text-emphasis-dark);
+	--invert-text-muted: var(--text-muted-dark);
+
+	--invert-link-color: var(--link-color-dark);
+	--invert-link-hover: var(--link-hover-dark);
+
+	--invert-surface-default: var(--surface-default-dark);
+	--invert-surface-muted: var(--surface-muted-dark);
+	--invert-surface-primary: var(--surface-primary-dark);
+
+	--invert-border-color: var(--border-color-dark);
+
+
+	// .uk-heading-small,
+	.uk-heading-medium,
+	.uk-heading-large,
+	.uk-heading-xlarge,
+	.uk-heading-2xlarge {
+
+		--base-heading-font-family: 'Rubik Bubbles';
+
+	}
+
+}
