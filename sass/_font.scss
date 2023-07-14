@@ -24,3 +24,17 @@
     src: url('fonts/RubikBubbles-Regular.woff2') format('woff2-variations');
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Rubik Dirt';
+    font-weight: 100 999;
+    src: url('fonts/RubikDirt-Regular.woff2') format('woff2-variations');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik Glitch';
+    font-weight: 400;
+    src: url('fonts/RubikGlitch-Regular.woff2') format('woff2');
+    font-display: swap;
+}
