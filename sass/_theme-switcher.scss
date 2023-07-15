@@ -1,0 +1,43 @@
+// Name:            Theme switcher
+// Description:     Styles for the off-canvas theme switcher
+//
+// Component:       `uk-theme-switcher`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-theme-switcher']) {
+
+    --form-range-track-height:                        3px;
+    --form-range-track-background:                    hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 );
+    --form-range-track-focus-background:              hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+
+    --form-range-thumb-height:                        15px;
+    --form-range-thumb-width:                         var(--form-range-thumb-height);
+    --form-range-thumb-border-radius:                 500px;
+    --form-range-thumb-background:                    hsl( var(--theme-color, var(--global-color) ) );
+
+}
+
+
+/* ========================================================================
+   Component: Form Range
+ ========================================================================== */
+
+/*
+ * Items
+ */
+
+.uk-theme-switcher li.uk-active {
+	background: hsl(var(--invert-surface-muted));
+	margin: calc(0.5 * var(--list-large-margin-top)) calc(-1 * var(--offcanvas-bar-padding-horizontal)) calc(-0.5 * var(--list-large-margin-top));
+	padding: calc(0.5 * var(--list-large-margin-top)) var(--offcanvas-bar-padding-horizontal);
+}
+
+/* First */
+.uk-theme-switcher .uk-nav-divider + .uk-active {
+	margin-block-start: calc(-0.5 * var(--list-large-margin-top));
+}
