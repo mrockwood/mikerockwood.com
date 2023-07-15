@@ -254,6 +254,17 @@
 
     --invert-border-color: 0 0% 100% / 0.25;
 
+
+	// .uk-heading-small,
+	.uk-heading-medium,
+	.uk-heading-large,
+	.uk-heading-xlarge,
+	.uk-heading-2xlarge {
+
+		--base-heading-font-family: 'Rubik 80s Fade';
+
+	}
+
 }
 
 .uk-theme-black-metal,
