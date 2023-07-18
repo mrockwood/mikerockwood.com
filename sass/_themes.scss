@@ -224,9 +224,9 @@
 
     color-scheme: light;
 
-    --text-color: var(--black-hsl);
+    --text-color: var(--gray-9-hsl);
     --text-emphasis: var(--black-hsl);
-    --text-muted: var(--gray-8-hsl);
+    --text-muted: var(--gray-7-hsl);
 
     --link-color: var(--cyan-7-hsl);
     --link-hover: var(--cyan-9-hsl);
@@ -267,8 +267,8 @@
 
 }
 
-.uk-theme-black-metal,
-[data-theme='uk-theme-black-metal'] {
+.uk-theme-metal,
+[data-theme='uk-theme-metal'] {
 
     color-scheme: dark;
 
