@@ -1,6 +1,7 @@
 ---
 title: Notification
 description: Create toggleable notifications that fade out automatically.
+draft: true
 ---
 
 ## Usage

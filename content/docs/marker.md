@@ -1,6 +1,7 @@
 ---
 title: Marker
 description: Create a marker icon that can be displayed on top of images.
+draft: true
 ---
 
 ## Usage

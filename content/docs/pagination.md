@@ -1,6 +1,7 @@
 ---
 title: Pagination
 description: Easily create a nice looking pagination to navigate through pages.
+draft: true
 ---
 
 ## Usage

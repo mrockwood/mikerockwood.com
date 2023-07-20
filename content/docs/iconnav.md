@@ -1,6 +1,7 @@
 ---
 title: Iconnav
 description: Create a navigation consisting of icons.
+draft: true
 ---
 
 ## Usage

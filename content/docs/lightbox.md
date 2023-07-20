@@ -1,6 +1,7 @@
 ---
 title: Lightbox
 description: Create a responsive lightbox gallery with images and videos.
+draft: true
 ---
 
 The lightbox component is fully responsive and supports touch and swipe navigation, as well as mouse drag for desktops. When swiping between slides the animation literally sticks at your fingertip or mouse cursor. Clicking fast on the previous and next navigation, will make animations even accelerate to keep up with your pace. All animations are hardware accelerated for a smoother performance.

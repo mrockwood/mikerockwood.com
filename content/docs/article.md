@@ -1,6 +1,7 @@
 ---
 title: Article
 description: Create articles within your page.
+draft: true
 ---
 
 ## Usage

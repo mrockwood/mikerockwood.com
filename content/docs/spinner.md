@@ -1,6 +1,7 @@
 ---
 title: Spinner
 description: Create an animated loading spinner.
+draft: true
 ---
 
 ## Usage

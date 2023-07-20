@@ -1,6 +1,7 @@
 ---
 title: Upload
 description: Upload files through a file input form element or a placeholder area.
+draft: true
 ---
 
 ## Usage

@@ -1,6 +1,7 @@
 ---
 title: Off-canvas
 description: Create an off-canvas sidebar that slides in and out of the page, which is perfect for creating mobile navigations.
+draft: true
 ---
 
 ## Usage

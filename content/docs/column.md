@@ -1,6 +1,7 @@
 ---
 title: Column
 description: Display your content in multiple text columns without having to split it in several containers.
+draft: true
 ---
 
 ## Usage
