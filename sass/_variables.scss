@@ -14,34 +14,34 @@
 // Tablet Landscape: iPad (1024x768), iPad Pro (1024x1366),
 // Desktop:          Galaxy Tab (1280x800), iPad Pro (1366x1024)
 
-$breakpoint-small:                              640px !default;  // Phone landscape
-$breakpoint-medium:                             960px !default;  // Tablet Landscape
-$breakpoint-large:                              1200px !default; // Desktop
-$breakpoint-xlarge:                             1600px !default; // Large Screens
+$breakpoint-small:                                    640px !default;  // Phone landscape
+$breakpoint-medium:                                   960px !default;  // Tablet Landscape
+$breakpoint-large:                                    1200px !default; // Desktop
+$breakpoint-xlarge:                                   1600px !default; // Large Screens
 
-$breakpoint-xsmall-max:                         ($breakpoint-small - 1) !default;
-$breakpoint-small-max:                          ($breakpoint-medium - 1) !default;
-$breakpoint-medium-max:                         ($breakpoint-large - 1) !default;
-$breakpoint-large-max:                          ($breakpoint-xlarge - 1) !default;
+$breakpoint-xsmall-max:                               ($breakpoint-small - 1) !default;
+$breakpoint-small-max:                                ($breakpoint-medium - 1) !default;
+$breakpoint-medium-max:                               ($breakpoint-large - 1) !default;
+$breakpoint-large-max:                                ($breakpoint-xlarge - 1) !default;
 
 
 // Media
 // ========================================================================
 
-$media-os-dark:                                 'prefers-color-scheme: dark' !default;
-$media-os-light:                                'prefers-color-scheme: light' !default;
+$media-os-dark:                                       'prefers-color-scheme: dark' !default;
+$media-os-light:                                      'prefers-color-scheme: light' !default;
 
-$media-motion-ok:                               'prefers-reduced-motion: no-preference' !default;
-$media-motion-not-ok:                           'prefers-reduced-motion: reduce' !default;
+$media-motion-ok:                                     'prefers-reduced-motion: no-preference' !default;
+$media-motion-not-ok:                                 'prefers-reduced-motion: reduce' !default;
 
-$media-opacity-ok:                              'prefers-reduced-transparency: no-preference' !default;
-$media-opacity-not-ok:                          'prefers-reduced-transparency: reduce' !default;
+$media-opacity-ok:                                    'prefers-reduced-transparency: no-preference' !default;
+$media-opacity-not-ok:                                'prefers-reduced-transparency: reduce' !default;
 
-$media-use-data-ok:                             'prefers-reduced-data: no-preference' !default;
-$media-use-data-not-ok:                         'prefers-reduced-data: reduce' !default;
+$media-use-data-ok:                                   'prefers-reduced-data: no-preference' !default;
+$media-use-data-not-ok:                               'prefers-reduced-data: reduce' !default;
 
-$media-high-contrast:                           'prefers-contrast: more' !default;
-$media-low-contrast:                            'prefers-contrast: less' !default;
+$media-high-contrast:                                 'prefers-contrast: more' !default;
+$media-low-contrast:                                  'prefers-contrast: less' !default;
 
 
 // Global variables
@@ -62,7 +62,7 @@ $media-low-contrast:                            'prefers-contrast: less' !defaul
 	--global-large-font-size:                         1.5rem;   // 24px
 	--global-medium-font-size:                        1.25rem;  // 20px
 	--global-small-font-size:                         0.875rem; // 14px
-	--global-xsmall-font-size:                        0.75rem; // 12px
+	--global-xsmall-font-size:                        0.75rem;  // 12px
 
 	//
 	// Text colors
