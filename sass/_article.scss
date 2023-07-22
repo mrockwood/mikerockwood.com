@@ -21,7 +21,7 @@
 
     --article-meta-font-size:                         var(--global-small-font-size);
     --article-meta-line-height:                       1.4;
-    --article-meta-color:                             hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --article-meta-color:                             var(--theme-muted-color, var(--global-muted-color) );
 
 }
 

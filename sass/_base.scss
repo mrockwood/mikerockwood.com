@@ -14,27 +14,27 @@
 // :where(html) {
 :where(html *) {
 
-    --base-body-background:                           hsl( var(--theme-background, var(--global-background) ) );
+    --base-body-background:                           var(--theme-background, var(--global-background) );
     --base-body-font-family:                          var(--global-font-family);
     --base-body-font-weight:                          normal;
     --base-body-font-size:                            var(--global-font-size);
     --base-body-line-height:                          var(--global-line-height);
-    --base-body-color:                                hsl( var(--theme-color, var(--global-color) ) );
+    --base-body-color:                                var(--theme-color, var(--global-color));
 
-    --base-link-color:                                hsl( var(--theme-link-color, var(--global-link-color) ) );
+    --base-link-color:                                var(--theme-link-color, var(--global-link-color) );
     --base-link-text-decoration:                      none;
-    --base-link-hover-color:                          hsl( var(--theme-link-hover-color, var(--global-link-hover-color) ) );
+    --base-link-hover-color:                          var(--theme-link-hover-color, var(--global-link-hover-color) );
     --base-link-hover-text-decoration:                underline;
 
     --base-strong-font-weight:                        bolder;
     --base-code-font-size:                            var(--global-small-font-size);
     --base-code-font-family:                          Consolas, monaco, monospace;
-    --base-code-color:                                hsl( var(--theme-danger-background, var(--global-danger-background) ) );
-    --base-em-color:                                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --base-code-color:                                var(--theme-danger-background, var(--global-danger-background) );
+    --base-em-color:                                  var(--theme-emphasis-color, var(--global-emphasis-color) );
     --base-ins-background:                            hsla(50,100%,50%,0.2);
-    --base-ins-color:                                 hsl( var(--theme-color, var(--global-color) ) );
+    --base-ins-color:                                 var(--theme-color, var(--global-color) );
     --base-mark-background:                           hsla(50,100%,50%,0.2);
-    --base-mark-color:                                hsl( var(--theme-color, var(--global-color) ) );
+    --base-mark-color:                                var(--theme-color, var(--global-color) );
     --base-quote-font-style:                          italic;
     --base-small-font-size:                           80%;
 
@@ -42,7 +42,7 @@
 
     --base-heading-font-family:                       var(--global-font-family);
     --base-heading-font-weight:                       normal;
-    --base-heading-color:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --base-heading-color:                             var(--theme-emphasis-color, var(--global-emphasis-color) );
     --base-heading-text-transform:                    none;
     --base-heading-margin-top:                        var(--global-medium-margin);
     --base-h1-font-size:                              calc( var(--global-2xlarge-font-size) * 0.85 );
@@ -62,7 +62,7 @@
 
     --base-hr-margin-vertical:                        var(--global-margin);
     --base-hr-border-width:                           var(--global-border-width);
-    --base-hr-border:                                 hsl( var(--theme-border, var(--global-border) ) );
+    --base-hr-border:                                 var(--theme-border, var(--global-border) );
 
     --base-blockquote-font-size:                      var(--global-medium-font-size);
     --base-blockquote-line-height:                    1.5;
@@ -75,15 +75,15 @@
     --base-pre-font-size:                             var(--global-small-font-size);
     --base-pre-line-height:                           1.5;
     --base-pre-font-family:                           var(--base-code-font-family);
-    --base-pre-color:                                 hsl( var(--theme-color, var(--global-color) ) );
+    --base-pre-color:                                 var(--theme-color, var(--global-color) );
 
     --base-focus-outline-width:                       2px;
     --base-focus-outline-style:                       dotted;
-    --base-focus-outline:                             hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --base-focus-outline:                             var(--theme-emphasis-color, var(--global-emphasis-color) );
     --base-focus-outline-offset:                      1px;
 
     --base-selection-background:                      #39f;
-    --base-selection-color:                           hsl(var(--global-inverse-color));
+    --base-selection-color:                           var(--global-inverse-color);
 
 }
 

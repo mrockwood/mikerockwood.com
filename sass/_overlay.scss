@@ -19,10 +19,10 @@
     --overlay-padding-horizontal:                     var(--global-gutter);
     --overlay-padding-vertical:                       var(--global-gutter);
 
-    --overlay-default-background:                     hsl(var(--global-background) / 0.8);
-    --overlay-primary-background:                     hsl(var(--global-secondary-background) / 0.8);
-	--overlay-light-background:                       hsl(var(--surface-default-light) / 0.8);
-    --overlay-dark-background:                        hsl(var(--surface-default-dark) / 0.8);
+    --overlay-default-background:                     color-mix(in oklab, var(--global-background), transparent 20%);
+    --overlay-primary-background:                     color-mix(in oklab, var(--global-secondary-background), transparent 20%);
+	--overlay-light-background:                       color-mix(in oklab, var(--surface-default-light), transparent 20%);
+    --overlay-dark-background:                        color-mix(in oklab, var(--surface-default-dark), transparent 20%);
 
 }
 

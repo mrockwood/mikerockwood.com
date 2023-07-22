@@ -12,10 +12,10 @@
 :where([class*='uk-marker']) {
 
     --marker-padding:                                  5px;
-    --marker-background:                               hsl( var(--theme-secondary-background, var(--global-secondary-background) ) );
-    --marker-color:                                    hsl( var(--theme-background, var(--global-background) ) );
+    --marker-background:                               var(--theme-secondary-background, var(--global-secondary-background) );
+    --marker-color:                                    var(--theme-background, var(--global-background) );
 
-    --marker-hover-color:                              hsl( var(--theme-background, var(--global-background) ) );
+    --marker-hover-color:                              var(--theme-background, var(--global-background) );
 
 }
 

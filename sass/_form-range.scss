@@ -12,13 +12,13 @@
 :where([class*='uk-range']) {
 
     --form-range-track-height:                        3px;
-    --form-range-track-background:                    hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 );
-    --form-range-track-focus-background:              hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --form-range-track-background:                    color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
+    --form-range-track-focus-background:              var(--theme-muted-background, var(--global-muted-background) );
 
     --form-range-thumb-height:                        15px;
     --form-range-thumb-width:                         var(--form-range-thumb-height);
     --form-range-thumb-border-radius:                 500px;
-    --form-range-thumb-background:                    hsl( var(--theme-color, var(--global-color) ) );
+    --form-range-thumb-background:                    var(--theme-color, var(--global-color) );
 
 }
 

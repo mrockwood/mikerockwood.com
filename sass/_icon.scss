@@ -19,20 +19,20 @@
 
     --icon-image-size:                                20px;
 
-    --icon-link-color:                                hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --icon-link-hover-color:                          hsl( var(--theme-color, var(--global-color) ) );
-    --icon-link-active-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --icon-link-color:                                var(--theme-muted-color, var(--global-muted-color) );
+    --icon-link-hover-color:                          var(--theme-color, var(--global-color) );
+    --icon-link-active-color:                         var(--theme-muted-color, var(--global-muted-color) );
 
     --icon-button-size:                               42px;
     --icon-button-border-radius:                      500px;
-    --icon-button-background:                         hsl( var(--theme-muted-background, var(--global-muted-background) ) );
-    --icon-button-color:                              hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --icon-button-background:                         var(--theme-muted-background, var(--global-muted-background) );
+    --icon-button-color:                              var(--theme-muted-color, var(--global-muted-color) );
 
-    --icon-button-hover-background:                   hsl( var(--theme-muted-background, var(--global-muted-background) ) );
-    --icon-button-hover-color:                        hsl( var(--theme-color, var(--global-color) ) );
+    --icon-button-hover-background:                   var(--theme-muted-background, var(--global-muted-background) );
+    --icon-button-hover-color:                        var(--theme-color, var(--global-color) );
 
-    --icon-button-active-background:                  hsl( var(--theme-muted-background, var(--global-muted-background) ) );
-    --icon-button-active-color:                       hsl( var(--theme-color, var(--global-color) ) );
+    --icon-button-active-background:                  var(--theme-muted-background, var(--global-muted-background) );
+    --icon-button-active-color:                       var(--theme-color, var(--global-color) );
 
 }
 

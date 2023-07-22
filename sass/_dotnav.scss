@@ -22,10 +22,10 @@
     --dotnav-item-height:                             var(--dotnav-item-width);
     --dotnav-item-border-radius:                      50%;
 
-    --dotnav-item-background:                         hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.2 );
-    --dotnav-item-hover-background:                   hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.6 );
-    --dotnav-item-onclick-background:                 hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.2 );
-    --dotnav-item-active-background:                  hsl( var(--inverse-theme-background, var(--inverse-global-background) ) / 0.6 );
+    --dotnav-item-background:                         color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
+    --dotnav-item-hover-background:                   color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
+    --dotnav-item-onclick-background:                 color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
+    --dotnav-item-active-background:                  color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
 
 }
 

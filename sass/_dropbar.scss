@@ -21,8 +21,8 @@
     --dropbar-padding-top:                            15px;
     --dropbar-padding-bottom:                         var(--dropbar-padding-top);
     --dropbar-padding-horizontal:                     15px;
-    --dropbar-background:                             hsl( var(--theme-muted-background, var(--global-muted-background) ) );
-    --dropbar-color:                                  hsl( var(--theme-color, var(--global-color) ) );
+    --dropbar-background:                             var(--theme-muted-background, var(--global-muted-background) );
+    --dropbar-color:                                  var(--theme-color, var(--global-color) );
 
     --dropbar-large-padding-top:                      40px;
     --dropbar-large-padding-bottom:                   var(--dropbar-large-padding-top);
@@ -35,7 +35,7 @@
     :where(.uk-dropbar) {
 
         --dropbar-padding-horizontal:                 var(--global-gutter);
-    
+
     }
 
 }
@@ -46,7 +46,7 @@
     :where(.uk-dropbar) {
 
         --dropbar-padding-horizontal:                 var(--global-medium-gutter);
-    
+
     }
 
 }

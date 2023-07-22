@@ -13,11 +13,11 @@
 
     --text-lead-font-size:                            var(--global-large-font-size);
     --text-lead-line-height:                          1.5;
-    --text-lead-color:                                hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --text-lead-color:                                var(--theme-emphasis-color, var(--global-emphasis-color) );
 
     --text-meta-font-size:                            var(--global-small-font-size);
     --text-meta-line-height:                          1.4;
-    --text-meta-color:                                hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --text-meta-color:                                var(--theme-muted-color, var(--global-muted-color) );
 
     --text-small-font-size:                           var(--global-small-font-size);
     --text-small-line-height:                         1.5;
@@ -25,15 +25,15 @@
     --text-large-font-size:                           var(--global-large-font-size);
     --text-large-line-height:                         1.5;
 
-    --text-muted-color:                               hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --text-emphasis-color:                            hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
-    --text-primary-color:                             hsl( var(--theme-primary-background, var(--global-primary-background) ) );
-    --text-secondary-color:                           hsl( var(--theme-secondary-background, var(--global-secondary-background) ) );
-    --text-success-color:                             hsl( var(--theme-success-background, var(--global-success-background) ) );
-    --text-warning-color:                             hsl( var(--theme-warning-background, var(--global-warning-background) ) );
-    --text-danger-color:                              hsl( var(--theme-danger-background, var(--global-danger-background) ) );
+    --text-muted-color:                               var(--theme-muted-color, var(--global-muted-color) );
+    --text-emphasis-color:                            var(--theme-emphasis-color, var(--global-emphasis-color) );
+    --text-primary-color:                             var(--theme-primary-background, var(--global-primary-background) );
+    --text-secondary-color:                           var(--theme-secondary-background, var(--global-secondary-background) );
+    --text-success-color:                             var(--theme-success-background, var(--global-success-background) );
+    --text-warning-color:                             var(--theme-warning-background, var(--global-warning-background) );
+    --text-danger-color:                              var(--theme-danger-background, var(--global-danger-background) );
 
-    --text-background-color:                          hsl( var(--theme-primary-background, var(--global-primary-background) ) );
+    --text-background-color:                          var(--theme-primary-background, var(--global-primary-background) );
 
     --text-default-tracking:                          0;
     --text-2xsmall-tracking:                          .025em;

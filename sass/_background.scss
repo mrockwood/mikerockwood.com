@@ -11,10 +11,10 @@
 
 :where([class*='uk-background']) {
 
-    --background-default-background:                  hsl(var(--global-background));
-    --background-muted-background:                    hsl(var(--global-muted-background));
-    --background-primary-background:                  hsl(var(--global-primary-background));
-    --background-secondary-background:                hsl(var(--global-secondary-background));
+    --background-default-background:                  var(--global-background);
+    --background-muted-background:                    var(--global-muted-background);
+    --background-primary-background:                  var(--global-primary-background);
+    --background-secondary-background:                var(--global-secondary-background);
 
 }
 

@@ -12,15 +12,15 @@
 
 :where(html) {
 
-    --inverse-global-color:                           var(--invert-text-color, 220 10% 100% / 0.7);
-	--inverse-global-emphasis-color:                  var(--invert-text-emphasis, 220 10% 100%);
-	--inverse-global-muted-color:                     var(--invert-text-muted, 220 10% 100% / 0.5);
+    --inverse-global-color:                           var(--invert-text-color, oklch(100% 0 0 / 0.7));
+	--inverse-global-emphasis-color:                  var(--invert-text-emphasis, white);
+	--inverse-global-muted-color:                     var(--invert-text-muted, oklch(100% 0 0 / 0.5));
 
-	--inverse-global-background:                      var(--invert-surface-default, 0 0% 13%);
-	--inverse-global-muted-background:                var(--invert-surface-muted, 220 10% 100% / 0.1);
-	--inverse-global-primary-background:              var(--invert-surface-primary, 220 10% 100%);
+	--inverse-global-background:                      var(--invert-surface-default, oklch(24.84% 0 0));
+	--inverse-global-muted-background:                var(--invert-surface-muted, oklch(100% 0 0 / 0.1));
+	--inverse-global-primary-background:              var(--invert-surface-primary, white);
 
-	--inverse-global-border:                          var(--invert-border-color, 220 10% 100% / 0.2);
+	--inverse-global-border:                          var(--invert-border-color, oklch(100% 0 0 / 0.2));
 
 }
 
@@ -119,7 +119,7 @@
     .uk-offcanvas-bar
 ) {
 
-    color: #{'hsl(var(--invert-text-color))'}; // Sass breaks on this for some reason
+    color: var(--invert-text-color);
 
     --theme-color:                                   var(--invert-text-color);
     --theme-emphasis-color:                          var(--invert-text-emphasis);
