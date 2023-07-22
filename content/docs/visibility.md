@@ -1,6 +1,7 @@
 ---
 title: Visibility
 description: Use responsive visibility classes to display or hide elements on different devices.
+draft: true
 ---
 
 ## Usage

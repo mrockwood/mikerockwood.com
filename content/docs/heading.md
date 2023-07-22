@@ -1,6 +1,7 @@
 ---
 title: Heading
 description: Define different styles for headings.
+draft: true
 ---
 
 Combine this component with the [Text component](text.md) to style your headings.

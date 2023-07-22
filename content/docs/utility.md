@@ -1,6 +1,7 @@
 ---
 title: Utility
 description: A collection of useful utility classes to style your content.
+draft: true
 ---
 
 ## Panel

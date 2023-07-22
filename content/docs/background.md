@@ -1,6 +1,7 @@
 ---
 title: Background
 description: A collection of utility classes to add different backgrounds to elements.
+draft: true
 ---
 
 ## Usage

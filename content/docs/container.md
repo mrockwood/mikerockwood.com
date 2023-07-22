@@ -1,6 +1,7 @@
 ---
 title: Container
 description: This component allows you to align and center your page content.
+draft: true
 ---
 
 ## Usage

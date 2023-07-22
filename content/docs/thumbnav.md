@@ -1,6 +1,7 @@
 ---
 title: Thumbnav
 description: Create a flexible thumbnail navigation.
+draft: true
 ---
 
 ## Usage

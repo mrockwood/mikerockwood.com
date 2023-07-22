@@ -1,6 +1,7 @@
 ---
 title: Animation
 description: A collection of smooth animations to use within your page.
+draft: true
 ---
 
 ## Usage

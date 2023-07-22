@@ -1,6 +1,7 @@
 ---
 title: Switcher
 description: Dynamically transition through different content panes.
+draft: true
 ---
 
 ## Usage

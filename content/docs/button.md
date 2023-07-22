@@ -1,6 +1,7 @@
 ---
 title: Button
 description: Easily create nice looking buttons, which come in different styles.
+draft: true
 ---
 
 ## Usage

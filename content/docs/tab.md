@@ -1,6 +1,7 @@
 ---
 title: Tab
 description: Create a tabbed navigation with different styles.
+draft: true
 ---
 
 ## Usage

@@ -1,6 +1,7 @@
 ---
 title: Progress
 description: Defines progress bars that indicate how far along a process is.
+draft: true
 ---
 
 ## Usage

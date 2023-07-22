@@ -1,6 +1,7 @@
 ---
 title: Close
 description: Create a close icon that can be combined with different components.
+draft: true
 ---
 
 ## Usage

@@ -1,6 +1,7 @@
 ---
 title: Width
 description: Define the width of elements for different viewport sizes.
+draft: true
 ---
 
 UIkit's Width component is often used in combination with [grids](grid.md) to split content into responsive columns. You can apply fractions, automatic width or expand units to fill the remaining space and combine these modes.

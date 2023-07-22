@@ -151,7 +151,28 @@
 		<meta property="og:image" content="{{ get_url(path=image) }}"/>
 	{%- else -%}
 		<meta property="og:image" content="{{ get_url(path=config.extra.author.avatar) }}"/>
-	{%- endif -%}
+	{%- endif %}
+
+	{#- JSON LD #}
+	<script type="application/ld+json">
+		{
+			"@context":"http://schema.org"
+			"name":"{{ config.extra.author.name }}",
+			"description":"{{ config.description }}",
+			"author": {
+				"@type":"Person",
+				"name":"{{ config.extra.author.name }}"
+			},
+			"@type":"WebSite",
+			"url":"{{ config.base_url | safe }}",
+			"image":"{{ get_url(path=config.extra.author.avatar) }}",
+			"headline":"{{ config.title }}",
+			"sameAs":[
+				"https://{{ config.extra.social.mastodon | safe }}",
+				"https://www.github.com/{{ config.extra.social.github }}"
+			]
+		}
+	</script>
 	{%- endblock head_seo %}
 
 </head>

@@ -1,6 +1,7 @@
 ---
 title: Modal
 description: Create modal dialogs with different styles and transitions.
+draft: true
 ---
 
 ## Usage

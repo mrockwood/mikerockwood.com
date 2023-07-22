@@ -1,6 +1,7 @@
 ---
 title: Video
 description: Start playing videos as they are shown or enter the viewport.
+draft: true
 ---
 
 The Video component offers two advanced functions for videos. First, it allows you to pause a video whenever it's hidden with CSS and resume playing once it becomes visible again. In addition, the video can pause when it's outside the viewport and start playing when entering it.

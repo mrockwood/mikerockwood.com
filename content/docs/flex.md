@@ -1,6 +1,7 @@
 ---
 title: Flex
 description: Utilize the power of flexbox to create a wide range of layouts.
+draft: true
 ---
 
 The Flex component has an essential role in building layouts in UIkit. A lot of components, for example the [Grid](grid.md) as well as horizontal navigations, like the [Navbar](navbar.md), [Subnav](subnav.md), [Breadcrumb](breadcrumb.md), [Pagination](pagination.md), [Tab](tab.md) and [Dotnav](dotnav.md) are built with flexbox and can be used together with the utility classes from this component.
