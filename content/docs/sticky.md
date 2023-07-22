@@ -1,6 +1,7 @@
 ---
 title: Sticky
 description: Make elements remain at the top of the viewport, like a sticky navigation.
+draft: true
 ---
 
 ## Usage

@@ -1,6 +1,7 @@
 ---
 title: Tile
 description: Create layout boxes with different backgrounds that can be arranged seamlessly next to each other.
+draft: true
 ---
 
 ## Usage

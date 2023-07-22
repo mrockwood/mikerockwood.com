@@ -1,6 +1,7 @@
 ---
 title: Divider
 description: Create dividers to separate content and apply different styles to them.
+draft: true
 ---
 
 ## Usage

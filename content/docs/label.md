@@ -1,6 +1,7 @@
 ---
 title: Label
 description: Indicate important notes and highlight parts of your content.
+draft: true
 ---
 
 ## Usage

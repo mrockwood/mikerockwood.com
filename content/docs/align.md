@@ -1,6 +1,7 @@
 ---
 title: Align
 description: Control the alignment of inline elements depending on the viewport size.
+draft: true
 ---
 
 ## Usage

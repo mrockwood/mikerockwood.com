@@ -1,6 +1,7 @@
 ---
 title: Card
 description: Create layout boxes with different styles.
+draft: true
 ---
 
 ## Usage

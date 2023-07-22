@@ -1,6 +1,7 @@
 ---
 title: Transition
 description: Create smooth transitions between two states when hovering an element.
+draft: true
 ---
 
 ## Usage

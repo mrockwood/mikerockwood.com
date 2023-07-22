@@ -1,6 +1,7 @@
 ---
 title: Link
 description: Define different styles to integrate links into specific content.
+draft: true
 ---
 
 ## Muted modifier

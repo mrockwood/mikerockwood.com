@@ -1,6 +1,7 @@
 ---
 title: Text
 description: A collection of utility classes to style text.
+draft: true
 ---
 
 Combine this component with the [Heading component](heading.md) to style your content.
