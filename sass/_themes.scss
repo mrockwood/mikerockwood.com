@@ -224,16 +224,16 @@
 
     color-scheme: light;
 
-    --text-color: black;
+    --text-color: var(--gray-9);
     --text-emphasis: black;
-    --text-muted: var(--gray-8);
+    --text-muted: var(--gray-7);
 
-    --link-color: var(--pink-7);
-    --link-hover: var(--pink-9);
+    --link-color: var(--cyan-7);
+    --link-hover: var(--cyan-9);
 
     --surface-default: var(--yellow-3);
     --surface-muted: var(--yellow-1);
-    --surface-primary: black;
+    --surface-primary: var(--pink-5);
 
     --surface-success: var(--surface-success-light);
     --surface-warning: var(--surface-warning-light);
@@ -245,14 +245,14 @@
     --invert-text-emphasis: var(--text-emphasis-dark);
     --invert-text-muted: var(--text-muted-dark);
 
-    --invert-link-color: var(--pink-4);
-    --invert-link-hover: var(--pink-2);
+    --invert-link-color: var(--cyan-3);
+    --invert-link-hover: var(--cyan-1);
 
     --invert-surface-default: black;
-    --invert-surface-muted: oklch(29.41% 0.012 264.37);
+    --invert-surface-muted: hsl(220 10% 18%);
     --invert-surface-primary: var(--pink-4);
 
-    --invert-border-color: 0 0% 100% / 0.25;
+    --invert-border-color: hsl(0 0% 100% / 0.25);
 
 
 	// .uk-heading-small,
@@ -272,16 +272,16 @@
 
     color-scheme: dark;
 
-    --text-color: 0 0% 100% / 0.8;
-    --text-emphasis: var(--white-hsl);
-    --text-muted: 0 0% 100% / 0.6;
+    --text-color: hsl(0 0% 100% / 0.8);
+    --text-emphasis: white;
+    --text-muted: hsl(0 0% 100% / 0.6);
 
-    --link-color: var(--red-3-hsl);
-    --link-hover: var(--red-1-hsl);
+    --link-color: var(--red-3);
+    --link-hover: var(--red-1);
 
-    --surface-default: var(--black-hsl);
-    --surface-muted: var(--gray-8-hsl);
-    --surface-primary: var(--red-7-hsl);
+    --surface-default: black;
+    --surface-muted: var(--gray-8);
+    --surface-primary: var(--red-7);
 
     --surface-success: var(--surface-success-light);
     --surface-warning: var(--surface-warning-light);
@@ -293,14 +293,14 @@
     --invert-text-emphasis: var(--text-emphasis-dark);
     --invert-text-muted: var(--text-muted-dark);
 
-    --invert-link-color: var(--red-3-hsl);
-    --invert-link-hover: var(--red-1-hsl);
+    --invert-link-color: var(--red-3);
+    --invert-link-hover: var(--red-1);
 
-    --invert-surface-default: var(--black-hsl);
-    --invert-surface-muted: 220 10% 18%;
-    --invert-surface-primary: var(--red-7-hsl);
+    --invert-surface-default: black;
+    --invert-surface-muted: hsl(220 10% 18%);
+    --invert-surface-primary: var(--red-7);
 
-    --invert-border-color: 0 0% 100% / 0.25;
+    --invert-border-color: hsl(0 0% 100% / 0.25);
 
 
 	// .uk-heading-small,
@@ -336,9 +336,9 @@
 	--link-color: var(--link-color-light);
 	--link-hover: var(--link-hover-light);
 
-	--surface-default: var(--orange-0-hsl);
-    --surface-muted: var(--orange-2-hsl);
-    --surface-primary: var(--cyan-6-hsl);
+	--surface-default: var(--orange-0);
+    --surface-muted: var(--orange-2);
+    --surface-primary: var(--cyan-6);
 
 	--surface-success: var(--surface-success-light);
 	--surface-warning: var(--surface-warning-light);
@@ -382,12 +382,12 @@
 	--text-emphasis: var(--text-emphasis-light);
 	--text-muted: var(--text-muted-light);
 
-	--link-color: var(--cyan-7-hsl);
-	--link-hover: var(--cyan-9-hsl);
+	--link-color: var(--cyan-7);
+	--link-hover: var(--cyan-9);
 
-	--surface-default: var(--orange-0-hsl);
-    --surface-muted: var(--orange-2-hsl);
-    --surface-primary: var(--cyan-6-hsl);
+	--surface-default: var(--orange-0);
+    --surface-muted: var(--orange-2);
+    --surface-primary: var(--cyan-6);
 
 	--surface-success: var(--surface-success-light);
 	--surface-warning: var(--surface-warning-light);
@@ -399,12 +399,12 @@
 	--invert-text-emphasis: var(--text-emphasis-dark);
 	--invert-text-muted: var(--text-muted-dark);
 
-	--invert-link-color: var(--orange-1-hsl);
-	--invert-link-hover: var(--orange-0-hsl);
+	--invert-link-color: var(--orange-1);
+	--invert-link-hover: var(--orange-0);
 
-	--invert-surface-default: 192.5, 38.1%, 27.3%;
-	--invert-surface-muted: 198.6, 33.9%, 24.3%;
-	--invert-surface-primary: var(--cyan-3-hsl);
+	--invert-surface-default: hsl(192.5, 38.1%, 27.3%);
+	--invert-surface-muted: hsl(198.6, 33.9%, 24.3%);
+	--invert-surface-primary: var(--cyan-3);
 
 	--invert-border-color: var(--border-color-dark);
 
@@ -434,7 +434,7 @@
 
 .themeswitcher .themeswitcher__item.uk-active {
 	margin-inline: calc(-1 * var(--offcanvas-bar-padding-horizontal));
-	background: hsl(var(--invert-surface-muted));
+	background: var(--invert-surface-muted);
 	padding-inline: var(--offcanvas-bar-padding-horizontal);
 	margin-block-start: calc(0.5 * var(--list-large-margin-top));
 	margin-block-end: calc(-0.5 * var(--list-large-margin-top));

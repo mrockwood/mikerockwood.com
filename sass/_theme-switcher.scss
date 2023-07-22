@@ -32,7 +32,7 @@
  */
 
 .uk-theme-switcher li.uk-active {
-	background: hsl(var(--invert-surface-muted));
+	background: var(--invert-surface-muted);
 	margin: calc(0.5 * var(--list-large-margin-top)) calc(-1 * var(--offcanvas-bar-padding-horizontal)) calc(-0.5 * var(--list-large-margin-top));
 	padding: calc(0.5 * var(--list-large-margin-top)) var(--offcanvas-bar-padding-horizontal);
 }
