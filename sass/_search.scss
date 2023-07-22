@@ -20,16 +20,16 @@
 
 :where([class*='uk-search']) {
 
-    --search-color:                                       hsl( var(--theme-color, var(--global-color) ) );
-    --search-placeholder-color:                           hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --search-color:                                       var(--theme-color, var(--global-color) );
+    --search-placeholder-color:                           var(--theme-muted-color, var(--global-muted-color) );
 
-    --search-icon-color:                                  hsl( var(--theme-muted-color, var(--global-muted-color) ) );
+    --search-icon-color:                                  var(--theme-muted-color, var(--global-muted-color) );
 
     --search-default-width:                               240px;
     --search-default-height:                              var(--global-control-height);
     --search-default-padding-horizontal:                  10px;
-    --search-default-background:                          hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 );
-    --search-default-focus-background:                    hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --search-default-background:                          color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
+    --search-default-focus-background:                    var(--theme-muted-background, var(--global-muted-background) );
 
     --search-default-icon-width:                          var(--global-control-height);
     --search-default-icon-padding:                        0px;
@@ -50,8 +50,8 @@
     --search-large-icon-width:                            80px;
     --search-large-icon-padding:                          0px;
 
-    --search-toggle-color:                                hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --search-toggle-hover-color:                          hsl( var(--theme-color, var(--global-color) ) );
+    --search-toggle-color:                                var(--theme-muted-color, var(--global-muted-color) );
+    --search-toggle-hover-color:                          var(--theme-color, var(--global-color) );
 
 }
 

@@ -1,6 +1,6 @@
 //
 // Component:       Syntax highlighting
-// Description:     Determines the color and style of source code 
+// Description:     Determines the color and style of source code
 //
 // ========================================================================
 
@@ -12,14 +12,14 @@
 
     --syntax-pre-font-size:                            12px;
     --syntax-pre-padding:                              25px;
-    --syntax-pre-background:                           hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --syntax-pre-background:                           var(--theme-muted-background, var(--global-muted-background) );
     --syntax-pre-border-width:                         0;
     --syntax-pre-border-radius:                        0;
 
-    --syntx-comment:                                   hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --syntx-name:                                      hsl( var(--theme-success-background, var(--global-success-background) ) );
-    --syntx-variable:                                  hsl( var(--theme-danger-background, var(--global-danger-background) ) );
-    --syntx-title:                                     hsl( var(--theme-link-color, var(--global-link-color) ) );
+    --syntx-comment:                                   var(--theme-muted-color, var(--global-muted-color) );
+    --syntx-name:                                      var(--theme-success-background, var(--global-success-background) );
+    --syntx-variable:                                  var(--theme-danger-background, var(--global-danger-background) );
+    --syntx-title:                                     var(--theme-link-color, var(--global-link-color) );
 
 }
 

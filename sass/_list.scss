@@ -33,18 +33,18 @@
 
     --list-marker-height:                             calc( var(--global-line-height) * 1em );
 
-    --list-muted-color:                               hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --list-emphasis-color:                            hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
-    --list-primary-color:                             hsl( var(--theme-primary-background, var(--global-primary-background) ) );
-    --list-secondary-color:                           hsl( var(--theme-secondary-background, var(--global-secondary-background) ) );
+    --list-muted-color:                               var(--theme-muted-color, var(--global-muted-color) );
+    --list-emphasis-color:                            var(--theme-emphasis-color, var(--global-emphasis-color) );
+    --list-primary-color:                             var(--theme-primary-background, var(--global-primary-background) );
+    --list-secondary-color:                           var(--theme-secondary-background, var(--global-secondary-background) );
 
     --list-divider-margin-top:                        var(--global-small-margin);
     --list-divider-border-width:                      var(--global-border-width);
-    --list-divider-border:                            hsl(var(--global-border));
+    --list-divider-border:                            var(--global-border);
 
     --list-striped-padding-vertical:                  var(--global-small-margin);
     --list-striped-padding-horizontal:                var(--global-small-margin);
-    --list-striped-background:                        hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+    --list-striped-background:                        var(--theme-muted-background, var(--global-muted-background) );
 
     --list-large-margin-top:                          var(--global-margin);
     --list-large-divider-margin-top:                  var(--global-margin);

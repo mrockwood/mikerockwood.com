@@ -15,7 +15,7 @@
 	>
 		<style>
 			.home-hero-bg circle {
-				filter: drop-shadow( 0 0 10vw hsla( var(--surface-default) / 0.5 ));
+				filter: drop-shadow( 0 0 10vw color-mix(in oklab, var(--surface-primary), transparent 90%) );
 				cx: 50%;
 				cy: 100%;
 			}
@@ -27,11 +27,11 @@
 			}
 		</style>
 		<g class="home-hero-bg">
-			<circle fill='hsla(var(--surface-primary) / 0.05)' cx='0%' cy='50%' r='clamp(375px, 50vw, 750px)'/>
-			<circle fill='hsla(var(--surface-primary) / 0.10)' cx='0%' cy='50%' r='clamp(300px, 40vw, 600px)'/>
-			<circle fill='hsla(var(--surface-primary) / 0.15)' cx='0%' cy='50%' r='clamp(225px, 30vw, 450px)'/>
-			<circle fill='hsla(var(--surface-primary) / 0.20)' cx='0%' cy='50%' r='clamp(150px, 20vw, 300px)'/>
-			<circle fill='hsla(var(--surface-primary) / 0.25)' cx='0%' cy='50%' r='clamp(75px, 10vw, 150px)'/>
+			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 95%)' cx='0%' cy='50%' r='clamp(375px, 50vw, 750px)'/>
+			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 90%)' cx='0%' cy='50%' r='clamp(300px, 40vw, 600px)'/>
+			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 85%)' cx='0%' cy='50%' r='clamp(225px, 30vw, 450px)'/>
+			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 80%)' cx='0%' cy='50%' r='clamp(150px, 20vw, 300px)'/>
+			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 75%)' cx='0%' cy='50%' r='clamp(75px, 10vw, 150px)'/>
 		</g>
 	</svg>
 	<!-- <img src="{{ config.base_url | safe }}/images/home-anarchy-symbol.svg" class="uk-position-cover uk-height-1-1"> -->

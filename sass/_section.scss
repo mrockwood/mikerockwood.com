@@ -29,10 +29,10 @@
     --section-large-padding-vertical:                  var(--global-large-margin);
     --section-xlarge-padding-vertical:                 var(--global-xlarge-margin);
 
-    --section-default-background:                      hsl(var(--global-background));
-    --section-muted-background:                        hsl(var(--global-muted-background));
-    --section-primary-background:                      hsl(var(--global-primary-background));
-    --section-secondary-background:                    hsl(var(--global-secondary-background));
+    --section-default-background:                      var(--global-background);
+    --section-muted-background:                        var(--global-muted-background);
+    --section-primary-background:                      var(--global-primary-background);
+    --section-secondary-background:                    var(--global-secondary-background);
 
 }
 

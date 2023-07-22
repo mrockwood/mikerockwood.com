@@ -49,55 +49,55 @@
 
     --nav-default-font-size:                          var(--global-font-size);
     --nav-default-line-height:                        var(--global-line-height);
-    --nav-default-item-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --nav-default-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) );
-    --nav-default-item-active-color:                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-default-item-color:                         var(--theme-muted-color, var(--global-muted-color) );
+    --nav-default-item-hover-color:                   var(--theme-color, var(--global-color) );
+    --nav-default-item-active-color:                  var(--theme-emphasis-color, var(--global-emphasis-color) );
     --nav-default-subtitle-font-size:                 var(--global-small-font-size);
-    --nav-default-header-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-default-header-color:                       var(--theme-emphasis-color, var(--global-emphasis-color) );
     --nav-default-divider-border-width:               var(--global-border-width);
-    --nav-default-divider-border:                     hsl( var(--theme-border, var(--global-border) ) );
+    --nav-default-divider-border:                     var(--theme-border, var(--global-border) );
     --nav-default-sublist-font-size:                  var(--nav-default-font-size);
     --nav-default-sublist-line-height:                var(--nav-default-line-height);
-    --nav-default-sublist-item-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --nav-default-sublist-item-hover-color:           hsl( var(--theme-color, var(--global-color) ) );
-    --nav-default-sublist-item-active-color:          hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-default-sublist-item-color:                 var(--theme-muted-color, var(--global-muted-color) );
+    --nav-default-sublist-item-hover-color:           var(--theme-color, var(--global-color) );
+    --nav-default-sublist-item-active-color:          var(--theme-emphasis-color, var(--global-emphasis-color) );
 
     --nav-primary-font-size:                          var(--global-large-font-size);
     --nav-primary-line-height:                        var(--global-line-height);
-    --nav-primary-item-color:                         hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --nav-primary-item-hover-color:                   hsl( var(--theme-color, var(--global-color) ) );
-    --nav-primary-item-active-color:                  hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-primary-item-color:                         var(--theme-muted-color, var(--global-muted-color) );
+    --nav-primary-item-hover-color:                   var(--theme-color, var(--global-color) );
+    --nav-primary-item-active-color:                  var(--theme-emphasis-color, var(--global-emphasis-color) );
     --nav-primary-subtitle-font-size:                 var(--global-medium-font-size);
-    --nav-primary-header-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-primary-header-color:                       var(--theme-emphasis-color, var(--global-emphasis-color) );
     --nav-primary-divider-border-width:               var(--global-border-width);
-    --nav-primary-divider-border:                     hsl( var(--theme-border, var(--global-border) ) );
+    --nav-primary-divider-border:                     var(--theme-border, var(--global-border) );
     --nav-primary-sublist-font-size:                  var(--global-medium-font-size);
     --nav-primary-sublist-line-height:                var(--global-line-height);
-    --nav-primary-sublist-item-color:                 hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --nav-primary-sublist-item-hover-color:           hsl( var(--theme-color, var(--global-color) ) );
-    --nav-primary-sublist-item-active-color:          hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-primary-sublist-item-color:                 var(--theme-muted-color, var(--global-muted-color) );
+    --nav-primary-sublist-item-hover-color:           var(--theme-color, var(--global-color) );
+    --nav-primary-sublist-item-active-color:          var(--theme-emphasis-color, var(--global-emphasis-color) );
 
     --nav-secondary-font-size:                        var(--global-font-size);
     --nav-secondary-line-height:                      var(--global-line-height);
-    --nav-secondary-item-color:                       hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
-    --nav-secondary-item-hover-color:                 hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
-    --nav-secondary-item-active-color:                hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-item-color:                       var(--theme-emphasis-color, var(--global-emphasis-color) );
+    --nav-secondary-item-hover-color:                 var(--theme-emphasis-color, var(--global-emphasis-color) );
+    --nav-secondary-item-active-color:                var(--theme-emphasis-color, var(--global-emphasis-color) );
     --nav-secondary-subtitle-font-size:               var(--global-small-font-size);
-    --nav-secondary-subtitle-color:                   hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --nav-secondary-subtitle-hover-color:             hsl( var(--theme-color, var(--global-color) ) );
-    --nav-secondary-subtitle-active-color:            hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
-    --nav-secondary-header-color:                     hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-subtitle-color:                   var(--theme-muted-color, var(--global-muted-color) );
+    --nav-secondary-subtitle-hover-color:             var(--theme-color, var(--global-color) );
+    --nav-secondary-subtitle-active-color:            var(--theme-emphasis-color, var(--global-emphasis-color) );
+    --nav-secondary-header-color:                     var(--theme-emphasis-color, var(--global-emphasis-color) );
     --nav-secondary-divider-border-width:             var(--global-border-width);
-    --nav-secondary-divider-border:                   hsl( var(--theme-border, var(--global-border) ) );
+    --nav-secondary-divider-border:                   var(--theme-border, var(--global-border) );
     --nav-secondary-sublist-font-size:                var(--global-small-font-size);
     --nav-secondary-sublist-line-height:              var(--global-line-height);
-    --nav-secondary-sublist-item-color:               hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --nav-secondary-sublist-item-hover-color:         hsl( var(--theme-color, var(--global-color) ) );
-    --nav-secondary-sublist-item-active-color:        hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --nav-secondary-sublist-item-color:               var(--theme-muted-color, var(--global-muted-color) );
+    --nav-secondary-sublist-item-hover-color:         var(--theme-color, var(--global-color) );
+    --nav-secondary-sublist-item-active-color:        var(--theme-emphasis-color, var(--global-emphasis-color) );
 
     --nav-dividers-margin-top:                        5px;
     --nav-dividers-border-width:                      var(--global-border-width);
-    --nav-dividers-border:                            hsl( var(--theme-border, var(--global-border) ) );
+    --nav-dividers-border:                            var(--theme-border, var(--global-border) );
 
 }
 

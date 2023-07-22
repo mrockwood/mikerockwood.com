@@ -26,8 +26,8 @@
     --dropdown-viewport-margin:                       15px;
     --dropdown-min-width:                             200px;
     --dropdown-padding:                               15px;
-    --dropdown-background:                            hsl( var(--theme-muted-background, var(--global-muted-background) ) );
-    --dropdown-color:                                 hsl( var(--theme-color, var(--global-color) ) );
+    --dropdown-background:                            var(--theme-muted-background, var(--global-muted-background) );
+    --dropdown-color:                                 var(--theme-color, var(--global-color) );
 
     --dropdown-large-padding:                         40px;
 
@@ -40,14 +40,14 @@
     --dropdown-dropbar-large-padding-top:             var(--dropdown-large-padding);
     --dropdown-dropbar-large-padding-bottom:          var(--dropdown-dropbar-large-padding-top);
 
-    --dropdown-nav-item-color:                        hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --dropdown-nav-item-hover-color:                  hsl( var(--theme-color, var(--global-color) ) );
+    --dropdown-nav-item-color:                        var(--theme-muted-color, var(--global-muted-color) );
+    --dropdown-nav-item-hover-color:                  var(--theme-color, var(--global-color) );
     --dropdown-nav-subtitle-font-size:                var(--global-small-font-size);
-    --dropdown-nav-header-color:                      hsl( var(--theme-emphasis-color, var(--global-emphasis-color) ) );
+    --dropdown-nav-header-color:                      var(--theme-emphasis-color, var(--global-emphasis-color) );
     --dropdown-nav-divider-border-width:              var(--global-border-width);
-    --dropdown-nav-divider-border:                    hsl( var(--theme-border, var(--global-border) ) );
-    --dropdown-nav-sublist-item-color:                hsl( var(--theme-muted-color, var(--global-muted-color) ) );
-    --dropdown-nav-sublist-item-hover-color:          hsl( var(--theme-color, var(--global-color) ) );
+    --dropdown-nav-divider-border:                    var(--theme-border, var(--global-border) );
+    --dropdown-nav-sublist-item-color:                var(--theme-muted-color, var(--global-muted-color) );
+    --dropdown-nav-sublist-item-hover-color:          var(--theme-color, var(--global-color) );
 
 }
 
@@ -68,7 +68,7 @@
     :where(.uk-dropdown) {
 
         --dropdown-dropbar-viewport-margin:           var(--global-medium-gutter);
-    
+
     }
 
 }

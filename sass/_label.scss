@@ -17,19 +17,19 @@
 
     --label-padding-vertical:                         2px;
     --label-padding-horizontal:                       calc( ( var(--global-xsmall-margin) + var(--global-small-margin) ) / 2);
-    --label-background:                               hsl( var(--theme-secondary-background, var(--global-secondary-background) ) );
+    --label-background:                               var(--theme-secondary-background, var(--global-secondary-background) );
     --label-line-height:                              var(--global-line-height);
     --label-font-size:                                var(--global-xsmall-font-size);
-    --label-color:                                    hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --label-color:                                    var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
     --label-border-radius:                            2px;
     --label-text-transform:                           uppercase;
 
-    --label-success-background:                       hsl( var(--theme-success-background, var(--global-success-background) ) );
-    --label-success-color:                            hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
-    --label-warning-background:                       hsl( var(--theme-warning-background, var(--global-warning-background) ) );
-    --label-warning-color:                            hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
-    --label-danger-background:                        hsl( var(--theme-danger-background, var(--global-danger-background) ) );
-    --label-danger-color:                             hsl( var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) ) );
+    --label-success-background:                       var(--theme-success-background, var(--global-success-background) );
+    --label-success-color:                            var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+    --label-warning-background:                       var(--theme-warning-background, var(--global-warning-background) );
+    --label-warning-color:                            var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+    --label-danger-background:                        var(--theme-danger-background, var(--global-danger-background) );
+    --label-danger-color:                             var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
 
 }
 

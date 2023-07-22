@@ -30,10 +30,10 @@
     --tile-large-padding-vertical:                   var(--global-large-margin);
     --tile-xlarge-padding-vertical:                  var(--global-xlarge-margin);
 
-    --tile-default-background:                       hsl(var(--global-background));
-    --tile-muted-background:                         hsl(var(--global-muted-background));
-    --tile-primary-background:                       hsl(var(--global-primary-background));
-    --tile-secondary-background:                     hsl(var(--global-secondary-background));
+    --tile-default-background:                       var(--global-background);
+    --tile-muted-background:                         var(--global-muted-background);
+    --tile-primary-background:                       var(--global-primary-background);
+    --tile-secondary-background:                     var(--global-secondary-background);
 
 }
 
