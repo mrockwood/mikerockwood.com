@@ -127,6 +127,16 @@ $media-low-contrast:                                  'prefers-contrast: less' !
 	--global-large-gutter:                            70px;
 
 	//
+	// Transitions
+	//
+
+	--global-xslow-transition:                        1000ms;
+	--global-slow-transition:                         500ms;
+	--global-medium-transition:                       250ms;
+	--global-fast-transition:                         150ms;
+	--global-xfast-transition:                        50ms;
+
+	//
 	// Controls
 	//
 
@@ -139,5 +149,20 @@ $media-low-contrast:                                  'prefers-contrast: less' !
 	//
 
 	--global-z-index:                                 1000;
+
+}
+
+
+@media ($media-motion-not-ok) {
+
+	:where(html) {
+
+		--global-xslow-transition:                    0ms;
+		--global-slow-transition:                     0ms;
+		--global-medium-transition:                   0ms;
+		--global-fast-transition:                     0ms;
+		--global-xfast-transition:                    0ms;
+
+	}
 
 }
