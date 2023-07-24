@@ -78,6 +78,7 @@
 	{% block head_general_meta %}
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="view-transition" content="same-origin" />
 	{%- endblock head_general_meta %}
 
 	{#- Page Meta -#}
@@ -244,7 +245,7 @@
 		<header class="uk-section uk-text-center">
 			<div class="uk-container uk-container-large">
 				{% if title %}
-				<h1 class="uk-heading-large uk-text-bold uk-text-uppercase uk-margin-small-bottom">
+				<h1 class="tm-page-title uk-heading-large uk-text-bold uk-text-uppercase uk-margin-small-bottom">
 					{{ title }}
 				</h1>
 				{% endif %}
