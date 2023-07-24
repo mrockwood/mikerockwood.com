@@ -265,7 +265,17 @@
 
 	}
 
-	.tm-page-title { transform: rotate(-2deg); }
+	.tm-page-title {
+
+		transform: rotate(-2deg);
+
+	}
+
+	.tm-home-hero-bg {
+
+		--theme-home-hero-circles: var(--orange-5);
+
+	}
 
 }
 
