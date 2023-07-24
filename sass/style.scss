@@ -79,6 +79,9 @@
 @import "dropdown.scss"; // After: Card, Nav
 @import "lightbox.scss"; // After: Close, Slidenav
 
+// Custom
+@import "theme-switcher.scss";
+
 // Utilities
 @import "animation.scss";
 @import "width.scss";

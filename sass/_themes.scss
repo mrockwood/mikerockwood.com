@@ -438,16 +438,3 @@
 	}
 
 }
-
-
-.themeswitcher .themeswitcher__item.uk-active {
-	margin-inline: calc(-1 * var(--offcanvas-bar-padding-horizontal));
-	background: var(--invert-surface-muted);
-	padding-inline: var(--offcanvas-bar-padding-horizontal);
-	margin-block-start: calc(0.5 * var(--list-large-margin-top));
-	margin-block-end: calc(-0.5 * var(--list-large-margin-top));
-	padding-block: calc(0.5 * var(--list-large-margin-top));
-}
-.themeswitcher .uk-nav-divider+.uk-active {
-	margin-block-start: calc(-0.5 * var(--list-large-margin-top)) !important;
-}
