@@ -14,6 +14,7 @@
 {% import "macros/toc.html" as toc -%}
 
 {#- Posts -#}
+{%- set posts = get_section(path="posts/_index.md") %}
 {%- set articles = get_section(path="posts/articles/_index.md") %}
 {%- set bookmarks = get_section(path="posts/bookmarks/_index.md") %}
 {%- set jams = get_section(path="posts/jams/_index.md") %}
@@ -244,16 +245,23 @@
 		{%- block masthead -%}
 		<header class="uk-section uk-text-center">
 			<div class="uk-container uk-container-large">
+
+				{%- block page_title %}
 				{% if title %}
-				<h1 class="tm-page-title uk-heading-large uk-text-bold uk-text-uppercase uk-margin-small-bottom">
+				<h1 class="tm-page-title uk-heading-large uk-text-bold uk-text-uppercase uk-margin-remove-top uk-margin-small-bottom">
 					{{ title }}
 				</h1>
 				{% endif %}
+				{% endblock page_title %}
+
+				{%- block page_desc %}
 				{% if description %}
 				<p class="uk-width-large uk-margin-auto uk-margin-small-top">
 					{{ description }}
 				</p>
 				{% endif %}
+				{% endblock page_desc %}
+
 				{%- block subnav %}{% endblock subnav %}
 			</div>
 		</header>

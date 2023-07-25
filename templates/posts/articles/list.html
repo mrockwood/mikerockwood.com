@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{%- block page_title %}
+	<p class="uk-margin-remove">
+		<a href="{{ get_url(path='@/posts/_index.md') }}" class="uk-inline">
+			<span uk-icon="icon: arrow-left;" class="uk-margin-xsmall-right"></span>
+			All Posts
+		</a>
+	</p>
+	{{- super() -}}
+{% endblock page_title %}
+
 {%- block content %}
 <section class="uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
 	<div class="uk-container">
