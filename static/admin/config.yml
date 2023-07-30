@@ -15,7 +15,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
@@ -23,14 +23,14 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "articles"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["articles"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Featured Image", name: "featuredImg", widget: "string"}
-          - {label: "Featured Image Caption", name: "featuredImgCaption", widget: "markdown"}
+          - {label: "Featured Image", name: "featuredImg", widget: "string", required: false}
+          - {label: "Featured Image Caption", name: "featuredImgCaption", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "bookmarks"
     label: "Bookmarks"
@@ -42,15 +42,15 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "bookmarks"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["bookmarks"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -65,15 +65,15 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "favorites"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["favorites"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -90,15 +90,15 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "jams"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["jams"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -116,16 +116,16 @@ collections:
     identifier_field: "body"
     editor:
       preview: false
-    slug: "{{year}}-{{month}}-{{day}}-{{{uuid}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{uuid_short}}"
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "notes"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["notes"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
@@ -135,7 +135,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Updated", name: "updated", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text" }
@@ -151,15 +151,15 @@ collections:
     identifier_field: "body"
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "hidden"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "replies"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["replies"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -175,15 +175,15 @@ collections:
     filter: {field: "type", value: "repost"}
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "reposts"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["reposts"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -199,15 +199,15 @@ collections:
     identifier_field: "body"
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: "rsvps"}
-          - {label: "Tags", name: "tags", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["rsvps"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
@@ -226,7 +226,7 @@ collections:
     media_folder: ''
     public_folder: ''
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
