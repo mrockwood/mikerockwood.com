@@ -11,15 +11,15 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-theme-nav']) {
+:where([class*='uk-theme-']) {
 
-	--theme-button-color:                             var(--text-color);
-	--theme-button-hover-color:                       var(--text-color);
-	--theme-button-active-color:                      var(--text-color);
+	// --theme-button-color:                             var(--text-color);
+	// --theme-button-hover-color:                       var(--text-color);
+	// --theme-button-active-color:                      var(--text-color);
 
-	--theme-button-background:                        var(--surface-default);
-	--theme-button-hover-background:                  var(--surface-default);
-	--theme-button-active-background:                 var(--surface-default);
+	// --theme-button-background:                        var(--surface-default);
+	// --theme-button-hover-background:                  var(--surface-default);
+	// --theme-button-active-background:                 var(--surface-default);
 
 	--theme-button-border:                            2px solid var(--border-color);
 
@@ -33,25 +33,6 @@
 /* Buttons
  ========================================================================== */
 
-// .uk-nav-theme > li > button[data-theme] {
-// 	background: var(--theme-button-background);
-// 	border: var(--theme-button-border);
-// 	color: var(--theme-button-color);
-// }
-
-/* Hover */
-// .uk-nav-theme > li > button[data-theme]:hover {
-// 	background: var(--theme-button-hover-background);
-// 	color: var(--theme-button-hover-color);
-// }
-
-/* Active
-.uk-nav-theme button[data-theme]:active {
-	background: var(--theme-button-active-background);
-	color: var(--theme-button-active-color);
-}*/
-
-
 /* Active */
 .uk-theme-nav > li.uk-active {
 	background: var(--invert-surface-muted);
@@ -60,12 +41,23 @@
 }
 
 .uk-theme-nav .uk-nav-divider + li.uk-active {
-	margin-block-start: calc(-0.5 * var(--list-large-margin-top)) !important;
+	margin-block-start: calc(-0.5 * var(--list-large-margin-top));
 }
 
 
 /* Buttons
  ========================================================================== */
+
+.uk-theme-button {
+	--button-default-color: var(--text-color);
+	--button-default-hover-color: var(--text-color);
+	--button-default-active-color: var(--text-color);
+	--button-default-background: var(--surface-default);
+	--button-default-hover-background: var(--surface-default);
+	--button-default-active-background: var(--surface-default);
+
+	border: var(--theme-button-border);
+}
 
 
 /* Swatches
