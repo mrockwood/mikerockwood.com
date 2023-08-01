@@ -1,7 +1,9 @@
 // Name:            Theme switcher
 // Description:     Styles for the off-canvas theme switcher
 //
-// Component:       `uk-theme-switcher`
+// Component:       `uk-theme-nav`
+//                  `uk-theme-button`
+//                  `uk-theme-swatch`
 //
 // ========================================================================
 
@@ -9,49 +11,82 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-theme-switcher']) {
+:where([class*='uk-theme-nav']) {
 
-    --form-range-track-height:                        3px;
-    --form-range-track-background:                    hsl( var(--theme-muted-background, var(--global-muted-background) ) / 0.8 );
-    --form-range-track-focus-background:              hsl( var(--theme-muted-background, var(--global-muted-background) ) );
+	--theme-button-color:                             var(--text-color);
+	--theme-button-hover-color:                       var(--text-color);
+	--theme-button-active-color:                      var(--text-color);
 
-    --form-range-thumb-height:                        15px;
-    --form-range-thumb-width:                         var(--form-range-thumb-height);
-    --form-range-thumb-border-radius:                 500px;
-    --form-range-thumb-background:                    hsl( var(--theme-color, var(--global-color) ) );
+	--theme-button-background:                        var(--surface-default);
+	--theme-button-hover-background:                  var(--surface-default);
+	--theme-button-active-background:                 var(--surface-default);
+
+	--theme-button-border:                            2px solid var(--border-color);
 
 }
 
 
 /* ========================================================================
-   Component: Form Range
+   Component: Theme Switcher
  ========================================================================== */
 
-/*
- * Items
- */
+/* Buttons
+ ========================================================================== */
 
-.uk-theme-switcher li.uk-active {
+// .uk-nav-theme > li > button[data-theme] {
+// 	background: var(--theme-button-background);
+// 	border: var(--theme-button-border);
+// 	color: var(--theme-button-color);
+// }
+
+/* Hover */
+// .uk-nav-theme > li > button[data-theme]:hover {
+// 	background: var(--theme-button-hover-background);
+// 	color: var(--theme-button-hover-color);
+// }
+
+/* Active
+.uk-nav-theme button[data-theme]:active {
+	background: var(--theme-button-active-background);
+	color: var(--theme-button-active-color);
+}*/
+
+
+/* Active */
+.uk-theme-nav > li.uk-active {
 	background: var(--invert-surface-muted);
 	margin: calc(0.5 * var(--list-large-margin-top)) calc(-1 * var(--offcanvas-bar-padding-horizontal)) calc(-0.5 * var(--list-large-margin-top));
 	padding: calc(0.5 * var(--list-large-margin-top)) var(--offcanvas-bar-padding-horizontal);
 }
 
-/* First */
-.uk-theme-switcher .uk-nav-divider + .uk-active {
-	margin-block-start: calc(-0.5 * var(--list-large-margin-top));
-}
-
-
-
-.themeswitcher .themeswitcher__item.uk-active {
-	margin-inline: calc(-1 * var(--offcanvas-bar-padding-horizontal));
-	background: var(--invert-surface-muted);
-	padding-inline: var(--offcanvas-bar-padding-horizontal);
-	margin-block-start: calc(0.5 * var(--list-large-margin-top));
-	margin-block-end: calc(-0.5 * var(--list-large-margin-top));
-	padding-block: calc(0.5 * var(--list-large-margin-top));
-}
-.themeswitcher .uk-nav-divider+.uk-active {
+.uk-theme-nav .uk-nav-divider + li.uk-active {
 	margin-block-start: calc(-0.5 * var(--list-large-margin-top)) !important;
 }
+
+
+/* Buttons
+ ========================================================================== */
+
+
+/* Swatches
+ ========================================================================== */
+
+.uk-theme-swatch {
+	margin-top: calc(-1 * var(--global-margin));
+}
+
+/* Items */
+.uk-theme-swatch > * {
+	border: 2px solid var(--border-color);
+	border-radius: 5px;
+	display: inline-block;
+	height: 1.25rem;
+	vertical-align: middle;
+	width: 1.25rem;
+}
+
+.uk-theme-swatch > :nth-child(1) { background-color: var(--text-color); }
+.uk-theme-swatch > :nth-child(2) { background-color: var(--surface-primary); }
+.uk-theme-swatch > :nth-child(3) { background-color: var(--surface-muted); }
+.uk-theme-swatch > :nth-child(4) { background-color: var(--invert-surface-default); }
+.uk-theme-swatch > :nth-child(5) { background-color: var(--link-color); }

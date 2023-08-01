@@ -5,13 +5,16 @@ const SELECTORS = {
     // closeBtn: '.js-themepicker-close',
     // navToggleBtn: '.js-nav-toggle'
 }
+
 const CLASSES = {
     open: 'uk-open',
     active: 'uk-active'
 }
+
 const THEME_STORAGE_KEY = 'theme'
 
 class ThemePicker {
+
     constructor() {
         this.isOpen = false
         this.activeTheme = 'default'
@@ -130,6 +133,7 @@ class ThemePicker {
     //         this.toggleBtn.focus()
     //     }
     // }
+
 }
 
 if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
