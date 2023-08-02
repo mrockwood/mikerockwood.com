@@ -5,8 +5,141 @@
 
 
 @font-face {
-    font-family: 'Rubik';    
-    font-weight: 100 999;
-    src: url('fonts/Rubik[wght].woff2') format('woff2-variations');
-    font-display: swap;
+	font-family: 'Rubik';
+	font-weight: 100 999;
+	src: url('fonts/Rubik[wght].woff2') format('woff2-variations');
+	font-display: fallback;
+}
+
+// @font-face {
+//     font-family: 'Rubik 80s Fade';
+//     font-weight: 400;
+//     src: url('fonts/Rubik80sFade-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+@font-face {
+	font-family: 'Rubik Beastly';
+	font-weight: 100 999;
+	src: url('fonts/RubikBeastly-Regular.woff2') format('woff2');
+	font-display: fallback;
+}
+
+// @font-face {
+//     font-family: 'Rubik Bubbles';
+//     font-weight: 400;
+//     src: url('fonts/RubikBubbles-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Burned';
+//     font-weight: 400;
+//     src: url('fonts/RubikBurned-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+@font-face {
+	font-family: 'Rubik Dirt';
+	font-weight: 400;
+	src: url('fonts/RubikDirt-Regular.woff2') format('woff2');
+	font-display: fallback;
+}
+
+// @font-face {
+//     font-family: 'Rubik Distressed';
+//     font-weight: 400;
+//     src: url('fonts/RubikDistressed-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Gemstones';
+//     font-weight: 400;
+//     src: url('fonts/RubikGemstones-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Glitch';
+//     font-weight: 400;
+//     src: url('fonts/RubikGlitch-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Iso';
+//     font-weight: 400;
+//     src: url('fonts/RubikIso-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Marker Hatch';
+//     font-weight: 400;
+//     src: url('fonts/RubikMarkerHatch-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Maze';
+//     font-weight: 400;
+//     src: url('fonts/RubikMaze-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Microbe';
+//     font-weight: 400;
+//     src: url('fonts/RubikMicrobe-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Moonrocks';
+//     font-weight: 400;
+//     src: url('fonts/RubikMoonrocks-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Pixels';
+//     font-weight: 400;
+//     src: url('fonts/RubikPixels-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Puddles';
+//     font-weight: 400;
+//     src: url('fonts/RubikPuddles-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Spray Paint';
+//     font-weight: 400;
+//     src: url('fonts/RubikSprayPaint-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Storm';
+//     font-weight: 400;
+//     src: url('fonts/RubikStorm-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+// @font-face {
+//     font-family: 'Rubik Vinyl';
+//     font-weight: 400;
+//     src: url('fonts/RubikVinyl-Regular.woff2') format('woff2');
+//     font-display: fallback;
+// }
+
+@font-face {
+	font-family: 'Rubik Wet Paint';
+	font-weight: 400;
+	src: url('fonts/RubikWetPaint-Regular.woff2') format('woff2');
+	font-display: fallback;
 }

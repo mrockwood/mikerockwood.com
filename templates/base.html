@@ -79,6 +79,7 @@
 	{% block head_general_meta %}
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="view-transition" content="same-origin" />
 	{%- endblock head_general_meta %}
 
 	{#- Page Meta -#}
@@ -97,12 +98,18 @@
 
 	{#- Fonts -#}
 	{% block head_fonts %}
-	<link rel="preload" href="{{ get_url(path='/fonts/Rubik[wght].woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="{{ get_url(path='/fonts/Rubik[wght].woff2') }}" as="font" type="font/woff2" crossorigin>
 	{%- endblock head_fonts %}
 
 	{#- Styles -#}
 	{% block head_styles %}
-	<link rel="preload stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
+	<link rel="preload" href="{{ get_url(path='style.css', cachebust=true) }}" as="style">
+	<link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
+	<script>
+        // if there's a theme id in localstorage, use it on the <html>
+        localStorage.getItem('theme') &&
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+    </script>
 	{%- endblock head_styles %}
 
 	{#- Favicons -#}
@@ -210,20 +217,20 @@
 						{%- endfor -%}
 					</ul>
 					{% endif -%}
-					<div class="uk-navbar-item uk-hidden@m">
-						<button uk-toggle="target: #js-mobile-menu" class="uk-icon-button" uk-icon aria-label="Main Menu">
+					<div class="uk-hidden@m">
+						<button uk-toggle="target: #js-mobile-menu" class="uk-icon-button uk-icon" uk-icon aria-label="Main Menu">
 							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 							</svg>
 						</button>
 					</div>
-					{# <div class="uk-navbar-item">
+					<div class="uk-navbar-item">
 						<button uk-toggle="target: #js-theme-menu" class="uk-icon-button uk-icon" aria-label="Theme Menu">
 							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
 							</svg>
 						</button>
-					</div> #}
+					</div>
 				</div>
 			</nav>
 		</div>
@@ -241,7 +248,7 @@
 
 				{%- block page_title %}
 				{% if title %}
-				<h1 class="uk-heading-large uk-text-bold uk-text-uppercase uk-margin-remove-top uk-margin-small-bottom">
+				<h1 class="tm-page-title uk-heading-large uk-text-bold uk-text-uppercase uk-margin-remove-top uk-margin-small-bottom">
 					{{ title }}
 				</h1>
 				{% endif %}
@@ -361,14 +368,129 @@
 
 
 	{#- Theme Menu -#}
-	{# {% block foot_theme %}
-	<div id="js-theme-menu" uk-offcanvas="flip: true; mode: push;">
+	{% block foot_theme %}
+	<div id="js-theme-menu" uk-offcanvas="overlay: true; flip: true; mode: push;">
 		<div class="uk-offcanvas-bar">
 			<button class="uk-offcanvas-close" type="button" uk-close></button>
-			test
+			<ul class="uk-theme-nav uk-nav uk-nav-primary uk-list-large uk-margin-top">
+				<li class="uk-nav-header">Select a Theme</li>
+				<li class="uk-nav-divider uk-margin-bottom"></li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-auto"
+						aria-label="Automatically select color theme based on user preferences"
+					>
+						Auto
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-light"
+						aria-label="Select light color theme"
+					>
+						Light
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-dark"
+						aria-label="Select dark color theme"
+					>
+						Dark
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-grunge"
+						aria-label="Select grunge color theme"
+					>
+						Grunge
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-metal"
+						aria-label="Select metal color theme"
+					>
+						Metal
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-punk"
+						aria-label="Select punk color theme"
+					>
+						Punk
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<!-- <li class="themeswitcher__item">
+					<button
+						class="js-themepicker-themeselect themepicker__btn uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-psychedelic"
+						aria-label="Select psychedelic color theme"
+					>
+						Psychedelic
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li> -->
+			</ul>
 		</div>
 	</div>
-	{% endblock foot_theme %} #}
+	{% endblock foot_theme %}
 
 
 	{#- h-card -#}
@@ -405,6 +527,7 @@
 	{% block foot_scripts %}
 	<script src="{{ get_url(path="/scripts/uikit.min.js", cachebust=true) }}" defer="defer"></script>
 	<script src="{{ get_url(path="/scripts/uikit-icons.min.js", cachebust=true) }}" defer="defer"></script>
+	<script src="{{ get_url(path="/scripts/theme-picker.js", cachebust=true) }}" defer="defer"></script>
 	{% endblock foot_scripts %}
 
 

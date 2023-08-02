@@ -260,12 +260,13 @@
  */
 
 .uk-offcanvas-container {
-    position: relative;
-    inset-inline-start: 0;
-    transition: left 0.3s ease-out;
-    /* 1 */
-    box-sizing: border-box;
-    inline-size: 100%;
+	position: relative;
+	inset-inline-start: 0;
+	transition: left 0.3s ease-out;
+	/* 1 */
+	box-sizing: border-box;
+	inline-size: 100vw;
+	overflow: hidden;
 }
 
 /*

@@ -11,29 +11,30 @@
 		xmlns='http://www.w3.org/2000/svg'
 		width='100%'
 		height='100%'
-		class="uk-position-cover uk-height-1-1"
+		class="tm-home-hero-bg uk-position-cover uk-height-1-1"
 	>
 		<style>
-			.home-hero-bg circle {
+			.tm-home-hero-bg circle {
 				filter: drop-shadow( 0 0 10vw color-mix(in oklab, var(--surface-primary), transparent 90%) );
 				cx: 50%;
 				cy: 100%;
 			}
 			@media (min-width: 640px) {
-				.home-hero-bg circle {
+				.tm-home-hero-bg circle {
 					cx: 0%;
 					cy: 50%;
 				}
 			}
 		</style>
-		<g class="home-hero-bg">
-			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 95%)' cx='0%' cy='50%' r='clamp(375px, 50vw, 750px)'/>
-			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 90%)' cx='0%' cy='50%' r='clamp(300px, 40vw, 600px)'/>
-			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 85%)' cx='0%' cy='50%' r='clamp(225px, 30vw, 450px)'/>
-			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 80%)' cx='0%' cy='50%' r='clamp(150px, 20vw, 300px)'/>
-			<circle fill='color-mix(in oklab, var(--surface-primary), transparent 75%)' cx='0%' cy='50%' r='clamp(75px, 10vw, 150px)'/>
+		<g class="">
+			<circle fill='color-mix(in oklab, var(--theme-home-hero-circles, var(--surface-primary)), transparent 95%)' cx='0%' cy='50%' r='clamp(375px, 50vw, 750px)'/>
+			<circle fill='color-mix(in oklab, var(--theme-home-hero-circles, var(--surface-primary)), transparent 90%)' cx='0%' cy='50%' r='clamp(300px, 40vw, 600px)'/>
+			<circle fill='color-mix(in oklab, var(--theme-home-hero-circles, var(--surface-primary)), transparent 85%)' cx='0%' cy='50%' r='clamp(225px, 30vw, 450px)'/>
+			<circle fill='color-mix(in oklab, var(--theme-home-hero-circles, var(--surface-primary)), transparent 80%)' cx='0%' cy='50%' r='clamp(150px, 20vw, 300px)'/>
+			<circle fill='color-mix(in oklab, var(--theme-home-hero-circles, var(--surface-primary)), transparent 75%)' cx='0%' cy='50%' r='clamp(75px, 10vw, 150px)'/>
 		</g>
 	</svg>
+	<!-- <img src="{{ config.base_url | safe }}/images/home-anarchy-symbol.svg" class="uk-position-cover uk-height-1-1"> -->
 
 	<div class="uk-width-1-1">
 		<div class="uk-container uk-container-large">
@@ -41,7 +42,7 @@
 				<div class="uk-grid-item-match uk-width-1-1@m">
 					<div class="uk-flex">
 						<div class="uk-tile uk-width-1-1 uk-background-norepeat uk-background-center-center" data-src="{{ config.base_url | safe }}/images/home-hero-texture.svg" uk-img uk-parallax="bgy: -10,-90">
-							<h1>
+							<h1 class="tm-page-title">
 								<div class="uk-h6 uk-heading-line uk-margin-small uk-width-medium@m uk-text-left@m uk-text-center uk-text-uppercase uk-text-tracking-small" uk-parallax="opacity: 1,0; media: @s; viewport: 0.95;">
 									<span>Front-End Developer</span>
 								</div>
