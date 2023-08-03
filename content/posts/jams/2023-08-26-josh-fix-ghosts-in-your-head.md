@@ -6,8 +6,8 @@ taxonomies:
   categories:
     - jams
   tags:
-    - Rock
     - Power Pop
+    - Piano Rock
 extra:
   service: soundcloud
   id: 1007802916

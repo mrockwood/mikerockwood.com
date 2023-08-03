@@ -7,7 +7,7 @@ taxonomies:
     - jams
   tags:
     - Indie Rock
-    - Alternative
+    - Alternative Rock
     - Power Pop
 extra:
   service: bandcamp

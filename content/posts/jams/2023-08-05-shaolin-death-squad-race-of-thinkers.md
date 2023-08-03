@@ -8,6 +8,7 @@ taxonomies:
   tags:
     - Progressive Metal
     - Avant-Garde Metal
+    - Progressive Rock
 extra:
   service: soundcloud
   id: 17653722

@@ -7,7 +7,7 @@ taxonomies:
     - jams
   tags:
     - Indie Rock
-    - Alternative
+    - Art Rock
 extra:
   service: bandcamp
   id: "1701520379"
