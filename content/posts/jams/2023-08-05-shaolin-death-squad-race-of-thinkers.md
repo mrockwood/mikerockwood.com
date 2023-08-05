@@ -1,7 +1,7 @@
 ---
 title: Shaolin Death Squad - Race of the Thinkers
 date: 2023-08-05T06:55:54.000Z
-draft: true
+draft: false
 taxonomies:
   categories:
     - jams

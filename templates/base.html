@@ -90,9 +90,13 @@
 
 	{#- Scripts -#}
 	{% block head_scripts %}
-	<script type="module">
+	<script>
+		// add class if JS is enabled
 		document.documentElement.classList.remove('no-js');
 		document.documentElement.classList.add('js');
+		// if there's a theme id in localstorage, use it on the <html>
+		localStorage.getItem('theme') &&
+		document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
 	</script>
 	{%- endblock head_scripts %}
 
@@ -105,11 +109,6 @@
 	{% block head_styles %}
 	<link rel="preload" href="{{ get_url(path='style.css', cachebust=true) }}" as="style">
 	<link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
-	<script>
-        // if there's a theme id in localstorage, use it on the <html>
-        localStorage.getItem('theme') &&
-        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
-    </script>
 	{%- endblock head_styles %}
 
 	{#- Favicons -#}
