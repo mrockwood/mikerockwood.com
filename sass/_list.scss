@@ -40,7 +40,7 @@
 
     --list-divider-margin-top:                        var(--global-small-margin);
     --list-divider-border-width:                      var(--global-border-width);
-    --list-divider-border:                            var(--global-border);
+    --list-divider-border:                            var(--theme-border, var(--global-border) );
 
     --list-striped-padding-vertical:                  var(--global-small-margin);
     --list-striped-padding-horizontal:                var(--global-small-margin);

@@ -14,7 +14,7 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-accordion']) {
+:where(.uk-accordion) {
 
     --accordion-item-margin-top:                     var(--global-margin);
 
@@ -22,6 +22,10 @@
     --accordion-title-line-height:                   1.4;
     --accordion-title-color:                         var(--theme-emphasis-color, var(--global-emphasis-color) );
     --accordion-title-hover-color:                   var(--theme-color, var(--global-color) );
+
+	--accordion-divider-margin-top:                  var(--global-margin);
+    --accordion-divider-border-width:                var(--global-border-width);
+    --accordion-divider-border:                      var(--theme-border, var(--global-border) );
 
     --accordion-content-margin-top:                  var(--global-margin);
 
@@ -43,6 +47,16 @@
 
 .uk-accordion > :nth-child(n+2) {
     margin-block-start: var(--accordion-item-margin-top);
+}
+
+
+/* Divider
+ ========================================================================== */
+
+.uk-accordion-divider > :nth-child(n+2) {
+	border-block-start: var(--accordion-divider-border-width) solid var(--accordion-divider-border);
+    margin-block-start: var(--accordion-divider-margin-top);
+	padding-block-start: var(--accordion-divider-margin-top);
 }
 
 
