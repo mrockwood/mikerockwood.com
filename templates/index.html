@@ -175,6 +175,44 @@
 </div>
 
 
+<div class="uk-overflow-hidden uk-section">
+	<div class="uk-container uk-container-large">
+		<div class="uk-grid uk-grid-large uk-child-width-1-4@m" uk-grid>
+
+			<div>
+				<article class="uk-card uk-card-body uk-background-muted">
+					test
+				</article>
+			</div>
+
+			{% if jams.pages %}
+			{% for jam in jams.pages %}
+			{% if loop.first %}
+			<div>
+				<article class="uk-card uk-background-muted">
+					<div class="uk-card-media-top">
+						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
+					</div>
+					<div class="uk-card-body">
+						<h3 class="uk-card-title">{{ jam.title }}</h3>
+					</div>
+				</article>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
+			<div>
+				<article class="uk-card uk-card-body uk-background-muted">
+					test
+				</article>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
 {# <section class="uk-section">
 	<div class="uk-container uk-container-large">
 		{% for year, pages in articles.pages | group_by(attribute="year") %}
