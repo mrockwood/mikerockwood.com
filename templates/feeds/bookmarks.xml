@@ -33,7 +33,7 @@
         <published>{{ p.date | date(format="%+", timezone="America/Denver") }}</published>
         <updated>{{ p.updated | default(value=p.date) | date(format="%+", timezone="America/Denver") }}</updated>
         <link rel="alternate" href="{{ p.permalink | safe }}" type="text/html"/>
-        <category term="note" scheme="{{ get_url(path='@/posts/bookmarks/_index.md') }}" label="Bookmark" />
+        <category term="bookmark" scheme="{{ get_url(path='@/posts/bookmarks/_index.md') }}" label="Bookmark" />
         <id>{{ p.permalink | safe }}</id>
         <content type="html">{{ p.content }}</content>
     </entry>

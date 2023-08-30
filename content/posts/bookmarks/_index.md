@@ -4,4 +4,7 @@ template: posts/bookmarks/list.html
 page_template: posts/bookmarks/single.html
 paginate_by: 10
 sort_by: date
+transparent: true
+extra:
+  singular: Bookmark
 ---
