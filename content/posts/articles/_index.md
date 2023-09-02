@@ -9,4 +9,5 @@ transparent: true
 insert_anchor_links: right
 extra:
   singular: Article
+  feed: feeds/articles.xml
 ---

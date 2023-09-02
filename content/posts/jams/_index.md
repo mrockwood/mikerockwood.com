@@ -7,4 +7,5 @@ sort_by: date
 transparent: true
 extra:
   singular: Jam
+  feed: feeds/jams.xml
 ---

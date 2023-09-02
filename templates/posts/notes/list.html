@@ -11,10 +11,12 @@
 {% endblock page_title %}
 
 {%- block subnav %}
-<a href="{{ get_url(path='@/feeds/notes.xml.md') | trim_end_matches(pat='/') }}" class="uk-button uk-button-small uk-button-default uk-flex-inline uk-flex-middle">
-	<span>Subscribe</span>
-	<span uk-icon="icon: rss; ratio: 0.75" class="uk-margin-xsmall-left uk-icon"></span>
-</a>
+{% if section.extra.feed %}
+	<a href="{{ get_url(path=section.extra.feed) }}" class="uk-button uk-button-small uk-button-default uk-flex-inline uk-flex-middle">
+		<span>Subscribe</span>
+		<span uk-icon="icon: rss; ratio: 0.75" class="uk-margin-xsmall-left uk-icon"></span>
+	</a>
+{% endif %}
 {% endblock subnav %}
 
 {%- block content %}

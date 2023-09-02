@@ -7,4 +7,5 @@ sort_by: date
 transparent: true
 extra:
   singular: Note
+  feed: feeds/notes.xml
 ---
