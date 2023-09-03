@@ -57,29 +57,6 @@ collections:
         fields:
           - {label: "Link", name: "bookmarkOf", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "favorites"
-    label: "Favorites"
-    label_singular: "Favorite"
-    icon: "favorite"
-    folder: "content/posts/favorites/"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
-    fields:
-      - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Title", name: "title", widget: "string"}
-      - label: "Taxonomies"
-        name: "taxonomies"
-        widget: "object"
-        fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["favorites"]}
-          - {label: "Tags", name: "tags", widget: "list", required: false}
-      - label: "Extra"
-        name: "extra"
-        widget: "object"
-        fields:
-          - {label: "Link", name: "likeOf", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
   - name: "jams"
     label: "Jams"
     label_singular: "Jam"
@@ -107,6 +84,29 @@ collections:
           - {label: "ID", name: "id", widget: "string"}
           - {label: "Thumbnail", name: "thumbnail", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "likes"
+    label: "Likes"
+    label_singular: "Like"
+    icon: "favorite"
+    folder: "content/posts/likes/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "hidden", default: ["likes"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "likeOf", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "notes"
     label: "Notes"
     label_singular: "Note"

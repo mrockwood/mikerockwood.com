@@ -18,7 +18,7 @@ feed_filename = "atom.xml"
 
 taxonomies = [
     {name = "categories", feed = true, render = false},
-    {name = "tags", feed = true, render = false},
+    {name = "tags", feed = false, render = false},
     {name = "tasks", feed = false, render = false},
 ]
 
