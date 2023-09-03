@@ -11,8 +11,9 @@
 {% endblock page_title %}
 
 {%- block subnav %}
-{% if section.extra.feed %}
-	<a href="{{ get_url(path=section.extra.feed) }}" class="uk-button uk-button-small uk-button-default uk-flex-inline uk-flex-middle">
+{# There has to be a better way to get the feed URL #}
+{% if section.generate_feed %}
+	<a href="{{ current_url }}atom.xml" class="uk-button uk-button-small uk-button-default uk-flex-inline uk-flex-middle">
 		<span>Subscribe</span>
 		<span uk-icon="icon: rss; ratio: 0.75" class="uk-margin-xsmall-left uk-icon"></span>
 	</a>

@@ -17,7 +17,7 @@ feed_filename = "atom.xml"
 #ignored_content = ["*.{graphml,xlsx}", "temp.*"]
 
 taxonomies = [
-    {name = "categories", feed = false, render = false},
+    {name = "categories", feed = true, render = false},
     {name = "tags", feed = false, render = false},
     {name = "tasks", feed = false, render = false},
 ]
