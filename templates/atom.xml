@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}" xml:base="{{ config.base_url | escape_xml | safe }}">
-    <title>{{ config.title }} - All Posts</title>
-    <subtitle>All of my posts.</subtitle>
+    <title>{{ config.title }}
+    {%- if term %} - {{ term.name }}
+    {%- elif section.title %} - {{ section.title }}
+	{%- else %} - All Posts
+    {%- endif -%}
+    </title>
+    <subtitle>
+	{%- if section.description %}
+		{{ section.description }}
+	{%- else %}
+		{{ config.description }}
+	{%- endif %}
+	</subtitle>
+	<id>
+	{%- if section -%}
+		{{ section.permalink | escape_xml | safe }}
+	{%- else -%}
+		{{ config.base_url | escape_xml | safe }}
+	{%- endif -%}
+	</id>
     {%- if not feed_url is defined %}
         {%- set feed_url = page.permalink | trim_end_matches(pat="/") %}
     {%- endif %}
     <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
-    <link href="{{ get_url(path='@/posts/_index.md') }}" rel="alternate"/>
+    {# <link href="{{ get_url(path='@/posts/_index.md') }}" rel="alternate"/> #}
+	<link href="
+      {%- if section -%}
+        {{ section.permalink | escape_xml | safe }}
+      {%- else -%}
+        {{ config.base_url | escape_xml | safe }}
+      {%- endif -%}
+    " rel="alternate" />
     <author>
         <name>{{ config.extra.author.name }}</name>
         <uri>{{ config.base_url | escape_xml | safe }}</uri>
@@ -14,9 +39,8 @@
     </author>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>{{ last_updated | default(value=now()) | date(format="%+") }}</updated>
-    <id>{{ get_url(path='@/posts/_index.md') }}</id>
-	{%- set posts = get_section(path="posts/_index.md") %}
-	{%- for p in posts.pages %}
+
+	{%- for p in pages %}
 
 		{%- if p.taxonomies.categories -%}
 			{%- set category = p.taxonomies.categories.0 -%}
@@ -24,7 +48,7 @@
 			{%- set section = get_section(path='posts/'~category~'/_index.md') %}
 			{%- if section.extra.singular %}{%- set category = section.extra.singular -%}{% endif %}
 		{%- endif %}
-
+	{%- if p.relative_path is starting_with("posts/") %}
 	<entry>
 		<id>{{ p.permalink | safe }}</id>
 		<link href="{{ p.permalink | safe }}" type="text/html"/>
@@ -59,5 +83,6 @@
 		<link rel="alternate" href="{{ p.extra.bookmarkOf | safe }}" />
 		{%- endif %}
     </entry>
+	{%- endif %}
 	{%- endfor %}
 </feed>
