@@ -5,7 +5,7 @@
 
 <main id="content">
 
-<div class="uk-section uk-section-large uk-flex uk-flex-middle uk-position-relative uk-height-viewport">
+<section class="uk-section uk-section-large uk-flex uk-flex-middle uk-position-relative uk-height-viewport">
 
 	<svg
 		xmlns='http://www.w3.org/2000/svg'
@@ -61,10 +61,10 @@
 		</div>
 	</div>
 
-</div>
+</section>
 
 
-<div id="works" class="uk-section uk-section-secondary uk-section-large">
+<section id="works" class="uk-section uk-section-secondary uk-section-large">
 	<div class="uk-container uk-container-large">
 		<h2 class="uk-heading-small uk-position-relative" uk-scrollspy-class>Featured project</h2>
 		<div class="uk-grid-large uk-margin-medium-top uk-grid uk-grid-stack" uk-grid>
@@ -126,12 +126,12 @@
 			</a>
 		</div>
 	</div>
-</div>
+</section>
 
 
 {%- set currentYear = now() | date(format="%Y") | int() %}
 
-<div class="uk-overflow-hidden uk-section uk-section-large">
+<section class="uk-overflow-hidden uk-section uk-section-large">
 	<div class="uk-container uk-container-large">
 		<div class="uk-grid uk-grid-large uk-flex-between" uk-grid>
 			<div class="uk-width-2-5@m uk-first-column">
@@ -172,121 +172,52 @@
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 
-<div class="uk-overflow-hidden uk-section">
+<section class="uk-section uk-section-large" style="">
 	<div class="uk-container uk-container-large">
 
-		<h2 class="uk-heading-small" hidden>Latest Posts</h2>
+		<div class="uk-grid uk-grid-large uk-flex-between" uk-grid>
+			<div class="uk-width-2-5@m uk-first-column">
+				<h2 class="uk-heading-small">Latest posts</h2>
+			</div>
 
-		<div class="uk-grid uk-grid-large" uk-grid>
-
-			{% if bookmarks.pages %}
 			<div class="uk-width-1-2@m">
-				{% for bookmark in bookmarks.pages %}
-				{% if loop.index < 3 %}
-				<article class="uk-card uk-card-default uk-card-hover uk-margin-medium">
-					<a href="{{ bookmark.extra.bookmarkOf }}" class="uk-card-body uk-link-reset">
-						<div class="uk-grid uk-flex-middle">
-							<div class="uk-width-expand">
-								<h3 class="uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
-								<p class="uk-text-meta uk-margin-xsmall">
-									{{ bookmark.extra.bookmarkOf }}
-								</p>
-							</div>
-							<div class="uk-width-auto">
-								<span
-									class="uk-icon-button"
-									uk-icon="link"
-									style="
-										--icon-button-background: var(--global-background);
-										--icon-button-hover-background: var(--global-background);
-									"
-								>
-								</span>
-							</div>
-						</div>
+
+		<ul class="uk-list uk-list-divider uk-margin-medium" style="--list-divider-margin-top: 1.75rem;">
+		{%- for page in paginator.pages %}
+			<li>
+
+				<div class="uk-position-relative uk-margin-small uk-margin-remove-adjacent">
+					{%- if page.taxonomies.categories %}
+						{%- for category in page.taxonomies.categories %}
+							<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label uk-margin-small-right" rel="tag">{{ category }}</a>
+						{% endfor %}
+					{% endif %}
+
+					<a class="uk-link-muted uk-text-small" href="{{ page.permalink }}">
+						<time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+							{{ page.date | date(format="%d %b %Y") }}
+						</time>
 					</a>
-				</article>
+				</div>
+
+				{% if page.title %}
+					<h3 class="uk-position-relative"><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+				{% else %}
+					{{ page.content | safe }}
 				{% endif %}
-				{% endfor %}
-			</div>
-			{% endif %}
 
-			{% if notes.pages %}
-			<div class="uk-width-1-2@m">
-				{% for note in notes.pages %}
-				{% if loop.index < 3 %}
-				<article class="h-entry uk-card uk-card-body uk-background-muted uk-margin-medium">
-					<p>
-						<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
-							<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-								{{ note.date | date(format="%d %b %Y at %H:%M") }}
-							</time>
-						</a>
-					</p>
-					<div class="p-name e-content uk-margin-remove-last-child">
-						{{ note.content | safe }}
-					</div>
-				</article>
-				{% endif %}
-				{% endfor %}
-			</div>
-			{% endif %}
-
-			{% if jams.pages %}
-			{% set jam = jams.pages | first %}
-			<div class="uk-width-1-1">
-				<article class="uk-card uk-card-default uk-grid-collapse uk-flex-middle uk-margin-medium" uk-grid>
-					<a class="uk-width-1-4@s uk-card-media-left uk-cover-container" href="{{ jam.permalink }}">
-						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" uk-cover>
-						<canvas width="600" height="600"></canvas>
-					</a>
-					<div class="uk-width-3-4@s">
-						<div class="uk-card-body">
-							<h3 class="p-name uk-card-title uk-margin-small-bottom">
-								<a class="uk-link-heading" href="{{ jam.permalink }}">{{ jam.title }}</a>
-							</h3>
-							{%- if jam.taxonomies.tags %}
-							<div>
-								{% for genre in jam.taxonomies.tags %}
-									<span class="p-category uk-label" rel="tag">{{ genre }}</span>
-								{% endfor %}
-							</div>
-							{% endif %}
-						</div>
-					</div>
-				</article>
-			</div>
-			{% endif %}
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-
-{# <section class="uk-section">
-	<div class="uk-container uk-container-large">
-		{% for year, pages in articles.pages | group_by(attribute="year") %}
-		<div class="posts-group">
-			<div class="post-year">{{ year }}</div>
-			<ul class="posts-list">
-				{% for page in pages %}
-				<li class="post-item">
-					<a href="{{ page.permalink }}">
-						<span class="post-title">{{ page.title }}</span>
-						<span class="post-day">{{ page.date | date(format="%b %d") }}</span>
-					</a>
-				</li>
-				{% endfor %}
-			</ul>
-		</div>
+			</li>
 		{% endfor %}
+		</ul>
+
+		</div>
+
 	</div>
-</section> #}
+</section>
+
 
 </main>
 

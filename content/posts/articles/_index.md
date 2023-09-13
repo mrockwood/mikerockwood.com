@@ -7,6 +7,7 @@ paginate_by: 10
 sort_by: date
 insert_anchor_links: right
 generate_feed: true
+# transparent: true
 extra:
   singular: Article
 ---
