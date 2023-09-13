@@ -1,4 +1,4 @@
 ---
-paginate_by: 5
+paginate_by: 3
 sort_by: "date"
 ---
