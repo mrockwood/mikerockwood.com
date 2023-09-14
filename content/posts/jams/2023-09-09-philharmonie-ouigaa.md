@@ -1,6 +1,6 @@
 ---
 draft: false
-date: 2023-09-16T18:09:00.000Z
+date: 2023-09-09T18:09:00.000Z
 title: Philharmonie - Ouigaa
 taxonomies:
   categories:
