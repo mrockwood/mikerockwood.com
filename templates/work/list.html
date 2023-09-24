@@ -27,8 +27,8 @@
 					<div class="uk-grid-collapse uk-grid-match uk-grid uk-flex-middle" uk-grid>
 						<div class="uk-width-expand@m">
 							<div class="uk-panel uk-overflow-hidden">
-								<canvas width="600" height="500"></canvas>
-								<img src="{{ image.url }}" alt="image" data-uk-cover="" class="uk-cover">
+								<canvas width="1200" height="1000"></canvas>
+								<img src="{{ image.url }}" alt="image" width="1200" height="1000" data-uk-cover="" class="uk-cover">
 								<div class="uk-position-cover uk-position-z-index uk-visible@m" style="background-image: linear-gradient(to right, var(--card-default-background) 8.33%, transparent);"></div>
 								<div class="uk-position-cover uk-position-z-index uk-hidden@m" style="background-image: linear-gradient(to top, var(--card-default-background) 8.33%, transparent);"></div>
 							</div>
@@ -140,7 +140,7 @@
 									<div data-tag="{% for task in project.taxonomies.tasks %}{{ task }} {% endfor %}">
 										<div class="uk-light">
 											<a class="uk-inline-clip uk-transition-toggle uk-link-toggle" href="{{ config.base_url }}/{{ feature_image }}" data-type="image" data-caption="&lt;h4 class='uk-margin-remove'&gt;{{ project.title }}&lt;/h4&gt;" uk-scrollspy-class>
-												<img alt class="uk-transition-opaque" data-src="{{ image.url }}" data-sizes="(min-width: 720px) 720px" data-width="720" data-height="1360" uk-img>
+												<img loading="lazy" alt class="uk-transition-opaque" data-src="{{ image.url }}" data-sizes="(min-width: 720px) 720px" data-width="720" uk-img>
 												<div class="uk-overlay-dark uk-transition-slide-bottom-small uk-position-cover">
 												</div>
 												<div class="uk-position-bottom-left uk-transition-slide-bottom-small">
