@@ -41,6 +41,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     editor:
       preview: false
+    sortable_fields: ['title', 'date', 'draft']
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Date", name: "date", widget: "datetime"}
