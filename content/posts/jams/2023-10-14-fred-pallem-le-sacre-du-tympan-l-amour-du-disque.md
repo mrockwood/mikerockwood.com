@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 date: 2023-10-14T09:28:00.000Z
 title: Fred Pallem & le Sacre du Tympan - L'amour du  disque
 taxonomies:
