@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 date: 2023-10-21T09:40:00.000Z
 title: Evil Arrows - The Motion Picture Managers (Of Love)
 taxonomies:
