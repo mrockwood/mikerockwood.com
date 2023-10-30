@@ -1,6 +1,6 @@
 ---
 draft: false
-date: 2023-10-30T13:11
+date: 2023-10-30T03:12:00.000Z
 title: Simplify sharing with built-in APIs and progressive enhancement
 taxonomies:
   categories:
