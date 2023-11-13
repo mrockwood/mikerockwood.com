@@ -1,5 +1,10 @@
+ZOLA_COMMAND := zola serve --drafts --open
+
 serve:
-	zola serve --drafts --open
+	$(ZOLA_COMMAND)
+
+start:
+	$(ZOLA_COMMAND)
 
 admin:
 	open http://localhost:1111/admin/
