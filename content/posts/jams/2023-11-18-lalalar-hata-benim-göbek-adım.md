@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 date: 2023-11-18T11:10:00.000Z
 title: Lalalar - Hata Benim Göbek Adım
 taxonomies:
