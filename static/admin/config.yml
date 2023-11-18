@@ -120,7 +120,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{uuid_short}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Date", name: "date", widget: "datetime", date_format: "DD.MM.YYYY"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
