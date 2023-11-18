@@ -16,7 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - label: "Taxonomies"
@@ -44,7 +44,7 @@ collections:
     sortable_fields: ['title', 'date', 'draft']
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
@@ -69,7 +69,7 @@ collections:
       preview: false
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
@@ -94,7 +94,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
@@ -120,7 +120,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{uuid_short}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
@@ -177,7 +177,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
@@ -201,7 +201,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
@@ -228,7 +228,7 @@ collections:
     public_folder: ''
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - label: "Taxonomies"
