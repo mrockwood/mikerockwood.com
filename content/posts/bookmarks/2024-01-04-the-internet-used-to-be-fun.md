@@ -1,6 +1,6 @@
 ---
 draft: false
-date: 2024-01-04T14:01
+date: 2024-01-04
 title: The internet used to be fun
 taxonomies:
   categories:
