@@ -1,7 +1,7 @@
 ---
 title: Uses
 path: uses
-updated: 2024-03-05T11:39:00.000Z
+updated: 2024-04-01T11:39:00.000Z
 aliases:
   - about/uses
 description: Curios about my setup? Here is the stuff I use most.
