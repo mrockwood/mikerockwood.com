@@ -26,7 +26,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-animation-']) { 
+.uk-animation,
+[class*='uk-animation-'] {
 
     --animation-duration:                             0.5s;
     --animation-fade-duration:                        0.8s;

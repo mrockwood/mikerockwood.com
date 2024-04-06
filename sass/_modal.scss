@@ -26,7 +26,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-modal']) {
+.uk-modal,
+[class*='uk-modal-'] {
 
     --modal-z-index:                                  calc( var(--global-z-index) + 10 );
     --modal-background:                               rgba(0,0,0,0.6);
@@ -66,7 +67,8 @@
 /* Phone landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    :where([class*='uk-modal']) {
+    .uk-modal,
+    [class*='uk-modal-'] {
 
         --modal-padding-horizontal:                   var(--global-gutter);
         --modal-padding-vertical:                     50px;
@@ -85,7 +87,8 @@
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-modal']) {
+    .uk-modal,
+    [class*='uk-modal-'] {
 
         --modal-padding-horizontal:                   var(--global-medium-gutter);
 

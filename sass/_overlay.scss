@@ -14,7 +14,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-overlay']) {
+.uk-overlay,
+[class*='uk-overlay-'] {
 
     --overlay-padding-horizontal:                     var(--global-gutter);
     --overlay-padding-vertical:                       var(--global-gutter);

@@ -14,7 +14,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-link']) {
+.uk-link,
+[class*='uk-link-'] {
 
     --link-muted-color:                               var(--theme-muted-color, var(--global-muted-color) );
     --link-muted-hover-color:                         var(--theme-color, var(--global-color) );

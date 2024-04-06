@@ -24,7 +24,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-transition']) {
+.uk-transition,
+[class*='uk-transition-'] {
 
     --transition-duration:                            0.3s;
 
@@ -52,9 +53,9 @@
  *    (Doesn't work on Surface touch devices)
  */
 
-:where(.uk-transition-fade),
-:where([class*='uk-transition-scale']),
-:where([class*='uk-transition-slide']) {
+.uk-transition-fade,
+[class*='uk-transition-scale'],
+[class*='uk-transition-slide'] {
     --uk-position-translate-x: 0;
     --uk-position-translate-y: 0;
 }

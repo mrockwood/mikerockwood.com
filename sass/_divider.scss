@@ -11,7 +11,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-divider']) {
+.uk-divider,
+[class*='uk-divider-'] {
 
     --divider-margin-vertical:                        var(--global-margin);
 

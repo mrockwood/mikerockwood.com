@@ -16,7 +16,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-tab) {
+.uk-tab,
+[class*='uk-tab-'] {
 
     --tab-margin-horizontal:                   20px;
 

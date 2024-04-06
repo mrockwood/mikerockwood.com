@@ -18,7 +18,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-search']) {
+.uk-search,
+[class*='uk-search-'] {
 
     --search-color:                                       var(--theme-color, var(--global-color) );
     --search-placeholder-color:                           var(--theme-muted-color, var(--global-muted-color) );

@@ -15,7 +15,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-dropbar) {
+.uk-dropbar,
+[class*='uk-dropbar-'] {
 
     --dropbar-margin:                                 0;
     --dropbar-padding-top:                            15px;
@@ -32,7 +33,8 @@
 /* Phone landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    :where(.uk-dropbar) {
+    .uk-dropbar,
+    [class*='uk-dropbar-'] {
 
         --dropbar-padding-horizontal:                 var(--global-gutter);
 
@@ -43,7 +45,8 @@
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    :where(.uk-dropbar) {
+    .uk-dropbar,
+    [class*='uk-dropbar-'] {
 
         --dropbar-padding-horizontal:                 var(--global-medium-gutter);
 

@@ -23,7 +23,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-offcanvas']) {
+.uk-offcanvas,
+[class*='uk-offcanvas-'] {
 
     --offcanvas-z-index:                              var(--global-z-index);
 
@@ -41,7 +42,8 @@
 
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-offcanvas']) {
+    .uk-offcanvas,
+    [class*='uk-offcanvas-'] {
 
         --offcanvas-bar-width:                        350px;
         --offcanvas-bar-padding-vertical:             var(--global-medium-gutter);

@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-totop']) {
+.uk-totop,
+[class*='uk-totop-'] {
 
     --totop-padding:                                  5px;
     --totop-color:                                    var(--theme-muted-color, var(--global-muted-color) );

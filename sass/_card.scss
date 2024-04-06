@@ -25,7 +25,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-card']) {
+.uk-card,
+[class*='uk-card-'] {
 
     --card-body-padding-horizontal:                  var(--global-gutter);
     --card-body-padding-vertical:                    var(--global-gutter);
@@ -75,7 +76,8 @@
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    :where([class*='uk-card']) {
+    .uk-card,
+    [class*='uk-card-'] {
 
         --card-body-padding-horizontal:              var(--global-medium-gutter);
         --card-body-padding-vertical:                var(--global-medium-gutter);

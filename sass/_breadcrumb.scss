@@ -11,7 +11,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-breadcrumb']) {
+.uk-breadcrumb,
+[class*='uk-breadcrumb-'] {
 
     --breadcrumb-item-font-size:                          var(--global-small-font-size);
     --breadcrumb-item-color:                              var(--theme-muted-color, var(--global-muted-color) );

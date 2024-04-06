@@ -11,7 +11,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-align']) {
+.uk-align,
+[class*='uk-align-'] {
 
     --align-margin-horizontal:                        var(--global-gutter);
     --align-margin-vertical:                          var(--global-gutter);
@@ -20,7 +21,8 @@
 
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-align']) {
+    .uk-align,
+    [class*='uk-align-'] {
 
         --align-margin-horizontal:                    var(--global-medium-gutter);
 

@@ -15,7 +15,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-pagination']) {
+.uk-pagination,
+[class*='uk-pagination-'] {
 
     --pagination-margin-horizontal:                   0;
 

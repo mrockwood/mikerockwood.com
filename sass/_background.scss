@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-background']) {
+.uk-background,
+[class*='uk-background-'] {
 
     --background-default-background:                  var(--global-background);
     --background-muted-background:                    var(--global-muted-background);

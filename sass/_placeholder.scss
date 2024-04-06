@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-placeholder']) {
+.uk-placeholder,
+[class*='uk-placeholder-'] {
 
     --placeholder-margin-vertical:                    var(--global-margin);
     --placeholder-padding-vertical:                   var(--global-gutter);

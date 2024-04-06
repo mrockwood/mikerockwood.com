@@ -36,7 +36,8 @@
 // Variables
 // ========================================================================
 
-:where(html) {
+.uk-navbar,
+[class*='uk-navbar-'] {
 
     --navbar-background:                              var(--global-muted-background);
     --navbar-gap:                                     0px; // Must have a unit because of `calc`
@@ -105,7 +106,8 @@
 
 @media (min-width: $breakpoint-small) {
 
-    :where(html) {
+    .uk-navbar,
+    [class*='uk-navbar-'] {
 
         --navbar-padding-vertical:                    20px;
 
@@ -119,7 +121,8 @@
 
 @media (min-width: $breakpoint-medium) {
 
-    :where(html) {
+    .uk-navbar,
+    [class*='uk-navbar-'] {
 
         --navbar-dropdown-dropbar-viewport-margin:    var(--global-medium-gutter);
 

@@ -15,7 +15,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-subnav']) {
+.uk-subnav,
+[class*='uk-subnav-'] {
 
     --subnav-margin-horizontal:                       20px;
 

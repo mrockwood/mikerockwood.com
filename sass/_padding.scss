@@ -11,7 +11,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-padding']) {
+.uk-padding,
+[class*='uk-padding-'] {
 
     --padding-padding:                                       var(--global-gutter);
     --padding-small-padding:                                 var(--global-small-gutter);
@@ -21,7 +22,8 @@
 
 @media (min-width: $breakpoint-large) {
 
-    :where([class*='uk-padding']) {
+    .uk-padding,
+    [class*='uk-padding-'] {
 
         --padding-padding:                                   var(--global-medium-gutter);
         --padding-large-padding:                             var(--global-large-gutter);

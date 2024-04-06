@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-countdown']) {
+.uk-countdown,
+[class*='uk-countdown-'] {
 
     --countdown-number-line-height:                   0.8;
     --countdown-number-font-size:                     2rem; // 32px
@@ -26,7 +27,8 @@
 /* Phone landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    :where([class*='uk-countdown']) {
+    .uk-countdown,
+    [class*='uk-countdown-'] {
 
         --countdown-number-font-size:                 4rem; // 64px
 
@@ -39,7 +41,8 @@
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-countdown']) {
+    .uk-countdown,
+    [class*='uk-countdown-'] {
 
         --countdown-number-font-size:                 6rem; // 96px
 

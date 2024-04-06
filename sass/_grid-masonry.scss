@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-grid-masonry) {
+.uk-grid-masonry,
+[class*='uk-grid-masonry-'] {
 
     --grid-column-xsmall:                             100px;
     --grid-column-small:                              200px;

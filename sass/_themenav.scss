@@ -1,9 +1,9 @@
 // Name:            Theme switcher
 // Description:     Styles for the off-canvas theme switcher
 //
-// Component:       `uk-theme-nav`
-//                  `uk-theme-button`
-//                  `uk-theme-swatch`
+// Component:       `uk-themenav-nav`
+//                  `uk-themenav-button`
+//                  `uk-themenav-swatch`
 //
 // ========================================================================
 
@@ -11,7 +11,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-theme-']) {
+.uk-themenav,
+[class*='uk-themenav-'] {
 
 	// --theme-button-color:                             var(--text-color);
 	// --theme-button-hover-color:                       var(--text-color);
@@ -34,13 +35,13 @@
  ========================================================================== */
 
 /* Active */
-.uk-theme-nav > li.uk-active {
+.uk-themenav > li.uk-active {
 	background: var(--invert-surface-muted);
 	margin: calc(0.5 * var(--list-large-margin-top)) calc(-1 * var(--offcanvas-bar-padding-horizontal)) calc(-0.5 * var(--list-large-margin-top));
 	padding: calc(0.5 * var(--list-large-margin-top)) var(--offcanvas-bar-padding-horizontal);
 }
 
-.uk-theme-nav .uk-nav-divider + li.uk-active {
+.uk-themenav .uk-nav-divider + li.uk-active {
 	margin-block-start: calc(-0.5 * var(--list-large-margin-top));
 }
 
@@ -48,7 +49,7 @@
 /* Buttons
  ========================================================================== */
 
-.uk-theme-button {
+.uk-themenav-button {
 	--button-default-color: var(--text-color);
 	--button-default-hover-color: var(--text-color);
 	--button-default-active-color: var(--text-color);
@@ -63,12 +64,12 @@
 /* Swatches
  ========================================================================== */
 
-.uk-theme-swatch {
+.uk-themenav-swatch {
 	margin-top: calc(-1 * var(--global-margin));
 }
 
 /* Items */
-.uk-theme-swatch > * {
+.uk-themenav-swatch > * {
 	border: 2px solid var(--border-color);
 	border-radius: 5px;
 	display: inline-block;
@@ -77,8 +78,8 @@
 	width: 1.25rem;
 }
 
-.uk-theme-swatch > :nth-child(1) { background-color: var(--text-color); }
-.uk-theme-swatch > :nth-child(2) { background-color: var(--surface-primary); }
-.uk-theme-swatch > :nth-child(3) { background-color: var(--surface-muted); }
-.uk-theme-swatch > :nth-child(4) { background-color: var(--invert-surface-default); }
-.uk-theme-swatch > :nth-child(5) { background-color: var(--link-color); }
+.uk-themenav-swatch > :nth-child(1) { background-color: var(--text-color); }
+.uk-themenav-swatch > :nth-child(2) { background-color: var(--surface-primary); }
+.uk-themenav-swatch > :nth-child(3) { background-color: var(--surface-muted); }
+.uk-themenav-swatch > :nth-child(4) { background-color: var(--invert-surface-default); }
+.uk-themenav-swatch > :nth-child(5) { background-color: var(--link-color); }

@@ -18,7 +18,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-comment']) {
+.uk-comment,
+[class*='uk-comment-'] {
 
     --comment-header-margin-bottom:                   var(--global-margin);
 
@@ -37,7 +38,8 @@
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-comment']) {
+    .uk-comment,
+    [class*='uk-comment-'] {
 
         --comment-list-padding-left:                  100px;
 

@@ -16,7 +16,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-alert']) {
+.uk-alert,
+[class*='uk-alert-'] {
 
     --alert-margin-vertical:                          var(--global-margin);
     --alert-padding:                                  15px;

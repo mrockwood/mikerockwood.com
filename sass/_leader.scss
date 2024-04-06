@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where(html) {
+.uk-leader,
+[class*='uk-leader-'] {
 
     --leader-fill-content:                            .;
     --leader-fill-margin-left:                        var(--global-small-gutter);
@@ -52,4 +53,5 @@
  * Pass fill character to JS
  */
 
-:where(html) { --uk-leader-fill-content: var(--leader-fill-content);  }
+.uk-leader,
+[class*='uk-leader-'] { --uk-leader-fill-content: var(--leader-fill-content);  }

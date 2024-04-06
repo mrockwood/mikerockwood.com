@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-spinner']) {
+.uk-spinner,
+[class*='uk-spinner-'] {
 
     --spinner-size:                                   30px;
     --spinner-stroke-width:                           1px;

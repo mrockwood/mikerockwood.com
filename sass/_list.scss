@@ -25,7 +25,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-list']) {
+.uk-list,
+[class*='uk-list-'] {
 
     --list-margin-top:                                var(--global-small-margin);
 

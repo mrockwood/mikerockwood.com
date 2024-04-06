@@ -106,7 +106,7 @@
 /* Inverted components
  ========================================================================== */
 
-:where(
+:is(
     .uk-section-primary:not(.uk-preserve-color),
     .uk-section-secondary:not(.uk-preserve-color),
     .uk-tile-primary:not(.uk-preserve-color),
@@ -147,7 +147,7 @@
  * Move background colors to children of inverted components
  */
 
-:where(
+:is(
     .uk-section-primary:not(.uk-preserve-color),
     .uk-section-secondary:not(.uk-preserve-color),
     .uk-tile-primary:not(.uk-preserve-color),

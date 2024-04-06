@@ -10,7 +10,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-width']) { 
+.uk-width,
+[class*='uk-width-'] { 
 
     --width-small-width:                              150px;
     --width-medium-width:                             300px;

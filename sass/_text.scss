@@ -9,7 +9,9 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-text']) {
+// :where(html) {
+.uk-text,
+[class*='uk-text-'] {
 
     --text-lead-font-size:                            var(--global-large-font-size);
     --text-lead-line-height:                          1.5;

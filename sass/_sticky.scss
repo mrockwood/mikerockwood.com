@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-sticky']) {
+.uk-sticky,
+[class*='uk-sticky-'] {
 
     --sticky-z-index:                                 980; /* calc(var(--global-z-index) - 20) */
 

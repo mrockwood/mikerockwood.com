@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-thumbnav']) {
+.uk-thumbnav,
+[class*='uk-thumbnav-'] {
 
     --thumbnav-margin-horizontal: 15px;
     --thumbnav-margin-vertical: var(--thumbnav-margin-horizontal);

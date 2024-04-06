@@ -17,7 +17,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-sortable']) {
+.uk-sortable,
+[class*='uk-sortable-'] {
 
     --sortable-dragged-z-index:                       calc(var(--global-z-index) + 50);
 

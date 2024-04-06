@@ -15,7 +15,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-slidenav']) {
+.uk-slidenav,
+[class*='uk-slidenav-'] {
 
     --slidenav-padding-vertical:                      5px;
     --slidenav-padding-horizontal:                    10px;

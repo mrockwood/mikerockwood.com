@@ -1,3 +1,5 @@
+@layer base, components, themes, utilities;
+
 // Base
 @import "font.scss";
 @import "color.scss";
@@ -80,7 +82,7 @@
 @import "lightbox.scss"; // After: Close, Slidenav
 
 // Custom
-@import "theme-switcher.scss";
+@import "themenav.scss";
 
 // Utilities
 @import "animation.scss";

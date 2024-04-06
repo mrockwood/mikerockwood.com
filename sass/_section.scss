@@ -21,7 +21,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-section']) {
+.uk-section,
+[class*='uk-section-'] {
 
     --section-padding-vertical:                        var(--global-medium-margin);
     --section-xsmall-padding-vertical:                 var(--global-margin);
@@ -38,7 +39,8 @@
 
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-section']) {
+    .uk-section,
+    [class*='uk-section-'] {
 
         --section-padding-vertical:                    var(--global-large-margin);
         --section-large-padding-vertical:              var(--global-xlarge-margin);

@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-close) {
+.uk-close,
+[class*='uk-close-'] {
 
     --close-color:                                    var(--theme-muted-color, var(--global-muted-color) );
     --close-hover-color:                              var(--theme-color, var(--global-color) );

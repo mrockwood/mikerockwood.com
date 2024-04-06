@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-height']) {
+.uk-height,
+[class*='uk-height-'] {
 
     --height-small-height:                            150px;
     --height-medium-height:                           300px;

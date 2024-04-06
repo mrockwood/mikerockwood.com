@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-iconnav']) {
+.uk-iconnav,
+[class*='uk-iconnav-'] {
 
     --iconnav-margin-horizontal:                       var(--global-small-margin);
     --iconnav-margin-vertical:                         var(--iconnav-margin-horizontal);

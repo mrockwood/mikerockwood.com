@@ -14,7 +14,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-column-']) {
+.uk-column,
+[class*='uk-column-'] {
 
     --column-gutter:                                  var(--global-gutter);
 
@@ -26,7 +27,8 @@
 /* Large screen and bigger */
 @media (min-width: $breakpoint-large) {
 
-    :where([class*='uk-column-']) {
+    .uk-column,
+    [class*='uk-column-'] {
 
         --column-gutter:                              var(--global-medium-gutter);
 
@@ -39,7 +41,7 @@
    Component: Column
  ========================================================================== */
 
- [class*='uk-column-'] { column-gap: var(--column-gutter); }
+[class*='uk-column-'] { column-gap: var(--column-gutter); }
 
 /*
  * Fix image 1px line wrapping into the next column in Chrome

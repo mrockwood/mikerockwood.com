@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-marker']) {
+.uk-marker,
+[class*='uk-marker-'] {
 
     --marker-padding:                                  5px;
     --marker-background:                               var(--theme-secondary-background, var(--global-secondary-background) );

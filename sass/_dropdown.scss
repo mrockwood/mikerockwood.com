@@ -20,7 +20,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-dropdown) {
+.uk-dropdown,
+[class*='uk-dropdown-'] {
 
     --dropdown-margin:                                var(--global-small-margin);
     --dropdown-viewport-margin:                       15px;
@@ -54,7 +55,8 @@
 /* Phone landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    :where(.uk-dropdown) {
+    .uk-dropdown,
+    [class*='uk-dropdown-'] {
 
         --dropdown-dropbar-viewport-margin:           var(--global-gutter);
 
@@ -65,7 +67,8 @@
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    :where(.uk-dropdown) {
+    .uk-dropdown,
+    [class*='uk-dropdown-'] {
 
         --dropdown-dropbar-viewport-margin:           var(--global-medium-gutter);
 

@@ -15,10 +15,11 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-margin']) {
+.uk-margin,
+[class*='uk-margin-'] {
 
     --margin-margin:                                         var(--global-margin);
-	--margin-xsmall-margin:                                   var(--global-xsmall-margin);
+	--margin-xsmall-margin:                                  var(--global-xsmall-margin);
     --margin-small-margin:                                   var(--global-small-margin);
     --margin-medium-margin:                                  var(--global-medium-margin);
     --margin-large-margin:                                   var(--global-medium-margin);
@@ -29,7 +30,8 @@
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    :where([class*='uk-margin']) {
+    .uk-margin,
+    [class*='uk-margin-'] {
 
         --margin-large-margin:                               var(--global-large-margin);
         --margin-xlarge-margin:                              var(--global-xlarge-margin);

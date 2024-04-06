@@ -25,7 +25,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-nav) {
+.uk-nav,
+[class*='uk-nav-'] {
 
     --nav-item-padding-vertical:                      5px;
     --nav-item-padding-horizontal:                    0px;

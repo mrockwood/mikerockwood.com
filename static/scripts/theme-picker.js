@@ -1,7 +1,7 @@
 const SELECTORS = {
     // picker: '.js-themepicker',
     // toggleBtn: '.js-themepicker-toggle',
-    themeSelectBtn: '.uk-theme-button',
+    themeSelectBtn: '.uk-themenav-button',
     // closeBtn: '.js-themepicker-close',
     // navToggleBtn: '.js-nav-toggle'
 }

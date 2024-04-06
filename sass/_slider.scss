@@ -14,7 +14,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-slider']) {
+.uk-slider,
+[class*='uk-slider-'] {
 
     --slider-container-margin-top:                        -11px;
     --slider-container-margin-bottom:                     -39px;

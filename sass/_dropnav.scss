@@ -11,7 +11,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-dropdown) {
+.uk-dropnav,
+[class*='uk-dropnav-'] {
 
   --dropnav-dropbar-z-index:                        calc( var(--global-z-index) - 20 );
 
@@ -29,12 +30,12 @@
  */
 
 .uk-dropnav-dropbar {
-  /* 1 */
-  position: absolute;
-  z-index: var(--dropnav-dropbar-z-index);
-  /* 2 */
-  padding: 0;
-  /* 3 */
-  inset-inline-start: 0;
-  inset-inline-end: 0;
+    /* 1 */
+    position: absolute;
+    z-index: var(--dropnav-dropbar-z-index);
+    /* 2 */
+    padding: 0;
+    /* 3 */
+    inset-inline-start: 0;
+    inset-inline-end: 0;
 }

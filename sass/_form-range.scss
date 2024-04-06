@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-range']) {
+.uk-range,
+[class*='uk-range-'] {
 
     --form-range-track-height:                        3px;
     --form-range-track-background:                    color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);

@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-progress']) {
+.uk-progress,
+[class*='uk-progress-'] {
 
     --progress-height:                                15px;
     --progress-margin-vertical:                       var(--global-margin);

@@ -20,7 +20,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-tile']) {
+.uk-tile,
+[class*='uk-tile-'] {
 
     --tile-padding-horizontal:                       15px;
     --tile-padding-vertical:                         var(--global-medium-margin);
@@ -40,7 +41,8 @@
 /* Phone landscape and bigger */
 @media (min-width: $breakpoint-small) {
 
-    :where([class*='uk-tile']) {
+    .uk-tile,
+    [class*='uk-tile-'] {
 
         --tile-padding-horizontal:                   var(--global-gutter);
 
@@ -51,7 +53,8 @@
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-tile']) {
+    .uk-tile,
+    [class*='uk-tile-'] {
 
         --tile-padding-horizontal:                   var(--global-medium-gutter);
         --tile-padding-vertical:                     var(--global-large-margin);

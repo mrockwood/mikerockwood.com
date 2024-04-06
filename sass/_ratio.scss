@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-ratio']) {
+.uk-ratio,
+[class*='uk-ratio-'] {
 
     --ratio-square:                                   1;
     --ratio-landscape:                                4/3;

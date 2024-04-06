@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-heading']) {
+.uk-heading,
+[class*='uk-heading-'] {
 
     --heading-small-font-size:                        2rem;          // 32px
     --heading-medium-font-size:                       2.5rem;        // 40px
@@ -49,7 +50,8 @@
 /* Tablet landscape and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-heading']) {
+    .uk-heading,
+    [class*='uk-heading-'] {
 
         --heading-small-font-size:                    2.75rem;   // 42px
         --heading-medium-font-size:                   3.5rem;    // 56px
@@ -64,7 +66,8 @@
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    :where([class*='uk-heading']) {
+    .uk-heading,
+    [class*='uk-heading-'] {
 
         --heading-medium-font-size:                   4rem;      // 64px
         --heading-large-font-size:                    6rem;      // 96px

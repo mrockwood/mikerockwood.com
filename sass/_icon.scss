@@ -15,7 +15,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-icon) {
+.uk-icon,
+[class*='uk-icon-'] {
 
     --icon-image-size:                                20px;
 

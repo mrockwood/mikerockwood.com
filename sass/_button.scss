@@ -22,7 +22,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-button']) {
+.uk-button,
+[class*='uk-button-'] {
 
     --button-line-height:                             var(--global-control-height);
     --button-small-line-height:                       var(--global-control-small-height);

@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-dotnav']) {
+.uk-dotnav,
+[class*='uk-dotnav-'] {
 
     --dotnav-margin-horizontal:                       12px;
     --dotnav-margin-vertical:                         var(--dotnav-margin-horizontal);

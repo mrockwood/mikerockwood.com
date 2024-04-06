@@ -29,7 +29,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-position']) {
+.uk-position,
+[class*='uk-position-'] {
 
     --position-small-margin:                                 var(--global-small-gutter);
     --position-medium-margin:                                var(--global-gutter);
@@ -39,7 +40,8 @@
 
 @media (min-width: $breakpoint-large) {
 
-    :where([class*='uk-position']) {
+    .uk-position,
+    [class*='uk-position-'] {
 
         --position-large-margin:                            50px;
 

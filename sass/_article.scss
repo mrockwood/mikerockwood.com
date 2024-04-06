@@ -12,7 +12,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-article']) {
+.uk-article,
+[class*='uk-article-'] {
 
     --article-margin-top:                             var(--global-large-margin);
 
@@ -27,7 +28,8 @@
 
 @media (min-width: $breakpoint-medium) {
 
-    :where([class*='uk-article']) {
+    .uk-article,
+    [class*='uk-article-'] {
 
         --article-title-font-size:                    var(--global-xlarge-font-size);
 

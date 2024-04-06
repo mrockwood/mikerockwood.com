@@ -9,7 +9,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-badge']) {
+.uk-badge,
+[class*='uk-badge-'] {
 
     --badge-size:                                     18px;
     --badge-padding-vertical:                         0;

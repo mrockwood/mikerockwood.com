@@ -19,7 +19,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-lightbox']) {
+.uk-lightbox,
+[class*='uk-lightbox-'] {
 
     --lightbox-z-index:                               calc( var(--global-z-index) + 10 );
     --lightbox-background:                            #000;

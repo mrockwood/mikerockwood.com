@@ -22,7 +22,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-table']) {
+.uk-table,
+[class*='uk-table-'] {
 
     --table-margin-vertical:                          var(--global-margin);
 

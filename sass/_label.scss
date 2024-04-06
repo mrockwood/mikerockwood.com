@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-label']) {
+.uk-label,
+[class*='uk-label-'] {
 
     --label-padding-vertical:                         2px;
     --label-padding-horizontal:                       calc( ( var(--global-xsmall-margin) + var(--global-small-margin) ) / 2);

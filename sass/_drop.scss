@@ -20,7 +20,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-drop) {
+.uk-drop,
+[class*='uk-drop-'] {
 
     --drop-z-index:                               calc( var(--global-z-index) + 20 );
     --drop-margin:                                var(--global-margin);

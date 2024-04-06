@@ -20,7 +20,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-tooltip']) {
+.uk-tooltip,
+[class*='uk-tooltip-'] {
 
     --tooltip-z-index:                                calc( var(--global-z-index) + 30 );
     --tooltip-margin:                                 10px;

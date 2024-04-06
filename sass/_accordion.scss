@@ -14,7 +14,8 @@
 // Variables
 // ========================================================================
 
-:where(.uk-accordion) {
+.uk-accordion,
+[class*='uk-accordion-'] {
 
     --accordion-item-margin-top:                     var(--global-margin);
 

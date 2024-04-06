@@ -23,7 +23,8 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-notification']) {
+.uk-notification,
+[class*='uk-notification-'] {
 
     --notification-position:                                10px;
     --notification-z-index:                                 calc( var(--global-z-index) + 40 );
