@@ -2,6 +2,7 @@ backend:
   name: github
   repo: mrockwood/mikerockwood.com
   branch: main
+  base_url: https://sveltia-cms-auth.rockwood-cloudflare.workers.dev/
 
 media_folder: "/static/images"
 public_folder: "/images"
