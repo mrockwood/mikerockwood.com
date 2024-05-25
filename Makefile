@@ -1,10 +1,21 @@
-ZOLA_COMMAND := zola serve --drafts --open
+# Detect the operating system
+OS := $(shell uname)
+
+# Default zola command
+ZOLA_CMD = zola
+
+# Adjust the zola command for Linux with flatpak
+ifeq ($(OS), Linux)
+    ZOLA_CMD = flatpak run org.getzola.zola
+endif
+
+# Define targets using the adjusted zola command
+start:
+	$(ZOLA_CMD) serve --drafts --open
 
 serve:
-	$(ZOLA_COMMAND)
+	$(ZOLA_CMD) serve --drafts --open
 
-start:
-	$(ZOLA_COMMAND)
 
 admin:
 	open http://localhost:1111/admin/
