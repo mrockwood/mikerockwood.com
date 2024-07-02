@@ -6,7 +6,7 @@ page_template: posts/articles/single.html
 paginate_by: 10
 sort_by: date
 insert_anchor_links: right
-generate_feed: true
+generate_feeds: true
 # transparent: true
 extra:
   singular: Article
