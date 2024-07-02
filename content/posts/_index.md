@@ -1,5 +1,5 @@
 ---
-path: posts
+#path: posts
 title: Posts
 description: Short thoughts, inspirational links, kick-ass tunes, and other malarkey.
 template: posts/list.html

@@ -1,5 +1,5 @@
 ---
-path: likes
+#path: likes
 title: Likes
 template: index.html
 paginate_by: 20

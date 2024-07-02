@@ -120,7 +120,7 @@
 
 	{#- Feeds -#}
 	{% block head_feeds %}
-	<link rel="alternate" title="Posts by {{ config.extra.author.name }}" href="{{ get_url(path=config.feed_filename) }}" type="application/atom+xml" />
+	<link rel="alternate" title="Posts by {{ config.extra.author.name }}" href="{{ get_url(path="atom.xml", trailing_slash=false) }}" type="application/atom+xml" />
 	{%- endblock head_feeds %}
 
 	{#- Indie Auth -#}

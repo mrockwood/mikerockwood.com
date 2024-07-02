@@ -1,5 +1,5 @@
 ---
-path: photos
+#path: photos
 title: Photos
 template: index.html
 paginate_by: 20

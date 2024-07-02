@@ -1,5 +1,5 @@
 ---
-path: rsvps
+#path: rsvps
 title: RSVPs
 template: index.html
 paginate_by: 20

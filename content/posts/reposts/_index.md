@@ -1,5 +1,5 @@
 ---
-path: reposts
+#path: reposts
 title: Reposts
 template: index.html
 paginate_by: 20

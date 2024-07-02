@@ -1,5 +1,5 @@
 ---
-path: videos
+#path: videos
 title: Videos
 template: index.html
 paginate_by: 20

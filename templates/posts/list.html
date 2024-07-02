@@ -8,7 +8,7 @@
 	{% if jams.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/jams/_index.md') }}">Jams</a>{% endif %}
 	{% if notes.pages %}<a class="uk-button uk-button-primary uk-button-small" href="{{ get_url(path='@/posts/notes/_index.md') }}">Notes</a>{% endif %}
 	{% if config.generate_feeds %}
-	<a href="{{ get_url(path=config.feed_filename) }}" class="uk-button uk-button-small uk-button-default uk-flex-inline uk-flex-middle">
+	<a href="{{ get_url(path="atom.xml", trailing_slash=false) }}" class="uk-button uk-button-small uk-button-default uk-flex-inline uk-flex-middle">
 		<span>Subscribe</span>
 		<span uk-icon="icon: rss; ratio: 0.75" class="uk-margin-xsmall-left uk-icon"></span>
 	</a>

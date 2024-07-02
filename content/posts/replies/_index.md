@@ -1,5 +1,5 @@
 ---
-path: replies
+#path: replies
 title: Replies
 template: index.html
 paginate_by: 20
