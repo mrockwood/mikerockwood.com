@@ -11,7 +11,7 @@ build_search_index = false
 
 output_dir = "public"
 
-generate_feed = true
+generate_feeds = true
 feed_filename = "atom.xml"
 
 #ignored_content = ["*.{graphml,xlsx}", "temp.*"]
