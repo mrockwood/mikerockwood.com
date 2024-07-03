@@ -1,6 +1,6 @@
 ---
 draft: false
-date: 2024-07-03T12:08
+date: 2024-07-03T05:34:00.000Z
 title: Weird things engineers believe about Web development
 taxonomies:
   categories:
