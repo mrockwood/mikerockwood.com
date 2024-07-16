@@ -11,6 +11,6 @@ taxonomies:
 extra:
   service: bandcamp
   id: "289339814"
-  thumbnail: https://f4.bcbits.com/img/a2617116845_16.jpg
+  thumbnail: /images/covers/a2617116845_16.jpg
 ---
 I don't know why, but soft piano rock is really doing it for me right now.
