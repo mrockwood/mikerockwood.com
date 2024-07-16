@@ -32,7 +32,8 @@
 
 					<div class="uk-width-auto@s">
 						<a class="" href="{{ jam.permalink }}">
-							<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" width="100" height="100" />
+							{% set thumbnail_image = resize_image(path=jam.extra.thumbnail, width=100, height=100, op='scale', format='webp') %}
+							<img src="{{ thumbnail_image.url }}" alt="album art for {{ jam.title }}" width="100" height="100" loading="lazy" />
 						</a>
 					</div>
 
