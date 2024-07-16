@@ -12,5 +12,5 @@ taxonomies:
 extra:
   service: bandcamp
   id: "3406939699"
-  thumbnail: https://f4.bcbits.com/img/a3184483393_10.jpg
+  thumbnail: /images/covers/a3184483393_10.jpg
 ---
