@@ -39,6 +39,8 @@
 					src="https://bandcamp.com/EmbeddedPlayer/track={{ page.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
 					style="border: 0; width: 100%; height: 120px; max-width: 700px;"
 					seamless
+					credentialless
+					sandbox="allow-same-origin allow-scripts"
 				></iframe>
 				{%- elif page.extra.service == "soundcloud" -%}
 				<iframe
@@ -48,6 +50,8 @@
 					height="166"
 					scrolling="no"
 					frameborder="no"
+					credentialless
+					sandbox="allow-same-origin allow-scripts"
 				></iframe>
 				{%- elif page.extra.service == "youtube" -%}
 				<iframe
@@ -56,6 +60,8 @@
 					style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
 					frameborder="0"
 					allowfullscreen
+					credentialless
+					sandbox="allow-same-origin allow-scripts"
 				></iframe>
 				{%- endif -%}
 
