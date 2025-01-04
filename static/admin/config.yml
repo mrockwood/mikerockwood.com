@@ -24,7 +24,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["articles"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["articles"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
@@ -51,7 +51,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["bookmarks"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["bookmarks"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
@@ -76,7 +76,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["jams"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["jams"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
@@ -101,7 +101,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["likes"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["likes"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
@@ -126,7 +126,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["notes"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["notes"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
@@ -154,13 +154,13 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "hidden"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["replies"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["replies"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
@@ -184,7 +184,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["reposts"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["reposts"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
@@ -208,7 +208,7 @@ collections:
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "hidden", default: ["rsvps"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["rsvps"]}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
