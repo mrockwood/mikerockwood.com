@@ -1,4 +1,4 @@
-/*! UIkit 3.16.6 | https://www.getuikit.com | (c) 2014 - 2023 YOOtheme | MIT License */
+/*! UIkit 3.16.16 | https://www.getuikit.com | (c) 2014 - 2023 YOOtheme | MIT License */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -191,14 +191,6 @@
       const cache = /* @__PURE__ */ Object.create(null);
       return (key) => cache[key] || (cache[key] = fn(key));
     }
-    class Deferred {
-      constructor() {
-        this.promise = new Promise((resolve, reject) => {
-          this.reject = reject;
-          this.resolve = resolve;
-        });
-      }
-    }
 
     function attr(element, name, value) {
       var _a;
@@ -297,7 +289,7 @@
     }
     function children(element, selector) {
       element = toNode(element);
-      const children2 = element ? toNodes(element.children) : [];
+      const children2 = element ? toArray(element.children) : [];
       return selector ? filter$1(children2, selector) : children2;
     }
     function index(element, ref) {
@@ -743,7 +735,7 @@
     function wrapInner(element, structure) {
       return toNodes(
         toNodes(element).map(
-          (element2) => element2.hasChildNodes() ? wrapAll(toNodes(element2.childNodes), structure) : append(element2, structure)
+          (element2) => element2.hasChildNodes() ? wrapAll(toArray(element2.childNodes), structure) : append(element2, structure)
         )
       );
     }
@@ -1073,7 +1065,7 @@
       return { x: x1 + ua * (x2 - x1), y: y1 + ua * (y2 - y1) };
     }
 
-    function observeIntersection(targets, cb, options = {}, intersecting = true) {
+    function observeIntersection(targets, cb, options = {}, { intersecting = true } = {}) {
       const observer = new IntersectionObserver(
         intersecting ? (entries, observer2) => {
           if (entries.some((entry) => entry.isIntersecting)) {
@@ -1334,7 +1326,8 @@
         } else {
           rect[start] += toFloat(css(viewportElement, `border-${start}-width`));
         }
-        rect[prop] = rect[dir] = viewportElement[`client${ucfirst(prop)}`];
+        const subpixel = rect[prop] % 1;
+        rect[prop] = rect[dir] = viewportElement[`client${ucfirst(prop)}`] - (subpixel ? subpixel < 0.5 ? -subpixel : 1 - subpixel : 0);
         rect[end] = rect[prop] + rect[start];
       }
       return rect;
@@ -1528,7 +1521,6 @@
         $: $,
         $$: $$,
         Animation: Animation,
-        Deferred: Deferred,
         Dimensions: Dimensions,
         MouseTracker: MouseTracker,
         Transition: Transition,
@@ -1666,114 +1658,60 @@
         wrapInner: wrapInner
     });
 
-    function initObservers(instance) {
-      instance._observers = [];
-      instance._observerUpdates = /* @__PURE__ */ new Map();
-      for (const observer of instance.$options.observe || []) {
-        if (hasOwn(observer, "handler")) {
-          registerObservable(instance, observer);
-        } else {
-          for (const key in observer) {
-            registerObservable(instance, observer[key], key);
-          }
+    function initWatches(instance) {
+      instance._watches = [];
+      for (const watches of instance.$options.watch || []) {
+        for (const [name, watch] of Object.entries(watches)) {
+          registerWatch(instance, watch, name);
         }
       }
+      instance._initial = true;
     }
-    function registerObserver(instance, ...observer) {
-      instance._observers.push(...observer);
-    }
-    function disconnectObservers(instance) {
-      for (const observer of instance._observers) {
-        observer == null ? void 0 : observer.disconnect();
-        instance._observerUpdates.delete(observer);
-      }
-    }
-    function callObserverUpdates(instance) {
-      for (const [observer, update] of instance._observerUpdates) {
-        update(observer);
-      }
-    }
-    function registerObservable(instance, observable, key) {
-      let {
-        observe,
-        target = instance.$el,
-        handler,
-        options,
-        filter,
-        args
-      } = isPlainObject(observable) ? observable : { type: key, handler: observable };
-      if (filter && !filter.call(instance, instance)) {
-        return;
-      }
-      const targets = isFunction(target) ? target.call(instance, instance) : target;
-      handler = isString(handler) ? instance[handler] : handler.bind(instance);
-      if (isFunction(options)) {
-        options = options.call(instance, instance);
-      }
-      const observer = observe(targets, handler, options, args);
-      if (isFunction(target) && isArray(targets) && observer.unobserve) {
-        instance._observerUpdates.set(observer, watchChange(instance, target, targets));
-      }
-      registerObserver(instance, observer);
-    }
-    function watchChange(instance, targetFn, targets) {
-      return (observer) => {
-        const newTargets = targetFn.call(instance, instance);
-        if (isEqual(targets, newTargets)) {
-          return;
-        }
-        targets.forEach((target) => !includes(newTargets, target) && observer.unobserve(target));
-        newTargets.forEach((target) => !includes(targets, target) && observer.observe(target));
-        targets.splice(0, targets.length, ...newTargets);
-      };
-    }
-
-    function callWatches(instance) {
-      if (instance._watch) {
-        return;
-      }
-      const initial = !hasOwn(instance, "_watch");
-      instance._watch = fastdom.read(() => {
-        if (instance._connected) {
-          runWatches(instance, initial);
-        }
-        instance._watch = null;
+    function registerWatch(instance, watch, name) {
+      instance._watches.push({
+        name,
+        ...isPlainObject(watch) ? watch : { handler: watch }
       });
     }
-    function runWatches(instance, initial) {
-      const values = { ...instance._computed };
-      instance._computed = {};
-      for (const [key, { watch, immediate }] of Object.entries(instance.$options.computed || {})) {
-        if (watch && (initial && immediate || hasOwn(values, key) && !isEqual(values[key], instance[key]))) {
-          watch.call(instance, instance[key], initial ? void 0 : values[key]);
+    function runWatches(instance, values) {
+      for (const { name, handler, immediate = true } of instance._watches) {
+        if (instance._initial && immediate || hasOwn(values, name) && !isEqual(values[name], instance[name])) {
+          handler.call(instance, instance[name], values[name]);
         }
       }
-      callObserverUpdates(instance);
+      instance._initial = false;
     }
 
+    function initUpdates(instance) {
+      instance._data = {};
+      instance._updates = [...instance.$options.update || []];
+    }
+    function prependUpdate(instance, update) {
+      instance._updates.unshift(update);
+    }
+    function clearUpdateData(instance) {
+      delete instance._data;
+    }
     function callUpdate(instance, e = "update") {
       if (!instance._connected) {
         return;
       }
-      if (e === "update" || e === "resize") {
-        callWatches(instance);
-      }
-      if (!instance.$options.update) {
+      if (!instance._updates.length) {
         return;
       }
-      if (!instance._updates) {
-        instance._updates = /* @__PURE__ */ new Set();
+      if (!instance._queued) {
+        instance._queued = /* @__PURE__ */ new Set();
         fastdom.read(() => {
           if (instance._connected) {
-            runUpdates(instance, instance._updates);
+            runUpdates(instance, instance._queued);
           }
-          delete instance._updates;
+          delete instance._queued;
         });
       }
-      instance._updates.add(e.type || e);
+      instance._queued.add(e.type || e);
     }
     function runUpdates(instance, types) {
-      for (const { read, write, events = [] } of instance.$options.update) {
+      for (const { read, write, events = [] } of instance._updates) {
         if (!types.has("update") && !events.some((type) => types.has(type))) {
           continue;
         }
@@ -1793,23 +1731,72 @@
         }
       }
     }
-    function initUpdateObserver(instance) {
-      let { el, computed, observe } = instance.$options;
-      if (!computed && !(observe == null ? void 0 : observe.some((options) => isFunction(options.target)))) {
-        return;
-      }
-      for (const key in computed || {}) {
-        if (computed[key].document) {
-          el = el.ownerDocument;
-          break;
+
+    function initComputed(instance) {
+      const { computed } = instance.$options;
+      instance._computed = {};
+      if (computed) {
+        for (const key in computed) {
+          registerComputed(instance, key, computed[key]);
         }
       }
-      const observer = new MutationObserver(() => callWatches(instance));
-      observer.observe(el, {
+    }
+    function registerComputed(instance, key, cb) {
+      instance._hasComputed = true;
+      Object.defineProperty(instance, key, {
+        enumerable: true,
+        get() {
+          const { _computed, $props, $el } = instance;
+          if (!hasOwn(_computed, key)) {
+            _computed[key] = (cb.get || cb).call(instance, $props, $el);
+          }
+          return _computed[key];
+        },
+        set(value) {
+          const { _computed } = instance;
+          _computed[key] = cb.set ? cb.set.call(instance, value) : value;
+          if (isUndefined(_computed[key])) {
+            delete _computed[key];
+          }
+        }
+      });
+    }
+    function initComputedUpdates(instance) {
+      if (!instance._hasComputed) {
+        return;
+      }
+      prependUpdate(instance, {
+        read: () => runWatches(instance, resetComputed(instance)),
+        events: ["resize", "computed"]
+      });
+      registerComputedObserver();
+      instances$1.add(instance);
+    }
+    function disconnectComputedUpdates(instance) {
+      instances$1 == null ? void 0 : instances$1.delete(instance);
+      resetComputed(instance);
+    }
+    function resetComputed(instance) {
+      const values = { ...instance._computed };
+      instance._computed = {};
+      return values;
+    }
+    let observer;
+    let instances$1;
+    function registerComputedObserver() {
+      if (observer) {
+        return;
+      }
+      instances$1 = /* @__PURE__ */ new Set();
+      observer = new MutationObserver(() => {
+        for (const instance of instances$1) {
+          callUpdate(instance, "computed");
+        }
+      });
+      observer.observe(document, {
         childList: true,
         subtree: true
       });
-      registerObserver(instance, observer);
     }
 
     function initEvents(instance) {
@@ -1849,8 +1836,59 @@
       );
     }
 
+    function initObservers(instance) {
+      instance._observers = [];
+      for (const observer of instance.$options.observe || []) {
+        if (hasOwn(observer, "handler")) {
+          registerObservable(instance, observer);
+        } else {
+          for (const observable of observer) {
+            registerObservable(instance, observable);
+          }
+        }
+      }
+    }
+    function registerObserver(instance, ...observer) {
+      instance._observers.push(...observer);
+    }
+    function disconnectObservers(instance) {
+      for (const observer of instance._observers) {
+        observer.disconnect();
+      }
+    }
+    function registerObservable(instance, observable) {
+      let { observe, target = instance.$el, handler, options, filter, args } = observable;
+      if (filter && !filter.call(instance, instance)) {
+        return;
+      }
+      const key = `_observe${instance._observers.length}`;
+      if (isFunction(target) && !hasOwn(instance, key)) {
+        registerComputed(instance, key, () => target.call(instance, instance));
+      }
+      handler = isString(handler) ? instance[handler] : handler.bind(instance);
+      if (isFunction(options)) {
+        options = options.call(instance, instance);
+      }
+      const targets = hasOwn(instance, key) ? instance[key] : target;
+      const observer = observe(targets, handler, options, args);
+      if (isFunction(target) && isArray(instance[key]) && observer.unobserve) {
+        registerWatch(instance, { handler: updateTargets(observer), immediate: false }, key);
+      }
+      registerObserver(instance, observer);
+    }
+    function updateTargets(observer) {
+      return (targets, prev) => {
+        for (const target of prev) {
+          !includes(targets, target) && observer.unobserve(target);
+        }
+        for (const target of targets) {
+          !includes(prev, target) && observer.observe(target);
+        }
+      };
+    }
+
     const strats = {};
-    strats.events = strats.observe = strats.created = strats.beforeConnect = strats.connected = strats.beforeDisconnect = strats.disconnected = strats.destroy = concatStrat;
+    strats.events = strats.watch = strats.observe = strats.created = strats.beforeConnect = strats.connected = strats.beforeDisconnect = strats.disconnected = strats.destroy = concatStrat;
     strats.args = function(parentVal, childVal) {
       return childVal !== false && concatStrat(childVal || parentVal);
     };
@@ -2001,11 +2039,11 @@
     }
     function initPropsObserver(instance) {
       const { $options, $props } = instance;
-      const { id, attrs, props, el } = $options;
-      if (!props || attrs === false) {
+      const { id, props, el } = $options;
+      if (!props) {
         return;
       }
-      const attributes = isArray(attrs) ? attrs : Object.keys(props);
+      const attributes = Object.keys(props);
       const filter = attributes.map((key) => hyphenate(key)).concat(id);
       const observer = new MutationObserver((records) => {
         const data = getProps$1($options);
@@ -2033,15 +2071,15 @@
       if (instance._connected) {
         return;
       }
-      instance._data = {};
-      instance._computed = {};
       initProps(instance);
       callHook(instance, "beforeConnect");
       instance._connected = true;
       initEvents(instance);
+      initUpdates(instance);
+      initWatches(instance);
       initObservers(instance);
       initPropsObserver(instance);
-      initUpdateObserver(instance);
+      initComputedUpdates(instance);
       callHook(instance, "connected");
       callUpdate(instance);
     }
@@ -2050,40 +2088,12 @@
         return;
       }
       callHook(instance, "beforeDisconnect");
-      disconnectObservers(instance);
       unbindEvents(instance);
+      clearUpdateData(instance);
+      disconnectObservers(instance);
+      disconnectComputedUpdates(instance);
       callHook(instance, "disconnected");
       instance._connected = false;
-      delete instance._watch;
-    }
-
-    function initComputed(instance) {
-      const { computed } = instance.$options;
-      instance._computed = {};
-      if (computed) {
-        for (const key in computed) {
-          registerComputed(instance, key, computed[key]);
-        }
-      }
-    }
-    function registerComputed(instance, key, cb) {
-      Object.defineProperty(instance, key, {
-        enumerable: true,
-        get() {
-          const { _computed, $props, $el } = instance;
-          if (!hasOwn(_computed, key)) {
-            _computed[key] = (cb.get || cb).call(instance, $props, $el);
-          }
-          return _computed[key];
-        },
-        set(value) {
-          const { _computed } = instance;
-          _computed[key] = cb.set ? cb.set.call(instance, value) : value;
-          if (isUndefined(_computed[key])) {
-            delete _computed[key];
-          }
-        }
-      });
     }
 
     let uid = 0;
@@ -2140,7 +2150,7 @@
     };
     App.util = util;
     App.options = {};
-    App.version = "3.16.6";
+    App.version = "3.16.16";
 
     const PREFIX = "uk-";
     const DATA = "__uikit__";
@@ -2200,34 +2210,46 @@
       }
     }
 
-    App.component = component;
-    App.getComponents = getComponents;
-    App.getComponent = getComponent;
-    App.use = function(plugin) {
-      if (plugin.installed) {
-        return;
-      }
-      plugin.call(null, this);
-      plugin.installed = true;
-      return this;
-    };
-    App.mixin = function(mixin, component2) {
-      component2 = (isString(component2) ? this.component(component2) : component2) || this;
-      component2.options = mergeOptions(component2.options, mixin);
-    };
-    App.extend = function(options) {
-      options = options || {};
-      const Super = this;
-      const Sub = function UIkitComponent(options2) {
-        init$1(this, options2);
+    function globalApi(App) {
+      App.component = component;
+      App.getComponents = getComponents;
+      App.getComponent = getComponent;
+      App.update = update;
+      App.use = function(plugin) {
+        if (plugin.installed) {
+          return;
+        }
+        plugin.call(null, this);
+        plugin.installed = true;
+        return this;
       };
-      Sub.prototype = Object.create(Super.prototype);
-      Sub.prototype.constructor = Sub;
-      Sub.options = mergeOptions(Super.options, options);
-      Sub.super = Super;
-      Sub.extend = Super.extend;
-      return Sub;
-    };
+      App.mixin = function(mixin, component2) {
+        component2 = (isString(component2) ? this.component(component2) : component2) || this;
+        component2.options = mergeOptions(component2.options, mixin);
+      };
+      App.extend = function(options) {
+        options || (options = {});
+        const Super = this;
+        const Sub = function UIkitComponent(options2) {
+          init$1(this, options2);
+        };
+        Sub.prototype = Object.create(Super.prototype);
+        Sub.prototype.constructor = Sub;
+        Sub.options = mergeOptions(Super.options, options);
+        Sub.super = Super;
+        Sub.extend = Super.extend;
+        return Sub;
+      };
+      let container;
+      Object.defineProperty(App, "container", {
+        get() {
+          return container || document.body;
+        },
+        set(element) {
+          container = $(element);
+        }
+      });
+    }
     function update(element, e) {
       element = element ? toNode(element) : document.body;
       for (const parentEl of parents(element).reverse()) {
@@ -2235,63 +2257,55 @@
       }
       apply(element, (element2) => updateElement(element2, e));
     }
-    App.update = update;
     function updateElement(element, e) {
       const components = getComponents(element);
       for (const name in components) {
         callUpdate(components[name], e);
       }
     }
-    let container;
-    Object.defineProperty(App, "container", {
-      get() {
-        return container || document.body;
-      },
-      set(element) {
-        container = $(element);
-      }
-    });
 
-    App.prototype.$mount = function(el) {
-      const instance = this;
-      attachToElement(el, instance);
-      instance.$options.el = el;
-      if (within(el, document)) {
-        callConnected(instance);
-      }
-    };
-    App.prototype.$destroy = function(removeEl = false) {
-      const instance = this;
-      const { el } = instance.$options;
-      if (el) {
-        callDisconnected(instance);
-      }
-      callHook(instance, "destroy");
-      detachFromElement(el, instance);
-      if (removeEl) {
-        remove$1(instance.$el);
-      }
-    };
-    App.prototype.$create = createComponent;
-    App.prototype.$emit = function(e) {
-      callUpdate(this, e);
-    };
-    App.prototype.$update = function(element = this.$el, e) {
-      update(element, e);
-    };
-    App.prototype.$reset = function() {
-      callDisconnected(this);
-      callConnected(this);
-    };
-    App.prototype.$getComponent = getComponent;
-    Object.defineProperties(App.prototype, {
-      $el: {
-        get() {
-          return this.$options.el;
+    function instanceApi(App) {
+      App.prototype.$mount = function(el) {
+        const instance = this;
+        attachToElement(el, instance);
+        instance.$options.el = el;
+        if (within(el, document)) {
+          callConnected(instance);
         }
-      },
-      $container: Object.getOwnPropertyDescriptor(App, "container")
-    });
+      };
+      App.prototype.$destroy = function(removeEl = false) {
+        const instance = this;
+        const { el } = instance.$options;
+        if (el) {
+          callDisconnected(instance);
+        }
+        callHook(instance, "destroy");
+        detachFromElement(el, instance);
+        if (removeEl) {
+          remove$1(instance.$el);
+        }
+      };
+      App.prototype.$create = createComponent;
+      App.prototype.$emit = function(e) {
+        callUpdate(this, e);
+      };
+      App.prototype.$update = function(element = this.$el, e) {
+        update(element, e);
+      };
+      App.prototype.$reset = function() {
+        callDisconnected(this);
+        callConnected(this);
+      };
+      App.prototype.$getComponent = getComponent;
+      Object.defineProperties(App.prototype, {
+        $el: {
+          get() {
+            return this.$options.el;
+          }
+        },
+        $container: Object.getOwnPropertyDescriptor(App, "container")
+      });
+    }
     function generateId(instance, el = instance.$el, postfix = "") {
       if (el.id) {
         return el.id;
@@ -2303,9 +2317,21 @@
       return id;
     }
 
+    globalApi(App);
+    instanceApi(App);
+
     function boot(App) {
       if (inBrowser && window.MutationObserver) {
-        requestAnimationFrame(() => init(App));
+        if (document.body) {
+          requestAnimationFrame(() => init(App));
+        } else {
+          new MutationObserver((records, observer) => {
+            if (document.body) {
+              init(App);
+              observer.disconnect();
+            }
+          }).observe(document.documentElement, { childList: true });
+        }
       }
     }
     function init(App) {
@@ -2400,9 +2426,9 @@
         }
       },
       methods: {
-        toggleElement(targets, toggle, animate) {
-          return new Promise(
-            (resolve) => Promise.all(
+        async toggleElement(targets, toggle, animate) {
+          try {
+            await Promise.all(
               toNodes(targets).map((el) => {
                 const show = isBoolean(toggle) ? toggle : !this.isToggled(el);
                 if (!trigger(el, `before${show ? "show" : "hide"}`, [this])) {
@@ -2421,11 +2447,14 @@
                   return Promise.reject();
                 }) : done();
               })
-            ).then(resolve, noop)
-          );
+            );
+            return true;
+          } catch (e) {
+            return false;
+          }
         },
         isToggled(el = this.$el) {
-          [el] = toNodes(el);
+          el = toNode(el);
           return hasClass(el, this.clsEnter) ? true : hasClass(el, this.clsLeave) ? false : this.cls ? hasClass(el, this.cls.split(" ")[0]) : isVisible(el);
         },
         _toggle(el, toggled) {
@@ -2599,7 +2628,7 @@
           };
         },
         {
-          target: window,
+          target: () => window,
           ...options
         },
         "scroll"
@@ -2670,52 +2699,41 @@
         offset: 0
       },
       computed: {
-        items: {
-          get({ targets }, $el) {
-            return $$(targets, $el);
-          },
-          watch(items, prev) {
-            if (prev || hasClass(items, this.clsOpen)) {
-              return;
-            }
-            const active = this.active !== false && items[Number(this.active)] || !this.collapsible && items[0];
-            if (active) {
-              this.toggle(active, false);
-            }
-          },
-          immediate: true
+        items({ targets }, $el) {
+          return $$(targets, $el);
         },
-        toggles: {
-          get({ toggle }) {
-            return this.items.map((item) => $(toggle, item));
-          },
-          watch() {
-            this.$emit();
-          },
-          immediate: true
+        toggles({ toggle }) {
+          return this.items.map((item) => $(toggle, item));
         },
-        contents: {
-          get({ content }) {
-            return this.items.map(
-              (item) => {
-                var _a;
-                return ((_a = item._wrapper) == null ? void 0 : _a.firstElementChild) || $(content, item);
-              }
+        contents({ content }) {
+          return this.items.map((item) => {
+            var _a;
+            return ((_a = item._wrapper) == null ? void 0 : _a.firstElementChild) || $(content, item);
+          });
+        }
+      },
+      watch: {
+        items(items, prev) {
+          if (prev || hasClass(items, this.clsOpen)) {
+            return;
+          }
+          const active = this.active !== false && items[Number(this.active)] || !this.collapsible && items[0];
+          if (active) {
+            this.toggle(active, false);
+          }
+        },
+        toggles() {
+          this.$emit();
+        },
+        contents(items) {
+          for (const el of items) {
+            const isOpen = hasClass(
+              this.items.find((item) => within(el, item)),
+              this.clsOpen
             );
-          },
-          watch(items) {
-            for (const el of items) {
-              hide(
-                el,
-                !hasClass(
-                  this.items.find((item) => within(el, item)),
-                  this.clsOpen
-                )
-              );
-            }
-            this.$emit();
-          },
-          immediate: true
+            hide(el, !isOpen);
+          }
+          this.$emit();
         }
       },
       observe: lazyload(),
@@ -2766,10 +2784,13 @@
             "aria-disabled": !this.collapsible && activeItems.length < 2 && active
           });
           attr(content, { role: "region", "aria-labelledby": toggle.id });
+          if (isTag(content, "ul")) {
+            attr(children(content), "role", "presentation");
+          }
         }
       },
       methods: {
-        async toggle(item, animate) {
+        toggle(item, animate) {
           item = this.items[getIndex(item, this.items)];
           let items = [item];
           const activeItems = filter$1(this.items, `.${this.clsOpen}`);
@@ -2779,7 +2800,7 @@
           if (!this.collapsible && activeItems.length < 2 && includes(activeItems, item)) {
             return;
           }
-          await Promise.all(
+          return Promise.all(
             items.map(
               (el) => this.toggleElement(el, !includes(activeItems, el), (el2, show) => {
                 toggleClass(el2, this.clsOpen, show);
@@ -2905,9 +2926,7 @@
           mute(this.$el);
         }
       },
-      observe: intersection({
-        args: { intersecting: false }
-      }),
+      observe: [intersection({ args: { intersecting: false } }), resize()],
       update: {
         read({ visible }) {
           if (!isVideo(this.$el)) {
@@ -2915,17 +2934,18 @@
           }
           return {
             prev: visible,
-            visible: isVisible(this.$el) && css(this.$el, "visibility") !== "hidden",
+            visible: isVisible(this.$el),
             inView: this.inView && isInView(this.$el)
           };
         },
         write({ prev, visible, inView }) {
           if (!visible || this.inView && !inView) {
             pause(this.$el);
-          } else if (this.autoplay === true && !prev || this.inView && inView) {
+          } else if (this.autoplay === true && !prev || inView) {
             play(this.$el);
           }
-        }
+        },
+        events: ["resize"]
       }
     };
 
@@ -2944,7 +2964,7 @@
         }
       },
       observe: resize({
-        target: ({ $el }) => [$el, getPositionedParent($el) || parent($el)]
+        target: ({ $el }) => [getPositionedParent($el) || parent($el)]
       }),
       update: {
         read() {
@@ -3084,7 +3104,7 @@
         el,
         "touchmove",
         (e) => {
-          if (e.targetTouches.length !== 1) {
+          if (e.targetTouches.length !== 1 || matches(e.target, 'input[type="range"')) {
             return;
           }
           let [{ scrollHeight, clientHeight }] = scrollParents(e.target);
@@ -3160,8 +3180,8 @@
           ];
         },
         target({ target, targetX, targetY }, $el) {
-          targetX = targetX || target || this.targetEl;
-          targetY = targetY || target || this.targetEl;
+          targetX || (targetX = target || this.targetEl);
+          targetY || (targetY = target || this.targetEl);
           return [
             targetX === true ? window : query(targetX, $el),
             targetY === true ? window : query(targetY, $el)
@@ -3417,13 +3437,13 @@
               const targetOffset = offset(this.target[i]);
               const elOffset = offset(this.$el);
               css(this.$el, {
-                [prop]: (targetOffset[start] > elOffset[start] ? targetOffset[start] - Math.max(
+                [prop]: (targetOffset[start] > elOffset[start] ? targetOffset[this.inset ? end : start] - Math.max(
                   offset(this.boundary[i])[start],
                   viewports[i][start] + viewportOffset
                 ) : Math.min(
                   offset(this.boundary[i])[end],
                   viewports[i][end] - viewportOffset
-                ) - targetOffset[end]) - positionOffset,
+                ) - targetOffset[this.inset ? start : end]) - positionOffset,
                 [`overflow-${axis}`]: "auto"
               });
               this.positionAt(this.$el, this.target, this.boundary);
@@ -3489,7 +3509,6 @@
     var Dropnav = {
       mixins: [Class, Container],
       props: {
-        dropdown: String,
         align: String,
         clsDrop: String,
         boundary: Boolean,
@@ -3508,7 +3527,6 @@
         animateOut: Boolean
       },
       data: {
-        dropdown: "> li > a, > ul > li > a",
         align: isRtl ? "right" : "left",
         clsDrop: "uk-dropdown",
         clsDropbar: "uk-dropnav-dropbar",
@@ -3516,77 +3534,63 @@
         dropbar: false,
         dropbarAnchor: false,
         duration: 200,
-        container: false
+        container: false,
+        selNavItem: "> li > a, > ul > li > a"
       },
       computed: {
         dropbarAnchor({ dropbarAnchor }, $el) {
           return query(dropbarAnchor, $el) || $el;
         },
-        dropbar: {
-          get({ dropbar }) {
-            if (!dropbar) {
-              return null;
-            }
-            dropbar = this._dropbar || query(dropbar, this.$el) || $(`+ .${this.clsDropbar}`, this.$el);
-            return dropbar ? dropbar : this._dropbar = $("<div></div>");
-          },
-          watch(dropbar) {
-            addClass(
-              dropbar,
-              "uk-dropbar",
-              "uk-dropbar-top",
-              this.clsDropbar,
-              `uk-${this.$options.name}-dropbar`
-            );
-          },
-          immediate: true
+        dropbar({ dropbar }) {
+          if (!dropbar) {
+            return null;
+          }
+          dropbar = this._dropbar || query(dropbar, this.$el) || $(`+ .${this.clsDropbar}`, this.$el);
+          return dropbar ? dropbar : this._dropbar = $("<div></div>");
         },
         dropContainer(_, $el) {
           return this.container || $el;
         },
-        dropdowns: {
-          get({ clsDrop }, $el) {
-            var _a;
-            const dropdowns = $$(`.${clsDrop}`, $el);
-            if (this.dropContainer !== $el) {
-              for (const el of $$(`.${clsDrop}`, this.dropContainer)) {
-                const target = (_a = this.getDropdown(el)) == null ? void 0 : _a.targetEl;
-                if (!includes(dropdowns, el) && target && within(target, this.$el)) {
-                  dropdowns.push(el);
-                }
+        dropdowns({ clsDrop }, $el) {
+          var _a;
+          const dropdowns = $$(`.${clsDrop}`, $el);
+          if (this.dropContainer !== $el) {
+            for (const el of $$(`.${clsDrop}`, this.dropContainer)) {
+              const target = (_a = this.getDropdown(el)) == null ? void 0 : _a.targetEl;
+              if (!includes(dropdowns, el) && target && within(target, this.$el)) {
+                dropdowns.push(el);
               }
             }
-            return dropdowns;
-          },
-          watch(dropdowns) {
-            this.$create(
-              "drop",
-              dropdowns.filter((el) => !this.getDropdown(el)),
-              {
-                ...this.$props,
-                flip: false,
-                shift: true,
-                pos: `bottom-${this.align}`,
-                boundary: this.boundary === true ? this.$el : this.boundary
-              }
-            );
-          },
-          immediate: true
+          }
+          return dropdowns;
         },
-        items: {
-          get({ dropdown }, $el) {
-            return $$(dropdown, $el);
-          },
-          watch(items) {
-            attr(children(this.$el), "role", "presentation");
-            attr(items, { tabindex: -1, role: "menuitem" });
-            attr(items[0], "tabindex", 0);
-          },
-          immediate: true
+        items({ selNavItem }, $el) {
+          return $$(selNavItem, $el);
         }
       },
-      connected() {
-        attr(this.$el, "role", "menubar");
+      watch: {
+        dropbar(dropbar) {
+          addClass(
+            dropbar,
+            "uk-dropbar",
+            "uk-dropbar-top",
+            this.clsDropbar,
+            `uk-${this.$options.name}-dropbar`
+          );
+        },
+        dropdowns(dropdowns) {
+          this.$create(
+            "drop",
+            dropdowns.filter((el) => !this.getDropdown(el)),
+            {
+              ...this.$props,
+              flip: false,
+              shift: true,
+              pos: `bottom-${this.align}`,
+              boundary: this.boundary === true ? this.$el : this.boundary
+            }
+          );
+        }
       },
       disconnected() {
         remove$1(this._dropbar);
@@ -3596,24 +3600,19 @@
         {
           name: "mouseover focusin",
           delegate() {
-            return this.dropdown;
+            return this.selNavItem;
           },
-          handler({ current, type }) {
+          handler({ current }) {
             const active2 = this.getActive();
             if (active2 && includes(active2.mode, "hover") && active2.targetEl && !within(active2.targetEl, current) && !active2.isDelaying) {
               active2.hide(false);
-            }
-            if (type === "focusin") {
-              for (const toggle of this.items) {
-                attr(toggle, "tabindex", current === toggle ? 0 : -1);
-              }
             }
           }
         },
         {
           name: "keydown",
           delegate() {
-            return this.dropdown;
+            return this.selNavItem;
           },
           handler(e) {
             const { current, keyCode } = e;
@@ -3901,7 +3900,7 @@
           }
         }),
         resize({
-          target: ({ $el }) => [$el, ...toArray($el.children)]
+          target: ({ $el }) => [$el, ...children($el)]
         })
       ],
       update: {
@@ -4099,13 +4098,8 @@
         row: true
       },
       computed: {
-        elements: {
-          get({ target }, $el) {
-            return $$(target, $el);
-          },
-          watch() {
-            this.$reset();
-          }
+        elements({ target }, $el) {
+          return $$(target, $el);
         }
       },
       observe: resize({
@@ -4215,72 +4209,28 @@
       }
     };
 
-    function getMaxPathLength(el) {
-      return Math.ceil(
-        Math.max(
-          0,
-          ...$$("[stroke]", el).map((stroke) => {
-            try {
-              return stroke.getTotalLength();
-            } catch (e) {
-              return 0;
-            }
-          })
-        )
-      );
-    }
-
-    var SVG = {
+    var Svg = {
       args: "src",
       props: {
-        id: Boolean,
-        icon: String,
-        src: String,
-        style: String,
         width: Number,
         height: Number,
-        ratio: Number,
-        class: String,
-        strokeAnimation: Boolean,
-        attributes: "list"
+        ratio: Number
       },
       data: {
-        ratio: 1,
-        include: ["style", "class"],
-        class: "",
-        strokeAnimation: false
-      },
-      beforeConnect() {
-        this.class += " uk-svg";
+        ratio: 1
       },
       connected() {
-        if (!this.icon && includes(this.src, "#")) {
-          [this.src, this.icon] = this.src.split("#");
-        }
         this.svg = this.getSvg().then((el) => {
-          if (this._connected) {
-            const svg = insertSVG(el, this.$el);
-            if (this.svgEl && svg !== this.svgEl) {
-              remove$1(this.svgEl);
-            }
-            this.applyAttributes(svg, el);
-            return this.svgEl = svg;
+          if (!this._connected) {
+            return;
           }
+          const svg = insertSVG(el, this.$el);
+          if (this.svgEl && svg !== this.svgEl) {
+            remove$1(this.svgEl);
+          }
+          applyWidthAndHeight.call(this, svg, el);
+          return this.svgEl = svg;
         }, noop);
-        if (this.strokeAnimation) {
-          this.svg.then((el) => {
-            if (this._connected && el) {
-              applyAnimation(el);
-              registerObserver(
-                this,
-                observeIntersection(el, (records, observer) => {
-                  applyAnimation(el);
-                  observer.disconnect();
-                })
-              );
-            }
-          });
-        }
       },
       disconnected() {
         this.svg.then((svg) => {
@@ -4297,76 +4247,9 @@
       },
       methods: {
         async getSvg() {
-          if (isTag(this.$el, "img") && !this.$el.complete && this.$el.loading === "lazy") {
-            return new Promise(
-              (resolve) => once(this.$el, "load", () => resolve(this.getSvg()))
-            );
-          }
-          return parseSVG(await loadSVG(this.src), this.icon) || Promise.reject("SVG not found.");
-        },
-        applyAttributes(el, ref) {
-          for (const prop in this.$options.props) {
-            if (includes(this.include, prop) && prop in this) {
-              attr(el, prop, this[prop]);
-            }
-          }
-          for (const attribute in this.attributes) {
-            const [prop, value] = this.attributes[attribute].split(":", 2);
-            attr(el, prop, value);
-          }
-          if (!this.id) {
-            removeAttr(el, "id");
-          }
-          const props = ["width", "height"];
-          let dimensions = props.map((prop) => this[prop]);
-          if (!dimensions.some((val) => val)) {
-            dimensions = props.map((prop) => attr(ref, prop));
-          }
-          const viewBox = attr(ref, "viewBox");
-          if (viewBox && !dimensions.some((val) => val)) {
-            dimensions = viewBox.split(" ").slice(2);
-          }
-          dimensions.forEach((val, i) => attr(el, props[i], toFloat(val) * this.ratio || null));
         }
       }
     };
-    const loadSVG = memoize(async (src) => {
-      if (src) {
-        if (startsWith(src, "data:")) {
-          return decodeURIComponent(src.split(",")[1]);
-        } else {
-          return (await fetch(src)).text();
-        }
-      } else {
-        return Promise.reject();
-      }
-    });
-    function parseSVG(svg, icon) {
-      if (icon && includes(svg, "<symbol")) {
-        svg = parseSymbols(svg, icon) || svg;
-      }
-      svg = $(svg.substr(svg.indexOf("<svg")));
-      return (svg == null ? void 0 : svg.hasChildNodes()) && svg;
-    }
-    const symbolRe = /<symbol([^]*?id=(['"])(.+?)\2[^]*?<\/)symbol>/g;
-    const symbols = {};
-    function parseSymbols(svg, icon) {
-      if (!symbols[svg]) {
-        symbols[svg] = {};
-        symbolRe.lastIndex = 0;
-        let match;
-        while (match = symbolRe.exec(svg)) {
-          symbols[svg][match[3]] = `<svg xmlns="http://www.w3.org/2000/svg"${match[1]}svg>`;
-        }
-      }
-      return symbols[svg][icon];
-    }
-    function applyAnimation(el) {
-      const length = getMaxPathLength(el);
-      if (length) {
-        el.style.setProperty("--uk-animation-stroke", length);
-      }
-    }
     function insertSVG(el, root) {
       if (isVoidElement(root) || isTag(root, "canvas")) {
         root.hidden = true;
@@ -4378,6 +4261,18 @@
     }
     function equals(el, other) {
       return isTag(el, "svg") && isTag(other, "svg") && el.innerHTML === other.innerHTML;
+    }
+    function applyWidthAndHeight(el, ref) {
+      const props = ["width", "height"];
+      let dimensions = props.map((prop) => this[prop]);
+      if (!dimensions.some((val) => val)) {
+        dimensions = props.map((prop) => attr(ref, prop));
+      }
+      const viewBox = attr(ref, "viewBox");
+      if (viewBox && !dimensions.some((val) => val)) {
+        dimensions = viewBox.split(" ").slice(2);
+      }
+      dimensions.forEach((val, i) => attr(el, props[i], toFloat(val) * this.ratio || null));
     }
 
     var I18n = {
@@ -4399,45 +4294,45 @@
       }
     };
 
-    var closeIcon = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"1\" y1=\"1\" x2=\"13\" y2=\"13\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"13\" y1=\"1\" x2=\"1\" y2=\"13\"/></svg>";
+    var closeIcon = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\"><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"1\" y1=\"1\" x2=\"13\" y2=\"13\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"13\" y1=\"1\" x2=\"1\" y2=\"13\"/></svg>";
 
-    var closeLarge = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" x1=\"1\" y1=\"1\" x2=\"19\" y2=\"19\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" x1=\"19\" y1=\"1\" x2=\"1\" y2=\"19\"/></svg>";
+    var closeLarge = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" x1=\"1\" y1=\"1\" x2=\"19\" y2=\"19\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" x1=\"19\" y1=\"1\" x2=\"1\" y2=\"19\"/></svg>";
 
-    var dropParentIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
+    var dropParentIcon = "<svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
 
-    var marker = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"9\" y=\"4\" width=\"1\" height=\"11\"/><rect x=\"4\" y=\"9\" width=\"11\" height=\"1\"/></svg>";
+    var marker = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><rect x=\"9\" y=\"4\" width=\"1\" height=\"11\"/><rect x=\"4\" y=\"9\" width=\"11\" height=\"1\"/></svg>";
 
-    var navParentIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
+    var navParentIcon = "<svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
 
-    var navParentIconLarge = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 4 7 10 13 4\"/></svg>";
+    var navParentIconLarge = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 4 7 10 13 4\"/></svg>";
 
-    var navbarParentIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
+    var navbarParentIcon = "<svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" points=\"1 3.5 6 8.5 11 3.5\"/></svg>";
 
-    var navbarToggleIcon = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><style>.uk-navbar-toggle-animate svg>[class*=line-]{transition:.2s ease-in-out;transition-property:transform,opacity;transform-origin:center;opacity:1}.uk-navbar-toggle svg>.line-3{opacity:0}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-3{opacity:1}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-2{transform:rotate(45deg)}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-3{transform:rotate(-45deg)}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-1,.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-4{opacity:0}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-1{transform:translateY(6px) scaleX(0)}.uk-navbar-toggle-animate[aria-expanded=true] svg>.line-4{transform:translateY(-6px) scaleX(0)}</style><rect class=\"line-1\" y=\"3\" width=\"20\" height=\"2\"/><rect class=\"line-2\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-3\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-4\" y=\"15\" width=\"20\" height=\"2\"/></svg>";
+    var navbarToggleIcon = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><style>.uk-navbar-toggle-animate svg&gt;[class*=&quot;line-&quot;]{transition:0.2s ease-in-out;transition-property:transform, opacity;transform-origin:center;opacity:1}.uk-navbar-toggle svg&gt;.line-3{opacity:0}.uk-navbar-toggle-animate[aria-expanded=&quot;true&quot;] svg&gt;.line-3{opacity:1}.uk-navbar-toggle-animate[aria-expanded=&quot;true&quot;] svg&gt;.line-2{transform:rotate(45deg)}.uk-navbar-toggle-animate[aria-expanded=&quot;true&quot;] svg&gt;.line-3{transform:rotate(-45deg)}.uk-navbar-toggle-animate[aria-expanded=&quot;true&quot;] svg&gt;.line-1,.uk-navbar-toggle-animate[aria-expanded=&quot;true&quot;] svg&gt;.line-4{opacity:0}.uk-navbar-toggle-animate[aria-expanded=&quot;true&quot;] svg&gt;.line-1{transform:translateY(6px) scaleX(0)}.uk-navbar-toggle-animate[aria-expanded=&quot;true&quot;] svg&gt;.line-4{transform:translateY(-6px) scaleX(0)}</style><rect class=\"line-1\" y=\"3\" width=\"20\" height=\"2\"/><rect class=\"line-2\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-3\" y=\"9\" width=\"20\" height=\"2\"/><rect class=\"line-4\" y=\"15\" width=\"20\" height=\"2\"/></svg>";
 
-    var overlayIcon = "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"19\" y=\"0\" width=\"1\" height=\"40\"/><rect x=\"0\" y=\"19\" width=\"40\" height=\"1\"/></svg>";
+    var overlayIcon = "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\"><rect x=\"19\" y=\"0\" width=\"1\" height=\"40\"/><rect x=\"0\" y=\"19\" width=\"40\" height=\"1\"/></svg>";
 
-    var paginationNext = "<svg width=\"7\" height=\"12\" viewBox=\"0 0 7 12\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" points=\"1 1 6 6 1 11\"/></svg>";
+    var paginationNext = "<svg width=\"7\" height=\"12\" viewBox=\"0 0 7 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" points=\"1 1 6 6 1 11\"/></svg>";
 
-    var paginationPrevious = "<svg width=\"7\" height=\"12\" viewBox=\"0 0 7 12\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" points=\"6 1 1 6 6 11\"/></svg>";
+    var paginationPrevious = "<svg width=\"7\" height=\"12\" viewBox=\"0 0 7 12\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" points=\"6 1 1 6 6 11\"/></svg>";
 
-    var searchIcon = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><circle fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" cx=\"9\" cy=\"9\" r=\"7\"/><path fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" d=\"M14,14 L18,18 L14,14 Z\"/></svg>";
+    var searchIcon = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><circle fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" cx=\"9\" cy=\"9\" r=\"7\"/><path fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" d=\"M14,14 L18,18 L14,14 Z\"/></svg>";
 
-    var searchLarge = "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><circle fill=\"none\" stroke=\"#000\" stroke-width=\"1.8\" cx=\"17.5\" cy=\"17.5\" r=\"16.5\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.8\" x1=\"38\" y1=\"39\" x2=\"29\" y2=\"30\"/></svg>";
+    var searchLarge = "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\"><circle fill=\"none\" stroke=\"#000\" stroke-width=\"1.8\" cx=\"17.5\" cy=\"17.5\" r=\"16.5\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.8\" x1=\"38\" y1=\"39\" x2=\"29\" y2=\"30\"/></svg>";
 
-    var searchNavbar = "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><circle fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" cx=\"10.5\" cy=\"10.5\" r=\"9.5\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"23\" y1=\"23\" x2=\"17\" y2=\"17\"/></svg>";
+    var searchNavbar = "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><circle fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" cx=\"10.5\" cy=\"10.5\" r=\"9.5\"/><line fill=\"none\" stroke=\"#000\" stroke-width=\"1.1\" x1=\"23\" y1=\"23\" x2=\"17\" y2=\"17\"/></svg>";
 
-    var slidenavNext = "<svg width=\"14\" height=\"24\" viewBox=\"0 0 14 24\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" points=\"1.225,23 12.775,12 1.225,1 \"/></svg>";
+    var slidenavNext = "<svg width=\"14\" height=\"24\" viewBox=\"0 0 14 24\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" points=\"1.225,23 12.775,12 1.225,1\"/></svg>";
 
-    var slidenavNextLarge = "<svg width=\"25\" height=\"40\" viewBox=\"0 0 25 40\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"2\" points=\"4.002,38.547 22.527,20.024 4,1.5 \"/></svg>";
+    var slidenavNextLarge = "<svg width=\"25\" height=\"40\" viewBox=\"0 0 25 40\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"2\" points=\"4.002,38.547 22.527,20.024 4,1.5\"/></svg>";
 
-    var slidenavPrevious = "<svg width=\"14\" height=\"24\" viewBox=\"0 0 14 24\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" points=\"12.775,1 1.225,12 12.775,23 \"/></svg>";
+    var slidenavPrevious = "<svg width=\"14\" height=\"24\" viewBox=\"0 0 14 24\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" points=\"12.775,1 1.225,12 12.775,23\"/></svg>";
 
-    var slidenavPreviousLarge = "<svg width=\"25\" height=\"40\" viewBox=\"0 0 25 40\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"2\" points=\"20.527,1.5 2,20.024 20.525,38.547 \"/></svg>";
+    var slidenavPreviousLarge = "<svg width=\"25\" height=\"40\" viewBox=\"0 0 25 40\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"2\" points=\"20.527,1.5 2,20.024 20.525,38.547\"/></svg>";
 
-    var spinner = "<svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"><circle fill=\"none\" stroke=\"#000\" cx=\"15\" cy=\"15\" r=\"14\"/></svg>";
+    var spinner = "<svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\"><circle fill=\"none\" stroke=\"#000\" cx=\"15\" cy=\"15\" r=\"14\"/></svg>";
 
-    var totop = "<svg width=\"18\" height=\"10\" viewBox=\"0 0 18 10\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" points=\"1 9 9 1 17 9 \"/></svg>";
+    var totop = "<svg width=\"18\" height=\"10\" viewBox=\"0 0 18 10\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" points=\"1 9 9 1 17 9\"/></svg>";
 
     const icons = {
       spinner,
@@ -4463,10 +4358,9 @@
     };
     const Icon = {
       install: install$3,
-      extends: SVG,
+      mixins: [Svg],
       args: "icon",
-      props: ["icon"],
-      data: { include: [] },
+      props: { icon: String },
       isIcon: true,
       beforeConnect() {
         addClass(this.$el, "uk-icon");
@@ -4628,9 +4522,10 @@
         ensureSrcAttribute(this.$el);
       },
       disconnected() {
-        if (this._data.image) {
-          this._data.image.onload = "";
+        if (this.img) {
+          this.img.onload = "";
         }
+        delete this.img;
       },
       observe: intersection({
         target: ({ $el, $props }) => [$el, ...queryAll($props.target, $el)],
@@ -4643,13 +4538,13 @@
       }),
       methods: {
         load() {
-          if (this._data.image) {
-            return this._data.image;
+          if (this.img) {
+            return this.img;
           }
           const image = isImg(this.$el) ? this.$el : getImageFromElement(this.$el, this.dataSrc, this.sources);
           removeAttr(image, "loading");
           setSrcAttrs(this.$el, image.currentSrc);
-          return this._data.image = image;
+          return this.img = image;
         }
       }
     };
@@ -4668,12 +4563,12 @@
     }
     const srcProps = ["data-src", "data-srcset", "sizes"];
     function setSourceProps(sourceEl, targetEl) {
-      srcProps.forEach((prop) => {
+      for (const prop of srcProps) {
         const value = data(sourceEl, prop);
         if (value) {
           attr(targetEl, prop.replace(/^(data-)+/, ""), value);
         }
-      });
+      }
     }
     function getImageFromElement(el, src, sources) {
       const img = new Image();
@@ -5067,22 +4962,21 @@
       modal.alert = function(message, options) {
         return openDialog(
           ({ i18n }) => `<div class="uk-modal-body">${isString(message) ? message : html(message)}</div> <div class="uk-modal-footer uk-text-right"> <button class="uk-button uk-button-primary uk-modal-close" autofocus>${i18n.ok}</button> </div>`,
-          options,
-          (deferred) => deferred.resolve()
+          options
         );
       };
       modal.confirm = function(message, options) {
         return openDialog(
           ({ i18n }) => `<form> <div class="uk-modal-body">${isString(message) ? message : html(message)}</div> <div class="uk-modal-footer uk-text-right"> <button class="uk-button uk-button-default uk-modal-close" type="button">${i18n.cancel}</button> <button class="uk-button uk-button-primary" autofocus>${i18n.ok}</button> </div> </form>`,
           options,
-          (deferred) => deferred.reject()
+          () => Promise.reject()
         );
       };
       modal.prompt = function(message, value, options) {
         return openDialog(
           ({ i18n }) => `<form class="uk-form-stacked"> <div class="uk-modal-body"> <label>${isString(message) ? message : html(message)}</label> <input class="uk-input" value="${value || ""}" autofocus> </div> <div class="uk-modal-footer uk-text-right"> <button class="uk-button uk-button-default uk-modal-close" type="button">${i18n.cancel}</button> <button class="uk-button uk-button-primary">${i18n.ok}</button> </div> </form>`,
           options,
-          (deferred) => deferred.resolve(null),
+          () => null,
           (dialog) => $("input", dialog.$el).value
         );
       };
@@ -5090,7 +4984,7 @@
         ok: "Ok",
         cancel: "Cancel"
       };
-      function openDialog(tmpl, options, hideFn, submitFn) {
+      function openDialog(tmpl, options, hideFn = noop, submitFn = noop) {
         options = {
           bgClose: false,
           escClose: true,
@@ -5099,17 +4993,18 @@
           i18n: { ...modal.i18n, ...options == null ? void 0 : options.i18n }
         };
         const dialog = modal.dialog(tmpl(options), options);
-        const deferred = new Deferred();
-        let resolved = false;
-        on(dialog.$el, "submit", "form", (e) => {
-          e.preventDefault();
-          deferred.resolve(submitFn == null ? void 0 : submitFn(dialog));
-          resolved = true;
-          dialog.hide();
-        });
-        on(dialog.$el, "hide", () => !resolved && hideFn(deferred));
-        deferred.promise.dialog = dialog;
-        return deferred.promise;
+        return assign(
+          new Promise((resolve) => {
+            const off = on(dialog.$el, "hide", () => resolve(hideFn()));
+            on(dialog.$el, "submit", "form", (e) => {
+              e.preventDefault();
+              resolve(submitFn(dialog));
+              off();
+              dialog.hide();
+            });
+          }),
+          { dialog }
+        );
       }
     }
 
@@ -5125,28 +5020,26 @@
     var navbar = {
       extends: Dropnav,
       data: {
-        dropdown: ".uk-navbar-nav > li > a, .uk-navbar-item, .uk-navbar-toggle",
-        clsDrop: "uk-navbar-dropdown"
+        clsDrop: "uk-navbar-dropdown",
+        selNavItem: ".uk-navbar-nav > li > a,a.uk-navbar-item,button.uk-navbar-item,.uk-navbar-item a,.uk-navbar-item button,.uk-navbar-toggle"
+        // Simplify with :where() selector once browser target is Safari 14+
       },
-      computed: {
-        items: {
-          get({ dropdown }, $el) {
-            return $$(dropdown, $el);
-          },
-          watch(items) {
-            const justify = hasClass(this.$el, "uk-navbar-justify");
-            for (const container of $$(
-              ".uk-navbar-nav, .uk-navbar-left, .uk-navbar-right",
-              this.$el
-            )) {
-              css(container, "flexGrow", justify ? $$(this.dropdown, container).length : "");
-            }
-            attr($$(".uk-navbar-nav", this.$el), "role", "group");
-            attr($$(".uk-navbar-nav > *", this.$el), "role", "presentation");
-            attr(items, { tabindex: -1, role: "menuitem" });
-            attr(items[0], "tabindex", 0);
-          },
-          immediate: true
+      watch: {
+        items() {
+          const justify = hasClass(this.$el, "uk-navbar-justify");
+          for (const container of $$(
+            ".uk-navbar-nav, .uk-navbar-left, .uk-navbar-right",
+            this.$el
+          )) {
+            css(
+              container,
+              "flexGrow",
+              justify ? $$(
+                ".uk-navbar-nav > li > a, .uk-navbar-item, .uk-navbar-toggle",
+                container
+              ).length : ""
+            );
+          }
         }
       }
     };
@@ -5398,7 +5291,9 @@
       for (const instance of instances) {
         if (within(e.target, instance.$el) && isSameSiteAnchor(instance.$el)) {
           e.preventDefault();
-          window.history.pushState({}, "", instance.$el.href);
+          if (window.location.href !== instance.$el.href) {
+            window.history.pushState({}, "", instance.$el.href);
+          }
           instance.scrollTo(getTargetedElement(instance.$el));
         }
       }
@@ -5424,30 +5319,30 @@
         inViewClass: "uk-scrollspy-inview"
       }),
       computed: {
-        elements: {
-          get({ target }, $el) {
-            return target ? $$(target, $el) : [$el];
-          },
-          watch(elements) {
-            if (this.hidden) {
-              css(filter$1(elements, `:not(.${this.inViewClass})`), "opacity", 0);
-            }
-          },
-          immediate: true
+        elements({ target }, $el) {
+          return target ? $$(target, $el) : [$el];
+        }
+      },
+      watch: {
+        elements(elements) {
+          if (this.hidden) {
+            css(filter$1(elements, `:not(.${this.inViewClass})`), "opacity", 0);
+          }
         }
       },
       connected() {
-        this._data.elements = /* @__PURE__ */ new Map();
+        this.elementData = /* @__PURE__ */ new Map();
       },
       disconnected() {
-        for (const [el, state] of this._data.elements.entries()) {
+        for (const [el, state] of this.elementData.entries()) {
           removeClass(el, this.inViewClass, (state == null ? void 0 : state.cls) || "");
         }
+        delete this.elementData;
       },
       observe: intersection({
         target: ({ elements }) => elements,
         handler(records) {
-          const elements = this._data.elements;
+          const elements = this.elementData;
           for (const { target: el, isIntersecting } of records) {
             if (!elements.has(el)) {
               elements.set(el, {
@@ -5468,7 +5363,7 @@
       update: [
         {
           write(data) {
-            for (const [el, state] of data.elements.entries()) {
+            for (const [el, state] of this.elementData.entries()) {
               if (state.show && !state.inview && !state.queued) {
                 state.queued = true;
                 data.promise = (data.promise || Promise.resolve()).then(() => new Promise((resolve) => setTimeout(resolve, this.delay))).then(() => {
@@ -5488,7 +5383,7 @@
       methods: {
         toggle(el, inview) {
           var _a;
-          const state = this._data.elements.get(el);
+          const state = this.elementData.get(el);
           if (!state) {
             return;
           }
@@ -5527,22 +5422,21 @@
         offset: 0
       },
       computed: {
-        links: {
-          get(_, $el) {
-            return $$('a[href*="#"]', $el).filter((el) => el.hash && isSameSiteAnchor(el));
-          },
-          watch(links) {
-            if (this.scroll) {
-              this.$create("scroll", links, { offset: this.offset || 0 });
-            }
-          },
-          immediate: true
+        links(_, $el) {
+          return $$('a[href*="#"]', $el).filter((el) => el.hash && isSameSiteAnchor(el));
         },
         elements({ closest: selector }) {
           return closest(this.links, selector || "*");
         }
       },
-      observe: scroll$1(),
+      watch: {
+        links(links) {
+          if (this.scroll) {
+            this.$create("scroll", links, { offset: this.offset || 0 });
+          }
+        }
+      },
+      observe: [intersection(), scroll$1()],
       update: [
         {
           read() {
@@ -5643,15 +5537,7 @@
         remove$1(this.placeholder);
         this.placeholder = null;
       },
-      observe: [
-        resize({
-          handler() {
-            !this.isFixed && this.$emit("resize");
-          }
-        }),
-        resize({ target: () => [document.documentElement] }),
-        scroll$1()
-      ],
+      observe: [resize({ target: ({ $el }) => [$el, document.documentElement] }), scroll$1()],
       events: [
         {
           name: "resize",
@@ -5659,7 +5545,7 @@
             return [window, window.visualViewport];
           },
           handler() {
-            this.$emit("resizeViewport");
+            this.$emit("resize");
           }
         },
         {
@@ -5683,18 +5569,29 @@
               }
             });
           }
+        },
+        {
+          name: "transitionstart",
+          capture: true,
+          handler() {
+            this.transitionInProgress = once(
+              this.$el,
+              "transitionend transitioncancel",
+              () => this.transitionInProgress = null
+            );
+          }
         }
       ],
       update: [
         {
-          read({ height: height$1, width, margin, sticky }, types) {
+          read({ height: height$1, width, margin, sticky }) {
             this.inactive = !this.matchMedia || !isVisible(this.$el);
             if (this.inactive) {
               return;
             }
-            const hide = this.isFixed && types.has("resize") && !sticky;
+            const hide = this.isFixed && !this.transitionInProgress;
             if (hide) {
-              css(this.selTarget, "transition", "0s");
+              preventTransition(this.selTarget);
               this.hide();
             }
             if (!this.active) {
@@ -5703,7 +5600,6 @@
             }
             if (hide) {
               this.show();
-              requestAnimationFrame(() => css(this.selTarget, "transition", ""));
             }
             const viewport = toPx("100vh", "height");
             const dynamicViewport = height(window);
@@ -5761,7 +5657,7 @@
             }
             (sticky ? before : after)(this.$el, placeholder);
           },
-          events: ["resize", "resizeViewport"]
+          events: ["resize"]
         },
         {
           read({
@@ -5834,6 +5730,7 @@
               this.show();
               Animation.in(this.$el, this.animation).catch(noop);
             } else {
+              preventTransition(this.selTarget);
               this.show();
             }
           },
@@ -5935,6 +5832,124 @@
     function reset(el) {
       css(el, { position: "", top: "", marginTop: "", width: "" });
     }
+    function preventTransition(el) {
+      css(el, "transition", "0s");
+      requestAnimationFrame(() => css(el, "transition", ""));
+    }
+
+    function getMaxPathLength(el) {
+      return Math.ceil(
+        Math.max(
+          0,
+          ...$$("[stroke]", el).map((stroke) => {
+            try {
+              return stroke.getTotalLength();
+            } catch (e) {
+              return 0;
+            }
+          })
+        )
+      );
+    }
+
+    var svg = {
+      mixins: [Svg],
+      args: "src",
+      props: {
+        src: String,
+        icon: String,
+        attributes: "list",
+        strokeAnimation: Boolean
+      },
+      data: {
+        strokeAnimation: false
+      },
+      observe: [
+        mutation({
+          async handler() {
+            const svg = await this.svg;
+            if (svg) {
+              applyAttributes.call(this, svg);
+            }
+          },
+          options: {
+            attributes: true,
+            attributeFilter: ["id", "class", "style"]
+          }
+        })
+      ],
+      async connected() {
+        if (includes(this.src, "#")) {
+          [this.src, this.icon] = this.src.split("#");
+        }
+        const svg = await this.svg;
+        if (svg) {
+          applyAttributes.call(this, svg);
+          if (this.strokeAnimation) {
+            applyAnimation(svg);
+          }
+        }
+      },
+      methods: {
+        async getSvg() {
+          if (isTag(this.$el, "img") && !this.$el.complete && this.$el.loading === "lazy") {
+            return new Promise(
+              (resolve) => once(this.$el, "load", () => resolve(this.getSvg()))
+            );
+          }
+          return parseSVG(await loadSVG(this.src), this.icon) || Promise.reject("SVG not found.");
+        }
+      }
+    };
+    function applyAttributes(el) {
+      const { $el } = this;
+      addClass(el, attr($el, "class"), "uk-svg");
+      for (let i = 0; i < $el.style.length; i++) {
+        const prop = $el.style[i];
+        css(el, prop, css($el, prop));
+      }
+      for (const attribute in this.attributes) {
+        const [prop, value] = this.attributes[attribute].split(":", 2);
+        attr(el, prop, value);
+      }
+      if (!this.$el.id) {
+        removeAttr(el, "id");
+      }
+    }
+    const loadSVG = memoize(async (src) => {
+      if (src) {
+        if (startsWith(src, "data:")) {
+          return decodeURIComponent(src.split(",")[1]);
+        } else {
+          return (await fetch(src)).text();
+        }
+      } else {
+        return Promise.reject();
+      }
+    });
+    function parseSVG(svg, icon) {
+      if (icon && includes(svg, "<symbol")) {
+        svg = parseSymbols(svg)[icon] || svg;
+      }
+      svg = $(svg.substr(svg.indexOf("<svg")));
+      return (svg == null ? void 0 : svg.hasChildNodes()) && svg;
+    }
+    const symbolRe = /<symbol([^]*?id=(['"])(.+?)\2[^]*?<\/)symbol>/g;
+    const parseSymbols = memoize(function(svg) {
+      const symbols = {};
+      symbolRe.lastIndex = 0;
+      let match;
+      while (match = symbolRe.exec(svg)) {
+        symbols[match[3]] = `<svg ${match[1]}svg>`;
+      }
+      return symbols;
+    });
+    function applyAnimation(el) {
+      const length = getMaxPathLength(el);
+      if (length) {
+        css(el, "--uk-animation-stroke", length);
+      }
+    }
 
     const selDisabled = ".uk-disabled *, .uk-disabled, [disabled]";
     var Switcher = {
@@ -5960,47 +5975,39 @@
         swiping: true
       },
       computed: {
-        connects: {
-          get({ connect }, $el) {
-            return queryAll(connect, $el);
-          },
-          watch(connects) {
-            if (this.swiping) {
-              css(connects, "touchAction", "pan-y pinch-zoom");
-            }
-            this.$emit();
-          },
-          document: true,
-          immediate: true
+        connects({ connect }, $el) {
+          return queryAll(connect, $el);
         },
-        connectChildren: {
-          get() {
-            return this.connects.map((el) => children(el)).flat();
-          },
-          watch() {
-            const index = this.index();
-            for (const el of this.connects) {
-              children(el).forEach((child, i) => toggleClass(child, this.cls, i === index));
-            }
-            this.$emit();
-          },
-          immediate: true
+        connectChildren() {
+          return this.connects.map((el) => children(el)).flat();
         },
-        toggles: {
-          get({ toggle }, $el) {
-            return $$(toggle, $el);
-          },
-          watch(toggles) {
-            this.$emit();
-            const active = this.index();
-            this.show(~active ? active : toggles[this.active] || toggles[0]);
-          },
-          immediate: true
+        toggles({ toggle }, $el) {
+          return $$(toggle, $el);
         },
         children() {
           return children(this.$el).filter(
             (child) => this.toggles.some((toggle) => within(toggle, child))
           );
+        }
+      },
+      watch: {
+        connects(connects) {
+          if (this.swiping) {
+            css(connects, "touchAction", "pan-y pinch-zoom");
+          }
+          this.$emit();
+        },
+        connectChildren() {
+          let index = Math.max(0, this.index());
+          for (const el of this.connects) {
+            children(el).forEach((child, i) => toggleClass(child, this.cls, i === index));
+          }
+          this.$emit();
+        },
+        toggles(toggles) {
+          this.$emit();
+          const active = this.index();
+          this.show(~active ? active : toggles[this.active] || toggles[0]);
         }
       },
       connected() {
@@ -6111,11 +6118,10 @@
           });
           const animate = prev >= 0 && prev !== next;
           this.connects.forEach(async ({ children: children2 }) => {
-            await this.toggleElement(
-              toNodes(children2).filter((child) => hasClass(child, this.cls)),
-              false,
-              animate
+            const actives = toArray(children2).filter(
+              (child, i) => i !== active && hasClass(child, this.cls)
             );
+            await this.toggleElement(actives, false, animate);
             await this.toggleElement(children2[active], true, animate);
           });
         }
@@ -6284,11 +6290,12 @@
             return;
           }
           const toggled = this.target.filter(this.isToggled);
-          await this.toggleElement(toggled, false);
-          await this.toggleElement(
-            this.target.filter((el) => !includes(toggled, el)),
-            true
-          );
+          if (await this.toggleElement(toggled, false)) {
+            await this.toggleElement(
+              this.target.filter((el) => !includes(toggled, el)),
+              true
+            );
+          }
         }
       }
     };
@@ -6332,7 +6339,7 @@
         SlidenavPrevious: Slidenav,
         Spinner: Spinner,
         Sticky: sticky,
-        Svg: SVG,
+        Svg: svg,
         Switcher: Switcher,
         Tab: tab,
         Toggle: toggle,
@@ -6635,46 +6642,42 @@
       mixins: [Animate],
       args: "target",
       props: {
-        target: Boolean,
+        target: String,
         selActive: Boolean
       },
       data: {
-        target: null,
+        target: "",
         selActive: false,
         attrItem: "uk-filter-control",
         cls: "uk-active",
         duration: 250
       },
       computed: {
-        toggles: {
-          get({ attrItem }, $el) {
-            return $$(`[${attrItem}],[data-${attrItem}]`, $el);
-          },
-          watch(toggles) {
-            this.updateState();
-            const actives = $$(this.selActive, this.$el);
-            for (const toggle of toggles) {
-              if (this.selActive !== false) {
-                toggleClass(toggle, this.cls, includes(actives, toggle));
-              }
-              const button = findButton(toggle);
-              if (isTag(button, "a")) {
-                attr(button, "role", "button");
-              }
-            }
-          },
-          immediate: true
+        toggles({ attrItem }, $el) {
+          return $$(`[${attrItem}],[data-${attrItem}]`, $el);
         },
-        children: {
-          get({ target }, $el) {
-            return $$(`${target} > *`, $el);
-          },
-          watch(list, prev) {
-            if (prev) {
-              this.updateState();
+        children({ target }, $el) {
+          return $$(`${target} > *`, $el);
+        }
+      },
+      watch: {
+        toggles(toggles) {
+          this.updateState();
+          const actives = $$(this.selActive, this.$el);
+          for (const toggle of toggles) {
+            if (this.selActive !== false) {
+              toggleClass(toggle, this.cls, includes(actives, toggle));
             }
-          },
-          immediate: true
+            const button = findButton(toggle);
+            if (isTag(button, "a")) {
+              attr(button, "role", "button");
+            }
+          }
+        },
+        children(list, prev) {
+          if (prev) {
+            this.updateState();
+          }
         }
       },
       events: {
@@ -6847,7 +6850,7 @@
     function Transitioner$1(prev, next, dir, { animation, easing }) {
       const { percent, translate, show = noop } = animation;
       const props = show(dir);
-      const deferred = new Deferred();
+      let resolve;
       return {
         dir,
         show(duration, percent2 = 0, linear) {
@@ -6856,25 +6859,27 @@
           this.translate(percent2);
           triggerUpdate$1(next, "itemin", { percent: percent2, duration, timing, dir });
           triggerUpdate$1(prev, "itemout", { percent: 1 - percent2, duration, timing, dir });
-          Promise.all([
-            Transition.start(next, props[1], duration, timing),
-            Transition.start(prev, props[0], duration, timing)
-          ]).then(() => {
-            this.reset();
-            deferred.resolve();
-          }, noop);
-          return deferred.promise;
+          return new Promise((res) => {
+            resolve || (resolve = res);
+            Promise.all([
+              Transition.start(next, props[1], duration, timing),
+              Transition.start(prev, props[0], duration, timing)
+            ]).then(() => {
+              this.reset();
+              resolve();
+            }, noop);
+          });
         },
         cancel() {
-          Transition.cancel([next, prev]);
+          return Transition.cancel([next, prev]);
         },
         reset() {
           for (const prop in props[0]) {
             css([next, prev], prop, "");
           }
         },
-        forward(duration, percent2 = this.percent()) {
-          Transition.cancel([next, prev]);
+        async forward(duration, percent2 = this.percent()) {
+          await this.cancel();
           return this.show(duration, percent2, true);
         },
         translate(percent2) {
@@ -6902,88 +6907,98 @@
         next: "Next slide",
         previous: "Previous slide",
         slideX: "Slide %s",
-        slideLabel: "%s of %s"
+        slideLabel: "%s of %s",
+        role: "String"
       },
       data: {
-        selNav: false
+        selNav: false,
+        role: "region"
       },
       computed: {
-        nav: {
-          get({ selNav }, $el) {
-            return $(selNav, $el);
-          },
-          watch(nav, prev) {
-            attr(nav, "role", "tablist");
-            if (prev) {
-              this.$emit();
-            }
-          },
-          immediate: true
+        nav({ selNav }, $el) {
+          return $(selNav, $el);
+        },
+        navChildren() {
+          return children(this.nav);
         },
         selNavItem({ attrItem }) {
           return `[${attrItem}],[data-${attrItem}]`;
         },
-        navItems: {
-          get(_, $el) {
-            return $$(this.selNavItem, $el);
-          },
-          watch() {
+        navItems(_, $el) {
+          return $$(this.selNavItem, $el);
+        }
+      },
+      watch: {
+        nav(nav, prev) {
+          attr(nav, "role", "tablist");
+          if (prev) {
             this.$emit();
+          }
+        },
+        list(list) {
+          attr(list, "role", "presentation");
+        },
+        navChildren(children2) {
+          attr(children2, "role", "presentation");
+        },
+        navItems(items) {
+          for (const el of items) {
+            const cmd = data(el, this.attrItem);
+            const button = $("a,button", el) || el;
+            let ariaLabel;
+            let ariaControls = null;
+            if (isNumeric(cmd)) {
+              const item = toNumber(cmd);
+              const slide = this.slides[item];
+              if (slide) {
+                if (!slide.id) {
+                  slide.id = generateId(this, slide, `-item-${cmd}`);
+                }
+                ariaControls = slide.id;
+              }
+              ariaLabel = this.t("slideX", toFloat(cmd) + 1);
+              attr(button, "role", "tab");
+            } else {
+              if (this.list) {
+                if (!this.list.id) {
+                  this.list.id = generateId(this, this.list, "-items");
+                }
+                ariaControls = this.list.id;
+              }
+              ariaLabel = this.t(cmd);
+            }
+            attr(button, {
+              "aria-controls": ariaControls,
+              "aria-label": attr(button, "aria-label") || ariaLabel
+            });
+          }
+        },
+        slides(slides) {
+          slides.forEach(
+            (slide, i) => attr(slide, {
+              role: this.nav ? "tabpanel" : "group",
+              "aria-label": this.t("slideLabel", i + 1, this.length),
+              "aria-roledescription": this.nav ? null : "slide"
+            })
+          );
+        },
+        length(length) {
+          const navLength = this.navChildren.length;
+          if (this.nav && length !== navLength) {
+            empty(this.nav);
+            for (let i = 0; i < length; i++) {
+              append(this.nav, `<li ${this.attrItem}="${i}"><a href></a></li>`);
+            }
           }
         }
       },
       connected() {
-        attr(this.$el, "aria-roledescription", "carousel");
+        attr(this.$el, {
+          role: this.role,
+          ariaRoleDescription: "carousel"
+        });
       },
       update: [
-        {
-          write() {
-            this.slides.forEach(
-              (slide, i) => attr(slide, {
-                role: this.nav ? "tabpanel" : "group",
-                "aria-label": this.t("slideLabel", i + 1, this.length),
-                "aria-roledescription": this.nav ? null : "slide"
-              })
-            );
-            if (this.nav && this.length !== this.nav.children.length) {
-              html(
-                this.nav,
-                this.slides.map((_, i) => `<li ${this.attrItem}="${i}"><a href></a></li>`).join("")
-              );
-            }
-            attr(children(this.nav).concat(this.list), "role", "presentation");
-            for (const el of this.navItems) {
-              const cmd = data(el, this.attrItem);
-              const button = $("a,button", el) || el;
-              let ariaLabel;
-              let ariaControls = null;
-              if (isNumeric(cmd)) {
-                const item = toNumber(cmd);
-                const slide = this.slides[item];
-                if (slide) {
-                  if (!slide.id) {
-                    slide.id = generateId(this, slide, `-item-${cmd}`);
-                  }
-                  ariaControls = slide.id;
-                }
-                ariaLabel = this.t("slideX", toFloat(cmd) + 1);
-                attr(button, "role", "tab");
-              } else {
-                if (this.list) {
-                  if (!this.list.id) {
-                    this.list.id = generateId(this, this.list, "-items");
-                  }
-                  ariaControls = this.list.id;
-                }
-                ariaLabel = this.t(cmd);
-              }
-              attr(button, {
-                "aria-controls": ariaControls,
-                "aria-label": attr(button, "aria-label") || ariaLabel
-              });
-            }
-          }
-        },
         {
           write() {
             this.navItems.concat(this.nav).forEach((el) => el && (el.hidden = !this.maxIndex));
@@ -7047,7 +7062,7 @@
               if (active) {
                 focusEl = button;
               }
-              focus = focus || matches(button, ":focus");
+              focus || (focus = matches(button, ":focus"));
             } else {
               toggleClass(
                 el,
@@ -7143,17 +7158,16 @@
           e.cancelable && e.preventDefault();
           this.dragging = true;
           this.dir = distance < 0 ? 1 : -1;
-          const { slides } = this;
-          let { prevIndex } = this;
+          let { slides, prevIndex } = this;
           let dis = Math.abs(distance);
-          let nextIndex = this.getIndex(prevIndex + this.dir, prevIndex);
-          let width = this._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
+          let nextIndex = this.getIndex(prevIndex + this.dir);
+          let width = this._getDistance(prevIndex, nextIndex);
           while (nextIndex !== prevIndex && dis > width) {
             this.drag -= width * this.dir;
             prevIndex = nextIndex;
             dis -= width;
-            nextIndex = this.getIndex(prevIndex + this.dir, prevIndex);
-            width = this._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
+            nextIndex = this.getIndex(prevIndex + this.dir);
+            width = this._getDistance(prevIndex, nextIndex);
           }
           this.percent = dis / width;
           const prev = slides[prevIndex];
@@ -7161,13 +7175,15 @@
           const changed = this.index !== nextIndex;
           const edge = prevIndex === nextIndex;
           let itemShown;
-          [this.index, this.prevIndex].filter((i) => !includes([nextIndex, prevIndex], i)).forEach((i) => {
-            trigger(slides[i], "itemhidden", [this]);
-            if (edge) {
-              itemShown = true;
-              this.prevIndex = prevIndex;
+          for (const i of [this.index, this.prevIndex]) {
+            if (!includes([nextIndex, prevIndex], i)) {
+              trigger(slides[i], "itemhidden", [this]);
+              if (edge) {
+                itemShown = true;
+                this.prevIndex = prevIndex;
+              }
             }
-          });
+          }
           if (this.index === prevIndex && this.prevIndex !== prevIndex || itemShown) {
             trigger(slides[this.index], "itemshown", [this]);
           }
@@ -7207,11 +7223,14 @@
           }
           css(this.list, { userSelect: "", pointerEvents: "" });
           this.drag = this.percent = null;
+        },
+        _getDistance(prev, next) {
+          return this._getTransitioner(prev, prev !== next && next).getDistance() || this.slides[prev].offsetWidth;
         }
       }
     };
     function hasSelectableText(el) {
-      return css(el, "userSelect") !== "none" && toNodes(el.childNodes).some((el2) => el2.nodeType === 3 && el2.textContent.trim());
+      return css(el, "userSelect") !== "none" && toArray(el.childNodes).some((el2) => el2.nodeType === 3 && el2.textContent.trim());
     }
 
     var SliderAutoplay = {
@@ -7226,7 +7245,7 @@
         pauseOnHover: true
       },
       connected() {
-        attr(this.list, "aria-live", "polite");
+        attr(this.list, "aria-live", this.autoplay ? "off" : "polite");
         this.autoplay && this.startAutoplay();
       },
       disconnected() {
@@ -7251,45 +7270,19 @@
               this.startAutoplay();
             }
           }
-        },
-        {
-          name: `${pointerEnter} focusin`,
-          filter() {
-            return this.autoplay;
-          },
-          handler(e) {
-            if (e.type !== pointerEnter || this.pauseOnHover) {
-              this.stopAutoplay();
-            }
-          }
-        },
-        {
-          name: `${pointerLeave} focusout`,
-          filter() {
-            return this.autoplay;
-          },
-          handler(e) {
-            if (e.type !== pointerLeave || this.pauseOnHover) {
-              this.startAutoplay();
-            }
-          }
         }
       ],
       methods: {
         startAutoplay() {
-          if (this.draggable && matches(this.$el, ":focus-within") || this.pauseOnHover && matches(this.$el, ":hover")) {
-            return;
-          }
           this.stopAutoplay();
-          this.interval = setInterval(
-            () => !this.stack.length && this.show("next"),
-            this.autoplayInterval
-          );
-          attr(this.list, "aria-live", "off");
+          this.interval = setInterval(() => {
+            if (!(this.stack.length || this.draggable && matches(this.$el, ":focus-within") || this.pauseOnHover && matches(this.$el, ":hover"))) {
+              this.show("next");
+            }
+          }, this.autoplayInterval);
         },
         stopAutoplay() {
           clearInterval(this.interval);
-          attr(this.list, "aria-live", "polite");
         }
       }
     };
@@ -7334,16 +7327,18 @@
         maxIndex() {
           return this.length - 1;
         },
-        slides: {
-          get() {
-            return children(this.list);
-          },
-          watch() {
-            this.$emit();
-          }
+        slides() {
+          return children(this.list);
         },
         length() {
           return this.slides.length;
+        }
+      },
+      watch: {
+        slides(slides, prev) {
+          if (prev) {
+            this.$emit();
+          }
         }
       },
       observe: resize(),
@@ -7420,9 +7415,6 @@
             this.percent
           );
         },
-        _getDistance(prev, next) {
-          return this._getTransitioner(prev, prev !== next && next).getDistance();
-        },
         _translate(percent, prev = this.prevIndex, next = this.index) {
           const transitioner = this._getTransitioner(prev === next ? false : prev, next);
           transitioner.translate(percent);
@@ -7430,8 +7422,8 @@
         },
         _getTransitioner(prev = this.prevIndex, next = this.index, dir = this.dir || 1, options = this.transitionOptions) {
           return new this.Transitioner(
-            isNumber(prev) ? this.slides[prev] : prev,
-            isNumber(next) ? this.slides[next] : next,
+            this.slides[prev] || prev,
+            this.slides[next] || next,
             dir * (isRtl ? -1 : 1),
             options
           );
@@ -7729,19 +7721,18 @@
       props: { toggle: String },
       data: { toggle: "a" },
       computed: {
-        toggles: {
-          get({ toggle }, $el) {
-            return $$(toggle, $el);
-          },
-          watch(toggles) {
-            this.hide();
-            for (const toggle of toggles) {
-              if (isTag(toggle, "a")) {
-                attr(toggle, "role", "button");
-              }
+        toggles({ toggle }, $el) {
+          return $$(toggle, $el);
+        }
+      },
+      watch: {
+        toggles(toggles) {
+          this.hide();
+          for (const toggle of toggles) {
+            if (isTag(toggle, "a")) {
+              attr(toggle, "role", "button");
             }
-          },
-          immediate: true
+          }
         }
       },
       disconnected() {
@@ -7937,9 +7928,9 @@
         getCss(percent) {
           const css2 = { transform: "", filter: "" };
           for (const prop in this.props) {
-            this.props[prop](css2, percent);
+            this.props[prop](css2, clamp(percent));
           }
-          css2.willChange = Object.keys(css2).filter((key) => css2[key] !== "").join(",");
+          css2.willChange = Object.keys(css2).filter((key) => css2[key] !== "").map(propName).join(",");
           return css2;
         }
       }
@@ -8111,7 +8102,7 @@
       const { length } = stops;
       let nullIndex = 0;
       for (let i = 0; i < length; i++) {
-        let [value, percent] = isString(stops[i]) ? stops[i].trim().split(" ") : [stops[i]];
+        let [value, percent] = isString(stops[i]) ? stops[i].trim().split(/ (?![^(]*\))/) : [stops[i]];
         value = fn(value);
         percent = percent ? toFloat(percent) / 100 : null;
         if (i === 0) {
@@ -8277,9 +8268,9 @@
     };
 
     function Transitioner(prev, next, dir, { center, easing, list }) {
-      const deferred = new Deferred();
       const from = prev ? getLeft(prev, list, center) : getLeft(next, list, center) + dimensions$1(next).width * dir;
       const to = next ? getLeft(next, list, center) : from + dimensions$1(prev).width * dir * (isRtl ? -1 : 1);
+      let resolve;
       return {
         dir,
         show(duration, percent = 0, linear) {
@@ -8294,22 +8285,24 @@
             timing,
             dir
           });
-          Transition.start(
-            list,
-            { transform: translate(-to * (isRtl ? -1 : 1), "px") },
-            duration,
-            timing
-          ).then(deferred.resolve, noop);
-          return deferred.promise;
+          return new Promise((res) => {
+            resolve || (resolve = res);
+            Transition.start(
+              list,
+              { transform: translate(-to * (isRtl ? -1 : 1), "px") },
+              duration,
+              timing
+            ).then(resolve, noop);
+          });
         },
         cancel() {
-          Transition.cancel(list);
+          return Transition.cancel(list);
         },
         reset() {
           css(list, "transform", "");
         },
-        forward(duration, percent = this.percent()) {
-          Transition.cancel(list);
+        async forward(duration, percent = this.percent()) {
+          await this.cancel();
           return this.show(duration, percent, true);
         },
         translate(percent) {
@@ -8446,7 +8439,7 @@
               left = 0;
             }
             if (this.center) {
-              if (left < width / 2 && left + slideWidth + dimensions$1(this.slides[+i + 1]).width / 2 > width / 2) {
+              if (left < width / 2 && left + slideWidth + dimensions$1(getIndex(+i + 1, this.slides)).width / 2 > width / 2) {
                 sets.push(+i);
                 left = width / 2 - slideWidth / 2;
               }
@@ -8556,7 +8549,12 @@
             const active = includes(actives, slide);
             toggleClass(slide, activeClasses, active);
             attr(slide, "aria-hidden", !active);
-            attr($$(selFocusable, slide), "tabindex", active ? null : -1);
+            for (const focusable of $$(selFocusable, slide)) {
+              if (!hasOwn(focusable, "_tabindex")) {
+                focusable._tabindex = attr(focusable, "tabindex");
+              }
+              attr(focusable, "tabindex", active ? focusable._tabindex : -1);
+            }
           }
         },
         getValidIndex(index = this.index, prevIndex = this.prevIndex) {
@@ -8875,24 +8873,20 @@
         items() {
           return children(this.target);
         },
-        isEmpty: {
-          get() {
-            return isEmpty(this.items);
-          },
-          watch(empty) {
-            toggleClass(this.target, this.clsEmpty, empty);
-          },
-          immediate: true
+        isEmpty() {
+          return isEmpty(this.items);
         },
-        handles: {
-          get({ handle }, el) {
-            return handle ? $$(handle, el) : this.items;
-          },
-          watch(handles, prev) {
-            css(prev, { touchAction: "", userSelect: "" });
-            css(handles, { touchAction: hasTouch ? "none" : "", userSelect: "none" });
-          },
-          immediate: true
+        handles({ handle }, el) {
+          return handle ? $$(handle, el) : this.items;
+        }
+      },
+      watch: {
+        isEmpty(empty) {
+          toggleClass(this.target, this.clsEmpty, empty);
+        },
+        handles(handles, prev) {
+          css(prev, { touchAction: "", userSelect: "" });
+          css(handles, { touchAction: hasTouch ? "none" : "", userSelect: "none" });
         }
       },
       update: {
@@ -9151,7 +9145,7 @@
         cls: "uk-active"
       },
       beforeConnect() {
-        this.id = generateId(this);
+        this.id = generateId(this, {});
         this._hasTitle = hasAttr(this.$el, "title");
         attr(this.$el, {
           title: "",
@@ -9178,14 +9172,13 @@
             return;
           }
           clearTimeout(this.showTimer);
-          if (!this.isToggled(this.tooltip || null)) {
-            return;
+          if (this.isToggled(this.tooltip || null)) {
+            await this.toggleElement(this.tooltip, false, false);
           }
-          await this.toggleElement(this.tooltip, false, false);
           remove$1(this.tooltip);
           this.tooltip = null;
         },
-        _show() {
+        async _show() {
           this.tooltip = append(
             this.container,
             `<div id="${this.id}" class="uk-${this.$options.name}" role="tooltip"> <div class="uk-${this.$options.name}-inner">${this.title}</div> </div>`
@@ -9214,7 +9207,9 @@
               self: true
             });
           });
-          this.toggleElement(this.tooltip, true);
+          if (!await this.toggleElement(this.tooltip, true)) {
+            this.hide();
+          }
         }
       },
       events: {
