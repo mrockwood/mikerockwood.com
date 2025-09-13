@@ -2,7 +2,7 @@ name: Send Webmentions
 
 on:
   workflow_run:
-    workflows: ["Zola on GitHub Pages"]
+    workflows: ["Build and deploy GH Pages"]
     types:
       - completed
 
