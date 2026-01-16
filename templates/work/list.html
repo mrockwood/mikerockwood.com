@@ -4,7 +4,7 @@
 <section class="uk-section uk-section-secondary uk-section-large">
 	<div class="uk-margin uk-container uk-container-large">
         <div class="uk-width-1-2@m">
-            <h2 class="uk-heading-small" uk-scrollspy-class>Featured projects</h2>
+            <h2 class="uk-heading-small">Featured projects</h2>
             <!-- <div class="uk-panel uk-margin" uk-scrollspy-class>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.</div> -->
 		</div>
     </div>
@@ -78,7 +78,7 @@
 							{% set experience = load_data(path="content/work/_experience.json") %}
 							{% for job in experience.jobs %}
                             <div>
-                                <div class="uk-panel uk-margin-remove-first-child" uk-parallax="opacity: 0.2,1; viewport: 0.2;">
+                                <div class="uk-panel uk-margin-remove-first-child">
                                     <div class="uk-child-width-expand uk-margin-top" uk-grid>
                                         <div class="uk-width-2-5@s uk-margin-remove-first-child">
                                             <div class="uk-text-meta uk-h6 uk-margin-top uk-margin-remove-bottom">{{ job.years }}</div>
@@ -109,18 +109,18 @@
 
 
 <!-- Graveyard -->
-<section class="uk-section uk-section-default uk-section-large" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small;">
+<section class="uk-section uk-section-default uk-section-large">
     <div class="uk-margin-medium uk-container uk-container-large">
         <div class="uk-width-1-2@m">
-            <h2 class="uk-heading-small" uk-scrollspy-class>Old stuff</h2>
-            <div class="uk-panel uk-margin" uk-scrollspy-class>Most of these websites are now long gone. A testament to the fleeting nature of the web.</div>
+            <h2 class="uk-heading-small">Old stuff</h2>
+            <div class="uk-panel uk-margin">Most of these websites are now long gone. A testament to the fleeting nature of the web.</div>
         </div>
 
 		<div class="uk-grid-margin uk-container uk-container-large">
 			<div class="uk-child-width-1-1" uk-grid>
 				<div class="uk-width-1-1@m">
 					<div uk-filter="target: .js-filter;" class="uk-margin">
-						<ul class="uk-subnav uk-subnav-pill uk-margin" uk-scrollspy-class>
+						<ul class="uk-subnav uk-subnav-pill uk-margin">
 							<li class="uk-active" uk-filter-control><a href="#">All</a></li>
 							{%- set tasks = get_taxonomy(kind="tasks") %}
 							{% for task in tasks.items %}
@@ -139,7 +139,7 @@
 
 									<div data-tag="{% for task in project.taxonomies.tasks %}{{ task }} {% endfor %}">
 										<div class="uk-light">
-											<a class="uk-inline-clip uk-transition-toggle uk-link-toggle" href="{{ config.base_url }}/{{ feature_image }}" data-type="image" data-caption="&lt;h4 class='uk-margin-remove'&gt;{{ project.title }}&lt;/h4&gt;" uk-scrollspy-class>
+											<a class="uk-inline-clip uk-transition-toggle uk-link-toggle" href="{{ config.base_url }}/{{ feature_image }}" data-type="image" data-caption="&lt;h4 class='uk-margin-remove'&gt;{{ project.title }}&lt;/h4&gt;">
 												<img loading="lazy" alt class="uk-transition-opaque" data-src="{{ image.url }}" data-sizes="(min-width: 720px) 720px" data-width="720" uk-img>
 												<div class="uk-overlay-dark uk-transition-slide-bottom-small uk-position-cover">
 												</div>
