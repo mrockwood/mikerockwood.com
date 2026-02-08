@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xml:base="https://mikerockwood.com">
+    <title>Mike Rockwood - Notes</title>
+    <subtitle>
+		Personal portfolio and blog of Mike Rockwood
+	</subtitle>
+	<id>https://mikerockwood.com/posts/notes/</id>
+    <link href="https://mikerockwood.com/posts/notes/atom.xml" rel="self" type="application/atom+xml"/>
+    
+	<link href="https://mikerockwood.com/posts/notes/" rel="alternate" />
+    <author>
+        <name>Mike Rockwood</name>
+        <uri>https://mikerockwood.com</uri>
+        <email>rockwood@gmail.com</email>
+    </author>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-09-19T13:25:00+00:00</updated>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/77e1286de651/</id>
+		<link href="https://mikerockwood.com/posts/notes/77e1286de651/" type="text/html"/>
+        <title>Note from 2024-09-19 at 13:25</title>
+        <published>2024-09-19T13:25:00+00:00</published>
+        <updated>2024-09-19T13:25:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;People are upset about LinkedIn training AI on user data, but a model trained on that much cringe sounds hilarious.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/93eb12dbd8c0/</id>
+		<link href="https://mikerockwood.com/posts/notes/93eb12dbd8c0/" type="text/html"/>
+        <title>Note from 2024-09-12 at 18:48</title>
+        <published>2024-09-12T18:48:00+00:00</published>
+        <updated>2024-09-12T18:48:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;I know there are a lot of generative AI haters, but based on my limited experience, OpenAI o1 is substantially better at coding than previous models. There could be rough times ahead for people like me, but I’m curious to see what people with non-technical backgrounds are able to dream up without the slog of learning how to code.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/f2b131c616e8/</id>
+		<link href="https://mikerockwood.com/posts/notes/f2b131c616e8/" type="text/html"/>
+        <title>Note from 2024-04-06 at 03:21</title>
+        <published>2024-04-06T03:21:00+00:00</published>
+        <updated>2024-04-06T03:21:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Perhaps the biggest tragedy of Google’s descent into uselessness is that we can’t say “Google it” anymore to get out of doin’ stuff.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/cf81ce6d6489/</id>
+		<link href="https://mikerockwood.com/posts/notes/cf81ce6d6489/" type="text/html"/>
+        <title>Note from 2023-12-07 at 00:00</title>
+        <published>2023-12-07T00:00:00+00:00</published>
+        <updated>2023-12-07T00:00:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Just upgraded my gaming PC. I hope it improves my performance in online chess.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/a72dfb4a85ac/</id>
+		<link href="https://mikerockwood.com/posts/notes/a72dfb4a85ac/" type="text/html"/>
+        <title>Note from 2023-11-18 at 14:09</title>
+        <published>2023-11-18T14:09:00+00:00</published>
+        <updated>2023-11-18T14:09:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;I, for one, am disappointed OpenAI didn’t build a new AI CEO.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/560a4d1a38ff/</id>
+		<link href="https://mikerockwood.com/posts/notes/560a4d1a38ff/" type="text/html"/>
+        <title>Note from 2023-07-29 at 14:40</title>
+        <published>2023-07-29T14:40:00+00:00</published>
+        <updated>2023-07-29T14:40:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;That feeling when you find a bug in the site you’re working on and the browser update that just dropped fixes it.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/f1ff1fb45bc3/</id>
+		<link href="https://mikerockwood.com/posts/notes/f1ff1fb45bc3/" type="text/html"/>
+        <title>Note from 2023-03-30 at 18:52</title>
+        <published>2023-03-30T18:52:00+00:00</published>
+        <updated>2023-03-30T18:52:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Hit the ten-year mark at University of Utah Health.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/3477fb58ce48/</id>
+		<link href="https://mikerockwood.com/posts/notes/3477fb58ce48/" type="text/html"/>
+        <title>Note from 2023-03-11 at 07:25</title>
+        <published>2023-03-11T07:25:49.408+00:00</published>
+        <updated>2023-03-11T07:25:49.408+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Welcome to the new site. Expect growing pains…&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/802b65d2efe2/</id>
+		<link href="https://mikerockwood.com/posts/notes/802b65d2efe2/" type="text/html"/>
+        <title>Note from 2023-03-06 at 10:25</title>
+        <published>2023-03-06T10:25:45.923+00:00</published>
+        <updated>2023-03-06T10:25:45.923+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Here’s a bit of a CSS gotcha: The `ch` unit doesn’t respond to character width changes when using variable fonts.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+</feed>

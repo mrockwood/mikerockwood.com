@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xml:base="https://mikerockwood.com">
+    <title>Mike Rockwood - Articles</title>
+    <subtitle>
+		Personal portfolio and blog of Mike Rockwood
+	</subtitle>
+	<id>https://mikerockwood.com/posts/articles/</id>
+    <link href="https://mikerockwood.com/posts/articles/atom.xml" rel="self" type="application/atom+xml"/>
+    
+	<link href="https://mikerockwood.com/posts/articles/" rel="alternate" />
+    <author>
+        <name>Mike Rockwood</name>
+        <uri>https://mikerockwood.com</uri>
+        <email>rockwood@gmail.com</email>
+    </author>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-02-08T01:17:17.384685098+00:00</updated>
+</feed>

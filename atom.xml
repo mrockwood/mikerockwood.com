@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xml:base="https://mikerockwood.com">
+    <title>Mike Rockwood - All Posts</title>
+    <subtitle>
+		Personal portfolio and blog of Mike Rockwood
+	</subtitle>
+	<id>https://mikerockwood.com</id>
+    <link href="https://mikerockwood.com/atom.xml" rel="self" type="application/atom+xml"/>
+    
+	<link href="https://mikerockwood.com" rel="alternate" />
+    <author>
+        <name>Mike Rockwood</name>
+        <uri>https://mikerockwood.com</uri>
+        <email>rockwood@gmail.com</email>
+    </author>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-02-03T05:18:00+00:00</updated>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/performance-optimized-video-embeds-with-zero-javascript/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/performance-optimized-video-embeds-with-zero-javascript/" type="text/html"/>
+        <title>Performance-Optimized Video Embeds with Zero JavaScript</title>
+        <published>2026-02-03T05:18:00+00:00</published>
+        <updated>2026-02-03T05:18:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Putting a YouTube video inside a closed details element means it won’t load until that details element is opened. We can use that.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://frontendmasters.com/blog/performance-optimized-video-embeds-with-zero-javascript/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/my-opinionated-css-reset/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/my-opinionated-css-reset/" type="text/html"/>
+        <title>My Opinionated CSS Reset</title>
+        <published>2026-01-23T18:09:00+00:00</published>
+        <updated>2026-01-23T18:09:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;This looks like a pretty solid CSS reset.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://vale.rocks/posts/css-reset" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/my-html-web-component-boilerplate-for-2026/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/my-html-web-component-boilerplate-for-2026/" type="text/html"/>
+        <title>My HTML Web Component boilerplate for 2026</title>
+        <published>2025-12-18T22:02:00+00:00</published>
+        <updated>2025-12-18T22:02:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Chris Ferdinandi shares his starting point for building web components. I generally agree with his approach.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://gomakethings.com/my-html-web-component-boilerplate-for-2026/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/static-site-webmentions/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/static-site-webmentions/" type="text/html"/>
+        <title>Static Site Webmentions</title>
+        <published>2025-09-13T18:00:00+00:00</published>
+        <updated>2025-09-13T18:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;An article describing how to enable Webmentions on a static site using Zola, webmention.io, and GitHub Actions to support decentralized blog interactions.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://scientiac.space/blog/webmentions/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/anatomy-of-a-web-component/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/anatomy-of-a-web-component/" type="text/html"/>
+        <title>Anatomy of a Web Component</title>
+        <published>2025-08-07T18:50:00+00:00</published>
+        <updated>2025-08-07T18:50:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;David Bushell shares some useful web component patterns.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://dbushell.com/2025/08/01/anatomy-of-a-web-component/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/a-few-things-about-the-anchor-element-s-href-you-might-not-have-known/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/a-few-things-about-the-anchor-element-s-href-you-might-not-have-known/" type="text/html"/>
+        <title>A Few Things About the Anchor Element’s href You Might Not Have Known</title>
+        <published>2025-08-04T19:19:00+00:00</published>
+        <updated>2025-08-04T19:19:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Jim Nielsen shares some advanced anchor element functionality.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://blog.jim-nielsen.com/2025/href-value-possibilities/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/modern-node-js-patterns-for-2025/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/modern-node-js-patterns-for-2025/" type="text/html"/>
+        <title>Modern Node.js Patterns for 2025</title>
+        <published>2025-08-04T01:55:00+00:00</published>
+        <updated>2025-08-04T01:55:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Node.js has made a bunch of improvements recently that I wasn’t aware of.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://kashw1n.com/blog/nodejs-2025/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/human-readable-date-formatting-with-vanilla-javascript/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/human-readable-date-formatting-with-vanilla-javascript/" type="text/html"/>
+        <title>Human-readable date formatting with vanilla JavaScript</title>
+        <published>2025-03-04T22:51:00+00:00</published>
+        <updated>2025-03-04T22:51:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Format dates and times in JavaScript using toLocaleDateString() and toLocaleTimeString() without relying on external libraries like Moment.js.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://henry.codes/writing/human-readable-date-formatting-with-vanilla-javascript/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/sorted-css-colors/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/sorted-css-colors/" type="text/html"/>
+        <title>Sorted CSS Colors</title>
+        <published>2025-02-08T03:12:00+00:00</published>
+        <updated>2025-02-08T03:12:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Interactive tool for finding named colors usable in CSS.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://enes.in/sorted-colors/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/responsive-tables/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/responsive-tables/" type="text/html"/>
+        <title>Responsive tables</title>
+        <published>2025-01-31T15:23:00+00:00</published>
+        <updated>2025-01-31T15:23:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;I really like this web component Chris Ferdinandi came up with for displaying tables on mobile screens.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://gomakethings.com/responsive-tables/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/nerdy-notebook/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/nerdy-notebook/" type="text/html"/>
+        <title>Nerdy Notebook</title>
+        <published>2025-01-13T12:37:00+00:00</published>
+        <updated>2025-01-13T12:37:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;A collection of Adam Argyle’s nifty CSS and JS snippets&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://nerdy.dev/notebook/index.html" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/sizes-auto-is-a-great-idea/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/sizes-auto-is-a-great-idea/" type="text/html"/>
+        <title>sizes=auto is a great idea</title>
+        <published>2025-01-05T02:02:00+00:00</published>
+        <updated>2025-01-05T02:02:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;I missed this: it’s now much easier to make images responsive in HTML.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://chriscoyier.net/2023/06/23/sizesauto-is-a-great-idea/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/magdalena-bay-you-lose/</id>
+		<link href="https://mikerockwood.com/posts/jams/magdalena-bay-you-lose/" type="text/html"/>
+        <title>Magdalena Bay - You Lose!</title>
+        <published>2025-01-04T04:37:00+00:00</published>
+        <updated>2025-01-04T04:37:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/77e1286de651/</id>
+		<link href="https://mikerockwood.com/posts/notes/77e1286de651/" type="text/html"/>
+        <title>Note from 2024-09-19 at 13:25</title>
+        <published>2024-09-19T13:25:00+00:00</published>
+        <updated>2024-09-19T13:25:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;People are upset about LinkedIn training AI on user data, but a model trained on that much cringe sounds hilarious.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/93eb12dbd8c0/</id>
+		<link href="https://mikerockwood.com/posts/notes/93eb12dbd8c0/" type="text/html"/>
+        <title>Note from 2024-09-12 at 18:48</title>
+        <published>2024-09-12T18:48:00+00:00</published>
+        <updated>2024-09-12T18:48:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;I know there are a lot of generative AI haters, but based on my limited experience, OpenAI o1 is substantially better at coding than previous models. There could be rough times ahead for people like me, but I’m curious to see what people with non-technical backgrounds are able to dream up without the slog of learning how to code.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/weird-things-engineers-believe-about-web-development/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/weird-things-engineers-believe-about-web-development/" type="text/html"/>
+        <title>Weird things engineers believe about Web development</title>
+        <published>2024-07-03T05:34:00+00:00</published>
+        <updated>2024-07-03T05:34:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Useful perspective from a former browser engineer who is now working in web development.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://birtles.blog/2024/01/06/weird-things-engineers-believe-about-development/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/diane-birch-critic-s-lullaby/</id>
+		<link href="https://mikerockwood.com/posts/jams/diane-birch-critic-s-lullaby/" type="text/html"/>
+        <title>Diane Birch - Critic&#x27;s Lullaby</title>
+        <published>2024-04-19T22:30:00+00:00</published>
+        <updated>2024-04-19T22:30:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+		<content type="html">&lt;p&gt;I don’t know why, but soft piano rock is really doing it for me right now.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/f2b131c616e8/</id>
+		<link href="https://mikerockwood.com/posts/notes/f2b131c616e8/" type="text/html"/>
+        <title>Note from 2024-04-06 at 03:21</title>
+        <published>2024-04-06T03:21:00+00:00</published>
+        <updated>2024-04-06T03:21:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Perhaps the biggest tragedy of Google’s descent into uselessness is that we can’t say “Google it” anymore to get out of doin’ stuff.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/an-interview-with-a-man-who-eats-leftover-food-from-strangers-plates-in-restaurants/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/an-interview-with-a-man-who-eats-leftover-food-from-strangers-plates-in-restaurants/" type="text/html"/>
+        <title>An Interview With A Man Who Eats Leftover Food From Strangers&#x27; Plates In Restaurants</title>
+        <published>2024-03-20T05:34:00+00:00</published>
+        <updated>2024-03-20T05:34:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;This article from a few years ago is exactly what it sounds like. Funny throughout.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://deadspin.com/an-interview-with-a-man-who-eats-leftover-food-from-str-1834424806" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/100-things-you-can-do-on-your-personal-website/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/100-things-you-can-do-on-your-personal-website/" type="text/html"/>
+        <title>100 things you can do on your personal website</title>
+        <published>2024-02-29T06:06:00+00:00</published>
+        <updated>2024-02-29T06:06:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;This list showcases possibilities for your personal site, from technical to whimsical ideas.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://jamesg.blog/2024/02/19/personal-website-ideas/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/webfonts-and-layout-shifting/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/webfonts-and-layout-shifting/" type="text/html"/>
+        <title>Webfonts and layout shifting</title>
+        <published>2024-01-31T00:00:00+00:00</published>
+        <updated>2024-01-31T00:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;A clever way to reduce layout shift caused by custom fonts on a website.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://httpster.io/article/webfonts-and-layout-shifting/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/the-internet-used-to-be-fun/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/the-internet-used-to-be-fun/" type="text/html"/>
+        <title>The internet used to be fun</title>
+        <published>2024-01-04T00:00:00+00:00</published>
+        <updated>2024-01-04T00:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;A collection of blog posts about personal sites and why they are more fun than the corporate web.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://projects.kwon.nyc/internet-is-fun/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/css-media-query-for-scripting-support/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/css-media-query-for-scripting-support/" type="text/html"/>
+        <title>CSS Media Query for Scripting Support</title>
+        <published>2023-12-18T00:00:00+00:00</published>
+        <updated>2023-12-18T00:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Looks like we’re finally getting a Media Query to test whether a user has JavaScript enabled. Chrome only for now.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://blog.stephaniestimac.com/posts/2023/12/css-media-query-scripting/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/cf81ce6d6489/</id>
+		<link href="https://mikerockwood.com/posts/notes/cf81ce6d6489/" type="text/html"/>
+        <title>Note from 2023-12-07 at 00:00</title>
+        <published>2023-12-07T00:00:00+00:00</published>
+        <updated>2023-12-07T00:00:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Just upgraded my gaming PC. I hope it improves my performance in online chess.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/brett-smiley-va-va-va-voom/</id>
+		<link href="https://mikerockwood.com/posts/jams/brett-smiley-va-va-va-voom/" type="text/html"/>
+        <title>Brett Smiley - Va Va Va Voom</title>
+        <published>2023-11-25T11:14:00+00:00</published>
+        <updated>2023-11-25T11:14:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/incomplete-list-of-mistakes-in-the-design-of-css/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/incomplete-list-of-mistakes-in-the-design-of-css/" type="text/html"/>
+        <title>Incomplete List of Mistakes in the Design of CSS</title>
+        <published>2023-11-21T00:00:00+00:00</published>
+        <updated>2023-11-21T00:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;CSS that should be corrected if anyone invents a time machine. :P&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://wiki.csswg.org/ideas/mistakes" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/a72dfb4a85ac/</id>
+		<link href="https://mikerockwood.com/posts/notes/a72dfb4a85ac/" type="text/html"/>
+        <title>Note from 2023-11-18 at 14:09</title>
+        <published>2023-11-18T14:09:00+00:00</published>
+        <updated>2023-11-18T14:09:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;I, for one, am disappointed OpenAI didn’t build a new AI CEO.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/lalalar-hata-benim-gobek-adim/</id>
+		<link href="https://mikerockwood.com/posts/jams/lalalar-hata-benim-gobek-adim/" type="text/html"/>
+        <title>Lalalar - Hata Benim Göbek Adım</title>
+        <published>2023-11-18T11:10:00+00:00</published>
+        <updated>2023-11-18T11:10:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/lost-in-the-trees-past-life/</id>
+		<link href="https://mikerockwood.com/posts/jams/lost-in-the-trees-past-life/" type="text/html"/>
+        <title>Lost In The Trees - Past Life</title>
+        <published>2023-11-11T11:04:00+00:00</published>
+        <updated>2023-11-11T11:04:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/jaga-jazzist-all-i-know-is-tonight/</id>
+		<link href="https://mikerockwood.com/posts/jams/jaga-jazzist-all-i-know-is-tonight/" type="text/html"/>
+        <title>Jaga Jazzist - All I Know Is Tonight</title>
+        <published>2023-11-04T10:00:00+00:00</published>
+        <updated>2023-11-04T10:00:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/simplify-sharing-with-built-in-apis-and-progressive-enhancement/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/simplify-sharing-with-built-in-apis-and-progressive-enhancement/" type="text/html"/>
+        <title>Simplify sharing with built-in APIs and progressive enhancement</title>
+        <published>2023-10-30T03:12:00+00:00</published>
+        <updated>2023-10-30T03:12:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Nice little article by Andy Bell describing how to build social sharing buttons in a slightly better way. It would be better if it was a native web component instead of a Vue component.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://set.studio/simplify-sharing-with-built-in-apis-and-progressive-enhancement/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/the-junipers-burning-pages/</id>
+		<link href="https://mikerockwood.com/posts/jams/the-junipers-burning-pages/" type="text/html"/>
+        <title>The Junipers - Burning Pages</title>
+        <published>2023-10-28T09:51:00+00:00</published>
+        <updated>2023-10-28T09:51:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/evil-arrows-the-motion-picture-managers-of-love/</id>
+		<link href="https://mikerockwood.com/posts/jams/evil-arrows-the-motion-picture-managers-of-love/" type="text/html"/>
+        <title>Evil Arrows - The Motion Picture Managers (Of Love)</title>
+        <published>2023-10-21T09:40:00+00:00</published>
+        <updated>2023-10-21T09:40:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/fred-pallem-le-sacre-du-tympan-l-amour-du-disque/</id>
+		<link href="https://mikerockwood.com/posts/jams/fred-pallem-le-sacre-du-tympan-l-amour-du-disque/" type="text/html"/>
+        <title>Fred Pallem &amp; le Sacre du Tympan - L&#x27;amour du  disque</title>
+        <published>2023-10-14T09:28:00+00:00</published>
+        <updated>2023-10-14T09:28:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/the-toms-lets-be-friends-again/</id>
+		<link href="https://mikerockwood.com/posts/jams/the-toms-lets-be-friends-again/" type="text/html"/>
+        <title>The Toms - Let&#x27;s Be Friends Again</title>
+        <published>2023-10-07T18:09:00+00:00</published>
+        <updated>2023-10-07T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/geurimja-gongdongce-jiweojineun-norae/</id>
+		<link href="https://mikerockwood.com/posts/jams/geurimja-gongdongce-jiweojineun-norae/" type="text/html"/>
+        <title>그림자 공동체 - 지워지는 노래</title>
+        <published>2023-09-30T06:55:54+00:00</published>
+        <updated>2023-09-30T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/responsive-type-scales-with-composable-css-utilities/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/responsive-type-scales-with-composable-css-utilities/" type="text/html"/>
+        <title>Responsive type scales with composable CSS utilities</title>
+        <published>2023-09-24T03:12:00+00:00</published>
+        <updated>2023-09-24T03:12:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Some nifty utilities for fluid typography created by Tobias Ahlin Bjerrome.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://tobiasahlin.com/blog/responsive-fluid-css-type-scales/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/the-honeydogs-10000-years/</id>
+		<link href="https://mikerockwood.com/posts/jams/the-honeydogs-10000-years/" type="text/html"/>
+        <title>The Honeydogs - 10,000 Years</title>
+        <published>2023-09-23T18:09:00+00:00</published>
+        <updated>2023-09-23T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/multi-page-web-apps/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/multi-page-web-apps/" type="text/html"/>
+        <title>Multi-page web apps</title>
+        <published>2023-09-14T23:24:00+00:00</published>
+        <updated>2023-09-14T23:24:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Jeremy Keith:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The default approach should be to assume a multi-page approach (which is the way the web works by default). Deciding to take a JavaScript-driven single-page approach should be the exception.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+
+		</content>
+		<link rel="alternate" href="https://adactio.com/journal/20442" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/step-into-the-light-dom/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/step-into-the-light-dom/" type="text/html"/>
+        <title>Step into the light (DOM)</title>
+        <published>2023-09-13T00:14:00+00:00</published>
+        <updated>2023-09-13T00:14:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Web components don’t need to be complicated.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://aaadaaam.com/notes/step-into-the-light-dom/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/philharmonie-ouigaa/</id>
+		<link href="https://mikerockwood.com/posts/jams/philharmonie-ouigaa/" type="text/html"/>
+        <title>Philharmonie - Ouigaa</title>
+        <published>2023-09-09T18:09:00+00:00</published>
+        <updated>2023-09-09T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/lamp-qing-ihai-an-xian-kara/</id>
+		<link href="https://mikerockwood.com/posts/jams/lamp-qing-ihai-an-xian-kara/" type="text/html"/>
+        <title>Lamp - 青い海岸線から</title>
+        <published>2023-09-02T18:09:00+00:00</published>
+        <updated>2023-09-02T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/josh-fix-ghosts-in-your-head/</id>
+		<link href="https://mikerockwood.com/posts/jams/josh-fix-ghosts-in-your-head/" type="text/html"/>
+        <title>Josh Fix - Ghosts In Your Head</title>
+        <published>2023-08-26T06:55:54+00:00</published>
+        <updated>2023-08-26T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/brief-encounter-smile/</id>
+		<link href="https://mikerockwood.com/posts/jams/brief-encounter-smile/" type="text/html"/>
+        <title>Brief Encounter - Smile</title>
+        <published>2023-08-19T18:09:00+00:00</published>
+        <updated>2023-08-19T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/ben-shive-listen/</id>
+		<link href="https://mikerockwood.com/posts/jams/ben-shive-listen/" type="text/html"/>
+        <title>Ben Shive - Listen!</title>
+        <published>2023-08-12T18:09:00+00:00</published>
+        <updated>2023-08-12T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/shaolin-death-squad-race-of-thinkers/</id>
+		<link href="https://mikerockwood.com/posts/jams/shaolin-death-squad-race-of-thinkers/" type="text/html"/>
+        <title>Shaolin Death Squad - Race of the Thinkers</title>
+        <published>2023-08-05T06:55:54+00:00</published>
+        <updated>2023-08-05T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/for-the-love-of-god-stop-microwaving-plastic/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/for-the-love-of-god-stop-microwaving-plastic/" type="text/html"/>
+        <title>For the Love of God, Stop Microwaving Plastic</title>
+        <published>2023-08-01T15:12:00+00:00</published>
+        <updated>2023-08-01T15:12:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Even more reasons to worry about microplastics. Plus, this article introduced me to a fun new word, “plastisphere.”&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://www.wired.com/story/for-the-love-of-god-stop-microwaving-plastic/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/560a4d1a38ff/</id>
+		<link href="https://mikerockwood.com/posts/notes/560a4d1a38ff/" type="text/html"/>
+        <title>Note from 2023-07-29 at 14:40</title>
+        <published>2023-07-29T14:40:00+00:00</published>
+        <updated>2023-07-29T14:40:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;That feeling when you find a bug in the site you’re working on and the browser update that just dropped fixes it.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/julia-holter-feel-you/</id>
+		<link href="https://mikerockwood.com/posts/jams/julia-holter-feel-you/" type="text/html"/>
+        <title>Julia Holter - Feel You</title>
+        <published>2023-07-29T12:48:00+00:00</published>
+        <updated>2023-07-29T12:48:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/blinker-the-star-september-already/</id>
+		<link href="https://mikerockwood.com/posts/jams/blinker-the-star-september-already/" type="text/html"/>
+        <title>Blinker the Star - September Already</title>
+        <published>2023-07-22T12:45:00+00:00</published>
+        <updated>2023-07-22T12:45:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/as-tall-as-lions-stab-city/</id>
+		<link href="https://mikerockwood.com/posts/jams/as-tall-as-lions-stab-city/" type="text/html"/>
+        <title>As Tall As Lions - Stab City</title>
+        <published>2023-07-15T12:43:00+00:00</published>
+        <updated>2023-07-15T12:43:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/elizabeth-and-the-catapult-wishing-well/</id>
+		<link href="https://mikerockwood.com/posts/jams/elizabeth-and-the-catapult-wishing-well/" type="text/html"/>
+        <title>Elizabeth and the Catapult - Wishing Well</title>
+        <published>2023-07-08T12:37:00+00:00</published>
+        <updated>2023-07-08T12:37:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/jon-brion-i-believe-she-s-lying/</id>
+		<link href="https://mikerockwood.com/posts/jams/jon-brion-i-believe-she-s-lying/" type="text/html"/>
+        <title>Jon Brion - I Believe She&#x27;s Lying</title>
+        <published>2023-07-01T12:34:00+00:00</published>
+        <updated>2023-07-01T12:34:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/v-sparks-sebastian/</id>
+		<link href="https://mikerockwood.com/posts/jams/v-sparks-sebastian/" type="text/html"/>
+        <title>V Sparks - Sebastian</title>
+        <published>2023-06-24T12:23:00+00:00</published>
+        <updated>2023-06-24T12:23:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/magma-hhai/</id>
+		<link href="https://mikerockwood.com/posts/jams/magma-hhai/" type="text/html"/>
+        <title>MAGMA - Hhaï</title>
+        <published>2023-06-17T12:13:00+00:00</published>
+        <updated>2023-06-17T12:13:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/america-s-hidden-urban-laboratory-the-south/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/america-s-hidden-urban-laboratory-the-south/" type="text/html"/>
+        <title>America&#x27;s hidden urban laboratory: the South</title>
+        <published>2023-06-16T17:24:00+00:00</published>
+        <updated>2023-06-16T17:24:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Interesting post by Devon Zuegel on the spread of urbanist ideas in the American South.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://devonzuegel.com/post/america-s-hidden-urban-laboratory-the-south" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/cornelius-micro-disneycal-world-tour/</id>
+		<link href="https://mikerockwood.com/posts/jams/cornelius-micro-disneycal-world-tour/" type="text/html"/>
+        <title>Cornelius  - Micro Disneycal World Tour</title>
+        <published>2023-06-10T12:12:00+00:00</published>
+        <updated>2023-06-10T12:12:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/jorge-elbrecht-the-clouds-are-gone/</id>
+		<link href="https://mikerockwood.com/posts/jams/jorge-elbrecht-the-clouds-are-gone/" type="text/html"/>
+        <title>Jorge Elbrecht - The Clouds Are Gone</title>
+        <published>2023-06-03T11:50:00+00:00</published>
+        <updated>2023-06-03T11:50:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/a-sveltekit-template-for-building-cms-free-editable-websites/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/a-sveltekit-template-for-building-cms-free-editable-websites/" type="text/html"/>
+        <title>A SvelteKit template for building CMS-free editable websites</title>
+        <published>2023-04-11T18:14:00+00:00</published>
+        <updated>2023-04-11T18:14:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Seems like more of a tech-demo than a usable product, but pretty cool nonetheless.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://editable.website/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/f1ff1fb45bc3/</id>
+		<link href="https://mikerockwood.com/posts/notes/f1ff1fb45bc3/" type="text/html"/>
+        <title>Note from 2023-03-30 at 18:52</title>
+        <published>2023-03-30T18:52:00+00:00</published>
+        <updated>2023-03-30T18:52:00+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Hit the ten-year mark at University of Utah Health.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/3477fb58ce48/</id>
+		<link href="https://mikerockwood.com/posts/notes/3477fb58ce48/" type="text/html"/>
+        <title>Note from 2023-03-11 at 07:25</title>
+        <published>2023-03-11T07:25:49.408+00:00</published>
+        <updated>2023-03-11T07:25:49.408+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Welcome to the new site. Expect growing pains…&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/notes/802b65d2efe2/</id>
+		<link href="https://mikerockwood.com/posts/notes/802b65d2efe2/" type="text/html"/>
+        <title>Note from 2023-03-06 at 10:25</title>
+        <published>2023-03-06T10:25:45.923+00:00</published>
+        <updated>2023-03-06T10:25:45.923+00:00</updated>
+		<category term="note" scheme="https://mikerockwood.com/posts/notes/" label="Note" />
+		<content type="html">&lt;p&gt;Here’s a bit of a CSS gotcha: The `ch` unit doesn’t respond to character width changes when using variable fonts.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/mid-air-thief-soesaseul-ahhhh-these-chains/</id>
+		<link href="https://mikerockwood.com/posts/jams/mid-air-thief-soesaseul-ahhhh-these-chains/" type="text/html"/>
+        <title>Mid-Air Thief - 쇠사슬 (Ahhhh, These Chains!)</title>
+        <published>2023-03-06T06:20:26.265+00:00</published>
+        <updated>2023-03-06T06:20:26.265+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/juanita-euka-mboka-moko/</id>
+		<link href="https://mikerockwood.com/posts/jams/juanita-euka-mboka-moko/" type="text/html"/>
+        <title>Juanita Euka - Mboka Moko</title>
+        <published>2023-03-05T01:31:57.746+00:00</published>
+        <updated>2023-03-05T01:31:57.746+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/single-page-applications-criticism/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/single-page-applications-criticism/" type="text/html"/>
+        <title>Why I&#x27;m not the biggest fan of Single Page Applications</title>
+        <published>2023-02-15T00:48:51.891+00:00</published>
+        <updated>2023-02-15T00:48:51.891+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Manuel Matuzović:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I guess the biggest criticism here is that it feels like people who believe in the superiority of single page applications and the entire ecosystem focus more on developer experience (DX) than user experience.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+
+		</content>
+		<link rel="alternate" href="https://www.matuzo.at/blog/2023/single-page-applications-criticism/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/scott-hardware-love-through-the-trees/</id>
+		<link href="https://mikerockwood.com/posts/jams/scott-hardware-love-through-the-trees/" type="text/html"/>
+        <title>Scott Hardware - Love Through The Trees</title>
+        <published>2022-06-07T07:00:41.600+00:00</published>
+        <updated>2022-06-07T07:00:41.600+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/bryan-scary-day-glo-waterfalls/</id>
+		<link href="https://mikerockwood.com/posts/jams/bryan-scary-day-glo-waterfalls/" type="text/html"/>
+        <title>Bryan Scary - Day-Glo Waterfalls</title>
+        <published>2022-06-07T06:55:54+00:00</published>
+        <updated>2022-06-07T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/billy-nicholls-winter-rose/</id>
+		<link href="https://mikerockwood.com/posts/jams/billy-nicholls-winter-rose/" type="text/html"/>
+        <title>Billy Nicholls - Winter Rose</title>
+        <published>2022-06-07T06:35:22.100+00:00</published>
+        <updated>2022-06-07T06:35:22.100+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/2017-10-9-building-large-scale-design-system-for-us-government/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/2017-10-9-building-large-scale-design-system-for-us-government/" type="text/html"/>
+        <title>Building a Large-Scale Design System</title>
+        <published>2017-10-09T10:00:00+00:00</published>
+        <updated>2017-10-09T10:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;A case study of how a design system was created for the U.S. government.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://www.smashingmagazine.com/2017/10/large-scale-design-system-us-government/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/event-for-css-position-sticky/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/event-for-css-position-sticky/" type="text/html"/>
+        <title>An event for CSS position:sticky</title>
+        <published>2017-09-22T10:00:00+00:00</published>
+        <updated>2017-09-22T10:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Use IntersectionObserver to fire a custom event when position:sticky elements become fixed or when they stop sticking.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://developer.chrome.com/blog/sticky-headers/" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/bookmarks/combine-css-grid-and-flexbox-for-efficient-layouts/</id>
+		<link href="https://mikerockwood.com/posts/bookmarks/combine-css-grid-and-flexbox-for-efficient-layouts/" type="text/html"/>
+        <title>How to combine Flexbox and CSS grids for efficient layouts</title>
+        <published>2017-08-27T10:00:00+00:00</published>
+        <updated>2017-08-27T10:00:00+00:00</updated>
+		<category term="bookmark" scheme="https://mikerockwood.com/posts/bookmarks/" label="Bookmark" />
+		<content type="html">&lt;p&gt;Learn how to combine CSS Grid and Flexbox to create efficient and interesting designs.&lt;&#x2F;p&gt;
+
+		</content>
+		<link rel="alternate" href="https://wpengine.com/resources/combine-flexbox-and-css-grids-for-layouts-how-to/" />
+    </entry>
+</feed>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="view-transition" content="same-origin" />
+	<title>My HTML Web Component boilerplate for 2026 - Mike Rockwood</title>
+	<meta name="description" content="Chris Ferdinandi shares his starting point for building web components. I generally agree with his approach.
+">
+	<script>
+		// add class if JS is enabled
+		document.documentElement.classList.remove('no-js');
+		document.documentElement.classList.add('js');
+		// if there's a theme id in localstorage, use it on the <html>
+		localStorage.getItem('theme') &&
+		document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+	</script>
+	<link rel="preload" href="https://mikerockwood.com/fonts/Rubik[wght].woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="https://mikerockwood.com/style.css?h=49c17e4bee91890810dd" as="style">
+	<link rel="stylesheet" href="https://mikerockwood.com/style.css?h=49c17e4bee91890810dd">
+	<link rel="shortcut icon" href="https://mikerockwood.com/images/favicon.svg?h=e8d78c0166b01d61c816" type="image/svg+xml">
+	<link rel="alternate" title="Posts by Mike Rockwood" href="https://mikerockwood.com/atom.xml" type="application/atom+xml" />
+	<link rel=me href="https://www.linkedin.com/in/mikerockwood">
+	<link rel=me href="https://www.github.com/mrockwood">
+	<link rel=me href="https://indieweb.social/@rockwood">
+	<link rel="canonical" href="https://mikerockwood.com/posts/bookmarks/my-html-web-component-boilerplate-for-2026/" />
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="My HTML Web Component boilerplate for 2026" />
+	<meta property="og:description" content="Chris Ferdinandi shares his starting point for building web components. I generally agree with his approach.
+"/>
+	<meta property="og:url" content="https://mikerockwood.com/posts/bookmarks/my-html-web-component-boilerplate-for-2026/"/>
+	<meta property="og:image" content="https://mikerockwood.com/images/headshot-cutout.jpg"/>
+	<script type="application/ld+json">
+		{
+			"@context":"http://schema.org"
+			"name":"Mike Rockwood",
+			"description":"Personal portfolio and blog of Mike Rockwood",
+			"author": {
+				"@type":"Person",
+				"name":"Mike Rockwood"
+			},
+			"@type":"WebSite",
+			"url":"https://mikerockwood.com",
+			"image":"https://mikerockwood.com/images/headshot-cutout.jpg",
+			"headline":"Mike Rockwood",
+			"sameAs":[
+				"https://indieweb.social/@rockwood",
+				"https://www.github.com/mrockwood"
+			]
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class="uk-header ">
+		<div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
+			<nav class="uk-navbar" style="margin-inline: calc(-1 * var(--navbar-nav-item-padding-horizontal));">
+				<div class="uk-navbar-left">
+					<a href="https:&#x2F;&#x2F;mikerockwood.com" class="uk-navbar-item uk-logo">
+						
+						
+						Mike Rockwood
+					</a>
+				</div>
+				<div class="uk-navbar-right">
+					<ul class="uk-navbar-nav uk-visible@m">
+						<li ><a href="https://mikerockwood.com/">Home</a></li>
+						<li ><a href="https://mikerockwood.com/work/">Work</a></li>
+						<li ><a href="https://mikerockwood.com/about/">About</a></li>
+						<li ><a href="https://mikerockwood.com/posts/">Posts</a></li></ul>
+					<div class="uk-hidden@m">
+						<button uk-toggle="target: #js-mobile-menu" class="uk-icon-button uk-icon" uk-icon aria-label="Main Menu">
+							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+							</svg>
+						</button>
+					</div>
+					<div class="uk-navbar-item">
+						<button uk-toggle="target: #js-theme-menu" class="uk-icon-button uk-icon" aria-label="Theme Menu">
+							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	
+
+<article class="h-entry">
+
+	<header class="uk-section uk-section-small">
+
+		<div class="uk-container uk-container-large uk-text-center">
+			<div class="uk-position-relative uk-margin-small">
+					<a href="https://mikerockwood.com/posts/bookmarks/" class="uk-label" rel="tag">bookmarks</a>
+				
+			</div>
+			
+
+			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">My HTML Web Component boilerplate for 2026</h1>
+			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="2025-12-18 22:02:00">
+				18 December, 2025
+			</time>
+			
+
+		</div>
+
+	</header>
+
+	<!-- <div class="e-content">
+
+		<p>Chris Ferdinandi shares his starting point for building web components. I generally agree with his approach.</p>
+
+
+	</div> -->
+
+	<div class="e-content uk-section-secondary">
+
+		<div class="uk-section uk-container uk-flex uk-flex-column uk-flex-middle">
+
+			<a class="uk-button uk-button-primary uk-button-large" href="https:&#x2F;&#x2F;gomakethings.com&#x2F;my-html-web-component-boilerplate-for-2026&#x2F;">
+				Direct Link
+				<span
+					class="uk-margin-small-left"
+					uk-icon="link"
+				>
+				</span>
+			</a>
+
+		</div>
+
+		
+		<hr class="uk-margin-remove">
+
+		<div class="uk-section uk-section-large">
+
+			<div class="uk-container uk-container-xsmall uk-margin-large">
+
+				<p>Chris Ferdinandi shares his starting point for building web components. I generally agree with his approach.</p>
+
+
+			</div>
+
+		</div>
+		
+
+	</div>
+
+	<footer>
+
+		
+
+	</footer>
+
+</article>
+
+
+	<footer>
+		<a href="mailto:rockwood@gmail.com" class="uk-section uk-section-small uk-button uk-button-primary">
+			<div class="uk-container uk-text-center uk-text-large">
+				<span>Want to chat?</span>
+				<span>Drop me a line.</span>
+			</div>
+		</a>
+		<div class="uk-section uk-section-small uk-section-muted">
+			<div class="uk-container uk-container-large">
+
+				<div class="uk-text-center uk-padding-small">
+					<ul class="uk-child-width-auto uk-grid-small uk-flex-inline" uk-grid>
+						<li>
+							<a href="https://www.linkedin.com/in/mikerockwood" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+								<span
+									class="uk-icon-button"
+									uk-icon="
+										icon: linkedin;
+										ratio: 1.2;"
+									style="
+										--icon-button-size: 44px;
+										--icon-button-background: var(--global-background);
+										--icon-button-hover-background: var(--global-background);"
+								></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.github.com/mrockwood" aria-label="Github" target="_blank" rel="noreferrer">
+								<span
+									class="uk-icon-button"
+									uk-icon="
+										icon: github;
+										ratio: 1.2;"
+									style="
+										--icon-button-size: 44px;
+										--icon-button-background: var(--global-background);
+										--icon-button-hover-background: var(--global-background);"
+								></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://indieweb.social/@rockwood" aria-label="Mastodon" target="_blank" rel="noreferrer">
+								<span
+									class="uk-icon-button"
+									uk-icon="
+										icon: mastodon;
+										ratio: 1.2;"
+									style="
+										--icon-button-size: 44px;
+										--icon-button-background: var(--global-background);
+										--icon-button-hover-background: var(--global-background);"
+								></span>
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+
+				<hr class="uk-margin-medium" />
+
+				<div class="uk-grid uk-grid-small uk-flex-between uk-flex-wrap" uk-grid>
+					<p class="uk-width-1-1 uk-text-center uk-text-left@s uk-width-expand@s">&copy; 2026 Mike Rockwood</p>
+					<p class="uk-flex uk-margin-auto">
+						<a class="uk-link-text" href="https://xn--sr8hvo.ws/%F0%9F%91%A9%E2%80%8D%E2%9D%A4%EF%B8%8F%E2%80%8D%F0%9F%91%A9%F0%9F%95%93%F0%9F%8F%BF/previous" aria-label="Previous IndieWeb Webring Site">←</a>
+						<a class="uk-link-text uk-margin-left uk-margin-right" href="https://xn--sr8hvo.ws">An IndieWeb Webring</a>
+						<a class="uk-link-text" href="https://xn--sr8hvo.ws/%F0%9F%91%A9%E2%80%8D%E2%9D%A4%EF%B8%8F%E2%80%8D%F0%9F%91%A9%F0%9F%95%93%F0%9F%8F%BF/next" aria-label="Next IndieWeb Webring Site">→</a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+	
+	<div id="js-mobile-menu" class="uk-modal-full" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-height-viewport">
+			<button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+			<div class="uk-margin-auto-vertical uk-width-1-1">
+				<ul class="uk-nav uk-nav-primary uk-nav-center uk-text-uppercase">
+					<li ><a href="https://mikerockwood.com/">Home</a></li>
+					<li ><a href="https://mikerockwood.com/work/">Work</a></li>
+					<li ><a href="https://mikerockwood.com/about/">About</a></li>
+					<li ><a href="https://mikerockwood.com/posts/">Posts</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div id="js-theme-menu" uk-offcanvas="overlay: true; flip: true; mode: push;">
+		<div class="uk-offcanvas-bar">
+			<button class="uk-offcanvas-close" type="button" uk-close></button>
+			<ul class="uk-theme-nav uk-nav uk-nav-primary uk-list-large uk-margin-top">
+				<li class="uk-nav-header">Select a Theme</li>
+				<li class="uk-nav-divider uk-margin-bottom"></li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-auto"
+						aria-label="Automatically select color theme based on user preferences"
+					>
+						Auto
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-light"
+						aria-label="Select light color theme"
+					>
+						Light
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-dark"
+						aria-label="Select dark color theme"
+					>
+						Dark
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-grunge"
+						aria-label="Select grunge color theme"
+					>
+						Grunge
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-metal"
+						aria-label="Select metal color theme"
+					>
+						Metal
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<li class="uk-theme-switcher-item">
+					<button
+						class="uk-theme-button uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-punk"
+						aria-label="Select punk color theme"
+					>
+						Punk
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li>
+				<!-- <li class="themeswitcher__item">
+					<button
+						class="js-themepicker-themeselect themepicker__btn uk-button uk-button-default uk-button-large uk-width-1-1 uk-border-rounded uk-padding-remove"
+						data-theme="uk-theme-psychedelic"
+						aria-label="Select psychedelic color theme"
+					>
+						Psychedelic
+						<div class="uk-theme-swatch">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+	
+	<script src="https://mikerockwood.com/scripts/uikit.min.js?h=440c8c1f62041d7713a8" defer="defer"></script>
+	<script src="https://mikerockwood.com/scripts/uikit-icons.min.js?h=456ff65a0cdf42cc03b0" defer="defer"></script>
+	<script src="https://mikerockwood.com/scripts/theme-picker.js?h=360599dfd2acda7e19c6" defer="defer"></script>
+	
+
+
+</body>
+
+</html>

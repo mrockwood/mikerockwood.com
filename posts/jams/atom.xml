@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xml:base="https://mikerockwood.com">
+    <title>Mike Rockwood - Jams</title>
+    <subtitle>
+		Personal portfolio and blog of Mike Rockwood
+	</subtitle>
+	<id>https://mikerockwood.com/posts/jams/</id>
+    <link href="https://mikerockwood.com/posts/jams/atom.xml" rel="self" type="application/atom+xml"/>
+    
+	<link href="https://mikerockwood.com/posts/jams/" rel="alternate" />
+    <author>
+        <name>Mike Rockwood</name>
+        <uri>https://mikerockwood.com</uri>
+        <email>rockwood@gmail.com</email>
+    </author>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-01-04T04:37:00+00:00</updated>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/magdalena-bay-you-lose/</id>
+		<link href="https://mikerockwood.com/posts/jams/magdalena-bay-you-lose/" type="text/html"/>
+        <title>Magdalena Bay - You Lose!</title>
+        <published>2025-01-04T04:37:00+00:00</published>
+        <updated>2025-01-04T04:37:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/diane-birch-critic-s-lullaby/</id>
+		<link href="https://mikerockwood.com/posts/jams/diane-birch-critic-s-lullaby/" type="text/html"/>
+        <title>Diane Birch - Critic&#x27;s Lullaby</title>
+        <published>2024-04-19T22:30:00+00:00</published>
+        <updated>2024-04-19T22:30:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+		<content type="html">&lt;p&gt;I don’t know why, but soft piano rock is really doing it for me right now.&lt;&#x2F;p&gt;
+
+		</content>
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/brett-smiley-va-va-va-voom/</id>
+		<link href="https://mikerockwood.com/posts/jams/brett-smiley-va-va-va-voom/" type="text/html"/>
+        <title>Brett Smiley - Va Va Va Voom</title>
+        <published>2023-11-25T11:14:00+00:00</published>
+        <updated>2023-11-25T11:14:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/lalalar-hata-benim-gobek-adim/</id>
+		<link href="https://mikerockwood.com/posts/jams/lalalar-hata-benim-gobek-adim/" type="text/html"/>
+        <title>Lalalar - Hata Benim Göbek Adım</title>
+        <published>2023-11-18T11:10:00+00:00</published>
+        <updated>2023-11-18T11:10:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/lost-in-the-trees-past-life/</id>
+		<link href="https://mikerockwood.com/posts/jams/lost-in-the-trees-past-life/" type="text/html"/>
+        <title>Lost In The Trees - Past Life</title>
+        <published>2023-11-11T11:04:00+00:00</published>
+        <updated>2023-11-11T11:04:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/jaga-jazzist-all-i-know-is-tonight/</id>
+		<link href="https://mikerockwood.com/posts/jams/jaga-jazzist-all-i-know-is-tonight/" type="text/html"/>
+        <title>Jaga Jazzist - All I Know Is Tonight</title>
+        <published>2023-11-04T10:00:00+00:00</published>
+        <updated>2023-11-04T10:00:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/the-junipers-burning-pages/</id>
+		<link href="https://mikerockwood.com/posts/jams/the-junipers-burning-pages/" type="text/html"/>
+        <title>The Junipers - Burning Pages</title>
+        <published>2023-10-28T09:51:00+00:00</published>
+        <updated>2023-10-28T09:51:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/evil-arrows-the-motion-picture-managers-of-love/</id>
+		<link href="https://mikerockwood.com/posts/jams/evil-arrows-the-motion-picture-managers-of-love/" type="text/html"/>
+        <title>Evil Arrows - The Motion Picture Managers (Of Love)</title>
+        <published>2023-10-21T09:40:00+00:00</published>
+        <updated>2023-10-21T09:40:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/fred-pallem-le-sacre-du-tympan-l-amour-du-disque/</id>
+		<link href="https://mikerockwood.com/posts/jams/fred-pallem-le-sacre-du-tympan-l-amour-du-disque/" type="text/html"/>
+        <title>Fred Pallem &amp; le Sacre du Tympan - L&#x27;amour du  disque</title>
+        <published>2023-10-14T09:28:00+00:00</published>
+        <updated>2023-10-14T09:28:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/the-toms-lets-be-friends-again/</id>
+		<link href="https://mikerockwood.com/posts/jams/the-toms-lets-be-friends-again/" type="text/html"/>
+        <title>The Toms - Let&#x27;s Be Friends Again</title>
+        <published>2023-10-07T18:09:00+00:00</published>
+        <updated>2023-10-07T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/geurimja-gongdongce-jiweojineun-norae/</id>
+		<link href="https://mikerockwood.com/posts/jams/geurimja-gongdongce-jiweojineun-norae/" type="text/html"/>
+        <title>그림자 공동체 - 지워지는 노래</title>
+        <published>2023-09-30T06:55:54+00:00</published>
+        <updated>2023-09-30T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/the-honeydogs-10000-years/</id>
+		<link href="https://mikerockwood.com/posts/jams/the-honeydogs-10000-years/" type="text/html"/>
+        <title>The Honeydogs - 10,000 Years</title>
+        <published>2023-09-23T18:09:00+00:00</published>
+        <updated>2023-09-23T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/philharmonie-ouigaa/</id>
+		<link href="https://mikerockwood.com/posts/jams/philharmonie-ouigaa/" type="text/html"/>
+        <title>Philharmonie - Ouigaa</title>
+        <published>2023-09-09T18:09:00+00:00</published>
+        <updated>2023-09-09T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/lamp-qing-ihai-an-xian-kara/</id>
+		<link href="https://mikerockwood.com/posts/jams/lamp-qing-ihai-an-xian-kara/" type="text/html"/>
+        <title>Lamp - 青い海岸線から</title>
+        <published>2023-09-02T18:09:00+00:00</published>
+        <updated>2023-09-02T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/josh-fix-ghosts-in-your-head/</id>
+		<link href="https://mikerockwood.com/posts/jams/josh-fix-ghosts-in-your-head/" type="text/html"/>
+        <title>Josh Fix - Ghosts In Your Head</title>
+        <published>2023-08-26T06:55:54+00:00</published>
+        <updated>2023-08-26T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/brief-encounter-smile/</id>
+		<link href="https://mikerockwood.com/posts/jams/brief-encounter-smile/" type="text/html"/>
+        <title>Brief Encounter - Smile</title>
+        <published>2023-08-19T18:09:00+00:00</published>
+        <updated>2023-08-19T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/ben-shive-listen/</id>
+		<link href="https://mikerockwood.com/posts/jams/ben-shive-listen/" type="text/html"/>
+        <title>Ben Shive - Listen!</title>
+        <published>2023-08-12T18:09:00+00:00</published>
+        <updated>2023-08-12T18:09:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/shaolin-death-squad-race-of-thinkers/</id>
+		<link href="https://mikerockwood.com/posts/jams/shaolin-death-squad-race-of-thinkers/" type="text/html"/>
+        <title>Shaolin Death Squad - Race of the Thinkers</title>
+        <published>2023-08-05T06:55:54+00:00</published>
+        <updated>2023-08-05T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/julia-holter-feel-you/</id>
+		<link href="https://mikerockwood.com/posts/jams/julia-holter-feel-you/" type="text/html"/>
+        <title>Julia Holter - Feel You</title>
+        <published>2023-07-29T12:48:00+00:00</published>
+        <updated>2023-07-29T12:48:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/blinker-the-star-september-already/</id>
+		<link href="https://mikerockwood.com/posts/jams/blinker-the-star-september-already/" type="text/html"/>
+        <title>Blinker the Star - September Already</title>
+        <published>2023-07-22T12:45:00+00:00</published>
+        <updated>2023-07-22T12:45:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/as-tall-as-lions-stab-city/</id>
+		<link href="https://mikerockwood.com/posts/jams/as-tall-as-lions-stab-city/" type="text/html"/>
+        <title>As Tall As Lions - Stab City</title>
+        <published>2023-07-15T12:43:00+00:00</published>
+        <updated>2023-07-15T12:43:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/elizabeth-and-the-catapult-wishing-well/</id>
+		<link href="https://mikerockwood.com/posts/jams/elizabeth-and-the-catapult-wishing-well/" type="text/html"/>
+        <title>Elizabeth and the Catapult - Wishing Well</title>
+        <published>2023-07-08T12:37:00+00:00</published>
+        <updated>2023-07-08T12:37:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/jon-brion-i-believe-she-s-lying/</id>
+		<link href="https://mikerockwood.com/posts/jams/jon-brion-i-believe-she-s-lying/" type="text/html"/>
+        <title>Jon Brion - I Believe She&#x27;s Lying</title>
+        <published>2023-07-01T12:34:00+00:00</published>
+        <updated>2023-07-01T12:34:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/v-sparks-sebastian/</id>
+		<link href="https://mikerockwood.com/posts/jams/v-sparks-sebastian/" type="text/html"/>
+        <title>V Sparks - Sebastian</title>
+        <published>2023-06-24T12:23:00+00:00</published>
+        <updated>2023-06-24T12:23:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/magma-hhai/</id>
+		<link href="https://mikerockwood.com/posts/jams/magma-hhai/" type="text/html"/>
+        <title>MAGMA - Hhaï</title>
+        <published>2023-06-17T12:13:00+00:00</published>
+        <updated>2023-06-17T12:13:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/cornelius-micro-disneycal-world-tour/</id>
+		<link href="https://mikerockwood.com/posts/jams/cornelius-micro-disneycal-world-tour/" type="text/html"/>
+        <title>Cornelius  - Micro Disneycal World Tour</title>
+        <published>2023-06-10T12:12:00+00:00</published>
+        <updated>2023-06-10T12:12:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/jorge-elbrecht-the-clouds-are-gone/</id>
+		<link href="https://mikerockwood.com/posts/jams/jorge-elbrecht-the-clouds-are-gone/" type="text/html"/>
+        <title>Jorge Elbrecht - The Clouds Are Gone</title>
+        <published>2023-06-03T11:50:00+00:00</published>
+        <updated>2023-06-03T11:50:00+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/mid-air-thief-soesaseul-ahhhh-these-chains/</id>
+		<link href="https://mikerockwood.com/posts/jams/mid-air-thief-soesaseul-ahhhh-these-chains/" type="text/html"/>
+        <title>Mid-Air Thief - 쇠사슬 (Ahhhh, These Chains!)</title>
+        <published>2023-03-06T06:20:26.265+00:00</published>
+        <updated>2023-03-06T06:20:26.265+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/juanita-euka-mboka-moko/</id>
+		<link href="https://mikerockwood.com/posts/jams/juanita-euka-mboka-moko/" type="text/html"/>
+        <title>Juanita Euka - Mboka Moko</title>
+        <published>2023-03-05T01:31:57.746+00:00</published>
+        <updated>2023-03-05T01:31:57.746+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/scott-hardware-love-through-the-trees/</id>
+		<link href="https://mikerockwood.com/posts/jams/scott-hardware-love-through-the-trees/" type="text/html"/>
+        <title>Scott Hardware - Love Through The Trees</title>
+        <published>2022-06-07T07:00:41.600+00:00</published>
+        <updated>2022-06-07T07:00:41.600+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/bryan-scary-day-glo-waterfalls/</id>
+		<link href="https://mikerockwood.com/posts/jams/bryan-scary-day-glo-waterfalls/" type="text/html"/>
+        <title>Bryan Scary - Day-Glo Waterfalls</title>
+        <published>2022-06-07T06:55:54+00:00</published>
+        <updated>2022-06-07T06:55:54+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+	<entry>
+		<id>https://mikerockwood.com/posts/jams/billy-nicholls-winter-rose/</id>
+		<link href="https://mikerockwood.com/posts/jams/billy-nicholls-winter-rose/" type="text/html"/>
+        <title>Billy Nicholls - Winter Rose</title>
+        <published>2022-06-07T06:35:22.100+00:00</published>
+        <updated>2022-06-07T06:35:22.100+00:00</updated>
+		<category term="jam" scheme="https://mikerockwood.com/posts/jams/" label="Jam" />
+    </entry>
+</feed>
