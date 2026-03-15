@@ -12,6 +12,7 @@
 		width='100%'
 		height='100%'
 		class="tm-home-hero-bg uk-position-cover uk-height-1-1"
+		role="presentation"
 	>
 		<style>
 			.tm-home-hero-bg circle {
@@ -51,7 +52,9 @@
 								</div>
 							</h1>
 							<div class="uk-margin uk-text-left@m uk-text-center" uk-parallax="y: 0,300; opacity: 1,0; easing: 0.3; target: !.uk-section; media: @s;" style="min-block-size: 30px; min-inline-size: 30px">
-								<a class="uk-icon-link" href="#works" aria-label="Scroll to next section" uk-scroll><span uk-icon="icon: arrow-down; width: 30; height: 30;"></span></a>
+								<a class="uk-icon-link" href="#works" aria-label="Scroll to next section" uk-scroll>
+									<span uk-icon="icon: arrow-down; width: 30; height: 30;" aria-hidden="true"></span>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -84,7 +87,7 @@
 					<div class="uk-grid-collapse uk-grid-match uk-grid uk-flex-middle" uk-grid>
 						<div class="uk-width-expand@m">
 							<div class="uk-panel uk-overflow-hidden">
-								<canvas width="1200" height="1000"></canvas>
+								<canvas width="1200" height="1000" aria-hidden="true"></canvas>
 								<img src="{{ image.url }}" alt="image" width="1200" height="1000" data-uk-cover="" class="uk-cover" loading="lazy">
 								<div class="uk-position-cover uk-position-z-index uk-visible@m" style="background-image: linear-gradient(to right, var(--card-default-background) 8.33%, transparent);"></div>
 								<div class="uk-position-cover uk-position-z-index uk-hidden@m" style="background-image: linear-gradient(to top, var(--card-default-background) 8.33%, transparent);"></div>
