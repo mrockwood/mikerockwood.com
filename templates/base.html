@@ -226,7 +226,13 @@
 						</button>
 					</div>
 					<div class="uk-navbar-item">
-						<button uk-toggle="target: #js-theme-menu" class="uk-icon-button uk-icon" aria-label="Theme Menu">
+						<button
+							uk-toggle="target: #js-theme-menu"
+							class="uk-icon-button uk-icon"
+							aria-label="Toggle theme menu"
+							aria-expanded="false"
+							aria-controls="js-theme-menu"
+						>
 							<svg stroke="currentColor" fill="none" stroke-width="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
 							</svg>
@@ -290,9 +296,10 @@
 				<div class="uk-text-center uk-padding-small">
 					<ul class="uk-child-width-auto uk-grid-small uk-flex-inline" uk-grid>
 						<li>
-							<a href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+							<a href="https://www.linkedin.com/in/{{ config.extra.social.linkedin }}" aria-label="Visit my LinkedIn profile" target="_blank" rel="noreferrer">
 								<span
 									class="uk-icon-button"
+									aria-hidden="true"
 									uk-icon="
 										icon: linkedin;
 										ratio: 1.2;"
@@ -304,9 +311,10 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://www.github.com/{{ config.extra.social.github }}" aria-label="Github" target="_blank" rel="noreferrer">
+							<a href="https://www.github.com/{{ config.extra.social.github }}" aria-label="Visit my Github profile" target="_blank" rel="noreferrer">
 								<span
 									class="uk-icon-button"
+									aria-hidden="true"
 									uk-icon="
 										icon: github;
 										ratio: 1.2;"
@@ -318,9 +326,10 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://{{ config.extra.social.mastodon | safe }}" aria-label="Mastodon" target="_blank" rel="noreferrer">
+							<a href="https://{{ config.extra.social.mastodon | safe }}" aria-label="Visit my Mastodon profile" target="_blank" rel="noreferrer">
 								<span
 									class="uk-icon-button"
+									aria-hidden="true"
 									uk-icon="
 										icon: mastodon;
 										ratio: 1.2;"
