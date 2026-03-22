@@ -54,75 +54,73 @@
 <div class="uk-section">
 	<div class="uk-child-width-1-1 uk-grid-margin" uk-grid>
 		<div class="uk-width-1-1@m">
-			<div uk-slider="center: 1; autoplay: 1;" class="uk-margin uk-text-center">
-				<div class="uk-position-relative">
-					<ul class="uk-slider-items uk-grid uk-grid-large">
-						<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
-							<div class="uk-cover-container">
-								<picture>
+			<div uk-slider="center: 1; autoplay: 1;" class="uk-margin uk-text-center uk-position-relative" aria-label="Image carousel" tabindex="-1">
+				<ul class="uk-slider-items uk-grid uk-grid-large">
+					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
+						<div class="uk-cover-container">
+							<picture>
 
-									{%- set slider_image3 = "/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg" %}
-									{%- set slider_image3_600 = resize_image(path=slider_image3, width=600, height=400, format="webp", quality=80) %}
-									{%- set slider_image3_1200 = resize_image(path=slider_image3, width=1200, height=800, format="webp", quality=80) %}
+								{%- set slider_image3 = "/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg" %}
+								{%- set slider_image3_600 = resize_image(path=slider_image3, width=600, height=400, format="webp", quality=80) %}
+								{%- set slider_image3_1200 = resize_image(path=slider_image3, width=1200, height=800, format="webp", quality=80) %}
 
-									<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
-										srcset="{{ slider_image3_600.url | safe }} 600w,
-												{{ slider_image3_1200.url | safe }} 1200w"
-										sizes="(max-width: 600px) 600px,
-												1200px">
-								</picture>
-							</div>
-						</li>
-						<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
-							<div class="uk-cover-container">
-								<picture>
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+									srcset="{{ slider_image3_600.url | safe }} 600w,
+											{{ slider_image3_1200.url | safe }} 1200w"
+									sizes="(max-width: 600px) 600px,
+											1200px">
+							</picture>
+						</div>
+					</li>
+					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
+						<div class="uk-cover-container">
+							<picture>
 
-									{%- set slider_image1 = "/images/mitchell-johnson-CZRNxAIYLzI-unsplash.jpg" %}
-									{%- set slider_image1_600 = resize_image(path=slider_image1, width=600, height=400, format="webp", quality=80) %}
-									{%- set slider_image1_1200 = resize_image(path=slider_image1, width=1200, height=800, format="webp", quality=80) %}
+								{%- set slider_image1 = "/images/mitchell-johnson-CZRNxAIYLzI-unsplash.jpg" %}
+								{%- set slider_image1_600 = resize_image(path=slider_image1, width=600, height=400, format="webp", quality=80) %}
+								{%- set slider_image1_1200 = resize_image(path=slider_image1, width=1200, height=800, format="webp", quality=80) %}
 
-									<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
-										srcset="{{ slider_image1_600.url | safe }} 600w,
-												{{ slider_image1_1200.url | safe }} 1200w"
-										sizes="(max-width: 600px) 600px,
-												1200px">
-								</picture>
-							</div>
-						</li>
-						<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
-							<div class="uk-cover-container">
-								<picture>
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+									srcset="{{ slider_image1_600.url | safe }} 600w,
+											{{ slider_image1_1200.url | safe }} 1200w"
+									sizes="(max-width: 600px) 600px,
+											1200px">
+							</picture>
+						</div>
+					</li>
+					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
+						<div class="uk-cover-container">
+							<picture>
 
-									{%- set slider_image2 = "/images/ashton-bingham-pzzHdzlFFXE-unsplash.jpg" %}
-									{%- set slider_image2_600 = resize_image(path=slider_image2, width=600, height=400, format="webp", quality=80) %}
-									{%- set slider_image2_1200 = resize_image(path=slider_image2, width=1200, height=800, format="webp", quality=80) %}
+								{%- set slider_image2 = "/images/ashton-bingham-pzzHdzlFFXE-unsplash.jpg" %}
+								{%- set slider_image2_600 = resize_image(path=slider_image2, width=600, height=400, format="webp", quality=80) %}
+								{%- set slider_image2_1200 = resize_image(path=slider_image2, width=1200, height=800, format="webp", quality=80) %}
 
-									<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
-										srcset="{{ slider_image2_600.url | safe }} 600w,
-												{{ slider_image2_1200.url | safe }} 1200w"
-										sizes="(max-width: 600px) 600px,
-												1200px">
-								</picture>
-							</div>
-						</li>
-						<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
-							<div class="uk-cover-container">
-								<picture>
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+									srcset="{{ slider_image2_600.url | safe }} 600w,
+											{{ slider_image2_1200.url | safe }} 1200w"
+									sizes="(max-width: 600px) 600px,
+											1200px">
+							</picture>
+						</div>
+					</li>
+					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
+						<div class="uk-cover-container">
+							<picture>
 
-									{%- set slider_image4 = "/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg" %}
-									{%- set slider_image4_600 = resize_image(path=slider_image4, width=600, height=400, format="webp", quality=80) %}
-									{%- set slider_image4_1200 = resize_image(path=slider_image4, width=1200, height=800, format="webp", quality=80) %}
+								{%- set slider_image4 = "/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg" %}
+								{%- set slider_image4_600 = resize_image(path=slider_image4, width=600, height=400, format="webp", quality=80) %}
+								{%- set slider_image4_1200 = resize_image(path=slider_image4, width=1200, height=800, format="webp", quality=80) %}
 
-									<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
-										srcset="{{ slider_image4_600.url | safe }} 600w,
-												{{ slider_image4_1200.url | safe }} 1200w"
-										sizes="(max-width: 600px) 600px,
-												1200px">
-								</picture>
-							</div>
-						</li>
-					</ul>
-				</div>
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+									srcset="{{ slider_image4_600.url | safe }} 600w,
+											{{ slider_image4_1200.url | safe }} 1200w"
+									sizes="(max-width: 600px) 600px,
+											1200px">
+							</picture>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
