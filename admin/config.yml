@@ -1,0 +1,246 @@
+backend:
+  name: github
+  repo: mrockwood/mikerockwood.com
+  branch: main
+  base_url: https://sveltia-cms-auth.rockwood-cloudflare.workers.dev/
+
+media_folder: "/static/images"
+public_folder: "/images"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    icon: "article"
+    folder: "content/posts/articles/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["articles"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Featured Image", name: "featuredImg", widget: "string", required: false}
+          - {label: "Featured Image Caption", name: "featuredImgCaption", widget: "markdown", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "bookmarks"
+    label: "Bookmarks"
+    label_singular: "Bookmark"
+    icon: "bookmark"
+    folder: "content/posts/bookmarks/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    editor:
+      preview: false
+    sortable_fields: ['title', 'date', 'draft']
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["bookmarks"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "bookmarkOf", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "jams"
+    label: "Jams"
+    label_singular: "Jam"
+    icon: "music_note"
+    folder: "content/posts/jams/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    editor:
+      preview: false
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["jams"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Service", name: "service", widget: "select", options: ['bandcamp','soundcloud','youtube']}
+          - {label: "ID", name: "id", widget: "string"}
+          - {label: "Thumbnail", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "likes"
+    label: "Likes"
+    label_singular: "Like"
+    icon: "favorite"
+    folder: "content/posts/likes/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["likes"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "likeOf", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "notes"
+    label: "Notes"
+    label_singular: "Note"
+    icon: "note"
+    folder: "content/posts/notes/"
+    create: true
+    identifier_field: "body"
+    editor:
+      preview: false
+    slug: "{{year}}-{{month}}-{{day}}-{{uuid_short}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["notes"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    icon: "web"
+    folder: "content/pages/"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Updated", name: "updated", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text" }
+      - {label: "Path", name: "path", widget: "string" }
+      - {label: "Template", name: "template", widget: "string" }
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "replies"
+    label: "Replies"
+    label_singular: "Reply"
+    icon: "reply"
+    folder: "content/posts/replies/"
+    create: true
+    identifier_field: "body"
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["replies"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Reply to URL", name: "inReplyTo", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "reposts"
+    label: "Reposts"
+    label_singular: "Repost"
+    icon: "content_copy"
+    folder: "content/posts/reposts/"
+    create: true
+    filter: {field: "type", value: "repost"}
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["reposts"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Link", name: "repostOf", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "rsvps"
+    label: "RSVPs"
+    label_singular: "RSVP"
+    icon: "rsvp"
+    folder: "content/posts/rsvps/"
+    create: true
+    identifier_field: "body"
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Categories", name: "categories", widget: "list", default: ["rsvps"]}
+          - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Event URL", name: "inReplyTo", widget: "string"}
+          - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested']}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "work"
+    label: "Work"
+    label_singular: "Work Project"
+    icon: "work"
+    folder: "content/work/"
+    create: true
+    slug: "{{title}}"
+    path: "{{slug}}/index.md"
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Taxonomies"
+        name: "taxonomies"
+        widget: "object"
+        fields:
+          - {label: "Tasks", name: "tasks", widget: "list"}
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {label: "Featured", name: "featured", widget: "boolean", default: false}
+          - {label: "Featured Image", name: "featuredImg", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
