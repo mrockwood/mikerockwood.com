@@ -28,7 +28,7 @@ Done when only successfully built output is published and automated jobs cannot 
 
 - [ ] Document common fields required by every post: title, date, summary, type, content, taxonomy, canonical URL, and author.
 - [x] Normalize type-specific fields such as `bookmark-of`, `like-of`, `repost-of`, `in-reply-to`, media IDs, and thumbnails.
-- [ ] Choose one naming convention for front matter keys.
+- [x] Choose one naming convention for front matter keys.
 - [x] Add Sveltia validation for required fields and valid values per post type.
 
 Done when a new post can be created from the CMS with required fields and constrained values enforced by the editor.

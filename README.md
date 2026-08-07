@@ -56,6 +56,10 @@ The main sections are:
 
 Posts are organized by type, including articles, bookmarks, jams, likes, notes, photos, replies, reposts, RSVPs, and videos. Most content is written in Markdown with YAML front matter.
 
+### Front matter naming
+
+Zola's built-in fields keep Zola's spelling, such as `sort_by` and `page_template`. Site-specific fields use kebab-case, such as `featured-image`, `external-link`, and `bookmark-of`. Simple one-word fields stay lowercase, such as `service`, `thumbnail`, and `id`.
+
 ## Publishing
 
 The site is deployed to GitHub Pages through GitHub Actions. The CMS lives at `/admin/` and uses [Sveltia CMS](https://github.com/sveltia/sveltia-cms).
