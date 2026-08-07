@@ -24,17 +24,28 @@ jobs:
         env:
           WEBMENTION_TOKEN: ${{ secrets.WEBMENTION_TOKEN }}
         run: |
+          set -euo pipefail
+          if [ -z "${WEBMENTION_TOKEN:-}" ]; then
+            echo "WEBMENTION_TOKEN is not configured"
+            exit 1
+          fi
           mkdir -p static/webmention
-          # Fetch webmentions and save (overwrite) to a single file
-          curl -s "https://webmention.io/api/mentions.json?token=${WEBMENTION_TOKEN}" -o static/webmention/webmentions.json
+          curl --fail --location --silent --show-error \
+            --get \
+            --data-urlencode "token=${WEBMENTION_TOKEN}" \
+            "https://webmention.io/api/mentions.json" \
+            -o static/webmention/webmentions.json
 
       - name: Commit and Push Webmentions
         run: |
+          set -euo pipefail
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add static/webmention/webmentions.json
-          git commit -m "Update webmentions" || echo "No changes to commit"
-          # Pull latest changes from main with rebase to avoid conflicts
+          if git diff --cached --quiet; then
+            echo "No Webmention changes to commit"
+            exit 0
+          fi
+          git commit -m "Update webmentions"
           git pull --rebase origin main
-          # Now push the updated branch
-          git push
+          git push origin HEAD:main
