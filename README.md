@@ -60,6 +60,12 @@ Posts are organized by type, including articles, bookmarks, jams, likes, notes, 
 
 Zola's built-in fields keep Zola's spelling, such as `sort_by` and `page_template`. Site-specific fields use kebab-case, such as `featured-image`, `external-link`, and `bookmark-of`. Simple one-word fields stay lowercase, such as `service`, `thumbnail`, and `id`.
 
+### Post fields
+
+Every post has a `date` and a `taxonomies.categories` value matching its post type. Titled posts also have a `title`, and most posts have Markdown content below the front matter. `tags` are optional.
+
+The post type comes from its directory, not a front matter field. Summaries are optional and can be created with Zola's `<!-- more -->` marker. Canonical URLs are generated from the page permalink, and the author comes from `config.toml`.
+
 ## Publishing
 
 The site is deployed to GitHub Pages through GitHub Actions. The CMS lives at `/admin/` and uses [Sveltia CMS](https://github.com/sveltia/sveltia-cms).
