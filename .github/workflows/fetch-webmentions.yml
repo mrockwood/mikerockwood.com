@@ -1,12 +1,16 @@
 name: Fetch Webmentions
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '*/30 * * * *'  # Runs every 30 minutes
   workflow_dispatch:  # Allows manual triggering of the workflow if needed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-publish
+  cancel-in-progress: false
 
 jobs:
   fetch_webmentions:
@@ -14,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Fetch Webmentions
         env:
@@ -34,4 +38,3 @@ jobs:
           git pull --rebase origin main
           # Now push the updated branch
           git push
-

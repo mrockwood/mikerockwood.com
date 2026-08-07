@@ -19,8 +19,8 @@ Done when a clean checkout builds on a new machine and local and CI builds use t
 
 - [x] Remove or redesign `make push` so it cannot automatically commit and push arbitrary changes.
 - [x] Make deployment fail clearly when the build fails.
-- [ ] Pin third-party GitHub Actions.
-- [ ] Prevent automated Webmention updates from racing with content deployments.
+- [x] Pin third-party GitHub Actions.
+- [x] Prevent automated Webmention updates from racing with content deployments.
 
 Done when only successfully built output is published and automated jobs cannot overwrite or rebase over content work.
 
