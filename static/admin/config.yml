@@ -17,14 +17,14 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Description", name: "description", widget: "text"}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["articles"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["articles"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
@@ -45,19 +45,19 @@ collections:
     sortable_fields: ['title', 'date', 'draft']
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["bookmarks"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["bookmarks"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Link", name: "bookmark-of", widget: "string"}
+          - {label: "Link", name: "bookmark-of", widget: "string", type: "url", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "jams"
     label: "Jams"
@@ -70,21 +70,21 @@ collections:
       preview: false
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["jams"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["jams"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Service", name: "service", widget: "select", options: ['bandcamp','soundcloud','youtube']}
-          - {label: "ID", name: "id", widget: "string"}
-          - {label: "Thumbnail", name: "thumbnail", widget: "image"}
+          - {label: "Service", name: "service", widget: "select", options: ['bandcamp','soundcloud','youtube'], required: true}
+          - {label: "ID", name: "id", widget: "string", required: true}
+          - {label: "Thumbnail", name: "thumbnail", widget: "image", required: true}
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "likes"
     label: "Likes"
@@ -95,19 +95,19 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["likes"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["likes"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Link", name: "like-of", widget: "string"}
+          - {label: "Link", name: "like-of", widget: "string", type: "url", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "notes"
     label: "Notes"
@@ -121,12 +121,12 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{uuid_short}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["notes"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["notes"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
@@ -154,19 +154,19 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["replies"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["replies"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Reply to URL", name: "in-reply-to", widget: "string"}
+          - {label: "Reply to URL", name: "in-reply-to", widget: "string", type: "url", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "reposts"
     label: "Reposts"
@@ -178,19 +178,19 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["reposts"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["reposts"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Link", name: "repost-of", widget: "string"}
+          - {label: "Link", name: "repost-of", widget: "string", type: "url", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "rsvps"
     label: "RSVPs"
@@ -202,20 +202,20 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Date", name: "date", widget: "datetime", picker_utc: true}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", picker_utc: true, required: true}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - label: "Taxonomies"
         name: "taxonomies"
         widget: "object"
         fields:
-          - {label: "Categories", name: "categories", widget: "list", default: ["rsvps"]}
+          - {label: "Categories", name: "categories", widget: "list", default: ["rsvps"], required: true}
           - {label: "Tags", name: "tags", widget: "list", required: false}
       - label: "Extra"
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Event URL", name: "in-reply-to", widget: "string"}
-          - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested']}
+          - {label: "Event URL", name: "in-reply-to", widget: "string", type: "url", required: true}
+          - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested'], required: true}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "work"
     label: "Work"
