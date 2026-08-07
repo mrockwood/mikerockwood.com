@@ -23,7 +23,7 @@ UIkit provides a number of useful classes to alter an element's height.
 <div class="uk-height-small"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@s" uk-grid>
     <div>
         <div class="uk-height-small uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">Small</div>
@@ -35,7 +35,7 @@ UIkit provides a number of useful classes to alter an element's height.
         <div class="uk-height-large uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">Large</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -98,7 +98,7 @@ You can also target and match specific elements inside the container, like cards
 <div uk-grid uk-height-match="target: SELECTOR">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid uk-height-match="target: > div > .uk-card">
     <div>
         <div class="uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -113,7 +113,7 @@ You can also target and match specific elements inside the container, like cards
         <div class="uk-card uk-card-default uk-card-body">Lorem Ipsum</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -125,7 +125,7 @@ If your grid wraps into multiple rows, only grid columns within the same row are
 <div uk-grid uk-height-match="row: false">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid uk-height-match="target: > div > .uk-card; row: false">
     <div class="uk-first-column">
         <div class="uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -140,7 +140,7 @@ If your grid wraps into multiple rows, only grid columns within the same row are
         <div class="uk-card uk-card-default uk-card-body">Lorem Ipsum</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

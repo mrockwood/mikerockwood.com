@@ -1,4 +1,4 @@
-{% macro paginate() %}
+{% component pagination.paginate() %}
     <div class="pagination">
         <div class="pagination__buttons">
             {% if paginator.previous -%}
@@ -21,4 +21,4 @@
             {% endif-%}
         </div>
     </div>
-{% endmacro paginate %}
+{% endcomponent pagination.paginate %}

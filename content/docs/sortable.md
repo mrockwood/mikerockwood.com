@@ -19,7 +19,7 @@ To apply this component, add the `uk-sortable` attribute to a container and crea
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s" uk-sortable="handle: .uk-card" uk-grid>
     <li>
         <div class="uk-card uk-card-default uk-card-body uk-text-center">Item 1</div>
@@ -46,7 +46,7 @@ To apply this component, add the `uk-sortable` attribute to a container and crea
         <div class="uk-card uk-card-default uk-card-body uk-text-center">Item 8</div>
     </li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -63,7 +63,7 @@ By default, the entire sortable element can be used for drag and drop sorting. T
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s" uk-sortable="handle: .uk-sortable-handle" uk-grid>
     <li>
         <div class="uk-card uk-card-default uk-card-body">
@@ -106,7 +106,7 @@ By default, the entire sortable element can be used for drag and drop sorting. T
         </div>
     </li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -124,7 +124,7 @@ To be able to sort items from one list to another, you can group them by adding 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@s" uk-grid>
     <div>
         <h4>Group 1</h4>
@@ -165,7 +165,7 @@ To be able to sort items from one list to another, you can group them by adding 
         <div uk-sortable="group: sortable-group">
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -179,7 +179,7 @@ You can also apply one or more custom classes to items when they are being dragg
 
 **Note** In this example, we are using a nav from the [Nav component](nav.md). When dragging an item it will get a box-shadow and background.
 
-{% example() %}
+{% <example> %}
 <ul class="uk-nav uk-nav-default uk-width-medium" uk-sortable="cls-custom: uk-box-shadow-small uk-flex uk-flex-middle uk-background">
     <li class="uk-active"><a href="#">Active</a></li>
     <li><a href="#">Item</a></li>
@@ -187,7 +187,7 @@ You can also apply one or more custom classes to items when they are being dragg
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 

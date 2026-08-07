@@ -19,7 +19,7 @@ To apply this component, add the `.uk-tile` class to a `<div>` element. By defau
 <div class="uk-tile uk-tile-default"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s uk-grid-collapse uk-text-center" uk-grid>
     <div>
         <div class="uk-tile uk-tile-default">
@@ -42,7 +42,7 @@ To apply this component, add the `.uk-tile` class to a `<div>` element. By defau
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -54,7 +54,7 @@ The tile component has some padding by default. To remove this or to apply diffe
 <div class="uk-tile uk-tile-default uk-padding-large"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@s uk-grid-small uk-text-center" uk-grid>
     <div>
         <div class="uk-tile uk-tile-muted uk-padding-remove">
@@ -72,4 +72,4 @@ The tile component has some padding by default. To remove this or to apply diffe
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}

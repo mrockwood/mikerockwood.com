@@ -22,7 +22,7 @@ The Pagination component consists of button-like styled links, that are aligned 
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-pagination" uk-margin>
     <li><a href="#"><span uk-pagination-previous></span></a></li>
     <li><a href="#">1</a></li>
@@ -38,7 +38,7 @@ The Pagination component consists of button-like styled links, that are aligned 
     <li><a href="#">20</a></li>
     <li><a href="#"><span uk-pagination-next></span></a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -50,7 +50,7 @@ The pagination component utilizes flexbox, so navigations can easily be aligned 
 <ul class="uk-pagination uk-flex-center">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-pagination uk-flex-center" uk-margin>
     <li><a href="#"><span uk-pagination-previous></span></a></li>
     <li><a href="#">1</a></li>
@@ -72,7 +72,7 @@ The pagination component utilizes flexbox, so navigations can easily be aligned 
     <li><a href="#">8</a></li>
     <li><a href="#"><span uk-pagination-next></span></a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -87,9 +87,9 @@ To apply a previous and next button, add the `uk-pagination-previous` or `uk-pag
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-pagination">
     <li><a href="#"><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>
     <li class="uk-margin-auto-left"><a href="#">Next <span class="uk-margin-small-left" uk-pagination-next></span></a></li>
 </ul>
-{% end %}
+{% </example> %}

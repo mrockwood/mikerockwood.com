@@ -12,11 +12,11 @@ To create an element that remains at the top of the viewport when scrolling down
 <div uk-sticky></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
     <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="end: !.uk-height-large; offset: 80">Stick to the top</div>
 </div>
-{% end %}
+{% </example> %}
 
 **Note** Example elements on this page are only sticky until you scroll down to the next heading and disappear afterwards. This was done so as not to clutter your screen with all variations of sticky containers.
 
@@ -30,11 +30,11 @@ By default, the element sticks to the top of the viewport. You can set the `posi
 <div uk-sticky="position: bottom"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
     <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="position: bottom; end: !.uk-height-large">Stick to the bottom</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -58,7 +58,7 @@ To apply an offset to when the element should start being sticky, add the `start
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
 
     <div class="uk-child-width-1-4@s" uk-grid>
@@ -78,7 +78,7 @@ To apply an offset to when the element should start being sticky, add the `start
 
 </div>
 <div style="height: 200px"></div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -106,7 +106,7 @@ To apply an offset to when the element should stop being sticky, add the `stop` 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
 
     <div class="uk-child-width-1-4@s" uk-grid>
@@ -125,7 +125,7 @@ To apply an offset to when the element should stop being sticky, add the `stop` 
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -137,11 +137,11 @@ To set an offset to the viewport's edge when the element is sticky, add the `off
 <div uk-sticky="offset: 200"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
     <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="end: !.uk-height-large; offset: 200">Stick 200px below the top</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -153,11 +153,11 @@ Add an animation from the [Animation component](animation.md) in order to have t
 <div uk-sticky="start: 200; animation: uk-animation-slide-top"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
     <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="start: 200; end: !.uk-height-large; offset: 80; animation: uk-animation-slide-top">Animation Slide Top</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -169,11 +169,11 @@ You can make the sticky element show only when scrolling up to save space. Toget
 <div uk-sticky="show-on-up: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
     <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="end: !.uk-height-large; offset: 80; show-on-up: true; animation: uk-animation-slide-top">Slide in on scroll up</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -185,11 +185,11 @@ It's possible to disable the sticky behavior for different device widths by appl
 <div uk-sticky="media: 640"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-background-muted uk-height-large">
     <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="end: !.uk-height-large; offset: 80; media: 640">Only be sticky on viewports larger than 640px.</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -197,7 +197,7 @@ It's possible to disable the sticky behavior for different device widths by appl
 
 Sticky content that is larger than the viewport will scroll down and stick to the bottom of the viewport. Changing the scroll direction will immediately scroll the sticky content up and change the sticky behavior to stick to the top of the viewport. Scrolling down will change the behavior again. 
 
-{% example() %}
+{% <example> %}
 <div id="js-oversized" class="uk-child-width-1-2" uk-grid>
     <div>
 
@@ -266,7 +266,7 @@ Sticky content that is larger than the viewport will scroll down and stick to th
     </div>
 </div>
 
-{% end %}
+{% </example> %}
 
 ***
 
@@ -284,7 +284,7 @@ The `overflow-flip` option disables the sticky behavior for oversized content. I
 <div uk-sticky="position: bottom; overflow-flip: true; start: -100%; end: 0"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-position-relative uk-position-z-index-zero">
     <div class="uk-background-primary uk-padding uk-flex uk-flex-center uk-flex-middle uk-text-center uk-light uk-height-medium uk-position-z-index-negative" uk-sticky="overflow-flip: true; end: 100%; offset: 80">
         overflow-flip: true<br>
@@ -298,7 +298,7 @@ The `overflow-flip` option disables the sticky behavior for oversized content. I
         end: 0
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 
 ***

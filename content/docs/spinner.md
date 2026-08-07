@@ -12,9 +12,9 @@ To create a spinner, add the `uk-spinner` attribute to a block element.
 <div uk-spinner></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-spinner></div>
-{% end %}
+{% </example> %}
 
 ## Ratio
 
@@ -24,7 +24,7 @@ Add the `ratio: 3` parameter to the `uk-spinner` attribute to triple its size â€
 <div uk-spinner="ratio: 3"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <span class="uk-margin-small-right" uk-spinner="ratio: 3"></span>
 <span uk-spinner="ratio: 4.5"></span>
-{% end %}
+{% </example> %}

@@ -1,15 +1,15 @@
-{% macro header() %}
+{% component header.header() %}
 <div class="uk-header {% if current_path and current_path == '/' %} uk-position-absolute uk-width-1-1 uk-position-z-index {% endif %}">
 	<div class="uk-container uk-container-large uk-navbar-container uk-navbar-transparent">
 		<nav class="uk-navbar">
 			<div class="uk-navbar-left">
-				{{ logo::logo() }}
+				{{<logo.logo />}}
 			</div>
 			<div class="uk-navbar-right">
 				{# Check if there are menu items to render, yes if > 0 #}
 				{%- set num = config.extra.menu | length -%}
 				{% if num > 0 -%}
-					{{ menu::menu() }}
+					{{<menu.menu />}}
 				{% endif -%}
 				<div class="uk-navbar-item uk-hidden@m">
 					<button uk-toggle="target: #js-mobile-menu" uk-navbar-toggle-icon class="uk-icon-button" aria-label="Menu"></button>
@@ -25,4 +25,4 @@
 		</nav>
 	</div>
 </div>
-{% endmacro header %}
+{% endcomponent header.header %}

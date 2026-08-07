@@ -14,7 +14,7 @@ To apply this component, add the `uk-marker` attribute to any element. You can u
 
 **Note** Add the `.uk-light` or `.uk-dark` class, so that elements will be optimized for better visibility on dark or light images.
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2" uk-grid>
     <div>
         <div class="uk-inline uk-dark">
@@ -33,4 +33,4 @@ To apply this component, add the `uk-marker` attribute to any element. You can u
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}

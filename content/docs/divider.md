@@ -14,9 +14,9 @@ You can use a simple `<hr>` element to illustrate a separation of different cont
 
 Add the `.uk-divider-icon` class to a `<hr>` or `<div>` element to create a divider with some decoration, like an icon.
 
-{% example() %}
+{% <example> %}
 <hr class="uk-divider-icon">
-{% end %}
+{% </example> %}
 
 ***
 
@@ -24,9 +24,9 @@ Add the `.uk-divider-icon` class to a `<hr>` or `<div>` element to create a divi
 
 Add the `.uk-divider-small` class to a `<hr>` or `<div>` element to create a smaller divider.
 
-{% example() %}
+{% <example> %}
 <hr class="uk-divider-small">
-{% end %}
+{% </example> %}
 
 ***
 
@@ -34,6 +34,6 @@ Add the `.uk-divider-small` class to a `<hr>` or `<div>` element to create a sma
 
 Add the `.uk-divider-vertical` class to a `<hr>` or `<div>` element to create a vertical divider.
 
-{% example() %}
+{% <example> %}
 <hr class="uk-divider-vertical">
-{% end %}
+{% </example> %}

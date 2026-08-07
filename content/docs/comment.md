@@ -29,7 +29,7 @@ The Comment component consists of the comment itself, a comment header, includin
 </article>
 ```
 
-{% example() %}
+{% <example> %}
 <article class="uk-comment">
     <header class="uk-comment-header">
         <div class="uk-grid-medium uk-flex-middle" uk-grid>
@@ -49,7 +49,7 @@ The Comment component consists of the comment itself, a comment header, includin
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div>
 </article>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -61,7 +61,7 @@ To style a comment differently, for example to highlight it as the admin's comme
 <article class="uk-comment uk-comment-primary">…</article>
 ```
 
-{% example() %}
+{% <example> %}
 <article class="uk-comment uk-comment-primary">
     <header class="uk-comment-header">
         <div class="uk-grid-medium uk-flex-middle" uk-grid>
@@ -81,7 +81,7 @@ To style a comment differently, for example to highlight it as the admin's comme
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div>
 </article>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -102,7 +102,7 @@ Add the `.uk-comment-list` class to a `<ul>` element to create a list of comment
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-comment-list">
     <li>
         <article class="uk-comment uk-visible-toggle" tabindex="-1">
@@ -164,4 +164,4 @@ Add the `.uk-comment-list` class to a `<ul>` element to create a list of comment
         </ul>
     </li>
 </ul>
-{% end %}
+{% </example> %}

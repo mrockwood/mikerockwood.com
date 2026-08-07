@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}" xml:base="{{ config.base_url | escape_xml | safe }}">
     <title>{{ config.title }}
-    {%- if term %} - {{ term.name }}
-    {%- elif section.title %} - {{ section.title }}
+    {%- if term is defined and term %} - {{ term.name }}
+    {%- elif section is defined and section.title %} - {{ section.title }}
 	{%- else %} - All Posts
     {%- endif -%}
     </title>
     <subtitle>
-	{%- if section.description %}
+		{%- if section is defined and section.description %}
 		{{ section.description }}
 	{%- else %}
 		{{ config.description }}
 	{%- endif %}
 	</subtitle>
 	<id>
-	{%- if section -%}
+	{%- if section is defined and section -%}
 		{{ section.permalink | escape_xml | safe }}
 	{%- else -%}
 		{{ config.base_url | escape_xml | safe }}
 	{%- endif -%}
 	</id>
     {%- if not feed_url is defined %}
-        {%- set feed_url = page.permalink | trim_end_matches(pat="/") %}
+        {%- set feed_url = page.permalink | trim_end(pat="/") %}
     {%- endif %}
     <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
     {# <link href="{{ get_url(path='@/posts/_index.md') }}" rel="alternate"/> #}
 	<link href="
-      {%- if section -%}
+      {%- if section is defined and section -%}
         {{ section.permalink | escape_xml | safe }}
       {%- else -%}
         {{ config.base_url | escape_xml | safe }}
@@ -38,17 +38,17 @@
         <email>{{ config.extra.author.email }}</email>
     </author>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>{{ last_updated | default(value=now()) | date(format="%+") }}</updated>
+    <updated>{{ last_updated | default(value=now()) | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
 
 	{%- for p in pages %}
 
 		{%- if p.taxonomies.categories -%}
-			{%- set category = p.taxonomies.categories.0 -%}
+			{%- set category = p.taxonomies.categories[0] -%}
 			{%- set cat_url = get_url(path='@/posts/'~category~'/_index.md') -%}
 			{%- set section = get_section(path='posts/'~category~'/_index.md') %}
 			{%- if section.extra.singular %}{%- set category = section.extra.singular -%}{% endif %}
 		{%- endif %}
-	{%- if p.relative_path is starting_with("posts/") %}
+	{%- if p.relative_path is starting_with(pat="posts/") %}
 	<entry>
 		<id>{{ p.permalink | safe }}</id>
 		<link href="{{ p.permalink | safe }}" type="text/html"/>
@@ -59,8 +59,8 @@
 				{%- if category -%}{{ category }}{% else %}Post{%- endif %} from {{ p.date | date(format="%Y-%m-%d at %H:%M") }}
 			{%- endif -%}
 		</title>
-        <published>{{ p.date | date(format="%+") }}</published>
-        <updated>{{ p.updated | default(value=p.date) | date(format="%+") }}</updated>
+        <published>{{ p.date | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</published>
+        <updated>{{ p.updated | default(value=p.date, boolean=true) | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
 
 		{#- Grab the first, and usually only, category #}
 		{%- if p.taxonomies.categories %}

@@ -18,13 +18,13 @@ To apply this component, add the `uk-svg` attribute to an `<img>` element.
 
 Using the `uk-svg` attribute also allows you to inject a symbol from the SVG file. Just append the symbol's ID to the image path as you would in any fragmented URL.
 
-{% example() %}
+{% <example> %}
 <!-- Targets the SVG image -->
 <img src="../assets/uikit/src/images/icons/cloud-download.svg" width="40" height="40" uk-svg>
 
 <!-- Targets a symbol inside the SVG image -->
 <img src="../assets/uikit/tests/images/icons.svg#cloud-upload" width="40" height="40" uk-svg>
-{% end %}
+{% </example> %}
 
 **Note** SVGs will adapt the current color for their stroke and fill color. To prevent this behavior, add the `.uk-preserve` class to the SVG itself or the elements inside the SVG.
 

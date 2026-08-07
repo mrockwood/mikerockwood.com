@@ -22,13 +22,13 @@ Add one of the following classes to modify the size and style of headings. Usual
 <h1 class="uk-heading-medium"></h1>
 ```
 
-{% example() %}
+{% <example> %}
 <h1 class="uk-heading-small">Small</h1>
 <h1 class="uk-heading-medium">Medium</h1>
 <h1 class="uk-heading-large">Large</h1>
 <h1 class="uk-heading-xlarge">X-Large</h1>
 <h1 class="uk-heading-2xlarge">2X-Large</h1>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -40,9 +40,9 @@ To apply a divider to a heading, add the `.uk-heading-divider` class. You can co
 <h1 class="uk-heading-divider"></h1>
 ```
 
-{% example() %}
+{% <example> %}
 <h1 class="uk-heading-divider">Heading Divider</h1>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -54,9 +54,9 @@ To apply a bullet to a heading, add the `.uk-heading-bullet` class. You can comb
 <h1 class="uk-heading-bullet"></h1>
 ```
 
-{% example() %}
+{% <example> %}
 <h1 class="uk-heading-bullet">Heading Bullet</h1>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -68,10 +68,10 @@ To apply a vertically centered line to a heading, add the `.uk-heading-line` cla
 <h1 class="uk-heading-line"><span></span></h1>
 ```
 
-{% example() %}
+{% <example> %}
 <h1 class="uk-heading-line"><span>Heading Line</span></h1>
 
 <h1 class="uk-heading-line uk-text-center"><span>Heading Line</span></h1>
 
 <h1 class="uk-heading-line uk-text-right"><span>Heading Line</span></h1>
-{% end %}
+{% </example> %}

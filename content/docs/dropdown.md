@@ -22,7 +22,7 @@ A dropdown can be enabled by hovering and clicking the toggle. Just add the `mod
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">Hover</button>
     <div uk-dropdown>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -32,7 +32,7 @@ A dropdown can be enabled by hovering and clicking the toggle. Just add the `mod
     <button class="uk-button uk-button-default" type="button">Click</button>
     <div uk-dropdown="mode: click">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -47,7 +47,7 @@ A dropdown can contain a nav from the [Nav component](nav.md). Just add the `.uk
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div uk-dropdown>
     <ul class="uk-nav uk-dropdown-nav">
@@ -60,7 +60,7 @@ A dropdown can contain a nav from the [Nav component](nav.md). Just add the `.uk
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -76,7 +76,7 @@ You can place a grid from the [Grid component](grid.md) inside a dropdown. Just 
 
 Use one of the classes from the [Width component](width.md) to adjust the dropdown's width.
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div class="uk-width-large" uk-dropdown>
     <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
@@ -104,7 +104,7 @@ Use one of the classes from the [Width component](width.md) to adjust the dropdo
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -117,7 +117,7 @@ Add the `.uk-dropdown-large` class for a dropdown with larger padding.
 <div class="uk-dropdown-large" uk-dropdown></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">Large</button>
     <div class="uk-dropdown-large" uk-dropdown>
@@ -132,7 +132,7 @@ Add the `.uk-dropdown-large` class for a dropdown with larger padding.
         </ul>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -159,7 +159,7 @@ By default, the dropdown is positioned below the toggle. To change its position,
 <div uk-dropdown="pos: top-left"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">Top Right</button>
     <div uk-dropdown="pos: top-right">
@@ -204,7 +204,7 @@ By default, the dropdown is positioned below the toggle. To change its position,
         </ul>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -219,7 +219,7 @@ By default, the dropdown automatically changes its positions if it exceeds the v
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="boundary uk-panel uk-placeholder uk-height-medium">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Right</button>
@@ -249,7 +249,7 @@ By default, the dropdown automatically changes its positions if it exceeds the v
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -261,7 +261,7 @@ To disable automatic shifting and flipping, add the `shift: false` or `flip: fal
 <div uk-dropdown="shift: false; flip: false"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="boundary uk-panel uk-placeholder uk-height-medium">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Right</button>
@@ -291,7 +291,7 @@ To disable automatic shifting and flipping, add the `shift: false` or `flip: fal
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -316,7 +316,7 @@ By default, the dropdown is aligned to its toggle. To position the dropdown to a
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="target uk-panel uk-placeholder uk-height-medium">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Left</button>
@@ -346,7 +346,7 @@ By default, the dropdown is aligned to its toggle. To position the dropdown to a
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -358,7 +358,7 @@ By default, the dropdown is positioned outside the toggle. To change the positio
 <div uk-dropdown="target: .my-class; inset: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="target uk-panel uk-placeholder uk-height-large">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Left</button>
@@ -388,7 +388,7 @@ By default, the dropdown is positioned outside the toggle. To change the positio
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -400,7 +400,7 @@ To stretch the dropdown to fill the size of its closest scrolling ancestor, add 
 <div uk-dropdown="stretch: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -423,7 +423,7 @@ To stretch the dropdown to fill the size of its closest scrolling ancestor, add 
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -435,7 +435,7 @@ Apply one or more animations to the dropdown by adding the `animation: uk-animat
 <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 1000"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div uk-dropdown="animation: uk-animation-slide-top-small; animate-out: true">
     <ul class="uk-nav uk-dropdown-nav">
@@ -448,7 +448,7 @@ Apply one or more animations to the dropdown by adding the `animation: uk-animat
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 Alternatively, the Drop component has two additional animation types which are not covered by the Animation component. `slide-*` animations slide the dropdown and its content from a selected direction, while with the `reveal-*` animations, the content of the dropdown stays static and is revealed from a selected direction.
 
@@ -467,7 +467,7 @@ Alternatively, the Drop component has two additional animation types which are n
 <div uk-dropdown="animation: slide-top; animate-out: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin" uk-margin>
 
     <div class="uk-inline">
@@ -531,7 +531,7 @@ Alternatively, the Drop component has two additional animation types which are n
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -543,7 +543,7 @@ To define a custom offset between the dropdown and its toggle, add the `offset` 
 <div uk-dropdown="offset: 80"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div uk-dropdown="offset: 80">
     <ul class="uk-nav uk-dropdown-nav">
@@ -556,7 +556,7 @@ To define a custom offset between the dropdown and its toggle, add the `offset` 
             <li><a href="#">Item</a></li>
         </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

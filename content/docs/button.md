@@ -16,13 +16,13 @@ To apply this component, add the `.uk-button` class and a modifier such as `.uk-
 <button class="uk-button uk-button-default" disabled></button>
 ```
 
-{% example() %}
+{% <example> %}
 <p uk-margin>
     <a class="uk-button uk-button-default" href="#">Link</a>
     <button class="uk-button uk-button-default">Button</button>
     <button class="uk-button uk-button-default" disabled>Disabled</button>
 </p>
-{% end %}
+{% </example> %}
 
 **Note** If you are displaying a number of buttons in a row, you can add a top margin to them, when they stack on smaller viewports. Just add the `uk-margin` attribute from the [Margin component](margin.md) to their parent element.
 
@@ -45,7 +45,7 @@ There are several style modifiers available. Just add one of the following class
 <button class="uk-button uk-button-primary"></button>
 ```
 
-{% example() %}
+{% <example> %}
 <p uk-margin>
     <button class="uk-button uk-button-default">Default</button>
     <button class="uk-button uk-button-primary">Primary</button>
@@ -54,7 +54,7 @@ There are several style modifiers available. Just add one of the following class
     <button class="uk-button uk-button-text">Text</button>
     <button class="uk-button uk-button-link">Link</button>
 </p>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -69,7 +69,7 @@ Add the `.uk-button-small` or `.uk-button-large` class to a button to make it sm
 <button class="uk-button uk-button-default uk-button-large"></button>
 ```
 
-{% example() %}
+{% <example> %}
 <p uk-margin>
     <button class="uk-button uk-button-default uk-button-small">Small button</button>
     <button class="uk-button uk-button-primary uk-button-small">Small button</button>
@@ -81,7 +81,7 @@ Add the `.uk-button-small` or `.uk-button-large` class to a button to make it sm
     <button class="uk-button uk-button-primary uk-button-large">Large button</button>
     <button class="uk-button uk-button-secondary uk-button-large">Large button</button>
 </p>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -91,11 +91,11 @@ Add the `.uk-width-1-1` class from the [Width component](width.md) and the butto
 
 ### Example
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom">Button</button>
 <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">Button</button>
 <button class="uk-button uk-button-secondary uk-width-1-1">Button</button>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -111,7 +111,7 @@ To create a button group, add the `.uk-button-group` class to a `<div>` element 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div>
     <div class="uk-button-group">
         <button class="uk-button uk-button-secondary">Button</button>
@@ -135,7 +135,7 @@ To create a button group, add the `.uk-button-group` class to a `<div>` element 
         <button class="uk-button uk-button-danger">Button</button>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -149,7 +149,7 @@ A button can be used to trigger a dropdown menu from the [Dropdown component](dr
 <div uk-dropdown></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">Dropdown</button>
     <div uk-dropdown>
@@ -164,7 +164,7 @@ A button can be used to trigger a dropdown menu from the [Dropdown component](dr
         </ul>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -186,7 +186,7 @@ Use button groups to split buttons into a standard action on the left and a drop
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-button-group">
     <button class="uk-button uk-button-default">Dropdown</button>
     <div class="uk-inline">
@@ -204,4 +204,4 @@ Use button groups to split buttons into a standard action on the left and a drop
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}

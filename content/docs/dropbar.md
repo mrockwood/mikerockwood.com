@@ -21,18 +21,18 @@ Additionally, add the `uk-drop` attribute to the dropbar and a toggle element be
 <div class="uk-dropbar uk-dropbar-top" uk-drop="stretch: x"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-overflow-auto uk-height-medium">
     <div class="uk-inline">
         <button class="uk-button uk-button-default" type="button">Hover</button>
         <div class="uk-dropbar uk-dropbar-top" uk-drop="stretch: x">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 The dropbar is typically used together with the [Navbar component](navbar.md).
 
-{% example() %}
+{% <example> %}
 <div class="uk-overflow-auto uk-height-medium">
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
@@ -51,7 +51,7 @@ The dropbar is typically used together with the [Navbar component](navbar.md).
         </div>
     </nav>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -79,7 +79,7 @@ To open the dropbar from a specific direction use the `pos` and `stretch` option
 <div class="uk-dropbar uk-dropbar-left" uk-drop="pos: left-top; stretch: y"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-overflow-auto uk-height-medium">
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
@@ -102,7 +102,7 @@ To open the dropbar from a specific direction use the `pos` and `stretch` option
         </div>
     </nav>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -125,7 +125,7 @@ To animate the dropbar use the `slide-*` or `reveal-*` animations from the [Drop
 <div uk-drop="animation: slide-top; animate-out: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-overflow-auto uk-height-medium">
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
@@ -160,7 +160,7 @@ To animate the dropbar use the `slide-*` or `reveal-*` animations from the [Drop
         </div>
     </nav>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -175,7 +175,7 @@ A dropbar can contain a nav from the [Nav component](nav.md). Just add the `.uk-
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-overflow-auto uk-height-large">
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
@@ -200,7 +200,7 @@ A dropbar can contain a nav from the [Nav component](nav.md). Just add the `.uk-
         </div>
     </nav>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -213,7 +213,7 @@ Add the `.uk-dropbar-large` class for a dropbar with larger vertical padding.
 <div class="uk-dropbar uk-dropbar-top uk-dropbar-large" uk-drop="stretch: x"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-overflow-auto uk-height-large">
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
@@ -238,4 +238,4 @@ Add the `.uk-dropbar-large` class for a dropbar with larger vertical padding.
         </div>
     </nav>
 </div>
-{% end %}
+{% </example> %}

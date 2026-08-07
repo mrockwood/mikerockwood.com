@@ -2,19 +2,19 @@
 
 {%- for source in src %}
 
-  {%- set dirtest = source | trim_start_matches(pat="./") %}
-  {%- if dirtest is containing("/") %}
+  {%- set dirtest = source | trim_start(pat="./") %}
+  {%- if dirtest is containing(pat="/") %}
     {%- set reldir = true %}
   {%- endif %}
 
-  {%- if source is starting_with("./") and reldir %} {# Relative Path #}
+  {%- if source is starting_with(pat="./") and reldir %} {# Relative Path #}
     {%- set pathtype = "rel-" %}
-    {%- set path = source | trim_start_matches(pat="./") | split(pat="/") | slice(end=-1) | join(sep="/") | trim_start_matches(pat="/") %}
+    {%- set path = source | trim_start(pat="./") | split(pat="/")[:-1] | join(sep="/") | trim_start(pat="/") %}
     {%- set path = path ~ "/"  %}
 
-  {%- elif source is starting_with("/") %} {# Root Path #}
+  {%- elif source is starting_with(pat="/") %} {# Root Path #}
     {%- set pathtype = "root-" %}
-    {%- set rootpath = source | split(pat="/") | slice(end=-1) | join(sep="/") %}
+    {%- set rootpath = source | split(pat="/")[:-1] | join(sep="/") %}
     {%- set path = config.base_url ~ rootpath ~ "/"  %}
 
   {%- else %} {# Same Directory Path #}
@@ -37,19 +37,19 @@
 <style>
   {%- for source in src %}
 
-    {%- set dirtest = source | trim_start_matches(pat="./") %}
-    {%- if dirtest is containing("/") %}
+    {%- set dirtest = source | trim_start(pat="./") %}
+    {%- if dirtest is containing(pat="/") %}
       {%- set reldir = true %}
     {%- endif %}
 
-    {%- if source is starting_with("./") and reldir %} {# Relative Path #}
+    {%- if source is starting_with(pat="./") and reldir %} {# Relative Path #}
       {%- set pathtype = "rel-" %}
-      {%- set path = source | trim_start_matches(pat="./") | split(pat="/") | slice(end=-1) | join(sep="/") | trim_start_matches(pat="/") %}
+      {%- set path = source | trim_start(pat="./") | split(pat="/")[:-1] | join(sep="/") | trim_start(pat="/") %}
       {%- set path = path ~ "/"  %}
 
-    {%- elif source is starting_with("/") %} {# Root Path #}
+    {%- elif source is starting_with(pat="/") %} {# Root Path #}
       {%- set pathtype = "root-" %}
-      {%- set rootpath = source | split(pat="/") | slice(end=-1) | join(sep="/") %}
+      {%- set rootpath = source | split(pat="/")[:-1] | join(sep="/") %}
       {%- set path = config.base_url ~ rootpath ~ "/"  %}
 
     {%- else %} {# Same Directory Path #}

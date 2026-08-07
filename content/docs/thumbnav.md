@@ -22,13 +22,13 @@ To create a navigation with thumbnails, use the following classes. This componen
 
 **Note** For a better layout, if items should wrap into the next row, add the `uk-margin` attribute from the [Margin component](margin.md).
 
-{% example() %}
+{% <example> %}
 <ul class="uk-thumbnav" uk-margin>
     <li class="uk-active"><a href="#"><img src="images/photo.jpg" width="100" height="67" alt=""></a></li>
     <li><a href="#"><img src="images/dark.jpg" width="100" height="67" alt=""></a></li>
     <li><a href="#"><img src="images/light.jpg" width="100" height="67" alt=""></a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -40,13 +40,13 @@ The thumbnav can also be displayed vertically. Just add the `.uk-thumbnav-vertic
 <ul class="uk-thumbnav uk-thumbnav-vertical">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>
     <li class="uk-active"><a href="#"><img src="images/photo.jpg" width="100" height="67" alt=""></a></li>
     <li><a href="#"><img src="images/dark.jpg" width="100" height="67" alt=""></a></li>
     <li><a href="#"><img src="images/light.jpg" width="100" height="67" alt=""></a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 
 ***
@@ -67,7 +67,7 @@ To position the thumbnav on top of an element or the [Slideshow component](slide
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-position-relative" uk-slideshow="animation: fade">
 
     <ul class="uk-slideshow-items">
@@ -91,4 +91,4 @@ To position the thumbnav on top of an element or the [Slideshow component](slide
     </div>
 
 </div>
-{% end %}
+{% </example> %}

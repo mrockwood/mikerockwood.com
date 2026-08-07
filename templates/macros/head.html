@@ -1,26 +1,26 @@
-{% macro fonts() %}
+{% component head.fonts() %}
     <link rel="preload" href="{{ get_url(path="/fonts/Rubik[wght].woff2") }}" as="font" type="font/woff2" crossorigin="anonymous">
-{% endmacro fonts %}
+{% endcomponent head.fonts %}
 
-{% macro styling() %}
+{% component head.styling() %}
     <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
-{% endmacro styling %}
+{% endcomponent head.styling %}
 
-{% macro favicon() %}
+{% component head.favicon() %}
     {%- if config.extra.favicon is defined -%}
         <link rel="shortcut icon" href="{{ get_url(path=config.extra.favicon) }}" type="image/x-icon" />
     {%- else -%}
     <link rel="shortcut icon" href="{{ get_url(path="/images/favicon.svg") }}" type="image/x-icon" />
     {%- endif -%}
-{% endmacro favicon %}
+{% endcomponent head.favicon %}
 
-{% macro rss() %}
+{% component head.rss() %}
     {%- if config.generate_feeds -%}
         <link rel="alternate" type={% if config.feed_filenames == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }} RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
     {%- endif -%}
-{% endmacro rss %}
+{% endcomponent head.rss %}
 
-{% macro general_meta() %}
+{% component head.general_meta() %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {%- if page.title -%}
@@ -46,4 +46,4 @@
         {%- endif -%}
         " />
     {%- endif -%}
-{% endmacro general_meta %}
+{% endcomponent head.general_meta %}

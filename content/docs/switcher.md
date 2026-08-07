@@ -26,7 +26,7 @@ Typically, the switcher toggles are styled through other components, some of whi
 
 In this example we are using the [Subnav component](subnav.md).
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-switcher>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
@@ -38,7 +38,7 @@ In this example we are using the [Subnav component](subnav.md).
     <li>Hello again!</li>
     <li>Bazinga!</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -57,7 +57,7 @@ Setting the attribute to `next` and `previous` will switch to the adjacent items
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-switcher>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
@@ -68,7 +68,7 @@ Setting the attribute to `next` and `previous` will switch to the adjacent items
     <li>Hello again! <a href="#" uk-switcher-item="next">Next item</a></li>
     <li>Bazinga! <a href="#" uk-switcher-item="previous">Previous item</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -86,7 +86,7 @@ It is also possible to connect multiple content containers. Just add the `connec
 <ul class="uk-switcher my-class">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-switcher="connect: .switcher-container">
     <li><a href="#">Active</a></li>
     <li><a href="#">Item</a></li>
@@ -108,7 +108,7 @@ It is also possible to connect multiple content containers. Just add the `connec
     <li>Hello again! The second item.</li>
     <li>Bazinga! The third item.</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -120,7 +120,7 @@ You can apply all animations from the [Animation component](animation) to switch
 <ul uk-switcher="animation: uk-animation-fade">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade">
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
@@ -132,7 +132,7 @@ You can apply all animations from the [Animation component](animation) to switch
     <li>Hello again!</li>
     <li>Bazinga!</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -144,7 +144,7 @@ You can also apply multiple animations from the [Animation component](animation)
 <ul uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
@@ -156,7 +156,7 @@ You can also apply multiple animations from the [Animation component](animation)
     <li>Hello again!</li>
     <li>Bazinga!</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -172,7 +172,7 @@ The switcher is easily applied to the [Subnav component](subnav).
 <ul class="uk-switcher"></ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-switcher>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
@@ -184,7 +184,7 @@ The switcher is easily applied to the [Subnav component](subnav).
     <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
     <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li>
 </ul>
-{% end %}
+{% </example> %}
 
 
 ***
@@ -201,7 +201,7 @@ As an exception to the rule, add the `uk-tab` attribute instead of `uk-switcher`
 <ul class="uk-switcher">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul uk-tab>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
@@ -213,7 +213,7 @@ As an exception to the rule, add the `uk-tab` attribute instead of `uk-switcher`
     <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
     <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -232,7 +232,7 @@ Use the [Grid](grid) and [Width](width) components to display content correctly 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div>
         <div uk-grid>
@@ -271,7 +271,7 @@ Use the [Grid](grid) and [Width](width) components to display content correctly 
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -289,7 +289,7 @@ The switcher can also be applied to buttons or button groups from the [Button co
 <ul class="uk-switcher">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-switcher="animation: uk-animation-fade; toggle: > *">
     <button class="uk-button uk-button-default" type="button">Item</button>
     <button class="uk-button uk-button-default" type="button">Item</button>
@@ -301,7 +301,7 @@ The switcher can also be applied to buttons or button groups from the [Button co
     <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
     <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li>
 </ul>
-{% end %}
+{% </example> %}
 
 **Note** Since this example does not wrap the buttons into list items the clickable elements which trigger the content switching has to be changed by using the `toggle` option.
 
@@ -322,7 +322,7 @@ To apply the switcher to the [Nav component](nav), add the `uk-switcher` attribu
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-grid>
     <div class="uk-width-small@m">
 
@@ -343,7 +343,7 @@ To apply the switcher to the [Nav component](nav), add the `uk-switcher` attribu
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

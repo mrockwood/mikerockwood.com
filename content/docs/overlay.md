@@ -17,14 +17,14 @@ Add the `.uk-overlay` class to an element following an image to create the overl
 
 **Note** Add the `.uk-light` or `.uk-dark` class, so that elements will be optimized for better visibility on dark or light images.
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
     <div class="uk-overlay uk-light uk-position-bottom">
         <p>Default Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -36,7 +36,7 @@ By default, the overlay has padding, but no additional styling. Add one of these
 
 For a simple background color, add the `.uk-overlay-default` class.
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@m" uk-grid>
     <div>
 
@@ -60,7 +60,7 @@ For a simple background color, add the `.uk-overlay-default` class.
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -68,7 +68,7 @@ For a simple background color, add the `.uk-overlay-default` class.
 
 For a prominent background color, add the `.uk-overlay-primary` class.
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@m" uk-grid>
     <div>
 
@@ -92,7 +92,7 @@ For a prominent background color, add the `.uk-overlay-primary` class.
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -106,7 +106,7 @@ To display an overlay icon, add the `uk-overlay-icon` attribute to a `<span>` el
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@m" uk-grid>
     <div>
 
@@ -131,7 +131,7 @@ To display an overlay icon, add the `uk-overlay-icon` attribute to a `<span>` el
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -143,7 +143,7 @@ Add one of the `.uk-position-*` classes from the [Position component](position.m
 <div class="uk-overlay uk-position-top"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@m" uk-grid>
     <div>
         <div class="uk-inline">
@@ -162,4 +162,4 @@ Add one of the `.uk-position-*` classes from the [Position component](position.m
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}

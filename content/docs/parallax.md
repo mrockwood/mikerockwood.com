@@ -37,13 +37,13 @@ Set one of the options to create an animation stop. The property is animated fro
 <div uk-parallax="bgy: -200">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url('images/dark.jpg');">
 
     <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">Headline</h1>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -55,14 +55,14 @@ To set a custom start value, create another animation stop by using two values s
 <div uk-parallax="opacity: 0,1">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" style="background-image: url('images/dark.jpg');">
     <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
         <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; end: 50vh + 50%;">Headline</h1>
         <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; end: 50vh + 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -74,14 +74,14 @@ To better control the property animation, you can set intermediate stops along t
 <div uk-parallax="x: 0,50,150">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" style="background-image: url('images/dark.jpg');">
     <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
         <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; end: 50vh + 50%;">Headline</h1>
         <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; end: 50vh + 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -93,14 +93,14 @@ Set an optional stop position to specify percentage along the animation sequence
 <div uk-parallax="x: 0,50 10%,150 50%">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" style="background-image: url('images/dark.jpg');">
     <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
         <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; end: 50vh + 50%;">Headline</h1>
         <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; end: 50vh + 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -114,13 +114,13 @@ Different parallax animations can easily be nested.
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url('images/dark.jpg');">
 
     <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" uk-parallax="y: 100,0">Headline</h1>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -134,13 +134,13 @@ The animation starts and stops depending on the element position in the viewport
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div id="test-target" class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url('images/dark.jpg');">
 
     <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" uk-parallax="target: #test-target; y: 100,0">Headline</h1>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -154,7 +154,7 @@ To adjust the animation duration, set the `start` and `end` options. The `start`
 <div uk-parallax="start: 100% + 100; end: 100% + 100;">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div id="test-start-end" class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" style="background-image: url('images/dark.jpg');">
      <div class="uk-grid uk-margin-auto uk-flex-inline">
         <div><div class="uk-card uk-card-default uk-padding-small" uk-parallax="target: #test-start-end; y: 398; easing: 0;">0 / 0</div></div>
@@ -163,7 +163,7 @@ To adjust the animation duration, set the `start` and `end` options. The `start`
         <div><div class="uk-card uk-card-default uk-padding-small" uk-parallax="target: #test-start-end; start: 100% + 100; end: 100% + 100; y: 398; easing: 0;">100% + 100 / 100% + 100</div></div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -171,7 +171,7 @@ To adjust the animation duration, set the `start` and `end` options. The `start`
 
 To adjust the easing of the animation, add the `easing` option. `0` transitions at an even speed. A positive value starts off quickly slowing down until complete while a negative value starts off slowly increasing the speed until complete.
 
-{% example() %}
+{% <example> %}
 <div id="test-easing" class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" style="background-image: url('images/dark.jpg');">
      <div class="uk-grid uk-margin-auto uk-margin-auto-vertical uk-flex-inline">
         <div><div class="uk-card uk-card-default uk-padding-small" uk-parallax="target: #test-easing; start: 100%; end: 100%; y: 200; easing: -2">-2</div></div>
@@ -183,7 +183,7 @@ To adjust the easing of the animation, add the `easing` option. `0` transitions 
         <div><div class="uk-card uk-card-default uk-padding-small" uk-parallax="target: #test-easing; start: 100%; end: 100%; y: 200; easing: 2">2</div></div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -195,13 +195,13 @@ Transition from one color to another, for example for borders, backgrounds or te
 <div uk-parallax="border-color: #00f,#f00">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div id="test-color" class="test-color uk-height-large uk-overflow-hidden uk-flex" uk-parallax="start: 100%; end: 100%; background-color: yellow,white; border-color: #00f,#f00;" style="border: 10px solid #000;">
 
     <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" uk-parallax="target: #test-target; start: 100%; end: 100%; color: #0f0;">Headline</h1>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -213,13 +213,13 @@ CSS filters are an easy way to add graphical effects to any element on your page
 <div uk-parallax="blur: 10; sepia: 100;">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div id="test-filter" class="uk-height-large uk-background-cover uk-overflow-hidden uk-flex" uk-parallax="start: 100%; end: 100%; sepia: 100;" style="background-image: url('images/light.jpg');">
 
     <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" uk-parallax="target: #test-filter; start: 100%; end: 100%; blur: 0,10;">Headline</h1>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -233,11 +233,11 @@ The Parallax component can be used to animate SVG strokes. The effect looks like
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-text-center" uk-parallax="start: 100%; end: 100%; stroke: 100%;">
     <img src="images/strokes.svg" width="350" height="340" alt="" uk-svg>
 </div>
-{% end %}
+{% </example> %}
 
 **Note** It's recommended to use percent unit `%`, so you don't have to know the exact length of the strokes.
 

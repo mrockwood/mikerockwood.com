@@ -1,14 +1,14 @@
-{%- set dirtest = src | trim_start_matches(pat="./") %}
-{%- if dirtest is containing("/") %}
+{%- set dirtest = src | trim_start(pat="./") %}
+{%- if dirtest is containing(pat="/") %}
   {%- set reldir = true %}
 {%- endif %}
 
-{%- if src is starting_with("./") and reldir %} {# Relative Path #}
-  {%- set path = src | trim_start_matches(pat="./") | split(pat="/") | slice(end=-1) | join(sep="/") | trim_start_matches(pat="/") %}
+{%- if src is starting_with(pat="./") and reldir %} {# Relative Path #}
+  {%- set path = src | trim_start(pat="./") | split(pat="/")[:-1] | join(sep="/") | trim_start(pat="/") %}
   {%- set path = path ~ "/"  %}
 
-{%- elif src is starting_with("/") %} {# Root Path #}
-  {%- set rootpath = src | split(pat="/") | slice(end=-1) | join(sep="/") %}
+{%- elif src is starting_with(pat="/") %} {# Root Path #}
+  {%- set rootpath = src | split(pat="/")[:-1] | join(sep="/") %}
   {%- set path = config.base_url ~ rootpath ~ "/"  %}
 
 {%- else %} {# Same Directory Path #}

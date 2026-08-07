@@ -1,8 +1,8 @@
-{% macro author(page) %}
+{% component utils.author(page) %}
     ::
     {% if page.extra.author -%}
         {{ page.extra.author }}
     {%- else -%}    
         {{ config.extra.author }}
     {%- endif -%}
-{%- endmacro author-%}
+{%- endcomponent utils.author -%}

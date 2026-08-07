@@ -43,7 +43,7 @@ Add one of the `.uk-hidden-*` classes to hide the element from screens larger th
 
 **Note** In this example the green elements are hidden on screens that are larger than the defined breakpoint. Resize your browser window to see the effect.
 
-{% example() %}
+{% <example> %}
 <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s uk-text-center" uk-grid>
     <div>
         <div class="uk-panel">
@@ -70,7 +70,7 @@ Add one of the `.uk-hidden-*` classes to hide the element from screens larger th
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -92,7 +92,7 @@ Use `.uk-visible-*` classes to show the element for screens larger than the spec
 
 **Note** In this example the green elements are displayed on screens that are larger than the defined breakpoint. Resize your browser window to see the effect.
 
-{% example() %}
+{% <example> %}
 <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s uk-text-center" uk-grid>
     <div>
         <div class="uk-panel">
@@ -119,7 +119,7 @@ Use `.uk-visible-*` classes to show the element for screens larger than the spec
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -142,7 +142,7 @@ If there are `a` or `button` elements within the hidden child element, they are 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div class="uk-visible-toggle" tabindex="-1">
 
@@ -177,7 +177,7 @@ If there are `a` or `button` elements within the hidden child element, they are 
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -193,7 +193,7 @@ Add the `.uk-hidden-touch` class to hide elements on touch devices and the `.uk-
 <div class="uk-hidden-notouch"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-grid-small uk-child-width-1-2 uk-child-width-auto@s uk-text-center" uk-grid>
     <div>
         <div class="uk-panel">
@@ -208,4 +208,4 @@ Add the `.uk-hidden-touch` class to hide elements on touch devices and the `.uk-
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}

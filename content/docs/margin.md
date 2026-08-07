@@ -20,10 +20,10 @@ Add one or more of the following classes to any element to create the same verti
 <div class="uk-margin"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 <div class="uk-margin uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -39,10 +39,10 @@ Add one of the following classes to add small spacing to block elements.
 | `.uk-margin-small-left`   | Adds small left margin.                                                                |
 | `.uk-margin-small-right`  | Adds small right margin.                                                               |
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin-small uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 <div class="uk-margin-small uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -58,10 +58,10 @@ Add one of the following classes to add medium spacing to block elements.
 | `.uk-margin-medium-left`   | Adds medium left margin.                                                                |
 | `.uk-margin-medium-right`  | Adds medium right margin.                                                               |
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin-medium uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 <div class="uk-margin-medium uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -77,10 +77,10 @@ Add one of the following classes to add large spacing to block elements.
 | `.uk-margin-large-left`   | Adds large left margin.                                                            |
 | `.uk-margin-large-right`  | Adds large right margin.                                                           |
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin-large uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 <div class="uk-margin-large uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -96,10 +96,10 @@ Add one of the following classes to add very large spacing to block elements.
 | `.uk-margin-xlarge-left`   | Adds larger left margin.                                                            |
 | `.uk-margin-xlarge-right`  | Adds larger right margin.                                                           |
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin-xlarge uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 <div class="uk-margin-xlarge uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -151,13 +151,13 @@ Add one of the following classes to set auto margin. This can be useful to cente
 | `.uk-margin-auto-right`    | Sets right margin to auto, pushing block and flex elements to the left              |
 | `.uk-margin-auto-vertical` | Sets top and bottom margin to auto, vertically centering only flex elements.        |
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin uk-margin-auto-left uk-width-1-2@s uk-card uk-card-default uk-card-body uk-text-center">Block element</div>
 
 <div class="uk-flex uk-height-medium uk-background-muted uk-margin uk-text-center">
     <div class="uk-margin-auto uk-margin-auto-vertical uk-width-1-2@s uk-card uk-card-default uk-card-body">Flex item</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -172,11 +172,11 @@ UIkit provides a number of responsive margin auto classes. Basically, they work 
 | `.uk-margin-auto-left@l`<br> `.uk-margin-auto@l`<br> `.uk-margin-auto-right@l`    | Affects device widths of _1200px_ and larger. |
 | `.uk-margin-auto-left@xl`<br> `.uk-margin-auto@xl`<br> `.uk-margin-auto-right@xl` | Affects device widths of _1600px_ and larger. |
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin uk-margin-auto-right uk-margin-auto@m uk-width-1-2@s uk-card uk-card-default uk-card-body uk-text-center">Block element</div>
 <div class="uk-margin uk-margin-auto uk-margin-auto-left@m uk-width-1-2@s uk-card uk-card-default uk-card-body uk-text-center">Block element</div>
 <div class="uk-margin uk-margin-auto-left uk-margin-auto-right@m uk-width-1-2@s uk-card uk-card-default uk-card-body uk-text-center">Block element</div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -191,7 +191,7 @@ To add spacing to stacking elements, for example inline elements that wrap on sm
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-margin>
     <button class="uk-button uk-button-default">Button</button>
     <button class="uk-button uk-button-default">Button</button>
@@ -204,7 +204,7 @@ To add spacing to stacking elements, for example inline elements that wrap on sm
     <button class="uk-button uk-button-default">Button</button>
     <button class="uk-button uk-button-default">Button</button>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

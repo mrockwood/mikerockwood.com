@@ -20,7 +20,7 @@ To apply this component, use the following classes.
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s uk-width-2-5@m">
     <ul class="uk-nav uk-nav-default">
         <li class="uk-active"><a href="#">Active</a></li>
@@ -28,7 +28,7 @@ To apply this component, use the following classes.
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 **Note** By default, the nav has no styling. That's why it is important to add a modifier class. In our example we are using the `.uk-nav-default` class.
 
@@ -53,7 +53,7 @@ Add the `.uk-parent` class to an item to turn it into a parent. Add the `.uk-nav
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s uk-width-2-5@m">
     <ul class="uk-nav uk-nav-default">
         <li class="uk-active"><a href="#">Active</a></li>
@@ -72,7 +72,7 @@ Add the `.uk-parent` class to an item to turn it into a parent. Add the `.uk-nav
         </li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 
 ***
@@ -87,7 +87,7 @@ By default, child menu items are always visible. To apply an accordion effect, j
 <ul uk-nav>…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s uk-width-2-5@m">
     <ul class="uk-nav-default" uk-nav>
         <li class="uk-active"><a href="#">Active</a></li>
@@ -113,7 +113,7 @@ By default, child menu items are always visible. To apply an accordion effect, j
         </li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -130,7 +130,7 @@ To create a parent icon, just add the `uk-nav-parent-icon` attribute to a `<span
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s uk-width-2-5@m">
     <ul class="uk-nav-default" uk-nav>
         <li class="uk-active"><a href="#">Active</a></li>
@@ -156,7 +156,7 @@ To create a parent icon, just add the `uk-nav-parent-icon` attribute to a `<span
         </li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -168,7 +168,7 @@ When clicking on a parent item, an open one will close, allowing only one open n
 <ul uk-nav="multiple: true">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s uk-width-2-5@m">
     <ul class="uk-nav-default" uk-nav="multiple: true">
         <li class="uk-active"><a href="#">Active</a></li>
@@ -194,7 +194,7 @@ When clicking on a parent item, an open one will close, allowing only one open n
         </li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -213,7 +213,7 @@ Add one of the following classes to a list item to create a header or a divider 
 <li class="uk-nav-divider"></li>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s uk-width-2-5@m">
     <ul class="uk-nav uk-nav-default">
         <li class="uk-nav-header">Header</li>
@@ -223,7 +223,7 @@ Add one of the following classes to a list item to create a header or a divider 
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -244,7 +244,7 @@ Add the `.uk-nav-subtitle` class to a `div` element to create an item subtitled.
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s uk-width-2-5@m">
     <ul class="uk-nav uk-nav-default">
         <li class="uk-active"><a href="#"><div>Active<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
@@ -253,7 +253,7 @@ Add the `.uk-nav-subtitle` class to a `div` element to create an item subtitled.
         <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -265,7 +265,7 @@ Add the `.uk-nav-default` class to give the nav its default style. You can place
 <ul class="uk-nav uk-nav-default">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-card uk-card-default uk-card-body uk-width-1-2@s">
     <ul class="uk-nav-default" uk-nav>
         <li class="uk-active"><a href="#">Active</a></li>
@@ -290,7 +290,7 @@ Add the `.uk-nav-default` class to give the nav its default style. You can place
         <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -302,7 +302,7 @@ Add the `.uk-nav-primary` class to give the nav a more distinct styling, for exa
 <ul class="uk-nav uk-nav-primary">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s">
     <ul class="uk-nav-primary" uk-nav>
         <li class="uk-active"><a href="#">Active</a></li>
@@ -323,7 +323,7 @@ Add the `.uk-nav-primary` class to give the nav a more distinct styling, for exa
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -335,7 +335,7 @@ Add the `.uk-nav-secondary` class to have an extra style if the nav has subtitle
 <ul class="uk-nav uk-nav-secondary">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s">
     <ul class="uk-nav uk-nav-secondary">
         <li class="uk-active"><a href="#"><div>Active<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
@@ -344,7 +344,7 @@ Add the `.uk-nav-secondary` class to have an extra style if the nav has subtitle
         <li><a href="#"><div>Item<div class="uk-nav-subtitle">Subtitle lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div></div></a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -356,7 +356,7 @@ Add the `.uk-nav-center` class to center nav items. This can be combined with th
 <ul class="uk-nav uk-nav-default uk-nav-center">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-card uk-card-default uk-card-body uk-width-1-2@s">
     <ul class="uk-nav-default uk-nav-center" uk-nav>
         <li class="uk-active"><a href="#">Active</a></li>
@@ -364,7 +364,7 @@ Add the `.uk-nav-center` class to center nav items. This can be combined with th
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -376,7 +376,7 @@ Add the `.uk-nav-divider` class to separate nav items with lines. This can be co
 <ul class="uk-nav uk-nav-default uk-nav-divider">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-1-2@s">
     <ul class="uk-nav-default uk-nav-divider" uk-nav>
         <li class="uk-active"><a href="#">Active</a></li>
@@ -384,7 +384,7 @@ Add the `.uk-nav-divider` class to separate nav items with lines. This can be co
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -398,7 +398,7 @@ Add the `.uk-dropdown-nav` class to place a nav inside a default dropdown from t
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div uk-dropdown>
     <ul class="uk-nav uk-dropdown-nav">
@@ -411,7 +411,7 @@ Add the `.uk-dropdown-nav` class to place a nav inside a default dropdown from t
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -425,7 +425,7 @@ Add the `.uk-navbar-dropdown-nav` class to place the nav inside a navbar dropdow
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -448,7 +448,7 @@ Add the `.uk-navbar-dropdown-nav` class to place the nav inside a navbar dropdow
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -456,7 +456,7 @@ Add the `.uk-navbar-dropdown-nav` class to place the nav inside a navbar dropdow
 
 A nav can be used inside an offcanvas from the [Offcanvas component](offcanvas.md). No modifier class needs to be added.
 
-{% example() %}
+{% <example> %}
 <a href="#offcanvas-slide" class="uk-button uk-button-default" uk-toggle>Open</a>
 
 <div id="offcanvas-slide" uk-offcanvas>
@@ -474,7 +474,7 @@ A nav can be used inside an offcanvas from the [Offcanvas component](offcanvas.m
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

@@ -22,12 +22,12 @@ The Card component consists of the card itself, the card body and an optional ca
 
 By default, a card is blank. That is why it is important to add a modifier class for styling. In our example we are using the `.uk-card-default` class.
 
-{% example() %}
+{% <example> %}
 <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
     <h3 class="uk-card-title">Default</h3>
     <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -49,7 +49,7 @@ UIkit includes a number of modifiers that can be used to add a specific style to
 <div class="uk-card uk-card-secondary"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">
@@ -70,7 +70,7 @@ UIkit includes a number of modifiers that can be used to add a specific style to
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -82,7 +82,7 @@ To create a hover effect on the card, add the `.uk-card-hover` class. This comes
 <div class="uk-card uk-card-hover"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
     <div>
         <div class="uk-card uk-card-hover uk-card-body">
@@ -109,7 +109,7 @@ To create a hover effect on the card, add the `.uk-card-hover` class. This comes
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -128,7 +128,7 @@ You can apply different size modifiers to cards that will decrease or increase t
 <div class="uk-card uk-card-large uk-card-default"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-small uk-card-body">
@@ -143,7 +143,7 @@ You can apply different size modifiers to cards that will decrease or increase t
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -161,7 +161,7 @@ You can also divide a card into header and footer — around the default body. J
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-card uk-card-default uk-width-1-2@m">
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -181,7 +181,7 @@ You can also divide a card into header and footer — around the default body. J
         <a href="#" class="uk-button uk-button-text">Read more</a>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -205,7 +205,7 @@ To display an image inside a card without any spacing, add one of the following 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@m" uk-grid>
     <div>
         <div class="uk-card uk-card-default">
@@ -230,7 +230,7 @@ To display an image inside a card without any spacing, add one of the following 
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -252,7 +252,7 @@ To do that, you could for example add the `.uk-cover-container` class from the [
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
     <div class="uk-card-media-left uk-cover-container">
         <img src="images/light.jpg" alt="" uk-cover>
@@ -278,7 +278,7 @@ To do that, you could for example add the `.uk-cover-container` class from the [
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -292,10 +292,10 @@ To position a badge inside a card, add the `.uk-card-badge` class to a container
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
     <div class="uk-card-badge uk-label">Badge</div>
     <h3 class="uk-card-title">Title</h3>
     <p>Lorem ipsum color sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
-{% end %}
+{% </example> %}

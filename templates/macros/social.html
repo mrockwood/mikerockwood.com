@@ -1,16 +1,16 @@
-{% macro og_preview() %}
-    <meta property="og:title" content="{{ social::og_title() }}" />
+{% component social.og_preview() %}
+    <meta property="og:title" content="{{<social.og_title />}}" />
     <meta property="og:type" content="website"/>
     {%- if current_url -%}
         <meta property="og:url" content="{{ current_url }}"/>
     {%- endif -%}
-    <meta property="og:description" content="{{ social::og_description() }}"/>
+    <meta property="og:description" content="{{<social.og_description />}}"/>
     {%- if config.extra.og_preview_img -%}
         <meta property="og:image" content="{{ get_url(path=config.extra.og_preview_img) }}"/>
     {%- endif -%}
-{% endmacro og_preview %}
+{% endcomponent social.og_preview %}
 
-{% macro og_description() %}
+{% component social.og_description() %}
     {%- if section -%}
         {%-  if section.description -%}
             {{ section.description }}
@@ -18,7 +18,7 @@
             {{ config.description }}
         {%- endif -%}
     {%- elif page -%}
-        {%- if page.summary | string -%}
+        {%- if page.summary -%}
             {{ page.summary | striptags | truncate(length=200) }}
         {%- elif page.description -%}
             {{ page.description }}
@@ -26,9 +26,9 @@
             {{ config.description }}
         {%- endif -%}
     {%- endif -%}
-{% endmacro og_description %}
+{% endcomponent social.og_description %}
 
-{% macro og_title() -%}
+{% component social.og_title() -%}
     {{ config.title }} -&nbsp;
     {%- if section -%}
         {%- if section.title -%}
@@ -43,4 +43,4 @@
             {{ config.description }}
         {%- endif -%}
     {%- endif -%}
-{% endmacro og_title %}
+{% endcomponent social.og_title %}

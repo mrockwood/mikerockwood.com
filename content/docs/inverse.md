@@ -16,7 +16,7 @@ Add the `.uk-light` class to improve the visibility of objects on dark backgroun
 <div class="uk-dark"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div>
         <div class="uk-light uk-background-secondary uk-padding">
@@ -33,7 +33,7 @@ Add the `.uk-light` class to improve the visibility of objects on dark backgroun
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 **Note** Some modifiers from the [Section](section.md), [Card](card.md), [Tile](tile.md), [Overlay](overlay.md) and [Off-canvas](offcanvas.md) component are extending the inverse style automatically, so you don't have to add any class.
 

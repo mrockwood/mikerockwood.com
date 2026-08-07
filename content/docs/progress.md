@@ -12,7 +12,7 @@ To apply this component, add the `.uk-progress` class to a `<progress>` element.
 <progress class="uk-progress" value="" max=""></progress>
 ```
 
-{% example() %}
+{% <example> %}
 <progress id="js-progressbar" class="uk-progress" value="10" max="100"></progress>
 
 <script>
@@ -35,4 +35,4 @@ To apply this component, add the `.uk-progress` class to a `<progress>` element.
 
 </script>
 
-{% end %}
+{% </example> %}

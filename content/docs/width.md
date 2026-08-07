@@ -30,7 +30,7 @@ Add one of the `.uk-width-*` classes to an element to determine its size. Typica
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-text-center" uk-grid>
     <div class="uk-width-1-3">
         <div class="uk-card uk-card-default uk-card-body">1-3</div>
@@ -60,7 +60,7 @@ Add one of the `.uk-width-*` classes to an element to determine its size. Typica
         <div class="uk-card uk-card-default uk-card-body">3-4</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -80,7 +80,7 @@ The Width component provides additional modifiers to give you more flexibility i
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-text-center" uk-grid>
     <div class="uk-width-auto">
         <div class="uk-card uk-card-default uk-card-body">Auto</div>
@@ -89,7 +89,7 @@ The Width component provides additional modifiers to give you more flexibility i
         <div class="uk-card uk-card-default uk-card-body">Expand</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -115,7 +115,7 @@ To create a grid whose child elements' widths are evenly split, you don't have t
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-4 uk-grid-small uk-text-center" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">Item</div>
@@ -133,7 +133,7 @@ To create a grid whose child elements' widths are evenly split, you don't have t
         <div class="uk-card uk-card-default uk-card-body">Item</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 Items that use width classes with fractions will break into a new row, if they no longer fit their container's width. When using one of the _expand_ classes, however, the space will be evenly distributed among items that always stay in the same row.
 
@@ -145,7 +145,7 @@ Items that use width classes with fractions will break into a new row, if they n
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-expand uk-grid-small uk-text-center" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">Item</div>
@@ -163,7 +163,7 @@ Items that use width classes with fractions will break into a new row, if they n
         <div class="uk-card uk-card-default uk-card-body">Item</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -183,13 +183,13 @@ In addition to the calculated width classes, you can also add one of the followi
 <div class="uk-width-medium"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-width-small uk-margin"><div class="uk-card uk-card-small uk-card-default uk-card-body">Small</div></div>
 <div class="uk-width-medium uk-margin"><div class="uk-card uk-card-small uk-card-default uk-card-body">Medium</div></div>
 <div class="uk-width-large uk-margin"><div class="uk-card uk-card-small uk-card-default uk-card-body">Large</div></div>
 <div class="uk-width-xlarge uk-margin"><div class="uk-card uk-card-small uk-card-default uk-card-body">X-Large</div></div>
 <div class="uk-width-2xlarge uk-margin"><div class="uk-card uk-card-small uk-card-default uk-card-body">2X-Large</div></div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -206,7 +206,7 @@ You can also combine `.uk-child-width-*` classes with `.uk-width-*` classes for 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-expand uk-grid-small uk-text-center" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body">Expand</div>
@@ -221,7 +221,7 @@ You can also combine `.uk-child-width-*` classes with `.uk-width-*` classes for 
         <div class="uk-card uk-card-default uk-card-body">Expand</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -237,7 +237,7 @@ UIkit provides a number of responsive widths classes. Basically they work just l
 | `.uk-width-*@l`<br> `.uk-child-width-*@l`   | Affects device widths of _1200px_ and larger. Grid columns will stack on smaller sizes. |
 | `.uk-width-*@xl`<br> `.uk-child-width-*@xl` | Affects device widths of _1600px_ and larger. Grid columns will stack on smaller sizes. |
 
-{% example() %}
+{% <example> %}
 <div class="uk-grid-match uk-grid-small uk-text-center" uk-grid>
     <div class="uk-width-1-2@m">
         <div class="uk-card uk-card-default uk-card-body">1-2@m</div>
@@ -270,4 +270,4 @@ UIkit provides a number of responsive widths classes. Basically they work just l
         <div class="uk-card uk-card-default uk-card-body">expand@m</div>
     </div>
 </div>
-{% end %}
+{% </example> %}

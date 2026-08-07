@@ -36,13 +36,13 @@
 						{% endfor %}
 						<li class="uk-nav-divider"></li>
 						<li>
-							<a href="{{ current_url | replace(from='docs', to='tests') | trim_end_matches(pat='/') }}.html" target="_blank" rel="noreferrer">
+							<a href="{{ current_url | replace(from='docs', to='tests') | trim_end(pat='/') }}.html" target="_blank" rel="noreferrer">
 								<span class="uk-margin-small-right" uk-icon="push"></span>
 								<span class="uk-text-middle">Open test</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://github.com/mrockwood/mikerockwood.com/blob/main/content/{{ current_path  | trim_end_matches(pat='/') }}.md" target="_blank" rel="noreferrer">
+							<a href="https://github.com/mrockwood/mikerockwood.com/blob/main/content/{{ current_path  | trim_end(pat='/') }}.md" target="_blank" rel="noreferrer">
 								<span class="uk-margin-small-right" uk-icon="pencil"></span>
 								<span class="uk-text-middle">Edit this page</span>
 							</a>

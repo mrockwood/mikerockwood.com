@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{%- block seo %}
+{%- block head_seo %}
   {{- super() }}
   {%- set title = term.name ~ " tag" %}
 
@@ -12,8 +12,7 @@
 
   {%- set description = config.description %}
 
-  {{- macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true) }}
-{%- endblock seo %}
+{%- endblock head_seo %}
 
 {%- block content %}
     <div>

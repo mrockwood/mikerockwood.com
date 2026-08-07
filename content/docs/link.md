@@ -12,11 +12,11 @@ The [Base component](base.md) determines the default link color. If you want the
 <a class="uk-link-muted" href="#"></a>
 ```
 
-{% example() %}
+{% <example> %}
 <a class="uk-link-muted" href="#">Link</a>
 
 <p class="uk-link-muted">Lorem ipsum <a href="#">dolor sit</a> amet, consectetur adipiscing elit, sed do <a href="#">eiusmod</a> tempor incididunt ut <a href="#">labore et</a> dolore magna aliqua.</p>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -28,13 +28,13 @@ To make a link appear like body text and apply a hover effect, add the `.uk-link
 <a class="uk-link-text" href="#"></a>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-list uk-link-text">
     <li><a href="#">Link</a></li>
     <li><a href="#">Link</a></li>
     <li><a href="#">Link</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -46,9 +46,9 @@ To style a link inside a heading element, add the `.uk-link-heading` class to th
 <h3><a class="uk-link-heading" href="#"></a></h3>
 ```
 
-{% example() %}
+{% <example> %}
 <h3><a class="uk-link-heading" href="#">Heading</a></h3>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -56,11 +56,11 @@ To style a link inside a heading element, add the `.uk-link-heading` class to th
 
 To reset a link's color, so that it inherits the color from its parent, add the `.uk-link-reset` class. There won't be any hover effect at all. This is useful for links inside heading elements. You can also add the class to a parent element, and it will be applied to all `<a>` elements inside it.
 
-{% example() %}
+{% <example> %}
 <a class="uk-link-reset" href="#">Link</a>
 
 <h3><a class="uk-link-reset" href="#">Heading</a></h3>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -74,9 +74,9 @@ To use an anchor as parent element and apply the link style on one of its child 
 </a>
 ```
 
-{% example() %}
+{% <example> %}
 <a href class="uk-display-block uk-card uk-card-body uk-card-default uk-link-toggle uk-width-medium">
     <h3 class="uk-card-title"><span class="uk-link-heading">Heading</span></h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </a>
-{% end %}
+{% </example> %}

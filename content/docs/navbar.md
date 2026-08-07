@@ -29,7 +29,7 @@ The Navbar component consists of a navbar container, the navbar itself and one o
 </nav>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -50,7 +50,7 @@ The Navbar component consists of a navbar container, the navbar itself and one o
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -66,7 +66,7 @@ You can place more than one navigation inside a navbar container. That way you c
 </nav>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
 
     <div class="uk-navbar-left">
@@ -108,7 +108,7 @@ You can place more than one navigation inside a navbar container. That way you c
     </div>
 
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -120,7 +120,7 @@ A parent item inside the navbar can be enabled by either hovering or clicking th
 <nav class="uk-navbar-container" uk-navbar="mode: click">…</nav>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container uk-margin" uk-navbar="mode: click">
     <div class="uk-navbar-left">
 
@@ -141,7 +141,7 @@ A parent item inside the navbar can be enabled by either hovering or clicking th
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -153,7 +153,7 @@ When using an image or colored background for the hero section of your website, 
 <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>…</nav>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-position-relative">
     <img src="images/light.jpg" width="1800" height="1200" alt="">
     <div class="uk-position-top">
@@ -181,7 +181,7 @@ When using an image or colored background for the hero section of your website, 
         </nav>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -200,7 +200,7 @@ To define a subtitle, create a `<div>` element inside an item's `<a>` element. A
 </li>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -240,7 +240,7 @@ To define a subtitle, create a `<div>` element inside an item's `<a>` element. A
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -260,7 +260,7 @@ You can also add custom content to the navbar, like text, icons, buttons or form
 
 Add the `.uk-logo` class from the [Utility component](utility.md) to an `<a>` or `<div>` element to indicate your brand.
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container uk-margin" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -288,7 +288,7 @@ Add the `.uk-logo` class from the [Utility component](utility.md) to an `<a>` or
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -306,7 +306,7 @@ You can create a split menu with a centered logo. Just add the `uk-navbar-center
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container uk-margin" uk-navbar>
     <div class="uk-navbar-center">
 
@@ -334,7 +334,7 @@ You can create a split menu with a centered logo. Just add the `uk-navbar-center
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 
 ***
@@ -351,7 +351,7 @@ Add the `.uk-navbar-toggle` class and the `uk-navbar-toggle-icon` attribute to a
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar uk-navbar-container uk-margin">
     <div class="uk-navbar-left">
         <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
@@ -365,7 +365,7 @@ Add the `.uk-navbar-toggle` class and the `uk-navbar-toggle-icon` attribute to a
         </a>
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 To changes toggle icon from a menu icon to a close icon with a smooth animation, add the `.uk-navbar-toggle-animate` class.
 
@@ -373,7 +373,7 @@ To changes toggle icon from a menu icon to a close icon with a smooth animation,
 <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href=""></a>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar uk-navbar-container uk-margin" uk-navbar>
     <div class="uk-navbar-left">
         <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
@@ -386,7 +386,7 @@ To changes toggle icon from a menu icon to a close icon with a smooth animation,
         </div>
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -405,7 +405,7 @@ A navbar can contain a dropdown from the [Dropdown component](dropdown.md). Just
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -449,7 +449,7 @@ A navbar can contain a dropdown from the [Dropdown component](dropdown.md). Just
         </ul>
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -466,7 +466,7 @@ To create a parent icon, just add the `uk-navbar-parent-icon` attribute to a `<s
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -510,7 +510,7 @@ To create a parent icon, just add the `uk-navbar-parent-icon` attribute to a `<s
         </ul>
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -536,7 +536,7 @@ The [Dropdown component](dropdown.md) allows you to arrange the dropdown content
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -575,7 +575,7 @@ The [Dropdown component](dropdown.md) allows you to arrange the dropdown content
     </div>
 
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -593,7 +593,7 @@ By default, the dropdowns are positioned below the navbar item and are aligned t
 <div uk-navbar="align: center"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar="align: center">
     <div class="uk-navbar-center">
 
@@ -617,7 +617,7 @@ By default, the dropdowns are positioned below the navbar item and are aligned t
     </div>
 
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -629,7 +629,7 @@ By default, the dropdowns are aligned to their navbar item. To position the drop
 <nav class="uk-navbar-container" uk-navbar="target: !.uk-navbar">…</nav>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar="target: !.uk-navbar; align: center;">
     <div class="uk-navbar-left">
 
@@ -741,7 +741,7 @@ By default, the dropdowns are aligned to their navbar item. To position the drop
     </div>
 
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -753,7 +753,7 @@ To stretch a dropdown, use the [Drop component](drop.md) and its `stretch` optio
 <div class="uk-navbar-dropdown" uk-drop="boundary: !.uk-navbar; stretch: x; flip: false">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -805,7 +805,7 @@ To stretch a dropdown, use the [Drop component](drop.md) and its `stretch` optio
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -818,7 +818,7 @@ A dropbar extends to the full width of the navbar and displays the dropdown with
 <div class="uk-navbar-dropbar"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-position-relative">
 
     <nav class="uk-navbar-container" uk-navbar="dropbar: true">
@@ -898,7 +898,7 @@ A dropbar extends to the full width of the navbar and displays the dropdown with
     <div class="uk-navbar-dropbar"></div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -916,7 +916,7 @@ The navbar itself has a modifier class `uk-navbar-sticky` that ensures an optimi
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-sticky="end: #transparent-sticky-navbar; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
         <div class="uk-navbar-left">
@@ -939,7 +939,7 @@ The navbar itself has a modifier class `uk-navbar-sticky` that ensures an optimi
         </div>
     </nav>
 </div>
-{% end %}
+{% </example> %}
 
 Instead of using a Dropdown, you can show a Dropbar, which means that the subnavigation is displayed in a full width below the navbar. Simply set `dropbar: true` inside the `uk-navbar` attribute.
 
@@ -949,7 +949,7 @@ Instead of using a Dropdown, you can show a Dropbar, which means that the subnav
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-sticky="end: #transparent-sticky-navbar; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     <nav class="uk-navbar-container" uk-navbar="dropbar: true;" style="position: relative; z-index: 980;">
         <div class="uk-navbar-left">
@@ -972,7 +972,7 @@ Instead of using a Dropdown, you can show a Dropbar, which means that the subnav
         </div>
     </nav>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -988,7 +988,7 @@ By default, the immediate toggling of classes does not look ideal. Instead, we c
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-section-primary uk-preserve-color">
 
     <div uk-sticky="start: 200; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light">
@@ -1030,7 +1030,7 @@ By default, the immediate toggling of classes does not look ideal. Instead, we c
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

@@ -24,10 +24,10 @@ UIkit.notification('My message', status);
 UIkit.notification('My message', { /* options */ });
 ```
 
-{% example() %}
+{% <example> %}
 <button class="demo uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Notification message'})">Click me</button>
 
-{% end %}
+{% </example> %}
 
 ***
 
@@ -39,10 +39,10 @@ You can use HTML inside your notification message, like an icon from the Icon co
 UIkit.notification("<span uk-icon='icon: check'></span> Message");
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})">With icon</button>
 
-{% end %}
+{% </example> %}
 
 ***
 
@@ -65,7 +65,7 @@ UIkit.notification("…", {pos: 'top-right'})
 | `bottom-right`  | `UIkit.notification("…", {pos: 'bottom-right'})`  |
 
 
-{% example() %}
+{% <example> %}
 <p uk-margin>
     <button class="uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Top Left…', pos: 'top-left'})">Top Left</button>
     <button class="uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Top Center…', pos: 'top-center'})">Top Center</button>
@@ -74,7 +74,7 @@ UIkit.notification("…", {pos: 'top-right'})
     <button class="uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Bottom Center…', pos: 'bottom-center'})">Bottom Center</button>
     <button class="uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Bottom Right…', pos: 'bottom-right'})">Bottom Right</button>
 </p>
-{% end %}
+{% </example> %}
 
 
 ***
@@ -94,14 +94,14 @@ UIkit.notification("…", {status: 'primary'})
 | `warning` | `UIkit.notification("…", {status:'warning'})` |
 | `danger`  | `UIkit.notification("…", {status:'danger'})`  |
 
-{% example() %}
+{% <example> %}
 <p uk-margin>
     <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: 'Primary message…', status: 'primary'})">Primary</button>
     <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: 'Success message…', status: 'success'})">Success</button>
     <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: 'Warning message…', status: 'warning'})">Warning</button>
     <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: 'Danger message…', status: 'danger'})">Danger</button>
 </p>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -109,10 +109,10 @@ UIkit.notification("…", {status: 'primary'})
 
 You can close all open notifications by calling `UIkit.notification.closeAll()`.
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default close" onclick="UIkit.notification.closeAll()">Close All</button>
 
-{% end %}
+{% </example> %}
 
 ***
 

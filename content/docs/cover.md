@@ -16,11 +16,11 @@ To have an image cover its parent element, add the `.uk-cover-container` class t
 
 **Note** To position content on top of the covering element, use the [Position component](position.md). To adapt your content for better visibility, add the `.uk-light` or `.uk-dark` class from the [Inverse component](inverse.md).
 
-{% example() %}
+{% <example> %}
 <div class="uk-cover-container uk-height-medium">
     <img src="images/dark.jpg" alt="" uk-cover>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -36,11 +36,11 @@ The Cover component inherits all properties from the [Video component](video.md)
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-cover-container uk-height-medium">
     <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" autoplay loop muted playsinline uk-cover></video>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -54,11 +54,11 @@ To apply the Cover component to an iframe, you need to add the `uk-cover` attrib
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-cover-container uk-height-medium">
     <iframe src="https://www.youtube-nocookie.com/embed/c2pz2mlSfXA?autoplay=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;modestbranding=1&amp;wmode=transparent" width="1920" height="1080" allowfullscreen uk-cover></iframe>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -73,12 +73,12 @@ To add responsive behavior to your cover image, you need to create an invisible 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-cover-container">
     <canvas width="400" height="200"></canvas>
     <img src="images/dark.jpg" alt="" uk-cover>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

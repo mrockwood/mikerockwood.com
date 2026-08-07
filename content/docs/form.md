@@ -32,7 +32,7 @@ Add one of the following classes to form controls inside a `<form>` element to d
 
 Add the `.uk-fieldset` class to a `<fieldset>` element and the `.uk-legend` class to a `<legend>` element to define a fieldset and a form legend.
 
-{% example() %}
+{% <example> %}
 <form>
     <fieldset class="uk-fieldset">
 
@@ -69,7 +69,7 @@ Add the `.uk-fieldset` class to a `<fieldset>` element and the `.uk-legend` clas
 
     </fieldset>
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -84,7 +84,7 @@ Provide the user with basic information through feedback states on form controls
 
 Add the `disabled` attribute to a form control. It will appear muted.
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin">
     <input class="uk-input uk-form-danger uk-form-width-medium" type="text" placeholder="form-danger" value="form-danger">
 </div>
@@ -96,7 +96,7 @@ Add the `disabled` attribute to a form control. It will appear muted.
 <div class="uk-margin">
     <input class="uk-input uk-form-width-medium" type="text" placeholder="disabled" value="disabled" disabled>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -109,7 +109,7 @@ Add one of the classes to an `<input>`, `<select>` or `<textarea>` element to mo
 | `.uk-form-large` | Add this class to make the element larger.  |
 | `.uk-form-small` | Add this class to make the element smaller. |
 
-{% example() %}
+{% <example> %}
 <form>
 
     <div class="uk-margin">
@@ -125,7 +125,7 @@ Add one of the classes to an `<input>`, `<select>` or `<textarea>` element to mo
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -140,7 +140,7 @@ Add one of the following classes to an `<input>`, `<select>` or `<textarea>` ele
 | `.uk-form-width-small`  | Applies a width of _130px_. |
 | `.uk-form-width-xsmall` | Applies a width of _40px_.  |
 
-{% example() %}
+{% <example> %}
 <form>
 
     <div class="uk-margin">
@@ -160,15 +160,15 @@ Add one of the following classes to an `<input>`, `<select>` or `<textarea>` ele
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 You can also apply the `.uk-width-*` classes from the [Width component](width.md) to form controls.
 
-{% example() %}
+{% <example> %}
 <form>
     <input class="uk-input uk-width-1-2" type="text" placeholder="uk-width-1-2">
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -176,11 +176,11 @@ You can also apply the `.uk-width-*` classes from the [Width component](width.md
 
 Add the `.uk-form-blank` class to minimize the styling of form controls.
 
-{% example() %}
+{% <example> %}
 <form>
     <input class="uk-input uk-form-blank uk-form-width-medium" type="text" placeholder="Form blank">
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -208,7 +208,7 @@ Define labels and controls and apply a stacked or horizontal layout to form elem
 </form>
 ```
 
-{% example() %}
+{% <example> %}
 <form class="uk-form-stacked">
 
     <div class="uk-margin">
@@ -237,7 +237,7 @@ Define labels and controls and apply a stacked or horizontal layout to form elem
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -258,7 +258,7 @@ Use the `.uk-form-controls-text` class to better align checkboxes and radio butt
 </form>
 ```
 
-{% example() %}
+{% <example> %}
 <form class="uk-form-horizontal uk-margin-large">
 
     <div class="uk-margin">
@@ -287,7 +287,7 @@ Use the `.uk-form-controls-text` class to better align checkboxes and radio butt
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -302,7 +302,7 @@ You use an icon from the [Icon component](icon.md) inside a form. Add the `.uk-f
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <form>
 
     <div class="uk-margin">
@@ -320,7 +320,7 @@ You use an icon from the [Icon component](icon.md) inside a form. Add the `.uk-f
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -335,7 +335,7 @@ To enable an action, for example opening a modal to pick an image or link, use a
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <form>
 
     <div class="uk-margin">
@@ -353,7 +353,7 @@ To enable an action, for example opening a modal to pick an image or link, use a
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -361,7 +361,7 @@ To enable an action, for example opening a modal to pick an image or link, use a
 
 You can also use the [Grid](grid.md) and [Width](width.md) components to define the layout of a form.
 
-{% example() %}
+{% <example> %}
 <form class="uk-grid-small" uk-grid>
     <div class="uk-width-1-1">
         <input class="uk-input" type="text" placeholder="100">
@@ -382,7 +382,7 @@ You can also use the [Grid](grid.md) and [Width](width.md) components to define 
         <input class="uk-input" type="text" placeholder="50">
     </div>
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -401,7 +401,7 @@ Use a button or text as a file input.
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <form>
 
     <div class="uk-margin">
@@ -428,7 +428,7 @@ Use a button or text as a file input.
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -446,7 +446,7 @@ Use a button, text or a link as a select form. Just add the `target: SELECTOR` o
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <form>
 
     <div class="uk-margin">
@@ -493,7 +493,7 @@ Use a button, text or a link as a select form. Just add the `target: SELECTOR` o
     </div>
 
 </form>
-{% end %}
+{% </example> %}
 
 ***
 

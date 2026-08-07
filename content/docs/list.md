@@ -16,13 +16,13 @@ To apply this component, add the `.uk-list` class to an unordered or ordered lis
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-list">
     <li>List item 1</li>
     <li>List item 2</li>
     <li>List item 3</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -42,7 +42,7 @@ Add one of the following classes to set the marker of a list item.
 <ul class="uk-list uk-list-disc">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-expand@s" uk-grid>
 
     <div>
@@ -91,7 +91,7 @@ Add one of the following classes to set the marker of a list item.
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -110,7 +110,7 @@ Add one of the following classes to set the marker color.
 <ul class="uk-list uk-list-disc uk-list-primary">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-expand@s" uk-grid>
 
     <div>
@@ -150,7 +150,7 @@ Add one of the following classes to set the marker color.
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 **Note** The color modifiers don't work in Chrome and Edge because the `::marker` pseudo-element is not supported yet. Vote this [Chromium issue](https://bugs.chromium.org/p/chromium/issues/detail?id=457718) up, to give it more attention.
 
@@ -164,13 +164,13 @@ Add the `.uk-list-bullet` class to set a custom image bullet as marker of a list
 <ul class="uk-list uk-list-bullet">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-list uk-list-bullet">
     <li>List item 1</li>
     <li>List item 2</li>
     <li>List item 3</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -182,13 +182,13 @@ Add the `.uk-list-divider` class to separate list items with lines.
 <ul class="uk-list uk-list-divider">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-list uk-list-divider">
     <li>List item 1</li>
     <li>List item 2</li>
     <li>List item 3</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -200,13 +200,13 @@ Add zebra-striping to a list using the `.uk-list-striped` class.
 <ul class="uk-list uk-list-striped">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-list uk-list-striped">
     <li>List item 1</li>
     <li>List item 2</li>
     <li>List item 3</li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -223,7 +223,7 @@ Add one of the following classes to increase or decrease the spacing between lis
 <ul class="uk-list uk-list-large">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <h4>Large</h4>
 
 <div class="uk-child-width-expand@s" uk-grid>
@@ -299,4 +299,4 @@ Add one of the following classes to increase or decrease the spacing between lis
     </div>
 
 </div>
-{% end %}
+{% </example> %}

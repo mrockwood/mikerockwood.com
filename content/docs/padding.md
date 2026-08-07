@@ -18,11 +18,11 @@ To apply this component, add one of the following classes to a block element.
 <div class="uk-padding"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-padding uk-background-muted uk-width-1-2@s">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

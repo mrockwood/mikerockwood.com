@@ -62,7 +62,7 @@ If `target` is the only option in the `uk-filter` attribute value, you can also 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <ul class="uk-subnav uk-subnav-pill">
@@ -111,7 +111,7 @@ If `target` is the only option in the `uk-filter` attribute value, you can also 
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 The Filter component comes unstyled, which allows you to use any of the other UIkit components to create the filter controls and layout items. For example, the [Nav](nav.md), [Subnav](subnav.md) and [Tab](tab.md) components can be used to style the filter controls. Usually, the [Grid component](grid.md) is used to create the item layout.
 
@@ -132,7 +132,7 @@ By default, the filter uses a `slide` animation for the items between the differ
 <div uk-filter="animation: fade">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter; animation: fade">
 
     <ul class="uk-subnav uk-subnav-pill">
@@ -181,7 +181,7 @@ By default, the filter uses a `slide` animation for the items between the differ
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -193,7 +193,7 @@ Add the `.uk-active` class to a filter control, and the filter will be applied i
 <li class="uk-active" uk-filter-control="[data-color='blue']">…</li>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <ul class="uk-subnav uk-subnav-pill">
@@ -242,7 +242,7 @@ Add the `.uk-active` class to a filter control, and the filter will be applied i
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -254,7 +254,7 @@ To reset the filter and target all items, use the `uk-filter-control` attribute 
 <li uk-filter-control>…</li>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <ul class="uk-subnav uk-subnav-pill">
@@ -304,7 +304,7 @@ To reset the filter and target all items, use the `uk-filter-control` attribute 
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -326,7 +326,7 @@ Items can have different meta data for filtering. You just need to define the HT
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <ul class="uk-subnav uk-subnav-pill">
@@ -376,7 +376,7 @@ Items can have different meta data for filtering. You just need to define the HT
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -402,7 +402,7 @@ Define different types of meta data and add any number of controls to filter the
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid>
@@ -503,7 +503,7 @@ Define different types of meta data and add any number of controls to filter the
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -531,7 +531,7 @@ To filter items by multiple criteria at the same time, the filter controls need 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid>
@@ -632,7 +632,7 @@ To filter items by multiple criteria at the same time, the filter controls need 
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -655,7 +655,7 @@ To sort items alphanumerically, just add the `sort: ATTRIBUTE` option to the `uk
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <ul class="uk-subnav uk-subnav-pill">
@@ -703,7 +703,7 @@ To sort items alphanumerically, just add the `sort: ATTRIBUTE` option to the `uk
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -713,7 +713,7 @@ A filter is often applied to a [Masonry](grid.md#masonry) grid. The filter trans
 
 Here is a comprehensive example with a masonry grid:
 
-{% example() %}
+{% <example> %}
 <div uk-filter="target: .js-filter">
 
     <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -827,7 +827,7 @@ Here is a comprehensive example with a masonry grid:
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

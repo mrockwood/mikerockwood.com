@@ -22,14 +22,14 @@ The tab component consists of clickable tabs, that are aligned side by side in a
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul uk-tab>
     <li class="uk-active"><a href="#">Left</a></li>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
     <li class="uk-disabled"><a>Disabled</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -41,13 +41,13 @@ Add the `.uk-tab-bottom` class to flip tab items to the bottom.
 <ul class="uk-tab-bottom" uk-tab>…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-tab-bottom" uk-tab>
     <li class="uk-active"><a href="#">Left</a></li>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -63,7 +63,7 @@ When using the vertical alignment, you will usually create a grid to apply the l
 <ul class="uk-tab-right" uk-tab>…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div>
         <ul class="uk-tab-left" uk-tab>
@@ -81,7 +81,7 @@ When using the vertical alignment, you will usually create a grid to apply the l
         </ul>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -103,7 +103,7 @@ You can combine tabs with the [Flex component](flex.md) or the [Width component]
 <ul class="uk-flex-right" uk-tab>…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin-medium-top">
     <ul class="uk-flex-center" uk-tab>
         <li class="uk-active"><a href="#">Center</a></li>
@@ -128,7 +128,7 @@ You can combine tabs with the [Flex component](flex.md) or the [Width component]
         <li><a href="#">Item</a></li>
     </ul>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -152,7 +152,7 @@ Tabs can be used to trigger a dropdown menu from the [Dropdown component](dropdo
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul uk-tab>
     <li class="uk-active"><a href="#">Active</a></li>
     <li><a href="#">Item</a></li>
@@ -171,7 +171,7 @@ Tabs can be used to trigger a dropdown menu from the [Dropdown component](dropdo
         </div>
     </li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 

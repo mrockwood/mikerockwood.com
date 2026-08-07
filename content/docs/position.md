@@ -27,7 +27,7 @@ To apply this component, add one of the `.uk-position-*` classes to a block elem
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline uk-margin">
 
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
@@ -38,7 +38,7 @@ To apply this component, add one of the `.uk-position-*` classes to a block elem
     <div class="uk-position-right uk-overlay uk-overlay-default uk-flex uk-flex-middle">Right</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -63,7 +63,7 @@ You can also apply more specific positions that won't spread over one side of th
 <div class="uk-position-top-right"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
 
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
@@ -79,7 +79,7 @@ You can also apply more specific positions that won't spread over one side of th
     <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -92,7 +92,7 @@ If you want a position element to cover its container, just add the `.uk-positio
 <div class="uk-position-cover"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
 
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
@@ -100,7 +100,7 @@ If you want a position element to cover its container, just add the `.uk-positio
     <div class="uk-position-cover uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">Cover</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -119,7 +119,7 @@ There are two classes to center elements outside on the left and right of the pa
 <div class="uk-position-center-left-out"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
 
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
@@ -128,7 +128,7 @@ There are two classes to center elements outside on the left and right of the pa
     <div class="uk-position-center-right-out uk-overlay uk-overlay-primary uk-visible@s">Out</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -140,7 +140,7 @@ To apply a small margin to positioned elements, add the `.uk-position-small` cla
 <div class="uk-position-small uk-position-center"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline uk-margin">
 
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
@@ -186,7 +186,7 @@ To apply a small margin to positioned elements, add the `.uk-position-small` cla
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -198,7 +198,7 @@ To apply a medium margin to positioned elements, add the `.uk-position-medium` c
 <div class="uk-position-medium uk-position-center"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline uk-margin">
 
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
@@ -244,7 +244,7 @@ To apply a medium margin to positioned elements, add the `.uk-position-medium` c
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -256,7 +256,7 @@ To apply a large margin to positioned elements, add the `.uk-position-large` cla
 <div class="uk-position-large uk-position-center"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline uk-margin">
 
     <img src="images/photo.jpg" width="1800" height="1200" alt="">
@@ -302,7 +302,7 @@ To apply a large margin to positioned elements, add the `.uk-position-large` cla
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

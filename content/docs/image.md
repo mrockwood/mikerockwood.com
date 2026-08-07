@@ -16,11 +16,11 @@ To apply this component, add the `uk-img` and the `data-src` attribute containin
 <div data-src="" uk-img>…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80" uk-img>
   <h1>Background Image</h1>
 </div>
-{% end %}
+{% </example> %}
 
 ****
 
@@ -32,11 +32,11 @@ To avoid lazy loading background images for the first visible viewport but still
 <div data-src="" uk-img="loading: eager">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://images.unsplash.com/photo-1495321308589-43affb814eee?fit=crop&w=650&h=433&q=80" uk-img="loading: eager">
   <h1>Background Image</h1>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -48,7 +48,7 @@ To use the `srcset` feature for background images, just add the `data-srcset` at
 <div data-src="" data-srcset="" sizes="" uk-img>…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover"
      data-src="https://images.unsplash.com/photo-1485627941502-d2e6429a8af0?fit=crop&w=650&h=433&q=80"
      data-srcset="https://images.unsplash.com/photo-1485627941502-d2e6429a8af0?fit=crop&w=650&h=433&q=80 650w,
@@ -56,7 +56,7 @@ To use the `srcset` feature for background images, just add the `data-srcset` at
      sizes="(min-width: 650px) 650px, 100vw" uk-img>
     <h1>Background Image</h1>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -70,14 +70,14 @@ To use different image sources just like the `<picture>` element that contains `
 <div sources="srcset: ____; type: ____" data-src="" uk-img>…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
      sources="srcset: https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?fit=crop&w=650&h=433&q=80; media: (min-width: 1200px)"
      data-src="https://images.unsplash.com/photo-1546349851-64285be8e9fa?fit=crop&w=650&h=433&q=80"
      uk-img>
     <h1>Background Image</h1>
 </div>
-{% end %}
+{% </example> %}
 
 It's possible to offer multiple image sources and also multiple resolutions for each source using `srcset`.
 
@@ -85,7 +85,7 @@ It's possible to offer multiple image sources and also multiple resolutions for 
 <div sources="srcset: ____; media: ____" data-src="" data-srcset="" sizes="" uk-img>…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
      sources="srcset: https://images.unsplash.com/photo-1464621922360-27f3bf0eca75?fit=crop&w=650&h=433&q=80 650w,
                       https://images.unsplash.com/photo-1464621922360-27f3bf0eca75?fit=crop&w=1300&h=866&q=80 1300w; 
@@ -96,7 +96,7 @@ It's possible to offer multiple image sources and also multiple resolutions for 
      sizes="(min-width: 650px) 650px, 100vw" uk-img>
     <h1>Background Image</h1>
 </div>
-{% end %}
+{% </example> %}
 
 Multiple sources can be defined using JSON syntax.
 
@@ -127,7 +127,7 @@ The JSON needs to be HTML encoded.
 
 This example offers alternative image formats like *WebP* and *AVIF*.
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover"
      sources="[{&quot;srcset&quot;: &quot;images/image-type.avif&quot;,
                 &quot;type&quot;: &quot;image\/avif&quot;
@@ -139,7 +139,7 @@ This example offers alternative image formats like *WebP* and *AVIF*.
         uk-img>
     <h1>Background Image</h1>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

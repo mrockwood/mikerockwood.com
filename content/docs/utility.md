@@ -10,7 +10,7 @@ UIkit uses panels to outline certain sections of your content. These can be arra
 
 Add the `.uk-panel` class to a `<div>` element to create a position context, set box-sizing to border-box, apply a clearfix and to remove the bottom margin of its last child element.
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@s" uk-grid>
     <div>
         <div class="uk-panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -22,7 +22,7 @@ Add the `.uk-panel` class to a `<div>` element to create a position context, set
         <div class="uk-panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -30,7 +30,7 @@ Add the `.uk-panel` class to a `<div>` element to create a position context, set
 
 Add the `.uk-panel-scrollable` class to give the panel a fixed height and make it scrollable, if its content exceeds the height. You can also add one of the `.uk-height-*` [classes](height.md) to apply a different height.
 
-{% example() %}
+{% <example> %}
 <div class="uk-panel uk-panel-scrollable">
     <ul class="uk-list">
         <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
@@ -54,7 +54,7 @@ Add the `.uk-panel-scrollable` class to give the panel a fixed height and make i
     </ul>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -69,7 +69,7 @@ Floating elements are taken from the document flow and aligned to the left or ri
 | `.uk-clearfix`    | Add this class to a parent container to clear floats. Alternatively, you can create a new block format context, e.g. by adding the `.uk-overflow-hidden` class. |
 
 
-{% example() %}
+{% <example> %}
 <div class="uk-clearfix">
     <div class="uk-float-right">
         <div class="uk-card uk-card-default uk-card-body">Right</div>
@@ -78,7 +78,7 @@ Floating elements are taken from the document flow and aligned to the left or ri
         <div class="uk-card uk-card-default uk-card-body">Left</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -93,7 +93,7 @@ These utilities provide different classes to modify an element's overflow behavi
 
 **Note** The `.uk-overflow-auto` class is useful when having to handle tables on a responsive website, which at some point would just get too big. It also works great on `<pre>` elements.
 
-{% example() %}
+{% <example> %}
 <div class="uk-overflow-auto uk-height-small">
     <table class="uk-table uk-table-striped uk-table-condensed uk-text-nowrap">
         <thead>
@@ -144,7 +144,7 @@ These utilities provide different classes to modify an element's overflow behavi
         </tbody>
     </table>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -152,7 +152,7 @@ These utilities provide different classes to modify an element's overflow behavi
 
 Add the `uk-overflow-auto` attribute to expand an element's height to make it fill the remaining height of a parent container. It provides a vertical scrollbar if its content is higher than the expanded height.
 
-{% example() %}
+{% <example> %}
 <div class="uk-height-medium">
     <div class="js-wrapper">
 
@@ -171,7 +171,7 @@ Add the `uk-overflow-auto` attribute to expand an element's height to make it fi
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 It's often used within the [Modal component](modal.md).
 
@@ -181,7 +181,7 @@ It's often used within the [Modal component](modal.md).
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Open</a>
 
 <div id="modal-overflow" uk-modal>
@@ -222,7 +222,7 @@ It's often used within the [Modal component](modal.md).
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 You can change the target heights by adding the `selContainer` and `selContent` options to the attribute. [Learn more](javascript.md#component-configuration)
 
@@ -244,7 +244,7 @@ These utilities provide different classes for resizing elements.
 
 <p>Grab and drag the bottom right corner of each box below to resize it</p>
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div>
         <pre class="uk-resize-vertical">
@@ -279,7 +279,7 @@ These utilities provide different classes for resizing elements.
         </pre>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -311,12 +311,12 @@ These classes are often used to create a position context on containers with an 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <img src="images/photo.jpg" width="300" height="200" alt="">
     <div class="uk-position-medium uk-position-cover uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">Overlay</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -356,7 +356,7 @@ Define how the content of an image or video should be resized to fit its element
 <img class="uk-object-cover" src="" width="1000" height="1000" alt="" style="aspect-ratio: 1 / 1">
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div>
         <img class="uk-object-cover" src="images/photo.jpg" width="1000" height="1000" alt="" style="aspect-ratio: 1 / 1;">
@@ -365,7 +365,7 @@ Define how the content of an image or video should be resized to fit its element
         <img class="uk-object-contain" src="images/photo.jpg" width="1000" height="1000" alt="" style="aspect-ratio: 1 / 1;">
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 To modify the alignment of the image or video within its element, add one of the `uk-object-position-*` classes.
 
@@ -393,11 +393,11 @@ To modify the border radius of an element, like an image, add one of the followi
 | `.uk-border-circle`  | Add this class to apply a circled shape. |
 | `.uk-border-pill`    | Add this class to apply a pill shape.    |
 
-{% example() %}
+{% <example> %}
 <img class="uk-border-rounded" src="images/avatar.jpg" width="200" height="200" alt="Border rounded">
 <img class="uk-border-circle" src="images/avatar.jpg" width="200" height="200" alt="Border circle">
 <img class="uk-border-pill" src="images/avatar.jpg" width="200" height="200" alt="Border pill">
-{% end %}
+{% </example> %}
 
 ***
 
@@ -416,7 +416,7 @@ You can apply different box shadows to elements. Just add one of the following c
 <div class="uk-box-shadow-small"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s uk-text-center" uk-grid>
     <div>
         <div class="uk-box-shadow-small uk-padding">Small</div>
@@ -434,7 +434,7 @@ You can apply different box shadows to elements. Just add one of the following c
         <div class="uk-box-shadow-xlarge uk-padding">X-Large</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -446,13 +446,13 @@ To apply a box shadow at the bottom of an element so that appears to be hovering
 <div class="uk-box-shadow-bottom"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-box-shadow-bottom uk-box-shadow-small uk-width-1-2@s uk-text-center">
     <div class="uk-background-default uk-padding-large">
         Box shadow bottom
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -471,7 +471,7 @@ To apply a box shadow on hover, add one of the following classes. This can also 
 <div class="uk-box-shadow-hover-small"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s uk-text-center" uk-grid>
     <div>
         <div class="uk-box-shadow-hover-small uk-padding">Hover Small</div>
@@ -489,7 +489,7 @@ To apply a box shadow on hover, add one of the following classes. This can also 
         <div class="uk-box-shadow-xlarge uk-box-shadow-hover-medium uk-padding">X-Large + Hover Medium</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -497,9 +497,9 @@ To apply a box shadow on hover, add one of the following classes. This can also 
 
 With the `.uk-dropcap` class you can achieve a drop cap within a text by adding it directly to the `<p>` element.
 
-{% example() %}
+{% <example> %}
 <p class="uk-dropcap">Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -511,17 +511,17 @@ With the new `.uk-logo` class you can easily define your logo, for example withi
 <a class="uk-logo" href=""></a>
 ```
 
-{% example() %}
+{% <example> %}
 <a class="uk-logo" href="#">Logo</a>
-{% end %}
+{% </example> %}
 
 Add the `.uk-light` class from the [Inverse component](inverse.md) when displaying the image on dark backgrounds, so that its color will automatically be inverted for better visibility.
 
-{% example() %}
+{% <example> %}
 <div class="uk-panel uk-padding uk-background-secondary uk-light">
     <a class="uk-logo" href="#">Logo</a>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -546,7 +546,7 @@ You can even automatically display alternative logos for light and dark backgrou
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-expand@s" uk-grid>
     <div>
         <div class="uk-panel uk-padding uk-background-muted">
@@ -565,7 +565,7 @@ You can even automatically display alternative logos for light and dark backgrou
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 **Note** To inject an SVG logo as inline SVG, use the [SVG component](svg.md).
 
@@ -601,7 +601,7 @@ Add one of the following classes to apply different blend modes to your backgrou
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2 uk-child-width-1-3@s uk-grid-small uk-light" uk-grid>
     <div>
         <div class="uk-inline uk-background-primary">
@@ -724,7 +724,7 @@ Add one of the following classes to apply different blend modes to your backgrou
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -732,12 +732,12 @@ Add one of the following classes to apply different blend modes to your backgrou
 
 To center an element to itself, add the `uk-transform-center` class. This is particularly useful for absolute positioning.
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <img src="images/light.jpg" width="1800" height="1200" alt="">
     <a class="uk-position-absolute uk-transform-center" style="left: 50%; top: 50%" href="#" uk-marker></a>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -760,7 +760,7 @@ To modify the origin of an animation, like scaling, add one of the `uk-transform
 <div class="uk-transform-origin-bottom-right uk-animation-scale-up"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@m" uk-grid>
     <div class="uk-animation-toggle" tabindex="0">
         <div class="uk-transform-origin-bottom-right uk-card uk-card-default uk-card-body uk-animation-scale-up">
@@ -778,7 +778,7 @@ To modify the origin of an animation, like scaling, add one of the `uk-transform
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -786,9 +786,9 @@ To modify the origin of an animation, like scaling, add one of the `uk-transform
 
 To disable the click behavior of any element, like a `<a>`, `<button>` or `<iframe>` element, add the `.uk-disabled` class.
 
-{% example() %}
+{% <example> %}
 <a class="uk-disabled uk-button uk-button-default" href="#">Disabled</a>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -800,10 +800,10 @@ To apply a move cursor to elements that are being dragged, add the `.uk-drag` cl
 <div class="uk-drag"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-drag uk-width-small uk-padding uk-background-muted uk-text-center">
     <i uk-icon="icon: move; ratio: 2"></i>
 </div>
-{% end %}
+{% </example> %}
 
 To create a box shadow on an [upload area](upload.md) when dragging a file over it, add the `.uk-dragover` class.

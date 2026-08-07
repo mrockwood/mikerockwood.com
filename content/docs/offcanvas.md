@@ -36,7 +36,7 @@ You can use any element to toggle an off-canvas sidebar. To enable the necessary
 </body>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-usage">Open</button>
 
 <a href="#offcanvas-usage" uk-toggle>Open</a>
@@ -52,7 +52,7 @@ You can use any element to toggle an off-canvas sidebar. To enable the necessary
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -64,7 +64,7 @@ To add an overlay, blanking out the page, add the `overlay: true` parameter to t
 <div id="my-id" uk-offcanvas="overlay: true">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-overlay">Open</button>
 
 <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
@@ -79,7 +79,7 @@ To add an overlay, blanking out the page, add the `overlay: true` parameter to t
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -91,7 +91,7 @@ Add the `flip: true` parameter to the `uk-offcanvas` attribute to adjust its ali
 <div id="my-id" uk-offcanvas="flip: true">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">Open</button>
 
 <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
@@ -105,7 +105,7 @@ Add the `flip: true` parameter to the `uk-offcanvas` attribute to adjust its ali
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 
 ***
@@ -125,7 +125,7 @@ By default, the off-canvas slides in. But you can actually choose between differ
 <div id="my-id" uk-offcanvas="mode: push">…</div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-slide">Slide</button>
 
 <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-push">Push</button>
@@ -181,7 +181,7 @@ By default, the off-canvas slides in. But you can actually choose between differ
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -197,7 +197,7 @@ You can use the [Nav component](nav.md) inside an off-canvas to create a mobile 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav-primary">Primary Nav</button>
 
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">Default Nav</button>
@@ -245,7 +245,7 @@ You can use the [Nav component](nav.md) inside an off-canvas to create a mobile 
 
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

@@ -104,7 +104,7 @@ Add one of these useful classes to align your text.
 | `.uk-text-center`  | Centers text horizontally. |
 | `.uk-text-justify` | Justifies text.            |
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@s uk-grid-small" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-small">
@@ -128,7 +128,7 @@ Add one of these useful classes to align your text.
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -143,7 +143,7 @@ UIkit provides a number of responsive alignment classes. Basically, they work ju
 | `.uk-text-left@l`<br> `.uk-text-center@l`<br> `.uk-text-right@l`    | Affects device widths of _1200px_ and larger. |
 | `.uk-text-left@xl`<br> `.uk-text-center@xl`<br> `.uk-text-right@xl` | Affects device widths of _1600px_ and larger. |
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@s uk-grid-small" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-small">
@@ -167,7 +167,7 @@ UIkit provides a number of responsive alignment classes. Basically, they work ju
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -182,7 +182,7 @@ Add one of these classes to vertically align text to an object.
 | `.uk-text-bottom`   | Aligns text to the bottom.   |
 | `.uk-text-baseline` | Aligns text to the baseline. |
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@m uk-child-width-1-2@s" uk-grid>
     <div>
         <img src="images/avatar.jpg" width="50" height="50">
@@ -197,7 +197,7 @@ Add one of these classes to vertically align text to an object.
         <span class="uk-text-bottom">Lorem ipsum.</span>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -211,7 +211,7 @@ Add one of these useful classes to wrap your text.
 | `.uk-text-break`    | Breaks strings, if their length exceeds the width of their container.                              |
 | `.uk-text-nowrap`   | Prevents text from wrapping into multiple lines.                                                   |
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@s" uk-grid>
     <div>
         <div class="uk-panel uk-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -220,4 +220,4 @@ Add one of these useful classes to wrap your text.
         <div class="uk-panel uk-text-break">Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodtemporincididuntutlaboreetdoloremagnaaliqua.</div>
     </div>
 </div>
-{% end %}
+{% </example> %}

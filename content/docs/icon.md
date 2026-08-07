@@ -30,11 +30,11 @@ If `icon` is the only option in the attribute value, you can also use `uk-icon="
 <span uk-icon="heart"></span>
 ```
 
-{% example() %}
+{% <example> %}
 <span class="uk-margin-small-right" uk-icon="check"></span>
 
 <a href="" uk-icon="heart"></a>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -298,10 +298,10 @@ Add the `ratio: 2` parameter to the `uk-icon` attribute to double its size – o
 <span uk-icon="icon: check; ratio: 2"></span>
 ```
 
-{% example() %}
+{% <example> %}
 <span class="uk-margin-small-right" uk-icon="icon: check; ratio: 2"></span>
 <span uk-icon="icon: check; ratio: 3.5"></span>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -313,11 +313,11 @@ To reset the default link styling to a more muted color when using an icon insid
 <a href="" class="uk-icon-link" uk-icon="heart"></a>
 ```
 
-{% example() %}
+{% <example> %}
 <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="copy"></a>
 <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="file-edit"></a>
 <a href="#" class="uk-icon-link" uk-icon="trash"></a>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -329,11 +329,11 @@ Use the modifier `.uk-icon-button` class on an `<a>` element to create an icon b
 <a href="" class="uk-icon-button" uk-icon="twitter"></a>
 ```
 
-{% example() %}
+{% <example> %}
 <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
 <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
 <a href="" class="uk-icon-button" uk-icon="youtube"></a>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -341,9 +341,9 @@ Use the modifier `.uk-icon-button` class on an `<a>` element to create an icon b
 
 You can also make any background image scale to the size of an icon. Just add the `.uk-icon-image` class and a background image path.
 
-{% example() %}
+{% <example> %}
 <span class="uk-icon uk-icon-image" style="background-image: url(images/dark.jpg);"></span>
-{% end %}
+{% </example> %}
 
 ***
 

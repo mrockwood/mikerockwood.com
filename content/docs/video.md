@@ -20,11 +20,11 @@ To apply this component, add the `uk-video` attribute to a `<video>` element. Th
 <video src="" width="" height="" uk-video></video>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default uk-margin" type="button" uk-toggle="target: +">Toggle HTML5 Video</button>
 
 <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" width="1920" height="1080" controls playsinline hidden uk-video></video>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -36,9 +36,9 @@ To play a video when it enters the viewport and pause it again when it leaves th
 <video src="" width="" height="" uk-video="autoplay: inview"></video>
 ```
 
-{% example() %}
+{% <example> %}
 <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" width="1800" height="1200" loop muted playsinline uk-video="autoplay: inview"></video>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -50,11 +50,11 @@ To mute YouTube or Vimeo videos by default, add the `uk-video="automute: true"` 
 <iframe src="" width="" height="" uk-video="automute: true"></iframe>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default uk-margin-bottom" type="button" uk-toggle="target: +">Toggle YouTube Video</button>
 
 <iframe src="https://www.youtube-nocookie.com/embed/c2pz2mlSfXA?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
-{% end %}
+{% </example> %}
 
 ***
 

@@ -23,14 +23,14 @@ To add list items without a link, use a `<span>` element instead of an `<a>`. Al
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav" uk-margin>
     <li class="uk-active"><a href="#">Active</a></li>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
     <li><span>Disabled</span></li>
 </ul>
-{% end %}
+{% </example> %}
 
 **Note** For a better layout, if items should wrap into the next row, add the `uk-margin` attribute from the [Margin component](margin.md).
 
@@ -44,13 +44,13 @@ Add the `.uk-subnav-divider` class to separate menu items with lines.
 <ul class="uk-subnav uk-subnav-divider">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-divider" uk-margin>
     <li class="uk-active"><a href="#">Active</a></li>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -62,13 +62,13 @@ Add the `.uk-subnav-pill` class to highlight the active menu item with a backgro
 <ul class="uk-subnav uk-subnav-pill">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-margin>
     <li class="uk-active"><a href="#">Active</a></li>
     <li><a href="#">Item</a></li>
     <li><a href="#">Item</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -92,7 +92,7 @@ You can also use a dropdown from the [Dropdown component](dropdown.md) with a su
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-subnav uk-subnav-pill" uk-margin>
     <li class="uk-active"><a href="#">Active</a></li>
     <li><a href="#">Item</a></li>
@@ -111,4 +111,4 @@ You can also use a dropdown from the [Dropdown component](dropdown.md) with a su
         </div>
     </li>
 </ul>
-{% end %}
+{% </example> %}

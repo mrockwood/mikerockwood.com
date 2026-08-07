@@ -1,11 +1,11 @@
-{% macro comments() %}
+{% component comments.comments() %}
     {% if config.extra.disqus.enabled is defined and config.extra.disqus.enabled == true %}
-        {{ comments::disqus() }}
+        {{<comments.disqus />}}
     {% endif %}
-{% endmacro comments %}
+{% endcomponent comments.comments %}
 
 
-{% macro disqus() %}
+{% component comments.disqus() %}
 
     <div id="disqus_thread"></div>
     <script>
@@ -27,4 +27,4 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-{% endmacro disqus %}
+{% endcomponent comments.disqus %}

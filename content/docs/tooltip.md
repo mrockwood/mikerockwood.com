@@ -18,9 +18,9 @@ If `title` is the only option in the attribute value, you can also use `uk-toolt
 <div uk-tooltip="Hello World"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" uk-tooltip="Hello World">Hover</button>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -43,7 +43,7 @@ Add one of the following options to the `uk-tooltip` attribute to adjust the too
 | `pos: left`         | Aligns the tooltip to the left.         |
 | `pos: right`        | Aligns the tooltip to the right.        |
 
-{% example() %}
+{% <example> %}
 <p uk-margin>
     <button class="uk-button uk-button-default" uk-tooltip="Hello World">Top</button>
     <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: top-left">Top Left</button>
@@ -54,7 +54,7 @@ Add one of the following options to the `uk-tooltip` attribute to adjust the too
     <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: left">Left</button>
     <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: right">Right</button>
 </p>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -66,9 +66,9 @@ If you want the tooltip to appear with a little delay, just add the `delay` opti
 <div uk-tooltip="title: Hello World; delay: 500"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; delay: 500">Hover</button>
-{% end %}
+{% </example> %}
 
 ***
 

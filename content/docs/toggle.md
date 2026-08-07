@@ -15,12 +15,12 @@ The toggle can be used to add or remove a class or attribute from the item. By d
 <p id="my-id"></p>
 ```
 
-{% example() %}
+{% <example> %}
 <div>
     <button class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-usage">Toggle</button>
     <p id="toggle-usage">What's up?</p>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -34,11 +34,11 @@ You can also toggle multiple items at the same time. Just add the `target: SELEC
 <p class="my-class"></p>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: .toggle">Toggle</button>
 <p class="toggle">Hello!</p>
 <p class="toggle" hidden>Bazinga!</p>
-{% end %}
+{% </example> %}
 
 **Note** In this example we added the `hidden` attribute to one of the items, so that only the other item will be shown. The toggle will switch visible states between both elements.
 
@@ -53,10 +53,10 @@ If you don't want to toggle the `hidden` attribute, you can also toggle a custom
 <p id="my-id" class="uk-card uk-card-default"></p>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-custom; cls: uk-card-primary">Toggle</button>
 <div id="toggle-custom" class="uk-card uk-card-default uk-card-body uk-margin-small">Custom class</div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -69,10 +69,10 @@ The Toggle component allows you to add animations to items when toggling between
 <p id="my-id"></p>
 ```
 
-{% example() %}
+{% <example> %}
 <button href="#toggle-animation" class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-animation; animation: uk-animation-fade">Toggle</button>
 <div id="toggle-animation" class="uk-card uk-card-default uk-card-body uk-margin-small">Animation</div>
-{% end %}
+{% </example> %}
 
 ### Multiple animations
 
@@ -83,10 +83,10 @@ You can also apply multiple animations from the [Animation component](animation)
 <p id="my-id"></p>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-animation-multiple; animation:  uk-animation-slide-left, uk-animation-slide-bottom">Toggle</button>
 <div id="toggle-animation-multiple" class="uk-card uk-card-default uk-card-body uk-margin-small">Animation</div>
-{% end %}
+{% </example> %}
 
 ### Queued animations
 
@@ -98,11 +98,11 @@ When toggling multiple items with an animation, you might want to wait until the
 <p class="my-class"></p>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: .toggle-animation-queued; animation: uk-animation-fade; queued: true; duration: 300">Toggle</button>
 <p class="toggle-animation-queued uk-card uk-card-default uk-card-body uk-margin-small">Animation</p>
 <p class="toggle-animation-queued uk-card uk-card-primary uk-card-body uk-margin-small" hidden>Animation</p>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -123,10 +123,10 @@ A toggle can be triggered in different ways. Just add the `mode` option to the `
 <p id="my-id"></p>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-hover; mode: hover">hover</button>
 <p id="toggle-hover">What's up?</p>
-{% end %}
+{% </example> %}
 
 ### Media
 
@@ -138,11 +138,11 @@ When using the `media` mode, the `media` option with one of possible values has 
 <div class="uk-card uk-card-default" uk-toggle="cls: uk-card-primary; mode: media; media: @l"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-card uk-card-default uk-card-body uk-width-medium" uk-toggle="cls: uk-card-primary; mode: media; media: @l">
     Primary on large screens
 </div>
-{% end %}
+{% </example> %}
 
 **Note** The initial toggle state depends on the `cls` option. It is either the first given class in the space separated list or if set to `false`, the `hidden` attribute. If more than one class is given, the other classes are simply being toggled on state change.
 

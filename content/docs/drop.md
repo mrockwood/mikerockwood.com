@@ -24,12 +24,12 @@ To group the toggle and the dropdown, just wrap them with a container element an
 
 **Note** The Drop component has no default styling. In this example, we've used a card from the [Card component](card.md) for visualization.
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">Hover, Click</button>
     <div class="uk-card uk-card-body uk-card-default" uk-drop>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -47,7 +47,7 @@ By default, the drop is toggled on hover and on click. Set the `mode` option to 
 <div uk-drop="mode: click"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">Hover</button>
     <div class="uk-card uk-card-body uk-card-default" uk-drop="mode: hover">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
@@ -57,7 +57,7 @@ By default, the drop is toggled on hover and on click. Set the `mode` option to 
     <button class="uk-button uk-button-default" type="button">Click</button>
     <div class="uk-card uk-card-body uk-card-default" uk-drop="mode: click">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -73,7 +73,7 @@ You can place a grid from the [Grid component](grid.md) inside a drop. Just wrap
 
 Use one of the classes from the [Width component](width.md) to adjust the drop's width.
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div class="uk-card uk-card-body uk-card-default uk-width-large" uk-drop>
     <div class="uk-drop-grid uk-child-width-1-2@m" uk-grid>
@@ -85,7 +85,7 @@ Use one of the classes from the [Width component](width.md) to adjust the drop's
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -112,7 +112,7 @@ By default, the drop is positioned below the toggle. To change its position, set
 <div uk-drop="pos: top-left"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">Top Right</button>
     <div class="uk-card uk-card-body uk-card-default" uk-drop="pos: top-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
@@ -127,7 +127,7 @@ By default, the drop is positioned below the toggle. To change its position, set
     <button class="uk-button uk-button-default" type="button">Right Top</button>
     <div class="uk-card uk-card-body uk-card-default" uk-drop="pos: right-top">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -142,7 +142,7 @@ By default, the drop automatically changes its positions if it exceeds the viewp
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="boundary uk-panel uk-placeholder uk-height-medium">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Right</button>
@@ -152,7 +152,7 @@ By default, the drop automatically changes its positions if it exceeds the viewp
     <div class="uk-card uk-card-body uk-card-default" uk-drop="pos: bottom-left; boundary: !.boundary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -164,7 +164,7 @@ To disable automatic shifting and flipping, add the `shift: false` or `flip: fal
 <div uk-drop="shift: false; flip: false"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="boundary uk-panel uk-placeholder uk-height-medium">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Right</button>
@@ -174,7 +174,7 @@ To disable automatic shifting and flipping, add the `shift: false` or `flip: fal
     <div class="uk-card uk-card-body uk-card-default" uk-drop="pos: bottom-left; boundary: !.boundary; shift: false; flip: false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -199,7 +199,7 @@ By default, the drop is aligned to its toggle. To position the drop to a differe
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="target uk-panel uk-placeholder uk-height-medium">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Left</button>
@@ -209,7 +209,7 @@ By default, the drop is aligned to its toggle. To position the drop to a differe
     <div class="uk-card uk-card-body uk-card-default" uk-drop="pos: bottom-right; target: !.target">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -221,7 +221,7 @@ By default, the drop is positioned outside the toggle. To change the position to
 <div uk-drop="target: .my-class; inset: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="target uk-panel uk-placeholder uk-height-medium">
 
     <button class="uk-button uk-button-default uk-float-left" type="button">Bottom Left</button>
@@ -231,7 +231,7 @@ By default, the drop is positioned outside the toggle. To change the position to
     <div class="uk-card uk-card-body uk-card-default" uk-drop="pos: bottom-right; target: !.target; inset: true">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -243,7 +243,7 @@ To stretch the drop to fill the size of its closest scrolling ancestor, add the 
 <div uk-drop="stretch: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
 
@@ -256,7 +256,7 @@ To stretch the drop to fill the size of its closest scrolling ancestor, add the 
 
     </div>
 </nav>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -268,10 +268,10 @@ Apply one or more animations to the dropdown by adding the `animation: uk-animat
 <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div class="uk-card uk-card-body uk-card-default" uk-drop="animation: uk-animation-slide-top-small; animate-out: true">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-{% end %}
+{% </example> %}
 
 Alternatively, the Drop component has two additional animation types which are not covered by the Animation component. `slide-*` animations slide the drop and its content from a selected direction, while with the `reveal-*` animations, the content of the drop stays static and is revealed from a selected direction.
 
@@ -290,7 +290,7 @@ Alternatively, the Drop component has two additional animation types which are n
 <div uk-drop="animation: slide-top; animate-out: true"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-margin" uk-margin>
 
     <div class="uk-inline">
@@ -314,7 +314,7 @@ Alternatively, the Drop component has two additional animation types which are n
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -326,10 +326,10 @@ To define a custom offset between the drop and its toggle, add the `offset` opti
 <div uk-drop="offset: 80"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <button class="uk-button uk-button-default" type="button">Hover</button>
 <div class="uk-card uk-card-body uk-card-default" uk-drop="offset: 80">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-{% end %}
+{% </example> %}
 
 ***
 

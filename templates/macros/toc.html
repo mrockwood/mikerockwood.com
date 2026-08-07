@@ -1,4 +1,4 @@
-{% macro toc (t) %}
+{% component toc.toc(t) %}
 {% if t %}
 <div class="toc" id="nav-container">
 	<p class="toc-head">Table of Contents</p>
@@ -58,4 +58,4 @@
 		</div>
 </div>
 {% endif %}
-{% endmacro %}
+{% endcomponent toc.toc %}

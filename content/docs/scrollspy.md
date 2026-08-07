@@ -14,7 +14,7 @@ Typically, classes from the [Animation component](animation.md) are used togethe
 <div uk-scrollspy="cls:uk-animation-fade"></div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
     <div>
         <div class="uk-card uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
@@ -29,7 +29,7 @@ Typically, classes from the [Animation component](animation.md) are used togethe
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 This example uses the `repeat: true` option. Scroll up and down to see the triggered animations. The layout is made with the [Card component](card.md).
 
@@ -46,7 +46,7 @@ You can also group scrollspy elements, so you won't have to apply the attribute 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@m" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 500; repeat: true">
     <div>
         <div class="uk-card uk-card-default uk-card-body">
@@ -85,7 +85,7 @@ You can also group scrollspy elements, so you won't have to apply the attribute 
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -100,7 +100,7 @@ You can also give each target a separate `cls` option. Just add the `uk-scrollsp
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-child-width-1-3@m" uk-grid uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300; repeat: true">
     <div>
         <div class="uk-card uk-card-default uk-card-body">
@@ -121,7 +121,7 @@ You can also give each target a separate `cls` option. Just add the `uk-scrollsp
         </div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

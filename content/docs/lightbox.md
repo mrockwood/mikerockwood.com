@@ -16,11 +16,11 @@ To apply this component, add the `uk-lightbox` attribute to a container to turn 
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-lightbox>
     <a class="uk-button uk-button-default" href="images/photo.jpg">Open Lightbox</a>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -34,11 +34,11 @@ To add an `alt` attribute to the image in the lightbox, set the `data-alt` attri
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-lightbox>
     <a class="uk-button uk-button-default" href="images/photo.jpg" data-alt="Image">Open Lightbox</a>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -52,11 +52,11 @@ To display a caption at the bottom of the lightbox, set the `data-caption` attri
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-lightbox>
     <a class="uk-button uk-button-default" href="images/photo.jpg" data-caption="Caption">Open Lightbox</a>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -70,7 +70,7 @@ By default, the Lightbox gallery uses a slide animation. You can set the `animat
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-h3">Slide</div>
 <div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
     <div>
@@ -127,7 +127,7 @@ By default, the Lightbox gallery uses a slide animation. You can set the `animat
         </a>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -144,7 +144,7 @@ A lightbox is not restricted to images. Other media, like videos, can be display
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-lightbox>
     <a class="uk-button uk-button-default" href="images/photo.jpg" data-caption="Image">Image</a>
     <a class="uk-button uk-button-default" href="https://yootheme.com/site/images/media/yootheme-pro.mp4" data-caption="Video">Video</a>
@@ -152,7 +152,7 @@ A lightbox is not restricted to images. Other media, like videos, can be display
     <a class="uk-button uk-button-default" href="https://vimeo.com/1084537" data-caption="Vimeo">Vimeo</a>
     <a class="uk-button uk-button-default" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4740.819266853735!2d9.99008871708242!3d53.550454675412404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9d24afe84a0263!2sRathaus!5e0!3m2!1sde!2sde!4v1499675200938" data-caption="Google Maps" data-type="iframe">Google Maps</a>
 </div>
-{% end %}
+{% </example> %}
 
 **Note** Use `youtube-nocookie.com` within the YouTube link and the lightbox will use the domain to embed the YouTube video.
 
@@ -182,11 +182,11 @@ You can add custom attributes to lightbox content items by using the `data-attrs
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div uk-lightbox>
     <a class="uk-button uk-button-default" href="https://www.youtube.com/watch?v=c2pz2mlSfXA" data-caption="YouTube" data-attrs="width: 1280; height: 720;">YouTube</a>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

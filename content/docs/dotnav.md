@@ -20,7 +20,7 @@ To create a navigation with dots, use the following classes. This component is b
 </ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-dotnav">
     <li class="uk-active"><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
@@ -28,7 +28,7 @@ To create a navigation with dots, use the following classes. This component is b
     <li><a href="#">Item 4</a></li>
     <li><a href="#">Item 5</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -40,7 +40,7 @@ The dotnav can also be displayed vertically. Just add the `.uk-dotnav-vertical` 
 <ul class="uk-dotnav uk-dotnav-vertical">…</ul>
 ```
 
-{% example() %}
+{% <example> %}
 <ul class="uk-dotnav uk-dotnav-vertical">
     <li class="uk-active"><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
@@ -48,7 +48,7 @@ The dotnav can also be displayed vertically. Just add the `.uk-dotnav-vertical` 
     <li><a href="#">Item 4</a></li>
     <li><a href="#">Item 5</a></li>
 </ul>
-{% end %}
+{% </example> %}
 
 
 ***
@@ -71,7 +71,7 @@ Use the `.uk-light` or `.uk-dark` class from the [Inverse component](inverse.md)
 </div>
 ```
 
-{% example() %}
+{% <example> %}
 <div class="uk-position-relative uk-light" uk-slideshow>
 
     <ul class="uk-slideshow-items">
@@ -95,7 +95,7 @@ Use the `.uk-light` or `.uk-dark` class from the [Inverse component](inverse.md)
     </div>
 
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

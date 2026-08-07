@@ -19,7 +19,7 @@ Add the following classes to child elements to apply the necessary functionality
 | `.uk-countdown-number`  | This class adds the neccessary style to a countdown number. |
 
 ```html
-<div uk-countdown="date: {%isodate%}">
+<div uk-countdown="date: 2030-01-01T00:00:00+00:00">
     <span class="uk-countdown-number uk-countdown-days"></span>
     <span class="uk-countdown-number uk-countdown-hours"></span>
     <span class="uk-countdown-number uk-countdown-minutes"></span>
@@ -27,8 +27,8 @@ Add the following classes to child elements to apply the necessary functionality
 </div>
 ```
 
-{% example() %}
-<div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: {%isodate%}">
+{% <example> %}
+<div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: 2030-01-01T00:00:00+00:00">
     <div>
         <div class="uk-countdown-number uk-countdown-days"></div>
     </div>
@@ -42,7 +42,7 @@ Add the following classes to child elements to apply the necessary functionality
         <div class="uk-countdown-number uk-countdown-seconds"></div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -51,7 +51,7 @@ Add the following classes to child elements to apply the necessary functionality
 To insert a separator between each number, use the `.uk-countdown-separator` class.
 
 ```html
-<div uk-countdown="date: {%isodate%}">
+<div uk-countdown="date: 2030-01-01T00:00:00+00:00">
     <span class="uk-countdown-number uk-countdown-days"></span>
     <span class="uk-countdown-separator">:</span>
     <span class="uk-countdown-number uk-countdown-hours"></span>
@@ -62,8 +62,8 @@ To insert a separator between each number, use the `.uk-countdown-separator` cla
 </div>
 ```
 
-{% example() %}
-<div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: {%isodate%}">
+{% <example> %}
+<div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: 2030-01-01T00:00:00+00:00">
     <div>
         <div class="uk-countdown-number uk-countdown-days"></div>
     </div>
@@ -80,7 +80,7 @@ To insert a separator between each number, use the `.uk-countdown-separator` cla
         <div class="uk-countdown-number uk-countdown-seconds"></div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 
@@ -95,8 +95,8 @@ To add a label to each number, use the `.uk-countdown-label` class.
 <div class="uk-countdown-label">Seconds</div>
 ```
 
-{% example() %}
-<div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: {%isodate%}">
+{% <example> %}
+<div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: 2030-01-01T00:00:00+00:00">
     <div>
         <div class="uk-countdown-number uk-countdown-days"></div>
         <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
@@ -117,7 +117,7 @@ To add a label to each number, use the `.uk-countdown-label` class.
         <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
     </div>
 </div>
-{% end %}
+{% </example> %}
 
 ***
 

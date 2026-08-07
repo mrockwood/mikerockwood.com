@@ -1,4 +1,4 @@
-{% macro footer() %}
+{% component footer.footer() %}
 <footer>
 	<a href="mailto:{{ config.extra.author.email }}" class="uk-section uk-section-small uk-button uk-button-primary uk-margin-large-top">
 		<div class="uk-container uk-text-center uk-text-large">
@@ -56,20 +56,20 @@
 		</div>
 	</div>
 </footer>
-{% endmacro footer %}
+{% endcomponent footer.footer %}
 
 {# This is the off-canvas theme picker #}
-{% macro themeMenu() %}
+{% component footer.themeMenu() %}
 <div id="js-theme-menu" uk-offcanvas="flip: true; mode: push;">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
         test
     </div>
 </div>
-{% endmacro themeMenu %}
+{% endcomponent footer.themeMenu %}
 
 {# This is the full-screen mobile navigation modal #}
-{% macro mobileMenu() %}
+{% component footer.mobileMenu() %}
 <div id="js-mobile-menu" class="uk-modal-full" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-height-viewport">
         <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
@@ -83,9 +83,9 @@
         </div>
     </div>
 </div>
-{% endmacro mobileMenu %}
+{% endcomponent footer.mobileMenu %}
 
-{% macro script() %}
+{% component footer.script() %}
 <script src="{{ get_url(path="/scripts/uikit.min.js", cachebust=true) }}" defer="defer"></script>
 <script src="{{ get_url(path="/scripts/uikit-icons.min.js", cachebust=true) }}" defer="defer"></script>
-{% endmacro script %}
+{% endcomponent footer.script %}
