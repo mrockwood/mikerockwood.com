@@ -1,33 +1,22 @@
-# Detect the operating system
-OS := $(shell uname)
+ZOLA ?= zola
+ZOLA_VERSION ?= 0.23.2
 
-# Default zola command
-ZOLA_CMD = zola
+.PHONY: serve build check doctor
 
-# Adjust the zola command for Linux with flatpak
-ifeq ($(OS), Linux)
-    ZOLA_CMD = flatpak run org.getzola.zola
-endif
+doctor:
+	@command -v "$(ZOLA)" >/dev/null || \
+		{ echo "Zola not found. Install Zola $(ZOLA_VERSION), or run with ZOLA=/path/to/zola"; exit 1; }
+	@actual=$$($(ZOLA) --version | awk '{print $$2}'); \
+	if [ "$$actual" != "$(ZOLA_VERSION)" ]; then \
+		echo "Expected Zola $(ZOLA_VERSION), found $$actual"; \
+		exit 1; \
+	fi
 
-# Define targets using the adjusted zola command
-start:
-	$(ZOLA_CMD) serve --drafts --open
+serve: doctor
+	$(ZOLA) serve --drafts --open
 
-serve:
-	$(ZOLA_CMD) serve --drafts --open
+build: doctor
+	$(ZOLA) build
 
-
-admin:
-	open http://localhost:1111/admin/
-
-build:
-	zola build
-
-check:
-	zola check
-
-push:
-	git pull origin master; \
-	git add --all; \
-	git commit --m "automated push"; \
-	git push origin master
+check: doctor
+	$(ZOLA) check
