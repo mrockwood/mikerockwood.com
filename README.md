@@ -6,7 +6,7 @@ The site is built with [Zola](https://www.getzola.org/), styled with [UIkit](htt
 
 ## Requirements
 
-- Zola `0.23.2`
+- [Zola](https://www.getzola.org/), using the version in [`ZOLA_VERSION`](ZOLA_VERSION)
 - GNU Make
 
 Zola can be installed with your operating system's package manager or from the [official releases](https://github.com/getzola/zola/releases). The Makefile checks the version before running. If Zola is installed somewhere unusual, point Make at it:
