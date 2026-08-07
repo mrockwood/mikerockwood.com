@@ -8,8 +8,10 @@ This roadmap is ordered by architectural impact. Each task has a completion crit
 
 - [ ] Pin the Zola version locally and in CI.
 - [ ] Replace the deployment action's `@master` reference with a pinned release or commit.
-- [ ] Make every Makefile target use the same configurable Zola command.
+- [x] Make every Makefile target use the same configurable Zola command.
 - [ ] Document the supported local setup and build commands.
+
+Progress: the Makefile now enforces the local Zola version and supports overriding the executable. CI still needs to be pinned separately.
 
 Done when a clean checkout builds on a new machine and local and CI builds use the same Zola version.
 
