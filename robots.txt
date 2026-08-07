@@ -1,0 +1,4 @@
+Sitemap: https://mikerockwood.com/sitemap.xml
+User-Agent: *
+Allow: /
+Host: https://mikerockwood.com

@@ -1,0 +1,18 @@
+<svg width="400" height="340" viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		circle {
+			fill: #000;
+		}
+		@media (prefers-color-scheme: dark) {
+			circle {
+				fill: #FFF;
+			}
+		}
+	</style>
+	<defs>
+		<pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+			<circle cx="1.5" cy="1.5" r="1.5" fill="#FFF" opacity="0.2"/>
+		</pattern>
+	</defs>
+	<rect width="400" height="340" fill="url(#dots)"/>
+</svg>
