@@ -7,5 +7,5 @@ taxonomies:
     - Design
 extra:
   featured: false
-  featuredImg: work__uccu--intranet.png
+  featured-image: work__uccu--intranet.png
 ---

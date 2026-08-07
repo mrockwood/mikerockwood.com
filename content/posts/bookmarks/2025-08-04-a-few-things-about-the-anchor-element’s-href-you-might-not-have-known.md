@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - HTML
 extra:
-  bookmarkOf: https://blog.jim-nielsen.com/2025/href-value-possibilities/
+  bookmark-of: https://blog.jim-nielsen.com/2025/href-value-possibilities/
 ---
 Jim Nielsen shares some advanced anchor element functionality.

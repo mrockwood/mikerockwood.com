@@ -3,7 +3,7 @@ draft: false
 date: 2023-06-16T17:24:00.000Z
 title: "America's hidden urban laboratory: the South"
 extra:
-  bookmarkOf: https://devonzuegel.com/post/america-s-hidden-urban-laboratory-the-south
+  bookmark-of: https://devonzuegel.com/post/america-s-hidden-urban-laboratory-the-south
 taxonomies:
   categories:
     - bookmarks

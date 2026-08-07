@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - IndieWeb
 extra:
-  bookmarkOf: https://jamesg.blog/2024/02/19/personal-website-ideas/
+  bookmark-of: https://jamesg.blog/2024/02/19/personal-website-ideas/
 ---
 This list showcases possibilities for your personal site, from technical to whimsical ideas.

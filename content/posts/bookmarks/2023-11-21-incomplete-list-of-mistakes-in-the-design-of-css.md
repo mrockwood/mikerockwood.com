@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - CSS
 extra:
-  bookmarkOf: https://wiki.csswg.org/ideas/mistakes
+  bookmark-of: https://wiki.csswg.org/ideas/mistakes
 ---
 CSS that should be corrected if anyone invents a time machine. :P

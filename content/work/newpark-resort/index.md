@@ -7,5 +7,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__newpark--homepage.png
+  featured-image: work__newpark--homepage.png
 ---

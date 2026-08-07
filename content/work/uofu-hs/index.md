@@ -8,5 +8,5 @@ taxonomies:
     - Back-End
 extra:
   featured: false
-  featuredImg: work__uuhsc--home.jpg
+  featured-image: work__uuhsc--home.jpg
 ---

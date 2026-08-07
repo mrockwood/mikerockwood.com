@@ -8,7 +8,7 @@ taxonomies:
   tags:
     - CSS
 extra:
-  bookmarkOf: https://vale.rocks/posts/css-reset
+  bookmark-of: https://vale.rocks/posts/css-reset
 ---
 
 This looks like a pretty solid CSS reset.

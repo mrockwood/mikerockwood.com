@@ -8,5 +8,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__pc--ski.png
+  featured-image: work__pc--ski.png
 ---

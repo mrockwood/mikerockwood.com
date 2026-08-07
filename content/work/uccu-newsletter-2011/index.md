@@ -7,5 +7,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__uccu--newsletter-2011.png
+  featured-image: work__uccu--newsletter-2011.png
 ---

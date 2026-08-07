@@ -8,7 +8,7 @@ taxonomies:
   tags:
     - Biology
 extra:
-  bookmarkOf: https://birdhistory.substack.com/p/the-100-greatest-bird-names-of-all
+  bookmark-of: https://birdhistory.substack.com/p/the-100-greatest-bird-names-of-all
 ---
 
 Just a bit of fun.

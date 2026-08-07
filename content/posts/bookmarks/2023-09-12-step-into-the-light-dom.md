@@ -9,6 +9,6 @@ taxonomies:
     - javascript
     - web-components
 extra:
-  bookmarkOf: https://aaadaaam.com/notes/step-into-the-light-dom/
+  bookmark-of: https://aaadaaam.com/notes/step-into-the-light-dom/
 ---
 Web components don't need to be complicated.

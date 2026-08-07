@@ -79,8 +79,8 @@
 		{%- endif %}
 
 		{#- Bookmarks get an extra tag for the bookmark URL #}
-		{%- if p.extra.bookmarkOf %}
-		<link rel="alternate" href="{{ p.extra.bookmarkOf | safe }}" />
+		{%- if p.extra["bookmark-of"] %}
+			<link rel="alternate" href="{{ p.extra["bookmark-of"] | safe }}" />
 		{%- endif %}
     </entry>
 	{%- endif %}

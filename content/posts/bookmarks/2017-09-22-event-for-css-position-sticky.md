@@ -2,7 +2,7 @@
 title: An event for CSS position:sticky
 date: 2017-09-22T10:00:00Z
 extra:
-  bookmarkOf: https://developer.chrome.com/blog/sticky-headers/
+  bookmark-of: https://developer.chrome.com/blog/sticky-headers/
 draft: false
 taxonomies:
   categories:

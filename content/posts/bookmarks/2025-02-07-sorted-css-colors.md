@@ -9,6 +9,6 @@ taxonomies:
     - CSS
     - color
 extra:
-  bookmarkOf: https://enes.in/sorted-colors/
+  bookmark-of: https://enes.in/sorted-colors/
 ---
 Interactive tool for finding named colors usable in CSS.

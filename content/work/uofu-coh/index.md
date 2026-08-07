@@ -9,5 +9,5 @@ taxonomies:
     - Design
 extra:
   featured: false
-  featuredImg: work__coh--pt.jpg
+  featured-image: work__coh--pt.jpg
 ---

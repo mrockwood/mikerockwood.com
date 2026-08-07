@@ -10,6 +10,6 @@ taxonomies:
     - design
     - typography
 extra:
-  bookmarkOf: https://tobiasahlin.com/blog/responsive-fluid-css-type-scales/
+  bookmark-of: https://tobiasahlin.com/blog/responsive-fluid-css-type-scales/
 ---
 Some nifty utilities for fluid typography created by Tobias Ahlin Bjerrome.

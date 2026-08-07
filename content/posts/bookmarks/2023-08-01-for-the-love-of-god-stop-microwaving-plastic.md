@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - health
 extra:
-  bookmarkOf: https://www.wired.com/story/for-the-love-of-god-stop-microwaving-plastic/
+  bookmark-of: https://www.wired.com/story/for-the-love-of-god-stop-microwaving-plastic/
 ---
 Even more reasons to worry about microplastics. Plus, this article introduced me to a fun new word, "plastisphere."

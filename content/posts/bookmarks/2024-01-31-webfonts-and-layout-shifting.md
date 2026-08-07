@@ -9,6 +9,6 @@ taxonomies:
     - css
     - typography
 extra:
-  bookmarkOf: https://httpster.io/article/webfonts-and-layout-shifting/
+  bookmark-of: https://httpster.io/article/webfonts-and-layout-shifting/
 ---
 A clever way to reduce layout shift caused by custom fonts on a website.

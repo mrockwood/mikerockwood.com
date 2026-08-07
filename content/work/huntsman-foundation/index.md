@@ -8,5 +8,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__hf--home.jpg
+  featured-image: work__hf--home.jpg
 ---

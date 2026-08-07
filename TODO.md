@@ -27,7 +27,7 @@ Done when only successfully built output is published and automated jobs cannot 
 ### Define the publishing data model
 
 - [ ] Document common fields required by every post: title, date, summary, type, content, taxonomy, canonical URL, and author.
-- [ ] Normalize type-specific fields such as `bookmarkOf`, `like-of`, `repost-of`, `in-reply-to`, media IDs, and thumbnails.
+- [x] Normalize type-specific fields such as `bookmark-of`, `like-of`, `repost-of`, `in-reply-to`, media IDs, and thumbnails.
 - [ ] Choose one naming convention for front matter keys.
 - [ ] Add validation for required fields and valid values per post type.
 

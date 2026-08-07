@@ -10,6 +10,6 @@ taxonomies:
     - JavaScript
     - Web Components
 extra:
-  bookmarkOf: https://gomakethings.com/responsive-tables/
+  bookmark-of: https://gomakethings.com/responsive-tables/
 ---
 I really like this web component Chris Ferdinandi came up with for displaying tables on mobile screens.

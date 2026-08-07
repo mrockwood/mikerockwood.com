@@ -2,7 +2,7 @@
 title: Why I'm not the biggest fan of Single Page Applications
 date: 2023-02-15T00:48:51.891Z
 extra:
-  bookmarkOf: https://www.matuzo.at/blog/2023/single-page-applications-criticism/
+  bookmark-of: https://www.matuzo.at/blog/2023/single-page-applications-criticism/
 draft: false
 taxonomies:
   categories:

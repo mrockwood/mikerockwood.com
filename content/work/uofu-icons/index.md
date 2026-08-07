@@ -7,6 +7,6 @@ taxonomies:
     - Design
 extra:
   featured: true
-  featuredImg: work__uofu--icons.png
-  externalLink: https://utahhealthcare.github.io/gloss-docs/elements/page-content/icon/
+  featured-image: work__uofu--icons.png
+  external-link: https://utahhealthcare.github.io/gloss-docs/elements/page-content/icon/
 ---

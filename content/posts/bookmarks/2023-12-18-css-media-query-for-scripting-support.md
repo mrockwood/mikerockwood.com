@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - CSS
 extra:
-  bookmarkOf: https://blog.stephaniestimac.com/posts/2023/12/css-media-query-scripting/
+  bookmark-of: https://blog.stephaniestimac.com/posts/2023/12/css-media-query-scripting/
 ---
 Looks like we're finally getting a Media Query to test whether a user has JavaScript enabled. Chrome only for now.

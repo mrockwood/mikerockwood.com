@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - IndieWeb, Webmentions
 extra:
-  bookmarkOf: https://scientiac.space/blog/webmentions/
+  bookmark-of: https://scientiac.space/blog/webmentions/
 ---
 An article describing how to enable Webmentions on a static site using Zola, webmention.io, and GitHub Actions to support decentralized blog interactions.

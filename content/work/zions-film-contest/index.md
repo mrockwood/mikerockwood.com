@@ -8,5 +8,5 @@ taxonomies:
     - Design
 extra:
   featured: false
-  featuredImg: work__zions--faf.png
+  featured-image: work__zions--faf.png
 ---

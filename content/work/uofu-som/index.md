@@ -7,5 +7,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__uusom--home.jpg
+  featured-image: work__uusom--home.jpg
 ---

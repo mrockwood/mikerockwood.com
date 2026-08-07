@@ -8,5 +8,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__radius--homepage.png
+  featured-image: work__radius--homepage.png
 ---

@@ -35,9 +35,9 @@
 				{% if loop.index == 1 %}
 				<article class="h-entry uk-article">
 					<a class="" href="{{ article.permalink }}">
-						{%- if article.extra.featuredImg %}
-							{% set featuredImg = resize_image(path=article.extra.featuredImg, width=900, op="fit_width", format="webp", quality=80) %}
-							<img class="uk-margin-remove" src="{{ featuredImg.url }}" alt="featured image for article">
+						{%- if article.extra["featured-image"] %}
+							{% set featured_image = resize_image(path=article.extra["featured-image"], width=900, op="fit_width", format="webp", quality=80) %}
+							<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="featured image for article">
 						{%- else %}
 							{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
 							{% set placeholderImg = resize_image(path=placeholderImg, width=900, op="fit_width", format="webp", quality=80) %}
@@ -70,9 +70,9 @@
 						<article class="h-entry uk-article uk-flex-middle" uk-grid>
 							<div class="uk-width-2-5@s">
 								<a class="" href="{{ article.permalink }}">
-									{%- if article.extra.featuredImg %}
-										{% set featuredImg = resize_image(path=article.extra.featuredImg, width=600, op="fit_width", format="webp", quality=75) %}
-										<img class="uk-margin-remove" src="{{ featuredImg.url }}" alt="featured image for article">
+									{%- if article.extra["featured-image"] %}
+										{% set featured_image = resize_image(path=article.extra["featured-image"], width=600, op="fit_width", format="webp", quality=75) %}
+										<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="featured image for article">
 									{%- else %}
 										{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
 										{% set placeholderImg = resize_image(path=placeholderImg, width=600, op="fit_width", format="webp", quality=75) %}
@@ -160,7 +160,7 @@
 			<div class="h-entry">
 
 				<article class="uk-card uk-card-default uk-card-hover">
-					<a href="{{ bookmark.extra.bookmarkOf }}" class="u-bookmark-of uk-card-body uk-link-reset">
+					<a href="{{ bookmark.extra["bookmark-of"] }}" class="u-bookmark-of uk-card-body uk-link-reset">
 						<div class="uk-grid uk-flex-middle">
 							<div class="uk-width-expand">
 								<h3 class="p-name uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
@@ -168,7 +168,7 @@
 									{{ bookmark.date | date(format="%d %b %Y at %H:%M") }}
 								</time>
 								<p class="uk-text-meta uk-margin-xsmall">
-									{{ bookmark.extra.bookmarkOf }}
+									{{ bookmark.extra["bookmark-of"] }}
 								</p>
 							</div>
 							<div class="uk-width-auto">

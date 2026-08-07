@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - JavaScript
 extra:
-  bookmarkOf: https://kashw1n.com/blog/nodejs-2025/
+  bookmark-of: https://kashw1n.com/blog/nodejs-2025/
 ---
 Node.js has made a bunch of improvements recently that I wasn't aware of.

@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - indieweb
 extra:
-  bookmarkOf: https://projects.kwon.nyc/internet-is-fun/
+  bookmark-of: https://projects.kwon.nyc/internet-is-fun/
 ---
 A collection of blog posts about personal sites and why they are more fun than the corporate web.

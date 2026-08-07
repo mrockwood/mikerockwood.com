@@ -7,5 +7,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__uuh--hcihome.png
+  featured-image: work__uuh--hcihome.png
 ---

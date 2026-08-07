@@ -8,7 +8,7 @@ taxonomies:
   tags:
     - CSS
 extra:
-  bookmarkOf: https://ishadeed.com/article/lh-unit/
+  bookmark-of: https://ishadeed.com/article/lh-unit/
 ---
 
 A look at the CSS line height unit and how it works.

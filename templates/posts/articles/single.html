@@ -28,13 +28,13 @@
 
 	</header>
 
-	{%- if page.extra.featuredImg %}
+	{%- if page.extra["featured-image"] %}
 
-		{%- set featuredImg = page.extra.featuredImg %}
-		{%- set featuredImg_640 = resize_image(path=featuredImg, width=640, op="fit_width", format="webp", quality=75) %}
-		{%- set featuredImg_960 = resize_image(path=featuredImg, width=960, op="fit_width", format="webp", quality=75) %}
-		{%- set featuredImg_1200 = resize_image(path=featuredImg, width=1200, op="fit_width", format="webp", quality=75) %}
-		{%- set featuredImg_1600 = resize_image(path=featuredImg, width=1600, op="fit_width", format="webp", quality=75) %}
+		{%- set featured_image = page.extra["featured-image"] %}
+		{%- set featured_image_640 = resize_image(path=featured_image, width=640, op="fit_width", format="webp", quality=75) %}
+		{%- set featured_image_960 = resize_image(path=featured_image, width=960, op="fit_width", format="webp", quality=75) %}
+		{%- set featured_image_1200 = resize_image(path=featured_image, width=1200, op="fit_width", format="webp", quality=75) %}
+		{%- set featured_image_1600 = resize_image(path=featured_image, width=1600, op="fit_width", format="webp", quality=75) %}
 
 		<div
 			class="uk-section uk-section-secondary uk-padding-remove"
@@ -45,20 +45,20 @@
 					<img
 						class=""
 						loading="lazy"
-						alt="{%- if not page.extra.featuredImgCaption %}decorative header image{% endif %}"
-						srcset="{{ featuredImg_640.url | safe }} 640w,
-								{{ featuredImg_960.url | safe }} 960w,
-								{{ featuredImg_1200.url | safe }} 1200w,
-								{{ featuredImg_1600.url | safe }} 1600w"
+						alt="{%- if not page.extra["featured-image-caption"] %}decorative header image{% endif %}"
+						srcset="{{ featured_image_640.url | safe }} 640w,
+								{{ featured_image_960.url | safe }} 960w,
+								{{ featured_image_1200.url | safe }} 1200w,
+								{{ featured_image_1600.url | safe }} 1600w"
 						sizes="(max-width: 640px) 640px,
 								(max-width: 960px) 960px,
 								(max-width: 1200px) 1200px,
 								1600px"
 					>
 				</picture>
-				{%- if page.extra.featuredImgCaption %}
+				{%- if page.extra["featured-image-caption"] %}
 				<figcaption class="uk-text-small uk-margin-small">
-					{{ page.extra.featuredImgCaption | markdown | safe }}
+					{{ page.extra["featured-image-caption"] | markdown | safe }}
 				</figcaption>
 				{% endif %}
 			</figure>

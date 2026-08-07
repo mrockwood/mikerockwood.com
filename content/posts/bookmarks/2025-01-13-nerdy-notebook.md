@@ -9,6 +9,6 @@ taxonomies:
     - CSS
     - JavaScript
 extra:
-  bookmarkOf: https://nerdy.dev/notebook/index.html
+  bookmark-of: https://nerdy.dev/notebook/index.html
 ---
 A collection of Adam Argyle's nifty CSS and JS snippets

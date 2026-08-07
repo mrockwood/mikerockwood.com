@@ -8,7 +8,7 @@ taxonomies:
   tags:
     - JavaScript
 extra:
-  bookmarkOf: https://adactio.com/journal/20442
+  bookmark-of: https://adactio.com/journal/20442
 ---
 Jeremy Keith:
 

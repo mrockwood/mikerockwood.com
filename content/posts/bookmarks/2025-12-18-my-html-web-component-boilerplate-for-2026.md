@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - JavaScript, Web Components
 extra:
-  bookmarkOf: https://gomakethings.com/my-html-web-component-boilerplate-for-2026/
+  bookmark-of: https://gomakethings.com/my-html-web-component-boilerplate-for-2026/
 ---
 Chris Ferdinandi shares his starting point for building web components. I generally agree with his approach.

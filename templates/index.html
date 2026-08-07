@@ -72,14 +72,14 @@
 		<div class="uk-grid-large uk-margin-medium-top uk-grid uk-grid-stack" uk-grid>
 
 		{% for project in projects.pages %}
-			{% if project.extra.featured and project.extra.featuredImg and loop.index0 == 0 %}
+			{% if project.extra.featured and project.extra["featured-image"] and loop.index0 == 0 %}
 
 			{% set project_relative_path_array = project.relative_path | split(pat="/")  %}
-			{% set feature_image = project_relative_path_array[0] ~ "/" ~ project_relative_path_array[1] ~ "/" ~ project.extra.featuredImg %}
+			{% set feature_image = project_relative_path_array[0] ~ "/" ~ project_relative_path_array[1] ~ "/" ~ project.extra["featured-image"] %}
 			{% set image = resize_image(path=feature_image, width=1200, op='fit_width', format='webp', quality=75) %}
 
-			{% if project.extra.externalLink %}
-				{% set link = project.extra.externalLink %}
+			{% if project.extra["external-link"] %}
+				{% set link = project.extra["external-link"] %}
 			{% endif %}
 
 			<div>

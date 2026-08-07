@@ -30,8 +30,8 @@ collections:
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Featured Image", name: "featuredImg", widget: "string", required: false}
-          - {label: "Featured Image Caption", name: "featuredImgCaption", widget: "markdown", required: false}
+          - {label: "Featured Image", name: "featured-image", widget: "string", required: false}
+          - {label: "Featured Image Caption", name: "featured-image-caption", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "bookmarks"
     label: "Bookmarks"
@@ -57,7 +57,7 @@ collections:
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Link", name: "bookmarkOf", widget: "string"}
+          - {label: "Link", name: "bookmark-of", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "jams"
     label: "Jams"
@@ -107,7 +107,7 @@ collections:
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Link", name: "likeOf", widget: "string"}
+          - {label: "Link", name: "like-of", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "notes"
     label: "Notes"
@@ -166,7 +166,7 @@ collections:
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Reply to URL", name: "inReplyTo", widget: "string"}
+          - {label: "Reply to URL", name: "in-reply-to", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "reposts"
     label: "Reposts"
@@ -190,7 +190,7 @@ collections:
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Link", name: "repostOf", widget: "string"}
+          - {label: "Link", name: "repost-of", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "rsvps"
     label: "RSVPs"
@@ -214,7 +214,7 @@ collections:
         name: "extra"
         widget: "object"
         fields:
-          - {label: "Event URL", name: "inReplyTo", widget: "string"}
+          - {label: "Event URL", name: "in-reply-to", widget: "string"}
           - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested']}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "work"
@@ -242,5 +242,5 @@ collections:
         widget: "object"
         fields:
           - {label: "Featured", name: "featured", widget: "boolean", default: false}
-          - {label: "Featured Image", name: "featuredImg", widget: "string"}
+          - {label: "Featured Image", name: "featured-image", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}

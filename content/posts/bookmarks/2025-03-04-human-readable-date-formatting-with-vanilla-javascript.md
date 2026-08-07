@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - JavaScript
 extra:
-  bookmarkOf: https://henry.codes/writing/human-readable-date-formatting-with-vanilla-javascript/
+  bookmark-of: https://henry.codes/writing/human-readable-date-formatting-with-vanilla-javascript/
 ---
 Format dates and times in JavaScript using toLocaleDateString() and toLocaleTimeString() without relying on external libraries like Moment.js.

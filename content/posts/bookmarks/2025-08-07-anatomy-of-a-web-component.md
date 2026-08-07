@@ -8,6 +8,6 @@ taxonomies:
   tags:
     - JavaScript, "Web Components"
 extra:
-  bookmarkOf: https://dbushell.com/2025/08/01/anatomy-of-a-web-component/
+  bookmark-of: https://dbushell.com/2025/08/01/anatomy-of-a-web-component/
 ---
 David Bushell shares some useful web component patterns.

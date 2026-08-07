@@ -9,5 +9,5 @@ taxonomies:
     - Design
 extra:
   featured: false
-  featuredImg: work__turns--homepage.png
+  featured-image: work__turns--homepage.png
 ---

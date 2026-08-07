@@ -7,6 +7,6 @@ taxonomies:
     - Front-End
 extra:
   featured: true
-  featuredImg: work__gloss--thumbnail.jpg
-  externalLink: https://utahhealthcare.github.io/gloss-docs/
+  featured-image: work__gloss--thumbnail.jpg
+  external-link: https://utahhealthcare.github.io/gloss-docs/
 ---

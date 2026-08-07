@@ -9,6 +9,6 @@ taxonomies:
     - funny
     - weird
 extra:
-  bookmarkOf: https://deadspin.com/an-interview-with-a-man-who-eats-leftover-food-from-str-1834424806
+  bookmark-of: https://deadspin.com/an-interview-with-a-man-who-eats-leftover-food-from-str-1834424806
 ---
 This article from a few years ago is exactly what it sounds like. Funny throughout.

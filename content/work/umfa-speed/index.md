@@ -8,5 +8,5 @@ taxonomies:
     - Back-End
 extra:
   featured: false
-  featuredImg: work__umfa--speed.png
+  featured-image: work__umfa--speed.png
 ---

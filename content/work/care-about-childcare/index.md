@@ -8,5 +8,5 @@ taxonomies:
     - Front-End
 extra:
   featured: false
-  featuredImg: work__cac-homepage.png
+  featured-image: work__cac-homepage.png
 ---
