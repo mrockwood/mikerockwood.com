@@ -1,4 +1,4 @@
-{%- macro logo() -%}
+{% macro logo() %}
 <a href="{{ config.base_url }}" class="uk-navbar-item uk-logo">
 	{%- set headshot = resize_image(path="/images/headshot-cutout.jpg", width=192, height=192, format='webp', quality=75) %}
 	<img src="{{ headshot.url }}" alt="" class="uk-border-circle uk-margin-small-right" width="48" height="48" />
@@ -10,4 +10,4 @@
 	</svg> -->
     Mike Rockwood
 </a>
-{%- endmacro logo -%}
+{% endmacro logo %}
