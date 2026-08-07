@@ -13,4 +13,3 @@ extra:
   id: '4001385379'
   thumbnail: /images/covers/a0154029397_10.jpg
 ---
-
