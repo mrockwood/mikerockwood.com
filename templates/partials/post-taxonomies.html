@@ -1,0 +1,14 @@
+{% if page.taxonomies.categories or page.taxonomies.tags %}
+	<div class="uk-position-relative uk-margin-small">
+		{% if page.taxonomies.categories %}
+			{% for category in page.taxonomies.categories %}
+				<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="p-category uk-label" rel="tag">{{ category }}</a>
+			{% endfor %}
+		{% endif %}
+		{% if page.taxonomies.tags %}
+			{% for tag in page.taxonomies.tags %}
+				<a href="{{ get_taxonomy_url(kind='tags', term=tag) | safe }}" class="p-category uk-label" rel="tag">{{ tag }}</a>
+			{% endfor %}
+		{% endif %}
+	</div>
+{% endif %}

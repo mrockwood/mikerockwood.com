@@ -21,22 +21,24 @@
 {% endblock subnav %}
 
 {%- block content %}
-<section class="uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
+<section class="h-feed uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
 	<div class="uk-container">
 
 		{% for article in paginator.pages %}
 
-			<article class="uk-margin-medium">
+			<article class="h-entry uk-margin-medium">
+				{% set item = article %}
+				{% include "partials/archive-properties.html" %}
 
 				<div class="uk-grid uk-grid-large uk-flex-middle">
 
 					<div class="uk-width-1-4@m uk-text-right@m">
-						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+						<time class="dt-published uk-text-meta" datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">{{ article.date | date(format="%d %b %Y") }}</time>
 					</div>
 
 					<div class="uk-width-expand">
-						<h2 class="">
-							<a href="{{ article.permalink }}" class="uk-link-heading">
+						<h2 class="p-name">
+							<a href="{{ article.permalink }}" class="u-url uk-link-heading">
 								{{ article.title }}
 							</a>
 						</h2>

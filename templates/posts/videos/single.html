@@ -3,6 +3,7 @@
 {%- block content %}
 
 <article class="h-entry">
+	{% include "partials/post-properties.html" %}
 
 	<header>
 
@@ -14,7 +15,7 @@
 
 		{%- if page.extra.service == "youtube" -%}
 		<iframe
-			class="embed-youtube"
+			class="u-video embed-youtube"
 			src="https://www.youtube-nocookie.com/embed/{{ page.extra.id }}"
 			style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
 			frameborder="0"

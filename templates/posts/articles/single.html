@@ -5,23 +5,20 @@
 
 {# Article #}
 <article class="h-entry uk-section uk-padding-remove-bottom">
+	{% include "partials/post-properties.html" %}
 
 	<header class="uk-container uk-container-large uk-margin-large uk-text-center">
 
 		<div class="uk-position-relative uk-margin-small">
 
-			{%- if page.taxonomies.categories %}
-				{% for category in page.taxonomies.categories %}
-					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
-				{% endfor %}
-			{% endif %}
+			{% include "partials/post-taxonomies.html" %}
 
 		</div>
 
 		<h1 class="tm-page-title p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">{{ title }}</h1>
 
 		{%- if page.date %}
-		<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+		<time class="uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">
 			{{ page.date | date(format="%d %B, %Y") }}
 		</time>
 		{% endif %}
@@ -43,7 +40,7 @@
 			<figure class="uk-container uk-container-large">
 				<picture>
 					<img
-						class=""
+						class="u-photo"
 						loading="lazy"
 						alt="{%- if not page.extra["featured-image-caption"] %}decorative header image{% endif %}"
 						srcset="{{ featured_image_640.url | safe }} 640w,
@@ -141,32 +138,5 @@
 
 </article>
 
-
-{# Pagination #}
-{#
-{%- if page.lower or page.higher %}
-<nav class="uk-section uk-section-small">
-
-	<div class="uk-container uk-container-large">
-
-		<hr>
-
-		<ul class="uk-pagination">
-
-			{% if page.lower %}
-			<li><a href="{{ page.lower.permalink }}"><span class="uk-margin-xsmall-right" uk-pagination-previous></span> Previous</a></li>
-			{% endif %}
-
-			{% if page.higher %}
-			<li class="uk-margin-auto-left"><a href="{{ page.higher.permalink }}">Next <span class="uk-margin-xsmall-left" uk-pagination-next></a></li>
-			{% endif %}
-
-		</ul>
-
-	</div>
-
-</nav>
-{% endif %}
-#}
 
 {%- endblock main %}

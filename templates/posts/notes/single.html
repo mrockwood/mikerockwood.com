@@ -3,30 +3,17 @@
 {%- block main %}
 
 <article class="h-entry">
+	{% include "partials/post-properties.html" %}
 
 	<header class="uk-section uk-section-small">
 
 		<div class="uk-container uk-container-large uk-text-center">
 
-			{%- if page.taxonomies.categories %}
-			<div class="uk-position-relative uk-margin-small">
-				{%- for category in page.taxonomies.categories %}
-					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
-				{% endfor %}
-			</div>
-			{% endif %}
+			{% include "partials/post-taxonomies.html" %}
 
 			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">
-				Note from <time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date | date(format="%d %B, %Y at %H:%M") }}</time>
+				Note from <time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">{{ page.date | date(format="%d %B, %Y at %H:%M") }}</time>
 			</h1>
-
-			{#
-			{%- if page.date %}
-			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-				{{ page.date | date(format="%d %B, %Y") }}
-			</time>
-			{% endif %}
-			#}
 
 		</div>
 

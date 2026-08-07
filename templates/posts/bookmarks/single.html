@@ -3,23 +3,18 @@
 {%- block main %}
 
 <article class="h-entry">
+	{% include "partials/post-properties.html" %}
 
 	<header class="uk-section uk-section-small">
 
 		<div class="uk-container uk-container-large uk-text-center">
 
-			{%- if page.taxonomies.categories %}
-			<div class="uk-position-relative uk-margin-small">
-				{%- for category in page.taxonomies.categories %}
-					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
-				{% endfor %}
-			</div>
-			{% endif %}
+			{% include "partials/post-taxonomies.html" %}
 
 			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">{{ title }}</h1>
 
 			{%- if page.date %}
-			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+			<time class="uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">
 				{{ page.date | date(format="%d %B, %Y") }}
 			</time>
 			{% endif %}
@@ -28,17 +23,11 @@
 
 	</header>
 
-	<!-- <div class="e-content">
-
-		{{ page.content | safe }}
-
-	</div> -->
-
 	<div class="e-content uk-section-secondary">
 
 		<div class="uk-section uk-container uk-flex uk-flex-column uk-flex-middle">
 
-			<a class="uk-button uk-button-primary uk-button-large" href="{{ page.extra["bookmark-of"] }}">
+			<a class="u-bookmark-of uk-button uk-button-primary uk-button-large" href="{{ page.extra["bookmark-of"] }}">
 				Direct Link
 				<span
 					class="uk-margin-small-left"

@@ -1,0 +1,20 @@
+{# Shared microformats2 properties for every post. #}
+<a class="u-url u-uid" href="{{ page.permalink | safe }}" hidden>{{ page.title }}</a>
+
+<span class="p-author h-card" hidden>
+	<a class="p-name u-url u-uid" href="{{ config.base_url | safe }}">
+		{{ config.extra.author.name }}
+	</a>
+</span>
+
+{% if page.date %}
+<time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}" hidden>
+	{{ page.date | date(format="%d %B, %Y at %H:%M") }}
+</time>
+{% endif %}
+
+{% if page.updated %}
+<time class="dt-updated" datetime="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%:z') }}" hidden>
+	{{ page.updated | date(format="%d %B, %Y at %H:%M") }}
+</time>
+{% endif %}

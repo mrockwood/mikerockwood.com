@@ -28,6 +28,8 @@
 		{%- for jam in paginator.pages %}
 
 			<article class="h-entry">
+				{% set item = jam %}
+				{% include "partials/archive-properties.html" %}
 				<div class="uk-grid uk-flex-middle uk-grid-row-small" uk-grid>
 
 					{% if jam.extra.thumbnail %}

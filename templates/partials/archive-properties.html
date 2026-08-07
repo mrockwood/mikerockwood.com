@@ -1,0 +1,11 @@
+<a class="u-url u-uid" href="{{ item.permalink | safe }}" hidden>{{ item.title }}</a>
+
+<span class="p-author h-card" hidden>
+	<a class="p-name u-url u-uid" href="{{ config.base_url | safe }}">{{ config.extra.author.name }}</a>
+</span>
+
+{% if item.date %}
+<time class="dt-published" datetime="{{ item.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}" hidden>
+	{{ item.date | date(format="%d %B, %Y at %H:%M") }}
+</time>
+{% endif %}

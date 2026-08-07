@@ -3,23 +3,18 @@
 {%- block main %}
 
 <article class="h-entry">
+	{% include "partials/post-properties.html" %}
 
 	<header class="uk-section uk-section-small">
 
 		<div class="uk-container uk-container-large uk-text-center">
 
-			{%- if page.taxonomies.categories %}
-			<div class="uk-position-relative uk-margin-small">
-				{%- for category in page.taxonomies.categories %}
-					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label" rel="tag">{{ category }}</a>
-				{% endfor %}
-			</div>
-			{% endif %}
+			{% include "partials/post-taxonomies.html" %}
 
 			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">♫ {{ title }}</h1>
 
 			{%- if page.date %}
-			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+			<time class="uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">
 				{{ page.date | date(format="%d %B, %Y") }}
 			</time>
 			{% endif %}
@@ -35,7 +30,7 @@
 
 				{%- if page.extra.service == "bandcamp" -%}
 				<iframe
-					class="embed-bandcamp"
+					class="u-audio embed-bandcamp"
 					src="https://bandcamp.com/EmbeddedPlayer/track={{ page.extra.id }}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
 					style="border: 0; width: 100%; height: 120px; max-width: 700px;"
 					seamless
@@ -44,7 +39,7 @@
 				></iframe>
 				{%- elif page.extra.service == "soundcloud" -%}
 				<iframe
-					class="embed-soundcloud"
+					class="u-audio embed-soundcloud"
 					src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.extra.id }}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
 					width="100%"
 					height="166"
@@ -55,7 +50,7 @@
 				></iframe>
 				{%- elif page.extra.service == "youtube" -%}
 				<iframe
-					class="embed-youtube"
+					class="u-video embed-youtube"
 					src="https://www.youtube-nocookie.com/embed/{{ page.extra.id }}"
 					style="height: 50vw; margin: 1rem 0; max-height: 25rem; width: 100%;"
 					frameborder="0"

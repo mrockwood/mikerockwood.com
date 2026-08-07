@@ -34,6 +34,8 @@
 			{% for article in articles.pages %}
 				{% if loop.index == 1 %}
 				<article class="h-entry uk-article">
+					{% set item = article %}
+					{% include "partials/archive-properties.html" %}
 					<a class="" href="{{ article.permalink }}">
 						{%- if article.extra["featured-image"] %}
 							{% set featured_image = resize_image(path=article.extra["featured-image"], width=900, op="fit_width", format="webp", quality=80) %}
@@ -45,7 +47,7 @@
 						{% endif %}
 					</a>
 					<p class="uk-article-meta uk-margin-remove-bottom">
-						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+						<time class="dt-published uk-text-meta" datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">{{ article.date | date(format="%d %b %Y") }}</time>
 					</p>
 					<h3 class="p-name uk-article-title uk-margin-small-top">
 						<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
@@ -68,6 +70,8 @@
 					{% if loop.index > 1 and loop.index < 5 %}
 					<div>
 						<article class="h-entry uk-article uk-flex-middle" uk-grid>
+							{% set item = article %}
+							{% include "partials/archive-properties.html" %}
 							<div class="uk-width-2-5@s">
 								<a class="" href="{{ article.permalink }}">
 									{%- if article.extra["featured-image"] %}
@@ -82,7 +86,7 @@
 							</div>
 							<div class="uk-width-expand">
 								<p class="uk-article-meta uk-margin-remove-bottom">
-									<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+									<time class="dt-published uk-text-meta" datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">{{ article.date | date(format="%d %b %Y") }}</time>
 								</p>
 								<h3 class="p-name uk-margin-small-top">
 									<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
@@ -158,13 +162,15 @@
 			{% if loop.index < 5 %}
 
 			<div class="h-entry">
+				{% set item = bookmark %}
+				{% include "partials/archive-properties.html" %}
 
 				<article class="uk-card uk-card-default uk-card-hover">
 					<a href="{{ bookmark.extra["bookmark-of"] }}" class="u-bookmark-of uk-card-body uk-link-reset">
 						<div class="uk-grid uk-flex-middle">
 							<div class="uk-width-expand">
 								<h3 class="p-name uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
-								<time class="dt-published uk-text-meta" datetime="{{ bookmark.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
+								<time class="dt-published uk-text-meta" datetime="{{ bookmark.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}" hidden>
 									{{ bookmark.date | date(format="%d %b %Y at %H:%M") }}
 								</time>
 								<p class="uk-text-meta uk-margin-xsmall">
@@ -225,8 +231,10 @@
 			{% for jam in jams.pages %}
 				{% if loop.index < 6 %}
 				<li class="h-entry">
+					{% set item = jam %}
+					{% include "partials/archive-properties.html" %}
 					<h3 class="p-name" hidden>{{ jam.title }}</h3>
-					<time class="dt-published uk-text-meta" datetime="{{ jam.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
+					<time class="dt-published uk-text-meta" datetime="{{ jam.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}" hidden>
 						{{ jam.date | date(format="%d %b %Y at %H:%M") }}
 					</time>
 					<div class="e-content">
@@ -299,11 +307,13 @@
 			{% if loop.index < 5 %}
 
 			<div class="h-entry">
+				{% set item = note %}
+				{% include "partials/archive-properties.html" %}
 				<article class="uk-card uk-card-body uk-card-default">
 
 					<p>
 						<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
-							<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+							<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">
 								{{ note.date | date(format="%d %b %Y at %H:%M") }}
 							</time>
 						</a>
