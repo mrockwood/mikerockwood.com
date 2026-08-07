@@ -1,0 +1,53 @@
+name: Update site screenshot
+
+on:
+  schedule:
+    - cron: '0 12 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-publish
+  cancel-in-progress: false
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@2e1d749697dd1612b833dba4a722266286fbefcd # v2.1.2
+        with:
+          chrome-version: stable
+
+      - name: Capture screenshot
+        run: |
+          "${{ steps.chrome.outputs.chrome-path }}" \
+            --headless=new \
+            --disable-gpu \
+            --no-sandbox \
+            --hide-scrollbars \
+            --force-device-scale-factor=1 \
+            --window-size=1280,640 \
+            --virtual-time-budget=5000 \
+            --screenshot="$GITHUB_WORKSPACE/screenshot.png" \
+            https://mikerockwood.com/
+
+      - name: Commit screenshot if changed
+        run: |
+          if git diff --quiet -- screenshot.png; then
+            echo "Screenshot has not changed"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add screenshot.png
+          git commit -m "Update site screenshot"
+          git push origin HEAD:main

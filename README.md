@@ -4,6 +4,8 @@ Personal site, portfolio, blog, and assorted internet debris.
 
 The site is built with [Zola](https://www.getzola.org/), styled with [UIkit](https://getuikit.com/), and published as a static site.
 
+![Screenshot of mikerockwood.com](screenshot.png)
+
 ## Requirements
 
 - [Zola](https://www.getzola.org/), using the version in [`ZOLA_VERSION`](ZOLA_VERSION)
