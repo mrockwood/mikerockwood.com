@@ -1,5 +1,6 @@
 ZOLA ?= zola
-ZOLA_VERSION ?= 0.23.2
+ZOLA_VERSION_FILE ?= ZOLA_VERSION
+ZOLA_VERSION ?= $(strip $(shell cat "$(ZOLA_VERSION_FILE)"))
 
 .PHONY: serve build check doctor
 
