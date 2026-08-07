@@ -38,7 +38,7 @@ Done when a new post can be created from the CMS with required fields and constr
 ### Create a shared post layout
 
 - [ ] Build one shared post shell for title, date, author, content, taxonomies, related links, and footer metadata.
-- [ ] Move only genuinely type-specific markup into small components.
+- [x] Move only genuinely type-specific markup into small components.
 - [ ] Standardize template inheritance so post templates override the same block.
 - [ ] Remove duplicated commented-out layouts once the shared shell works.
 
@@ -56,7 +56,7 @@ Done when adding a post type requires a small configuration change rather than a
 
 - [ ] Create one metadata component for title, description, image, canonical URL, publication date, and content type.
 - [ ] Generate appropriate Open Graph types for articles, profiles, work, and generic pages.
-- [ ] Fix and validate the JSON-LD output.
+- [x] Fix and validate the JSON-LD output.
 - [ ] Add automated checks for canonical URLs, descriptions, and structured data.
 
 Done when every important page has valid title, description, canonical, Open Graph, and structured-data output.
@@ -68,7 +68,7 @@ Done when every important page has valid title, description, canonical, Open Gra
 - [ ] Decide which features are supported: h-card, h-entry, Webmention receiving, Webmention sending, IndieAuth, syndication, and feeds.
 - [ ] Document required microformats properties for every post type.
 - [ ] Identify the canonical author h-card and reuse it consistently.
-- [ ] Add stable `u-url`, `u-uid`, `p-author`, `dt-published`, and `e-content` properties where appropriate.
+- [x] Add stable `u-url`, `u-uid`, `p-author`, `dt-published`, and `e-content` properties where appropriate.
 
 Done when a microformats parser can identify the author, canonical URL, date, content, and relationship target for every published post.
 
