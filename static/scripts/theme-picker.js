@@ -1,141 +1,68 @@
-const SELECTORS = {
-    // picker: '.js-themepicker',
-    // toggleBtn: '.js-themepicker-toggle',
-    themeSelectBtn: '.uk-theme-button',
-    // closeBtn: '.js-themepicker-close',
-    // navToggleBtn: '.js-nav-toggle'
-}
+(() => {
+    const THEME_STORAGE_KEY = 'theme'
+    const DEFAULT_THEME = 'uk-theme-auto'
+    const THEME_BUTTON_SELECTOR = '.uk-theme-button[data-theme]'
+    const ACTIVE_CLASS = 'uk-active'
 
-const CLASSES = {
-    open: 'uk-open',
-    active: 'uk-active'
-}
+    const root = document.documentElement
+    const themeButtons = Array.from(
+        document.querySelectorAll(THEME_BUTTON_SELECTOR)
+    )
+    const availableThemes = new Set(
+        themeButtons.map((button) => button.dataset.theme)
+    )
+    const supportsCustomProperties = window.CSS?.supports(
+        'color',
+        'var(--fake-var)'
+    )
 
-const THEME_STORAGE_KEY = 'theme'
-
-class ThemePicker {
-
-    constructor() {
-        this.isOpen = false
-        this.activeTheme = 'default'
-        this.hasLocalStorage = typeof Storage !== 'undefined'
-        this.hasThemeColorMeta =
-            !!document.querySelector('meta[name="theme-color"]') &&
-            window.metaColors
-
-        // this.picker = document.querySelector(SELECTORS.picker)
-        // this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
-        // this.navToggleBtn = document.querySelector(SELECTORS.navToggleBtn)
-        // this.closeBtn = document.querySelector(SELECTORS.closeBtn)
-        this.themeSelectBtns = Array.from(
-            document.querySelectorAll(SELECTORS.themeSelectBtn)
-        )
-
-        this.init()
+    if (!themeButtons.length || !supportsCustomProperties) {
+        return
     }
 
-    init() {
-        const systemPreference = this.getSystemPreference()
-        const storedPreference = this.getStoredPreference()
-
-        if (storedPreference) {
-            this.activeTheme = storedPreference
-        } else if (systemPreference) {
-            this.activeTheme = systemPreference
-        }
-
-        this.setActiveItem()
-        this.bindEvents()
-    }
-
-    bindEvents() {
-        // this.toggleBtn.addEventListener('click', () => this.togglePicker())
-        // this.closeBtn.addEventListener('click', () => this.togglePicker(false))
-
-        // this.navToggleBtn.addEventListener('click', () => {
-        //     if (this.isOpen) {
-        //         this.togglePicker(false)
-        //     }
-        // })
-
-        this.themeSelectBtns.forEach((btn) => {
-            const id = btn.dataset.theme
-
-            if (id) {
-                btn.addEventListener('click', () => this.setTheme(id))
-            }
-        })
-    }
-
-    getSystemPreference() {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark'
-        }
-        return false
-    }
-
-    getStoredPreference() {
-        if (this.hasLocalStorage) {
+    const getStoredTheme = () => {
+        try {
             return localStorage.getItem(THEME_STORAGE_KEY)
+        } catch {
+            return null
         }
-        return false
     }
 
-    setActiveItem() {
-        this.themeSelectBtns.forEach((btn) => {
-            btn.parentNode.classList.remove(CLASSES.active)
-            btn.removeAttribute('aria-checked')
+    const storeTheme = (theme) => {
+        try {
+            localStorage.setItem(THEME_STORAGE_KEY, theme)
+        } catch {
+            // Theme selection still works when storage is unavailable.
+        }
+    }
 
-            if (btn.dataset.theme === this.activeTheme) {
-                btn.parentNode.classList.add(CLASSES.active)
-                btn.setAttribute('aria-checked', 'true')
-            }
+    const updateSelectedButton = (theme) => {
+        themeButtons.forEach((button) => {
+            const isSelected = button.dataset.theme === theme
+            const item = button.closest('li')
+
+            item?.classList.toggle(ACTIVE_CLASS, isSelected)
+            button.setAttribute('aria-pressed', String(isSelected))
         })
     }
 
-    setTheme(id) {
-        this.activeTheme = id
-        document.documentElement.setAttribute('data-theme', id)
+    const applyTheme = (theme, { persist = true } = {}) => {
+        const nextTheme = availableThemes.has(theme) ? theme : DEFAULT_THEME
 
-        if (this.hasLocalStorage) {
-            localStorage.setItem(THEME_STORAGE_KEY, id)
-        }
-        if (this.hasThemeColorMeta) {
-            const metaColor = window.metaColors[id]
-            const metaTag = document.querySelector('meta[name="theme-color"]')
-            metaTag.setAttribute('content', metaColor)
-        }
+        root.dataset.theme = nextTheme
+        updateSelectedButton(nextTheme)
 
-        this.setActiveItem()
+        if (persist) {
+            storeTheme(nextTheme)
+        }
     }
 
-    // togglePicker(force) {
-    //     this.isOpen = typeof force === 'boolean' ? force : !this.isOpen
+    const storedTheme = getStoredTheme()
+    applyTheme(storedTheme, { persist: false })
 
-    //     this.toggleBtn.setAttribute('aria-expanded', String(this.isOpen))
-
-    //     if (this.isOpen) {
-    //         this.picker.removeAttribute('hidden')
-    //         window.setTimeout(() => {
-    //             this.picker.classList.add(CLASSES.open)
-    //         }, 1)
-    //         this.themeSelectBtns[0].focus()
-    //     } else {
-    //         const transitionHandler = () => {
-    //             this.picker.removeEventListener(
-    //                 'transitionend',
-    //                 transitionHandler
-    //             )
-    //             this.picker.setAttribute('hidden', true)
-    //         }
-    //         this.picker.addEventListener('transitionend', transitionHandler)
-    //         this.picker.classList.remove(CLASSES.open)
-    //         this.toggleBtn.focus()
-    //     }
-    // }
-
-}
-
-if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
-    new ThemePicker()
-}
+    themeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            applyTheme(button.dataset.theme)
+        })
+    })
+})()

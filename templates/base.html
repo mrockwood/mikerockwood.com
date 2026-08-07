@@ -80,8 +80,13 @@
 		document.documentElement.classList.remove('no-js');
 		document.documentElement.classList.add('js');
 		// if there's a theme id in localstorage, use it on the <html>
-		localStorage.getItem('theme') &&
-		document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+		try {
+			const storedTheme = localStorage.getItem('theme')
+			storedTheme &&
+				document.documentElement.setAttribute('data-theme', storedTheme)
+		} catch {
+			// Continue with the automatic theme when storage is unavailable.
+		}
 	</script>
 	{%- endblock head_scripts %}
 
