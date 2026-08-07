@@ -65,7 +65,8 @@ The site also includes IndieWeb features such as microformats, Atom feeds, and W
 - `config.toml` controls site metadata, menus, taxonomies, and author information
 - `templates/base.html` defines the shared page shell
 - `templates/posts/` contains post-type layouts
-- `templates/macros/` contains reusable Tera components
+- `templates/components/` contains reusable Tera components
+- `templates/partials/` contains reusable template fragments
 - `templates/shortcodes/` contains Markdown shortcodes
 - `sass/style.scss` is the main stylesheet entry point
 - `.github/workflows/` contains build, deployment, and Webmention automation
