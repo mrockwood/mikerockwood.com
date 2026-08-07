@@ -7,15 +7,35 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
-    name: Publish site
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout main
-      uses: actions/checkout@v4
-    - name: Build and deploy
-      uses: shalzz/zola-deploy-action@master
-      env:
-        PAGES_BRANCH: gh-pages
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Zola site
+        uses: getzola/github-pages@066755243e69f508fd1a74739fbf1a65f656c790
+        with:
+          zola_version: v0.23.2
+          check_links: false
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
