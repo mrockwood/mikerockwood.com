@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
   schedule:
     - cron: '0 0 * * *'
 
@@ -18,6 +19,7 @@ concurrency:
 
 jobs:
   build:
+    name: Build Zola site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,6 +32,7 @@ jobs:
           check_links: false
 
   deploy:
+    if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
     needs: build
     runs-on: ubuntu-latest
     environment:

@@ -10,7 +10,7 @@ jobs:
   send_webmentions:
     name: Send Webmentions with Delay
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' }}
     steps:
       - name: Wait for Delay
         run: sleep 60  # Waits for 1 minute (60 seconds) before running the next steps
