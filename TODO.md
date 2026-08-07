@@ -135,8 +135,10 @@ Done when template regressions fail CI before deployment and core journeys are t
 
 ### Remove transitional code
 
-- [ ] Remove stale Nunjucks references, commented-out includes, unused components, and duplicate layouts.
-- [ ] Remove orphaned templates and dead configuration fields.
+- [x] Remove stale Nunjucks references.
+- [ ] Remove commented-out includes, unused components, and duplicate layouts.
+- [x] Remove orphaned templates.
+- [ ] Remove dead configuration fields.
 - [ ] Remove `.DS_Store` and other accidental repository artifacts.
 - [ ] Record current architectural decisions in project documentation rather than abandoned template comments.
 
