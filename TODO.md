@@ -6,19 +6,19 @@ This roadmap is ordered by architectural impact. Each task has a completion crit
 
 ### Pin the build toolchain
 
-- [ ] Pin the Zola version locally and in CI.
-- [ ] Replace the deployment action's `@master` reference with a pinned release or commit.
+- [x] Pin the Zola version locally and in CI.
+- [x] Replace the deployment action's `@master` reference with a pinned release or commit.
 - [x] Make every Makefile target use the same configurable Zola command.
-- [ ] Document the supported local setup and build commands.
+- [x] Document the supported local setup and build commands.
 
-Progress: the Makefile now enforces the local Zola version and supports overriding the executable. CI still needs to be pinned separately.
+Progress: local and CI builds now target Zola `0.23.2`. The CI build action is pinned to a specific commit.
 
 Done when a clean checkout builds on a new machine and local and CI builds use the same Zola version.
 
 ### Make deployment safe and deterministic
 
-- [ ] Remove or redesign `make push` so it cannot automatically commit and push arbitrary changes.
-- [ ] Make deployment fail clearly when the build fails.
+- [x] Remove or redesign `make push` so it cannot automatically commit and push arbitrary changes.
+- [x] Make deployment fail clearly when the build fails.
 - [ ] Pin third-party GitHub Actions.
 - [ ] Prevent automated Webmention updates from racing with content deployments.
 
