@@ -3,7 +3,7 @@
         <span class="post-date">
 
             {%- if section.extra["date"] -%}
-                {{ section.extra["date"] | date(format="%Y.%m.%d") }}
+				{{ section.extra["date"] | date(format="%Y.%m.%d", timezone=config.extra.timezone) }}
                 {# end of section.date if-check #}
             {%- endif -%}
         </span>
@@ -20,12 +20,12 @@
     <div class="post-meta">
         <span class="post-date">
             {%- if page.date -%}
-                {{ page.date | date(format="%Y.%m.%d") }}
+				{{ page.date | date(format="%Y.%m.%d", timezone=config.extra.timezone) }}
                 {# end of page.date if-check #}
             {%- endif -%}
 
             {%- if page.updated -%}
-                [Updated: {{ page.updated | date(format="%Y.%m.%d") }}]
+				[Updated: {{ page.updated | date(format="%Y.%m.%d", timezone=config.extra.timezone) }}]
                 {# end of page.updated if-check #}
             {%- endif -%}
         </span>

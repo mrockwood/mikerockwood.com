@@ -38,7 +38,7 @@
         <email>{{ config.extra.author.email }}</email>
     </author>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>{{ last_updated | default(value=now()) | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
+    <updated>{{ last_updated | default(value=now()) | date(format="%Y-%m-%dT%H:%M:%S%:z", timezone=config.extra.timezone) }}</updated>
 
 	{%- for p in pages %}
 
@@ -56,11 +56,11 @@
 			{%- if p.title -%}
 				{{ p.title }}
 			{%- else -%}
-				{%- if category -%}{{ category }}{% else %}Post{%- endif %} from {{ p.date | date(format="%Y-%m-%d at %H:%M") }}
+				{%- if category -%}{{ category }}{% else %}Post{%- endif %} from {{ p.date | date(format="%Y-%m-%d at %H:%M", timezone=config.extra.timezone) }}
 			{%- endif -%}
 		</title>
-        <published>{{ p.date | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</published>
-        <updated>{{ p.updated | default(value=p.date, boolean=true) | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
+        <published>{{ p.date | date(format="%Y-%m-%dT%H:%M:%S%:z", timezone=config.extra.timezone) }}</published>
+        <updated>{{ p.updated | default(value=p.date, boolean=true) | date(format="%Y-%m-%dT%H:%M:%S%:z", timezone=config.extra.timezone) }}</updated>
 
 		{#- Grab the first, and usually only, category #}
 		{%- if p.taxonomies.categories %}

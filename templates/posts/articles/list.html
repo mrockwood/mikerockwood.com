@@ -31,7 +31,7 @@
 				<div class="uk-grid uk-grid-large uk-flex-middle">
 
 					<div class="uk-width-1-4@m uk-text-right@m">
-						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+						<time datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y", timezone=config.extra.timezone) }}</time>
 					</div>
 
 					<div class="uk-width-expand">

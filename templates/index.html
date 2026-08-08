@@ -131,7 +131,7 @@
 </section>
 
 
-{%- set currentYear = now() | date(format="%Y") | int() %}
+{%- set currentYear = now() | date(format="%Y", timezone=config.extra.timezone) | int() %}
 
 <section class="uk-overflow-hidden uk-section uk-section-large">
 	<div class="uk-container uk-container-large">
@@ -197,8 +197,8 @@
 						{% endif %}
 
 						<a class="uk-link-muted uk-text-small" href="{{ page.permalink }}">
-							<time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-								{{ page.date | date(format="%d %b %Y") }}
+							<time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}">
+								{{ page.date | date(format="%d %b %Y", timezone=config.extra.timezone) }}
 							</time>
 						</a>
 					</div>

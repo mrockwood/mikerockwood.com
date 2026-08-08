@@ -45,7 +45,7 @@
 						{% endif %}
 					</a>
 					<p class="uk-article-meta uk-margin-remove-bottom">
-						<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+						<time datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y", timezone=config.extra.timezone) }}</time>
 					</p>
 					<h3 class="p-name uk-article-title uk-margin-small-top">
 						<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
@@ -82,7 +82,7 @@
 							</div>
 							<div class="uk-width-expand">
 								<p class="uk-article-meta uk-margin-remove-bottom">
-									<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+									<time datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y", timezone=config.extra.timezone) }}</time>
 								</p>
 								<h3 class="p-name uk-margin-small-top">
 									<a class="u-url uk-link-reset" href="{{ article.permalink }}">{{ article.title }}</a>
@@ -109,7 +109,7 @@
 				<article class="uk-panel">
 					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-flex-middle" uk-grid>
 						<div class="uk-width-1-4@m">
-							<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
+							<time datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y", timezone=config.extra.timezone) }}</time>
 						</div>
 						<div>
 							<h3 class="p-name uk-h2 uk-margin-remove">
@@ -164,8 +164,8 @@
 						<div class="uk-grid uk-flex-middle">
 							<div class="uk-width-expand">
 								<h3 class="p-name uk-card-title uk-margin-xsmall">{{ bookmark.title }}</h3>
-								<time class="dt-published uk-text-meta" datetime="{{ bookmark.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
-									{{ bookmark.date | date(format="%d %b %Y at %H:%M") }}
+								<time class="dt-published uk-text-meta" datetime="{{ bookmark.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}" hidden>
+									{{ bookmark.date | date(format="%d %b %Y at %H:%M", timezone=config.extra.timezone) }}
 								</time>
 								<p class="uk-text-meta uk-margin-xsmall">
 									{{ bookmark.extra["bookmark-of"] }}
@@ -226,8 +226,8 @@
 				{% if loop.index < 6 %}
 				<li class="h-entry">
 					<h3 class="p-name" hidden>{{ jam.title }}</h3>
-					<time class="dt-published uk-text-meta" datetime="{{ jam.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>
-						{{ jam.date | date(format="%d %b %Y at %H:%M") }}
+					<time class="dt-published uk-text-meta" datetime="{{ jam.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}" hidden>
+						{{ jam.date | date(format="%d %b %Y at %H:%M", timezone=config.extra.timezone) }}
 					</time>
 					<div class="e-content">
 					{%- if jam.extra.service == "bandcamp" -%}
@@ -303,8 +303,8 @@
 
 					<p>
 						<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
-							<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-								{{ note.date | date(format="%d %b %Y at %H:%M") }}
+							<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}">
+								{{ note.date | date(format="%d %b %Y at %H:%M", timezone=config.extra.timezone) }}
 							</time>
 						</a>
 					</p>
@@ -336,7 +336,7 @@
 		{% for post in subsection_item.pages %}
 		<article class="uk-article">
 			<h3 class="uk-article-title"><a href="{{ post.path }}">{{ post.title }}</a></h3>
-			<p class="uk-article-meta">{{ post.date }}</p>
+			<p class="uk-article-meta">{{ post.date | date(format="%d %b %Y", timezone=config.extra.timezone) }}</p>
 		</article>
 		{% endfor %}
 	</div>

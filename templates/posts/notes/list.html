@@ -30,8 +30,8 @@
 
 			<p>
 				<a class="uk-link-muted uk-text-small" href="{{ note.permalink }}">
-					<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-						{{ note.date | date(format="%d %b %Y at %H:%M") }}
+					<time class="dt-published" datetime="{{ note.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}">
+						{{ note.date | date(format="%d %b %Y at %H:%M", timezone=config.extra.timezone) }}
 					</time>
 				</a>
 			</p>

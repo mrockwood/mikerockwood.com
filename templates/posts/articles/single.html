@@ -21,8 +21,8 @@
 		<h1 class="tm-page-title p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">{{ title }}</h1>
 
 		{%- if page.date %}
-		<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-			{{ page.date | date(format="%d %B, %Y") }}
+		<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}">
+			{{ page.date | date(format="%d %B, %Y", timezone=config.extra.timezone) }}
 		</time>
 		{% endif %}
 

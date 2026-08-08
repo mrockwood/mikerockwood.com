@@ -54,7 +54,7 @@
 			</article>
 
 			<!-- <p class="uk-text-meta">
-				{{ bookmark.date | date(format="%d %b %Y") }}
+				{{ bookmark.date | date(format="%d %b %Y", timezone=config.extra.timezone) }}
 			</p> -->
 
 		{% endfor %}

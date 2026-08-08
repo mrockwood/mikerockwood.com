@@ -17,13 +17,13 @@
 			{% endif %}
 
 			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">
-				Note from <time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date | date(format="%d %B, %Y at %H:%M") }}</time>
+				Note from <time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}">{{ page.date | date(format="%d %B, %Y at %H:%M", timezone=config.extra.timezone) }}</time>
 			</h1>
 
 			{#
 			{%- if page.date %}
-			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
-				{{ page.date | date(format="%d %B, %Y") }}
+			<time class="dt-published uk-text-meta uk-margin-medium-top" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z', timezone=config.extra.timezone) }}">
+				{{ page.date | date(format="%d %B, %Y", timezone=config.extra.timezone) }}
 			</time>
 			{% endif %}
 			#}
