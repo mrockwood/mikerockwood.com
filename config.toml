@@ -37,7 +37,7 @@ external_links_no_referrer = false # rel="noreferrer"
 
 # Set date format in blog publish metadata
 timeformat = "%Y-%m-%d %H:%M:%S" # e.g. 2021-05-01 09:19:42
-timezone = "America/Denver"
+timezone = "UTC"
 
 menu = [
     {url = "/", name = "Home", slash = true},
