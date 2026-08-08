@@ -23,7 +23,7 @@
       {%- for term in terms %}
       <h2 id="{{ term.name }}"><a href="{{ term.permalink | safe }}">{{ term.name }}</a></h2>
       {%- for page in term.pages %}
-      <p><a href="{{ page.permalink | safe }}">{{ page.title }}</a> - <time datetime="{{ page.date | date(format="%Y-%m-%dT%H:%M:%S%:z", timezone=config.extra.timezone) }}">{{ page.date | date(format="%F", timezone=config.extra.timezone) }}</time></p>
+      <p><a href="{{ page.permalink | safe }}">{{ page.title }}</a> - <time datetime="{{ page.date | date(format=config.extra.timeformat | default(value="%Y-%m-%d %H:%M:%S"), timezone=config.extra.timezone) }}">{{ page.date | date(format="%F", timezone=config.extra.timezone) }}</time></p>
       {%- endfor %}
       {%- endfor %}
     </div>
