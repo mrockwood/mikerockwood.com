@@ -21,3 +21,5 @@ build: doctor
 
 check: doctor
 	$(ZOLA) check
+	$(ZOLA) build
+	sh scripts/check-site.sh

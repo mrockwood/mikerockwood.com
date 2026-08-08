@@ -101,36 +101,6 @@
 
 		</div>
 
-		{#
-
-		<uk class="uk-list uk-list-xlarge uk-list-divider">
-
-		{% for article in articles.pages %}
-			{% if loop.index < 6 %}
-
-			<li class="h-entry">
-				<!-- {% if loop.index > 1 %}<hr class="uk-margin-medium" />{% endif %} -->
-				<article class="uk-panel">
-					<div class="uk-child-width-expand uk-grid-column-large uk-grid-collapse uk-flex-middle" uk-grid>
-						<div class="uk-width-1-4@m">
-							<time datetime="{{ article.date | date(format='%Y-%m-%d %H:%M:%S') }}" class="uk-text-meta">{{ article.date | date(format="%d %b %Y") }}</time>
-						</div>
-						<div>
-							<h3 class="p-name uk-h2 uk-margin-remove">
-								<a href="{{ article.permalink }}" class="u-url uk-link-reset">{{ article.title }}</a>
-							</h3>
-						</div>
-					</div>
-				</article>
-			</li>
-
-			{% endif %}
-		{% endfor %}
-
-		</ul>
-
-		#}
-
 	</div>
 </section>
 {% endif %}
@@ -140,19 +110,6 @@
 {% if bookmarks.pages %}
 <section class="h-feed uk-section">
 	<div class="uk-container uk-container-large">
-
-		<!-- <div class="uk-grid uk-grid-small uk-flex-middle uk-margin-medium-bottom" uk-grid>
-			<div class="uk-width-expand@s">
-				<h2 class="uk-h1 uk-text-uppercase uk-text-semibold uk-text-tracking-2xsmall uk-heading-line">
-					<span>
-						Bookmarks
-					</span>
-				</h2>
-			</div>
-			<div class="uk-width-auto">
-				<a href="{{ get_url(path='@/posts/bookmarks/_index.md') }}">More Bookmarks</a>
-			</div>
-		</div> -->
 
 		<h2 class="uk-heading-small uk-margin-medium-bottom">Bookmarks</h2>
 
@@ -189,7 +146,6 @@
 								</span>
 							</div>
 						</div>
-						{# bookmark.content | safe #}
 					</a>
 				</article>
 
@@ -276,13 +232,6 @@
 						{%- endif -%}
 					</div>
 
-					{#
-					{% if jam.extra.thumbnail %}
-						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
-					{% else %}
-						{{ jam.title }}
-					{% endif %}
-					#}
 				</li>
 				{% endif %}
 			{% endfor %}
@@ -334,24 +283,5 @@
 	</div>
 </section>
 {% endif %}
-
-
-{#
-{% for subsection in section.subsections | sort %}
-<section class="uk-section">
-	<div class="uk-container">
-		{% set subsection_item = get_section(path=subsection) %}
-		<h2>{{ subsection_item.title  }}</h2>
-
-		{% for post in subsection_item.pages %}
-		<article class="uk-article">
-			<h3 class="uk-article-title"><a href="{{ post.path }}">{{ post.title }}</a></h3>
-			<p class="uk-article-meta">{{ post.date }}</p>
-		</article>
-		{% endfor %}
-	</div>
-</section>
-{% endfor %}
-#}
 
 {%- endblock content %}

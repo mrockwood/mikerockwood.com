@@ -1,10 +1,8 @@
-{% extends "base.html" %}
+{% extends "posts/single.html" %}
 
-{%- block main %}
+{% block post_masthead %}{% endblock post_masthead %}
 
-<article class="h-entry">
-	{% include "partials/post-properties.html" %}
-
+{%- block entry_header %}
 	<header class="uk-section uk-section-small">
 
 		<div class="uk-container uk-container-large uk-text-center">
@@ -22,7 +20,9 @@
 		</div>
 
 	</header>
+{%- endblock entry_header %}
 
+	{% block entry_content %}
 	<div class="e-content uk-section-secondary">
 
 		<div class="uk-section uk-container uk-flex uk-flex-column uk-flex-middle">
@@ -54,6 +54,4 @@
 
 	</div>
 
-</article>
-
-{%- endblock main %}
+{%- endblock entry_content %}

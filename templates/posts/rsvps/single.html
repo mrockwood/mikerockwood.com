@@ -1,17 +1,21 @@
-{% extends "base.html" %}
+{% extends "posts/single.html" %}
 
-{%- block content %}
+{%- block entry_header %}
+	<header class="uk-section uk-section-small">
+		<div class="uk-container uk-container-large uk-text-center">
+			<h1 class="p-name uk-heading-small uk-text-bold uk-text-uppercase uk-margin-remove">{{ page.title }}</h1>
+			{% if page.extra.rsvp %}<data class="p-rsvp uk-label" value="{{ page.extra.rsvp }}">{{ page.extra.rsvp | capitalize }}</data>{% endif %}
+			{% if page.extra["in-reply-to"] %}
+			<p><a class="u-in-reply-to" href="{{ page.extra["in-reply-to"] }}">Event details</a></p>
+			{% endif %}
+		</div>
+	</header>
+{%- endblock entry_header %}
 
-<article class="h-entry">
-	{% include "partials/post-properties.html" %}
-
-	<div class="p-name e-content">
+{%- block entry_content %}
+	<div class="e-content uk-section uk-section-secondary">
 
 		{{ page.content | safe }}
 
 	</div>
-
-</article>
-
-
-{%- endblock content %}
+{%- endblock entry_content %}

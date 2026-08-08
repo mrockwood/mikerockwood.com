@@ -1,0 +1,34 @@
+{% set og_type = "website" %}
+{% if page is defined and page %}{% set og_type = "article" %}{% endif %}
+{% if current_path and current_path == "/about/" %}{% set og_type = "profile" %}{% endif %}
+{% set schema_type = "WebSite" %}
+{% if og_type == "article" %}{% set schema_type = "Article" %}{% endif %}
+{% set canonical_url = current_url | default(value=config.base_url) %}
+
+<meta property="og:type" content="{{ og_type }}"/>
+<meta property="og:title" content="{{ title | default(value=config.title) }}" />
+<meta property="og:description" content="{{ description | default(value=config.description) }}"/>
+<meta property="og:url" content="{{ canonical_url | safe }}"/>
+<link rel="canonical" href="{{ canonical_url | safe }}" />
+{% if page is defined and page.date %}<meta property="article:published_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}" />{% endif %}
+{% if image %}
+	<meta property="og:image" content="{{ get_url(path=image) }}"/>
+{% else %}
+	<meta property="og:image" content="{{ get_url(path=config.extra.author.avatar) }}"/>
+{% endif %}
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "{{ schema_type }}",
+	"name": {{ title | default(value=config.title) | json_encode() | safe }},
+	"description": {{ description | default(value=config.description) | json_encode() | safe }},
+	"author": {
+		"@type": "Person",
+		"name": {{ config.extra.author.name | json_encode() | safe }},
+		"url": {{ config.base_url | json_encode() | safe }}
+	},
+	"url": {{ canonical_url | json_encode() | safe }},
+	"image": {{ get_url(path=config.extra.author.avatar) | json_encode() | safe }}
+}
+</script>

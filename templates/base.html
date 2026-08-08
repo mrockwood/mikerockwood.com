@@ -110,12 +110,6 @@
 	<link rel="alternate" title="Posts by {{ config.extra.author.name }}" href="{{ get_url(path="atom.xml", trailing_slash=false) }}" type="application/atom+xml" />
 	{%- endblock head_feeds %}
 
-	{#- Indie Auth -#}
-	{% block head_auth %}
-	{#- <link rel="authorization_endpoint" href="https://indieauth.com/auth"> #}
-	{#- <link rel="token_endpoint" href="https://tokens.indieauth.com/token"> #}
-	{%- endblock head_auth %}
-
 	{#- Webmentions -#}
 	{% block head_webmentions %}
 	<link rel="preconnect" href="https://webmention.io">
@@ -131,43 +125,11 @@
 
 	{#- Canonical -#}
 	{% block head_canonical %}
-	{% if current_url %}<link rel="canonical" href="{{ current_url | safe }}" />{% endif %}
 	{%- endblock head_canonical %}
 
 	{#- SEO -#}
 	{% block head_seo %}
-	{% set og_type = "website" %}
-	{% if page %}{% set og_type = "article" %}{% endif %}
-	<meta property="og:type" content="{{ og_type }}"/>
-	<meta property="og:title" content="{{ title | default(value=config.title) }}" />
-	<meta property="og:description" content="{{ description | default(value=config.description) }}"/>
-	{% if current_url %}<meta property="og:url" content="{{ current_url | safe }}"/>{%- endif %}
-	{% if image -%}
-		<meta property="og:image" content="{{ get_url(path=image) }}"/>
-	{%- else -%}
-		<meta property="og:image" content="{{ get_url(path=config.extra.author.avatar) }}"/>
-	{%- endif %}
-
-	{#- JSON LD #}
-	<script type="application/ld+json">
-		{
-			"@context":"https://schema.org",
-			"@type":"WebSite",
-			"name":{{ config.title | json_encode() | safe }},
-			"description":{{ config.description | json_encode() | safe }},
-			"author": {
-				"@type":"Person",
-				"name":{{ config.extra.author.name | json_encode() | safe }}
-			},
-			"url":{{ config.base_url | json_encode() | safe }},
-			"image":{{ get_url(path=config.extra.author.avatar) | json_encode() | safe }},
-			"headline":{{ config.title | json_encode() | safe }},
-			"sameAs":[
-				{{ ("https://" ~ config.extra.social.mastodon) | json_encode() | safe }},
-				{{ ("https://www.github.com/" ~ config.extra.social.github) | json_encode() | safe }}
-			]
-		}
-	</script>
+	{% include "partials/page-meta.html" %}
 	{%- endblock head_seo %}
 
 </head>

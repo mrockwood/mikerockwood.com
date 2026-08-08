@@ -1,9 +1,6 @@
-{% extends "base.html" %}
+{% extends "posts/single.html" %}
 
-{%- block content %}
-
-<article class="h-entry">
-	{% include "partials/post-properties.html" %}
+{%- block entry_content %}
 
 	<div class="p-name e-content">
 
@@ -13,7 +10,4 @@
 
 	</div>
 
-</article>
-
-
-{%- endblock content %}
+{%- endblock entry_content %}

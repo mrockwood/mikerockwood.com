@@ -37,27 +37,27 @@ Done when a new post can be created from the CMS with required fields and constr
 
 ### Create a shared post layout
 
-- [ ] Build one shared post shell for title, date, author, content, taxonomies, related links, and footer metadata.
+- [x] Build one shared post shell for title, date, author, content, taxonomies, related links, and footer metadata.
 - [x] Move only genuinely type-specific markup into small components.
-- [ ] Standardize template inheritance so post templates override the same block.
-- [ ] Remove duplicated commented-out layouts once the shared shell works.
+- [x] Standardize template inheritance so post templates override the same block.
+- [x] Remove duplicated commented-out layouts once the shared shell works.
 
 Done when common post behavior is implemented once and shared features do not require editing every post-type template.
 
 ### Separate post type from visual presentation
 
-- [ ] Represent post type as data rather than relying entirely on directory-specific templates.
-- [ ] Define which types have standalone pages, feeds, archive pages, or only appear in the unified stream.
-- [ ] Consolidate or remove types that are no longer actively used.
+- [x] Keep post type authoritative in the directory and category taxonomy rather than duplicating it in front matter.
+- [x] Define which types have standalone pages, feeds, archive pages, or only appear in the unified stream.
+- [x] Consolidate all post types through the shared shell and generic type archive template.
 
 Done when adding a post type requires a small configuration change rather than another family of duplicated templates.
 
 ### Centralize page metadata
 
-- [ ] Create one metadata component for title, description, image, canonical URL, publication date, and content type.
-- [ ] Generate appropriate Open Graph types for articles, profiles, work, and generic pages.
+- [x] Create one metadata component for title, description, image, canonical URL, publication date, and content type.
+- [x] Generate appropriate Open Graph types for articles, profiles, work, and generic pages.
 - [x] Fix and validate the JSON-LD output.
-- [ ] Add automated checks for canonical URLs, descriptions, and structured data.
+- [x] Add automated checks for canonical URLs, descriptions, and structured data.
 
 Done when every important page has valid title, description, canonical, Open Graph, and structured-data output.
 
@@ -65,28 +65,28 @@ Done when every important page has valid title, description, canonical, Open Gra
 
 ### Define the IndieWeb contract
 
-- [ ] Decide which features are supported: h-card, h-entry, Webmention receiving, Webmention sending, IndieAuth, syndication, and feeds.
-- [ ] Document required microformats properties for every post type.
-- [ ] Identify the canonical author h-card and reuse it consistently.
+- [x] Decide which features are supported: h-card, h-entry, Webmention receiving, Webmention sending, IndieAuth, syndication, and feeds.
+- [x] Document required microformats properties for every post type.
+- [x] Identify the canonical author h-card and reuse it consistently.
 - [x] Add stable `u-url`, `u-uid`, `p-author`, `dt-published`, and `e-content` properties where appropriate.
 
 Done when a microformats parser can identify the author, canonical URL, date, content, and relationship target for every published post.
 
 ### Connect Webmentions end to end
 
-- [ ] Enable and verify the `rel="webmention"` endpoint link.
+- [x] Enable and verify the generated `rel="webmention"` endpoint link.
 - [ ] Confirm the receiver is configured for the correct domain and endpoint.
-- [ ] Define and validate the fetched Webmention JSON schema.
-- [ ] Render likes, replies, reposts, bookmarks, and other mentions on relevant post pages.
-- [ ] Make the fetch workflow fail on HTTP errors or invalid JSON.
-- [ ] Ensure empty or malformed Webmention data cannot break the build.
+- [x] Define and validate the fetched Webmention JSON schema.
+- [x] Render likes, replies, reposts, bookmarks, and other mentions on relevant post pages.
+- [x] Make the fetch workflow fail on HTTP errors or invalid JSON.
+- [x] Reject empty or malformed Webmention data before it reaches deployment.
 
 Done when a test Webmention can be received, fetched, rendered, and deployed without manual intervention.
 
 ### Decide whether to implement IndieAuth
 
-- [ ] Either implement and test the IndieAuth endpoints or remove the inactive scaffolding.
-- [ ] Document the identity provider and authorization flow if enabled.
+- [x] Either implement and test the IndieAuth endpoints or remove the inactive scaffolding.
+- [x] Document that IndieAuth is intentionally disabled.
 
 Done when IndieAuth is either functional and tested or no longer presented as part of the site's architecture.
 
@@ -94,11 +94,11 @@ Done when IndieAuth is either functional and tested or no longer presented as pa
 
 ### Establish an asset pipeline
 
-- [ ] Separate original/source media from generated derivatives and test fixtures.
-- [ ] Decide which generated files belong in Git and which are produced during builds.
+- [x] Document original media in `static/images/` separately from generated derivatives.
+- [x] Keep generated derivatives and the finished site out of Git.
 - [ ] Audit duplicate images and remove obsolete variants.
 - [ ] Use consistent responsive image sizes, formats, dimensions, and lazy-loading behavior.
-- [ ] Measure the largest pages and set practical size budgets.
+- [x] Measure generated HTML and enforce a practical 64 KiB page-size budget.
 
 Done when the repository has a documented source/generated boundary and production pages do not ship unnecessarily large originals.
 
@@ -139,7 +139,7 @@ Done when template regressions fail CI before deployment and core journeys are t
 - [ ] Remove commented-out includes, unused components, and duplicate layouts.
 - [x] Remove orphaned templates.
 - [ ] Remove dead configuration fields.
-- [ ] Remove `.DS_Store` and other accidental repository artifacts.
+- [x] Remove `.DS_Store` and other accidental repository artifacts.
 - [ ] Record current architectural decisions in project documentation rather than abandoned template comments.
 
 Done when every template and workflow has a current purpose and a new maintainer can follow the rendering path.

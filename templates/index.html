@@ -187,26 +187,27 @@
 		<ul class="uk-child-width-1-2@s uk-child-width-1-3@l uk-margin-medium" uk-grid>
 		{%- for page in paginator.pages %}
 			<li>
-				<article class="uk-card uk-card-body uk-card-default">
+				<article class="h-entry uk-card uk-card-body uk-card-default">
+					{% include "partials/post-properties.html" %}
 
 					<div class="uk-position-relative uk-margin-small uk-margin-remove-adjacent">
 						{%- if page.taxonomies.categories %}
 							{%- for category in page.taxonomies.categories %}
-								<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="uk-label uk-margin-small-right" rel="tag">{{ category }}</a>
+								<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="p-category uk-label uk-margin-small-right" rel="tag">{{ category }}</a>
 							{% endfor %}
 						{% endif %}
 
 						<a class="uk-link-muted uk-text-small" href="{{ page.permalink }}">
-							<time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">
+							<time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">
 								{{ page.date | date(format="%d %b %Y") }}
 							</time>
 						</a>
 					</div>
 
 					{% if page.title %}
-						<h3 class="uk-h4 uk-link-heading uk-position-relative"><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+						<h3 class="p-name uk-h4 uk-link-heading uk-position-relative"><a class="u-url" href="{{ page.permalink }}">{{ page.title }}</a></h3>
 					{% else %}
-						{{ page.content | safe }}
+						<div class="e-content">{{ page.content | safe }}</div>
 					{% endif %}
 
 				</article>

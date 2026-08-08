@@ -1,0 +1,27 @@
+{% set webmentions = load_data(path="static/webmention/webmentions.json", format="json") %}
+
+{% if webmentions.links %}
+<section class="webmentions uk-section uk-section-small" aria-label="Webmentions">
+	<div class="uk-container uk-container-xsmall">
+		<h2 class="uk-h3">Responses</h2>
+		<ul class="uk-list uk-list-divider">
+		{% for mention in webmentions.links %}
+			{% if mention.source and mention.target and mention.target == page.permalink %}
+			<li class="h-cite">
+				<a class="u-url" href="{{ mention.source | safe }}">
+					{% if mention.data and mention.data.author and mention.data.author.name %}
+						{{ mention.data.author.name }}
+					{% else %}
+						A response
+					{% endif %}
+				</a>
+				{% if mention.data and mention.data.content and mention.data.content.text %}
+				<p class="p-content uk-margin-small-top">{{ mention.data.content.text }}</p>
+				{% endif %}
+			</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
+</section>
+{% endif %}

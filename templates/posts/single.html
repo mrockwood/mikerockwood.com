@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% block post_masthead %}
+<header class="uk-section uk-text-center">
+	<div class="uk-container uk-container-large">
+		{% if title %}
+		<h1 class="tm-page-title uk-heading-large uk-text-bold uk-text-uppercase uk-margin-remove-top uk-margin-small-bottom">{{ title }}</h1>
+		{% endif %}
+		{% if description %}<p class="uk-width-large uk-margin-auto uk-margin-small-top">{{ description }}</p>{% endif %}
+	</div>
+</header>
+{% endblock post_masthead %}
+
+<article class="h-entry {% block entry_class %}{% endblock entry_class %}">
+	{% include "partials/post-properties.html" %}
+
+	{% block entry_header %}{% endblock entry_header %}
+	{% block entry_content %}{% endblock entry_content %}
+
+	{% include "partials/post-footer.html" %}
+</article>
+{% endblock main %}

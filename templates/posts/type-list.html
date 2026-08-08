@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	<p class="uk-margin-remove">
+		<a href="{{ get_url(path='@/posts/_index.md') }}" class="uk-inline">
+			<span uk-icon="icon: arrow-left;" class="uk-margin-xsmall-right"></span>
+			All Posts
+		</a>
+	</p>
+	{{- super() -}}
+{% endblock page_title %}
+
+{% block subnav %}
+	{% if section.generate_feeds %}
+	<a href="{{ current_url }}atom.xml" class="uk-button uk-button-small uk-button-default uk-flex-inline uk-flex-middle">
+		<span>Subscribe</span>
+		<span uk-icon="icon: rss; ratio: 0.75" class="uk-margin-xsmall-left uk-icon"></span>
+	</a>
+	{% endif %}
+{% endblock subnav %}
+
+{% block content %}
+<section class="h-feed uk-section" style="padding-block-end: var(--section-large-padding-vertical);">
+	<div class="uk-container uk-container-small">
+		{% for post in paginator.pages %}
+		<article class="h-entry uk-card uk-card-default uk-card-body uk-margin-medium">
+			{% set item = post %}
+			{% include "partials/archive-properties.html" %}
+
+			{% if post.taxonomies.categories or post.taxonomies.tags %}
+			<div class="uk-margin-small-bottom">
+				{% if post.taxonomies.categories %}
+					{% for category in post.taxonomies.categories %}
+					<a href="{{ get_url(path='@/posts/'~category~'/_index.md') | safe }}" class="p-category uk-label" rel="tag">{{ category }}</a>
+					{% endfor %}
+				{% endif %}
+				{% if post.taxonomies.tags %}
+					{% for tag in post.taxonomies.tags %}
+					<a href="{{ get_taxonomy_url(kind='tags', term=tag) | safe }}" class="p-category uk-label" rel="tag">{{ tag }}</a>
+					{% endfor %}
+				{% endif %}
+			</div>
+			{% endif %}
+
+			<h2 class="p-name uk-card-title">
+				<a class="u-url uk-link-reset" href="{{ post.permalink }}">
+					{% if post.title %}{{ post.title }}{% else %}{{ section.extra.singular }} from {{ post.date | date(format="%d %B, %Y") }}{% endif %}
+				</a>
+			</h2>
+
+			{% if post.date %}
+			<time class="uk-text-meta" datetime="{{ post.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}">
+				{{ post.date | date(format="%d %B, %Y") }}
+			</time>
+			{% endif %}
+
+			{% if post.content %}
+			<div class="e-content uk-margin-small-top">
+				{{ post.content | safe }}
+			</div>
+			{% endif %}
+		</article>
+		{% endfor %}
+
+		{% if paginator.previous or paginator.next %}
+		<ul class="uk-pagination">
+			{% if paginator.previous %}<li><a href="{{ paginator.previous }}">Previous</a></li>{% endif %}
+			{% if paginator.next %}<li class="uk-margin-auto-left"><a href="{{ paginator.next }}">Next</a></li>{% endif %}
+		</ul>
+		{% endif %}
+	</div>
+</section>
+{% endblock content %}

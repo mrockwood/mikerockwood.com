@@ -30,11 +30,15 @@ jobs:
             exit 1
           fi
           mkdir -p static/webmention
+          temp_file="$(mktemp)"
+          trap 'rm -f "$temp_file"' EXIT
           curl --fail --location --silent --show-error \
             --get \
             --data-urlencode "token=${WEBMENTION_TOKEN}" \
             "https://webmention.io/api/mentions.json" \
-            -o static/webmention/webmentions.json
+            -o "$temp_file"
+          jq -e 'type == "object" and (.links | type == "array") and all(.links[]; type == "object" and (.source | type == "string") and (.target | type == "string"))' "$temp_file" >/dev/null
+          mv "$temp_file" static/webmention/webmentions.json
 
       - name: Commit and Push Webmentions
         run: |

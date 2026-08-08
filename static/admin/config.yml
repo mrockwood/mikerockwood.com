@@ -215,7 +215,7 @@ collections:
         widget: "object"
         fields:
           - {label: "Event URL", name: "in-reply-to", widget: "string", type: "url", required: true}
-          - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','interested'], required: true}
+          - {label: "RSVP", name: "rsvp", widget: "select", options: ['yes','no','maybe','interested'], required: true}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "work"
     label: "Work"
