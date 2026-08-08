@@ -35,7 +35,7 @@ external_links_no_referrer = false # rel="noreferrer"
 
 [extra]
 
-timezone = "America/Denver"
+timezone = "MST"
 
 menu = [
     {url = "/", name = "Home", slash = true},
