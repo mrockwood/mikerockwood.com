@@ -1,0 +1,40 @@
+// Name:            Inverse
+// Description:     Inverse component style for light or dark backgrounds
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$inverse-global-color-mode:                     light;
+
+$inverse-global-color:                          fade($global-inverse-color, 70%);
+$inverse-global-emphasis-color:                 $global-inverse-color;
+$inverse-global-muted-color:                    fade($global-inverse-color, 50%);
+$inverse-global-inverse-color:                  $global-color;
+
+$inverse-global-primary-background:             $global-inverse-color;
+$inverse-global-muted-background:               fade($global-inverse-color, 10%);
+
+$inverse-global-border:                         fade($global-inverse-color, 20%);
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --inverse-global-color-mode: $inverse-global-color-mode;
+
+    --inverse-global-color: $inverse-global-color;
+    --inverse-global-emphasis-color: $inverse-global-emphasis-color;
+    --inverse-global-muted-color: $inverse-global-muted-color;
+    --inverse-global-inverse-color: $inverse-global-inverse-color;
+
+    --inverse-global-primary-background: $inverse-global-primary-background;
+    --inverse-global-muted-background: $inverse-global-muted-background;
+
+    --inverse-global-border: $inverse-global-border;
+
+}

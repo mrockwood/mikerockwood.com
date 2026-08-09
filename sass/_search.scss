@@ -1,0 +1,120 @@
+// Name:            Search
+// Description:     Component to create the search
+//
+// Component:       `uk-search`
+//
+// Sub-objects:     `uk-search-input`
+//                  `uk-search-toggle`
+//
+// Adopted:         `uk-search-icon`
+//
+// Modifier:        `uk-search-default`
+//                  `uk-search-navbar`
+//                  `uk-search-medium`
+//                  `uk-search-large`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$search-color:                                      $global-color;
+$search-placeholder-color:                          $global-muted-color;
+
+$search-icon-color:                                 $global-muted-color;
+
+$search-default-width:                              240px;
+$search-default-height:                             $global-control-height;
+$search-default-padding-horizontal:                 10px;
+$search-default-background:                         $global-muted-background;
+$search-default-focus-background:                   darken($search-default-background, 2%);
+
+$search-default-icon-width:                         20px;
+$search-default-icon-padding:                       10px;
+
+$search-navbar-width:                               240px;
+$search-navbar-height:                              $global-control-height;
+$search-navbar-padding-horizontal:                  10px;
+$search-navbar-background:                          $global-background;
+$search-navbar-focus-background:                    darken($search-navbar-background, 1%);
+
+$search-navbar-icon-width:                          20px;
+$search-navbar-icon-padding:                        10px;
+
+$search-medium-width:                               400px;
+$search-medium-height:                              $global-control-large-height;
+$search-medium-padding-horizontal:                  12px;
+$search-medium-background:                          $search-default-background;
+$search-medium-font-size:                           $global-large-font-size;
+$search-medium-focus-background:                    darken($search-medium-background, 2%);
+
+$search-medium-icon-width:                          24px;
+$search-medium-icon-padding:                        12px;
+
+$search-large-width:                                500px;
+$search-large-height:                               90px;
+$search-large-padding-horizontal:                   20px;
+$search-large-background:                           $search-default-background;
+$search-large-font-size:                            $global-2xlarge-font-size;
+$search-large-focus-background:                     darken($search-large-background, 2%);
+
+$search-large-icon-width:                           40px;
+$search-large-icon-padding:                         20px;
+
+$search-toggle-color:                               $global-muted-color;
+$search-toggle-hover-color:                         $global-color;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --search-color: $search-color;
+    --search-placeholder-color: $search-placeholder-color;
+
+    --search-icon-color: $search-icon-color;
+
+    --search-default-width: $search-default-width;
+    --search-default-height: $search-default-height;
+    --search-default-padding-horizontal: $search-default-padding-horizontal;
+    --search-default-background: $search-default-background;
+    --search-default-focus-background: $search-default-focus-background;
+
+    --search-default-icon-width: $search-default-icon-width;
+    --search-default-icon-padding: $search-default-icon-padding;
+
+    --search-navbar-width: $search-navbar-width;
+    --search-navbar-height: $search-navbar-height;
+    --search-navbar-padding-horizontal: $search-navbar-padding-horizontal;
+    --search-navbar-background: $search-navbar-background;
+    --search-navbar-focus-background: $search-navbar-focus-background;
+
+    --search-navbar-icon-width: $search-navbar-icon-width;
+    --search-navbar-icon-padding: $search-navbar-icon-padding;
+
+    --search-medium-width: $search-medium-width;
+    --search-medium-height: $search-medium-height;
+    --search-medium-padding-horizontal: $search-medium-padding-horizontal;
+    --search-medium-background: $search-medium-background;
+    --search-medium-font-size: $search-medium-font-size;
+    --search-medium-focus-background: $search-medium-focus-background;
+
+    --search-medium-icon-width: $search-medium-icon-width;
+    --search-medium-icon-padding: $search-medium-icon-padding;
+
+    --search-large-width: $search-large-width;
+    --search-large-height: $search-large-height;
+    --search-large-padding-horizontal: $search-large-padding-horizontal;
+    --search-large-background: $search-large-background;
+    --search-large-font-size: $search-large-font-size;
+    --search-large-focus-background: $search-large-focus-background;
+
+    --search-large-icon-width: $search-large-icon-width;
+    --search-large-icon-padding: $search-large-icon-padding;
+
+    --search-toggle-color: $search-toggle-color;
+    --search-toggle-hover-color: $search-toggle-hover-color;
+
+}

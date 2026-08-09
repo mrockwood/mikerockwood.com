@@ -1,0 +1,28 @@
+// Name:            Marker
+// Description:     Component to create a marker icon
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$marker-padding:                                 5px;
+$marker-background:                              $global-secondary-background;
+$marker-color:                                   $global-inverse-color;
+
+$marker-hover-color:                             $global-inverse-color;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --marker-padding: $marker-padding;
+    --marker-background: $marker-background;
+    --marker-color: $marker-color;
+
+    --marker-hover-color: $marker-hover-color;
+
+}

@@ -1,0 +1,72 @@
+// Name:            Tile
+// Description:     Component to create tiled boxes
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$tile-padding-horizontal:                      15px;
+$tile-padding-horizontal-s:                    $global-gutter;
+$tile-padding-horizontal-m:                    $global-medium-gutter;
+$tile-padding-vertical:                        $global-medium-margin;
+$tile-padding-vertical-m:                      $global-large-margin;
+
+$tile-xsmall-padding-vertical:                 $global-margin;
+
+$tile-small-padding-vertical:                  $global-medium-margin;
+
+$tile-large-padding-vertical:                  $global-large-margin;
+$tile-large-padding-vertical-m:                $global-xlarge-margin;
+
+$tile-xlarge-padding-vertical:                 $global-xlarge-margin;
+$tile-xlarge-padding-vertical-m:               ($global-large-margin + $global-xlarge-margin);
+
+$tile-default-background:                      $global-background;
+$tile-default-color-mode:                      dark;
+
+$tile-muted-background:                        $global-muted-background;
+$tile-muted-color-mode:                        dark;
+
+$tile-primary-background:                      $global-primary-background;
+$tile-primary-color-mode:                      light;
+
+$tile-secondary-background:                    $global-secondary-background;
+$tile-secondary-color-mode:                    light;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --tile-padding-horizontal: $tile-padding-horizontal;
+    --tile-padding-horizontal-s: $tile-padding-horizontal-s;
+    --tile-padding-horizontal-m: $tile-padding-horizontal-m;
+    --tile-padding-vertical: $tile-padding-vertical;
+    --tile-padding-vertical-m: $tile-padding-vertical-m;
+
+    --tile-xsmall-padding-vertical: $tile-xsmall-padding-vertical;
+
+    --tile-small-padding-vertical: $tile-small-padding-vertical;
+
+    --tile-large-padding-vertical: $tile-large-padding-vertical;
+    --tile-large-padding-vertical-m: $tile-large-padding-vertical-m;
+
+    --tile-xlarge-padding-vertical: $tile-xlarge-padding-vertical;
+    --tile-xlarge-padding-vertical-m: $tile-xlarge-padding-vertical-m;
+
+    --tile-default-background: $tile-default-background;
+    --tile-default-color-mode: $tile-default-color-mode;
+
+    --tile-muted-background: $tile-muted-background;
+    --tile-muted-color-mode: $tile-muted-color-mode;
+
+    --tile-primary-background: $tile-primary-background;
+    --tile-primary-color-mode: $tile-primary-color-mode;
+
+    --tile-secondary-background: $tile-secondary-background;
+    --tile-secondary-color-mode: $tile-secondary-color-mode;
+
+}

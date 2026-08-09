@@ -1,0 +1,24 @@
+// Name:            Leader
+// Description:     Component to create dot leaders
+//
+// Component:       `uk-leader`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$leader-fill-content:                           ~'.';
+$leader-fill-margin-left:                       $global-small-gutter;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --leader-fill-content: $leader-fill-content;
+    --leader-fill-margin-left: $leader-fill-margin-left;
+
+}

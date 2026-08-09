@@ -1,0 +1,28 @@
+// Name:            Sortable
+// Description:     Component to create sortable grids and lists
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$sortable-dragged-z-index:                      $global-z-index + 50;
+
+$sortable-placeholder-opacity:                  0;
+
+$sortable-empty-height:                         50px;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --sortable-dragged-z-index: $sortable-dragged-z-index;
+
+    --sortable-placeholder-opacity: $sortable-placeholder-opacity;
+
+    --sortable-empty-height: $sortable-empty-height;
+
+}

@@ -1,0 +1,52 @@
+// Name:            Dropbar
+// Description:     Component to create a dropbar based on Drop component
+//
+// Component:       `uk-dropbar`
+//
+// Modifiers:       `uk-dropbar-large`
+//                  `uk-dropbar-top`
+//                  `uk-dropbar-bottom`
+//                  `uk-dropbar-left`
+//                  `uk-dropbar-right`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$dropbar-margin:                                0;
+$dropbar-padding-top:                           15px;
+$dropbar-padding-bottom:                        $dropbar-padding-top;
+$dropbar-padding-horizontal:                    15px;
+$dropbar-padding-horizontal-s:                  $global-gutter;
+$dropbar-padding-horizontal-m:                  $global-medium-gutter;
+$dropbar-background:                            $global-muted-background;
+$dropbar-color:                                 $global-color;
+$dropbar-color-mode:                            dark;
+$dropbar-focus-outline:                         $base-focus-outline;
+
+$dropbar-large-padding-top:                     40px;
+$dropbar-large-padding-bottom:                  $dropbar-large-padding-top;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --dropbar-margin: $dropbar-margin;
+    --dropbar-padding-top: $dropbar-padding-top;
+    --dropbar-padding-bottom: $dropbar-padding-bottom;
+    --dropbar-padding-horizontal: $dropbar-padding-horizontal;
+    --dropbar-padding-horizontal-s: $dropbar-padding-horizontal-s;
+    --dropbar-padding-horizontal-m: $dropbar-padding-horizontal-m;
+    --dropbar-background: $dropbar-background;
+    --dropbar-color: $dropbar-color;
+    --dropbar-color-mode: $dropbar-color-mode;
+    --dropbar-focus-outline: $dropbar-focus-outline;
+
+    --dropbar-large-padding-top: $dropbar-large-padding-top;
+    --dropbar-large-padding-bottom: $dropbar-large-padding-bottom;
+
+}

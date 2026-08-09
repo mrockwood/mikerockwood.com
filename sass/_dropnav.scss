@@ -1,0 +1,24 @@
+// Name:            Dropnav
+// Description:     Component to create dropdown/dropbar menus based on Drop component
+//
+// Component:       `uk-dropnav`
+//
+// Sub-objects:     `uk-dropnav-dropbar`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$dropnav-dropbar-z-index:                       $global-z-index - 20;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --dropnav-dropbar-z-index: $dropnav-dropbar-z-index;
+
+}

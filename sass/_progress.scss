@@ -1,0 +1,28 @@
+// Name:            Progress
+// Description:     Component to create progress bars
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$progress-height:                               15px;
+$progress-margin-vertical:                      $global-margin;
+$progress-background:                           $global-muted-background;
+
+$progress-bar-background:                       $global-primary-background;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --progress-height: $progress-height;
+    --progress-margin-vertical: $progress-margin-vertical;
+    --progress-background: $progress-background;
+
+    --progress-bar-background: $progress-bar-background;
+
+}

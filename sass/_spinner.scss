@@ -1,0 +1,30 @@
+// Name:            Spinner
+// Description:     Component to create a loading spinner
+//
+// Component:       `uk-spinner`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$spinner-size:                                  30px;
+$spinner-stroke-width:                          1;
+$spinner-radius:                                floor((($spinner-size - $spinner-stroke-width) / 2)); // Minus stroke width to prevent overflow clipping
+$spinner-circumference:                         round(2 * 3.141 * $spinner-radius);
+$spinner-duration:                              1.4s;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --spinner-size: $spinner-size;
+    --spinner-stroke-width: $spinner-stroke-width;
+    --spinner-radius: $spinner-radius;
+    --spinner-circumference: $spinner-circumference;
+    --spinner-duration: $spinner-duration;
+
+}

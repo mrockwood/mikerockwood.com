@@ -1,0 +1,36 @@
+// Name:            Form Range
+// Description:     Styles for the range input type
+//
+// Component:       `uk-range`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$form-range-track-height:                       3px;
+$form-range-track-background:                   color-mix(in srgb, $global-muted-background 5%, black);
+$form-range-track-focus-background:             color-mix(in srgb, $form-range-track-background 5%, black);
+
+$form-range-thumb-height:                       15px;
+$form-range-thumb-width:                        $form-range-thumb-height;
+$form-range-thumb-border-radius:                500px;
+$form-range-thumb-background:                   $global-color;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --form-range-track-height: $form-range-track-height;
+    --form-range-track-background: $form-range-track-background;
+    --form-range-track-focus-background: $form-range-track-focus-background;
+
+    --form-range-thumb-height: $form-range-thumb-height;
+    --form-range-thumb-width: $form-range-thumb-width;
+    --form-range-thumb-border-radius: $form-range-thumb-border-radius;
+    --form-range-thumb-background: $form-range-thumb-background;
+
+}

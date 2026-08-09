@@ -1,0 +1,28 @@
+// Name:            Placeholder
+// Description:     Component to create placeholder boxes
+//
+// Component:       `uk-placeholder`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$placeholder-margin-vertical:                   $global-margin;
+$placeholder-padding-vertical:                  $global-gutter;
+$placeholder-padding-horizontal:                $global-gutter;
+$placeholder-background:                        $global-muted-background;
+
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --placeholder-margin-vertical: $placeholder-margin-vertical;
+    --placeholder-padding-vertical: $placeholder-padding-vertical;
+    --placeholder-padding-horizontal: $placeholder-padding-horizontal;
+    --placeholder-background: $placeholder-background;
+
+}
