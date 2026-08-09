@@ -1,0 +1,93 @@
+@use "sass:meta";
+
+// Name:            Countdown
+// Description:     Component to create countdown timers
+//
+// Component:       `uk-countdown`
+//
+// Sub-objects:     `uk-countdown-number`
+//                  `uk-countdown-separator`
+//                  `uk-countdown-label`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+
+/* ========================================================================
+   Component: Countdown
+ ========================================================================== */
+
+.uk-countdown {
+    margin: 0;
+    @if(meta.mixin-exists(hook-countdown)) {@include hook-countdown();}
+}
+
+
+/* Item
+ ========================================================================== */
+
+.uk-countdown-number,
+.uk-countdown-separator {
+    @if(meta.mixin-exists(hook-countdown-item)) {@include hook-countdown-item();}
+}
+
+
+/* Number
+ ========================================================================== */
+
+/*
+ * 1. Make numbers all of the same size to prevent jumping. Must be supported by the font.
+ */
+
+.uk-countdown-number {
+    margin: 0;
+    /* 1 */
+    font-variant-numeric: tabular-nums;
+    @if(meta.mixin-exists(hook-countdown-number)) {@include hook-countdown-number();}
+}
+
+
+/* Separator
+ ========================================================================== */
+
+.uk-countdown-separator {
+    font-size: $countdown-separator-font-size;
+    line-height: $countdown-separator-line-height;
+    @if(meta.mixin-exists(hook-countdown-separator)) {@include hook-countdown-separator();}
+}
+
+
+/* Label
+ ========================================================================== */
+
+.uk-countdown-label {
+    @if(meta.mixin-exists(hook-countdown-label)) {@include hook-countdown-label();}
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(meta.mixin-exists(hook-countdown-misc)) {@include hook-countdown-misc();}
+
+// @mixin hook-countdown(){}
+// @mixin hook-countdown-item(){}
+// @mixin hook-countdown-number(){}
+// @mixin hook-countdown-separator(){}
+// @mixin hook-countdown-label(){}
+// @mixin hook-countdown-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+
+
+// @mixin hook-inverse-countdown-item(){}
+// @mixin hook-inverse-countdown-number(){}
+// @mixin hook-inverse-countdown-separator(){}
+// @mixin hook-inverse-countdown-label(){}

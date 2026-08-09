@@ -11,74 +11,32 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-breadcrumb']) {
+$breadcrumb-item-font-size:                         $global-small-font-size;
+$breadcrumb-item-color:                             $global-muted-color;
+$breadcrumb-item-hover-color:                       $global-color;
+$breadcrumb-item-hover-text-decoration:             none;
+$breadcrumb-item-active-color:                      $global-color;
 
-    --breadcrumb-item-font-size:                          var(--global-small-font-size);
-    --breadcrumb-item-color:                              var(--theme-muted-color, var(--global-muted-color) );
-    --breadcrumb-item-hover-color:                        var(--theme-color, var(--global-color) );
-    --breadcrumb-item-hover-text-decoration:              none;
-    --breadcrumb-item-active-color:                       var(--theme-color, var(--global-color) );
-
-    --breadcrumb-divider:                                 "/";
-    --breadcrumb-divider-margin-horizontal:               20px;
-    --breadcrumb-divider-font-size:                       var(--breadcrumb-item-font-size);
-    --breadcrumb-divider-color:                           var(--theme-muted-color, var(--global-muted-color) );
-
-}
+$breadcrumb-divider:                                "/";
+$breadcrumb-divider-margin-horizontal:              20px;
+$breadcrumb-divider-font-size:                      $breadcrumb-item-font-size;
+$breadcrumb-divider-color:                          $global-muted-color;
 
 
-/* ========================================================================
-   Component: Breadcrumb
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-.uk-breadcrumb {
-    padding: 0;
-    list-style: none;
-}
+:root {
 
-/*
- * 1. Doesn't generate any box and replaced by child boxes
- */
+    --breadcrumb-item-font-size: $breadcrumb-item-font-size;
+    --breadcrumb-item-color: $breadcrumb-item-color;
+    --breadcrumb-item-hover-color: $breadcrumb-item-hover-color;
+    --breadcrumb-item-hover-text-decoration: $breadcrumb-item-hover-text-decoration;
+    --breadcrumb-item-active-color: $breadcrumb-item-active-color;
 
-.uk-breadcrumb > * { display: contents; }
+    --breadcrumb-divider: $breadcrumb-divider;
+    --breadcrumb-divider-margin-horizontal: $breadcrumb-divider-margin-horizontal;
+    --breadcrumb-divider-font-size: $breadcrumb-divider-font-size;
+    --breadcrumb-divider-color: $breadcrumb-divider-color;
 
-
-/* Items
- ========================================================================== */
-
-.uk-breadcrumb > * > * {
-    font-size: var(--breadcrumb-item-font-size);
-    color: var(--breadcrumb-item-color);
-}
-
-/* Hover */
-.uk-breadcrumb > * > :hover {
-    color: var(--breadcrumb-item-hover-color);
-    text-decoration: var(--breadcrumb-item-hover-text-decoration);
-}
-
-/* Disabled */
-.uk-breadcrumb > .uk-disabled > * {}
-
-/* Active */
-.uk-breadcrumb > :last-child > span,
-.uk-breadcrumb > :last-child > a:not([href]) {
-    color: var(--breadcrumb-item-active-color);
-}
-
-/*
- * Divider
- * `nth-child` makes it also work without JS if it's only one row
- * 1. Remove space between inline block elements.
- * 2. Style
- */
-
-.uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
-    content: var(--breadcrumb-divider);
-    display: inline-block;
-    /* 1 */
-    margin: 0 var(--breadcrumb-divider-margin-horizontal) 0 unquote('calc(var(--breadcrumb-divider-margin-horizontal) - 4px)');
-    /* 2 */
-    font-size: var(--breadcrumb-divider-font-size);
-    color: var(--breadcrumb-divider-color);
 }

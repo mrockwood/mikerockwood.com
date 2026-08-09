@@ -11,60 +11,26 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-padding']) {
+$padding-padding:                                       $global-gutter;
+$padding-padding-l:                                     $global-medium-gutter;
 
-    --padding-padding:                                       var(--global-gutter);
-    --padding-small-padding:                                 var(--global-small-gutter);
-    --padding-large-padding:                                 var(--global-medium-gutter);
+$padding-small-padding:                                 $global-small-gutter;
 
-}
-
-@media (min-width: $breakpoint-large) {
-
-    :where([class*='uk-padding']) {
-
-        --padding-padding:                                   var(--global-medium-gutter);
-        --padding-large-padding:                             var(--global-large-gutter);
-
-    }
-
-}
+$padding-large-padding:                                 $global-medium-gutter;
+$padding-large-padding-l:                               $global-large-gutter;
 
 
-/* ========================================================================
-   Component: Padding
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-.uk-padding { padding: var(--padding-padding); }
+:root {
 
+    --padding-padding: $padding-padding;
+    --padding-padding-l: $padding-padding-l;
 
-/* Small
- ========================================================================== */
+    --padding-small-padding: $padding-small-padding;
 
-.uk-padding-small { padding: var(--padding-small-padding); }
+    --padding-large-padding: $padding-large-padding;
+    --padding-large-padding-l: $padding-large-padding-l;
 
-
-/* Large
- ========================================================================== */
-
-.uk-padding-large { padding: var(--padding-large-padding); }
-
-
-/* Remove
- ========================================================================== */
-
-.uk-padding-remove { padding: 0 !important; }
-.uk-padding-remove-top { padding-block-start: 0 !important; }
-.uk-padding-remove-bottom { padding-block-end: 0 !important; }
-.uk-padding-remove-left { padding-inline-start: 0 !important; }
-.uk-padding-remove-right { padding-inline-end: 0 !important; }
-
-.uk-padding-remove-vertical {
-    padding-block-start: 0 !important;
-    padding-block-end: 0 !important;
-}
-
-.uk-padding-remove-horizontal {
-    padding-inline-start: 0 !important;
-    padding-inline-end: 0 !important;
 }

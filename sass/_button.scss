@@ -1,346 +1,124 @@
 // Name:            Button
 // Description:     Styles for buttons
 //
-// Component:       `uk-button`
-//
-// Sub-objects:     `uk-button-group`
-//
-// Modifiers:       `uk-button-default`
-//                  `uk-button-primary`
-//                  `uk-button-secondary`
-//                  `uk-button-danger`
-//                  `uk-button-text`
-//                  `uk-button-link`
-//                  `uk-button-small`
-//                  `uk-button-large`
-//
-// States:          `uk-active`
-//
 // ========================================================================
 
 
 // Variables
 // ========================================================================
 
-:where([class*='uk-button']) {
+$button-line-height:                            $global-control-height;
+$button-small-line-height:                      $global-control-small-height;
+$button-large-line-height:                      $global-control-large-height;
 
-    --button-line-height:                             var(--global-control-height);
-    --button-small-line-height:                       var(--global-control-small-height);
-    --button-large-line-height:                       var(--global-control-large-height);
+$button-font-size:                              $global-font-size;
+$button-small-font-size:                        $global-small-font-size;
+$button-large-font-size:                        $global-medium-font-size;
 
-    --button-font-size:                               var(--global-font-size);
-    --button-small-font-size:                         var(--global-small-font-size);
-    --button-large-font-size:                         var(--global-medium-font-size);
+$button-padding-horizontal:                     $global-gutter;
+$button-small-padding-horizontal:               $global-small-gutter;
+$button-large-padding-horizontal:               $global-medium-gutter;
 
-    --button-padding-horizontal:                      var(--global-gutter);
-    --button-small-padding-horizontal:                var(--global-small-gutter);
-    --button-large-padding-horizontal:                var(--global-medium-gutter);
+$button-default-background:                     $global-muted-background;
+$button-default-color:                          $global-emphasis-color;
+$button-default-hover-background:               color-mix(in srgb, $button-default-background 95%, black);
+$button-default-hover-color:                    $global-emphasis-color;
+$button-default-active-background:              color-mix(in srgb, $button-default-background 90%, black);
+$button-default-active-color:                   $global-emphasis-color;
 
-    --button-default-background:                      var(--theme-muted-background, var(--global-muted-background) );
-    --button-default-color:                           var(--theme-emphasis-color, var(--global-emphasis-color) );
-    --button-default-hover-background:                color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 15%);
-    --button-default-hover-color:                     var(--theme-emphasis-color, var(--global-emphasis-color) );
-    --button-default-active-background:               color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 30%);
-    --button-default-active-color:                    var(--theme-emphasis-color, var(--global-emphasis-color) );
+$button-primary-background:                     $global-primary-background;
+$button-primary-color:                          $global-inverse-color;
+$button-primary-hover-background:               color-mix(in srgb, $button-primary-background 95%, black);
+$button-primary-hover-color:                    $global-inverse-color;
+$button-primary-active-background:              color-mix(in srgb, $button-primary-background 90%, black);
+$button-primary-active-color:                   $global-inverse-color;
 
-    --button-primary-background:                      var(--theme-primary-background, var(--global-primary-background) );
-    --button-primary-color:                           var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
-    --button-primary-hover-background:                color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 10%);
-    --button-primary-hover-color:                     var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
-    --button-primary-active-background:               color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 20%);
-    --button-primary-active-color:                    var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+$button-secondary-background:                   $global-secondary-background;
+$button-secondary-color:                        $global-inverse-color;
+$button-secondary-hover-background:             color-mix(in srgb, $button-secondary-background 95%, black);
+$button-secondary-hover-color:                  $global-inverse-color;
+$button-secondary-active-background:            color-mix(in srgb, $button-secondary-background 90%, black);
+$button-secondary-active-color:                 $global-inverse-color;
 
-    --button-secondary-background:                    var(--theme-secondary-background, var(--global-secondary-background) );
-    --button-secondary-color:                         var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
-    --button-secondary-hover-background:              color-mix(in oklab, var(--theme-secondary-background, var(--global-secondary-background)), transparent 10%);
-    --button-secondary-hover-color:                   var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
-    --button-secondary-active-background:             color-mix(in oklab, var(--theme-secondary-background, var(--global-secondary-background)), transparent 20%);
-    --button-secondary-active-color:                  var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+$button-danger-background:                      $global-danger-background;
+$button-danger-color:                           $global-inverse-color;
+$button-danger-hover-background:                color-mix(in srgb, $button-danger-background 95%, black);
+$button-danger-hover-color:                     $global-inverse-color;
+$button-danger-active-background:               color-mix(in srgb, $button-danger-background 90%, black);
+$button-danger-active-color:                    $global-inverse-color;
 
-    --button-danger-background:                       var(--theme-danger-background, var(--global-danger-background) );
-    --button-danger-color:                            var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
-    --button-danger-hover-background:                 color-mix(in oklab, var(--theme-danger-background, var(--global-danger-background)), transparent 10%);
-    --button-danger-hover-color:                      var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
-    --button-danger-active-background:                color-mix(in oklab, var(--theme-danger-background, var(--global-danger-background)), transparent 20%);
-    --button-danger-active-color:                     var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+$button-disabled-background:                    $global-muted-background;
+$button-disabled-color:                         $global-muted-color;
 
-    --button-disabled-background:                     var(--theme-muted-background, var(--global-muted-background) );
-    --button-disabled-color:                          var(--theme-muted-color, var(--global-muted-color) );
+$button-text-line-height:                       $global-line-height;
+$button-text-color:                             $global-emphasis-color;
+$button-text-hover-color:                       $global-muted-color;
+$button-text-disabled-color:                    $global-muted-color;
 
-    --button-text-line-height:                        var(--global-line-height);
-    --button-text-color:                              var(--theme-emphasis-color, var(--global-emphasis-color) );
-    --button-text-hover-color:                        var(--theme-muted-color, var(--global-muted-color) );
-    --button-text-disabled-color:                     var(--theme-muted-color, var(--global-muted-color) );
-
-    --button-link-line-height:                        var(--global-line-height);
-    --button-link-color:                              var(--theme-emphasis-color, var(--global-emphasis-color) );
-    --button-link-hover-color:                        var(--theme-muted-color, var(--global-muted-color) );
-    --button-link-hover-text-decoration:              none;
-    --button-link-disabled-color:                     var(--theme-muted-color, var(--global-muted-color) );
-
-}
+$button-link-line-height:                       $global-line-height;
+$button-link-color:                             $global-emphasis-color;
+$button-link-hover-color:                       $global-muted-color;
+$button-link-hover-text-decoration:             none;
+$button-link-disabled-color:                    $global-muted-color;
 
 
-/* ========================================================================
-   Component: Button
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-/*
- * 1. Remove margins in Chrome, Safari and Opera.
- * 2. Remove borders for `button`.
- * 3. Address `overflow` set to `hidden` in IE.
- * 4. Correct `font` properties and `color` not being inherited for `button`.
- * 5. Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 6. Remove default style for `input type="submit"`in iOS.
- * 7. Style
- * 8. `line-height` is used to create a height because it also centers the text vertically for `a` elements.
- *    Better would be to use height and flexbox to center the text vertically but flexbox doesn't work in Firefox on `button` elements.
- * 9. Align text if button has a width
- * 10. Required for `a`.
- */
+:root {
 
-.uk-button {
-    /* 1 */
-    margin: 0;
-    /* 2 */
-    border: none;
-    /* 3 */
-    overflow: visible;
-    /* 4 */
-    font: inherit;
-    color: inherit;
-    /* 5 */
-    text-transform: none;
-    /* 6 */
-    -webkit-appearance: none;
-    border-radius: 0;
-    /* 7 */
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 0 var(--button-padding-horizontal);
-    vertical-align: middle;
-    font-size: var(--button-font-size);
-    /* 8 */
-    line-height: var(--button-line-height);
-    /* 9 */
-    text-align: center;
-    /* 10 */
-    text-decoration: none;
-}
+    --button-line-height: $button-line-height;
+    --button-small-line-height: $button-small-line-height;
+    --button-large-line-height: $button-large-line-height;
 
-.uk-button:not(:disabled) { cursor: pointer; }
+    --button-font-size: $button-font-size;
+    --button-small-font-size: $button-small-font-size;
+    --button-large-font-size: $button-large-font-size;
 
-/*
- * Remove the inner border and padding in Firefox.
- */
+    --button-padding-horizontal: $button-padding-horizontal;
+    --button-small-padding-horizontal: $button-small-padding-horizontal;
+    --button-large-padding-horizontal: $button-large-padding-horizontal;
 
-.uk-button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
+    --button-default-background: $button-default-background;
+    --button-default-color: $button-default-color;
+    --button-default-hover-background: $button-default-hover-background;
+    --button-default-hover-color: $button-default-hover-color;
+    --button-default-active-background: $button-default-active-background;
+    --button-default-active-color: $button-default-active-color;
 
-/* Hover */
-.uk-button:hover {
-    /* 9 */
-    text-decoration: none;
-}
+    --button-primary-background: $button-primary-background;
+    --button-primary-color: $button-primary-color;
+    --button-primary-hover-background: $button-primary-hover-background;
+    --button-primary-hover-color: $button-primary-hover-color;
+    --button-primary-active-background: $button-primary-active-background;
+    --button-primary-active-color: $button-primary-active-color;
 
-/* OnClick + Active */
-.uk-button:active,
-.uk-button.uk-active {}
+    --button-secondary-background: $button-secondary-background;
+    --button-secondary-color: $button-secondary-color;
+    --button-secondary-hover-background: $button-secondary-hover-background;
+    --button-secondary-hover-color: $button-secondary-hover-color;
+    --button-secondary-active-background: $button-secondary-active-background;
+    --button-secondary-active-color: $button-secondary-active-color;
 
+    --button-danger-background: $button-danger-background;
+    --button-danger-color: $button-danger-color;
+    --button-danger-hover-background: $button-danger-hover-background;
+    --button-danger-hover-color: $button-danger-hover-color;
+    --button-danger-active-background: $button-danger-active-background;
+    --button-danger-active-color: $button-danger-active-color;
 
-/* Style modifiers
- ========================================================================== */
+    --button-disabled-background: $button-disabled-background;
+    --button-disabled-color: $button-disabled-color;
 
-/*
- * Default
- */
+    --button-text-line-height: $button-text-line-height;
+    --button-text-color: $button-text-color;
+    --button-text-hover-color: $button-text-hover-color;
+    --button-text-disabled-color: $button-text-disabled-color;
 
-.uk-button-default {
-    background-color: var(--button-default-background);
-    color: var(--button-default-color);
-}
+    --button-link-line-height: $button-link-line-height;
+    --button-link-color: $button-link-color;
+    --button-link-hover-color: $button-link-hover-color;
+    --button-link-hover-text-decoration: $button-link-hover-text-decoration;
+    --button-link-disabled-color: $button-link-disabled-color;
 
-/* Hover */
-.uk-button-default:hover {
-    background-color: var(--button-default-hover-background);
-    color: var(--button-default-hover-color);
-}
-
-/* OnClick + Active */
-.uk-button-default:active,
-.uk-button-default.uk-active {
-    background-color: var(--button-default-active-background);
-    color: var(--button-default-active-color);
-}
-
-/*
- * Primary
- */
-
-.uk-button-primary {
-    background-color: var(--button-primary-background);
-    color: var(--button-primary-color);
-}
-
-/* Hover */
-.uk-button-primary:hover {
-    background-color: var(--button-primary-hover-background);
-    color: var(--button-primary-hover-color);
-}
-
-/* OnClick + Active */
-.uk-button-primary:active,
-.uk-button-primary.uk-active {
-    background-color: var(--button-primary-active-background);
-    color: var(--button-primary-active-color);
-}
-
-/*
- * Secondary
- */
-
-.uk-button-secondary {
-    background-color: var(--button-secondary-background);
-    color: var(--button-secondary-color);
-}
-
-/* Hover */
-.uk-button-secondary:hover {
-    background-color: var(--button-secondary-hover-background);
-    color: var(--button-secondary-hover-color);
-}
-
-/* OnClick + Active */
-.uk-button-secondary:active,
-.uk-button-secondary.uk-active {
-    background-color: var(--button-secondary-active-background);
-    color: var(--button-secondary-active-color);
-}
-
-/*
- * Danger
- */
-
-.uk-button-danger {
-    background-color: var(--button-danger-background);
-    color: var(--button-danger-color);
-}
-
-/* Hover */
-.uk-button-danger:hover {
-    background-color: var(--button-danger-hover-background);
-    color: var(--button-danger-hover-color);
-}
-
-/* OnClick + Active */
-.uk-button-danger:active,
-.uk-button-danger.uk-active {
-    background-color: var(--button-danger-active-background);
-    color: var(--button-danger-active-color);
-}
-
-/*
- * Disabled
- * The same for all style modifiers
- */
-
-.uk-button-default:disabled,
-.uk-button-primary:disabled,
-.uk-button-secondary:disabled,
-.uk-button-danger:disabled {
-    background-color: var(--button-disabled-background);
-    color: var(--button-disabled-color);
-}
-
-
-/* Size modifiers
- ========================================================================== */
-
-.uk-button-small {
-    padding: 0 var(--button-small-padding-horizontal);
-    line-height: var(--button-small-line-height);
-    font-size: var(--button-small-font-size);
-}
-
-.uk-button-large {
-    padding: 0 var(--button-large-padding-horizontal);
-    line-height: var(--button-large-line-height);
-    font-size: var(--button-large-font-size);
-}
-
-
-/* Text modifiers
- ========================================================================== */
-
-/*
- * Text
- * 1. Reset
- * 2. Style
- */
-
-.uk-button-text {
-    /* 1 */
-    padding: 0;
-    line-height: var(--button-text-line-height);
-    background: none;
-    /* 2 */
-    color: var(--button-text-color);
-}
-
-/* Hover */
-.uk-button-text:hover {
-    color: var(--button-text-hover-color);
-}
-
-/* Disabled */
-.uk-button-text:disabled {
-    color: var(--button-text-disabled-color);
-}
-
-/*
- * Link
- * 1. Reset
- * 2. Style
- */
-
-.uk-button-link {
-    /* 1 */
-    padding: 0;
-    line-height: var(--button-link-line-height);
-    background: none;
-    /* 2 */
-    color: var(--button-link-color);
-}
-
-/* Hover */
-.uk-button-link:hover {
-    color: var(--button-link-hover-color);
-    text-decoration: var(--button-link-hover-text-decoration);
-}
-
-/* Disabled */
-.uk-button-link:disabled {
-    color: var(--button-link-disabled-color);
-    text-decoration: none;
-}
-
-
-/* Group
- ========================================================================== */
-
-/*
- * 1. Using `flex` instead of `inline-block` to prevent whitespace betweent child elements
- * 2. Behave like button
- * 3. Create position context
- */
-
-.uk-button-group {
-    /* 1 */
-    display: inline-flex;
-    /* 2 */
-    vertical-align: middle;
-    /* 3 */
-    position: relative;
 }

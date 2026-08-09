@@ -9,27 +9,16 @@
 // Variables
 // ========================================================================
 
-:where(.uk-close) {
-
-    --close-color:                                    var(--theme-muted-color, var(--global-muted-color) );
-    --close-hover-color:                              var(--theme-color, var(--global-color) );
-
-}
+$close-color:                                   $global-muted-color;
+$close-hover-color:                             $global-color;
 
 
-/* ========================================================================
-   Component: Close
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-/*
- * Adopts `uk-icon`
- */
+:root {
 
-.uk-close {
-    color: var(--close-color);
-}
+    --close-color: $close-color;
+    --close-hover-color: $close-hover-color;
 
-/* Hover */
-.uk-close:hover {
-    color: var(--close-hover-color);
 }

@@ -1,58 +1,32 @@
 // Name:            Badge
 // Description:     Component to create notification badges
 //
-// Component:       `uk-badge`
-//
 // ========================================================================
 
 
 // Variables
 // ========================================================================
 
-:where([class*='uk-badge']) {
-
-    --badge-size:                                     18px;
-    --badge-padding-vertical:                         0;
-    --badge-padding-horizontal:                       5px;
-    --badge-border-radius:                            500px;
-    --badge-background:                               var(--theme-primary-background, var(--global-primary-background) );
-    --badge-color:                                    var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
-    --badge-font-size:                                11px;
-
-}
+$badge-size:                                    18px;
+$badge-padding-vertical:                        0;
+$badge-padding-horizontal:                      5px;
+$badge-border-radius:                           500px;
+$badge-background:                              $global-primary-background;
+$badge-color:                                   $global-inverse-color;
+$badge-font-size:                               11px;
 
 
-/* ========================================================================
-   Component: Badge
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-/*
- * 1. Style
- * 2. Center child vertically and horizontally
- */
+:root {
 
-:where(.uk-badge) {
-    box-sizing: border-box;
-    min-inline-size: var(--badge-size);
-    block-size: var(--badge-size);
-    padding: var(--badge-padding-vertical) var(--badge-padding-horizontal);
-    border-radius: var(--badge-border-radius);
-    vertical-align: middle;
-    /* 1 */
-    background: var(--badge-background);
-    color: var(--badge-color) !important;
-    font-size: var(--badge-font-size);
-    /* 2 */
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 0;
-}
+    --badge-size: $badge-size;
+    --badge-padding-vertical: $badge-padding-vertical;
+    --badge-padding-horizontal: $badge-padding-horizontal;
+    --badge-border-radius: $badge-border-radius;
+    --badge-background: $badge-background;
+    --badge-color: $badge-color;
+    --badge-font-size: $badge-font-size;
 
-/*
- * Required for `a`
- */
-
-.uk-badge:hover {
-    text-decoration: none;
 }

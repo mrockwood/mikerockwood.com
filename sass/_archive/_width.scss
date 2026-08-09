@@ -1,0 +1,367 @@
+// Name:            Width
+// Description:     Utilities for widths
+//
+// Component:       `uk-child-width-*`
+//                  `uk-width-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-width']) { 
+
+    --width-small-width:                              150px;
+    --width-medium-width:                             300px;
+    --width-large-width:                              450px;
+    --width-xlarge-width:                             600px;
+    --width-2xlarge-width:                            750px;
+
+}
+
+
+/* ========================================================================
+   Component: Width
+ ========================================================================== */
+
+
+/* Equal child widths
+ ========================================================================== */
+
+[class*='uk-child-width'] > * {
+    box-sizing: border-box;
+    inline-size: 100%;
+}
+
+.uk-child-width-1-2 > * { inline-size: 50%; }
+.uk-child-width-1-3 > * { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+.uk-child-width-1-4 > * { inline-size: 25%; }
+.uk-child-width-1-5 > * { inline-size: 20%; }
+.uk-child-width-1-6 > * { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+
+.uk-child-width-auto > * { inline-size: auto; }
+
+/*
+ * 1. Reset the `min-width`, which is set to auto by default, because
+ *    flex items won't shrink below their minimum intrinsic content size.
+ *    Using `1px` instead of `0`, so items still wrap into the next line,
+ *    if they have zero width and padding and the predecessor is 100% wide.
+ */
+
+.uk-child-width-expand > :not([class*='uk-width']) {
+    flex: 1;
+    /* 1 */
+    min-inline-size: 1px;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .uk-child-width-1-1\@s > * { inline-size: 100%; }
+    .uk-child-width-1-2\@s > * { inline-size: 50%; }
+    .uk-child-width-1-3\@s > * { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-child-width-1-4\@s > * { inline-size: 25%; }
+    .uk-child-width-1-5\@s > * { inline-size: 20%; }
+    .uk-child-width-1-6\@s > * { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+
+    .uk-child-width-auto\@s > * { inline-size: auto; }
+    .uk-child-width-expand\@s > :not([class*='uk-width']) {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .uk-child-width-1-1\@m > * { inline-size: 100%; }
+    .uk-child-width-1-2\@m > * { inline-size: 50%; }
+    .uk-child-width-1-3\@m > * { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-child-width-1-4\@m > * { inline-size: 25%; }
+    .uk-child-width-1-5\@m > * { inline-size: 20%; }
+    .uk-child-width-1-6\@m > * { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+
+    .uk-child-width-auto\@m > * { inline-size: auto; }
+    .uk-child-width-expand\@m > :not([class*='uk-width']) {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .uk-child-width-1-1\@l > * { inline-size: 100%; }
+    .uk-child-width-1-2\@l > * { inline-size: 50%; }
+    .uk-child-width-1-3\@l > * { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-child-width-1-4\@l > * { inline-size: 25%; }
+    .uk-child-width-1-5\@l > * { inline-size: 20%; }
+    .uk-child-width-1-6\@l > * { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+
+    .uk-child-width-auto\@l > * { inline-size: auto; }
+    .uk-child-width-expand\@l > :not([class*='uk-width']) {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .uk-child-width-1-1\@xl > * { inline-size: 100%; }
+    .uk-child-width-1-2\@xl > * { inline-size: 50%; }
+    .uk-child-width-1-3\@xl > * { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-child-width-1-4\@xl > * { inline-size: 25%; }
+    .uk-child-width-1-5\@xl > * { inline-size: 20%; }
+    .uk-child-width-1-6\@xl > * { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+
+    .uk-child-width-auto\@xl > * { inline-size: auto; }
+    .uk-child-width-expand\@xl > :not([class*='uk-width']) {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+
+/* Single Widths
+ ========================================================================== */
+
+/*
+ * 1. `max-width` is needed for the pixel-based classes
+ */
+
+[class*='uk-width'] {
+    box-sizing: border-box;
+    inline-size: 100%;
+    /* 1 */
+    max-inline-size: 100%;
+}
+
+/* Halves */
+.uk-width-1-2 { inline-size: 50%; }
+
+/* Thirds */
+.uk-width-1-3 { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+.uk-width-2-3 { inline-size: unquote('calc(100% * 2 / 3.001)'); }
+
+/* Quarters */
+.uk-width-1-4 { inline-size: 25%; }
+.uk-width-3-4 { inline-size: 75%; }
+
+/* Fifths */
+.uk-width-1-5 { inline-size: 20%; }
+.uk-width-2-5 { inline-size: 40%; }
+.uk-width-3-5 { inline-size: 60%; }
+.uk-width-4-5 { inline-size: 80%; }
+
+/* Sixths */
+.uk-width-1-6 { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+.uk-width-5-6 { inline-size: unquote('calc(100% * 5 / 6.001)'); }
+
+/* Pixel */
+.uk-width-small { inline-size: var(--width-small-width); }
+.uk-width-medium { inline-size: var(--width-medium-width); }
+.uk-width-large { inline-size: var(--width-large-width); }
+.uk-width-xlarge { inline-size: var(--width-xlarge-width); }
+.uk-width-2xlarge { inline-size: var(--width-2xlarge-width); }
+
+/* Auto */
+.uk-width-auto { inline-size: auto; }
+
+/* Expand */
+.uk-width-expand {
+    flex: 1;
+    min-inline-size: 1px;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    /* Whole */
+    .uk-width-1-1\@s { inline-size: 100%; }
+
+    /* Halves */
+    .uk-width-1-2\@s { inline-size: 50%; }
+
+    /* Thirds */
+    .uk-width-1-3\@s { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-width-2-3\@s { inline-size: unquote('calc(100% * 2 / 3.001)'); }
+
+    /* Quarters */
+    .uk-width-1-4\@s { inline-size: 25%; }
+    .uk-width-3-4\@s { inline-size: 75%; }
+
+    /* Fifths */
+    .uk-width-1-5\@s { inline-size: 20%; }
+    .uk-width-2-5\@s { inline-size: 40%; }
+    .uk-width-3-5\@s { inline-size: 60%; }
+    .uk-width-4-5\@s { inline-size: 80%; }
+
+    /* Sixths */
+    .uk-width-1-6\@s { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+    .uk-width-5-6\@s { inline-size: unquote('calc(100% * 5 / 6.001)'); }
+
+    /* Pixel */
+    .uk-width-small\@s { inline-size: var(--width-small-width); }
+    .uk-width-medium\@s { inline-size: var(--width-medium-width); }
+    .uk-width-large\@s { inline-size: var(--width-large-width); }
+    .uk-width-xlarge\@s { inline-size: var(--width-xlarge-width); }
+    .uk-width-2xlarge\@s { inline-size: var(--width-2xlarge-width); }
+
+    /* Auto */
+    .uk-width-auto\@s { inline-size: auto; }
+
+    /* Expand */
+    .uk-width-expand\@s {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    /* Whole */
+    .uk-width-1-1\@m { inline-size: 100%; }
+
+    /* Halves */
+    .uk-width-1-2\@m { inline-size: 50%; }
+
+    /* Thirds */
+    .uk-width-1-3\@m { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-width-2-3\@m { inline-size: unquote('calc(100% * 2 / 3.001)'); }
+
+    /* Quarters */
+    .uk-width-1-4\@m { inline-size: 25%; }
+    .uk-width-3-4\@m { inline-size: 75%; }
+
+    /* Fifths */
+    .uk-width-1-5\@m { inline-size: 20%; }
+    .uk-width-2-5\@m { inline-size: 40%; }
+    .uk-width-3-5\@m { inline-size: 60%; }
+    .uk-width-4-5\@m { inline-size: 80%; }
+
+    /* Sixths */
+    .uk-width-1-6\@m { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+    .uk-width-5-6\@m { inline-size: unquote('calc(100% * 5 / 6.001)'); }
+
+    /* Pixel */
+    .uk-width-small\@m { inline-size: var(--width-small-width); }
+    .uk-width-medium\@m { inline-size: var(--width-medium-width); }
+    .uk-width-large\@m { inline-size: var(--width-large-width); }
+    .uk-width-xlarge\@m { inline-size: var(--width-xlarge-width); }
+    .uk-width-2xlarge\@m { inline-size: var(--width-2xlarge-width); }
+
+     /* Auto */
+    .uk-width-auto\@m { inline-size: auto; }
+
+    /* Expand */
+    .uk-width-expand\@m {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    /* Whole */
+    .uk-width-1-1\@l { inline-size: 100%; }
+
+    /* Halves */
+    .uk-width-1-2\@l { inline-size: 50%; }
+
+    /* Thirds */
+    .uk-width-1-3\@l { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-width-2-3\@l { inline-size: unquote('calc(100% * 2 / 3.001)'); }
+
+    /* Quarters */
+    .uk-width-1-4\@l { inline-size: 25%; }
+    .uk-width-3-4\@l { inline-size: 75%; }
+
+    /* Fifths */
+    .uk-width-1-5\@l { inline-size: 20%; }
+    .uk-width-2-5\@l { inline-size: 40%; }
+    .uk-width-3-5\@l { inline-size: 60%; }
+    .uk-width-4-5\@l { inline-size: 80%; }
+
+    /* Sixths */
+    .uk-width-1-6\@l { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+    .uk-width-5-6\@l { inline-size: unquote('calc(100% * 5 / 6.001)'); }
+
+    /* Pixel */
+    .uk-width-small\@l { inline-size: var(--width-small-width); }
+    .uk-width-medium\@l { inline-size: var(--width-medium-width); }
+    .uk-width-large\@l { inline-size: var(--width-large-width); }
+    .uk-width-xlarge\@l { inline-size: var(--width-xlarge-width); }
+    .uk-width-2xlarge\@l { inline-size: var(--width-2xlarge-width); }
+
+    /* Auto */
+    .uk-width-auto\@l { inline-size: auto; }
+
+    /* Expand */
+    .uk-width-expand\@l {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    /* Whole */
+    .uk-width-1-1\@xl { inline-size: 100%; }
+
+    /* Halves */
+    .uk-width-1-2\@xl { inline-size: 50%; }
+
+    /* Thirds */
+    .uk-width-1-3\@xl { inline-size: unquote('calc(100% * 1 / 3.001)'); }
+    .uk-width-2-3\@xl { inline-size: unquote('calc(100% * 2 / 3.001)'); }
+
+    /* Quarters */
+    .uk-width-1-4\@xl { inline-size: 25%; }
+    .uk-width-3-4\@xl { inline-size: 75%; }
+
+    /* Fifths */
+    .uk-width-1-5\@xl { inline-size: 20%; }
+    .uk-width-2-5\@xl { inline-size: 40%; }
+    .uk-width-3-5\@xl { inline-size: 60%; }
+    .uk-width-4-5\@xl { inline-size: 80%; }
+
+    /* Sixths */
+    .uk-width-1-6\@xl { inline-size: unquote('calc(100% * 1 / 6.001)'); }
+    .uk-width-5-6\@xl { inline-size: unquote('calc(100% * 5 / 6.001)'); }
+
+    /* Pixel */
+    .uk-width-small\@xl { inline-size: var(--width-small-width); }
+    .uk-width-medium\@xl { inline-size: var(--width-medium-width); }
+    .uk-width-large\@xl { inline-size: var(--width-large-width); }
+    .uk-width-xlarge\@xl { inline-size: var(--width-xlarge-width); }
+    .uk-width-2xlarge\@xl { inline-size: var(--width-2xlarge-width); }
+
+    /* Auto */
+    .uk-width-auto\@xl { inline-size: auto; }
+
+    /* Expand */
+    .uk-width-expand\@xl {
+        flex: 1;
+        min-inline-size: 1px;
+    }
+
+}
+
+/* Intrinsic Widths
+ ========================================================================== */
+
+.uk-width-max-content { inline-size: max-content; }
+
+.uk-width-min-content { inline-size: min-content; }

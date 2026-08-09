@@ -1,0 +1,53 @@
+// Name:            Height
+// Description:     Utilities for heights
+//
+// Component:       `uk-height-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-height']) {
+
+    --height-small-height:                            150px;
+    --height-medium-height:                           300px;
+    --height-large-height:                            450px;
+
+}
+
+
+/* ========================================================================
+   Component: Height
+ ========================================================================== */
+
+[class*='uk-height'] { box-sizing: border-box; }
+
+/*
+ * Only works if parent element has a height set
+ */
+
+.uk-height-1-1 { block-size: 100%; }
+
+/*
+ * Useful to create image teasers
+ */
+
+.uk-height-viewport { min-block-size: 100vh; }
+.uk-height-viewport-2 { min-block-size: 200vh; }
+.uk-height-viewport-3 { min-block-size: 300vh; }
+.uk-height-viewport-4 { min-block-size: 400vh; }
+
+/*
+ * Pixel
+ * Useful for `overflow: auto`
+ */
+
+.uk-height-small { block-size: var(--height-small-height); }
+.uk-height-medium { block-size: var(--height-medium-height); }
+.uk-height-large { block-size: var(--height-large-height); }
+
+.uk-height-max-small { max-block-size: var(--height-small-height); }
+.uk-height-max-medium { max-block-size: var(--height-medium-height); }
+.uk-height-max-large { max-block-size: var(--height-large-height); }

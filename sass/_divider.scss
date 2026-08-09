@@ -1,79 +1,54 @@
 // Name:            Divider
 // Description:     Styles for dividers
 //
-// Component:       `uk-divider-icon`
-//                  `uk-divider-small`
-//                  `uk-divider-vertical`
-//
 // ========================================================================
 
 
 // Variables
 // ========================================================================
 
-:where([class*='uk-divider']) {
+$divider-margin-vertical:                       $global-margin;
 
-    --divider-margin-vertical:                        var(--global-margin);
+$divider-icon-width:                            50px;
+$divider-icon-height:                           20px;
+$divider-icon-color:                            $global-border;
+$divider-icon-line-top:                         50%;
+$divider-icon-line-width:                       100%;
+$divider-icon-line-border-width:                $global-border-width;
+$divider-icon-line-border:                      $global-border;
 
-    --divider-small-width:                            100px;
-    --divider-small-border-width:                     var(--global-border-width);
-    --divider-small-border:                           var(--theme-border, var(--global-border));
+$internal-divider-icon-image:                   "../../images/backgrounds/divider-icon.svg";
 
-    --divider-vertical-height:                        100px;
-    --divider-vertical-border-width:                  var(--global-border-width);
-    --divider-vertical-border:                        var(--theme-border, var(--global-border));
+$divider-small-width:                           100px;
+$divider-small-border-width:                    $global-border-width;
+$divider-small-border:                          $global-border;
 
-}
-
-
-/* ========================================================================
-   Component: Divider
- ========================================================================== */
-
-/*
- * 1. Reset default `hr`
- * 2. Set margin if a `div` is used for semantical reason
- */
-
-[class*='uk-divider'] {
-    /* 1 */
-    border: none;
-    /* 2 */
-    margin-block-end: var(--divider-margin-vertical);
-}
-
-/* Add margin if adjacent element */
-* + [class*='uk-divider'] { margin-block-start: var(--divider-margin-vertical); }
+$divider-vertical-height:                       100px;
+$divider-vertical-border-width:                 $global-border-width;
+$divider-vertical-border:                       $global-border;
 
 
-/* Small
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-/*
- * 1. Fix height because of `inline-block`
- * 2. Using ::after and inline-block to make `text-align` work
- */
+:root {
 
-/* 1 */
-.uk-divider-small { line-height: 0; }
+    --divider-margin-vertical: $divider-margin-vertical;
 
-/* 2 */
-.uk-divider-small::after {
-    content: "";
-    display: inline-block;
-    inline-size: var(--divider-small-width);
-    max-inline-size: 100%;
-    border-block-start: var(--divider-small-border-width) solid var(--divider-small-border);
-    vertical-align: top;
-}
+    --divider-icon-width: $divider-icon-width;
+    --divider-icon-height: $divider-icon-height;
+    --divider-icon-color: $divider-icon-color;
+    --divider-icon-line-top: $divider-icon-line-top;
+    --divider-icon-line-width: $divider-icon-line-width;
+    --divider-icon-line-border-width: $divider-icon-line-border-width;
+    --divider-icon-line-border: $divider-icon-line-border;
 
+    --divider-small-width: $divider-small-width;
+    --divider-small-border-width: $divider-small-border-width;
+    --divider-small-border: $divider-small-border;
 
-/* Vertical
- ========================================================================== */
+    --divider-vertical-height: $divider-vertical-height;
+    --divider-vertical-border-width: $divider-vertical-border-width;
+    --divider-vertical-border: $divider-vertical-border;
 
-.uk-divider-vertical {
-    inline-size: max-content;
-    block-size: var(--divider-vertical-height);
-    margin-inline: auto;
-    border-inline-start: var(--divider-vertical-border-width) solid var(--divider-vertical-border);
 }

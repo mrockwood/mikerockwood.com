@@ -14,90 +14,26 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-link']) {
+$link-muted-color:                              $global-muted-color;
+$link-muted-hover-color:                        $global-color;
 
-    --link-muted-color:                               var(--theme-muted-color, var(--global-muted-color) );
-    --link-muted-hover-color:                         var(--theme-color, var(--global-color) );
+$link-text-hover-color:                         $global-muted-color;
 
-    --link-text-hover-color:                          var(--theme-muted-color, var(--global-muted-color) );
-
-    --link-heading-hover-color:                       var(--theme-primary-background, var(--global-primary-background) );
-    --link-heading-hover-text-decoration:             none;
-
-}
+$link-heading-hover-color:                      $global-primary-background;
+$link-heading-hover-text-decoration:            none;
 
 
-/* ========================================================================
-   Component: Link
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-/* Muted
- ========================================================================== */
+:root {
 
-a.uk-link-muted,
-.uk-link-muted a,
-.uk-link-toggle .uk-link-muted {
-    color: var(--link-muted-color);
-}
+    --link-muted-color: $link-muted-color;
+    --link-muted-hover-color: $link-muted-hover-color;
 
-a.uk-link-muted:hover,
-.uk-link-muted a:hover,
-.uk-link-toggle:hover .uk-link-muted {
-    color: var(--link-muted-hover-color);
-}
+    --link-text-hover-color: $link-text-hover-color;
 
+    --link-heading-hover-color: $link-heading-hover-color;
+    --link-heading-hover-text-decoration: $link-heading-hover-text-decoration;
 
-/* Text
- ========================================================================== */
-
-a.uk-link-text,
-.uk-link-text a,
-.uk-link-toggle .uk-link-text {
-    color: inherit;
-}
-
-a.uk-link-text:hover,
-.uk-link-text a:hover,
-.uk-link-toggle:hover .uk-link-text {
-    color: var(--link-text-hover-color);
-}
-
-
-/* Heading
- ========================================================================== */
-
-a.uk-link-heading,
-.uk-link-heading a,
-.uk-link-toggle .uk-link-heading {
-    color: inherit;
-}
-
-a.uk-link-heading:hover,
-.uk-link-heading a:hover,
-.uk-link-toggle:hover .uk-link-heading {
-    color: var(--link-heading-hover-color);
-    text-decoration: var(--link-heading-hover-text-decoration);
-}
-
-
-/* Reset
- ========================================================================== */
-
-/*
- * `!important` needed to override inverse component
- */
-
-a.uk-link-reset,
-.uk-link-reset a {
-    color: inherit !important;
-    text-decoration: none !important;
-}
-
-
-/* Toggle
- ========================================================================== */
-
-.uk-link-toggle {
-    color: inherit !important;
-    text-decoration: none !important;
 }

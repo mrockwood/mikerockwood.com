@@ -13,113 +13,34 @@
 // Variables
 // ========================================================================
 
-:where([class*='uk-dotnav']) {
+$dotnav-margin-horizontal:                      12px;
+$dotnav-margin-vertical:                        $dotnav-margin-horizontal;
 
-    --dotnav-margin-horizontal:                       12px;
-    --dotnav-margin-vertical:                         var(--dotnav-margin-horizontal);
+$dotnav-item-width:                             10px;
+$dotnav-item-height:                            $dotnav-item-width;
+$dotnav-item-border-radius:                     50%;
 
-    --dotnav-item-width:                              10px;
-    --dotnav-item-height:                             var(--dotnav-item-width);
-    --dotnav-item-border-radius:                      50%;
-
-    --dotnav-item-background:                         color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
-    --dotnav-item-hover-background:                   color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
-    --dotnav-item-onclick-background:                 color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
-    --dotnav-item-active-background:                  color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
-
-}
+$dotnav-item-background:                        color-mix(in srgb, $global-color 80%, transparent);
+$dotnav-item-hover-background:                  color-mix(in srgb, $global-color 40%, transparent);
+$dotnav-item-onclick-background:                color-mix(in srgb, $global-color 80%, transparent);
+$dotnav-item-active-background:                 color-mix(in srgb, $global-color 40%, transparent);
 
 
-/* ========================================================================
-   Component: Dotnav
- ========================================================================== */
+// Set custom properties
+// ========================================================================
 
-/*
- * 1. Allow items to wrap into the next line
- * 2. Reset list
- * 3. Gutter
- */
+:root {
 
- .uk-dotnav {
-    display: flex;
-    /* 1 */
-    flex-wrap: wrap;
-    /* 2 */
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    /* 3 */
-    margin-inline-start: calc( -1 * var(--dotnav-margin-horizontal) );
-}
+    --dotnav-margin-horizontal: $dotnav-margin-horizontal;
+    --dotnav-margin-vertical: $dotnav-margin-vertical;
 
-/*
- * 1. Space is allocated solely based on content dimensions: 0 0 auto
- * 2. Gutter
- */
+    --dotnav-item-width: $dotnav-item-width;
+    --dotnav-item-height: $dotnav-item-height;
+    --dotnav-item-border-radius: $dotnav-item-border-radius;
 
-.uk-dotnav > * {
-    /* 1 */
-    flex: none;
-    /* 2 */
-    padding-inline-start: var(--dotnav-margin-horizontal);
-}
+    --dotnav-item-background: $dotnav-item-background;
+    --dotnav-item-hover-background: $dotnav-item-hover-background;
+    --dotnav-item-onclick-background: $dotnav-item-onclick-background;
+    --dotnav-item-active-background: $dotnav-item-active-background;
 
-
-/* Items
- ========================================================================== */
-
-/*
- * Items
- * 1. Hide text if present
- */
-
-.uk-dotnav > * > * {
-    display: block;
-    box-sizing: border-box;
-    inline-size: var(--dotnav-item-width);
-    block-size: var(--dotnav-item-height);
-    border-radius: var(--dotnav-item-border-radius);
-    background: var(--dotnav-item-background);
-    /* 1 */
-    text-indent: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-/* Hover */
-.uk-dotnav > * > :hover {
-    background-color: var(--dotnav-item-hover-background);
-}
-
-/* OnClick */
-.uk-dotnav > * > :active {
-    background-color: var(--dotnav-item-onclick-background);
-}
-
-/* Active */
-.uk-dotnav > .uk-active > * {
-    background-color: var(--dotnav-item-active-background);
-}
-
-
-/* Modifier: 'uk-dotnav-vertical'
- ========================================================================== */
-
-/*
- * 1. Change direction
- * 2. Gutter
- */
-
-.uk-dotnav-vertical {
-    /* 1 */
-    flex-direction: column;
-    /* 2 */
-    margin-inline-start: 0;
-    margin-block-start: calc( -1 * var(--dotnav-margin-vertical) );
-}
-
-/* 2 */
-.uk-dotnav-vertical > * {
-    padding-inline-start: 0;
-    padding-block-start: var(--dotnav-margin-vertical);
 }
