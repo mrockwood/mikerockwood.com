@@ -25,12 +25,12 @@ $padding-large-padding-l:                               $global-large-gutter;
 
 :root {
 
-    --padding-padding: $padding-padding;
-    --padding-padding-l: $padding-padding-l;
+    --padding-padding: #{$padding-padding};
+    --padding-padding-l: #{$padding-padding-l};
 
-    --padding-small-padding: $padding-small-padding;
+    --padding-small-padding: #{$padding-small-padding};
 
-    --padding-large-padding: $padding-large-padding;
-    --padding-large-padding-l: $padding-large-padding-l;
+    --padding-large-padding: #{$padding-large-padding};
+    --padding-large-padding-l: #{$padding-large-padding-l};
 
 }

@@ -41,30 +41,30 @@ $internal-list-bullet-image:                    "../../images/backgrounds/list-b
 
 :root {
 
-    --list-margin-top: $list-margin-top;
+    --list-margin-top: #{$list-margin-top};
 
-    --list-padding-left: $list-padding-left;
+    --list-padding-left: #{$list-padding-left};
 
-    --list-marker-height: $list-marker-height;
+    --list-marker-height: #{$list-marker-height};
 
-    --list-muted-color: $list-muted-color;
-    --list-emphasis-color: $list-emphasis-color;
-    --list-primary-color: $list-primary-color;
-    --list-secondary-color: $list-secondary-color;
+    --list-muted-color: #{$list-muted-color};
+    --list-emphasis-color: #{$list-emphasis-color};
+    --list-primary-color: #{$list-primary-color};
+    --list-secondary-color: #{$list-secondary-color};
 
-    --list-bullet-icon-color: $list-bullet-icon-color;
+    --list-bullet-icon-color: #{$list-bullet-icon-color};
 
-    --list-divider-margin-top: $list-divider-margin-top;
-    --list-divider-border-width: $list-divider-border-width;
-    --list-divider-border: $list-divider-border;
+    --list-divider-margin-top: #{$list-divider-margin-top};
+    --list-divider-border-width: #{$list-divider-border-width};
+    --list-divider-border: #{$list-divider-border};
 
-    --list-striped-padding-vertical: $list-striped-padding-vertical;
-    --list-striped-padding-horizontal: $list-striped-padding-horizontal;
-    --list-striped-background: $list-striped-background;
+    --list-striped-padding-vertical: #{$list-striped-padding-vertical};
+    --list-striped-padding-horizontal: #{$list-striped-padding-horizontal};
+    --list-striped-background: #{$list-striped-background};
 
-    --list-large-margin-top: $list-large-margin-top;
-    --list-large-divider-margin-top: $list-large-divider-margin-top;
-    --list-large-striped-padding-vertical: $list-large-striped-padding-vertical;
-    --list-large-striped-padding-horizontal: $list-large-striped-padding-horizontal;
+    --list-large-margin-top: #{$list-large-margin-top};
+    --list-large-divider-margin-top: #{$list-large-divider-margin-top};
+    --list-large-striped-padding-vertical: #{$list-large-striped-padding-vertical};
+    --list-large-striped-padding-horizontal: #{$list-large-striped-padding-horizontal};
 
 }

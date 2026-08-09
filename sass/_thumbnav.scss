@@ -22,7 +22,7 @@ $thumbnav-margin-vertical:                      $thumbnav-margin-horizontal;
 
 :root {
 
-    --thumbnav-margin-horizontal: $thumbnav-margin-horizontal;
-    --thumbnav-margin-vertical: $thumbnav-margin-vertical;
+    --thumbnav-margin-horizontal: #{$thumbnav-margin-horizontal};
+    --thumbnav-margin-vertical: #{$thumbnav-margin-vertical};
 
 }

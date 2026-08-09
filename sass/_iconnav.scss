@@ -22,13 +22,13 @@ $iconnav-item-active-color:                      $global-color;
 
 :root {
 
-    --iconnav-margin-horizontal: $iconnav-margin-horizontal;
-    --iconnav-margin-vertical: $iconnav-margin-vertical;
+    --iconnav-margin-horizontal: #{$iconnav-margin-horizontal};
+    --iconnav-margin-vertical: #{$iconnav-margin-vertical};
 
-    --iconnav-item-color: $iconnav-item-color;
+    --iconnav-item-color: #{$iconnav-item-color};
 
-    --iconnav-item-hover-color: $iconnav-item-hover-color;
+    --iconnav-item-hover-color: #{$iconnav-item-hover-color};
 
-    --iconnav-item-active-color: $iconnav-item-active-color;
+    --iconnav-item-active-color: #{$iconnav-item-active-color};
 
 }

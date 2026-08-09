@@ -47,30 +47,30 @@ $subnav-item-disabled-color:                    $global-muted-color;
 
 :root {
 
-    --subnav-margin-horizontal: $subnav-margin-horizontal;
+    --subnav-margin-horizontal: #{$subnav-margin-horizontal};
 
-    --subnav-item-color: $subnav-item-color;
-    --subnav-item-hover-color: $subnav-item-hover-color;
-    --subnav-item-hover-text-decoration: $subnav-item-hover-text-decoration;
-    --subnav-item-active-color: $subnav-item-active-color;
+    --subnav-item-color: #{$subnav-item-color};
+    --subnav-item-hover-color: #{$subnav-item-hover-color};
+    --subnav-item-hover-text-decoration: #{$subnav-item-hover-text-decoration};
+    --subnav-item-active-color: #{$subnav-item-active-color};
 
-    --subnav-divider-margin-horizontal: $subnav-divider-margin-horizontal;
-    --subnav-divider-border-height: $subnav-divider-border-height;
-    --subnav-divider-border-width: $subnav-divider-border-width;
-    --subnav-divider-border: $subnav-divider-border;
+    --subnav-divider-margin-horizontal: #{$subnav-divider-margin-horizontal};
+    --subnav-divider-border-height: #{$subnav-divider-border-height};
+    --subnav-divider-border-width: #{$subnav-divider-border-width};
+    --subnav-divider-border: #{$subnav-divider-border};
 
-    --subnav-pill-margin-horizontal: $subnav-pill-margin-horizontal;
-    --subnav-pill-item-padding-vertical: $subnav-pill-item-padding-vertical;
-    --subnav-pill-item-padding-horizontal: $subnav-pill-item-padding-horizontal;
-    --subnav-pill-item-background: $subnav-pill-item-background;
-    --subnav-pill-item-color: $subnav-pill-item-color;
-    --subnav-pill-item-hover-background: $subnav-pill-item-hover-background;
-    --subnav-pill-item-hover-color: $subnav-pill-item-hover-color;
-    --subnav-pill-item-onclick-background: $subnav-pill-item-onclick-background;
-    --subnav-pill-item-onclick-color: $subnav-pill-item-onclick-color;
-    --subnav-pill-item-active-background: $subnav-pill-item-active-background;
-    --subnav-pill-item-active-color: $subnav-pill-item-active-color;
+    --subnav-pill-margin-horizontal: #{$subnav-pill-margin-horizontal};
+    --subnav-pill-item-padding-vertical: #{$subnav-pill-item-padding-vertical};
+    --subnav-pill-item-padding-horizontal: #{$subnav-pill-item-padding-horizontal};
+    --subnav-pill-item-background: #{$subnav-pill-item-background};
+    --subnav-pill-item-color: #{$subnav-pill-item-color};
+    --subnav-pill-item-hover-background: #{$subnav-pill-item-hover-background};
+    --subnav-pill-item-hover-color: #{$subnav-pill-item-hover-color};
+    --subnav-pill-item-onclick-background: #{$subnav-pill-item-onclick-background};
+    --subnav-pill-item-onclick-color: #{$subnav-pill-item-onclick-color};
+    --subnav-pill-item-active-background: #{$subnav-pill-item-active-background};
+    --subnav-pill-item-active-color: #{$subnav-pill-item-active-color};
 
-    --subnav-item-disabled-color: $subnav-item-disabled-color;
+    --subnav-item-disabled-color: #{$subnav-item-disabled-color};
 
 }

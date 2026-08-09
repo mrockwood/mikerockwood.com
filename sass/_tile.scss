@@ -41,32 +41,32 @@ $tile-secondary-color-mode:                    light;
 
 :root {
 
-    --tile-padding-horizontal: $tile-padding-horizontal;
-    --tile-padding-horizontal-s: $tile-padding-horizontal-s;
-    --tile-padding-horizontal-m: $tile-padding-horizontal-m;
-    --tile-padding-vertical: $tile-padding-vertical;
-    --tile-padding-vertical-m: $tile-padding-vertical-m;
+    --tile-padding-horizontal: #{$tile-padding-horizontal};
+    --tile-padding-horizontal-s: #{$tile-padding-horizontal-s};
+    --tile-padding-horizontal-m: #{$tile-padding-horizontal-m};
+    --tile-padding-vertical: #{$tile-padding-vertical};
+    --tile-padding-vertical-m: #{$tile-padding-vertical-m};
 
-    --tile-xsmall-padding-vertical: $tile-xsmall-padding-vertical;
+    --tile-xsmall-padding-vertical: #{$tile-xsmall-padding-vertical};
 
-    --tile-small-padding-vertical: $tile-small-padding-vertical;
+    --tile-small-padding-vertical: #{$tile-small-padding-vertical};
 
-    --tile-large-padding-vertical: $tile-large-padding-vertical;
-    --tile-large-padding-vertical-m: $tile-large-padding-vertical-m;
+    --tile-large-padding-vertical: #{$tile-large-padding-vertical};
+    --tile-large-padding-vertical-m: #{$tile-large-padding-vertical-m};
 
-    --tile-xlarge-padding-vertical: $tile-xlarge-padding-vertical;
-    --tile-xlarge-padding-vertical-m: $tile-xlarge-padding-vertical-m;
+    --tile-xlarge-padding-vertical: #{$tile-xlarge-padding-vertical};
+    --tile-xlarge-padding-vertical-m: #{$tile-xlarge-padding-vertical-m};
 
-    --tile-default-background: $tile-default-background;
-    --tile-default-color-mode: $tile-default-color-mode;
+    --tile-default-background: #{$tile-default-background};
+    --tile-default-color-mode: #{$tile-default-color-mode};
 
-    --tile-muted-background: $tile-muted-background;
-    --tile-muted-color-mode: $tile-muted-color-mode;
+    --tile-muted-background: #{$tile-muted-background};
+    --tile-muted-color-mode: #{$tile-muted-color-mode};
 
-    --tile-primary-background: $tile-primary-background;
-    --tile-primary-color-mode: $tile-primary-color-mode;
+    --tile-primary-background: #{$tile-primary-background};
+    --tile-primary-color-mode: #{$tile-primary-color-mode};
 
-    --tile-secondary-background: $tile-secondary-background;
-    --tile-secondary-color-mode: $tile-secondary-color-mode;
+    --tile-secondary-background: #{$tile-secondary-background};
+    --tile-secondary-color-mode: #{$tile-secondary-color-mode};
 
 }

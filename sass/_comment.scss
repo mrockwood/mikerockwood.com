@@ -26,17 +26,17 @@ $comment-list-padding-left-m:                   100px;
 
 :root {
 
-    --comment-header-margin-bottom: $comment-header-margin-bottom;
+    --comment-header-margin-bottom: #{$comment-header-margin-bottom};
 
-    --comment-title-font-size: $comment-title-font-size;
-    --comment-title-line-height: $comment-title-line-height;
+    --comment-title-font-size: #{$comment-title-font-size};
+    --comment-title-line-height: #{$comment-title-line-height};
 
-    --comment-meta-font-size: $comment-meta-font-size;
-    --comment-meta-line-height: $comment-meta-line-height;
-    --comment-meta-color: $comment-meta-color;
+    --comment-meta-font-size: #{$comment-meta-font-size};
+    --comment-meta-line-height: #{$comment-meta-line-height};
+    --comment-meta-color: #{$comment-meta-color};
 
-    --comment-list-margin-top: $comment-list-margin-top;
-    --comment-list-padding-left: $comment-list-padding-left;
-    --comment-list-padding-left-m: $comment-list-padding-left-m;
+    --comment-list-margin-top: #{$comment-list-margin-top};
+    --comment-list-padding-left: #{$comment-list-padding-left};
+    --comment-list-padding-left-m: #{$comment-list-padding-left-m};
 
 }

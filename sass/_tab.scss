@@ -32,14 +32,14 @@ $tab-item-disabled-color:                $global-muted-color;
 
 :root {
 
-    --tab-margin-horizontal: $tab-margin-horizontal;
+    --tab-margin-horizontal: #{$tab-margin-horizontal};
 
-    --tab-item-padding-horizontal: $tab-item-padding-horizontal;
-    --tab-item-padding-vertical: $tab-item-padding-vertical;
-    --tab-item-color: $tab-item-color;
-    --tab-item-hover-color: $tab-item-hover-color;
-    --tab-item-hover-text-decoration: $tab-item-hover-text-decoration;
-    --tab-item-active-color: $tab-item-active-color;
-    --tab-item-disabled-color: $tab-item-disabled-color;
+    --tab-item-padding-horizontal: #{$tab-item-padding-horizontal};
+    --tab-item-padding-vertical: #{$tab-item-padding-vertical};
+    --tab-item-color: #{$tab-item-color};
+    --tab-item-hover-color: #{$tab-item-hover-color};
+    --tab-item-hover-text-decoration: #{$tab-item-hover-text-decoration};
+    --tab-item-active-color: #{$tab-item-active-color};
+    --tab-item-disabled-color: #{$tab-item-disabled-color};
 
 }

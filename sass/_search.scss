@@ -71,50 +71,50 @@ $search-toggle-hover-color:                         $global-color;
 
 :root {
 
-    --search-color: $search-color;
-    --search-placeholder-color: $search-placeholder-color;
+    --search-color: #{$search-color};
+    --search-placeholder-color: #{$search-placeholder-color};
 
-    --search-icon-color: $search-icon-color;
+    --search-icon-color: #{$search-icon-color};
 
-    --search-default-width: $search-default-width;
-    --search-default-height: $search-default-height;
-    --search-default-padding-horizontal: $search-default-padding-horizontal;
-    --search-default-background: $search-default-background;
-    --search-default-focus-background: $search-default-focus-background;
+    --search-default-width: #{$search-default-width};
+    --search-default-height: #{$search-default-height};
+    --search-default-padding-horizontal: #{$search-default-padding-horizontal};
+    --search-default-background: #{$search-default-background};
+    --search-default-focus-background: #{$search-default-focus-background};
 
-    --search-default-icon-width: $search-default-icon-width;
-    --search-default-icon-padding: $search-default-icon-padding;
+    --search-default-icon-width: #{$search-default-icon-width};
+    --search-default-icon-padding: #{$search-default-icon-padding};
 
-    --search-navbar-width: $search-navbar-width;
-    --search-navbar-height: $search-navbar-height;
-    --search-navbar-padding-horizontal: $search-navbar-padding-horizontal;
-    --search-navbar-background: $search-navbar-background;
-    --search-navbar-focus-background: $search-navbar-focus-background;
+    --search-navbar-width: #{$search-navbar-width};
+    --search-navbar-height: #{$search-navbar-height};
+    --search-navbar-padding-horizontal: #{$search-navbar-padding-horizontal};
+    --search-navbar-background: #{$search-navbar-background};
+    --search-navbar-focus-background: #{$search-navbar-focus-background};
 
-    --search-navbar-icon-width: $search-navbar-icon-width;
-    --search-navbar-icon-padding: $search-navbar-icon-padding;
+    --search-navbar-icon-width: #{$search-navbar-icon-width};
+    --search-navbar-icon-padding: #{$search-navbar-icon-padding};
 
-    --search-medium-width: $search-medium-width;
-    --search-medium-height: $search-medium-height;
-    --search-medium-padding-horizontal: $search-medium-padding-horizontal;
-    --search-medium-background: $search-medium-background;
-    --search-medium-font-size: $search-medium-font-size;
-    --search-medium-focus-background: $search-medium-focus-background;
+    --search-medium-width: #{$search-medium-width};
+    --search-medium-height: #{$search-medium-height};
+    --search-medium-padding-horizontal: #{$search-medium-padding-horizontal};
+    --search-medium-background: #{$search-medium-background};
+    --search-medium-font-size: #{$search-medium-font-size};
+    --search-medium-focus-background: #{$search-medium-focus-background};
 
-    --search-medium-icon-width: $search-medium-icon-width;
-    --search-medium-icon-padding: $search-medium-icon-padding;
+    --search-medium-icon-width: #{$search-medium-icon-width};
+    --search-medium-icon-padding: #{$search-medium-icon-padding};
 
-    --search-large-width: $search-large-width;
-    --search-large-height: $search-large-height;
-    --search-large-padding-horizontal: $search-large-padding-horizontal;
-    --search-large-background: $search-large-background;
-    --search-large-font-size: $search-large-font-size;
-    --search-large-focus-background: $search-large-focus-background;
+    --search-large-width: #{$search-large-width};
+    --search-large-height: #{$search-large-height};
+    --search-large-padding-horizontal: #{$search-large-padding-horizontal};
+    --search-large-background: #{$search-large-background};
+    --search-large-font-size: #{$search-large-font-size};
+    --search-large-focus-background: #{$search-large-focus-background};
 
-    --search-large-icon-width: $search-large-icon-width;
-    --search-large-icon-padding: $search-large-icon-padding;
+    --search-large-icon-width: #{$search-large-icon-width};
+    --search-large-icon-padding: #{$search-large-icon-padding};
 
-    --search-toggle-color: $search-toggle-color;
-    --search-toggle-hover-color: $search-toggle-hover-color;
+    --search-toggle-color: #{$search-toggle-color};
+    --search-toggle-hover-color: #{$search-toggle-hover-color};
 
 }

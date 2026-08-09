@@ -151,67 +151,67 @@ $inverse-global-color-mode:                     light !default;
 
 :root {
 
-    --global-font-family: $global-font-family;
-    --global-font-size: $global-font-size;
-    --global-line-height: $global-line-height;
+    --global-font-family: #{$global-font-family};
+    --global-font-size: #{$global-font-size};
+    --global-line-height: #{$global-line-height};
 
-    --global-2xlarge-font-size: $global-2xlarge-font-size;
-    --global-xlarge-font-size: $global-xlarge-font-size;
-    --global-large-font-size: $global-large-font-size;
-    --global-medium-font-size: $global-medium-font-size;
-    --global-small-font-size: $global-small-font-size;
-    --global-xsmall-font-size: $global-xsmall-font-size;
+    --global-2xlarge-font-size: #{$global-2xlarge-font-size};
+    --global-xlarge-font-size: #{$global-xlarge-font-size};
+    --global-large-font-size: #{$global-large-font-size};
+    --global-medium-font-size: #{$global-medium-font-size};
+    --global-small-font-size: #{$global-small-font-size};
+    --global-xsmall-font-size: #{$global-xsmall-font-size};
 
-    --global-color: $global-color;
-    --global-emphasis-color: $global-emphasis-color;
-    --global-muted-color: $global-muted-color;
+    --global-color: #{$global-color};
+    --global-emphasis-color: #{$global-emphasis-color};
+    --global-muted-color: #{$global-muted-color};
 
-    --global-link-color: $global-link-color;
-    --global-link-hover-color: $global-link-hover-color;
+    --global-link-color: #{$global-link-color};
+    --global-link-hover-color: #{$global-link-hover-color};
 
-    --global-inverse-color: $global-inverse-color;
+    --global-inverse-color: #{$global-inverse-color};
 
-    --global-background: $global-background;
+    --global-background: #{$global-background};
 
-    --global-muted-background: $global-muted-background;
-    --global-primary-background: $global-primary-background;
-    --global-secondary-background: $global-secondary-background;
+    --global-muted-background: #{$global-muted-background};
+    --global-primary-background: #{$global-primary-background};
+    --global-secondary-background: #{$global-secondary-background};
 
-    --global-success-background: $global-success-background;
-    --global-warning-background: $global-warning-background;
-    --global-danger-background: $global-danger-background;
+    --global-success-background: #{$global-success-background};
+    --global-warning-background: #{$global-warning-background};
+    --global-danger-background: #{$global-danger-background};
 
-    --global-border-width: $global-border-width;
-    --global-border-style: $global-border-style;
-    --global-border: $global-border;
+    --global-border-width: #{$global-border-width};
+    --global-border-style: #{$global-border-style};
+    --global-border: #{$global-border};
 
-    --global-small-box-shadow: $global-small-box-shadow;
-    --global-medium-box-shadow: $global-medium-box-shadow;
-    --global-large-box-shadow: $global-large-box-shadow;
-    --global-xlarge-box-shadow: $global-xlarge-box-shadow;
+    --global-small-box-shadow: #{$global-small-box-shadow};
+    --global-medium-box-shadow: #{$global-medium-box-shadow};
+    --global-large-box-shadow: #{$global-large-box-shadow};
+    --global-xlarge-box-shadow: #{$global-xlarge-box-shadow};
 
-    --global-margin: $global-margin;
-    --global-xsmall-margin: $global-xsmall-margin;
-    --global-small-margin: $global-small-margin;
-    --global-medium-margin: $global-medium-margin;
-    --global-large-margin: $global-large-margin;
-    --global-xlarge-margin: $global-xlarge-margin;
+    --global-margin: #{$global-margin};
+    --global-xsmall-margin: #{$global-xsmall-margin};
+    --global-small-margin: #{$global-small-margin};
+    --global-medium-margin: #{$global-medium-margin};
+    --global-large-margin: #{$global-large-margin};
+    --global-xlarge-margin: #{$global-xlarge-margin};
 
-    --global-gutter: $global-gutter;
-    --global-small-gutter: $global-small-gutter;
-    --global-medium-gutter: $global-medium-gutter;
-    --global-large-gutter: $global-large-gutter;
+    --global-gutter: #{$global-gutter};
+    --global-small-gutter: #{$global-small-gutter};
+    --global-medium-gutter: #{$global-medium-gutter};
+    --global-large-gutter: #{$global-large-gutter};
 
-    --global-xslow-transition: $global-xslow-transition;
-    --global-slow-transition: $global-slow-transition;
-    --global-medium-transition: $global-medium-transition;
-    --global-fast-transition: $global-fast-transition;
-    --global-xfast-transition: $global-xfast-transition;
+    --global-xslow-transition: #{$global-xslow-transition};
+    --global-slow-transition: #{$global-slow-transition};
+    --global-medium-transition: #{$global-medium-transition};
+    --global-fast-transition: #{$global-fast-transition};
+    --global-xfast-transition: #{$global-xfast-transition};
 
-    --global-control-height: $global-control-height;
-    --global-control-small-height: $global-control-small-height;
-    --global-control-large-height: $global-control-large-height;
+    --global-control-height: #{$global-control-height};
+    --global-control-small-height: #{$global-control-small-height};
+    --global-control-large-height: #{$global-control-large-height};
 
-    --global-z-index: $global-z-index;
+    --global-z-index: #{$global-z-index};
 
 }

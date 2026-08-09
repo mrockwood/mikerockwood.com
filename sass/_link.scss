@@ -28,12 +28,12 @@ $link-heading-hover-text-decoration:            none;
 
 :root {
 
-    --link-muted-color: $link-muted-color;
-    --link-muted-hover-color: $link-muted-hover-color;
+    --link-muted-color: #{$link-muted-color};
+    --link-muted-hover-color: #{$link-muted-hover-color};
 
-    --link-text-hover-color: $link-text-hover-color;
+    --link-text-hover-color: #{$link-text-hover-color};
 
-    --link-heading-hover-color: $link-heading-hover-color;
-    --link-heading-hover-text-decoration: $link-heading-hover-text-decoration;
+    --link-heading-hover-color: #{$link-heading-hover-color};
+    --link-heading-hover-text-decoration: #{$link-heading-hover-text-decoration};
 
 }

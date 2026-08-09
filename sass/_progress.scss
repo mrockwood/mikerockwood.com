@@ -19,10 +19,10 @@ $progress-bar-background:                       $global-primary-background;
 
 :root {
 
-    --progress-height: $progress-height;
-    --progress-margin-vertical: $progress-margin-vertical;
-    --progress-background: $progress-background;
+    --progress-height: #{$progress-height};
+    --progress-margin-vertical: #{$progress-margin-vertical};
+    --progress-background: #{$progress-background};
 
-    --progress-bar-background: $progress-bar-background;
+    --progress-bar-background: #{$progress-bar-background};
 
 }

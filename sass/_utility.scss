@@ -65,32 +65,32 @@ $dragover-box-shadow:                           0 0 20px rgba(100,100,100,0.3);
 
 :root {
 
-    --panel-scrollable-height: $panel-scrollable-height;
-    --panel-scrollable-padding: $panel-scrollable-padding;
-    --panel-scrollable-border-width: $panel-scrollable-border-width;
-    --panel-scrollable-border: $panel-scrollable-border;
+    --panel-scrollable-height: #{$panel-scrollable-height};
+    --panel-scrollable-padding: #{$panel-scrollable-padding};
+    --panel-scrollable-border-width: #{$panel-scrollable-border-width};
+    --panel-scrollable-border: #{$panel-scrollable-border};
 
-    --overflow-fade-size: $overflow-fade-size;
+    --overflow-fade-size: #{$overflow-fade-size};
 
-    --border-rounded-border-radius: $border-rounded-border-radius;
+    --border-rounded-border-radius: #{$border-rounded-border-radius};
 
-    --box-shadow-duration: $box-shadow-duration;
+    --box-shadow-duration: #{$box-shadow-duration};
 
-    --box-shadow-bottom-height: $box-shadow-bottom-height;
-    --box-shadow-bottom-bottom: $box-shadow-bottom-bottom;
-    --box-shadow-bottom-border-radius: $box-shadow-bottom-border-radius;
-    --box-shadow-bottom-background: $box-shadow-bottom-background;
-    --box-shadow-bottom-blur: $box-shadow-bottom-blur;
+    --box-shadow-bottom-height: #{$box-shadow-bottom-height};
+    --box-shadow-bottom-bottom: #{$box-shadow-bottom-bottom};
+    --box-shadow-bottom-border-radius: #{$box-shadow-bottom-border-radius};
+    --box-shadow-bottom-background: #{$box-shadow-bottom-background};
+    --box-shadow-bottom-blur: #{$box-shadow-bottom-blur};
 
-    --dropcap-margin-right: $dropcap-margin-right;
-    --dropcap-font-size: $dropcap-font-size;
-    --dropcap-line-height: $dropcap-line-height;
+    --dropcap-margin-right: #{$dropcap-margin-right};
+    --dropcap-font-size: #{$dropcap-font-size};
+    --dropcap-line-height: #{$dropcap-line-height};
 
-    --logo-font-size: $logo-font-size;
-    --logo-font-family: $logo-font-family;
-    --logo-color: $logo-color;
-    --logo-hover-color: $logo-hover-color;
+    --logo-font-size: #{$logo-font-size};
+    --logo-font-family: #{$logo-font-family};
+    --logo-color: #{$logo-color};
+    --logo-hover-color: #{$logo-hover-color};
 
-    --dragover-box-shadow: $dragover-box-shadow;
+    --dragover-box-shadow: #{$dragover-box-shadow};
 
 }

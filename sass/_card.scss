@@ -82,73 +82,73 @@ $card-large-footer-padding-vertical-l:         round(($global-large-gutter / 2))
 
 :root {
 
-    --card-body-padding-horizontal: $card-body-padding-horizontal;
-    --card-body-padding-vertical: $card-body-padding-vertical;
+    --card-body-padding-horizontal: #{$card-body-padding-horizontal};
+    --card-body-padding-vertical: #{$card-body-padding-vertical};
 
-    --card-body-padding-horizontal-l: $card-body-padding-horizontal-l;
-    --card-body-padding-vertical-l: $card-body-padding-vertical-l;
+    --card-body-padding-horizontal-l: #{$card-body-padding-horizontal-l};
+    --card-body-padding-vertical-l: #{$card-body-padding-vertical-l};
 
-    --card-header-padding-horizontal: $card-header-padding-horizontal;
-    --card-header-padding-vertical: $card-header-padding-vertical;
+    --card-header-padding-horizontal: #{$card-header-padding-horizontal};
+    --card-header-padding-vertical: #{$card-header-padding-vertical};
 
-    --card-header-padding-horizontal-l: $card-header-padding-horizontal-l;
-    --card-header-padding-vertical-l: $card-header-padding-vertical-l;
+    --card-header-padding-horizontal-l: #{$card-header-padding-horizontal-l};
+    --card-header-padding-vertical-l: #{$card-header-padding-vertical-l};
 
-    --card-footer-padding-horizontal: $card-footer-padding-horizontal;
-    --card-footer-padding-vertical: $card-footer-padding-vertical;
+    --card-footer-padding-horizontal: #{$card-footer-padding-horizontal};
+    --card-footer-padding-vertical: #{$card-footer-padding-vertical};
 
-    --card-footer-padding-horizontal-l: $card-footer-padding-horizontal-l;
-    --card-footer-padding-vertical-l: $card-footer-padding-vertical-l;
+    --card-footer-padding-horizontal-l: #{$card-footer-padding-horizontal-l};
+    --card-footer-padding-vertical-l: #{$card-footer-padding-vertical-l};
 
-    --card-title-font-size: $card-title-font-size;
-    --card-title-line-height: $card-title-line-height;
+    --card-title-font-size: #{$card-title-font-size};
+    --card-title-line-height: #{$card-title-line-height};
 
-    --card-badge-top: $card-badge-top;
-    --card-badge-right: $card-badge-right;
-    --card-badge-height: $card-badge-height;
-    --card-badge-padding-horizontal: $card-badge-padding-horizontal;
-    --card-badge-background: $card-badge-background;
-    --card-badge-color: $card-badge-color;
-    --card-badge-font-size: $card-badge-font-size;
+    --card-badge-top: #{$card-badge-top};
+    --card-badge-right: #{$card-badge-right};
+    --card-badge-height: #{$card-badge-height};
+    --card-badge-padding-horizontal: #{$card-badge-padding-horizontal};
+    --card-badge-background: #{$card-badge-background};
+    --card-badge-color: #{$card-badge-color};
+    --card-badge-font-size: #{$card-badge-font-size};
 
-    --card-hover-background: $card-hover-background;
+    --card-hover-background: #{$card-hover-background};
 
-    --card-default-background: $card-default-background;
-    --card-default-color: $card-default-color;
-    --card-default-title-color: $card-default-title-color;
-    --card-default-hover-background: $card-default-hover-background;
-    --card-default-color-mode: $card-default-color-mode;
+    --card-default-background: #{$card-default-background};
+    --card-default-color: #{$card-default-color};
+    --card-default-title-color: #{$card-default-title-color};
+    --card-default-hover-background: #{$card-default-hover-background};
+    --card-default-color-mode: #{$card-default-color-mode};
 
-    --card-primary-background: $card-primary-background;
-    --card-primary-color: $card-primary-color;
-    --card-primary-title-color: $card-primary-title-color;
-    --card-primary-hover-background: $card-primary-hover-background;
-    --card-primary-color-mode: $card-primary-color-mode;
+    --card-primary-background: #{$card-primary-background};
+    --card-primary-color: #{$card-primary-color};
+    --card-primary-title-color: #{$card-primary-title-color};
+    --card-primary-hover-background: #{$card-primary-hover-background};
+    --card-primary-color-mode: #{$card-primary-color-mode};
 
-    --card-secondary-background: $card-secondary-background;
-    --card-secondary-color: $card-secondary-color;
-    --card-secondary-title-color: $card-secondary-title-color;
-    --card-secondary-hover-background: $card-secondary-hover-background;
-    --card-secondary-color-mode: $card-secondary-color-mode;
+    --card-secondary-background: #{$card-secondary-background};
+    --card-secondary-color: #{$card-secondary-color};
+    --card-secondary-title-color: #{$card-secondary-title-color};
+    --card-secondary-hover-background: #{$card-secondary-hover-background};
+    --card-secondary-color-mode: #{$card-secondary-color-mode};
 
-    --card-overlay-background: $card-overlay-background;
-    --card-overlay-color: $card-overlay-color;
-    --card-overlay-title-color: $card-overlay-title-color;
-    --card-overlay-hover-background: $card-overlay-hover-background;
-    --card-overlay-color-mode: $card-overlay-color-mode;
+    --card-overlay-background: #{$card-overlay-background};
+    --card-overlay-color: #{$card-overlay-color};
+    --card-overlay-title-color: #{$card-overlay-title-color};
+    --card-overlay-hover-background: #{$card-overlay-hover-background};
+    --card-overlay-color-mode: #{$card-overlay-color-mode};
 
-    --card-small-body-padding-horizontal: $card-small-body-padding-horizontal;
-    --card-small-body-padding-vertical: $card-small-body-padding-vertical;
-    --card-small-header-padding-horizontal: $card-small-header-padding-horizontal;
-    --card-small-header-padding-vertical: $card-small-header-padding-vertical;
-    --card-small-footer-padding-horizontal: $card-small-footer-padding-horizontal;
-    --card-small-footer-padding-vertical: $card-small-footer-padding-vertical;
+    --card-small-body-padding-horizontal: #{$card-small-body-padding-horizontal};
+    --card-small-body-padding-vertical: #{$card-small-body-padding-vertical};
+    --card-small-header-padding-horizontal: #{$card-small-header-padding-horizontal};
+    --card-small-header-padding-vertical: #{$card-small-header-padding-vertical};
+    --card-small-footer-padding-horizontal: #{$card-small-footer-padding-horizontal};
+    --card-small-footer-padding-vertical: #{$card-small-footer-padding-vertical};
 
-    --card-large-body-padding-horizontal-l: $card-large-body-padding-horizontal-l;
-    --card-large-body-padding-vertical-l: $card-large-body-padding-vertical-l;
-    --card-large-header-padding-horizontal-l: $card-large-header-padding-horizontal-l;
-    --card-large-header-padding-vertical-l: $card-large-header-padding-vertical-l;
-    --card-large-footer-padding-horizontal-l: $card-large-footer-padding-horizontal-l;
-    --card-large-footer-padding-vertical-l: $card-large-footer-padding-vertical-l;
+    --card-large-body-padding-horizontal-l: #{$card-large-body-padding-horizontal-l};
+    --card-large-body-padding-vertical-l: #{$card-large-body-padding-vertical-l};
+    --card-large-header-padding-horizontal-l: #{$card-large-header-padding-horizontal-l};
+    --card-large-header-padding-vertical-l: #{$card-large-header-padding-vertical-l};
+    --card-large-footer-padding-horizontal-l: #{$card-large-footer-padding-horizontal-l};
+    --card-large-footer-padding-vertical-l: #{$card-large-footer-padding-vertical-l};
 
 }

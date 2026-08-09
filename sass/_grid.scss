@@ -32,23 +32,23 @@ $grid-divider-border:                           $global-border;
 
 :root {
 
-    --grid-gutter-horizontal: $grid-gutter-horizontal;
-    --grid-gutter-vertical: $grid-gutter-vertical;
-    --grid-gutter-horizontal-l: $grid-gutter-horizontal-l;
-    --grid-gutter-vertical-l: $grid-gutter-vertical-l;
+    --grid-gutter-horizontal: #{$grid-gutter-horizontal};
+    --grid-gutter-vertical: #{$grid-gutter-vertical};
+    --grid-gutter-horizontal-l: #{$grid-gutter-horizontal-l};
+    --grid-gutter-vertical-l: #{$grid-gutter-vertical-l};
 
-    --grid-small-gutter-horizontal: $grid-small-gutter-horizontal;
-    --grid-small-gutter-vertical: $grid-small-gutter-vertical;
+    --grid-small-gutter-horizontal: #{$grid-small-gutter-horizontal};
+    --grid-small-gutter-vertical: #{$grid-small-gutter-vertical};
 
-    --grid-medium-gutter-horizontal: $grid-medium-gutter-horizontal;
-    --grid-medium-gutter-vertical: $grid-medium-gutter-vertical;
+    --grid-medium-gutter-horizontal: #{$grid-medium-gutter-horizontal};
+    --grid-medium-gutter-vertical: #{$grid-medium-gutter-vertical};
 
-    --grid-large-gutter-horizontal: $grid-large-gutter-horizontal;
-    --grid-large-gutter-vertical: $grid-large-gutter-vertical;
-    --grid-large-gutter-horizontal-l: $grid-large-gutter-horizontal-l;
-    --grid-large-gutter-vertical-l: $grid-large-gutter-vertical-l;
+    --grid-large-gutter-horizontal: #{$grid-large-gutter-horizontal};
+    --grid-large-gutter-vertical: #{$grid-large-gutter-vertical};
+    --grid-large-gutter-horizontal-l: #{$grid-large-gutter-horizontal-l};
+    --grid-large-gutter-vertical-l: #{$grid-large-gutter-vertical-l};
 
-    --grid-divider-border-width: $grid-divider-border-width;
-    --grid-divider-border: $grid-divider-border;
+    --grid-divider-border-width: #{$grid-divider-border-width};
+    --grid-divider-border: #{$grid-divider-border};
 
 }

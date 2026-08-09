@@ -23,14 +23,14 @@ $container-padding-horizontal-m:        $global-medium-gutter;
 
 :root {
 
-    --container-max-width: $container-max-width;
-    --container-xsmall-max-width: $container-xsmall-max-width;
-    --container-small-max-width: $container-small-max-width;
-    --container-large-max-width: $container-large-max-width;
-    --container-xlarge-max-width: $container-xlarge-max-width;
+    --container-max-width: #{$container-max-width};
+    --container-xsmall-max-width: #{$container-xsmall-max-width};
+    --container-small-max-width: #{$container-small-max-width};
+    --container-large-max-width: #{$container-large-max-width};
+    --container-xlarge-max-width: #{$container-xlarge-max-width};
 
-    --container-padding-horizontal: $container-padding-horizontal;
-    --container-padding-horizontal-s: $container-padding-horizontal-s;
-    --container-padding-horizontal-m: $container-padding-horizontal-m;
+    --container-padding-horizontal: #{$container-padding-horizontal};
+    --container-padding-horizontal-s: #{$container-padding-horizontal-s};
+    --container-padding-horizontal-m: #{$container-padding-horizontal-m};
 
 }

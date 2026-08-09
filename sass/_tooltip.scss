@@ -23,14 +23,14 @@ $tooltip-font-size:                             12px;
 
 :root {
 
-    --tooltip-z-index: $tooltip-z-index;
-    --tooltip-margin: $tooltip-margin;
-    --tooltip-max-width: $tooltip-max-width;
-    --tooltip-padding-vertical: $tooltip-padding-vertical;
-    --tooltip-padding-horizontal: $tooltip-padding-horizontal;
-    --tooltip-background: $tooltip-background;
-    --tooltip-border-radius: $tooltip-border-radius;
-    --tooltip-color: $tooltip-color;
-    --tooltip-font-size: $tooltip-font-size;
+    --tooltip-z-index: #{$tooltip-z-index};
+    --tooltip-margin: #{$tooltip-margin};
+    --tooltip-max-width: #{$tooltip-max-width};
+    --tooltip-padding-vertical: #{$tooltip-padding-vertical};
+    --tooltip-padding-horizontal: #{$tooltip-padding-horizontal};
+    --tooltip-background: #{$tooltip-background};
+    --tooltip-border-radius: #{$tooltip-border-radius};
+    --tooltip-color: #{$tooltip-color};
+    --tooltip-font-size: #{$tooltip-font-size};
 
 }

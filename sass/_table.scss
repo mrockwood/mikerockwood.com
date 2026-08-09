@@ -44,35 +44,35 @@ $table-expand-min-width:                        150px;
 
 :root {
 
-    --table-margin-vertical: $table-margin-vertical;
+    --table-margin-vertical: #{$table-margin-vertical};
 
-    --table-cell-padding-vertical: $table-cell-padding-vertical;
-    --table-cell-padding-horizontal: $table-cell-padding-horizontal;
+    --table-cell-padding-vertical: #{$table-cell-padding-vertical};
+    --table-cell-padding-horizontal: #{$table-cell-padding-horizontal};
 
-    --table-header-cell-font-size: $table-header-cell-font-size;
-    --table-header-cell-font-weight: $table-header-cell-font-weight;
-    --table-header-cell-color: $table-header-cell-color;
+    --table-header-cell-font-size: #{$table-header-cell-font-size};
+    --table-header-cell-font-weight: #{$table-header-cell-font-weight};
+    --table-header-cell-color: #{$table-header-cell-color};
 
-    --table-footer-font-size: $table-footer-font-size;
+    --table-footer-font-size: #{$table-footer-font-size};
 
-    --table-caption-font-size: $table-caption-font-size;
-    --table-caption-color: $table-caption-color;
+    --table-caption-font-size: #{$table-caption-font-size};
+    --table-caption-color: #{$table-caption-color};
 
-    --table-row-active-background: $table-row-active-background;
+    --table-row-active-background: #{$table-row-active-background};
 
-    --table-divider-border-width: $table-divider-border-width;
-    --table-divider-border: $table-divider-border;
+    --table-divider-border-width: #{$table-divider-border-width};
+    --table-divider-border: #{$table-divider-border};
 
-    --table-striped-row-background: $table-striped-row-background;
+    --table-striped-row-background: #{$table-striped-row-background};
 
-    --table-hover-row-background: $table-hover-row-background;
+    --table-hover-row-background: #{$table-hover-row-background};
 
-    --table-small-cell-padding-vertical: $table-small-cell-padding-vertical;
-    --table-small-cell-padding-horizontal: $table-small-cell-padding-horizontal;
+    --table-small-cell-padding-vertical: #{$table-small-cell-padding-vertical};
+    --table-small-cell-padding-horizontal: #{$table-small-cell-padding-horizontal};
 
-    --table-large-cell-padding-vertical: $table-large-cell-padding-vertical;
-    --table-large-cell-padding-horizontal: $table-large-cell-padding-horizontal;
+    --table-large-cell-padding-vertical: #{$table-large-cell-padding-vertical};
+    --table-large-cell-padding-horizontal: #{$table-large-cell-padding-horizontal};
 
-    --table-expand-min-width: $table-expand-min-width;
+    --table-expand-min-width: #{$table-expand-min-width};
 
 }

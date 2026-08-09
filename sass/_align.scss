@@ -1,10 +1,6 @@
 // Name:            Align
 // Description:     Utilities to align embedded content
 //
-// Component:       `uk-align-left-*`
-//                  `uk-align-right-*`
-//                  `uk-align-center`
-//
 // ========================================================================
 
 
@@ -19,9 +15,9 @@ $align-margin-horizontal-l:                     $global-medium-gutter;
 
 :root {
 
-    --align-margin-horizontal: $align-margin-horizontal;
-    --align-margin-vertical: $align-margin-vertical;
+    --align-margin-horizontal: #{$align-margin-horizontal};
+    --align-margin-vertical: #{$align-margin-vertical};
 
-    --align-margin-horizontal-l: $align-margin-horizontal-l;
+    --align-margin-horizontal-l: #{$align-margin-horizontal-l};
 
 }

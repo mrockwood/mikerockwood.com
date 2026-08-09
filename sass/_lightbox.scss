@@ -30,21 +30,21 @@ $lightbox-caption-color:                        rgba(255,255,255,0.7);
 
 :root {
 
-    --lightbox-z-index: $lightbox-z-index;
-    --lightbox-background: $lightbox-background;
-    --lightbox-color-mode: $lightbox-color-mode;
+    --lightbox-z-index: #{$lightbox-z-index};
+    --lightbox-background: #{$lightbox-background};
+    --lightbox-color-mode: #{$lightbox-color-mode};
 
-    --lightbox-focus-outline: $lightbox-focus-outline;
+    --lightbox-focus-outline: #{$lightbox-focus-outline};
 
-    --lightbox-item-max-width: $lightbox-item-max-width;
-    --lightbox-item-max-height: $lightbox-item-max-height;
+    --lightbox-item-max-width: #{$lightbox-item-max-width};
+    --lightbox-item-max-height: #{$lightbox-item-max-height};
 
-    --lightbox-thumbnav-vertical-width: $lightbox-thumbnav-vertical-width;
-    --lightbox-thumbnav-height: $lightbox-thumbnav-height;
+    --lightbox-thumbnav-vertical-width: #{$lightbox-thumbnav-vertical-width};
+    --lightbox-thumbnav-height: #{$lightbox-thumbnav-height};
 
-    --lightbox-caption-padding-vertical: $lightbox-caption-padding-vertical;
-    --lightbox-caption-padding-horizontal: $lightbox-caption-padding-horizontal;
-    --lightbox-caption-background: $lightbox-caption-background;
-    --lightbox-caption-color: $lightbox-caption-color;
+    --lightbox-caption-padding-vertical: #{$lightbox-caption-padding-vertical};
+    --lightbox-caption-padding-horizontal: #{$lightbox-caption-padding-horizontal};
+    --lightbox-caption-background: #{$lightbox-caption-background};
+    --lightbox-caption-color: #{$lightbox-caption-color};
 
 }

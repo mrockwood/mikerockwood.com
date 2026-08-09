@@ -31,14 +31,14 @@ $slidenav-large-padding-horizontal:             $slidenav-large-padding-vertical
 
 :root {
 
-    --slidenav-padding-vertical: $slidenav-padding-vertical;
-    --slidenav-padding-horizontal: $slidenav-padding-horizontal;
+    --slidenav-padding-vertical: #{$slidenav-padding-vertical};
+    --slidenav-padding-horizontal: #{$slidenav-padding-horizontal};
 
-    --slidenav-color: $slidenav-color;
-    --slidenav-hover-color: $slidenav-hover-color;
-    --slidenav-active-color: $slidenav-active-color;
+    --slidenav-color: #{$slidenav-color};
+    --slidenav-hover-color: #{$slidenav-hover-color};
+    --slidenav-active-color: #{$slidenav-active-color};
 
-    --slidenav-large-padding-vertical: $slidenav-large-padding-vertical;
-    --slidenav-large-padding-horizontal: $slidenav-large-padding-horizontal;
+    --slidenav-large-padding-vertical: #{$slidenav-large-padding-vertical};
+    --slidenav-large-padding-horizontal: #{$slidenav-large-padding-horizontal};
 
 }

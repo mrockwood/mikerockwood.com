@@ -27,18 +27,18 @@ $label-danger-color:                            $global-inverse-color;
 
 :root {
 
-    --label-padding-vertical: $label-padding-vertical;
-    --label-padding-horizontal: $label-padding-horizontal;
-    --label-background: $label-background;
-    --label-line-height: $label-line-height;
-    --label-font-size: $label-font-size;
-    --label-color: $label-color;
+    --label-padding-vertical: #{$label-padding-vertical};
+    --label-padding-horizontal: #{$label-padding-horizontal};
+    --label-background: #{$label-background};
+    --label-line-height: #{$label-line-height};
+    --label-font-size: #{$label-font-size};
+    --label-color: #{$label-color};
 
-    --label-success-background: $label-success-background;
-    --label-success-color: $label-success-color;
-    --label-warning-background: $label-warning-background;
-    --label-warning-color: $label-warning-color;
-    --label-danger-background: $label-danger-background;
-    --label-danger-color: $label-danger-color;
+    --label-success-background: #{$label-success-background};
+    --label-success-color: #{$label-success-color};
+    --label-warning-background: #{$label-warning-background};
+    --label-warning-color: #{$label-warning-color};
+    --label-danger-background: #{$label-danger-background};
+    --label-danger-color: #{$label-danger-color};
 
 }

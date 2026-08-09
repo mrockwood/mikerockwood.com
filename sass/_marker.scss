@@ -19,10 +19,10 @@ $marker-hover-color:                             $global-inverse-color;
 
 :root {
 
-    --marker-padding: $marker-padding;
-    --marker-background: $marker-background;
-    --marker-color: $marker-color;
+    --marker-padding: #{$marker-padding};
+    --marker-background: #{$marker-background};
+    --marker-color: #{$marker-color};
 
-    --marker-hover-color: $marker-hover-color;
+    --marker-hover-color: #{$marker-hover-color};
 
 }

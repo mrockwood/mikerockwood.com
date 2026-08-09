@@ -31,16 +31,16 @@ $dotnav-item-active-background:                 color-mix(in srgb, $global-color
 
 :root {
 
-    --dotnav-margin-horizontal: $dotnav-margin-horizontal;
-    --dotnav-margin-vertical: $dotnav-margin-vertical;
+    --dotnav-margin-horizontal: #{$dotnav-margin-horizontal};
+    --dotnav-margin-vertical: #{$dotnav-margin-vertical};
 
-    --dotnav-item-width: $dotnav-item-width;
-    --dotnav-item-height: $dotnav-item-height;
-    --dotnav-item-border-radius: $dotnav-item-border-radius;
+    --dotnav-item-width: #{$dotnav-item-width};
+    --dotnav-item-height: #{$dotnav-item-height};
+    --dotnav-item-border-radius: #{$dotnav-item-border-radius};
 
-    --dotnav-item-background: $dotnav-item-background;
-    --dotnav-item-hover-background: $dotnav-item-hover-background;
-    --dotnav-item-onclick-background: $dotnav-item-onclick-background;
-    --dotnav-item-active-background: $dotnav-item-active-background;
+    --dotnav-item-background: #{$dotnav-item-background};
+    --dotnav-item-hover-background: #{$dotnav-item-hover-background};
+    --dotnav-item-onclick-background: #{$dotnav-item-onclick-background};
+    --dotnav-item-active-background: #{$dotnav-item-active-background};
 
 }

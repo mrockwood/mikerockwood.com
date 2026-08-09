@@ -1,12 +1,6 @@
 // Name:            Column
 // Description:     Utilities for text columns
 //
-// Component:       `uk-column-*`
-//
-// Sub-objects:     `uk-column-span`
-//
-// Modifiers:       `uk-column-divider`
-//
 // ========================================================================
 
 
@@ -25,10 +19,10 @@ $column-divider-rule-width:                     1px;
 
 :root {
 
-    --column-gutter: $column-gutter;
-    --column-gutter-l: $column-gutter-l;
+    --column-gutter: #{$column-gutter};
+    --column-gutter-l: #{$column-gutter-l};
 
-    --column-divider-rule-color: $column-divider-rule-color;
-    --column-divider-rule-width: $column-divider-rule-width;
+    --column-divider-rule-color: #{$column-divider-rule-color};
+    --column-divider-rule-width: #{$column-divider-rule-width};
 
 }

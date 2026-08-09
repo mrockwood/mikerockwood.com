@@ -20,9 +20,9 @@ $placeholder-background:                        $global-muted-background;
 
 :root {
 
-    --placeholder-margin-vertical: $placeholder-margin-vertical;
-    --placeholder-padding-vertical: $placeholder-padding-vertical;
-    --placeholder-padding-horizontal: $placeholder-padding-horizontal;
-    --placeholder-background: $placeholder-background;
+    --placeholder-margin-vertical: #{$placeholder-margin-vertical};
+    --placeholder-padding-vertical: #{$placeholder-padding-vertical};
+    --placeholder-padding-horizontal: #{$placeholder-padding-horizontal};
+    --placeholder-background: #{$placeholder-background};
 
 }

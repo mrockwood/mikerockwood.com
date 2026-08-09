@@ -9,15 +9,15 @@
 
 $inverse-global-color-mode:                     light;
 
-$inverse-global-color:                          fade($global-inverse-color, 70%);
-$inverse-global-emphasis-color:                 $global-inverse-color;
-$inverse-global-muted-color:                    fade($global-inverse-color, 50%);
-$inverse-global-inverse-color:                  $global-color;
+$inverse-global-color:                          var(--invert-text-color, oklch(100% 0 0 / 0.7));
+$inverse-global-emphasis-color:                 var(--invert-text-emphasis, white);
+$inverse-global-muted-color:                    var(--invert-text-color, oklch(100% 0 0 / 0.5));
+$inverse-global-inverse-color:                  var(--global-color);
 
-$inverse-global-primary-background:             $global-inverse-color;
-$inverse-global-muted-background:               fade($global-inverse-color, 10%);
+$inverse-global-primary-background:             var(--invert-surface-primary, white);
+$inverse-global-muted-background:               var(--invert-surface-muted, oklch(100% 0 0 / 0.1));
 
-$inverse-global-border:                         fade($global-inverse-color, 20%);
+$inverse-global-border:                         var(--invert-border-color, oklch(100% 0 0 / 0.2));
 
 
 // Set custom properties
@@ -25,16 +25,84 @@ $inverse-global-border:                         fade($global-inverse-color, 20%)
 
 :root {
 
-    --inverse-global-color-mode: $inverse-global-color-mode;
+    --inverse-global-color-mode: #{$inverse-global-color-mode};
 
-    --inverse-global-color: $inverse-global-color;
-    --inverse-global-emphasis-color: $inverse-global-emphasis-color;
-    --inverse-global-muted-color: $inverse-global-muted-color;
-    --inverse-global-inverse-color: $inverse-global-inverse-color;
+    --inverse-global-color: #{$inverse-global-color};
+    --inverse-global-emphasis-color: #{$inverse-global-emphasis-color};
+    --inverse-global-muted-color: #{$inverse-global-muted-color};
+    --inverse-global-inverse-color: #{$inverse-global-inverse-color};
 
-    --inverse-global-primary-background: $inverse-global-primary-background;
-    --inverse-global-muted-background: $inverse-global-muted-background;
+    --inverse-global-primary-background: #{$inverse-global-primary-background};
+    --inverse-global-muted-background: #{$inverse-global-muted-background};
 
-    --inverse-global-border: $inverse-global-border;
+    --inverse-global-border: #{$inverse-global-border};
+
+}
+
+
+/* Inverted components
+ ========================================================================== */
+
+:where(
+    .uk-section-primary:not(.uk-preserve-color),
+    .uk-section-secondary:not(.uk-preserve-color),
+    .uk-tile-primary:not(.uk-preserve-color),
+    .uk-tile-secondary:not(.uk-preserve-color),
+    .uk-card-primary.uk-card-body,
+    .uk-card-primary > :not([class*='uk-card-media']),
+    .uk-card-secondary.uk-card-body,
+    .uk-card-secondary > :not([class*='uk-card-media']),
+    .uk-overlay-primary,
+    .uk-offcanvas-bar
+) {
+
+    color: var(--invert-text-color);
+
+    --theme-color:                                   var(--invert-text-color);
+    --theme-emphasis-color:                          var(--invert-text-emphasis);
+    --theme-muted-color:                             var(--invert-text-muted);
+
+    --theme-link-color:                              var(--invert-link-color);
+    --theme-link-hover-color:                        var(--invert-link-hover);
+
+    --theme-border:                                  var(--invert-border-color);
+
+    // inverse
+
+    --inverse-theme-color:                           var(--text-color);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis);
+    --inverse-theme-muted-color:                     var(--text-muted);
+
+	--inverse-theme-link-color:                      var(--link-color);
+    --inverse-theme-link-hover-color:                var(--link-hover);
+
+    --inverse-theme-border:                          var(--border-color);
+
+}
+
+/*
+ * Move background colors to children of inverted components
+ */
+
+:where(
+    .uk-section-primary:not(.uk-preserve-color),
+    .uk-section-secondary:not(.uk-preserve-color),
+    .uk-tile-primary:not(.uk-preserve-color),
+    .uk-tile-secondary:not(.uk-preserve-color),
+    .uk-card-primary,
+    .uk-card-secondary,
+    .uk-overlay-primary,
+    .uk-offcanvas-bar
+) :where([class*='uk-']) {
+
+    --theme-background:                              var(--invert-surface-default);
+    --theme-muted-background:                        var(--invert-surface-muted);
+    --theme-primary-background:                      var(--invert-surface-primary);
+    --theme-secondary-background:                    var(--surface-default);
+
+    --inverse-theme-background:                      var(--surface-default);
+    --inverse-theme-muted-background:                var(--surface-muted);
+    --inverse-theme-primary-background:              var(--surface-primary);
+    --inverse-theme-secondary-background:            var(--invert-surface-default);
 
 }

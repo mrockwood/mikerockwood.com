@@ -21,12 +21,12 @@ $badge-font-size:                               11px;
 
 :root {
 
-    --badge-size: $badge-size;
-    --badge-padding-vertical: $badge-padding-vertical;
-    --badge-padding-horizontal: $badge-padding-horizontal;
-    --badge-border-radius: $badge-border-radius;
-    --badge-background: $badge-background;
-    --badge-color: $badge-color;
-    --badge-font-size: $badge-font-size;
+    --badge-size: #{$badge-size};
+    --badge-padding-vertical: #{$badge-padding-vertical};
+    --badge-padding-horizontal: #{$badge-padding-horizontal};
+    --badge-border-radius: #{$badge-border-radius};
+    --badge-background: #{$badge-background};
+    --badge-color: #{$badge-color};
+    --badge-font-size: #{$badge-font-size};
 
 }

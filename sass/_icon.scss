@@ -33,24 +33,24 @@ $icon-overlay-hover-color:                      $global-emphasis-color;
 
 :root {
 
-    --icon-image-size: $icon-image-size;
+    --icon-image-size: #{$icon-image-size};
 
-    --icon-link-color: $icon-link-color;
-    --icon-link-hover-color: $icon-link-hover-color;
-    --icon-link-active-color: $icon-link-active-color;
+    --icon-link-color: #{$icon-link-color};
+    --icon-link-hover-color: #{$icon-link-hover-color};
+    --icon-link-active-color: #{$icon-link-active-color};
 
-    --icon-button-size: $icon-button-size;
-    --icon-button-border-radius: $icon-button-border-radius;
-    --icon-button-background: $icon-button-background;
-    --icon-button-color: $icon-button-color;
+    --icon-button-size: #{$icon-button-size};
+    --icon-button-border-radius: #{$icon-button-border-radius};
+    --icon-button-background: #{$icon-button-background};
+    --icon-button-color: #{$icon-button-color};
 
-    --icon-button-hover-background: $icon-button-hover-background;
-    --icon-button-hover-color: $icon-button-hover-color;
+    --icon-button-hover-background: #{$icon-button-hover-background};
+    --icon-button-hover-color: #{$icon-button-hover-color};
 
-    --icon-button-active-background: $icon-button-active-background;
-    --icon-button-active-color: $icon-button-active-color;
+    --icon-button-active-background: #{$icon-button-active-background};
+    --icon-button-active-color: #{$icon-button-active-color};
 
-    --icon-overlay-color: $icon-overlay-color;
-    --icon-overlay-hover-color: $icon-overlay-hover-color;
+    --icon-overlay-color: #{$icon-overlay-color};
+    --icon-overlay-hover-color: #{$icon-overlay-hover-color};
 
 }

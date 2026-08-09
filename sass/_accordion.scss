@@ -7,15 +7,19 @@
 // Variables
 // ========================================================================
 
-$accordion-default-item-margin-top:             $global-margin;
+$accordion-default-item-margin-top:             var(--global-margin);
 
 $accordion-default-title-gap:                   15px;
-$accordion-default-title-font-size:             $global-medium-font-size;
+$accordion-default-title-font-size:             var(--global-medium-font-size);
 $accordion-default-title-line-height:           1.4;
-$accordion-default-title-color:                 $global-emphasis-color;
-$accordion-default-title-hover-color:           $global-color;
+$accordion-default-title-color:                 var(--theme-emphasis-color, var(--global-emphasis-color));
+$accordion-default-title-hover-color:           var(--theme-color, var(--global-color));
 
-$accordion-default-content-margin-top:          $global-margin;
+$accordion-divider-margin-top:                  var(--global-margin);
+$accordion-divider-border-width:                var(--global-border-width);
+$accordion-divider-border:                      var(--theme-border, var(--global-border));
+
+$accordion-default-content-margin-top:          var(--global-margin);
 
 
 // Set custom properties
@@ -23,14 +27,28 @@ $accordion-default-content-margin-top:          $global-margin;
 
 :root {
 
-    --accordion-default-item-margin-top: $accordion-default-item-margin-top;
+    --accordion-default-item-margin-top: #{$accordion-default-item-margin-top};
 
-    --accordion-default-title-gap: $accordion-default-title-gap;
-    --accordion-default-title-font-size: $accordion-default-title-font-size;
-    --accordion-default-title-line-height: $accordion-default-title-line-height;
-    --accordion-default-title-color: $accordion-default-title-color;
-    --accordion-default-title-hover-color: $accordion-default-title-hover-color;
+    --accordion-default-title-gap: #{$accordion-default-title-gap};
+    --accordion-default-title-font-size: #{$accordion-default-title-font-size};
+    --accordion-default-title-line-height: #{$accordion-default-title-line-height};
+    --accordion-default-title-color: #{$accordion-default-title-color};
+    --accordion-default-title-hover-color: #{$accordion-default-title-hover-color};
 
-    --accordion-default-content-margin-top: $accordion-default-content-margin-top;
+    --accordion-divider-margin-top: #{$accordion-divider-margin-top};
+    --accordion-divider-border-width: #{$accordion-divider-border-width};
+    --accordion-divider-border: #{$accordion-divider-border};
 
+    --accordion-default-content-margin-top: #{$accordion-default-content-margin-top};
+
+}
+
+
+// Custom styling
+// ==========================================================================
+
+.uk-accordion-divider > :nth-child(n+2) {
+	border-block-start: var(--accordion-divider-border-width) solid var(--accordion-divider-border);
+    margin-block-start: var(--accordion-divider-margin-top);
+	padding-block-start: var(--accordion-divider-margin-top);
 }

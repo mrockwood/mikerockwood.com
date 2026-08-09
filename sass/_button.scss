@@ -67,58 +67,58 @@ $button-link-disabled-color:                    $global-muted-color;
 
 :root {
 
-    --button-line-height: $button-line-height;
-    --button-small-line-height: $button-small-line-height;
-    --button-large-line-height: $button-large-line-height;
+    --button-line-height: #{$button-line-height};
+    --button-small-line-height: #{$button-small-line-height};
+    --button-large-line-height: #{$button-large-line-height};
 
-    --button-font-size: $button-font-size;
-    --button-small-font-size: $button-small-font-size;
-    --button-large-font-size: $button-large-font-size;
+    --button-font-size: #{$button-font-size};
+    --button-small-font-size: #{$button-small-font-size};
+    --button-large-font-size: #{$button-large-font-size};
 
-    --button-padding-horizontal: $button-padding-horizontal;
-    --button-small-padding-horizontal: $button-small-padding-horizontal;
-    --button-large-padding-horizontal: $button-large-padding-horizontal;
+    --button-padding-horizontal: #{$button-padding-horizontal};
+    --button-small-padding-horizontal: #{$button-small-padding-horizontal};
+    --button-large-padding-horizontal: #{$button-large-padding-horizontal};
 
-    --button-default-background: $button-default-background;
-    --button-default-color: $button-default-color;
-    --button-default-hover-background: $button-default-hover-background;
-    --button-default-hover-color: $button-default-hover-color;
-    --button-default-active-background: $button-default-active-background;
-    --button-default-active-color: $button-default-active-color;
+    --button-default-background: #{$button-default-background};
+    --button-default-color: #{$button-default-color};
+    --button-default-hover-background: #{$button-default-hover-background};
+    --button-default-hover-color: #{$button-default-hover-color};
+    --button-default-active-background: #{$button-default-active-background};
+    --button-default-active-color: #{$button-default-active-color};
 
-    --button-primary-background: $button-primary-background;
-    --button-primary-color: $button-primary-color;
-    --button-primary-hover-background: $button-primary-hover-background;
-    --button-primary-hover-color: $button-primary-hover-color;
-    --button-primary-active-background: $button-primary-active-background;
-    --button-primary-active-color: $button-primary-active-color;
+    --button-primary-background: #{$button-primary-background};
+    --button-primary-color: #{$button-primary-color};
+    --button-primary-hover-background: #{$button-primary-hover-background};
+    --button-primary-hover-color: #{$button-primary-hover-color};
+    --button-primary-active-background: #{$button-primary-active-background};
+    --button-primary-active-color: #{$button-primary-active-color};
 
-    --button-secondary-background: $button-secondary-background;
-    --button-secondary-color: $button-secondary-color;
-    --button-secondary-hover-background: $button-secondary-hover-background;
-    --button-secondary-hover-color: $button-secondary-hover-color;
-    --button-secondary-active-background: $button-secondary-active-background;
-    --button-secondary-active-color: $button-secondary-active-color;
+    --button-secondary-background: #{$button-secondary-background};
+    --button-secondary-color: #{$button-secondary-color};
+    --button-secondary-hover-background: #{$button-secondary-hover-background};
+    --button-secondary-hover-color: #{$button-secondary-hover-color};
+    --button-secondary-active-background: #{$button-secondary-active-background};
+    --button-secondary-active-color: #{$button-secondary-active-color};
 
-    --button-danger-background: $button-danger-background;
-    --button-danger-color: $button-danger-color;
-    --button-danger-hover-background: $button-danger-hover-background;
-    --button-danger-hover-color: $button-danger-hover-color;
-    --button-danger-active-background: $button-danger-active-background;
-    --button-danger-active-color: $button-danger-active-color;
+    --button-danger-background: #{$button-danger-background};
+    --button-danger-color: #{$button-danger-color};
+    --button-danger-hover-background: #{$button-danger-hover-background};
+    --button-danger-hover-color: #{$button-danger-hover-color};
+    --button-danger-active-background: #{$button-danger-active-background};
+    --button-danger-active-color: #{$button-danger-active-color};
 
-    --button-disabled-background: $button-disabled-background;
-    --button-disabled-color: $button-disabled-color;
+    --button-disabled-background: #{$button-disabled-background};
+    --button-disabled-color: #{$button-disabled-color};
 
-    --button-text-line-height: $button-text-line-height;
-    --button-text-color: $button-text-color;
-    --button-text-hover-color: $button-text-hover-color;
-    --button-text-disabled-color: $button-text-disabled-color;
+    --button-text-line-height: #{$button-text-line-height};
+    --button-text-color: #{$button-text-color};
+    --button-text-hover-color: #{$button-text-hover-color};
+    --button-text-disabled-color: #{$button-text-disabled-color};
 
-    --button-link-line-height: $button-link-line-height;
-    --button-link-color: $button-link-color;
-    --button-link-hover-color: $button-link-hover-color;
-    --button-link-hover-text-decoration: $button-link-hover-text-decoration;
-    --button-link-disabled-color: $button-link-disabled-color;
+    --button-link-line-height: #{$button-link-line-height};
+    --button-link-color: #{$button-link-color};
+    --button-link-hover-color: #{$button-link-hover-color};
+    --button-link-hover-text-decoration: #{$button-link-hover-text-decoration};
+    --button-link-disabled-color: #{$button-link-disabled-color};
 
 }

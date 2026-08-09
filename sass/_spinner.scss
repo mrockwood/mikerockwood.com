@@ -21,10 +21,10 @@ $spinner-duration:                              1.4s;
 
 :root {
 
-    --spinner-size: $spinner-size;
-    --spinner-stroke-width: $spinner-stroke-width;
-    --spinner-radius: $spinner-radius;
-    --spinner-circumference: $spinner-circumference;
-    --spinner-duration: $spinner-duration;
+    --spinner-size: #{$spinner-size};
+    --spinner-stroke-width: #{$spinner-stroke-width};
+    --spinner-radius: #{$spinner-radius};
+    --spinner-circumference: #{$spinner-circumference};
+    --spinner-duration: #{$spinner-duration};
 
 }

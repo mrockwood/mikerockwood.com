@@ -27,18 +27,18 @@ $margin-xlarge-margin-l:                               $global-xlarge-margin;
 
 :root {
 
-    --margin-margin: $margin-margin;
+    --margin-margin: #{$margin-margin};
 
-    --margin-xsmall-margin: $margin-xsmall-margin;
+    --margin-xsmall-margin: #{$margin-xsmall-margin};
 
-    --margin-small-margin: $margin-small-margin;
+    --margin-small-margin: #{$margin-small-margin};
 
-    --margin-medium-margin: $margin-medium-margin;
+    --margin-medium-margin: #{$margin-medium-margin};
 
-    --margin-large-margin: $margin-large-margin;
-    --margin-large-margin-l: $margin-large-margin-l;
+    --margin-large-margin: #{$margin-large-margin};
+    --margin-large-margin-l: #{$margin-large-margin-l};
 
-    --margin-xlarge-margin: $margin-xlarge-margin;
-    --margin-xlarge-margin-l: $margin-xlarge-margin-l;
+    --margin-xlarge-margin: #{$margin-xlarge-margin};
+    --margin-xlarge-margin-l: #{$margin-xlarge-margin-l};
 
 }

@@ -19,8 +19,8 @@ $height-large-height:                           450px;
 
 :root {
 
-  --height-small-height: $height-small-height;
-  --height-medium-height: $height-medium-height;
-  --height-large-height: $height-large-height;
+  --height-small-height: #{$height-small-height};
+  --height-medium-height: #{$height-medium-height};
+  --height-large-height: #{$height-large-height};
 
 }

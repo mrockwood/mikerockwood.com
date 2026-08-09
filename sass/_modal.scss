@@ -55,46 +55,46 @@ $modal-close-outside-hover-color:               $global-inverse-color;
 
 :root {
 
-    --modal-z-index: $modal-z-index;
-    --modal-background: $modal-background;
+    --modal-z-index: #{$modal-z-index};
+    --modal-background: #{$modal-background};
 
-    --modal-padding-horizontal: $modal-padding-horizontal;
-    --modal-padding-horizontal-s: $modal-padding-horizontal-s;
-    --modal-padding-horizontal-m: $modal-padding-horizontal-m;
-    --modal-padding-vertical: $modal-padding-vertical;
-    --modal-padding-vertical-s: $modal-padding-vertical-s;
+    --modal-padding-horizontal: #{$modal-padding-horizontal};
+    --modal-padding-horizontal-s: #{$modal-padding-horizontal-s};
+    --modal-padding-horizontal-m: #{$modal-padding-horizontal-m};
+    --modal-padding-vertical: #{$modal-padding-vertical};
+    --modal-padding-vertical-s: #{$modal-padding-vertical-s};
 
-    --modal-dialog-width: $modal-dialog-width;
-    --modal-dialog-background: $modal-dialog-background;
+    --modal-dialog-width: #{$modal-dialog-width};
+    --modal-dialog-background: #{$modal-dialog-background};
 
-    --modal-container-width: $modal-container-width;
+    --modal-container-width: #{$modal-container-width};
 
-    --modal-body-padding-horizontal: $modal-body-padding-horizontal;
-    --modal-body-padding-vertical: $modal-body-padding-vertical;
-    --modal-body-padding-horizontal-s: $modal-body-padding-horizontal-s;
-    --modal-body-padding-vertical-s: $modal-body-padding-vertical-s;
+    --modal-body-padding-horizontal: #{$modal-body-padding-horizontal};
+    --modal-body-padding-vertical: #{$modal-body-padding-vertical};
+    --modal-body-padding-horizontal-s: #{$modal-body-padding-horizontal-s};
+    --modal-body-padding-vertical-s: #{$modal-body-padding-vertical-s};
 
-    --modal-header-padding-horizontal: $modal-header-padding-horizontal;
-    --modal-header-padding-vertical: $modal-header-padding-vertical;
-    --modal-header-padding-horizontal-s: $modal-header-padding-horizontal-s;
-    --modal-header-padding-vertical-s: $modal-header-padding-vertical-s;
-    --modal-header-background: $modal-header-background;
+    --modal-header-padding-horizontal: #{$modal-header-padding-horizontal};
+    --modal-header-padding-vertical: #{$modal-header-padding-vertical};
+    --modal-header-padding-horizontal-s: #{$modal-header-padding-horizontal-s};
+    --modal-header-padding-vertical-s: #{$modal-header-padding-vertical-s};
+    --modal-header-background: #{$modal-header-background};
 
-    --modal-footer-padding-horizontal: $modal-footer-padding-horizontal;
-    --modal-footer-padding-vertical: $modal-footer-padding-vertical;
-    --modal-footer-padding-horizontal-s: $modal-footer-padding-horizontal-s;
-    --modal-footer-padding-vertical-s: $modal-footer-padding-vertical-s;
-    --modal-footer-background: $modal-footer-background;
+    --modal-footer-padding-horizontal: #{$modal-footer-padding-horizontal};
+    --modal-footer-padding-vertical: #{$modal-footer-padding-vertical};
+    --modal-footer-padding-horizontal-s: #{$modal-footer-padding-horizontal-s};
+    --modal-footer-padding-vertical-s: #{$modal-footer-padding-vertical-s};
+    --modal-footer-background: #{$modal-footer-background};
 
-    --modal-title-font-size: $modal-title-font-size;
-    --modal-title-line-height: $modal-title-line-height;
+    --modal-title-font-size: #{$modal-title-font-size};
+    --modal-title-line-height: #{$modal-title-line-height};
 
-    --modal-close-position: $modal-close-position;
-    --modal-close-padding: $modal-close-padding;
+    --modal-close-position: #{$modal-close-position};
+    --modal-close-padding: #{$modal-close-padding};
 
-    --modal-close-outside-position: $modal-close-outside-position;
-    --modal-close-outside-translate: $modal-close-outside-translate;
-    --modal-close-outside-color: $modal-close-outside-color;
-    --modal-close-outside-hover-color: $modal-close-outside-hover-color;
+    --modal-close-outside-position: #{$modal-close-outside-position};
+    --modal-close-outside-translate: #{$modal-close-outside-translate};
+    --modal-close-outside-color: #{$modal-close-outside-color};
+    --modal-close-outside-hover-color: #{$modal-close-outside-hover-color};
 
 }

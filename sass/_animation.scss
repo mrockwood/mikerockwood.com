@@ -22,13 +22,13 @@ $animation-slide-medium-translate:              50px;
 
 :root {
 
-    --animation-duration: $animation-duration;
-    --animation-fade-duration: $animation-fade-duration;
-    --animation-stroke-duration: $animation-stroke-duration;
-    --animation-kenburns-duration: $animation-kenburns-duration;
-    --animation-fast-duration: $animation-fast-duration;
+    --animation-duration: #{$animation-duration};
+    --animation-fade-duration: #{$animation-fade-duration};
+    --animation-stroke-duration: #{$animation-stroke-duration};
+    --animation-kenburns-duration: #{$animation-kenburns-duration};
+    --animation-fast-duration: #{$animation-fast-duration};
 
-    --animation-slide-small-translate: $animation-slide-small-translate;
-    --animation-slide-medium-translate: $animation-slide-medium-translate;
+    --animation-slide-small-translate: #{$animation-slide-small-translate};
+    --animation-slide-medium-translate: #{$animation-slide-medium-translate};
 
 }

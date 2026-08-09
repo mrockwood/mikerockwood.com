@@ -22,10 +22,10 @@ $width-2xlarge-width:                           750px;
 
 :root {
 
-    --width-small-width: $width-small-width;
-    --width-medium-width: $width-medium-width;
-    --width-large-width: $width-large-width;
-    --width-xlarge-width: $width-xlarge-width;
-    --width-2xlarge-width: $width-2xlarge-width;
+    --width-small-width: #{$width-small-width};
+    --width-medium-width: #{$width-medium-width};
+    --width-large-width: #{$width-large-width};
+    --width-xlarge-width: #{$width-xlarge-width};
+    --width-2xlarge-width: #{$width-2xlarge-width};
 
 }

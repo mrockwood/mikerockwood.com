@@ -1,10 +1,6 @@
 // Name:            Breadcrumb
 // Description:     Component to create a breadcrumb navigation
 //
-// Component:       `uk-breadcrumb`
-//
-// States:          `uk-disabled`
-//
 // ========================================================================
 
 
@@ -28,15 +24,15 @@ $breadcrumb-divider-color:                          $global-muted-color;
 
 :root {
 
-    --breadcrumb-item-font-size: $breadcrumb-item-font-size;
-    --breadcrumb-item-color: $breadcrumb-item-color;
-    --breadcrumb-item-hover-color: $breadcrumb-item-hover-color;
-    --breadcrumb-item-hover-text-decoration: $breadcrumb-item-hover-text-decoration;
-    --breadcrumb-item-active-color: $breadcrumb-item-active-color;
+    --breadcrumb-item-font-size: #{$breadcrumb-item-font-size};
+    --breadcrumb-item-color: #{$breadcrumb-item-color};
+    --breadcrumb-item-hover-color: #{$breadcrumb-item-hover-color};
+    --breadcrumb-item-hover-text-decoration: #{$breadcrumb-item-hover-text-decoration};
+    --breadcrumb-item-active-color: #{$breadcrumb-item-active-color};
 
-    --breadcrumb-divider: $breadcrumb-divider;
-    --breadcrumb-divider-margin-horizontal: $breadcrumb-divider-margin-horizontal;
-    --breadcrumb-divider-font-size: $breadcrumb-divider-font-size;
-    --breadcrumb-divider-color: $breadcrumb-divider-color;
+    --breadcrumb-divider: #{$breadcrumb-divider};
+    --breadcrumb-divider-margin-horizontal: #{$breadcrumb-divider-margin-horizontal};
+    --breadcrumb-divider-font-size: #{$breadcrumb-divider-font-size};
+    --breadcrumb-divider-color: #{$breadcrumb-divider-color};
 
 }

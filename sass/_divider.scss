@@ -33,22 +33,22 @@ $divider-vertical-border:                       $global-border;
 
 :root {
 
-    --divider-margin-vertical: $divider-margin-vertical;
+    --divider-margin-vertical: #{$divider-margin-vertical};
 
-    --divider-icon-width: $divider-icon-width;
-    --divider-icon-height: $divider-icon-height;
-    --divider-icon-color: $divider-icon-color;
-    --divider-icon-line-top: $divider-icon-line-top;
-    --divider-icon-line-width: $divider-icon-line-width;
-    --divider-icon-line-border-width: $divider-icon-line-border-width;
-    --divider-icon-line-border: $divider-icon-line-border;
+    --divider-icon-width: #{$divider-icon-width};
+    --divider-icon-height: #{$divider-icon-height};
+    --divider-icon-color: #{$divider-icon-color};
+    --divider-icon-line-top: #{$divider-icon-line-top};
+    --divider-icon-line-width: #{$divider-icon-line-width};
+    --divider-icon-line-border-width: #{$divider-icon-line-border-width};
+    --divider-icon-line-border: #{$divider-icon-line-border};
 
-    --divider-small-width: $divider-small-width;
-    --divider-small-border-width: $divider-small-border-width;
-    --divider-small-border: $divider-small-border;
+    --divider-small-width: #{$divider-small-width};
+    --divider-small-border-width: #{$divider-small-border-width};
+    --divider-small-border: #{$divider-small-border};
 
-    --divider-vertical-height: $divider-vertical-height;
-    --divider-vertical-border-width: $divider-vertical-border-width;
-    --divider-vertical-border: $divider-vertical-border;
+    --divider-vertical-height: #{$divider-vertical-height};
+    --divider-vertical-border-width: #{$divider-vertical-border-width};
+    --divider-vertical-border: #{$divider-vertical-border};
 
 }

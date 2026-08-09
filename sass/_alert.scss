@@ -34,25 +34,25 @@ $alert-danger-color:                            var(--theme-danger-background, v
 
 :root {
 
-    --alert-margin-vertical: $alert-margin-vertical;
-    --alert-padding: $alert-padding;
-    --alert-padding-right: $alert-padding-right;
-    --alert-background: $alert-background;
-    --alert-color: $alert-color;
+    --alert-margin-vertical: #{$alert-margin-vertical};
+    --alert-padding: #{$alert-padding};
+    --alert-padding-right: #{$alert-padding-right};
+    --alert-background: #{$alert-background};
+    --alert-color: #{$alert-color};
 
-    --alert-close-top: $alert-close-top;
-    --alert-close-right: $alert-close-right;
+    --alert-close-top: #{$alert-close-top};
+    --alert-close-right: #{$alert-close-right};
 
-    --alert-primary-background: $alert-primary-background;
-    --alert-primary-color: $alert-primary-color;
+    --alert-primary-background: #{$alert-primary-background};
+    --alert-primary-color: #{$alert-primary-color};
 
-    --alert-success-background: $alert-success-background;
-    --alert-success-color: $alert-success-color;
+    --alert-success-background: #{$alert-success-background};
+    --alert-success-color: #{$alert-success-color};
 
-    --alert-warning-background: $alert-warning-background;
-    --alert-warning-color: $alert-warning-color;
+    --alert-warning-background: #{$alert-warning-background};
+    --alert-warning-color: #{$alert-warning-color};
 
-    --alert-danger-background: $alert-danger-background;
-    --alert-danger-color: $alert-danger-color;
+    --alert-danger-background: #{$alert-danger-background};
+    --alert-danger-color: #{$alert-danger-color};
 
 }

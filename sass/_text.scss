@@ -41,30 +41,30 @@ $text-stroke-text-stroke:                       calc(1.4px + 0.002em);
 
 :root {
 
-    --text-lead-font-size: $text-lead-font-size;
-    --text-lead-line-height: $text-lead-line-height;
-    --text-lead-color: $text-lead-color;
+    --text-lead-font-size: #{$text-lead-font-size};
+    --text-lead-line-height: #{$text-lead-line-height};
+    --text-lead-color: #{$text-lead-color};
 
-    --text-meta-font-size: $text-meta-font-size;
-    --text-meta-line-height: $text-meta-line-height;
-    --text-meta-color: $text-meta-color;
+    --text-meta-font-size: #{$text-meta-font-size};
+    --text-meta-line-height: #{$text-meta-line-height};
+    --text-meta-color: #{$text-meta-color};
 
-    --text-small-font-size: $text-small-font-size;
-    --text-small-line-height: $text-small-line-height;
+    --text-small-font-size: #{$text-small-font-size};
+    --text-small-line-height: #{$text-small-line-height};
 
-    --text-large-font-size: $text-large-font-size;
-    --text-large-line-height: $text-large-line-height;
+    --text-large-font-size: #{$text-large-font-size};
+    --text-large-line-height: #{$text-large-line-height};
 
-    --text-muted-color: $text-muted-color;
-    --text-emphasis-color: $text-emphasis-color;
-    --text-primary-color: $text-primary-color;
-    --text-secondary-color: $text-secondary-color;
-    --text-success-color: $text-success-color;
-    --text-warning-color: $text-warning-color;
-    --text-danger-color: $text-danger-color;
+    --text-muted-color: #{$text-muted-color};
+    --text-emphasis-color: #{$text-emphasis-color};
+    --text-primary-color: #{$text-primary-color};
+    --text-secondary-color: #{$text-secondary-color};
+    --text-success-color: #{$text-success-color};
+    --text-warning-color: #{$text-warning-color};
+    --text-danger-color: #{$text-danger-color};
 
-    --text-background-color: $text-background-color;
+    --text-background-color: #{$text-background-color};
 
-    --text-stroke-text-stroke: $text-stroke-text-stroke;
+    --text-stroke-text-stroke: #{$text-stroke-text-stroke};
 
 }

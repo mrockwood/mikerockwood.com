@@ -256,8 +256,8 @@
 // @import "_visibility";
 @import "_vendor/visibility";
 
-// @import "_inverse";
-// @import "_vendor/inverse";
+@import "_inverse";
+@import "_vendor/inverse";
 
 // Need to be loaded last
 @import "_vendor/print.scss";

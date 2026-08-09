@@ -22,11 +22,11 @@ $totop-active-color:                            $global-emphasis-color;
 
 :root {
 
-    --totop-padding: $totop-padding;
-    --totop-color: $totop-color;
+    --totop-padding: #{$totop-padding};
+    --totop-color: #{$totop-color};
 
-    --totop-hover-color: $totop-hover-color;
+    --totop-hover-color: #{$totop-hover-color};
 
-    --totop-active-color: $totop-active-color;
+    --totop-active-color: #{$totop-active-color};
 
 }

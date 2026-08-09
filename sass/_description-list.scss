@@ -20,11 +20,11 @@ $description-list-divider-term-border:          $global-border;
 
 :root {
 
-    --description-list-term-color: $description-list-term-color;
-    --description-list-term-margin-top: $description-list-term-margin-top;
+    --description-list-term-color: #{$description-list-term-color};
+    --description-list-term-margin-top: #{$description-list-term-margin-top};
 
-    --description-list-divider-term-margin-top: $description-list-divider-term-margin-top;
-    --description-list-divider-term-border-width: $description-list-divider-term-border-width;
-    --description-list-divider-term-border: $description-list-divider-term-border;
+    --description-list-divider-term-margin-top: #{$description-list-divider-term-margin-top};
+    --description-list-divider-term-border-width: #{$description-list-divider-term-border-width};
+    --description-list-divider-term-border: #{$description-list-divider-term-border};
 
 }

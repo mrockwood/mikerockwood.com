@@ -23,7 +23,7 @@ $slider-container-margin-right:                     $slider-container-margin-lef
 
 :root {
 
-    --slider-container-margin-left: $slider-container-margin-left;
-    --slider-container-margin-right: $slider-container-margin-right;
+    --slider-container-margin-left: #{$slider-container-margin-left};
+    --slider-container-margin-right: #{$slider-container-margin-right};
 
 }

@@ -31,14 +31,14 @@ $pagination-item-disabled-color:                $global-muted-color;
 
 :root {
 
-    --pagination-margin-horizontal: $pagination-margin-horizontal;
+    --pagination-margin-horizontal: #{$pagination-margin-horizontal};
 
-    --pagination-item-padding-vertical: $pagination-item-padding-vertical;
-    --pagination-item-padding-horizontal: $pagination-item-padding-horizontal;
-    --pagination-item-color: $pagination-item-color;
-    --pagination-item-hover-color: $pagination-item-hover-color;
-    --pagination-item-hover-text-decoration: $pagination-item-hover-text-decoration;
-    --pagination-item-active-color: $pagination-item-active-color;
-    --pagination-item-disabled-color: $pagination-item-disabled-color;
+    --pagination-item-padding-vertical: #{$pagination-item-padding-vertical};
+    --pagination-item-padding-horizontal: #{$pagination-item-padding-horizontal};
+    --pagination-item-color: #{$pagination-item-color};
+    --pagination-item-hover-color: #{$pagination-item-hover-color};
+    --pagination-item-hover-text-decoration: #{$pagination-item-hover-text-decoration};
+    --pagination-item-active-color: #{$pagination-item-active-color};
+    --pagination-item-disabled-color: #{$pagination-item-disabled-color};
 
 }

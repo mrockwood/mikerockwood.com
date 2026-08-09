@@ -19,6 +19,6 @@ $dropnav-dropbar-z-index:                       $global-z-index - 20;
 
 :root {
 
-    --dropnav-dropbar-z-index: $dropnav-dropbar-z-index;
+    --dropnav-dropbar-z-index: #{$dropnav-dropbar-z-index};
 
 }

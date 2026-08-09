@@ -1,8 +1,6 @@
 // Name:            Close
 // Description:     Component to create a close button
 //
-// Component:       `uk-close`
-//
 // ========================================================================
 
 
@@ -18,7 +16,7 @@ $close-hover-color:                             $global-color;
 
 :root {
 
-    --close-color: $close-color;
-    --close-hover-color: $close-hover-color;
+    --close-color: #{$close-color};
+    --close-hover-color: #{$close-hover-color};
 
 }

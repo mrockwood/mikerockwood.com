@@ -32,23 +32,23 @@ $offcanvas-overlay-background:                  rgba(0,0,0,0.1);
 
 :root {
 
-    --offcanvas-z-index: $offcanvas-z-index;
+    --offcanvas-z-index: #{$offcanvas-z-index};
 
-    --offcanvas-bar-width: $offcanvas-bar-width;
-    --offcanvas-bar-padding-vertical: $offcanvas-bar-padding-vertical;
-    --offcanvas-bar-padding-horizontal: $offcanvas-bar-padding-horizontal;
-    --offcanvas-bar-background: $offcanvas-bar-background;
-    --offcanvas-bar-color-mode: $offcanvas-bar-color-mode;
+    --offcanvas-bar-width: #{$offcanvas-bar-width};
+    --offcanvas-bar-padding-vertical: #{$offcanvas-bar-padding-vertical};
+    --offcanvas-bar-padding-horizontal: #{$offcanvas-bar-padding-horizontal};
+    --offcanvas-bar-background: #{$offcanvas-bar-background};
+    --offcanvas-bar-color-mode: #{$offcanvas-bar-color-mode};
 
-    --offcanvas-bar-width-s: $offcanvas-bar-width-s;
-    --offcanvas-bar-padding-vertical-s: $offcanvas-bar-padding-vertical-s;
-    --offcanvas-bar-padding-horizontal-s: $offcanvas-bar-padding-horizontal-s;
+    --offcanvas-bar-width-s: #{$offcanvas-bar-width-s};
+    --offcanvas-bar-padding-vertical-s: #{$offcanvas-bar-padding-vertical-s};
+    --offcanvas-bar-padding-horizontal-s: #{$offcanvas-bar-padding-horizontal-s};
 
-    --offcanvas-close-position: $offcanvas-close-position;
-    --offcanvas-close-padding: $offcanvas-close-padding;
+    --offcanvas-close-position: #{$offcanvas-close-position};
+    --offcanvas-close-padding: #{$offcanvas-close-padding};
 
-    --offcanvas-close-position-s: $offcanvas-close-position-s;
+    --offcanvas-close-position-s: #{$offcanvas-close-position-s};
 
-    --offcanvas-overlay-background: $offcanvas-overlay-background;
+    --offcanvas-overlay-background: #{$offcanvas-overlay-background};
 
 }

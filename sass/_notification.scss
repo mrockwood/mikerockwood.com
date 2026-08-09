@@ -32,23 +32,23 @@ $notification-message-danger-color:                   $global-danger-background;
 
 :root {
 
-    --notification-position: $notification-position;
-    --notification-z-index: $notification-z-index;
-    --notification-width: $notification-width;
+    --notification-position: #{$notification-position};
+    --notification-z-index: #{$notification-z-index};
+    --notification-width: #{$notification-width};
 
-    --notification-message-margin-top: $notification-message-margin-top;
-    --notification-message-padding: $notification-message-padding;
-    --notification-message-background: $notification-message-background;
-    --notification-message-color: $notification-message-color;
-    --notification-message-font-size: $notification-message-font-size;
-    --notification-message-line-height: $notification-message-line-height;
+    --notification-message-margin-top: #{$notification-message-margin-top};
+    --notification-message-padding: #{$notification-message-padding};
+    --notification-message-background: #{$notification-message-background};
+    --notification-message-color: #{$notification-message-color};
+    --notification-message-font-size: #{$notification-message-font-size};
+    --notification-message-line-height: #{$notification-message-line-height};
 
-    --notification-close-top: $notification-close-top;
-    --notification-close-right: $notification-close-right;
+    --notification-close-top: #{$notification-close-top};
+    --notification-close-right: #{$notification-close-right};
 
-    --notification-message-primary-color: $notification-message-primary-color;
-    --notification-message-success-color: $notification-message-success-color;
-    --notification-message-warning-color: $notification-message-warning-color;
-    --notification-message-danger-color: $notification-message-danger-color;
+    --notification-message-primary-color: #{$notification-message-primary-color};
+    --notification-message-success-color: #{$notification-message-success-color};
+    --notification-message-warning-color: #{$notification-message-warning-color};
+    --notification-message-danger-color: #{$notification-message-danger-color};
 
 }

@@ -22,13 +22,13 @@ $transition-slow-duration:                      0.7s;
 
 :root {
 
-    --transition-duration: $transition-duration;
+    --transition-duration: #{$transition-duration};
 
-    --transition-scale: $transition-scale;
+    --transition-scale: #{$transition-scale};
 
-    --transition-slide-small-translate: $transition-slide-small-translate;
-    --transition-slide-medium-translate: $transition-slide-medium-translate;
+    --transition-slide-small-translate: #{$transition-slide-small-translate};
+    --transition-slide-medium-translate: #{$transition-slide-medium-translate};
 
-    --transition-slow-duration: $transition-slow-duration;
+    --transition-slow-duration: #{$transition-slow-duration};
 
 }

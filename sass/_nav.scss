@@ -121,90 +121,90 @@ $nav-dividers-border:                           $global-border;
 
 :root {
 
-    --nav-item-padding-vertical: $nav-item-padding-vertical;
-    --nav-item-padding-horizontal: $nav-item-padding-horizontal;
+    --nav-item-padding-vertical: #{$nav-item-padding-vertical};
+    --nav-item-padding-horizontal: #{$nav-item-padding-horizontal};
 
-    --nav-sublist-padding-vertical: $nav-sublist-padding-vertical;
-    --nav-sublist-padding-left: $nav-sublist-padding-left;
-    --nav-sublist-deeper-padding-left: $nav-sublist-deeper-padding-left;
-    --nav-sublist-item-padding-vertical: $nav-sublist-item-padding-vertical;
+    --nav-sublist-padding-vertical: #{$nav-sublist-padding-vertical};
+    --nav-sublist-padding-left: #{$nav-sublist-padding-left};
+    --nav-sublist-deeper-padding-left: #{$nav-sublist-deeper-padding-left};
+    --nav-sublist-item-padding-vertical: #{$nav-sublist-item-padding-vertical};
 
-    --nav-parent-icon-margin-left: $nav-parent-icon-margin-left;
+    --nav-parent-icon-margin-left: #{$nav-parent-icon-margin-left};
 
-    --nav-header-padding-vertical: $nav-header-padding-vertical;
-    --nav-header-padding-horizontal: $nav-header-padding-horizontal;
-    --nav-header-font-size: $nav-header-font-size;
-    --nav-header-text-transform: $nav-header-text-transform;
-    --nav-header-margin-top: $nav-header-margin-top;
+    --nav-header-padding-vertical: #{$nav-header-padding-vertical};
+    --nav-header-padding-horizontal: #{$nav-header-padding-horizontal};
+    --nav-header-font-size: #{$nav-header-font-size};
+    --nav-header-text-transform: #{$nav-header-text-transform};
+    --nav-header-margin-top: #{$nav-header-margin-top};
 
-    --nav-divider-margin-vertical: $nav-divider-margin-vertical;
-    --nav-divider-margin-horizontal: $nav-divider-margin-horizontal;
+    --nav-divider-margin-vertical: #{$nav-divider-margin-vertical};
+    --nav-divider-margin-horizontal: #{$nav-divider-margin-horizontal};
 
-    --nav-default-font-size: $nav-default-font-size;
-    --nav-default-line-height: $nav-default-line-height;
-    --nav-default-item-color: $nav-default-item-color;
-    --nav-default-item-hover-color: $nav-default-item-hover-color;
-    --nav-default-item-active-color: $nav-default-item-active-color;
-    --nav-default-subtitle-font-size: $nav-default-subtitle-font-size;
-    --nav-default-header-color: $nav-default-header-color;
-    --nav-default-divider-border-width: $nav-default-divider-border-width;
-    --nav-default-divider-border: $nav-default-divider-border;
-    --nav-default-sublist-font-size: $nav-default-sublist-font-size;
-    --nav-default-sublist-line-height: $nav-default-sublist-line-height;
-    --nav-default-sublist-item-color: $nav-default-sublist-item-color;
-    --nav-default-sublist-item-hover-color: $nav-default-sublist-item-hover-color;
-    --nav-default-sublist-item-active-color: $nav-default-sublist-item-active-color;
+    --nav-default-font-size: #{$nav-default-font-size};
+    --nav-default-line-height: #{$nav-default-line-height};
+    --nav-default-item-color: #{$nav-default-item-color};
+    --nav-default-item-hover-color: #{$nav-default-item-hover-color};
+    --nav-default-item-active-color: #{$nav-default-item-active-color};
+    --nav-default-subtitle-font-size: #{$nav-default-subtitle-font-size};
+    --nav-default-header-color: #{$nav-default-header-color};
+    --nav-default-divider-border-width: #{$nav-default-divider-border-width};
+    --nav-default-divider-border: #{$nav-default-divider-border};
+    --nav-default-sublist-font-size: #{$nav-default-sublist-font-size};
+    --nav-default-sublist-line-height: #{$nav-default-sublist-line-height};
+    --nav-default-sublist-item-color: #{$nav-default-sublist-item-color};
+    --nav-default-sublist-item-hover-color: #{$nav-default-sublist-item-hover-color};
+    --nav-default-sublist-item-active-color: #{$nav-default-sublist-item-active-color};
 
-    --nav-primary-font-size: $nav-primary-font-size;
-    --nav-primary-line-height: $nav-primary-line-height;
-    --nav-primary-item-color: $nav-primary-item-color;
-    --nav-primary-item-hover-color: $nav-primary-item-hover-color;
-    --nav-primary-item-active-color: $nav-primary-item-active-color;
-    --nav-primary-subtitle-font-size: $nav-primary-subtitle-font-size;
-    --nav-primary-header-color: $nav-primary-header-color;
-    --nav-primary-divider-border-width: $nav-primary-divider-border-width;
-    --nav-primary-divider-border: $nav-primary-divider-border;
-    --nav-primary-sublist-font-size: $nav-primary-sublist-font-size;
-    --nav-primary-sublist-line-height: $nav-primary-sublist-line-height;
-    --nav-primary-sublist-item-color: $nav-primary-sublist-item-color;
-    --nav-primary-sublist-item-hover-color: $nav-primary-sublist-item-hover-color;
-    --nav-primary-sublist-item-active-color: $nav-primary-sublist-item-active-color;
+    --nav-primary-font-size: #{$nav-primary-font-size};
+    --nav-primary-line-height: #{$nav-primary-line-height};
+    --nav-primary-item-color: #{$nav-primary-item-color};
+    --nav-primary-item-hover-color: #{$nav-primary-item-hover-color};
+    --nav-primary-item-active-color: #{$nav-primary-item-active-color};
+    --nav-primary-subtitle-font-size: #{$nav-primary-subtitle-font-size};
+    --nav-primary-header-color: #{$nav-primary-header-color};
+    --nav-primary-divider-border-width: #{$nav-primary-divider-border-width};
+    --nav-primary-divider-border: #{$nav-primary-divider-border};
+    --nav-primary-sublist-font-size: #{$nav-primary-sublist-font-size};
+    --nav-primary-sublist-line-height: #{$nav-primary-sublist-line-height};
+    --nav-primary-sublist-item-color: #{$nav-primary-sublist-item-color};
+    --nav-primary-sublist-item-hover-color: #{$nav-primary-sublist-item-hover-color};
+    --nav-primary-sublist-item-active-color: #{$nav-primary-sublist-item-active-color};
 
-    --nav-secondary-font-size: $nav-secondary-font-size;
-    --nav-secondary-line-height: $nav-secondary-line-height;
-    --nav-secondary-item-color: $nav-secondary-item-color;
-    --nav-secondary-item-hover-color: $nav-secondary-item-hover-color;
-    --nav-secondary-item-active-color: $nav-secondary-item-active-color;
-    --nav-secondary-subtitle-font-size: $nav-secondary-subtitle-font-size;
-    --nav-secondary-subtitle-color: $nav-secondary-subtitle-color;
-    --nav-secondary-subtitle-hover-color: $nav-secondary-subtitle-hover-color;
-    --nav-secondary-subtitle-active-color: $nav-secondary-subtitle-active-color;
-    --nav-secondary-header-color: $nav-secondary-header-color;
-    --nav-secondary-divider-border-width: $nav-secondary-divider-border-width;
-    --nav-secondary-divider-border: $nav-secondary-divider-border;
-    --nav-secondary-sublist-font-size: $nav-secondary-sublist-font-size;
-    --nav-secondary-sublist-line-height: $nav-secondary-sublist-line-height;
-    --nav-secondary-sublist-item-color: $nav-secondary-sublist-item-color;
-    --nav-secondary-sublist-item-hover-color: $nav-secondary-sublist-item-hover-color;
-    --nav-secondary-sublist-item-active-color: $nav-secondary-sublist-item-active-color;
+    --nav-secondary-font-size: #{$nav-secondary-font-size};
+    --nav-secondary-line-height: #{$nav-secondary-line-height};
+    --nav-secondary-item-color: #{$nav-secondary-item-color};
+    --nav-secondary-item-hover-color: #{$nav-secondary-item-hover-color};
+    --nav-secondary-item-active-color: #{$nav-secondary-item-active-color};
+    --nav-secondary-subtitle-font-size: #{$nav-secondary-subtitle-font-size};
+    --nav-secondary-subtitle-color: #{$nav-secondary-subtitle-color};
+    --nav-secondary-subtitle-hover-color: #{$nav-secondary-subtitle-hover-color};
+    --nav-secondary-subtitle-active-color: #{$nav-secondary-subtitle-active-color};
+    --nav-secondary-header-color: #{$nav-secondary-header-color};
+    --nav-secondary-divider-border-width: #{$nav-secondary-divider-border-width};
+    --nav-secondary-divider-border: #{$nav-secondary-divider-border};
+    --nav-secondary-sublist-font-size: #{$nav-secondary-sublist-font-size};
+    --nav-secondary-sublist-line-height: #{$nav-secondary-sublist-line-height};
+    --nav-secondary-sublist-item-color: #{$nav-secondary-sublist-item-color};
+    --nav-secondary-sublist-item-hover-color: #{$nav-secondary-sublist-item-hover-color};
+    --nav-secondary-sublist-item-active-color: #{$nav-secondary-sublist-item-active-color};
 
-    --nav-medium-line-height: $nav-medium-line-height;
-    --nav-medium-font-size: $nav-medium-font-size;
-    --nav-medium-font-size-m: $nav-medium-font-size-m;
-    --nav-medium-font-size-l: $nav-medium-font-size-l;
+    --nav-medium-line-height: #{$nav-medium-line-height};
+    --nav-medium-font-size: #{$nav-medium-font-size};
+    --nav-medium-font-size-m: #{$nav-medium-font-size-m};
+    --nav-medium-font-size-l: #{$nav-medium-font-size-l};
 
-    --nav-large-line-height: $nav-large-line-height;
-    --nav-large-font-size: $nav-large-font-size;
-    --nav-large-font-size-m: $nav-large-font-size-m;
-    --nav-large-font-size-l: $nav-large-font-size-l;
+    --nav-large-line-height: #{$nav-large-line-height};
+    --nav-large-font-size: #{$nav-large-font-size};
+    --nav-large-font-size-m: #{$nav-large-font-size-m};
+    --nav-large-font-size-l: #{$nav-large-font-size-l};
 
-    --nav-xlarge-line-height: $nav-xlarge-line-height;
-    --nav-xlarge-font-size: $nav-xlarge-font-size;
-    --nav-xlarge-font-size-m: $nav-xlarge-font-size-m;
-    --nav-xlarge-font-size-l: $nav-xlarge-font-size-l;
+    --nav-xlarge-line-height: #{$nav-xlarge-line-height};
+    --nav-xlarge-font-size: #{$nav-xlarge-font-size};
+    --nav-xlarge-font-size-m: #{$nav-xlarge-font-size-m};
+    --nav-xlarge-font-size-l: #{$nav-xlarge-font-size-l};
 
-    --nav-dividers-margin-top: $nav-dividers-margin-top;
-    --nav-dividers-border-width: $nav-dividers-border-width;
-    --nav-dividers-border: $nav-dividers-border;
+    --nav-dividers-margin-top: #{$nav-dividers-margin-top};
+    --nav-dividers-border-width: #{$nav-dividers-border-width};
+    --nav-dividers-border: #{$nav-dividers-border};
 
 }

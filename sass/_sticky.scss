@@ -24,9 +24,9 @@ $sticky-reverse-animation-duration:             0.2s;
 
 :root {
 
-    --sticky-z-index: $sticky-z-index;
+    --sticky-z-index: #{$sticky-z-index};
 
-    --sticky-animation-duration: $sticky-animation-duration;
-    --sticky-reverse-animation-duration: $sticky-reverse-animation-duration;
+    --sticky-animation-duration: #{$sticky-animation-duration};
+    --sticky-reverse-animation-duration: #{$sticky-reverse-animation-duration};
 
 }

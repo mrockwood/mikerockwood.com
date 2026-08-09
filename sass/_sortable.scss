@@ -19,10 +19,10 @@ $sortable-empty-height:                         50px;
 
 :root {
 
-    --sortable-dragged-z-index: $sortable-dragged-z-index;
+    --sortable-dragged-z-index: #{$sortable-dragged-z-index};
 
-    --sortable-placeholder-opacity: $sortable-placeholder-opacity;
+    --sortable-placeholder-opacity: #{$sortable-placeholder-opacity};
 
-    --sortable-empty-height: $sortable-empty-height;
+    --sortable-empty-height: #{$sortable-empty-height};
 
 }

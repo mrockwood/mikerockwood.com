@@ -9,7 +9,7 @@
 // Variables
 // ========================================================================
 
-$leader-fill-content:                           ~'.';
+$leader-fill-content:                           '.';
 $leader-fill-margin-left:                       $global-small-gutter;
 
 
@@ -18,7 +18,7 @@ $leader-fill-margin-left:                       $global-small-gutter;
 
 :root {
 
-    --leader-fill-content: $leader-fill-content;
-    --leader-fill-margin-left: $leader-fill-margin-left;
+    --leader-fill-content: #{$leader-fill-content};
+    --leader-fill-margin-left: #{$leader-fill-margin-left};
 
 }

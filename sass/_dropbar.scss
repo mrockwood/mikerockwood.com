@@ -35,18 +35,18 @@ $dropbar-large-padding-bottom:                  $dropbar-large-padding-top;
 
 :root {
 
-    --dropbar-margin: $dropbar-margin;
-    --dropbar-padding-top: $dropbar-padding-top;
-    --dropbar-padding-bottom: $dropbar-padding-bottom;
-    --dropbar-padding-horizontal: $dropbar-padding-horizontal;
-    --dropbar-padding-horizontal-s: $dropbar-padding-horizontal-s;
-    --dropbar-padding-horizontal-m: $dropbar-padding-horizontal-m;
-    --dropbar-background: $dropbar-background;
-    --dropbar-color: $dropbar-color;
-    --dropbar-color-mode: $dropbar-color-mode;
-    --dropbar-focus-outline: $dropbar-focus-outline;
+    --dropbar-margin: #{$dropbar-margin};
+    --dropbar-padding-top: #{$dropbar-padding-top};
+    --dropbar-padding-bottom: #{$dropbar-padding-bottom};
+    --dropbar-padding-horizontal: #{$dropbar-padding-horizontal};
+    --dropbar-padding-horizontal-s: #{$dropbar-padding-horizontal-s};
+    --dropbar-padding-horizontal-m: #{$dropbar-padding-horizontal-m};
+    --dropbar-background: #{$dropbar-background};
+    --dropbar-color: #{$dropbar-color};
+    --dropbar-color-mode: #{$dropbar-color-mode};
+    --dropbar-focus-outline: #{$dropbar-focus-outline};
 
-    --dropbar-large-padding-top: $dropbar-large-padding-top;
-    --dropbar-large-padding-bottom: $dropbar-large-padding-bottom;
+    --dropbar-large-padding-top: #{$dropbar-large-padding-top};
+    --dropbar-large-padding-bottom: #{$dropbar-large-padding-bottom};
 
 }

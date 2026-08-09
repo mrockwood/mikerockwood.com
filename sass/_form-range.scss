@@ -24,13 +24,13 @@ $form-range-thumb-background:                   $global-color;
 
 :root {
 
-    --form-range-track-height: $form-range-track-height;
-    --form-range-track-background: $form-range-track-background;
-    --form-range-track-focus-background: $form-range-track-focus-background;
+    --form-range-track-height: #{$form-range-track-height};
+    --form-range-track-background: #{$form-range-track-background};
+    --form-range-track-focus-background: #{$form-range-track-focus-background};
 
-    --form-range-thumb-height: $form-range-thumb-height;
-    --form-range-thumb-width: $form-range-thumb-width;
-    --form-range-thumb-border-radius: $form-range-thumb-border-radius;
-    --form-range-thumb-background: $form-range-thumb-background;
+    --form-range-thumb-height: #{$form-range-thumb-height};
+    --form-range-thumb-width: #{$form-range-thumb-width};
+    --form-range-thumb-border-radius: #{$form-range-thumb-border-radius};
+    --form-range-thumb-background: #{$form-range-thumb-background};
 
 }

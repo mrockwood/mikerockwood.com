@@ -22,11 +22,11 @@ $overlay-primary-color-mode:                    light;
 
 :root {
 
-    --overlay-padding-horizontal: $overlay-padding-horizontal;
-    --overlay-padding-vertical: $overlay-padding-vertical;
+    --overlay-padding-horizontal: #{$overlay-padding-horizontal};
+    --overlay-padding-vertical: #{$overlay-padding-vertical};
 
-    --overlay-default-background: $overlay-default-background;
+    --overlay-default-background: #{$overlay-default-background};
 
-    --overlay-primary-background: $overlay-primary-background;
+    --overlay-primary-background: #{$overlay-primary-background};
 
 }

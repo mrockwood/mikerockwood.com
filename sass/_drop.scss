@@ -31,11 +31,11 @@ $drop-parent-icon-margin-left:              0.25em;
 
 :root {
 
-    --drop-z-index: $drop-z-index;
-    --drop-margin: $drop-margin;
-    --drop-viewport-margin: $drop-viewport-margin;
-    --drop-width: $drop-width;
+    --drop-z-index: #{$drop-z-index};
+    --drop-margin: #{$drop-margin};
+    --drop-viewport-margin: #{$drop-viewport-margin};
+    --drop-width: #{$drop-width};
 
-    --drop-parent-icon-margin-left: $drop-parent-icon-margin-left;
+    --drop-parent-icon-margin-left: #{$drop-parent-icon-margin-left};
 
 }

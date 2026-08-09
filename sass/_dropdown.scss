@@ -51,34 +51,34 @@ $dropdown-nav-sublist-item-hover-color:         $global-color;
 
 :root {
 
-    --dropdown-margin: $dropdown-margin;
-    --dropdown-viewport-margin: $dropdown-viewport-margin;
-    --dropdown-min-width: $dropdown-min-width;
-    --dropdown-padding: $dropdown-padding;
-    --dropdown-background: $dropdown-background;
-    --dropdown-color: $dropdown-color;
-    --dropdown-color-mode: $dropdown-color-mode;
-    --dropdown-focus-outline: $dropdown-focus-outline;
+    --dropdown-margin: #{$dropdown-margin};
+    --dropdown-viewport-margin: #{$dropdown-viewport-margin};
+    --dropdown-min-width: #{$dropdown-min-width};
+    --dropdown-padding: #{$dropdown-padding};
+    --dropdown-background: #{$dropdown-background};
+    --dropdown-color: #{$dropdown-color};
+    --dropdown-color-mode: #{$dropdown-color-mode};
+    --dropdown-focus-outline: #{$dropdown-focus-outline};
 
-    --dropdown-large-padding: $dropdown-large-padding;
+    --dropdown-large-padding: #{$dropdown-large-padding};
 
-    --dropdown-dropbar-margin: $dropdown-dropbar-margin;
-    --dropdown-dropbar-padding-top: $dropdown-dropbar-padding-top;
-    --dropdown-dropbar-padding-bottom: $dropdown-dropbar-padding-bottom;
-    --dropdown-dropbar-viewport-margin: $dropdown-dropbar-viewport-margin;
-    --dropdown-dropbar-viewport-margin-s: $dropdown-dropbar-viewport-margin-s;
-    --dropdown-dropbar-viewport-margin-m: $dropdown-dropbar-viewport-margin-m;
+    --dropdown-dropbar-margin: #{$dropdown-dropbar-margin};
+    --dropdown-dropbar-padding-top: #{$dropdown-dropbar-padding-top};
+    --dropdown-dropbar-padding-bottom: #{$dropdown-dropbar-padding-bottom};
+    --dropdown-dropbar-viewport-margin: #{$dropdown-dropbar-viewport-margin};
+    --dropdown-dropbar-viewport-margin-s: #{$dropdown-dropbar-viewport-margin-s};
+    --dropdown-dropbar-viewport-margin-m: #{$dropdown-dropbar-viewport-margin-m};
 
-    --dropdown-dropbar-large-padding-top: $dropdown-dropbar-large-padding-top;
-    --dropdown-dropbar-large-padding-bottom: $dropdown-dropbar-large-padding-bottom;
+    --dropdown-dropbar-large-padding-top: #{$dropdown-dropbar-large-padding-top};
+    --dropdown-dropbar-large-padding-bottom: #{$dropdown-dropbar-large-padding-bottom};
 
-    --dropdown-nav-item-color: $dropdown-nav-item-color;
-    --dropdown-nav-item-hover-color: $dropdown-nav-item-hover-color;
-    --dropdown-nav-subtitle-font-size: $dropdown-nav-subtitle-font-size;
-    --dropdown-nav-header-color: $dropdown-nav-header-color;
-    --dropdown-nav-divider-border-width: $dropdown-nav-divider-border-width;
-    --dropdown-nav-divider-border: $dropdown-nav-divider-border;
-    --dropdown-nav-sublist-item-color: $dropdown-nav-sublist-item-color;
-    --dropdown-nav-sublist-item-hover-color: $dropdown-nav-sublist-item-hover-color;
+    --dropdown-nav-item-color: #{$dropdown-nav-item-color};
+    --dropdown-nav-item-hover-color: #{$dropdown-nav-item-hover-color};
+    --dropdown-nav-subtitle-font-size: #{$dropdown-nav-subtitle-font-size};
+    --dropdown-nav-header-color: #{$dropdown-nav-header-color};
+    --dropdown-nav-divider-border-width: #{$dropdown-nav-divider-border-width};
+    --dropdown-nav-divider-border: #{$dropdown-nav-divider-border};
+    --dropdown-nav-sublist-item-color: #{$dropdown-nav-sublist-item-color};
+    --dropdown-nav-sublist-item-hover-color: #{$dropdown-nav-sublist-item-hover-color};
 
 }
