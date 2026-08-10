@@ -16,10 +16,10 @@
     --syntax-pre-border-width:                         0;
     --syntax-pre-border-radius:                        0;
 
-    --syntx-comment:                                   var(--theme-muted-color, var(--global-muted-color) );
-    --syntx-name:                                      var(--theme-success-background, var(--global-success-background) );
-    --syntx-variable:                                  var(--theme-danger-background, var(--global-danger-background) );
-    --syntx-title:                                     var(--theme-link-color, var(--global-link-color) );
+    --syntax-comment:                                  var(--theme-muted-color, var(--global-muted-color) );
+    --syntax-name:                                     var(--theme-success-background, var(--global-success-background) );
+    --syntax-variable:                                 var(--theme-danger-background, var(--global-danger-background) );
+    --syntax-title:                                    var(--theme-link-color, var(--global-link-color) );
 
 }
 
@@ -49,7 +49,7 @@ pre[data-lang] {
 .z-template-variable,
 .z-strong,
 .z-emphasis,
-.z-quote { color: var(--syntx-variable); }
+.z-quote { color: var(--syntax-variable); }
 
 .z-keyword,
 .z-selector-tag,
@@ -61,7 +61,7 @@ pre[data-lang] {
 .z-attribute { color: #0086b3; }
 
 .z-section,
-.z-name { color: var(--syntx-name); }
+.z-name { color: var(--syntax-name); }
 
 .z-title,
 .z-attr,
@@ -69,7 +69,7 @@ pre[data-lang] {
 .z-selector-id,
 .z-selector-class,
 .z-selector-attr,
-.z-selector-pseudo { color: var(--syntx-title); }
+.z-selector-pseudo { color: var(--syntax-title); }
 
 .z-addition {
   color: #55a532;

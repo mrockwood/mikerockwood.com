@@ -100,8 +100,8 @@ $modal-close-outside-hover-color: var(--modal-close-outside-hover-color);
         --modal-header-padding-horizontal:           var(--global-gutter);
         --modal-header-padding-vertical:             calc(var(--modal-header-padding-horizontal-s) / 2);
 
-        --modal-footer-padding-horizontal-s:         var(--global-gutter);
-        --modal-footer-padding-vertical-s:           calc(var(--modal-footer-padding-horizontal-s) / 2);
+        --modal-footer-padding-horizontal:           var(--global-gutter);
+        --modal-footer-padding-vertical:             calc(var(--modal-footer-padding-horizontal-s) / 2);
 
     }
 
