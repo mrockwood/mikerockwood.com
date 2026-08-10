@@ -20,7 +20,7 @@ $animation-slide-medium-translate: var(--animation-slide-medium-translate);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-animation-']) {
 
     --animation-duration:                            0.5s;
     --animation-fade-duration:                       0.8s;

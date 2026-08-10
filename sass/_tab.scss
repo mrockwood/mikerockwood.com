@@ -30,7 +30,7 @@ $tab-item-disabled-color: var(--tab-item-disabled-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where(.uk-tab) {
 
     --tab-margin-horizontal:                  20px;
 

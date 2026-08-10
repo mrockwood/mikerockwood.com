@@ -28,7 +28,7 @@ $lightbox-caption-color: var(--lightbox-caption-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-lightbox']) {
 
     --lightbox-z-index:                              calc( var(--global-z-index) + 10 );
     --lightbox-background:                           #000;

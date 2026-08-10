@@ -20,7 +20,7 @@ $transition-slow-duration: var(--transition-slow-duration);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-transition']) {
 
     --transition-duration:                           0.3s;
 

@@ -21,7 +21,7 @@ $article-meta-color: var(--article-meta-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-article']) {
 
     --article-margin-top:                            var(--global-large-margin);
 

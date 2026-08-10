@@ -45,7 +45,7 @@ $subnav-item-disabled-color: var(--subnav-item-disabled-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-subnav']) {
 
     --subnav-margin-horizontal:                      20px;
 

@@ -25,7 +25,7 @@ $accordion-default-content-margin-top: var(--accordion-default-content-margin-to
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-accordion']) {
 
     --accordion-default-item-margin-top: var(--global-margin);
 

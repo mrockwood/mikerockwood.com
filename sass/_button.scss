@@ -65,7 +65,7 @@ $button-link-disabled-color: var(--button-link-disabled-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-button']) {
 
     --button-line-height:                            var(--global-control-height);
     --button-small-line-height:                      var(--global-control-small-height);

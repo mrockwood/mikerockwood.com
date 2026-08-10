@@ -29,7 +29,7 @@ $dotnav-item-active-background: var(--dotnav-item-active-background);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-dotnav']) {
 
     --dotnav-margin-horizontal:                      12px;
     --dotnav-margin-vertical:                        var(--dotnav-margin-horizontal);

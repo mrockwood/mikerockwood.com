@@ -44,7 +44,7 @@ $internal-list-bullet-image: "../../images/backgrounds/list-bullet.svg";
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-list']) {
 
     --list-margin-top:                               var(--global-small-margin);
 

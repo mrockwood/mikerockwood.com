@@ -42,7 +42,7 @@ $table-expand-min-width: var(--table-expand-min-width);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-table']) {
 
     --table-margin-vertical:                         var(--global-margin);
 

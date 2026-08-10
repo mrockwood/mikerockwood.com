@@ -30,7 +30,7 @@ $offcanvas-overlay-background: var(--offcanvas-overlay-background);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-offcanvas']) {
 
     --offcanvas-z-index:                             var(--global-z-index);
 

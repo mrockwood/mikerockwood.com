@@ -36,7 +36,7 @@ $section-secondary-color-mode: var(--section-secondary-color-mode);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-section']) {
 
     --section-padding-vertical:                        var(--global-medium-margin);
 

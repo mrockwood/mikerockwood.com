@@ -16,7 +16,7 @@ $background-secondary-background: var(--background-secondary-background);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-background']) {
 
     --background-default-background:                 var(--global-background);
     --background-muted-background:                   var(--global-muted-background);

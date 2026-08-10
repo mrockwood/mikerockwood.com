@@ -20,7 +20,7 @@ $width-2xlarge-width: var(--width-2xlarge-width);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-width']) {
 
     --width-small-width:                             150px;
     --width-medium-width:                            300px;

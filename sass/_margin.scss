@@ -25,7 +25,7 @@ $margin-xlarge-margin-l: var(--margin-xlarge-margin);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-margin']) {
 
     --margin-margin:                                        var(--global-margin);
 

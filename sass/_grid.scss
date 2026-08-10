@@ -28,7 +28,7 @@
 // Variables
 // ========================================================================
 
-:root {
+:where([class*='uk-grid']) {
 
     --grid-gutter-horizontal:                        var(--global-gutter);
     --grid-gutter-vertical:                          var(--grid-gutter-horizontal);

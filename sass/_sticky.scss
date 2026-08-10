@@ -22,7 +22,7 @@ $sticky-reverse-animation-duration: var(--sticky-reverse-animation-duration);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-sticky']) {
 
     --sticky-z-index:                                calc(var(--global-z-index) - 20);
 

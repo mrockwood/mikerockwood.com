@@ -29,7 +29,7 @@ $pagination-item-disabled-color: var(--pagination-item-disabled-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-pagination']) {
 
     --pagination-margin-horizontal:                  0;
 

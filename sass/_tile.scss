@@ -39,7 +39,7 @@ $tile-secondary-color-mode: var(--tile-secondary-color-mode);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-tile']) {
 
     --tile-padding-horizontal:                      15px;
     --tile-padding-vertical:                        var(--global-medium-margin);

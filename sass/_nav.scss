@@ -120,7 +120,7 @@ $nav-dividers-border: var(--nav-dividers-border);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where(.uk-nav) {
 
     --nav-item-padding-vertical:                     5px;
     --nav-item-padding-horizontal:                   0;

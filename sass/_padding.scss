@@ -23,7 +23,7 @@ $padding-large-padding-l: var(--padding-large-padding);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-padding']) {
 
     --padding-padding:                                       var(--global-gutter);
 

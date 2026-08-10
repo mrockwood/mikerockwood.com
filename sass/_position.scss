@@ -38,7 +38,7 @@ $position-large-margin-l: var(--position-large-margin);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-position']) {
 
     --uk-position-margin-offset: 0px;
 

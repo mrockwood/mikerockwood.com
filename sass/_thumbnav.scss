@@ -24,7 +24,7 @@ $thumbnav-item-active-opacity: var(--thumbnav-item-active-opacity);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-thumbnav']) {
 
     --thumbnav-margin-horizontal:                    15px;
     --thumbnav-margin-vertical:                      var(--thumbnav-margin-horizontal);
@@ -75,4 +75,3 @@ $thumbnav-item-active-opacity: var(--thumbnav-item-active-opacity);
     }
 
 }
-

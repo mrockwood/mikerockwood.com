@@ -31,7 +31,7 @@ $icon-overlay-hover-color: var(--icon-overlay-hover-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where(.uk-icon) {
 
     --icon-image-size:                               20px;
 

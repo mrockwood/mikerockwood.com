@@ -17,7 +17,7 @@ $height-large-height: var(--height-large-height);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-height']) {
 
     --height-small-height:                           150px;
     --height-medium-height:                          300px;

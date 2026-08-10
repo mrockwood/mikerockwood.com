@@ -80,7 +80,7 @@ $card-large-footer-padding-vertical-l: var(--card-large-footer-padding-vertical)
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-card']) {
 
     --card-body-padding-horizontal:                 var(--global-gutter);
     --card-body-padding-vertical:                   var(--global-gutter);

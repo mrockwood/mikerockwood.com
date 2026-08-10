@@ -20,7 +20,7 @@ $iconnav-item-active-color: var(--iconnav-item-active-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-iconnav']) {
 
     --iconnav-margin-horizontal:                      var(--global-small-margin);
     --iconnav-margin-vertical:                        var(--iconnav-margin-horizontal);

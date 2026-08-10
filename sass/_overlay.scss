@@ -26,7 +26,7 @@ $overlay-dark-color-mode: var(--overlay-dark-color-mode);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-overlay']) {
 
     --overlay-padding-horizontal:                    var(--global-gutter);
     --overlay-padding-vertical:                      var(--global-gutter);

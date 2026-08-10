@@ -14,7 +14,7 @@ $close-hover-color: var(--close-hover-color);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where(.uk-close) {
 
     --close-color:                                   var(--theme-muted-color, var(--global-muted-color));
     --close-hover-color:                             var(--theme-color, var(--global-color));

@@ -29,7 +29,7 @@ $slidenav-large-padding-horizontal: var(--slidenav-large-padding-horizontal);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-slidenav']) {
 
     --slidenav-padding-vertical:                     5px;
     --slidenav-padding-horizontal:                   10px;

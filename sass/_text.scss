@@ -48,7 +48,7 @@ $text-2xlarge-tracking: var(--text-2xlarge-tracking);
 // Set custom properties
 // ========================================================================
 
-:root {
+:where([class*='uk-text']) {
 
     --text-lead-font-size:                           var(--global-large-font-size);
     --text-lead-line-height:                         1.5;
