@@ -166,3 +166,15 @@ $base-selection-color: var(--base-selection-color);
     }
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-base-misc() {
+
+    html { font-size: 100%; }
+
+    body { font-size: var(--base-body-font-size); }
+
+}
