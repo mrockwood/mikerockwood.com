@@ -44,3 +44,13 @@ $dotnav-item-active-background: var(--dotnav-item-active-background);
     --dotnav-item-active-background:                 color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
 
 }
+
+
+// Mixin and overrides
+// ========================================================================
+
+@mixin hook-dotnav-misc() {
+
+    .uk-dotnav-vertical { margin-top: calc( var(--dotnav-margin-vertical) * -1 ); }
+
+}

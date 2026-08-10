@@ -32,3 +32,35 @@ $animation-slide-medium-translate: var(--animation-slide-medium-translate);
     --animation-slide-medium-translate:              50px;
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-animation-misc() {
+
+    /*
+    * Slide Small
+    */
+
+    @keyframes uk-slide-top-small {
+        0% { transform: translateY( calc( var(--animation-slide-small-translate) * -1 ) ); }
+    }
+
+    @keyframes uk-slide-left-small {
+        0% { transform: translateX( calc( var(--animation-slide-small-translate) * -1 ) ); }
+    }
+
+    /*
+    * Slide Medium
+    */
+
+    @keyframes uk-slide-top-medium {
+        0% { transform: translateY( calc( var(--animation-slide-medium-translate) * -1 ) ); }
+    }
+
+    @keyframes uk-slide-left-medium {
+        0% { transform: translateX( calc( var(--animation-slide-medium-translate) * -1 ) ); }
+    }
+
+}

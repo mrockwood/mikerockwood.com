@@ -43,3 +43,13 @@ $tab-item-disabled-color: var(--tab-item-disabled-color);
     --tab-item-disabled-color:                var(--theme-muted-color, var(--global-muted-color));
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-tab() {
+
+    margin-left: calc( var(--tab-margin-horizontal) * -1 );
+
+};

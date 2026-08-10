@@ -46,3 +46,14 @@ $container-padding-horizontal-m: var(--container-padding-horizontal);
     }
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-container-misc() {
+
+    .uk-container-item-padding-remove-left { margin-left: calc( var(--container-padding-horizontal) * -1 ); }
+    .uk-container-item-padding-remove-right { margin-right: calc( var(--container-padding-horizontal) * -1 ); }
+
+};

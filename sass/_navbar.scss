@@ -187,6 +187,8 @@ $navbar-dropdown-nav-sublist-item-active-color: var(--navbar-dropdown-nav-sublis
 
     .uk-navbar-container { padding-block: var(--navbar-padding-vertical); }
 
+    .uk-navbar-dropdown .uk-drop-grid { margin-left: calc( var(--navbar-dropdown-grid-gutter-horizontal) * -1 ); }
+
     .uk-navbar-dropdown-width-2:not(.uk-drop-stack) { width: calc(var(--navbar-dropdown-width) * 2); }
     .uk-navbar-dropdown-width-3:not(.uk-drop-stack) { width: calc(var(--navbar-dropdown-width) * 3); }
     .uk-navbar-dropdown-width-4:not(.uk-drop-stack) { width: calc(var(--navbar-dropdown-width) * 4); }

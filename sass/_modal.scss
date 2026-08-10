@@ -113,3 +113,13 @@ $modal-close-outside-hover-color: var(--modal-close-outside-hover-color);
     }
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-modal-close-outside() {
+
+    right: calc( var(--modal-close-padding) * -1 );
+
+}

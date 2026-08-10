@@ -79,7 +79,13 @@ $subnav-item-disabled-color: var(--subnav-item-disabled-color);
 // Mixins and overrides
 // ========================================================================
 
+@mixin hook-subnav() {
+    margin-left: calc( var(--subnav-margin-horizontal) * -1 );
+};
+
 @mixin hook-subnav-misc() {
+
+    .uk-subnav-pill { margin-left: calc( var(--subnav-pill-margin-horizontal) * -1 ); }
 
     .uk-subnav-divider { margin-left: calc( ( var(--subnav-divider-margin-horizontal) * 2) + var(--subnav-divider-border-width) * -1 ); }
 

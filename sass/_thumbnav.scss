@@ -39,6 +39,10 @@ $thumbnav-item-active-opacity: var(--thumbnav-item-active-opacity);
 // Mixins
 // ========================================================================
 
+@mixin hook-thumbnav() {
+    margin-left: calc( var(--thumbnav-margin-horizontal) * -1 );
+}
+
 @mixin hook-thumbnav-item() {
 
     position: relative;
@@ -63,3 +67,12 @@ $thumbnav-item-active-opacity: var(--thumbnav-item-active-opacity);
 @mixin hook-thumbnav-item-active() {
     &::after { opacity: var(--thumbnav-item-active-opacity); }
 }
+
+@mixin hook-thumbnav-misc() {
+
+    .uk-thumbnav-vertical {
+        margin-top: calc( var(--thumbnav-margin-vertical) * -1 );
+    }
+
+}
+

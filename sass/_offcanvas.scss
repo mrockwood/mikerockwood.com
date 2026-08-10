@@ -76,10 +76,19 @@ $offcanvas-overlay-background: var(--offcanvas-overlay-background);
     /* Flip modifier */
     .uk-offcanvas-flip .uk-offcanvas-bar { right: calc( var(--offcanvas-bar-width) * -1 ); }
 
-    /* Tablet landscape and bigger */
+    /* Phone landscape and bigger */
     @media (min-width: $breakpoint-small) {
 
         .uk-offcanvas-flip .uk-offcanvas-bar { right: calc( var(--offcanvas-bar-width) * -1); }
+
+    }
+
+    .uk-offcanvas-flip.uk-offcanvas-container-animation { left: calc( var(--offcanvas-bar-width) * -1 ); }
+
+    /* Phone landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        .uk-offcanvas-flip.uk-offcanvas-container-animation { left: calc( var(--offcanvas-bar-width) * -1 ); }
 
     }
 

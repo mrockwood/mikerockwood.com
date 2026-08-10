@@ -32,3 +32,19 @@ $iconnav-item-active-color: var(--iconnav-item-active-color);
     --iconnav-item-active-color:                      var(--theme-color, var(--global-color));
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-iconnav() {
+    margin-left: calc( var(--iconnav-margin-horizontal) * -1 );
+}
+
+@mixin hook-iconnav-misc() {
+
+    .uk-iconnav-vertical {
+        margin-top: calc( var(--iconnav-margin-vertical) * -1 );
+    }
+
+}

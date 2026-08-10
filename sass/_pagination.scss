@@ -42,3 +42,13 @@ $pagination-item-disabled-color: var(--pagination-item-disabled-color);
     --pagination-item-disabled-color:                var(--theme-muted-color, var(--global-muted-color));
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-pagination() {
+
+    margin-left: calc( var(--pagination-margin-horizontal) * -1 );
+
+};
