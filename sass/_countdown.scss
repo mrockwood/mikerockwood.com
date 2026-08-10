@@ -7,8 +7,8 @@
 // Variables
 // ========================================================================
 
-$countdown-separator-line-height:               2;
-$countdown-separator-font-size:                 0.5em;
+$countdown-separator-line-height: var(--countdown-separator-line-height);
+$countdown-separator-font-size: var(--countdown-separator-font-size);
 
 
 // Set custom properties
@@ -16,7 +16,7 @@ $countdown-separator-font-size:                 0.5em;
 
 :root {
 
-    --countdown-separator-line-height: #{$countdown-separator-line-height};
-    --countdown-separator-font-size: #{$countdown-separator-font-size};
+    --countdown-separator-line-height:               2;
+    --countdown-separator-font-size:                 0.5em;
 
 }

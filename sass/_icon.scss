@@ -7,25 +7,25 @@
 // Variables
 // ========================================================================
 
-$icon-image-size:                               20px;
+$icon-image-size: var(--icon-image-size);
 
-$icon-link-color:                               var(--theme-muted-color, var(--global-muted-color));
-$icon-link-hover-color:                         var(--theme-color, var(--global-color));
-$icon-link-active-color:                        var(--theme-muted-color, var(--global-muted-color));
+$icon-link-color: var(--icon-link-color);
+$icon-link-hover-color: var(--icon-link-hover-color);
+$icon-link-active-color: var(--icon-link-active-color);
 
-$icon-button-size:                              42px;
-$icon-button-border-radius:                     500px;
-$icon-button-background:                        var(--theme-muted-background, var(--global-muted-background));
-$icon-button-color:                             var(--theme-muted-color, var(--global-muted-color));
+$icon-button-size: var(--icon-button-size);
+$icon-button-border-radius: var(--icon-button-border-radius);
+$icon-button-background: var(--icon-button-background);
+$icon-button-color: var(--icon-button-color);
 
-$icon-button-hover-background:                  var(--theme-muted-background, var(--global-muted-background));
-$icon-button-hover-color:                       var(--theme-color, var(--global-color));
+$icon-button-hover-background: var(--icon-button-hover-background);
+$icon-button-hover-color: var(--icon-button-hover-color);
 
-$icon-button-active-background:                 var(--theme-muted-background, var(--global-muted-background));
-$icon-button-active-color:                      var(--theme-color, var(--global-color));
+$icon-button-active-background: var(--icon-button-active-background);
+$icon-button-active-color: var(--icon-button-active-color);
 
-$icon-overlay-color:                            color-mix(in srgb, var(--theme-emphasis-color, var(--global-emphasis-color)) 60%, transparent);
-$icon-overlay-hover-color:                      var(--theme-emphasis-color, var(--global-emphasis-color));
+$icon-overlay-color: var(--icon-overlay-color);
+$icon-overlay-hover-color: var(--icon-overlay-hover-color);
 
 
 // Set custom properties
@@ -33,24 +33,24 @@ $icon-overlay-hover-color:                      var(--theme-emphasis-color, var(
 
 :root {
 
-    --icon-image-size: #{$icon-image-size};
+    --icon-image-size:                               20px;
 
-    --icon-link-color: #{$icon-link-color};
-    --icon-link-hover-color: #{$icon-link-hover-color};
-    --icon-link-active-color: #{$icon-link-active-color};
+    --icon-link-color:                               var(--theme-muted-color, var(--global-muted-color));
+    --icon-link-hover-color:                         var(--theme-color, var(--global-color));
+    --icon-link-active-color:                        var(--theme-muted-color, var(--global-muted-color));
 
-    --icon-button-size: #{$icon-button-size};
-    --icon-button-border-radius: #{$icon-button-border-radius};
-    --icon-button-background: #{$icon-button-background};
-    --icon-button-color: #{$icon-button-color};
+    --icon-button-size:                              42px;
+    --icon-button-border-radius:                     500px;
+    --icon-button-background:                        var(--theme-muted-background, var(--global-muted-background));
+    --icon-button-color:                             var(--theme-muted-color, var(--global-muted-color));
 
-    --icon-button-hover-background: #{$icon-button-hover-background};
-    --icon-button-hover-color: #{$icon-button-hover-color};
+    --icon-button-hover-background:                  var(--theme-muted-background, var(--global-muted-background));
+    --icon-button-hover-color:                       var(--theme-color, var(--global-color));
 
-    --icon-button-active-background: #{$icon-button-active-background};
-    --icon-button-active-color: #{$icon-button-active-color};
+    --icon-button-active-background:                 var(--theme-muted-background, var(--global-muted-background));
+    --icon-button-active-color:                      var(--theme-color, var(--global-color));
 
-    --icon-overlay-color: #{$icon-overlay-color};
-    --icon-overlay-hover-color: #{$icon-overlay-hover-color};
+    --icon-overlay-color:                            color-mix(in srgb, var(--theme-emphasis-color, var(--global-emphasis-color)) 60%, transparent);
+    --icon-overlay-hover-color:                      var(--theme-emphasis-color, var(--global-emphasis-color));
 
 }

@@ -7,20 +7,20 @@
 // Variables
 // ========================================================================
 
-$overlay-padding-horizontal:                    var(--global-gutter);
-$overlay-padding-vertical:                      var(--global-gutter);
+$overlay-padding-horizontal: var(--overlay-padding-horizontal);
+$overlay-padding-vertical: var(--overlay-padding-vertical);
 
-$overlay-default-background:                    color-mix(in oklab, var(--global-background), transparent 20%);
-$overlay-default-color-mode:                    dark;
+$overlay-default-background: var(--overlay-default-background);
+$overlay-default-color-mode: var(--overlay-default-color-mode);
 
-$overlay-primary-background:                    color-mix(in oklab, var(--global-secondary-background), transparent 20%);
-$overlay-primary-color-mode:                    light;
+$overlay-primary-background: var(--overlay-primary-background);
+$overlay-primary-color-mode: var(--overlay-primary-color-mode);
 
-$overlay-light-background:                      color-mix(in oklab, var(--surface-default-light), transparent 20%);
-$overlay-light-color-mode:                      dark;
+$overlay-light-background: var(--overlay-light-background);
+$overlay-light-color-mode: var(--overlay-light-color-mode);
 
-$overlay-dark-background:                       color-mix(in oklab, var(--surface-default-dark), transparent 20%);
-$overlay-dark-color-mode:                       light;
+$overlay-dark-background: var(--overlay-dark-background);
+$overlay-dark-color-mode: var(--overlay-dark-color-mode);
 
 
 // Set custom properties
@@ -28,16 +28,20 @@ $overlay-dark-color-mode:                       light;
 
 :root {
 
-    --overlay-padding-horizontal: #{$overlay-padding-horizontal};
-    --overlay-padding-vertical: #{$overlay-padding-vertical};
+    --overlay-padding-horizontal:                    var(--global-gutter);
+    --overlay-padding-vertical:                      var(--global-gutter);
 
-    --overlay-default-background: #{$overlay-default-background};
+    --overlay-default-background:                    color-mix(in oklab, var(--global-background), transparent 20%);
+    --overlay-default-color-mode:                    dark;
 
-    --overlay-primary-background: #{$overlay-primary-background};
+    --overlay-primary-background:                    color-mix(in oklab, var(--global-secondary-background), transparent 20%);
+    --overlay-primary-color-mode:                    light;
 
-    --overlay-light-background: #{$overlay-light-background};
+    --overlay-light-background:                      color-mix(in oklab, var(--surface-default-light), transparent 20%);
+    --overlay-light-color-mode:                      dark;
 
-    --overlay-dark-background: #{$overlay-dark-background};
+    --overlay-dark-background:                       color-mix(in oklab, var(--surface-default-dark), transparent 20%);
+    --overlay-dark-color-mode:                       light;
 
 }
 

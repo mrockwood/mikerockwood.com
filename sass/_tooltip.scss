@@ -7,18 +7,18 @@
 // Variables
 // ========================================================================
 
-$tooltip-z-index:                               calc( var(--global-z-index) + 30 );
-$tooltip-margin:                                10px;
-$tooltip-max-width:                             200px;
-$tooltip-padding-vertical:                      3px;
-$tooltip-padding-horizontal:                    6px;
-$tooltip-background:                            color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 20%);
-$tooltip-border-radius:                         2px;
-$tooltip-color:                                 var(--inverse-theme-color, var(--global-inverse-color) );
-$tooltip-font-size:                             12px;
+$tooltip-z-index: var(--tooltip-z-index);
+$tooltip-margin: var(--tooltip-margin);
+$tooltip-max-width: var(--tooltip-max-width);
+$tooltip-padding-vertical: var(--tooltip-padding-vertical);
+$tooltip-padding-horizontal: var(--tooltip-padding-horizontal);
+$tooltip-background: var(--tooltip-background);
+$tooltip-border-radius: var(--tooltip-border-radius);
+$tooltip-color: var(--tooltip-color);
+$tooltip-font-size: var(--tooltip-font-size);
 
-$tooltip-primary-background:                    color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 20%);
-$tooltip-primary-color:                         var(--theme-color, var(--global-color) );
+$tooltip-primary-background: var(--tooltip-primary-background);
+$tooltip-primary-color: var(--tooltip-primary-color);
 
 
 // Set custom properties
@@ -26,18 +26,18 @@ $tooltip-primary-color:                         var(--theme-color, var(--global-
 
 :root {
 
-    --tooltip-z-index: #{$tooltip-z-index};
-    --tooltip-margin: #{$tooltip-margin};
-    --tooltip-max-width: #{$tooltip-max-width};
-    --tooltip-padding-vertical: #{$tooltip-padding-vertical};
-    --tooltip-padding-horizontal: #{$tooltip-padding-horizontal};
-    --tooltip-background: #{$tooltip-background};
-    --tooltip-border-radius: #{$tooltip-border-radius};
-    --tooltip-color: #{$tooltip-color};
-    --tooltip-font-size: #{$tooltip-font-size};
+    --tooltip-z-index:                               calc( var(--global-z-index) + 30 );
+    --tooltip-margin:                                10px;
+    --tooltip-max-width:                             200px;
+    --tooltip-padding-vertical:                      3px;
+    --tooltip-padding-horizontal:                    6px;
+    --tooltip-background:                            color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 20%);
+    --tooltip-border-radius:                         2px;
+    --tooltip-color:                                 var(--inverse-theme-color, var(--global-inverse-color));
+    --tooltip-font-size:                             12px;
 
-    --tooltip-primary-background: #{$tooltip-primary-background};
-	--tooltip-primary-color: #{$tooltip-primary-color};
+    --tooltip-primary-background:                    color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 20%);
+    --tooltip-primary-color:                         var(--theme-color, var(--global-color));
 
 }
 

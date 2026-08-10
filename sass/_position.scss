@@ -29,10 +29,10 @@
 // Variables
 // ========================================================================
 
-$position-small-margin:                                var(--global-small-gutter);
-$position-medium-margin:                               var(--global-gutter);
-$position-large-margin:                                var(--global-gutter);
-$position-large-margin-l:                              50px;
+$position-small-margin: var(--position-small-margin);
+$position-medium-margin: var(--position-medium-margin);
+$position-large-margin: var(--position-large-margin);
+$position-large-margin-l: var(--position-large-margin);
 
 
 // Set custom properties
@@ -42,13 +42,13 @@ $position-large-margin-l:                              50px;
 
     --uk-position-margin-offset: 0px;
 
-    --position-small-margin: #{$position-small-margin};
-    --position-medium-margin: #{$position-medium-margin};
-    --position-large-margin: #{$position-large-margin};
+    --position-small-margin:                                var(--global-small-gutter);
+    --position-medium-margin:                               var(--global-gutter);
+    --position-large-margin:                                var(--global-gutter);
 
     @media (min-width: $breakpoint-large) {
 
-        --position-large-margin: #{$position-large-margin-l};
+        --position-large-margin:                            50px;
 
     }
 

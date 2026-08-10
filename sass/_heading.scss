@@ -7,49 +7,49 @@
 // Variables
 // ========================================================================
 
-$heading-small-font-size:                       2rem;          // 32px
-$heading-medium-font-size:                      2.5rem;        // 40px
-$heading-large-font-size:                       3.125rem;      // 50px
-$heading-xlarge-font-size:                      4rem;          // 64px
-$heading-2xlarge-font-size:                     6rem;          // 96px
-$heading-3xlarge-font-size:                     8rem;          // 128px
+$heading-small-font-size: var(--heading-small-font-size);
+$heading-medium-font-size: var(--heading-medium-font-size);
+$heading-large-font-size: var(--heading-large-font-size);
+$heading-xlarge-font-size: var(--heading-xlarge-font-size);
+$heading-2xlarge-font-size: var(--heading-2xlarge-font-size);
+$heading-3xlarge-font-size: var(--heading-3xlarge-font-size);
 
-$heading-small-font-size-m:                     2.75rem;       // 42px
-$heading-medium-font-size-m:                    3.5rem;        // 56px
-$heading-large-font-size-m:                     4rem;          // 64px
-$heading-xlarge-font-size-m:                    6rem;          // 96px
-$heading-2xlarge-font-size-m:                   8rem;          // 128px
-$heading-3xlarge-font-size-m:                   11rem;         // 176px
+$heading-small-font-size-m: var(--heading-small-font-size);
+$heading-medium-font-size-m: var(--heading-medium-font-size);
+$heading-large-font-size-m: var(--heading-large-font-size);
+$heading-xlarge-font-size-m: var(--heading-xlarge-font-size);
+$heading-2xlarge-font-size-m: var(--heading-2xlarge-font-size);
+$heading-3xlarge-font-size-m: var(--heading-3xlarge-font-size);
 
-$heading-medium-font-size-l:                    4rem;          // 64px
-$heading-large-font-size-l:                     6rem;          // 96px
-$heading-xlarge-font-size-l:                    8rem;          // 128px
-$heading-2xlarge-font-size-l:                   11rem;         // 176px
-$heading-3xlarge-font-size-l:                   15rem;         // 240px
+$heading-medium-font-size-l: var(--heading-medium-font-size);
+$heading-large-font-size-l: var(--heading-large-font-size);
+$heading-xlarge-font-size-l: var(--heading-xlarge-font-size);
+$heading-2xlarge-font-size-l: var(--heading-2xlarge-font-size);
+$heading-3xlarge-font-size-l: var(--heading-3xlarge-font-size);
 
-$heading-small-line-height:                     1.2;
-$heading-medium-line-height:                    1.1;
-$heading-large-line-height:                     1.1;
-$heading-xlarge-line-height:                    1;
-$heading-2xlarge-line-height:                   1;
-$heading-3xlarge-line-height:                   1;
+$heading-small-line-height: var(--heading-small-line-height);
+$heading-medium-line-height: var(--heading-medium-line-height);
+$heading-large-line-height: var(--heading-large-line-height);
+$heading-xlarge-line-height: var(--heading-xlarge-line-height);
+$heading-2xlarge-line-height: var(--heading-2xlarge-line-height);
+$heading-3xlarge-line-height: var(--heading-3xlarge-line-height);
 
-$heading-divider-padding-bottom:                calc(5px + 0.1em);
-$heading-divider-border-width:                  calc(0.2px + 0.05em);
-$heading-divider-border:                        var(--theme-border, var(--global-border));
+$heading-divider-padding-bottom: var(--heading-divider-padding-bottom);
+$heading-divider-border-width: var(--heading-divider-border-width);
+$heading-divider-border: var(--heading-divider-border);
 
-$heading-bullet-top:                            calc(-0.1 * 1em);
-$heading-bullet-height:                         calc(4px + 0.7em);
-$heading-bullet-margin-right:                   calc(5px + 0.2em);
-$heading-bullet-border-width:                   calc(5px + 0.1em);
-$heading-bullet-border:                         var(--theme-border, var(--global-border));
+$heading-bullet-top: var(--heading-bullet-top);
+$heading-bullet-height: var(--heading-bullet-height);
+$heading-bullet-margin-right: var(--heading-bullet-margin-right);
+$heading-bullet-border-width: var(--heading-bullet-border-width);
+$heading-bullet-border: var(--heading-bullet-border);
 
-$heading-line-top:                              50%;
-$heading-line-width:                            2000px;
-$heading-line-border-width:                     calc(0.2px + 0.05em);
-$heading-line-border:                           var(--theme-border, var(--global-border));
-$heading-line-height:                           $heading-line-border-width;
-$heading-line-margin-horizontal:                calc(5px + 0.3em);
+$heading-line-top: var(--heading-line-top);
+$heading-line-width: var(--heading-line-width);
+$heading-line-border-width: var(--heading-line-border-width);
+$heading-line-border: var(--heading-line-border);
+$heading-line-height: var(--heading-line-height);
+$heading-line-margin-horizontal: var(--heading-line-margin-horizontal);
 
 
 // Set custom properties
@@ -57,57 +57,63 @@ $heading-line-margin-horizontal:                calc(5px + 0.3em);
 
 :root {
 
-    --heading-small-font-size: #{$heading-small-font-size};
-    --heading-medium-font-size: #{$heading-medium-font-size};
-    --heading-large-font-size: #{$heading-large-font-size};
-    --heading-xlarge-font-size: #{$heading-xlarge-font-size};
-    --heading-2xlarge-font-size: #{$heading-2xlarge-font-size};
-    --heading-3xlarge-font-size: #{$heading-3xlarge-font-size};
+    --heading-small-font-size:                       2rem;          // 32px
+    --heading-medium-font-size:                      2.5rem;        // 40px
+    --heading-large-font-size:                       3.125rem;      // 50px
+    --heading-xlarge-font-size:                      4rem;          // 64px
+    --heading-2xlarge-font-size:                     6rem;          // 96px
+    --heading-3xlarge-font-size:                     8rem;          // 128px
 
-    --heading-small-line-height: #{$heading-small-line-height};
-    --heading-medium-line-height: #{$heading-medium-line-height};
-    --heading-large-line-height: #{$heading-large-line-height};
-    --heading-xlarge-line-height: #{$heading-xlarge-line-height};
-    --heading-2xlarge-line-height: #{$heading-2xlarge-line-height};
-    --heading-3xlarge-line-height: #{$heading-3xlarge-line-height};
+    --heading-medium-font-size-l:                    4rem;          // 64px
+    --heading-large-font-size-l:                     6rem;          // 96px
+    --heading-xlarge-font-size-l:                    8rem;          // 128px
+    --heading-2xlarge-font-size-l:                   11rem;         // 176px
+    --heading-3xlarge-font-size-l:                   15rem;         // 240px
 
-    --heading-divider-padding-bottom: #{$heading-divider-padding-bottom};
-    --heading-divider-border-width: #{$heading-divider-border-width};
-    --heading-divider-border: #{$heading-divider-border};
+    --heading-small-line-height:                     1.2;
+    --heading-medium-line-height:                    1.1;
+    --heading-large-line-height:                     1.1;
+    --heading-xlarge-line-height:                    1;
+    --heading-2xlarge-line-height:                   1;
+    --heading-3xlarge-line-height:                   1;
 
-    --heading-bullet-top: #{$heading-bullet-top};
-    --heading-bullet-height: #{$heading-bullet-height};
-    --heading-bullet-margin-right: #{$heading-bullet-margin-right};
-    --heading-bullet-border-width: #{$heading-bullet-border-width};
-    --heading-bullet-border: #{$heading-bullet-border};
+    --heading-divider-padding-bottom:                calc(5px + 0.1em);
+    --heading-divider-border-width:                  calc(0.2px + 0.05em);
+    --heading-divider-border:                        var(--theme-border, var(--global-border));
 
-    --heading-line-top: #{$heading-line-top};
-    --heading-line-height: #{$heading-line-height};
-    --heading-line-width: #{$heading-line-width};
-    --heading-line-border-width: #{$heading-line-border-width};
-    --heading-line-border: #{$heading-line-border};
-    --heading-line-margin-horizontal: #{$heading-line-margin-horizontal};
+    --heading-bullet-top:                            calc(-0.1 * 1em);
+    --heading-bullet-height:                         calc(4px + 0.7em);
+    --heading-bullet-margin-right:                   calc(5px + 0.2em);
+    --heading-bullet-border-width:                   calc(5px + 0.1em);
+    --heading-bullet-border:                         var(--theme-border, var(--global-border));
+
+    --heading-line-top:                              50%;
+    --heading-line-width:                            2000px;
+    --heading-line-border-width:                     calc(0.2px + 0.05em);
+    --heading-line-border:                           var(--theme-border, var(--global-border));
+    --heading-line-height:                           --heading-line-border-width;
+    --heading-line-margin-horizontal:                calc(5px + 0.3em);
 
     /* Tablet landscape and bigger */
     @media (min-width: $breakpoint-medium) {
 
-        --heading-small-font-size: #{$heading-small-font-size-m};
-        --heading-medium-font-size: #{$heading-medium-font-size-m};
-        --heading-large-font-size: #{$heading-large-font-size-m};
-        --heading-xlarge-font-size: #{$heading-xlarge-font-size-m};
-        --heading-2xlarge-font-size: #{$heading-2xlarge-font-size-m};
-        --heading-3xlarge-font-size: #{$heading-3xlarge-font-size-m};
+        --heading-small-font-size:                   2.75rem;       // 42px
+        --heading-medium-font-size:                  3.5rem;        // 56px
+        --heading-large-font-size:                   4rem;          // 64px
+        --heading-xlarge-font-size:                  6rem;          // 96px
+        --heading-2xlarge-font-size:                 8rem;          // 128px
+        --heading-3xlarge-font-size:                 11rem;         // 176px
 
     }
 
     /* Desktop and bigger */
     @media (min-width: $breakpoint-large) {
 
-        --heading-medium-font-size: #{$heading-medium-font-size-l};
-        --heading-large-font-size: #{$heading-large-font-size-l};
-        --heading-xlarge-font-size: #{$heading-xlarge-font-size-l};
-        --heading-2xlarge-font-size: #{$heading-2xlarge-font-size-l};
-        --heading-3xlarge-font-size: #{$heading-3xlarge-font-size-l};
+        --heading-medium-font-size:                  4rem;          // 64px
+        --heading-large-font-size:                   6rem;          // 96px
+        --heading-xlarge-font-size:                  8rem;          // 128px
+        --heading-2xlarge-font-size:                 11rem;         // 176px
+        --heading-3xlarge-font-size:                 15rem;         // 240px
 
     }
 

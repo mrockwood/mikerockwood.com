@@ -19,51 +19,51 @@
 // Variables
 // ========================================================================
 
-$search-color:                                      var(--theme-color, var(--global-color));
-$search-placeholder-color:                          var(--theme-muted-color, var(--global-muted-color));
+$search-color: var(--search-color);
+$search-placeholder-color: var(--search-placeholder-color);
 
-$search-icon-color:                                 var(--theme-muted-color, var(--global-muted-color));
+$search-icon-color: var(--search-icon-color);
 
-$search-default-width:                              240px;
-$search-default-height:                             var(--global-control-height);
-$search-default-padding-horizontal:                 10px;
-$search-default-background:                         color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
-$search-default-focus-background:                   var(--theme-muted-background, var(--global-muted-background));
+$search-default-width: var(--search-default-width);
+$search-default-height: var(--search-default-height);
+$search-default-padding-horizontal: var(--search-default-padding-horizontal);
+$search-default-background: var(--search-default-background);
+$search-default-focus-background: var(--search-default-focus-background);
 
-$search-default-icon-width:                         var(--global-control-height);
-$search-default-icon-padding:                       0px;
+$search-default-icon-width: var(--search-default-icon-width);
+$search-default-icon-padding: var(--search-default-icon-padding);
 
-$search-navbar-width:                               400px;
-$search-navbar-height:                              var(--global-control-height);
-$search-navbar-padding-horizontal:                  10px;
-$search-navbar-background:                          var(--theme-background, var(--global-background));
-$search-navbar-focus-background:                    var(--theme-muted-background, var(--global-muted-background));
+$search-navbar-width: var(--search-navbar-width);
+$search-navbar-height: var(--search-navbar-height);
+$search-navbar-padding-horizontal: var(--search-navbar-padding-horizontal);
+$search-navbar-background: var(--search-navbar-background);
+$search-navbar-focus-background: var(--search-navbar-focus-background);
 
-$search-navbar-icon-width:                          20px;
-$search-navbar-icon-padding:                        10px;
+$search-navbar-icon-width: var(--search-navbar-icon-width);
+$search-navbar-icon-padding: var(--search-navbar-icon-padding);
 
-$search-medium-width:                               400px;
-$search-medium-height:                              var(--global-control-large-height);
-$search-medium-padding-horizontal:                  12px;
-$search-medium-background:                          var(--search-default-background);
-$search-medium-font-size:                           var(--global-large-font-size);
-$search-medium-focus-background:                    var(--theme-muted-background, var(--global-muted-background));
+$search-medium-width: var(--search-medium-width);
+$search-medium-height: var(--search-medium-height);
+$search-medium-padding-horizontal: var(--search-medium-padding-horizontal);
+$search-medium-background: var(--search-medium-background);
+$search-medium-font-size: var(--search-medium-font-size);
+$search-medium-focus-background: var(--search-medium-focus-background);
 
-$search-medium-icon-width:                          24px;
-$search-medium-icon-padding:                        12px;
+$search-medium-icon-width: var(--search-medium-icon-width);
+$search-medium-icon-padding: var(--search-medium-icon-padding);
 
-$search-large-width:                                500px;
-$search-large-height:                               80px;
-$search-large-padding-horizontal:                   20px;
-$search-large-background:                           transparent;
-$search-large-font-size:                            var(--global-2xlarge-font-size);
-$search-large-focus-background:                     var(--theme-muted-background, var(--global-muted-background));
+$search-large-width: var(--search-large-width);
+$search-large-height: var(--search-large-height);
+$search-large-padding-horizontal: var(--search-large-padding-horizontal);
+$search-large-background: var(--search-large-background);
+$search-large-font-size: var(--search-large-font-size);
+$search-large-focus-background: var(--search-large-focus-background);
 
-$search-large-icon-width:                           80px;
-$search-large-icon-padding:                         0px;
+$search-large-icon-width: var(--search-large-icon-width);
+$search-large-icon-padding: var(--search-large-icon-padding);
 
-$search-toggle-color:                               var(--theme-muted-color, var(--global-muted-color));
-$search-toggle-hover-color:                         var(--theme-color, var(--global-color));
+$search-toggle-color: var(--search-toggle-color);
+$search-toggle-hover-color: var(--search-toggle-hover-color);
 
 
 // Set custom properties
@@ -71,50 +71,50 @@ $search-toggle-hover-color:                         var(--theme-color, var(--glo
 
 :root {
 
-    --search-color: #{$search-color};
-    --search-placeholder-color: #{$search-placeholder-color};
+    --search-color:                                      var(--theme-color, var(--global-color));
+    --search-placeholder-color:                          var(--theme-muted-color, var(--global-muted-color));
 
-    --search-icon-color: #{$search-icon-color};
+    --search-icon-color:                                 var(--theme-muted-color, var(--global-muted-color));
 
-    --search-default-width: #{$search-default-width};
-    --search-default-height: #{$search-default-height};
-    --search-default-padding-horizontal: #{$search-default-padding-horizontal};
-    --search-default-background: #{$search-default-background};
-    --search-default-focus-background: #{$search-default-focus-background};
+    --search-default-width:                              240px;
+    --search-default-height:                             var(--global-control-height);
+    --search-default-padding-horizontal:                 10px;
+    --search-default-background:                         color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
+    --search-default-focus-background:                   var(--theme-muted-background, var(--global-muted-background));
 
-    --search-default-icon-width: #{$search-default-icon-width};
-    --search-default-icon-padding: #{$search-default-icon-padding};
+    --search-default-icon-width:                         var(--global-control-height);
+    --search-default-icon-padding:                       0px;
 
-    --search-navbar-width: #{$search-navbar-width};
-    --search-navbar-height: #{$search-navbar-height};
-    --search-navbar-padding-horizontal: #{$search-navbar-padding-horizontal};
-    --search-navbar-background: #{$search-navbar-background};
-    --search-navbar-focus-background: #{$search-navbar-focus-background};
+    --search-navbar-width:                               400px;
+    --search-navbar-height:                              var(--global-control-height);
+    --search-navbar-padding-horizontal:                  10px;
+    --search-navbar-background:                          var(--theme-background, var(--global-background));
+    --search-navbar-focus-background:                    var(--theme-muted-background, var(--global-muted-background));
 
-    --search-navbar-icon-width: #{$search-navbar-icon-width};
-    --search-navbar-icon-padding: #{$search-navbar-icon-padding};
+    --search-navbar-icon-width:                          20px;
+    --search-navbar-icon-padding:                        10px;
 
-    --search-medium-width: #{$search-medium-width};
-    --search-medium-height: #{$search-medium-height};
-    --search-medium-padding-horizontal: #{$search-medium-padding-horizontal};
-    --search-medium-background: #{$search-medium-background};
-    --search-medium-font-size: #{$search-medium-font-size};
-    --search-medium-focus-background: #{$search-medium-focus-background};
+    --search-medium-width:                               400px;
+    --search-medium-height:                              var(--global-control-large-height);
+    --search-medium-padding-horizontal:                  12px;
+    --search-medium-background:                          var(--search-default-background);
+    --search-medium-font-size:                           var(--global-large-font-size);
+    --search-medium-focus-background:                    var(--theme-muted-background, var(--global-muted-background));
 
-    --search-medium-icon-width: #{$search-medium-icon-width};
-    --search-medium-icon-padding: #{$search-medium-icon-padding};
+    --search-medium-icon-width:                          24px;
+    --search-medium-icon-padding:                        12px;
 
-    --search-large-width: #{$search-large-width};
-    --search-large-height: #{$search-large-height};
-    --search-large-padding-horizontal: #{$search-large-padding-horizontal};
-    --search-large-background: #{$search-large-background};
-    --search-large-font-size: #{$search-large-font-size};
-    --search-large-focus-background: #{$search-large-focus-background};
+    --search-large-width:                                500px;
+    --search-large-height:                               80px;
+    --search-large-padding-horizontal:                   20px;
+    --search-large-background:                           transparent;
+    --search-large-font-size:                            var(--global-2xlarge-font-size);
+    --search-large-focus-background:                     var(--theme-muted-background, var(--global-muted-background));
 
-    --search-large-icon-width: #{$search-large-icon-width};
-    --search-large-icon-padding: #{$search-large-icon-padding};
+    --search-large-icon-width:                           80px;
+    --search-large-icon-padding:                         0px;
 
-    --search-toggle-color: #{$search-toggle-color};
-    --search-toggle-hover-color: #{$search-toggle-hover-color};
+    --search-toggle-color:                               var(--theme-muted-color, var(--global-muted-color));
+    --search-toggle-hover-color:                         var(--theme-color, var(--global-color));
 
 }

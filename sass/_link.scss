@@ -14,13 +14,13 @@
 // Variables
 // ========================================================================
 
-$link-muted-color:                              var(--theme-muted-color, var(--global-muted-color));
-$link-muted-hover-color:                        var(--theme-color, var(--global-color));
+$link-muted-color: var(--link-muted-color);
+$link-muted-hover-color: var(--link-muted-hover-color);
 
-$link-text-hover-color:                         var(--theme-muted-color, var(--global-muted-color));
+$link-text-hover-color: var(--link-text-hover-color);
 
-$link-heading-hover-color:                      var(--theme-primary-background, var(--global-primary-background));
-$link-heading-hover-text-decoration:            none;
+$link-heading-hover-color: var(--link-heading-hover-color);
+$link-heading-hover-text-decoration: var(--link-heading-hover-text-decoration);
 
 
 // Set custom properties
@@ -28,12 +28,12 @@ $link-heading-hover-text-decoration:            none;
 
 :root {
 
-    --link-muted-color: #{$link-muted-color};
-    --link-muted-hover-color: #{$link-muted-hover-color};
+    --link-muted-color:                              var(--theme-muted-color, var(--global-muted-color));
+    --link-muted-hover-color:                        var(--theme-color, var(--global-color));
 
-    --link-text-hover-color: #{$link-text-hover-color};
+    --link-text-hover-color:                         var(--theme-muted-color, var(--global-muted-color));
 
-    --link-heading-hover-color: #{$link-heading-hover-color};
-    --link-heading-hover-text-decoration: #{$link-heading-hover-text-decoration};
+    --link-heading-hover-color:                      var(--theme-primary-background, var(--global-primary-background));
+    --link-heading-hover-text-decoration:            none;
 
 }

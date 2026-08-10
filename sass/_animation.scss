@@ -7,14 +7,14 @@
 // Variables
 // ========================================================================
 
-$animation-duration:                            0.5s;
-$animation-fade-duration:                       0.8s;
-$animation-stroke-duration:                     2s;
-$animation-kenburns-duration:                   15s;
-$animation-fast-duration:                       0.1s;
+$animation-duration: var(--animation-duration);
+$animation-fade-duration: var(--animation-fade-duration);
+$animation-stroke-duration: var(--animation-stroke-duration);
+$animation-kenburns-duration: var(--animation-kenburns-duration);
+$animation-fast-duration: var(--animation-fast-duration);
 
-$animation-slide-small-translate:               10px;
-$animation-slide-medium-translate:              50px;
+$animation-slide-small-translate: var(--animation-slide-small-translate);
+$animation-slide-medium-translate: var(--animation-slide-medium-translate);
 
 
 // Set custom properties
@@ -22,13 +22,13 @@ $animation-slide-medium-translate:              50px;
 
 :root {
 
-    --animation-duration: #{$animation-duration};
-    --animation-fade-duration: #{$animation-fade-duration};
-    --animation-stroke-duration: #{$animation-stroke-duration};
-    --animation-kenburns-duration: #{$animation-kenburns-duration};
-    --animation-fast-duration: #{$animation-fast-duration};
+    --animation-duration:                            0.5s;
+    --animation-fade-duration:                       0.8s;
+    --animation-stroke-duration:                     2s;
+    --animation-kenburns-duration:                   15s;
+    --animation-fast-duration:                       0.1s;
 
-    --animation-slide-small-translate: #{$animation-slide-small-translate};
-    --animation-slide-medium-translate: #{$animation-slide-medium-translate};
+    --animation-slide-small-translate:               10px;
+    --animation-slide-medium-translate:              50px;
 
 }

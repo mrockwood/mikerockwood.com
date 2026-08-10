@@ -9,9 +9,9 @@
 // Variables
 // ========================================================================
 
-$height-small-height:                           150px;
-$height-medium-height:                          300px;
-$height-large-height:                           450px;
+$height-small-height: var(--height-small-height);
+$height-medium-height: var(--height-medium-height);
+$height-large-height: var(--height-large-height);
 
 
 // Set custom properties
@@ -19,8 +19,8 @@ $height-large-height:                           450px;
 
 :root {
 
-    --height-small-height: #{$height-small-height};
-    --height-medium-height: #{$height-medium-height};
-    --height-large-height: #{$height-large-height};
+    --height-small-height:                           150px;
+    --height-medium-height:                          300px;
+    --height-large-height:                           450px;
 
 }

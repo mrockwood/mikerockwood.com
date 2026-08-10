@@ -7,19 +7,19 @@
 // Variables
 // ========================================================================
 
-$margin-margin:                                        var(--global-margin);
+$margin-margin: var(--margin-margin);
 
-$margin-xsmall-margin:                                 var(--global-xsmall-margin);
+$margin-xsmall-margin: var(--margin-xsmall-margin);
 
-$margin-small-margin:                                  var(--global-small-margin);
+$margin-small-margin: var(--margin-small-margin);
 
-$margin-medium-margin:                                 var(--global-medium-margin);
+$margin-medium-margin: var(--margin-medium-margin);
 
-$margin-large-margin:                                  var(--global-medium-margin);
-$margin-large-margin-l:                                var(--global-large-margin);
+$margin-large-margin: var(--margin-large-margin);
+$margin-large-margin-l: var(--margin-large-margin);
 
-$margin-xlarge-margin:                                 var(--global-large-margin);
-$margin-xlarge-margin-l:                               var(--global-xlarge-margin);
+$margin-xlarge-margin: var(--margin-xlarge-margin);
+$margin-xlarge-margin-l: var(--margin-xlarge-margin);
 
 
 // Set custom properties
@@ -27,23 +27,24 @@ $margin-xlarge-margin-l:                               var(--global-xlarge-margi
 
 :root {
 
-    --margin-margin: #{$margin-margin};
+    --margin-margin:                                        var(--global-margin);
 
-    --margin-xsmall-margin: #{$margin-xsmall-margin};
+    --margin-xsmall-margin:                                 var(--global-xsmall-margin);
 
-    --margin-small-margin: #{$margin-small-margin};
+    --margin-small-margin:                                  var(--global-small-margin);
 
-    --margin-medium-margin: #{$margin-medium-margin};
+    --margin-medium-margin:                                 var(--global-medium-margin);
 
-    --margin-large-margin: #{$margin-large-margin};
+    --margin-large-margin:                                  var(--global-medium-margin);
 
-    --margin-xlarge-margin: #{$margin-xlarge-margin};
+    --margin-xlarge-margin:                                 var(--global-large-margin);
 
     /* Desktop and bigger */
     @media (min-width: $breakpoint-large) {
 
-        --margin-large-margin: #{$margin-large-margin-l};
-        --margin-xlarge-margin: #{$margin-xlarge-margin-l};
+        --margin-large-margin:                              var(--global-large-margin);
+
+        --margin-xlarge-margin:                             var(--global-xlarge-margin);
 
     }
 

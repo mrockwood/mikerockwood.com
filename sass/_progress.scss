@@ -7,11 +7,11 @@
 // Variables
 // ========================================================================
 
-$progress-height:                               15px;
-$progress-margin-vertical:                      var(--global-margin);
-$progress-background:                           var(--theme-muted-background, var(--global-muted-background));
+$progress-height: var(--progress-height);
+$progress-margin-vertical: var(--progress-margin-vertical);
+$progress-background: var(--progress-background);
 
-$progress-bar-background:                       var(--theme-primary-background, var(--global-primary-background));
+$progress-bar-background: var(--progress-bar-background);
 
 
 // Set custom properties
@@ -19,10 +19,10 @@ $progress-bar-background:                       var(--theme-primary-background, 
 
 :root {
 
-    --progress-height: #{$progress-height};
-    --progress-margin-vertical: #{$progress-margin-vertical};
-    --progress-background: #{$progress-background};
+    --progress-height:                               15px;
+    --progress-margin-vertical:                      var(--global-margin);
+    --progress-background:                           var(--theme-muted-background, var(--global-muted-background));
 
-    --progress-bar-background: #{$progress-bar-background};
+    --progress-bar-background:                       var(--theme-primary-background, var(--global-primary-background));
 
 }

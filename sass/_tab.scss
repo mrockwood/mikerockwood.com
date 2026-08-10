@@ -16,15 +16,15 @@
 // Variables
 // ========================================================================
 
-$tab-margin-horizontal:                  20px;
+$tab-margin-horizontal: var(--tab-margin-horizontal);
 
-$tab-item-padding-horizontal:            10px;
-$tab-item-padding-vertical:              5px;
-$tab-item-color:                         var(--theme-muted-color, var(--global-muted-color));
-$tab-item-hover-color:                   var(--theme-color, var(--global-color));
-$tab-item-hover-text-decoration:         none;
-$tab-item-active-color:                  var(--theme-emphasis-color, var(--global-emphasis-color));
-$tab-item-disabled-color:                var(--theme-muted-color, var(--global-muted-color));
+$tab-item-padding-horizontal: var(--tab-item-padding-horizontal);
+$tab-item-padding-vertical: var(--tab-item-padding-vertical);
+$tab-item-color: var(--tab-item-color);
+$tab-item-hover-color: var(--tab-item-hover-color);
+$tab-item-hover-text-decoration: var(--tab-item-hover-text-decoration);
+$tab-item-active-color: var(--tab-item-active-color);
+$tab-item-disabled-color: var(--tab-item-disabled-color);
 
 
 // Set custom properties
@@ -32,14 +32,14 @@ $tab-item-disabled-color:                var(--theme-muted-color, var(--global-m
 
 :root {
 
-    --tab-margin-horizontal: #{$tab-margin-horizontal};
+    --tab-margin-horizontal:                  20px;
 
-    --tab-item-padding-horizontal: #{$tab-item-padding-horizontal};
-    --tab-item-padding-vertical: #{$tab-item-padding-vertical};
-    --tab-item-color: #{$tab-item-color};
-    --tab-item-hover-color: #{$tab-item-hover-color};
-    --tab-item-hover-text-decoration: #{$tab-item-hover-text-decoration};
-    --tab-item-active-color: #{$tab-item-active-color};
-    --tab-item-disabled-color: #{$tab-item-disabled-color};
+    --tab-item-padding-horizontal:            10px;
+    --tab-item-padding-vertical:              5px;
+    --tab-item-color:                         var(--theme-muted-color, var(--global-muted-color));
+    --tab-item-hover-color:                   var(--theme-color, var(--global-color));
+    --tab-item-hover-text-decoration:         none;
+    --tab-item-active-color:                  var(--theme-emphasis-color, var(--global-emphasis-color));
+    --tab-item-disabled-color:                var(--theme-muted-color, var(--global-muted-color));
 
 }

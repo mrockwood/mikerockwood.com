@@ -7,14 +7,14 @@
 // Variables
 // ========================================================================
 
-$iconnav-margin-horizontal:                      var(--global-small-margin);
-$iconnav-margin-vertical:                        var(--iconnav-margin-horizontal);
+$iconnav-margin-horizontal: var(--iconnav-margin-horizontal);
+$iconnav-margin-vertical: var(--iconnav-margin-vertical);
 
-$iconnav-item-color:                             var(--theme-muted-color, var(--global-muted-color));
+$iconnav-item-color: var(--iconnav-item-color);
 
-$iconnav-item-hover-color:                       var(--theme-color, var(--global-color));
+$iconnav-item-hover-color: var(--iconnav-item-hover-color);
 
-$iconnav-item-active-color:                      var(--theme-color, var(--global-color));
+$iconnav-item-active-color: var(--iconnav-item-active-color);
 
 
 // Set custom properties
@@ -22,13 +22,13 @@ $iconnav-item-active-color:                      var(--theme-color, var(--global
 
 :root {
 
-    --iconnav-margin-horizontal: #{$iconnav-margin-horizontal};
-    --iconnav-margin-vertical: #{$iconnav-margin-vertical};
+    --iconnav-margin-horizontal:                      var(--global-small-margin);
+    --iconnav-margin-vertical:                        var(--iconnav-margin-horizontal);
 
-    --iconnav-item-color: #{$iconnav-item-color};
+    --iconnav-item-color:                             var(--theme-muted-color, var(--global-muted-color));
 
-    --iconnav-item-hover-color: #{$iconnav-item-hover-color};
+    --iconnav-item-hover-color:                       var(--theme-color, var(--global-color));
 
-    --iconnav-item-active-color: #{$iconnav-item-active-color};
+    --iconnav-item-active-color:                      var(--theme-color, var(--global-color));
 
 }

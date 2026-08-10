@@ -9,11 +9,11 @@
 // Variables
 // ========================================================================
 
-$spinner-size:                                  30px;
-$spinner-stroke-width:                          1;
-$spinner-radius:                                calc( ( var(--spinner-size) - var(--spinner-stroke-width) ) / 2); /* Minus stroke width to prevent overflow clipping */
-$spinner-circumference:                         calc( 2 * 3.141 * var(--spinner-radius) );
-$spinner-duration:                              1.4s;
+$spinner-size: var(--spinner-size);
+$spinner-stroke-width: var(--spinner-stroke-width);
+$spinner-radius: var(--spinner-radius);
+$spinner-circumference: var(--spinner-circumference);
+$spinner-duration: var(--spinner-duration);
 
 
 // Set custom properties
@@ -21,10 +21,10 @@ $spinner-duration:                              1.4s;
 
 :root {
 
-    --spinner-size: #{$spinner-size};
-    --spinner-stroke-width: #{$spinner-stroke-width};
-    --spinner-radius: #{$spinner-radius};
-    --spinner-circumference: #{$spinner-circumference};
-    --spinner-duration: #{$spinner-duration};
+    --spinner-size:                                  30px;
+    --spinner-stroke-width:                          1;
+    --spinner-radius:                                calc( ( var(--spinner-size) - var(--spinner-stroke-width) ) / 2); /* Minus stroke width to prevent overflow clipping */
+    --spinner-circumference:                         calc( 2 * 3.141 * var(--spinner-radius) );
+    --spinner-duration:                              1.4s;
 
 }

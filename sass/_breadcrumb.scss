@@ -7,16 +7,16 @@
 // Variables
 // ========================================================================
 
-$breadcrumb-item-font-size:                         var(--global-small-font-size);
-$breadcrumb-item-color:                             var(--theme-muted-color, var(--global-muted-color));
-$breadcrumb-item-hover-color:                       var(--theme-color, var(--global-color));
-$breadcrumb-item-hover-text-decoration:             none;
-$breadcrumb-item-active-color:                      var(--theme-color, var(--global-color));
+$breadcrumb-item-font-size: var(--breadcrumb-item-font-size);
+$breadcrumb-item-color: var(--breadcrumb-item-color);
+$breadcrumb-item-hover-color: var(--breadcrumb-item-hover-color);
+$breadcrumb-item-hover-text-decoration: var(--breadcrumb-item-hover-text-decoration);
+$breadcrumb-item-active-color: var(--breadcrumb-item-active-color);
 
-$breadcrumb-divider:                                "/";
-$breadcrumb-divider-margin-horizontal:              20px;
-$breadcrumb-divider-font-size:                      var(--breadcrumb-item-font-size);
-$breadcrumb-divider-color:                          var(--theme-muted-color, var(--global-muted-color));
+$breadcrumb-divider: var(--breadcrumb-divider);
+$breadcrumb-divider-margin-horizontal: var(--breadcrumb-divider-margin-horizontal);
+$breadcrumb-divider-font-size: var(--breadcrumb-divider-font-size);
+$breadcrumb-divider-color: var(--breadcrumb-divider-color);
 
 
 // Set custom properties
@@ -24,15 +24,15 @@ $breadcrumb-divider-color:                          var(--theme-muted-color, var
 
 :root {
 
-    --breadcrumb-item-font-size: #{$breadcrumb-item-font-size};
-    --breadcrumb-item-color: #{$breadcrumb-item-color};
-    --breadcrumb-item-hover-color: #{$breadcrumb-item-hover-color};
-    --breadcrumb-item-hover-text-decoration: #{$breadcrumb-item-hover-text-decoration};
-    --breadcrumb-item-active-color: #{$breadcrumb-item-active-color};
+    --breadcrumb-item-font-size:                         var(--global-small-font-size);
+    --breadcrumb-item-color:                             var(--theme-muted-color, var(--global-muted-color));
+    --breadcrumb-item-hover-color:                       var(--theme-color, var(--global-color));
+    --breadcrumb-item-hover-text-decoration:             none;
+    --breadcrumb-item-active-color:                      var(--theme-color, var(--global-color));
 
-    --breadcrumb-divider: #{$breadcrumb-divider};
-    --breadcrumb-divider-margin-horizontal: #{$breadcrumb-divider-margin-horizontal};
-    --breadcrumb-divider-font-size: #{$breadcrumb-divider-font-size};
-    --breadcrumb-divider-color: #{$breadcrumb-divider-color};
+    --breadcrumb-divider:                                "/";
+    --breadcrumb-divider-margin-horizontal:              20px;
+    --breadcrumb-divider-font-size:                      var(--breadcrumb-item-font-size);
+    --breadcrumb-divider-color:                          var(--theme-muted-color, var(--global-muted-color));
 
 }

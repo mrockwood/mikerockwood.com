@@ -7,15 +7,15 @@
 // Variables
 // ========================================================================
 
-$article-margin-top:                            var(--global-large-margin);
+$article-margin-top: var(--article-margin-top);
 
-$article-title-font-size-m:                     var(--global-xlarge-font-size);
-$article-title-font-size:                       var(--global-large-font-size);
-$article-title-line-height:                     1.2;
+$article-title-font-size-m: var(--article-title-font-size);
+$article-title-font-size: var(--article-title-font-size);
+$article-title-line-height: var(--article-title-line-height);
 
-$article-meta-font-size:                        var(--global-small-font-size);
-$article-meta-line-height:                      1.4;
-$article-meta-color:                            var(--theme-muted-color, var(--global-muted-color));
+$article-meta-font-size: var(--article-meta-font-size);
+$article-meta-line-height: var(--article-meta-line-height);
+$article-meta-color: var(--article-meta-color);
 
 
 // Set custom properties
@@ -23,18 +23,18 @@ $article-meta-color:                            var(--theme-muted-color, var(--g
 
 :root {
 
-    --article-margin-top: #{$article-margin-top};
+    --article-margin-top:                            var(--global-large-margin);
 
-    --article-title-font-size: #{$article-title-font-size};
-    --article-title-line-height: #{$article-title-line-height};
+    --article-title-font-size:                       var(--global-large-font-size);
+    --article-title-line-height:                     1.2;
 
-    --article-meta-font-size: #{$article-meta-font-size};
-    --article-meta-line-height: #{$article-meta-line-height};
-    --article-meta-color: #{$article-meta-color};
+    --article-meta-font-size:                        var(--global-small-font-size);
+    --article-meta-line-height:                      1.4;
+    --article-meta-color:                            var(--theme-muted-color, var(--global-muted-color));
 
     @media (min-width: $breakpoint-medium) {
 
-        --article-title-font-size: #{$article-title-font-size-m};
+        --article-title-font-size:                   var(--global-xlarge-font-size);
 
     }
 

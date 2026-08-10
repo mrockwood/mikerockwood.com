@@ -15,19 +15,19 @@
 // Variables
 // ========================================================================
 
-$dropbar-margin:                                0;
-$dropbar-padding-top:                           15px;
-$dropbar-padding-bottom:                        var(--dropbar-padding-top);
-$dropbar-padding-horizontal:                    15px;
-$dropbar-padding-horizontal-s:                  var(--global-gutter);
-$dropbar-padding-horizontal-m:                  var(--global-medium-gutter);
-$dropbar-background:                            var(--theme-muted-background, var(--global-muted-background));
-$dropbar-color:                                 var(--theme-color, var(--global-color));
-$dropbar-color-mode:                            dark;
-$dropbar-focus-outline:                         $base-focus-outline;
+$dropbar-margin: var(--dropbar-margin);
+$dropbar-padding-top: var(--dropbar-padding-top);
+$dropbar-padding-bottom: var(--dropbar-padding-bottom);
+$dropbar-padding-horizontal: var(--dropbar-padding-horizontal);
+$dropbar-padding-horizontal-s: var(--dropbar-padding-horizontal);
+$dropbar-padding-horizontal-m: var(--dropbar-padding-horizontal);
+$dropbar-background: var(--dropbar-background);
+$dropbar-color: var(--dropbar-color);
+$dropbar-color-mode: var(--dropbar-color-mode);
+$dropbar-focus-outline: var(--dropbar-focus-outline);
 
-$dropbar-large-padding-top:                     40px;
-$dropbar-large-padding-bottom:                  var(--dropbar-large-padding-top);
+$dropbar-large-padding-top: var(--dropbar-large-padding-top);
+$dropbar-large-padding-bottom: var(--dropbar-large-padding-bottom);
 
 
 // Set custom properties
@@ -35,29 +35,29 @@ $dropbar-large-padding-bottom:                  var(--dropbar-large-padding-top)
 
 :root {
 
-    --dropbar-margin: #{$dropbar-margin};
-    --dropbar-padding-top: #{$dropbar-padding-top};
-    --dropbar-padding-bottom: #{$dropbar-padding-bottom};
-    --dropbar-padding-horizontal: #{$dropbar-padding-horizontal};
-    --dropbar-background: #{$dropbar-background};
-    --dropbar-color: #{$dropbar-color};
-    --dropbar-color-mode: #{$dropbar-color-mode};
-    --dropbar-focus-outline: #{$dropbar-focus-outline};
+    --dropbar-margin:                                0;
+    --dropbar-padding-top:                           15px;
+    --dropbar-padding-bottom:                        var(--dropbar-padding-top);
+    --dropbar-padding-horizontal:                    15px;
+    --dropbar-background:                            var(--theme-muted-background, var(--global-muted-background));
+    --dropbar-color:                                 var(--theme-color, var(--global-color));
+    --dropbar-color-mode:                            dark;
+    --dropbar-focus-outline:                         var(--base-focus-outline);
 
-    --dropbar-large-padding-top: #{$dropbar-large-padding-top};
-    --dropbar-large-padding-bottom: #{$dropbar-large-padding-bottom};
+    --dropbar-large-padding-top:                     40px;
+    --dropbar-large-padding-bottom:                  var(--dropbar-large-padding-top);
 
     /* Phone landscape and bigger */
     @media (min-width: $breakpoint-small) {
 
-        --dropbar-padding-horizontal: #{$dropbar-padding-horizontal-s};
+        --dropbar-padding-horizontal:                var(--global-gutter);
 
     }
 
     /* Tablet landscape and bigger */
     @media (min-width: $breakpoint-medium) {
 
-        --dropbar-padding-horizontal: #{$dropbar-padding-horizontal-m};
+        --dropbar-padding-horizontal:                var(--global-medium-gutter);
 
     }
 

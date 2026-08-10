@@ -7,14 +7,14 @@
 // Variables
 // ========================================================================
 
-$transition-duration:                           0.3s;
+$transition-duration: var(--transition-duration);
 
-$transition-scale:                              1.03;
+$transition-scale: var(--transition-scale);
 
-$transition-slide-small-translate:              10px;
-$transition-slide-medium-translate:             50px;
+$transition-slide-small-translate: var(--transition-slide-small-translate);
+$transition-slide-medium-translate: var(--transition-slide-medium-translate);
 
-$transition-slow-duration:                      0.7s;
+$transition-slow-duration: var(--transition-slow-duration);
 
 
 // Set custom properties
@@ -22,13 +22,13 @@ $transition-slow-duration:                      0.7s;
 
 :root {
 
-    --transition-duration: #{$transition-duration};
+    --transition-duration:                           0.3s;
 
-    --transition-scale: #{$transition-scale};
+    --transition-scale:                              1.03;
 
-    --transition-slide-small-translate: #{$transition-slide-small-translate};
-    --transition-slide-medium-translate: #{$transition-slide-medium-translate};
+    --transition-slide-small-translate:              10px;
+    --transition-slide-medium-translate:             50px;
 
-    --transition-slow-duration: #{$transition-slow-duration};
+    --transition-slow-duration:                      0.7s;
 
 }

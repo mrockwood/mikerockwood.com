@@ -7,10 +7,10 @@
 // Variables
 // ========================================================================
 
-$background-default-background:                 var(--global-background);
-$background-muted-background:                   var(--global-muted-background);
-$background-primary-background:                 var(--global-primary-background);
-$background-secondary-background:               var(--global-secondary-background);
+$background-default-background: var(--background-default-background);
+$background-muted-background: var(--background-muted-background);
+$background-primary-background: var(--background-primary-background);
+$background-secondary-background: var(--background-secondary-background);
 
 
 // Set custom properties
@@ -18,9 +18,9 @@ $background-secondary-background:               var(--global-secondary-backgroun
 
 :root {
 
-    --background-default-background: #{$background-default-background};
-    --background-muted-background: #{$background-muted-background};
-    --background-primary-background: #{$background-primary-background};
-    --background-secondary-background: #{$background-secondary-background};
+    --background-default-background:                 var(--global-background);
+    --background-muted-background:                   var(--global-muted-background);
+    --background-primary-background:                 var(--global-primary-background);
+    --background-secondary-background:               var(--global-secondary-background);
 
 }

@@ -13,12 +13,12 @@
 // Variables
 // ========================================================================
 
-$thumbnav-margin-horizontal:                    15px;
-$thumbnav-margin-vertical:                      var(--thumbnav-margin-horizontal);
+$thumbnav-margin-horizontal: var(--thumbnav-margin-horizontal);
+$thumbnav-margin-vertical: var(--thumbnav-margin-vertical);
 
-$thumbnav-item-gradient:                        linear-gradient(180deg, color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 100%), color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 50%) );
-$thumbnav-item-hover-opacity:                   0;
-$thumbnav-item-active-opacity:                  0;
+$thumbnav-item-gradient: var(--thumbnav-item-gradient);
+$thumbnav-item-hover-opacity: var(--thumbnav-item-hover-opacity);
+$thumbnav-item-active-opacity: var(--thumbnav-item-active-opacity);
 
 
 // Set custom properties
@@ -26,12 +26,12 @@ $thumbnav-item-active-opacity:                  0;
 
 :root {
 
-    --thumbnav-margin-horizontal: #{$thumbnav-margin-horizontal};
-    --thumbnav-margin-vertical: #{$thumbnav-margin-vertical};
+    --thumbnav-margin-horizontal:                    15px;
+    --thumbnav-margin-vertical:                      var(--thumbnav-margin-horizontal);
 
-    --thumbnav-item-gradient: #{$thumbnav-item-gradient};
-    --thumbnav-item-hover-opacity: #{$thumbnav-item-hover-opacity};
-    --thumbnav-item-active-opacity: #{$thumbnav-item-active-opacity};
+    --thumbnav-item-gradient:                        linear-gradient(180deg, color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 100%), color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 50%) );
+    --thumbnav-item-hover-opacity:                   0;
+    --thumbnav-item-active-opacity:                  0;
 
 }
 

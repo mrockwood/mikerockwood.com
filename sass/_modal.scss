@@ -7,47 +7,47 @@
 // Variables
 // ========================================================================
 
-$modal-z-index:                                 calc( var(--global-z-index) + 10 );
-$modal-background:                              rgba(0,0,0,0.6);
+$modal-z-index: var(--modal-z-index);
+$modal-background: var(--modal-background);
 
-$modal-padding-horizontal:                      15px;
-$modal-padding-horizontal-s:                    var(--global-gutter);
-$modal-padding-horizontal-m:                    var(--global-medium-gutter);
-$modal-padding-vertical:                        var(--modal-padding-horizontal);
-$modal-padding-vertical-s:                      50px;
+$modal-padding-horizontal: var(--modal-padding-horizontal);
+$modal-padding-horizontal-s: var(--modal-padding-horizontal);
+$modal-padding-horizontal-m: var(--modal-padding-horizontal);
+$modal-padding-vertical: var(--modal-padding-vertical);
+$modal-padding-vertical-s: var(--modal-padding-vertical);
 
-$modal-dialog-width:                            600px;
-$modal-dialog-background:                       var(--theme-background, var(--global-background));
+$modal-dialog-width: var(--modal-dialog-width);
+$modal-dialog-background: var(--modal-dialog-background);
 
-$modal-container-width:                         1200px;
+$modal-container-width: var(--modal-container-width);
 
-$modal-body-padding-horizontal:                 20px;
-$modal-body-padding-vertical:                   20px;
-$modal-body-padding-horizontal-s:               var(--global-gutter);
-$modal-body-padding-vertical-s:                 var(--global-gutter);
+$modal-body-padding-horizontal: var(--modal-body-padding-horizontal);
+$modal-body-padding-vertical: var(--modal-body-padding-vertical);
+$modal-body-padding-horizontal-s: var(--modal-body-padding-horizontal);
+$modal-body-padding-vertical-s: var(--modal-body-padding-vertical);
 
-$modal-header-padding-horizontal:               20px;
-$modal-header-padding-vertical:                 calc(var(--modal-header-padding-horizontal) / 2);
-$modal-header-padding-horizontal-s:             var(--global-gutter);
-$modal-header-padding-vertical-s:               calc(var(--modal-header-padding-horizontal-s) / 2);
-$modal-header-background:                       var(--theme-muted-background, var(--global-muted-background));
+$modal-header-padding-horizontal: var(--modal-header-padding-horizontal);
+$modal-header-padding-vertical: var(--modal-header-padding-vertical);
+$modal-header-padding-horizontal-s: var(--modal-header-padding-horizontal);
+$modal-header-padding-vertical-s: var(--modal-header-padding-vertical);
+$modal-header-background: var(--modal-header-background);
 
-$modal-footer-padding-horizontal:               20px;
-$modal-footer-padding-vertical:                 calc(var(--modal-footer-padding-horizontal) / 2);
-$modal-footer-padding-horizontal-s:             var(--global-gutter);
-$modal-footer-padding-vertical-s:               calc(var(--modal-footer-padding-horizontal-s) / 2);
-$modal-footer-background:                       var(--theme-muted-background, var(--global-muted-background));
+$modal-footer-padding-horizontal: var(--modal-footer-padding-horizontal);
+$modal-footer-padding-vertical: var(--modal-footer-padding-vertical);
+$modal-footer-padding-horizontal-s: var(--modal-footer-padding-horizontal);
+$modal-footer-padding-vertical-s: var(--modal-footer-padding-vertical);
+$modal-footer-background: var(--modal-footer-background);
 
-$modal-title-font-size:                         var(--global-xlarge-font-size);
-$modal-title-line-height:                       1.3;
+$modal-title-font-size: var(--modal-title-font-size);
+$modal-title-line-height: var(--modal-title-line-height);
 
-$modal-close-position:                          var(--global-small-margin);
-$modal-close-padding:                           5px;
+$modal-close-position: var(--modal-close-position);
+$modal-close-padding: var(--modal-close-padding);
 
-$modal-close-outside-position:                  0;
-$modal-close-outside-translate:                 100%;
-$modal-close-outside-color:                     white;
-$modal-close-outside-hover-color:               var(--theme-inverse-color, var(--global-inverse-color));
+$modal-close-outside-position: var(--modal-close-outside-position);
+$modal-close-outside-translate: var(--modal-close-outside-translate);
+$modal-close-outside-color: var(--modal-close-outside-color);
+$modal-close-outside-hover-color: var(--modal-close-outside-hover-color);
 
 
 // Set custom properties
@@ -55,58 +55,60 @@ $modal-close-outside-hover-color:               var(--theme-inverse-color, var(-
 
 :root {
 
-    --modal-z-index: #{$modal-z-index};
-    --modal-background: #{$modal-background};
+    --modal-z-index:                                 calc( var(--global-z-index) + 10 );
+    --modal-background:                              rgba(0,0,0,0.6);
 
-    --modal-padding-horizontal: #{$modal-padding-horizontal};
-    --modal-padding-vertical: #{$modal-padding-vertical};
+    --modal-padding-horizontal:                      15px;
+    --modal-padding-vertical:                        var(--modal-padding-horizontal);
 
-    --modal-dialog-width: #{$modal-dialog-width};
-    --modal-dialog-background: #{$modal-dialog-background};
+    --modal-dialog-width:                            600px;
+    --modal-dialog-background:                       var(--theme-background, var(--global-background));
 
-    --modal-container-width: #{$modal-container-width};
+    --modal-container-width:                         1200px;
 
-    --modal-body-padding-horizontal: #{$modal-body-padding-horizontal};
-    --modal-body-padding-vertical: #{$modal-body-padding-vertical};
+    --modal-body-padding-horizontal:                 20px;
+    --modal-body-padding-vertical:                   20px;
 
-    --modal-header-padding-horizontal: #{$modal-header-padding-horizontal};
-    --modal-header-padding-vertical: #{$modal-header-padding-vertical};
-    --modal-header-background: #{$modal-header-background};
+    --modal-header-padding-horizontal:               20px;
+    --modal-header-padding-vertical:                 calc(var(--modal-header-padding-horizontal) / 2);
+    --modal-header-background:                       var(--theme-muted-background, var(--global-muted-background));
 
-    --modal-footer-padding-horizontal: #{$modal-footer-padding-horizontal};
-    --modal-footer-padding-vertical: #{$modal-footer-padding-vertical};
-    --modal-footer-background: #{$modal-footer-background};
+    --modal-footer-padding-horizontal:               20px;
+    --modal-footer-padding-vertical:                 calc(var(--modal-footer-padding-horizontal) / 2);
+    --modal-footer-background:                       var(--theme-muted-background, var(--global-muted-background));
 
-    --modal-title-font-size: #{$modal-title-font-size};
-    --modal-title-line-height: #{$modal-title-line-height};
+    --modal-title-font-size:                         var(--global-xlarge-font-size);
+    --modal-title-line-height:                       1.3;
 
-    --modal-close-position: #{$modal-close-position};
-    --modal-close-padding: #{$modal-close-padding};
+    --modal-close-position:                          var(--global-small-margin);
+    --modal-close-padding:                           5px;
 
-    --modal-close-outside-position: #{$modal-close-outside-position};
-    --modal-close-outside-translate: #{$modal-close-outside-translate};
-    --modal-close-outside-color: #{$modal-close-outside-color};
-    --modal-close-outside-hover-color: #{$modal-close-outside-hover-color};
+    --modal-close-outside-position:                  0;
+    --modal-close-outside-translate:                 100%;
+    --modal-close-outside-color:                     white;
+    --modal-close-outside-hover-color:               var(--theme-inverse-color, var(--global-inverse-color));
 
     /* Phone landscape and bigger */
     @media (min-width: $breakpoint-small) {
 
-        --modal-padding-horizontal: #{$modal-padding-horizontal-s};
-        --modal-padding-vertical: #{$modal-padding-vertical-s};
+        --modal-padding-horizontal:                  var(--global-gutter);
+        --modal-padding-vertical:                    50px;
 
-        --modal-body-padding-horizontal: #{$modal-body-padding-horizontal-s};
-        --modal-body-padding-vertical: #{$modal-body-padding-vertical-s};
+        --modal-body-padding-horizontal:             var(--global-gutter);
+        --modal-body-padding-vertical:               var(--global-gutter);
 
-        --modal-header-padding-horizontal: #{$modal-header-padding-horizontal-s};
+        --modal-header-padding-horizontal:           var(--global-gutter);
+        --modal-header-padding-vertical:             calc(var(--modal-header-padding-horizontal-s) / 2);
 
-        --modal-footer-padding-horizontal: #{$modal-footer-padding-horizontal-s};
+        --modal-footer-padding-horizontal-s:         var(--global-gutter);
+        --modal-footer-padding-vertical-s:           calc(var(--modal-footer-padding-horizontal-s) / 2);
 
     }
 
     /* Tablet landscape and bigger */
     @media (min-width: $breakpoint-medium) {
 
-        --modal-padding-horizontal: #{$modal-padding-horizontal-m};
+        --modal-padding-horizontal:                  var(--global-medium-gutter);
 
     }
 

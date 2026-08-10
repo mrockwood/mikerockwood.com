@@ -7,33 +7,33 @@
 // Variables
 // ========================================================================
 
-$tile-padding-horizontal:                      15px;
-$tile-padding-horizontal-s:                    var(--global-gutter);
-$tile-padding-horizontal-m:                    var(--global-medium-margin);
-$tile-padding-vertical:                        var(--global-medium-margin);
-$tile-padding-vertical-m:                      var(--global-large-margin);
+$tile-padding-horizontal: var(--tile-padding-horizontal);
+$tile-padding-horizontal-s: var(--tile-padding-horizontal);
+$tile-padding-horizontal-m: var(--tile-padding-horizontal);
+$tile-padding-vertical: var(--tile-padding-vertical);
+$tile-padding-vertical-m: var(--tile-padding-vertical);
 
-$tile-xsmall-padding-vertical:                 var(--global-margin);
+$tile-xsmall-padding-vertical: var(--tile-xsmall-padding-vertical);
 
-$tile-small-padding-vertical:                  var(--global-medium-margin);
+$tile-small-padding-vertical: var(--tile-small-padding-vertical);
 
-$tile-large-padding-vertical:                  var(--global-large-margin);
-$tile-large-padding-vertical-m:                var(--global-xlarge-margin);
+$tile-large-padding-vertical: var(--tile-large-padding-vertical);
+$tile-large-padding-vertical-m: var(--tile-large-padding-vertical);
 
-$tile-xlarge-padding-vertical:                 var(--global-xlarge-margin);
-$tile-xlarge-padding-vertical-m:               calc( var(--global-large-margin) + var(--global-xlarge-margin) );
+$tile-xlarge-padding-vertical: var(--tile-xlarge-padding-vertical);
+$tile-xlarge-padding-vertical-m: var(--tile-xlarge-padding-vertical);
 
-$tile-default-background:                      var(--theme-background, var(--global-background));
-$tile-default-color-mode:                      dark;
+$tile-default-background: var(--tile-default-background);
+$tile-default-color-mode: var(--tile-default-color-mode);
 
-$tile-muted-background:                        var(--theme-muted-background, var(--global-muted-background));
-$tile-muted-color-mode:                        dark;
+$tile-muted-background: var(--tile-muted-background);
+$tile-muted-color-mode: var(--tile-muted-color-mode);
 
-$tile-primary-background:                      var(--theme-primary-background, var(--global-primary-background));
-$tile-primary-color-mode:                      light;
+$tile-primary-background: var(--tile-primary-background);
+$tile-primary-color-mode: var(--tile-primary-color-mode);
 
-$tile-secondary-background:                    var(--theme-secondary-background, var(--global-secondary-background));
-$tile-secondary-color-mode:                    light;
+$tile-secondary-background: var(--tile-secondary-background);
+$tile-secondary-color-mode: var(--tile-secondary-color-mode);
 
 
 // Set custom properties
@@ -41,44 +41,46 @@ $tile-secondary-color-mode:                    light;
 
 :root {
 
-    --tile-padding-horizontal: #{$tile-padding-horizontal};
-    --tile-padding-vertical: #{$tile-padding-vertical};
+    --tile-padding-horizontal:                      15px;
+    --tile-padding-vertical:                        var(--global-medium-margin);
 
-    --tile-xsmall-padding-vertical: #{$tile-xsmall-padding-vertical};
+    --tile-xsmall-padding-vertical:                 var(--global-margin);
 
-    --tile-small-padding-vertical: #{$tile-small-padding-vertical};
+    --tile-small-padding-vertical:                  var(--global-medium-margin);
 
-    --tile-large-padding-vertical: #{$tile-large-padding-vertical};
+    --tile-large-padding-vertical:                  var(--global-large-margin);
 
-    --tile-xlarge-padding-vertical: #{$tile-xlarge-padding-vertical};
+    --tile-xlarge-padding-vertical:                 var(--global-xlarge-margin);
+    --tile-xlarge-padding-vertical-m:               calc( var(--global-large-margin) + var(--global-xlarge-margin));
 
-    --tile-default-background: #{$tile-default-background};
-    --tile-default-color-mode: #{$tile-default-color-mode};
+    --tile-default-background:                      var(--theme-background, var(--global-background));
+    --tile-default-color-mode:                      dark;
 
-    --tile-muted-background: #{$tile-muted-background};
-    --tile-muted-color-mode: #{$tile-muted-color-mode};
+    --tile-muted-background:                        var(--theme-muted-background, var(--global-muted-background));
+    --tile-muted-color-mode:                        dark;
 
-    --tile-primary-background: #{$tile-primary-background};
-    --tile-primary-color-mode: #{$tile-primary-color-mode};
+    --tile-primary-background:                      var(--theme-primary-background, var(--global-primary-background));
+    --tile-primary-color-mode:                      light;
 
-    --tile-secondary-background: #{$tile-secondary-background};
-    --tile-secondary-color-mode: #{$tile-secondary-color-mode};
+    --tile-secondary-background:                    var(--theme-secondary-background, var(--global-secondary-background));
+    --tile-secondary-color-mode:                    light;
 
     /* Phone landscape and bigger */
     @media (min-width: $breakpoint-small) {
 
-        --tile-padding-horizontal: #{$tile-padding-horizontal-s};
+        --tile-padding-horizontal:                  var(--global-gutter);
 
     }
 
     /* Tablet landscape and bigger */
     @media (min-width: $breakpoint-medium) {
 
-        --tile-padding-horizontal: #{$tile-padding-horizontal-m};
-        --tile-padding-vertical: #{$tile-padding-vertical-m};
+        --tile-padding-horizontal:                  var(--global-medium-margin);
+        --tile-padding-vertical:                    var(--global-large-margin);
 
-        --tile-large-padding-vertical: #{$tile-large-padding-vertical-m};
-        --tile-xlarge-padding-vertical: #{$tile-xlarge-padding-vertical-m};
+        --tile-large-padding-vertical:              var(--global-xlarge-margin);
+
+        --tile-xlarge-padding-vertical:             calc( var(--global-large-margin) + var(--global-xlarge-margin));
 
     }
 

@@ -15,35 +15,35 @@
 // Variables
 // ========================================================================
 
-$dropdown-margin:                               var(--global-small-margin);
-$dropdown-viewport-margin:                      15px;
-$dropdown-min-width:                            200px;
-$dropdown-padding:                              15px;
-$dropdown-background:                           var(--theme-muted-background, var(--global-muted-background));
-$dropdown-color:                                var(--theme-color, var(--global-color));
-$dropdown-color-mode:                           dark;
-$dropdown-focus-outline:                        $base-focus-outline;
+$dropdown-margin: var(--dropdown-margin);
+$dropdown-viewport-margin: var(--dropdown-viewport-margin);
+$dropdown-min-width: var(--dropdown-min-width);
+$dropdown-padding: var(--dropdown-padding);
+$dropdown-background: var(--dropdown-background);
+$dropdown-color: var(--dropdown-color);
+$dropdown-color-mode: var(--dropdown-color-mode);
+$dropdown-focus-outline: var(--dropdown-focus-outline);
 
-$dropdown-large-padding:                        40px;
+$dropdown-large-padding: var(--dropdown-large-padding);
 
-$dropdown-dropbar-margin:                       var(--dropdown-margin);
-$dropdown-dropbar-padding-top:                  var(--dropdown-padding);
-$dropdown-dropbar-padding-bottom:               var(--dropdown-padding);
-$dropdown-dropbar-viewport-margin:              15px;
-$dropdown-dropbar-viewport-margin-s:            var(--global-gutter);
-$dropdown-dropbar-viewport-margin-m:            var(--global-medium-gutter);
+$dropdown-dropbar-margin: var(--dropdown-dropbar-margin);
+$dropdown-dropbar-padding-top: var(--dropdown-dropbar-padding-top);
+$dropdown-dropbar-padding-bottom: var(--dropdown-dropbar-padding-bottom);
+$dropdown-dropbar-viewport-margin: var(--dropdown-dropbar-viewport-margin);
+$dropdown-dropbar-viewport-margin-s: var(--dropdown-dropbar-viewport-margin);
+$dropdown-dropbar-viewport-margin-m: var(--dropdown-dropbar-viewport-margin);
 
-$dropdown-dropbar-large-padding-top:            var(--dropdown-large-padding);
-$dropdown-dropbar-large-padding-bottom:         var(--dropdown-dropbar-large-padding-top);
+$dropdown-dropbar-large-padding-top: var(--dropdown-dropbar-large-padding-top);
+$dropdown-dropbar-large-padding-bottom: var(--dropdown-dropbar-large-padding-bottom);
 
-$dropdown-nav-item-color:                       var(--theme-muted-color, var(--global-muted-color));
-$dropdown-nav-item-hover-color:                 var(--theme-color, var(--global-color));
-$dropdown-nav-subtitle-font-size:               var(--global-small-font-size);
-$dropdown-nav-header-color:                     var(--theme-emphasis-color, var(--global-emphasis-color));
-$dropdown-nav-divider-border-width:             var(--global-border-width);
-$dropdown-nav-divider-border:                   var(--theme-border, var(--global-border));
-$dropdown-nav-sublist-item-color:               var(--theme-muted-color, var(--global-muted-color));
-$dropdown-nav-sublist-item-hover-color:         var(--theme-color, var(--global-color));
+$dropdown-nav-item-color: var(--dropdown-nav-item-color);
+$dropdown-nav-item-hover-color: var(--dropdown-nav-item-hover-color);
+$dropdown-nav-subtitle-font-size: var(--dropdown-nav-subtitle-font-size);
+$dropdown-nav-header-color: var(--dropdown-nav-header-color);
+$dropdown-nav-divider-border-width: var(--dropdown-nav-divider-border-width);
+$dropdown-nav-divider-border: var(--dropdown-nav-divider-border);
+$dropdown-nav-sublist-item-color: var(--dropdown-nav-sublist-item-color);
+$dropdown-nav-sublist-item-hover-color: var(--dropdown-nav-sublist-item-hover-color);
 
 
 // Set custom properties
@@ -51,45 +51,45 @@ $dropdown-nav-sublist-item-hover-color:         var(--theme-color, var(--global-
 
 :root {
 
-    --dropdown-margin: #{$dropdown-margin};
-    --dropdown-viewport-margin: #{$dropdown-viewport-margin};
-    --dropdown-min-width: #{$dropdown-min-width};
-    --dropdown-padding: #{$dropdown-padding};
-    --dropdown-background: #{$dropdown-background};
-    --dropdown-color: #{$dropdown-color};
-    --dropdown-color-mode: #{$dropdown-color-mode};
-    --dropdown-focus-outline: #{$dropdown-focus-outline};
+    --dropdown-margin:                               var(--global-small-margin);
+    --dropdown-viewport-margin:                      15px;
+    --dropdown-min-width:                            200px;
+    --dropdown-padding:                              15px;
+    --dropdown-background:                           var(--theme-muted-background, var(--global-muted-background));
+    --dropdown-color:                                var(--theme-color, var(--global-color));
+    --dropdown-color-mode:                           dark;
+    --dropdown-focus-outline:                        --base-focus-outline;
 
-    --dropdown-large-padding: #{$dropdown-large-padding};
+    --dropdown-large-padding:                        40px;
 
-    --dropdown-dropbar-margin: #{$dropdown-dropbar-margin};
-    --dropdown-dropbar-padding-top: #{$dropdown-dropbar-padding-top};
-    --dropdown-dropbar-padding-bottom: #{$dropdown-dropbar-padding-bottom};
-    --dropdown-dropbar-viewport-margin: #{$dropdown-dropbar-viewport-margin};
+    --dropdown-dropbar-margin:                       var(--dropdown-margin);
+    --dropdown-dropbar-padding-top:                  var(--dropdown-padding);
+    --dropdown-dropbar-padding-bottom:               var(--dropdown-padding);
+    --dropdown-dropbar-viewport-margin:              15px;
 
-    --dropdown-dropbar-large-padding-top: #{$dropdown-dropbar-large-padding-top};
-    --dropdown-dropbar-large-padding-bottom: #{$dropdown-dropbar-large-padding-bottom};
+    --dropdown-dropbar-large-padding-top:            var(--dropdown-large-padding);
+    --dropdown-dropbar-large-padding-bottom:         var(--dropdown-dropbar-large-padding-top);
 
-    --dropdown-nav-item-color: #{$dropdown-nav-item-color};
-    --dropdown-nav-item-hover-color: #{$dropdown-nav-item-hover-color};
-    --dropdown-nav-subtitle-font-size: #{$dropdown-nav-subtitle-font-size};
-    --dropdown-nav-header-color: #{$dropdown-nav-header-color};
-    --dropdown-nav-divider-border-width: #{$dropdown-nav-divider-border-width};
-    --dropdown-nav-divider-border: #{$dropdown-nav-divider-border};
-    --dropdown-nav-sublist-item-color: #{$dropdown-nav-sublist-item-color};
-    --dropdown-nav-sublist-item-hover-color: #{$dropdown-nav-sublist-item-hover-color};
+    --dropdown-nav-item-color:                       var(--theme-muted-color, var(--global-muted-color));
+    --dropdown-nav-item-hover-color:                 var(--theme-color, var(--global-color));
+    --dropdown-nav-subtitle-font-size:               var(--global-small-font-size);
+    --dropdown-nav-header-color:                     var(--theme-emphasis-color, var(--global-emphasis-color));
+    --dropdown-nav-divider-border-width:             var(--global-border-width);
+    --dropdown-nav-divider-border:                   var(--theme-border, var(--global-border));
+    --dropdown-nav-sublist-item-color:               var(--theme-muted-color, var(--global-muted-color));
+    --dropdown-nav-sublist-item-hover-color:         var(--theme-color, var(--global-color));
 
     /* Phone landscape and bigger */
     @media (min-width: $breakpoint-small) {
 
-        --dropdown-dropbar-viewport-margin: #{$dropdown-dropbar-viewport-margin-s};
+        --dropdown-dropbar-viewport-margin:          var(--global-gutter);
 
     }
 
     /* Tablet landscape and bigger */
     @media (min-width: $breakpoint-medium) {
 
-        --dropdown-dropbar-viewport-margin: #{$dropdown-dropbar-viewport-margin-m};
+        --dropdown-dropbar-viewport-margin:          var(--global-medium-gutter);
 
     }
 

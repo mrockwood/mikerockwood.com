@@ -7,13 +7,13 @@
 // Variables
 // ========================================================================
 
-$badge-size:                                    18px;
-$badge-padding-vertical:                        0;
-$badge-padding-horizontal:                      5px;
-$badge-border-radius:                           500px;
-$badge-background:                              var(--theme-primary-background, var(--global-primary-background));
-$badge-color:                                   var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
-$badge-font-size:                               11px;
+$badge-size: var(--badge-size);
+$badge-padding-vertical: var(--badge-padding-vertical);
+$badge-padding-horizontal: var(--badge-padding-horizontal);
+$badge-border-radius: var(--badge-border-radius);
+$badge-background: var(--badge-background);
+$badge-color: var(--badge-color);
+$badge-font-size: var(--badge-font-size);
 
 
 // Set custom properties
@@ -21,12 +21,12 @@ $badge-font-size:                               11px;
 
 :root {
 
-    --badge-size: #{$badge-size};
-    --badge-padding-vertical: #{$badge-padding-vertical};
-    --badge-padding-horizontal: #{$badge-padding-horizontal};
-    --badge-border-radius: #{$badge-border-radius};
-    --badge-background: #{$badge-background};
-    --badge-color: #{$badge-color};
-    --badge-font-size: #{$badge-font-size};
+    --badge-size:                                    18px;
+    --badge-padding-vertical:                        0;
+    --badge-padding-horizontal:                      5px;
+    --badge-border-radius:                           500px;
+    --badge-background:                              var(--theme-primary-background, var(--global-primary-background));
+    --badge-color:                                   var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+    --badge-font-size:                               11px;
 
 }

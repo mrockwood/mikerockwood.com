@@ -13,10 +13,10 @@
 // Variables
 // ========================================================================
 
-$sticky-z-index:                                calc(var(--global-z-index) - 20);
+$sticky-z-index: var(--sticky-z-index);
 
-$sticky-animation-duration:                     0.2s;
-$sticky-reverse-animation-duration:             0.2s;
+$sticky-animation-duration: var(--sticky-animation-duration);
+$sticky-reverse-animation-duration: var(--sticky-reverse-animation-duration);
 
 
 // Set custom properties
@@ -24,9 +24,9 @@ $sticky-reverse-animation-duration:             0.2s;
 
 :root {
 
-    --sticky-z-index: #{$sticky-z-index};
+    --sticky-z-index:                                calc(var(--global-z-index) - 20);
 
-    --sticky-animation-duration: #{$sticky-animation-duration};
-    --sticky-reverse-animation-duration: #{$sticky-reverse-animation-duration};
+    --sticky-animation-duration:                     0.2s;
+    --sticky-reverse-animation-duration:             0.2s;
 
 }

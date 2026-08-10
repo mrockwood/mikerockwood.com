@@ -9,40 +9,40 @@
 // Variables
 // ========================================================================
 
-$text-lead-font-size:                           var(--global-large-font-size);
-$text-lead-line-height:                         1.5;
-$text-lead-color:                               var(--theme-emphasis-color, var(--global-emphasis-color));
+$text-lead-font-size: var(--text-lead-font-size);
+$text-lead-line-height: var(--text-lead-line-height);
+$text-lead-color: var(--text-lead-color);
 
-$text-meta-font-size:                           var(--global-small-font-size);
-$text-meta-line-height:                         1.4;
-$text-meta-color:                               var(--theme-muted-color, var(--global-muted-color));
+$text-meta-font-size: var(--text-meta-font-size);
+$text-meta-line-height: var(--text-meta-line-height);
+$text-meta-color: var(--text-meta-color);
 
-$text-small-font-size:                          var(--global-small-font-size);
-$text-small-line-height:                        1.5;
+$text-small-font-size: var(--text-small-font-size);
+$text-small-line-height: var(--text-small-line-height);
 
-$text-large-font-size:                          var(--global-large-font-size);
-$text-large-line-height:                        1.5;
+$text-large-font-size: var(--text-large-font-size);
+$text-large-line-height: var(--text-large-line-height);
 
-$text-muted-color:                              $global-muted-color;
-$text-emphasis-color:                           $global-emphasis-color;
-$text-primary-color:                            $global-primary-background;
-$text-secondary-color:                          $global-secondary-background;
-$text-success-color:                            $global-success-background;
-$text-warning-color:                            $global-warning-background;
-$text-danger-color:                             $global-danger-background;
+$text-muted-color: var(--text-muted-color);
+$text-emphasis-color: var(--text-emphasis-color);
+$text-primary-color: var(--text-primary-color);
+$text-secondary-color: var(--text-secondary-color);
+$text-success-color: var(--text-success-color);
+$text-warning-color: var(--text-warning-color);
+$text-danger-color: var(--text-danger-color);
 
-$text-background-color:                         var(--theme-primary-background, var(--global-primary-background) );
+$text-background-color: var(--text-background-color);
 
-$text-stroke-text-stroke:                       calc(1.4px + 0.002em);
+$text-stroke-text-stroke: var(--text-stroke-text-stroke);
 
-$text-default-tracking:                         0;
-$text-2xsmall-tracking:                         .025em;
-$text-xsmall-tracking:                          .050em;
-$text-small-tracking:                           .075em;
-$text-medium-tracking:                          .150em;
-$text-large-tracking:                           .500em;
-$text-xlarge-tracking:                          .750em;
-$text-2xlarge-tracking:                         1em;
+$text-default-tracking: var(--text-default-tracking);
+$text-2xsmall-tracking: var(--text-2xsmall-tracking);
+$text-xsmall-tracking: var(--text-xsmall-tracking);
+$text-small-tracking: var(--text-small-tracking);
+$text-medium-tracking: var(--text-medium-tracking);
+$text-large-tracking: var(--text-large-tracking);
+$text-xlarge-tracking: var(--text-xlarge-tracking);
+$text-2xlarge-tracking: var(--text-2xlarge-tracking);
 
 
 // Set custom properties
@@ -50,31 +50,40 @@ $text-2xlarge-tracking:                         1em;
 
 :root {
 
-    --text-lead-font-size: #{$text-lead-font-size};
-    --text-lead-line-height: #{$text-lead-line-height};
-    --text-lead-color: #{$text-lead-color};
+    --text-lead-font-size:                           var(--global-large-font-size);
+    --text-lead-line-height:                         1.5;
+    --text-lead-color:                               var(--theme-emphasis-color, var(--global-emphasis-color));
 
-    --text-meta-font-size: #{$text-meta-font-size};
-    --text-meta-line-height: #{$text-meta-line-height};
-    --text-meta-color: #{$text-meta-color};
+    --text-meta-font-size:                           var(--global-small-font-size);
+    --text-meta-line-height:                         1.4;
+    --text-meta-color:                               var(--theme-muted-color, var(--global-muted-color));
 
-    --text-small-font-size: #{$text-small-font-size};
-    --text-small-line-height: #{$text-small-line-height};
+    --text-small-font-size:                          var(--global-small-font-size);
+    --text-small-line-height:                        1.5;
 
-    --text-large-font-size: #{$text-large-font-size};
-    --text-large-line-height: #{$text-large-line-height};
+    --text-large-font-size:                          var(--global-large-font-size);
+    --text-large-line-height:                        1.5;
 
-    --text-muted-color: #{$text-muted-color};
-    --text-emphasis-color: #{$text-emphasis-color};
-    --text-primary-color: #{$text-primary-color};
-    --text-secondary-color: #{$text-secondary-color};
-    --text-success-color: #{$text-success-color};
-    --text-warning-color: #{$text-warning-color};
-    --text-danger-color: #{$text-danger-color};
+    --text-muted-color:                              --global-muted-color;
+    --text-emphasis-color:                           --global-emphasis-color;
+    --text-primary-color:                            --global-primary-background;
+    --text-secondary-color:                          --global-secondary-background;
+    --text-success-color:                            --global-success-background;
+    --text-warning-color:                            --global-warning-background;
+    --text-danger-color:                             --global-danger-background;
 
-    --text-background-color: #{$text-background-color};
+    --text-background-color:                         var(--theme-primary-background, var(--global-primary-background) );
 
-    --text-stroke-text-stroke: #{$text-stroke-text-stroke};
+    --text-stroke-text-stroke:                       calc(1.4px + 0.002em);
+
+    --text-default-tracking:                         0;
+    --text-2xsmall-tracking:                         .025em;
+    --text-xsmall-tracking:                          .050em;
+    --text-small-tracking:                           .075em;
+    --text-medium-tracking:                          .150em;
+    --text-large-tracking:                           .500em;
+    --text-xlarge-tracking:                          .750em;
+    --text-2xlarge-tracking:                         1em;
 
 }
 

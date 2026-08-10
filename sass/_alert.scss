@@ -7,26 +7,26 @@
 // Variables
 // ========================================================================
 
-$alert-margin-vertical:                         var(--global-margin);
-$alert-padding:                                 15px;
-$alert-padding-right:                           calc(var(--alert-padding) + 14px);
-$alert-background:                              var(--theme-muted-background, var(--global-muted-background));
-$alert-color:                                   var(--theme-color, var(--global-color));
+$alert-margin-vertical: var(--alert-margin-vertical);
+$alert-padding: var(--alert-padding);
+$alert-padding-right: var(--alert-padding-right);
+$alert-background: var(--alert-background);
+$alert-color: var(--alert-color);
 
-$alert-close-top:                               calc(var(--alert-padding) + 5px);
-$alert-close-right:                             var(--alert-padding);
+$alert-close-top: var(--alert-close-top);
+$alert-close-right: var(--alert-close-right);
 
-$alert-primary-background:                      color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 85%);
-$alert-primary-color:                           var(--theme-primary-background, var(--global-primary-background) );
+$alert-primary-background: var(--alert-primary-background);
+$alert-primary-color: var(--alert-primary-color);
 
-$alert-success-background:                      color-mix(in oklab, var(--theme-success-background, var(--global-success-background)), transparent 90%);
-$alert-success-color:                           var(--theme-success-background, var(--global-success-background) );
+$alert-success-background: var(--alert-success-background);
+$alert-success-color: var(--alert-success-color);
 
-$alert-warning-background:                      color-mix(in oklab, var(--theme-warning-background, var(--global-warning-background)), transparent 90%);
-$alert-warning-color:                           var(--theme-warning-background, var(--global-warning-background) );
+$alert-warning-background: var(--alert-warning-background);
+$alert-warning-color: var(--alert-warning-color);
 
-$alert-danger-background:                       color-mix(in oklab, var(--theme-danger-background, var(--global-danger-background)), transparent 90%);
-$alert-danger-color:                            var(--theme-danger-background, var(--global-danger-background) );
+$alert-danger-background: var(--alert-danger-background);
+$alert-danger-color: var(--alert-danger-color);
 
 
 // Set custom properties
@@ -34,25 +34,25 @@ $alert-danger-color:                            var(--theme-danger-background, v
 
 :root {
 
-    --alert-margin-vertical: #{$alert-margin-vertical};
-    --alert-padding: #{$alert-padding};
-    --alert-padding-right: #{$alert-padding-right};
-    --alert-background: #{$alert-background};
-    --alert-color: #{$alert-color};
+    --alert-margin-vertical:                         var(--global-margin);
+    --alert-padding:                                 15px;
+    --alert-padding-right:                           calc(var(--alert-padding) + 14px);
+    --alert-background:                              var(--theme-muted-background, var(--global-muted-background));
+    --alert-color:                                   var(--theme-color, var(--global-color));
 
-    --alert-close-top: #{$alert-close-top};
-    --alert-close-right: #{$alert-close-right};
+    --alert-close-top:                               calc(var(--alert-padding) + 5px);
+    --alert-close-right:                             var(--alert-padding);
 
-    --alert-primary-background: #{$alert-primary-background};
-    --alert-primary-color: #{$alert-primary-color};
+    --alert-primary-background:                      color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 85%);
+    --alert-primary-color:                           var(--theme-primary-background, var(--global-primary-background) );
 
-    --alert-success-background: #{$alert-success-background};
-    --alert-success-color: #{$alert-success-color};
+    --alert-success-background:                      color-mix(in oklab, var(--theme-success-background, var(--global-success-background)), transparent 90%);
+    --alert-success-color:                           var(--theme-success-background, var(--global-success-background) );
 
-    --alert-warning-background: #{$alert-warning-background};
-    --alert-warning-color: #{$alert-warning-color};
+    --alert-warning-background:                      color-mix(in oklab, var(--theme-warning-background, var(--global-warning-background)), transparent 90%);
+    --alert-warning-color:                           var(--theme-warning-background, var(--global-warning-background) );
 
-    --alert-danger-background: #{$alert-danger-background};
-    --alert-danger-color: #{$alert-danger-color};
+    --alert-danger-background:                       color-mix(in oklab, var(--theme-danger-background, var(--global-danger-background)), transparent 90%);
+    --alert-danger-color:                            var(--theme-danger-background, var(--global-danger-background) );
 
 }

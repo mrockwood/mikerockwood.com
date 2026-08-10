@@ -7,12 +7,12 @@
 // Variables
 // ========================================================================
 
-$description-list-term-color:                   var(--theme-emphasis-color, var(--global-emphasis-color));
-$description-list-term-margin-top:              var(--global-margin);
+$description-list-term-color: var(--description-list-term-color);
+$description-list-term-margin-top: var(--description-list-term-margin-top);
 
-$description-list-divider-term-margin-top:      var(--global-margin);
-$description-list-divider-term-border-width:    var(--global-border-width);
-$description-list-divider-term-border:          var(--theme-border, var(--global-border));
+$description-list-divider-term-margin-top: var(--description-list-divider-term-margin-top);
+$description-list-divider-term-border-width: var(--description-list-divider-term-border-width);
+$description-list-divider-term-border: var(--description-list-divider-term-border);
 
 
 // Set custom properties
@@ -20,11 +20,11 @@ $description-list-divider-term-border:          var(--theme-border, var(--global
 
 :root {
 
-    --description-list-term-color: #{$description-list-term-color};
-    --description-list-term-margin-top: #{$description-list-term-margin-top};
+    --description-list-term-color:                   var(--theme-emphasis-color, var(--global-emphasis-color));
+    --description-list-term-margin-top:              var(--global-margin);
 
-    --description-list-divider-term-margin-top: #{$description-list-divider-term-margin-top};
-    --description-list-divider-term-border-width: #{$description-list-divider-term-border-width};
-    --description-list-divider-term-border: #{$description-list-divider-term-border};
+    --description-list-divider-term-margin-top:      var(--global-margin);
+    --description-list-divider-term-border-width:    var(--global-border-width);
+    --description-list-divider-term-border:          var(--theme-border, var(--global-border));
 
 }

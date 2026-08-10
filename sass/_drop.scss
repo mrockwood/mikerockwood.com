@@ -18,12 +18,12 @@
 // Variables
 // ========================================================================
 
-$drop-z-index:                              calc(var(--global-z-index) + 20);
-$drop-margin:                               var(--global-margin);
-$drop-viewport-margin:                      15px;
-$drop-width:                                300px;
+$drop-z-index: var(--drop-z-index);
+$drop-margin: var(--drop-margin);
+$drop-viewport-margin: var(--drop-viewport-margin);
+$drop-width: var(--drop-width);
 
-$drop-parent-icon-margin-left:              0.25em;
+$drop-parent-icon-margin-left: var(--drop-parent-icon-margin-left);
 
 
 // Set custom properties
@@ -31,11 +31,11 @@ $drop-parent-icon-margin-left:              0.25em;
 
 :root {
 
-    --drop-z-index: #{$drop-z-index};
-    --drop-margin: #{$drop-margin};
-    --drop-viewport-margin: #{$drop-viewport-margin};
-    --drop-width: #{$drop-width};
+    --drop-z-index:                              calc(var(--global-z-index) + 20);
+    --drop-margin:                               var(--global-margin);
+    --drop-viewport-margin:                      15px;
+    --drop-width:                                300px;
 
-    --drop-parent-icon-margin-left: #{$drop-parent-icon-margin-left};
+    --drop-parent-icon-margin-left:              0.25em;
 
 }

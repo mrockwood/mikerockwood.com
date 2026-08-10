@@ -7,12 +7,11 @@
 // Variables
 // ========================================================================
 
-// Must use Sass variables due to calc in vendor file.
-$column-gutter:                                 $global-gutter;
-$column-gutter-l:                               $global-medium-gutter;
+$column-gutter: 30px;
+$column-gutter-l: 40px;
 
-$column-divider-rule-color:                     var(--theme-border, var(--global-border));
-$column-divider-rule-width:                     1px;
+$column-divider-rule-color: var(--column-divider-rule-color);
+$column-divider-rule-width: var(--column-divider-rule-width);
 
 
 // Set custom properties
@@ -20,16 +19,22 @@ $column-divider-rule-width:                     1px;
 
 :root {
 
-    --column-gutter: #{$column-gutter};
+    --column-gutter:                                 var(--global-gutter);
 
-    --column-divider-rule-color: #{$column-divider-rule-color};
-    --column-divider-rule-width: #{$column-divider-rule-width};
+    --column-divider-rule-color:                     var(--theme-border, var(--global-border));
+    --column-divider-rule-width:                     1px;
 
     /* Large screen and bigger */
     @media (min-width: $breakpoint-large) {
 
-        --column-gutter: #{$column-gutter-l};
+        --column-gutter:                             var(--global-medium-gutter);
 
     }
 
 }
+
+
+// Overrides
+// ========================================================================
+
+.uk-column-divider { column-gap: calc( var(--column-gutter) * 2 ); }

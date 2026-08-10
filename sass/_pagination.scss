@@ -15,15 +15,15 @@
 // Variables
 // ========================================================================
 
-$pagination-margin-horizontal:                  0;
+$pagination-margin-horizontal: var(--pagination-margin-horizontal);
 
-$pagination-item-padding-vertical:              5px;
-$pagination-item-padding-horizontal:            10px;
-$pagination-item-color:                         var(--theme-muted-color, var(--global-muted-color));
-$pagination-item-hover-color:                   var(--theme-color, var(--global-color));
-$pagination-item-hover-text-decoration:         none;
-$pagination-item-active-color:                  var(--theme-color, var(--global-color));
-$pagination-item-disabled-color:                var(--theme-muted-color, var(--global-muted-color));
+$pagination-item-padding-vertical: var(--pagination-item-padding-vertical);
+$pagination-item-padding-horizontal: var(--pagination-item-padding-horizontal);
+$pagination-item-color: var(--pagination-item-color);
+$pagination-item-hover-color: var(--pagination-item-hover-color);
+$pagination-item-hover-text-decoration: var(--pagination-item-hover-text-decoration);
+$pagination-item-active-color: var(--pagination-item-active-color);
+$pagination-item-disabled-color: var(--pagination-item-disabled-color);
 
 
 // Set custom properties
@@ -31,14 +31,14 @@ $pagination-item-disabled-color:                var(--theme-muted-color, var(--g
 
 :root {
 
-    --pagination-margin-horizontal: #{$pagination-margin-horizontal};
+    --pagination-margin-horizontal:                  0;
 
-    --pagination-item-padding-vertical: #{$pagination-item-padding-vertical};
-    --pagination-item-padding-horizontal: #{$pagination-item-padding-horizontal};
-    --pagination-item-color: #{$pagination-item-color};
-    --pagination-item-hover-color: #{$pagination-item-hover-color};
-    --pagination-item-hover-text-decoration: #{$pagination-item-hover-text-decoration};
-    --pagination-item-active-color: #{$pagination-item-active-color};
-    --pagination-item-disabled-color: #{$pagination-item-disabled-color};
+    --pagination-item-padding-vertical:              5px;
+    --pagination-item-padding-horizontal:            10px;
+    --pagination-item-color:                         var(--theme-muted-color, var(--global-muted-color));
+    --pagination-item-hover-color:                   var(--theme-color, var(--global-color));
+    --pagination-item-hover-text-decoration:         none;
+    --pagination-item-active-color:                  var(--theme-color, var(--global-color));
+    --pagination-item-disabled-color:                var(--theme-muted-color, var(--global-muted-color));
 
 }

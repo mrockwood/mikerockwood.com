@@ -9,10 +9,10 @@
 // Variables
 // ========================================================================
 
-$placeholder-margin-vertical:                   var(--global-margin);
-$placeholder-padding-vertical:                  var(--global-gutter);
-$placeholder-padding-horizontal:                var(--global-gutter);
-$placeholder-background:                        var(--theme-muted-background, var(--global-muted-background));
+$placeholder-margin-vertical: var(--placeholder-margin-vertical);
+$placeholder-padding-vertical: var(--placeholder-padding-vertical);
+$placeholder-padding-horizontal: var(--placeholder-padding-horizontal);
+$placeholder-background: var(--placeholder-background);
 
 
 // Set custom properties
@@ -20,9 +20,9 @@ $placeholder-background:                        var(--theme-muted-background, va
 
 :root {
 
-    --placeholder-margin-vertical: #{$placeholder-margin-vertical};
-    --placeholder-padding-vertical: #{$placeholder-padding-vertical};
-    --placeholder-padding-horizontal: #{$placeholder-padding-horizontal};
-    --placeholder-background: #{$placeholder-background};
+    --placeholder-margin-vertical:                   var(--global-margin);
+    --placeholder-padding-vertical:                  var(--global-gutter);
+    --placeholder-padding-horizontal:                var(--global-gutter);
+    --placeholder-background:                        var(--theme-muted-background, var(--global-muted-background));
 
 }

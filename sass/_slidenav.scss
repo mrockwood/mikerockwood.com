@@ -15,15 +15,15 @@
 // Variables
 // ========================================================================
 
-$slidenav-padding-vertical:                     5px;
-$slidenav-padding-horizontal:                   10px;
+$slidenav-padding-vertical: var(--slidenav-padding-vertical);
+$slidenav-padding-horizontal: var(--slidenav-padding-horizontal);
 
-$slidenav-color:                                color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 50%);
-$slidenav-hover-color:                          color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 10%);
-$slidenav-active-color:                         color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 50%);
+$slidenav-color: var(--slidenav-color);
+$slidenav-hover-color: var(--slidenav-hover-color);
+$slidenav-active-color: var(--slidenav-active-color);
 
-$slidenav-large-padding-vertical:               10px;
-$slidenav-large-padding-horizontal:             var(--slidenav-large-padding-vertical);
+$slidenav-large-padding-vertical: var(--slidenav-large-padding-vertical);
+$slidenav-large-padding-horizontal: var(--slidenav-large-padding-horizontal);
 
 
 // Set custom properties
@@ -31,14 +31,14 @@ $slidenav-large-padding-horizontal:             var(--slidenav-large-padding-ver
 
 :root {
 
-    --slidenav-padding-vertical: #{$slidenav-padding-vertical};
-    --slidenav-padding-horizontal: #{$slidenav-padding-horizontal};
+    --slidenav-padding-vertical:                     5px;
+    --slidenav-padding-horizontal:                   10px;
 
-    --slidenav-color: #{$slidenav-color};
-    --slidenav-hover-color: #{$slidenav-hover-color};
-    --slidenav-active-color: #{$slidenav-active-color};
+    --slidenav-color:                                color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 50%);
+    --slidenav-hover-color:                          color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 10%);
+    --slidenav-active-color:                         color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 50%);
 
-    --slidenav-large-padding-vertical: #{$slidenav-large-padding-vertical};
-    --slidenav-large-padding-horizontal: #{$slidenav-large-padding-horizontal};
+    --slidenav-large-padding-vertical:               10px;
+    --slidenav-large-padding-horizontal:             var(--slidenav-large-padding-vertical);
 
 }

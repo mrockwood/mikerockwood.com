@@ -7,24 +7,24 @@
 // Variables
 // ========================================================================
 
-$offcanvas-z-index:                             var(--global-z-index);
+$offcanvas-z-index: var(--offcanvas-z-index);
 
-$offcanvas-bar-width:                           270px;
-$offcanvas-bar-padding-vertical:                20px;
-$offcanvas-bar-padding-horizontal:              20px;
-$offcanvas-bar-background:                      var(--global-secondary-background);
-$offcanvas-bar-color-mode:                      light;
+$offcanvas-bar-width: var(--offcanvas-bar-width);
+$offcanvas-bar-padding-vertical: var(--offcanvas-bar-padding-vertical);
+$offcanvas-bar-padding-horizontal: var(--offcanvas-bar-padding-horizontal);
+$offcanvas-bar-background: var(--offcanvas-bar-background);
+$offcanvas-bar-color-mode: var(--offcanvas-bar-color-mode);
 
-$offcanvas-bar-width-s:                         350px;
-$offcanvas-bar-padding-vertical-s:              var(--global-medium-gutter);
-$offcanvas-bar-padding-horizontal-s:            var(--global-medium-gutter);
+$offcanvas-bar-width-s: var(--offcanvas-bar-width);
+$offcanvas-bar-padding-vertical-s: var(--offcanvas-bar-padding-vertical);
+$offcanvas-bar-padding-horizontal-s: var(--offcanvas-bar-padding-horizontal);
 
-$offcanvas-close-position:                      5px;
-$offcanvas-close-padding:                       5px;
+$offcanvas-close-position: var(--offcanvas-close-position);
+$offcanvas-close-padding: var(--offcanvas-close-padding);
 
-$offcanvas-close-position-s:                    10px;
+$offcanvas-close-position-s: var(--offcanvas-close-position);
 
-$offcanvas-overlay-background:                  rgba(0,0,0,0.1);
+$offcanvas-overlay-background: var(--offcanvas-overlay-background);
 
 
 // Set custom properties
@@ -32,26 +32,26 @@ $offcanvas-overlay-background:                  rgba(0,0,0,0.1);
 
 :root {
 
-    --offcanvas-z-index: #{$offcanvas-z-index};
+    --offcanvas-z-index:                             var(--global-z-index);
 
-    --offcanvas-bar-width: #{$offcanvas-bar-width};
-    --offcanvas-bar-padding-vertical: #{$offcanvas-bar-padding-vertical};
-    --offcanvas-bar-padding-horizontal: #{$offcanvas-bar-padding-horizontal};
-    --offcanvas-bar-background: #{$offcanvas-bar-background};
-    --offcanvas-bar-color-mode: #{$offcanvas-bar-color-mode};
+    --offcanvas-bar-width:                           270px;
+    --offcanvas-bar-padding-vertical:                20px;
+    --offcanvas-bar-padding-horizontal:              20px;
+    --offcanvas-bar-background:                      var(--global-secondary-background);
+    --offcanvas-bar-color-mode:                      light;
 
-    --offcanvas-close-position: #{$offcanvas-close-position};
-    --offcanvas-close-padding: #{$offcanvas-close-padding};
+    --offcanvas-close-position:                      5px;
+    --offcanvas-close-padding:                       5px;
 
-    --offcanvas-overlay-background: #{$offcanvas-overlay-background};
+    --offcanvas-overlay-background:                  rgba(0,0,0,0.1);
 
     @media (min-width: $breakpoint-small) {
 
-        --offcanvas-bar-width: #{$offcanvas-bar-width-s};
-        --offcanvas-bar-padding-vertical: #{$offcanvas-bar-padding-vertical-s};
-        --offcanvas-bar-padding-horizontal: #{$offcanvas-bar-padding-horizontal-s};
+        --offcanvas-bar-width:                       350px;
+        --offcanvas-bar-padding-vertical:            var(--global-medium-gutter);
+        --offcanvas-bar-padding-horizontal:          var(--global-medium-gutter);
 
-        --offcanvas-close-position: #{$offcanvas-close-position-s};
+        --offcanvas-close-position:                  10px;
 
     }
 

@@ -7,11 +7,11 @@
 // Variables
 // ========================================================================
 
-$sortable-dragged-z-index:                      calc(var(--global-z-index) + 50);
+$sortable-dragged-z-index: var(--sortable-dragged-z-index);
 
-$sortable-placeholder-opacity:                  0;
+$sortable-placeholder-opacity: var(--sortable-placeholder-opacity);
 
-$sortable-empty-height:                         50px;
+$sortable-empty-height: var(--sortable-empty-height);
 
 
 // Set custom properties
@@ -19,10 +19,10 @@ $sortable-empty-height:                         50px;
 
 :root {
 
-    --sortable-dragged-z-index: #{$sortable-dragged-z-index};
+    --sortable-dragged-z-index:                      calc(var(--global-z-index) + 50);
 
-    --sortable-placeholder-opacity: #{$sortable-placeholder-opacity};
+    --sortable-placeholder-opacity:                  0;
 
-    --sortable-empty-height: #{$sortable-empty-height};
+    --sortable-empty-height:                         50px;
 
 }

@@ -7,85 +7,85 @@
 // Variables
 // ========================================================================
 
-$form-accent-color:                             var(--theme-primary-background, var(--global-primary-background));
+$form-accent-color: var(--form-accent-color);
 
-$form-height:                                   var(--global-control-height);
-$form-line-height:                              var(--form-height);
+$form-height: var(--form-height);
+$form-line-height: var(--form-line-height);
 
-$form-padding-horizontal:                       10px;
-$form-multi-line-padding-horizontal:            var(--form-padding-horizontal);
-$form-multi-line-padding-vertical:              calc( var(--form-padding-horizontal) * 0.6 );
+$form-padding-horizontal: var(--form-padding-horizontal);
+$form-multi-line-padding-horizontal: var(--form-multi-line-padding-horizontal);
+$form-multi-line-padding-vertical: var(--form-multi-line-padding-vertical);
 
-$form-background:                               color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
-$form-color:                                    var(--theme-color, var(--global-color));
+$form-background: var(--form-background);
+$form-color: var(--form-color);
 
-$form-focus-background:                         var(--theme-muted-background, var(--global-muted-background));
-$form-focus-color:                              var(--theme-color, var(--global-color));
+$form-focus-background: var(--form-focus-background);
+$form-focus-color: var(--form-focus-color);
 
-$form-disabled-background:                      var(--theme-muted-background, var(--global-muted-background));
-$form-disabled-color:                           var(--theme-muted-color, var(--global-muted-color));
+$form-disabled-background: var(--form-disabled-background);
+$form-disabled-color: var(--form-disabled-color);
 
-$form-placeholder-color:                        var(--theme-muted-color, var(--global-muted-color));
+$form-placeholder-color: var(--form-placeholder-color);
 
-$form-danger-color:                             var(--theme-danger-background, var(--global-danger-background));
-$form-success-color:                            var(--theme-success-background, var(--global-success-background) );
+$form-danger-color: var(--form-danger-color);
+$form-success-color: var(--form-success-color);
 
-$form-width-xsmall:                             50px;
-$form-width-small:                              130px;
-$form-width-medium:                             200px;
-$form-width-large:                              500px;
+$form-width-xsmall: var(--form-width-xsmall);
+$form-width-small: var(--form-width-small);
+$form-width-medium: var(--form-width-medium);
+$form-width-large: var(--form-width-large);
 
-$form-select-padding-right:                     20px;
-$form-select-icon-color:                        var(--theme-color, var(--global-color));
-$form-select-option-color:                      var(--theme-color, var(--global-color));
-$form-select-disabled-icon-color:               var(--theme-muted-color, var(--global-muted-color));
+$form-select-padding-right: var(--form-select-padding-right);
+$form-select-icon-color: var(--form-select-icon-color);
+$form-select-option-color: var(--form-select-option-color);
+$form-select-disabled-icon-color: var(--form-select-disabled-icon-color);
 
-$form-datalist-padding-right:                   20px;
-$form-datalist-icon-color:                      var(--theme-color, var(--global-color));
+$form-datalist-padding-right: var(--form-datalist-padding-right);
+$form-datalist-icon-color: var(--form-datalist-icon-color);
 
-$form-radio-size:                               16px;
-$form-radio-margin-top:                         -4px;
-$form-radio-background:                         var(--theme-muted-background, var(--global-muted-background));
+$form-radio-size: var(--form-radio-size);
+$form-radio-margin-top: var(--form-radio-margin-top);
+$form-radio-background: var(--form-radio-background);
 
-$form-radio-focus-background:                   var(--theme-muted-background, var(--global-muted-background));
+$form-radio-focus-background: var(--form-radio-focus-background);
 
-$form-radio-checked-background:                 var(--theme-primary-background, var(--global-primary-background));
-$form-radio-checked-icon-color:                 var(--inverse-theme-emphasis-color, var(--global-inverse-color));
+$form-radio-checked-background: var(--form-radio-checked-background);
+$form-radio-checked-icon-color: var(--form-radio-checked-icon-color);
 
-$form-radio-checked-focus-background:           var(--theme-primary-background, var(--global-primary-background));
+$form-radio-checked-focus-background: var(--form-radio-checked-focus-background);
 
-$form-radio-disabled-background:                var(--theme-muted-background, var(--global-muted-background));
-$form-radio-disabled-icon-color:                var(--theme-muted-color, var(--global-muted-color));
+$form-radio-disabled-background: var(--form-radio-disabled-background);
+$form-radio-disabled-icon-color: var(--form-radio-disabled-icon-color);
 
-$form-small-font-size:                          var(--global-small-font-size);
-$form-small-height:                             var(--global-control-small-height);
-$form-small-padding-horizontal:                 8px;
-$form-small-multi-line-padding-horizontal:      var(--form-small-padding-horizontal);
-$form-small-multi-line-padding-vertical:        calc(var(--form-small-multi-line-padding-horizontal) * 0.6);
-$form-small-line-height:                        var(--form-small-height);
-$form-small-radio-size:                         14px;
+$form-small-font-size: var(--form-small-font-size);
+$form-small-height: var(--form-small-height);
+$form-small-padding-horizontal: var(--form-small-padding-horizontal);
+$form-small-multi-line-padding-horizontal: var(--form-small-multi-line-padding-horizontal);
+$form-small-multi-line-padding-vertical: var(--form-small-multi-line-padding-vertical);
+$form-small-line-height: var(--form-small-line-height);
+$form-small-radio-size: var(--form-small-radio-size);
 
-$form-large-font-size:                          var(--global-medium-font-size);
-$form-large-height:                             var(--global-control-large-height);
-$form-large-padding-horizontal:                 12px;
-$form-large-multi-line-padding-horizontal:      var(--form-large-padding-horizontal);
-$form-large-multi-line-padding-vertical:        calc(var(--form-large-multi-line-padding-horizontal) * 0.6);
-$form-large-line-height:                        var(--form-large-height);
-$form-large-radio-size:                         22px;
+$form-large-font-size: var(--form-large-font-size);
+$form-large-height: var(--form-large-height);
+$form-large-padding-horizontal: var(--form-large-padding-horizontal);
+$form-large-multi-line-padding-horizontal: var(--form-large-multi-line-padding-horizontal);
+$form-large-multi-line-padding-vertical: var(--form-large-multi-line-padding-vertical);
+$form-large-line-height: var(--form-large-line-height);
+$form-large-radio-size: var(--form-large-radio-size);
 
-$form-legend-font-size:                         var(--global-large-font-size);
-$form-legend-line-height:                       1.4;
+$form-legend-font-size: var(--form-legend-font-size);
+$form-legend-line-height: var(--form-legend-line-height);
 
-$form-stacked-margin-bottom:                    var(--global-small-margin);
+$form-stacked-margin-bottom: var(--form-stacked-margin-bottom);
 
-$form-horizontal-label-width:                   200px;
-$form-horizontal-label-margin-top:              7px;
-$form-horizontal-controls-margin-left:          215px;
-$form-horizontal-controls-text-padding-top:     7px;
+$form-horizontal-label-width: var(--form-horizontal-label-width);
+$form-horizontal-label-margin-top: var(--form-horizontal-label-margin-top);
+$form-horizontal-controls-margin-left: var(--form-horizontal-controls-margin-left);
+$form-horizontal-controls-text-padding-top: var(--form-horizontal-controls-text-padding-top);
 
-$form-icon-width:                               var(--form-height);
-$form-icon-color:                               var(--theme-muted-color, var(--global-muted-color));
-$form-icon-hover-color:                         var(--theme-color, var(--global-color));
+$form-icon-width: var(--form-icon-width);
+$form-icon-color: var(--form-icon-color);
+$form-icon-hover-color: var(--form-icon-hover-color);
 
 $internal-form-select-image:                     "../../images/backgrounds/form-select.svg";
 $internal-form-datalist-image:                   "../../images/backgrounds/form-datalist.svg";
@@ -99,88 +99,84 @@ $internal-form-checkbox-indeterminate-image:     "../../images/backgrounds/form-
 
 :root {
 
-    --form-height: #{$form-height};
-    --form-line-height: #{$form-line-height};
+    --form-accent-color:                             var(--theme-primary-background, var(--global-primary-background));
 
-    --form-padding-horizontal: #{$form-padding-horizontal};
-    --form-multi-line-padding-horizontal: #{$form-multi-line-padding-horizontal};
-    --form-multi-line-padding-vertical: #{$form-multi-line-padding-vertical};
+    --form-height:                                   var(--global-control-height);
+    --form-line-height:                              var(--form-height);
 
-    --form-background: #{$form-background};
-    --form-color: #{$form-color};
+    --form-padding-horizontal:                       10px;
+    --form-multi-line-padding-horizontal:            var(--form-padding-horizontal);
+    --form-multi-line-padding-vertical:              calc( var(--form-padding-horizontal) * 0.6 );
 
-    --form-focus-background: #{$form-focus-background};
-    --form-focus-color: #{$form-focus-color};
+    --form-background:                               color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
+    --form-color:                                    var(--theme-color, var(--global-color));
 
-    --form-disabled-background: #{$form-disabled-background};
-    --form-disabled-color: #{$form-disabled-color};
+    --form-focus-background:                         var(--theme-muted-background, var(--global-muted-background));
+    --form-focus-color:                              var(--theme-color, var(--global-color));
 
-    --form-placeholder-color: #{$form-placeholder-color};
+    --form-disabled-background:                      var(--theme-muted-background, var(--global-muted-background));
+    --form-disabled-color:                           var(--theme-muted-color, var(--global-muted-color));
 
-    --form-danger-color: #{$form-danger-color};
-    --form-success-color: #{$form-success-color};
+    --form-placeholder-color:                        var(--theme-muted-color, var(--global-muted-color));
 
-    --form-width-xsmall: #{$form-width-xsmall};
-    --form-width-small: #{$form-width-small};
-    --form-width-medium: #{$form-width-medium};
-    --form-width-large: #{$form-width-large};
+    --form-danger-color:                             var(--theme-danger-background, var(--global-danger-background));
+    --form-success-color:                            var(--theme-success-background, var(--global-success-background) );
 
-    --form-select-padding-right: #{$form-select-padding-right};
-    --form-select-icon-color: #{$form-select-icon-color};
-    --form-select-option-color: #{$form-select-option-color};
-    --form-select-disabled-icon-color: #{$form-select-disabled-icon-color};
+    --form-width-xsmall:                             50px;
+    --form-width-small:                              130px;
+    --form-width-medium:                             200px;
+    --form-width-large:                              500px;
 
-    --form-datalist-padding-right: #{$form-datalist-padding-right};
-    --form-datalist-icon-color: #{$form-datalist-icon-color};
+    --form-select-padding-right:                     20px;
+    --form-select-icon-color:                        var(--theme-color, var(--global-color));
+    --form-select-option-color:                      var(--theme-color, var(--global-color));
+    --form-select-disabled-icon-color:               var(--theme-muted-color, var(--global-muted-color));
 
-    --form-radio-size: #{$form-radio-size};
-    --form-radio-margin-top: #{$form-radio-margin-top};
-    --form-radio-background: #{$form-radio-background};
+    --form-datalist-padding-right:                   20px;
+    --form-datalist-icon-color:                      var(--theme-color, var(--global-color));
 
-    --form-radio-focus-background: #{$form-radio-focus-background};
+    --form-radio-size:                               16px;
+    --form-radio-margin-top:                         -4px;
+    --form-radio-background:                         var(--theme-muted-background, var(--global-muted-background));
 
-    --form-radio-checked-background: #{$form-radio-checked-background};
-    --form-radio-checked-icon-color: #{$form-radio-checked-icon-color};
+    --form-radio-focus-background:                   var(--theme-muted-background, var(--global-muted-background));
 
-    --form-radio-checked-focus-background: #{$form-radio-checked-focus-background};
+    --form-radio-checked-background:                 var(--theme-primary-background, var(--global-primary-background));
+    --form-radio-checked-icon-color:                 var(--inverse-theme-emphasis-color, var(--global-inverse-color));
 
-    --form-radio-disabled-background: #{$form-radio-disabled-background};
-    --form-radio-disabled-icon-color: #{$form-radio-disabled-icon-color};
+    --form-radio-checked-focus-background:           var(--theme-primary-background, var(--global-primary-background));
 
-    --form-small-font-size: #{$form-small-font-size};
-    --form-small-height: #{$form-small-height};
-    --form-small-padding-horizontal: #{$form-small-padding-horizontal};
-    --form-small-multi-line-padding-horizontal: #{$form-small-multi-line-padding-horizontal};
-    --form-small-multi-line-padding-vertical: #{$form-small-multi-line-padding-vertical};
-    --form-small-line-height: #{$form-small-line-height};
-    --form-small-radio-size: #{$form-small-radio-size};
+    --form-radio-disabled-background:                var(--theme-muted-background, var(--global-muted-background));
+    --form-radio-disabled-icon-color:                var(--theme-muted-color, var(--global-muted-color));
 
-    --form-large-font-size: #{$form-large-font-size};
-    --form-large-height: #{$form-large-height};
-    --form-large-padding-horizontal: #{$form-large-padding-horizontal};
-    --form-large-multi-line-padding-horizontal: #{$form-large-multi-line-padding-horizontal};
-    --form-large-multi-line-padding-vertical: #{$form-large-multi-line-padding-vertical};
-    --form-large-line-height: #{$form-large-line-height};
-    --form-large-radio-size: #{$form-large-radio-size};
+    --form-small-font-size:                          var(--global-small-font-size);
+    --form-small-height:                             var(--global-control-small-height);
+    --form-small-padding-horizontal:                 8px;
+    --form-small-multi-line-padding-horizontal:      var(--form-small-padding-horizontal);
+    --form-small-multi-line-padding-vertical:        calc(var(--form-small-multi-line-padding-horizontal) * 0.6);
+    --form-small-line-height:                        var(--form-small-height);
+    --form-small-radio-size:                         14px;
 
-    --form-legend-font-size: #{$form-legend-font-size};
-    --form-legend-line-height: #{$form-legend-line-height};
+    --form-large-font-size:                          var(--global-medium-font-size);
+    --form-large-height:                             var(--global-control-large-height);
+    --form-large-padding-horizontal:                 12px;
+    --form-large-multi-line-padding-horizontal:      var(--form-large-padding-horizontal);
+    --form-large-multi-line-padding-vertical:        calc(var(--form-large-multi-line-padding-horizontal) * 0.6);
+    --form-large-line-height:                        var(--form-large-height);
+    --form-large-radio-size:                         22px;
 
-    --form-stacked-margin-bottom: #{$form-stacked-margin-bottom};
+    --form-legend-font-size:                         var(--global-large-font-size);
+    --form-legend-line-height:                       1.4;
 
-    --form-horizontal-label-width: #{$form-horizontal-label-width};
-    --form-horizontal-label-margin-top: #{$form-horizontal-label-margin-top};
-    --form-horizontal-controls-margin-left: #{$form-horizontal-controls-margin-left};
-    --form-horizontal-controls-text-padding-top: #{$form-horizontal-controls-text-padding-top};
+    --form-stacked-margin-bottom:                    var(--global-small-margin);
 
-    --form-icon-width: #{$form-icon-width};
-    --form-icon-color: #{$form-icon-color};
-    --form-icon-hover-color: #{$form-icon-hover-color};
+    --form-horizontal-label-width:                   200px;
+    --form-horizontal-label-margin-top:              7px;
+    --form-horizontal-controls-margin-left:          215px;
+    --form-horizontal-controls-text-padding-top:     7px;
 
-    --internal-form-select-image: #{$internal-form-select-image};
-    --internal-form-datalist-image: #{$internal-form-datalist-image};
-    --internal-form-radio-image: #{$internal-form-radio-image};
-    --internal-form-checkbox-image: #{$internal-form-checkbox-image};
-    --internal-form-checkbox-indeterminate-image: #{$internal-form-checkbox-indeterminate-image};
+    --form-icon-width:                               var(--form-height);
+    --form-icon-color:                               var(--theme-muted-color, var(--global-muted-color));
+    --form-icon-hover-color:                         var(--theme-color, var(--global-color));
 
 }

@@ -7,25 +7,25 @@
 // Variables
 // ========================================================================
 
-$divider-margin-vertical:                       var(--global-margin);
+$divider-margin-vertical: var(--divider-margin-vertical);
 
-$divider-icon-width:                            50px;
-$divider-icon-height:                           20px;
-$divider-icon-color:                            var(--theme-border, var(--global-border));
-$divider-icon-line-top:                         50%;
-$divider-icon-line-width:                       100%;
-$divider-icon-line-border-width:                var(--global-border-width);
-$divider-icon-line-border:                      var(--theme-border, var(--global-border));
+$divider-icon-width: var(--divider-icon-width);
+$divider-icon-height: var(--divider-icon-height);
+$divider-icon-color: var(--divider-icon-color);
+$divider-icon-line-top: var(--divider-icon-line-top);
+$divider-icon-line-width: var(--divider-icon-line-width);
+$divider-icon-line-border-width: var(--divider-icon-line-border-width);
+$divider-icon-line-border: var(--divider-icon-line-border);
 
-$internal-divider-icon-image:                   "../../images/backgrounds/divider-icon.svg";
+$internal-divider-icon-image: "../../images/backgrounds/divider-icon.svg";
 
-$divider-small-width:                           100px;
-$divider-small-border-width:                    var(--global-border-width);
-$divider-small-border:                          var(--theme-border, var(--global-border));
+$divider-small-width: var(--divider-small-width);
+$divider-small-border-width: var(--divider-small-border-width);
+$divider-small-border: var(--divider-small-border);
 
-$divider-vertical-height:                       100px;
-$divider-vertical-border-width:                 var(--global-border-width);
-$divider-vertical-border:                       var(--theme-border, var(--global-border));
+$divider-vertical-height: var(--divider-vertical-height);
+$divider-vertical-border-width: var(--divider-vertical-border-width);
+$divider-vertical-border: var(--divider-vertical-border);
 
 
 // Set custom properties
@@ -33,22 +33,22 @@ $divider-vertical-border:                       var(--theme-border, var(--global
 
 :root {
 
-    --divider-margin-vertical: #{$divider-margin-vertical};
+    --divider-margin-vertical:                       var(--global-margin);
 
-    --divider-icon-width: #{$divider-icon-width};
-    --divider-icon-height: #{$divider-icon-height};
-    --divider-icon-color: #{$divider-icon-color};
-    --divider-icon-line-top: #{$divider-icon-line-top};
-    --divider-icon-line-width: #{$divider-icon-line-width};
-    --divider-icon-line-border-width: #{$divider-icon-line-border-width};
-    --divider-icon-line-border: #{$divider-icon-line-border};
+    --divider-icon-width:                            50px;
+    --divider-icon-height:                           20px;
+    --divider-icon-color:                            var(--theme-border, var(--global-border));
+    --divider-icon-line-top:                         50%;
+    --divider-icon-line-width:                       100%;
+    --divider-icon-line-border-width:                var(--global-border-width);
+    --divider-icon-line-border:                      var(--theme-border, var(--global-border));
 
-    --divider-small-width: #{$divider-small-width};
-    --divider-small-border-width: #{$divider-small-border-width};
-    --divider-small-border: #{$divider-small-border};
+    --divider-small-width:                           100px;
+    --divider-small-border-width:                    var(--global-border-width);
+    --divider-small-border:                          var(--theme-border, var(--global-border));
 
-    --divider-vertical-height: #{$divider-vertical-height};
-    --divider-vertical-border-width: #{$divider-vertical-border-width};
-    --divider-vertical-border: #{$divider-vertical-border};
+    --divider-vertical-height:                       100px;
+    --divider-vertical-border-width:                 var(--global-border-width);
+    --divider-vertical-border:                       var(--theme-border, var(--global-border));
 
 }

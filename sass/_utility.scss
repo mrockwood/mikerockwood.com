@@ -1,63 +1,39 @@
 // Name:            Utility
 // Description:     Utilities collection
 //
-// Component:       `uk-panel-*`
-//                  `uk-clearfix`
-//                  `uk-float-*`
-//                  `uk-overflow-*`
-//                  `uk-resize-*`
-//                  `uk-display-*`
-//                  `uk-inline-*`
-//                  `uk-responsive-*`
-//                  `uk-preserve-width`
-//                  `uk-object-*`
-//                  `uk-border-*`
-//                  `uk-box-shadow-*`
-//                  `uk-box-shadow-bottom`
-//                  `uk-dropcap`
-//                  `uk-logo`
-//                  `uk-blend-*`
-//                  `uk-transform-*`
-//                  `uk-transform-origin-*`
-//
-// States:          `uk-disabled`
-//                  `uk-drag`
-//                  `uk-dragover`
-//                  `uk-preserve`
-//
 // ========================================================================
 
 
 // Variables
 // ========================================================================
 
-$panel-scrollable-height:                       170px;
-$panel-scrollable-padding:                      10px;
-$panel-scrollable-border-width:                 var(--global-border-width);
-$panel-scrollable-border:                       var(--theme-border, var(--global-border));
+$panel-scrollable-height: var(--panel-scrollable-height);
+$panel-scrollable-padding: var(--panel-scrollable-padding);
+$panel-scrollable-border-width: var(--panel-scrollable-border-width);
+$panel-scrollable-border: var(--panel-scrollable-border);
 
-$overflow-fade-size:                            100px;
+$overflow-fade-size: var(--overflow-fade-size);
 
-$border-rounded-border-radius:                  5px;
+$border-rounded-border-radius: var(--border-rounded-border-radius);
 
-$box-shadow-duration:                           0.1s;
+$box-shadow-duration: var(--box-shadow-duration);
 
-$box-shadow-bottom-height:                      30px;
-$box-shadow-bottom-bottom:                      calc( var(--box-shadow-bottom-height) * -1 );
-$box-shadow-bottom-border-radius:               100%;
-$box-shadow-bottom-background:                  #444;
-$box-shadow-bottom-blur:                        20px;
+$box-shadow-bottom-height: var(--box-shadow-bottom-height);
+$box-shadow-bottom-bottom: var(--box-shadow-bottom-bottom);
+$box-shadow-bottom-border-radius: var(--box-shadow-bottom-border-radius);
+$box-shadow-bottom-background: var(--box-shadow-bottom-background);
+$box-shadow-bottom-blur: var(--box-shadow-bottom-blur);
 
-$dropcap-margin-right:                          10px;
-$dropcap-font-size:                             (($global-line-height * 3) * 1em);
-$dropcap-line-height:                           1;
+$dropcap-margin-right: var(--dropcap-margin-right);
+$dropcap-font-size: var(--dropcap-font-size);
+$dropcap-line-height: var(--dropcap-line-height);
 
-$logo-font-size:                                var(--global-font-size);
-$logo-font-family:                              var(--global-font-family);
-$logo-color:                                    var(--theme-muted-color, var(--global-muted-color));
-$logo-hover-color:                              var(--theme-color, var(--global-color));
+$logo-font-size: var(--logo-font-size);
+$logo-font-family: var(--logo-font-family);
+$logo-color: var(--logo-color);
+$logo-hover-color: var(--logo-hover-color);
 
-$dragover-box-shadow:                           0 0 20px rgba(100,100,100,0.3);
+$dragover-box-shadow: var(--dragover-box-shadow);
 
 
 // Set custom properties
@@ -65,32 +41,32 @@ $dragover-box-shadow:                           0 0 20px rgba(100,100,100,0.3);
 
 :root {
 
-    --panel-scrollable-height: #{$panel-scrollable-height};
-    --panel-scrollable-padding: #{$panel-scrollable-padding};
-    --panel-scrollable-border-width: #{$panel-scrollable-border-width};
-    --panel-scrollable-border: #{$panel-scrollable-border};
+    --panel-scrollable-height:                       170px;
+    --panel-scrollable-padding:                      10px;
+    --panel-scrollable-border-width:                 var(--global-border-width);
+    --panel-scrollable-border:                       var(--theme-border, var(--global-border));
 
-    --overflow-fade-size: #{$overflow-fade-size};
+    --overflow-fade-size:                            100px;
 
-    --border-rounded-border-radius: #{$border-rounded-border-radius};
+    --border-rounded-border-radius:                  5px;
 
-    --box-shadow-duration: #{$box-shadow-duration};
+    --box-shadow-duration:                           0.1s;
 
-    --box-shadow-bottom-height: #{$box-shadow-bottom-height};
-    --box-shadow-bottom-bottom: #{$box-shadow-bottom-bottom};
-    --box-shadow-bottom-border-radius: #{$box-shadow-bottom-border-radius};
-    --box-shadow-bottom-background: #{$box-shadow-bottom-background};
-    --box-shadow-bottom-blur: #{$box-shadow-bottom-blur};
+    --box-shadow-bottom-height:                      30px;
+    --box-shadow-bottom-bottom:                      calc( var(--box-shadow-bottom-height) * -1 );
+    --box-shadow-bottom-border-radius:               100%;
+    --box-shadow-bottom-background:                  #444;
+    --box-shadow-bottom-blur:                        20px;
 
-    --dropcap-margin-right: #{$dropcap-margin-right};
-    --dropcap-font-size: #{$dropcap-font-size};
-    --dropcap-line-height: #{$dropcap-line-height};
+    --dropcap-margin-right:                          10px;
+    --dropcap-font-size:                             ((--global-line-height * 3) * 1em);
+    --dropcap-line-height:                           1;
 
-    --logo-font-size: #{$logo-font-size};
-    --logo-font-family: #{$logo-font-family};
-    --logo-color: #{$logo-color};
-    --logo-hover-color: #{$logo-hover-color};
+    --logo-font-size:                                var(--global-font-size);
+    --logo-font-family:                              var(--global-font-family);
+    --logo-color:                                    var(--theme-muted-color, var(--global-muted-color));
+    --logo-hover-color:                              var(--theme-color, var(--global-color));
 
-    --dragover-box-shadow: #{$dragover-box-shadow};
+    --dragover-box-shadow:                           0 0 20px rgba(100,100,100,0.3);
 
 }

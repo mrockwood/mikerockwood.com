@@ -7,15 +7,15 @@
 // Variables
 // ========================================================================
 
-$container-max-width:                   1200px;
-$container-xsmall-max-width:            750px;
-$container-small-max-width:             900px;
-$container-large-max-width:             1400px;
-$container-xlarge-max-width:            1600px;
+$container-max-width: var(--container-max-width);
+$container-xsmall-max-width: var(--container-xsmall-max-width);
+$container-small-max-width: var(--container-small-max-width);
+$container-large-max-width: var(--container-large-max-width);
+$container-xlarge-max-width: var(--container-xlarge-max-width);
 
-$container-padding-horizontal:          15px;
-$container-padding-horizontal-s:        var(--global-gutter);
-$container-padding-horizontal-m:        var(--global-medium-gutter);
+$container-padding-horizontal: var(--container-padding-horizontal);
+$container-padding-horizontal-s: var(--container-padding-horizontal);
+$container-padding-horizontal-m: var(--container-padding-horizontal);
 
 
 // Set custom properties
@@ -23,25 +23,25 @@ $container-padding-horizontal-m:        var(--global-medium-gutter);
 
 :root {
 
-    --container-max-width: #{$container-max-width};
-    --container-xsmall-max-width: #{$container-xsmall-max-width};
-    --container-small-max-width: #{$container-small-max-width};
-    --container-large-max-width: #{$container-large-max-width};
-    --container-xlarge-max-width: #{$container-xlarge-max-width};
+    --container-max-width:                   1200px;
+    --container-xsmall-max-width:            750px;
+    --container-small-max-width:             900px;
+    --container-large-max-width:             1400px;
+    --container-xlarge-max-width:            1600px;
 
-    --container-padding-horizontal: #{$container-padding-horizontal};
+    --container-padding-horizontal:          15px;
 
     /* Phone landscape and bigger */
     @media (min-width: $breakpoint-small) {
 
-        --container-padding-horizontal: #{$container-padding-horizontal-s};
+        --container-padding-horizontal:      var(--global-gutter);
 
     }
 
     /* Tablet landscape and bigger */
     @media (min-width: $breakpoint-medium) {
 
-        --container-padding-horizontal: #{$container-padding-horizontal-m};
+        --container-padding-horizontal:      var(--global-medium-gutter);
 
     }
 

@@ -9,14 +9,14 @@
 // Variables
 // ========================================================================
 
-$form-range-track-height:                       3px;
-$form-range-track-background:                   color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
-$form-range-track-focus-background:             var(--theme-muted-background, var(--global-muted-background));
+$form-range-track-height: var(--form-range-track-height);
+$form-range-track-background: var(--form-range-track-background);
+$form-range-track-focus-background: var(--form-range-track-focus-background);
 
-$form-range-thumb-height:                       15px;
-$form-range-thumb-width:                        var(--form-range-thumb-height);
-$form-range-thumb-border-radius:                500px;
-$form-range-thumb-background:                   var(--theme-color, var(--global-color));
+$form-range-thumb-height: var(--form-range-thumb-height);
+$form-range-thumb-width: var(--form-range-thumb-width);
+$form-range-thumb-border-radius: var(--form-range-thumb-border-radius);
+$form-range-thumb-background: var(--form-range-thumb-background);
 
 
 // Set custom properties
@@ -24,13 +24,13 @@ $form-range-thumb-background:                   var(--theme-color, var(--global-
 
 :root {
 
-    --form-range-track-height: #{$form-range-track-height};
-    --form-range-track-background: #{$form-range-track-background};
-    --form-range-track-focus-background: #{$form-range-track-focus-background};
+    --form-range-track-height:                       3px;
+    --form-range-track-background:                   color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
+    --form-range-track-focus-background:             var(--theme-muted-background, var(--global-muted-background));
 
-    --form-range-thumb-height: #{$form-range-thumb-height};
-    --form-range-thumb-width: #{$form-range-thumb-width};
-    --form-range-thumb-border-radius: #{$form-range-thumb-border-radius};
-    --form-range-thumb-background: #{$form-range-thumb-background};
+    --form-range-thumb-height:                       15px;
+    --form-range-thumb-width:                        var(--form-range-thumb-height);
+    --form-range-thumb-border-radius:                500px;
+    --form-range-thumb-background:                   var(--theme-color, var(--global-color));
 
 }

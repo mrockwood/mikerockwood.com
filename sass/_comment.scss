@@ -7,18 +7,18 @@
 // Variables
 // ========================================================================
 
-$comment-header-margin-bottom:                  $global-margin;
+$comment-header-margin-bottom: var(--comment-header-margin-bottom);
 
-$comment-title-font-size:                       $global-medium-font-size;
-$comment-title-line-height:                     1.4;
+$comment-title-font-size: var(--comment-title-font-size);
+$comment-title-line-height: var(--comment-title-line-height);
 
-$comment-meta-font-size:                        $global-small-font-size;
-$comment-meta-line-height:                      1.4;
-$comment-meta-color:                            $global-muted-color;
+$comment-meta-font-size: var(--comment-meta-font-size);
+$comment-meta-line-height: var(--comment-meta-line-height);
+$comment-meta-color: var(--comment-meta-color);
 
-$comment-list-margin-top:                       $global-large-margin;
-$comment-list-padding-left:                     30px;
-$comment-list-padding-left-m:                   100px;
+$comment-list-margin-top: var(--comment-list-margin-top);
+$comment-list-padding-left: var(--comment-list-padding-left);
+$comment-list-padding-left-m: var(--comment-list-padding-left);
 
 
 // Set custom properties
@@ -26,17 +26,23 @@ $comment-list-padding-left-m:                   100px;
 
 :root {
 
-    --comment-header-margin-bottom: #{$comment-header-margin-bottom};
+    --comment-header-margin-bottom:                  --global-margin;
 
-    --comment-title-font-size: #{$comment-title-font-size};
-    --comment-title-line-height: #{$comment-title-line-height};
+    --comment-title-font-size:                       --global-medium-font-size;
+    --comment-title-line-height:                     1.4;
 
-    --comment-meta-font-size: #{$comment-meta-font-size};
-    --comment-meta-line-height: #{$comment-meta-line-height};
-    --comment-meta-color: #{$comment-meta-color};
+    --comment-meta-font-size:                        --global-small-font-size;
+    --comment-meta-line-height:                      1.4;
+    --comment-meta-color:                            --global-muted-color;
 
-    --comment-list-margin-top: #{$comment-list-margin-top};
-    --comment-list-padding-left: #{$comment-list-padding-left};
-    --comment-list-padding-left-m: #{$comment-list-padding-left-m};
+    --comment-list-margin-top:                       --global-large-margin;
+    --comment-list-padding-left:                     30px;
+
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
+
+        --comment-list-padding-left:                 100px;
+
+    }
 
 }

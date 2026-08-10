@@ -7,24 +7,24 @@
 // Variables
 // ========================================================================
 
-$notification-position:                               10px;
-$notification-z-index:                                calc( var(--global-z-index) + 40 );
-$notification-width:                                  350px;
+$notification-position: var(--notification-position);
+$notification-z-index: var(--notification-z-index);
+$notification-width: var(--notification-width);
 
-$notification-message-margin-top:                     10px;
-$notification-message-padding:                        var(--global-small-gutter);
-$notification-message-background:                     var(--theme-muted-background, var(--global-muted-background));
-$notification-message-color:                          var(--theme-color, var(--global-color));
-$notification-message-font-size:                      var(--global-medium-font-size);
-$notification-message-line-height:                    1.4;
+$notification-message-margin-top: var(--notification-message-margin-top);
+$notification-message-padding: var(--notification-message-padding);
+$notification-message-background: var(--notification-message-background);
+$notification-message-color: var(--notification-message-color);
+$notification-message-font-size: var(--notification-message-font-size);
+$notification-message-line-height: var(--notification-message-line-height);
 
-$notification-close-top:                              calc( var(--notification-message-padding) + 5px );
-$notification-close-right:                            var(--notification-message-padding);
+$notification-close-top: var(--notification-close-top);
+$notification-close-right: var(--notification-close-right);
 
-$notification-message-primary-color:                  var(--theme-primary-background, var(--global-primary-background));
-$notification-message-success-color:                  var(--theme-success-background, var(--global-success-background));
-$notification-message-warning-color:                  var(--theme-warning-background, var(--global-warning-background));
-$notification-message-danger-color:                   var(--theme-danger-background, var(--global-danger-background));
+$notification-message-primary-color: var(--notification-message-primary-color);
+$notification-message-success-color: var(--notification-message-success-color);
+$notification-message-warning-color: var(--notification-message-warning-color);
+$notification-message-danger-color: var(--notification-message-danger-color);
 
 
 // Set custom properties
@@ -32,23 +32,23 @@ $notification-message-danger-color:                   var(--theme-danger-backgro
 
 :root {
 
-    --notification-position: #{$notification-position};
-    --notification-z-index: #{$notification-z-index};
-    --notification-width: #{$notification-width};
+    --notification-position:                               10px;
+    --notification-z-index:                                calc( var(--global-z-index) + 40 );
+    --notification-width:                                  350px;
 
-    --notification-message-margin-top: #{$notification-message-margin-top};
-    --notification-message-padding: #{$notification-message-padding};
-    --notification-message-background: #{$notification-message-background};
-    --notification-message-color: #{$notification-message-color};
-    --notification-message-font-size: #{$notification-message-font-size};
-    --notification-message-line-height: #{$notification-message-line-height};
+    --notification-message-margin-top:                     10px;
+    --notification-message-padding:                        var(--global-small-gutter);
+    --notification-message-background:                     var(--theme-muted-background, var(--global-muted-background));
+    --notification-message-color:                          var(--theme-color, var(--global-color));
+    --notification-message-font-size:                      var(--global-medium-font-size);
+    --notification-message-line-height:                    1.4;
 
-    --notification-close-top: #{$notification-close-top};
-    --notification-close-right: #{$notification-close-right};
+    --notification-close-top:                              calc( var(--notification-message-padding) + 5px );
+    --notification-close-right:                            var(--notification-message-padding);
 
-    --notification-message-primary-color: #{$notification-message-primary-color};
-    --notification-message-success-color: #{$notification-message-success-color};
-    --notification-message-warning-color: #{$notification-message-warning-color};
-    --notification-message-danger-color: #{$notification-message-danger-color};
+    --notification-message-primary-color:                  var(--theme-primary-background, var(--global-primary-background));
+    --notification-message-success-color:                  var(--theme-success-background, var(--global-success-background));
+    --notification-message-warning-color:                  var(--theme-warning-background, var(--global-warning-background));
+    --notification-message-danger-color:                   var(--theme-danger-background, var(--global-danger-background));
 
 }

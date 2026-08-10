@@ -11,7 +11,7 @@
 // Variables
 // ========================================================================
 
-$dropnav-dropbar-z-index:                       calc( var(--global-z-index) - 20 );
+$dropnav-dropbar-z-index: var(--dropnav-dropbar-z-index);
 
 
 // Set custom properties
@@ -19,6 +19,6 @@ $dropnav-dropbar-z-index:                       calc( var(--global-z-index) - 20
 
 :root {
 
-    --dropnav-dropbar-z-index: #{$dropnav-dropbar-z-index};
+    --dropnav-dropbar-z-index:                       calc( var(--global-z-index) - 20 );
 
 }

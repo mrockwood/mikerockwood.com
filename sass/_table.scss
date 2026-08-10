@@ -7,36 +7,36 @@
 // Variables
 // ========================================================================
 
-$table-margin-vertical:                         var(--global-margin);
+$table-margin-vertical: var(--table-margin-vertical);
 
-$table-cell-padding-vertical:                   16px;
-$table-cell-padding-horizontal:                 12px;
+$table-cell-padding-vertical: 16px; // var(--table-cell-padding-vertical);
+$table-cell-padding-horizontal: var(--table-cell-padding-horizontal);
 
-$table-header-cell-font-size:                   var(--global-font-size);
-$table-header-cell-font-weight:                 bold;
-$table-header-cell-color:                       var(--theme-color, var(--global-color));
+$table-header-cell-font-size: var(--table-header-cell-font-size);
+$table-header-cell-font-weight: var(--table-header-cell-font-weight);
+$table-header-cell-color: var(--table-header-cell-color);
 
-$table-footer-font-size:                        var(--global-small-font-size);
+$table-footer-font-size: var(--table-footer-font-size);
 
-$table-caption-font-size:                       var(--global-small-font-size);
-$table-caption-color:                           var(--theme-muted-color, var(--global-muted-color) );
+$table-caption-font-size: var(--table-caption-font-size);
+$table-caption-color: var(--table-caption-color);
 
-$table-row-active-background:                   #ffd;
+$table-row-active-background: var(--table-row-active-background);
 
-$table-divider-border-width:                    var(--global-border-width);
-$table-divider-border:                          var(--theme-border, var(--global-border));
+$table-divider-border-width: var(--table-divider-border-width);
+$table-divider-border: var(--table-divider-border);
 
-$table-striped-row-background:                  var(--theme-muted-background, var(--global-muted-background));
+$table-striped-row-background: var(--table-striped-row-background);
 
-$table-hover-row-background:                    var(--table-row-active-background);
+$table-hover-row-background: var(--table-hover-row-background);
 
-$table-small-cell-padding-vertical:             10px;
-$table-small-cell-padding-horizontal:           12px;
+$table-small-cell-padding-vertical: var(--table-small-cell-padding-vertical);
+$table-small-cell-padding-horizontal: var(--table-small-cell-padding-horizontal);
 
-$table-large-cell-padding-vertical:             22px;
-$table-large-cell-padding-horizontal:           12px;
+$table-large-cell-padding-vertical: var(--table-large-cell-padding-vertical);
+$table-large-cell-padding-horizontal: var(--table-large-cell-padding-horizontal);
 
-$table-expand-min-width:                        150px;
+$table-expand-min-width: var(--table-expand-min-width);
 
 
 // Set custom properties
@@ -44,35 +44,51 @@ $table-expand-min-width:                        150px;
 
 :root {
 
-    --table-margin-vertical: #{$table-margin-vertical};
+    --table-margin-vertical:                         var(--global-margin);
 
-    --table-cell-padding-vertical: #{$table-cell-padding-vertical};
-    --table-cell-padding-horizontal: #{$table-cell-padding-horizontal};
+    --table-cell-padding-vertical:                   16px;
+    --table-cell-padding-horizontal:                 12px;
 
-    --table-header-cell-font-size: #{$table-header-cell-font-size};
-    --table-header-cell-font-weight: #{$table-header-cell-font-weight};
-    --table-header-cell-color: #{$table-header-cell-color};
+    --table-header-cell-font-size:                   var(--global-font-size);
+    --table-header-cell-font-weight:                 bold;
+    --table-header-cell-color:                       var(--theme-color, var(--global-color));
 
-    --table-footer-font-size: #{$table-footer-font-size};
+    --table-footer-font-size:                        var(--global-small-font-size);
 
-    --table-caption-font-size: #{$table-caption-font-size};
-    --table-caption-color: #{$table-caption-color};
+    --table-caption-font-size:                       var(--global-small-font-size);
+    --table-caption-color:                           var(--theme-muted-color, var(--global-muted-color) );
 
-    --table-row-active-background: #{$table-row-active-background};
+    --table-row-active-background:                   #ffd;
 
-    --table-divider-border-width: #{$table-divider-border-width};
-    --table-divider-border: #{$table-divider-border};
+    --table-divider-border-width:                    var(--global-border-width);
+    --table-divider-border:                          var(--theme-border, var(--global-border));
 
-    --table-striped-row-background: #{$table-striped-row-background};
+    --table-striped-row-background:                  var(--theme-muted-background, var(--global-muted-background));
 
-    --table-hover-row-background: #{$table-hover-row-background};
+    --table-hover-row-background:                    var(--table-row-active-background);
 
-    --table-small-cell-padding-vertical: #{$table-small-cell-padding-vertical};
-    --table-small-cell-padding-horizontal: #{$table-small-cell-padding-horizontal};
+    --table-small-cell-padding-vertical:             10px;
+    --table-small-cell-padding-horizontal:           12px;
 
-    --table-large-cell-padding-vertical: #{$table-large-cell-padding-vertical};
-    --table-large-cell-padding-horizontal: #{$table-large-cell-padding-horizontal};
+    --table-large-cell-padding-vertical:             22px;
+    --table-large-cell-padding-horizontal:           12px;
 
-    --table-expand-min-width: #{$table-expand-min-width};
+    --table-expand-min-width:                        150px;
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-table-misc() {
+
+    .uk-table-responsive th:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:first-child) > a { padding-top: calc(var(--table-cell-padding-vertical) * 0.33333) !important; }
+
+    .uk-table-responsive th:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:last-child) > a { padding-bottom: calc(var(--table-cell-padding-vertical) * 0.33333) !important; }
+
+};

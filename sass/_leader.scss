@@ -9,8 +9,8 @@
 // Variables
 // ========================================================================
 
-$leader-fill-content:                           '.';
-$leader-fill-margin-left:                       var(--global-small-gutter);
+$leader-fill-content: var(--leader-fill-content);
+$leader-fill-margin-left: var(--leader-fill-margin-left);
 
 
 // Set custom properties
@@ -18,7 +18,7 @@ $leader-fill-margin-left:                       var(--global-small-gutter);
 
 :root {
 
-    --leader-fill-content: #{$leader-fill-content};
-    --leader-fill-margin-left: #{$leader-fill-margin-left};
+    --leader-fill-content:                           '.';
+    --leader-fill-margin-left:                       var(--global-small-gutter);
 
 }

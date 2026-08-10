@@ -13,17 +13,17 @@
 // Variables
 // ========================================================================
 
-$dotnav-margin-horizontal:                      12px;
-$dotnav-margin-vertical:                        var(--dotnav-margin-horizontal);
+$dotnav-margin-horizontal: var(--dotnav-margin-horizontal);
+$dotnav-margin-vertical: var(--dotnav-margin-vertical);
 
-$dotnav-item-width:                             10px;
-$dotnav-item-height:                            var(--dotnav-item-width);
-$dotnav-item-border-radius:                     50%;
+$dotnav-item-width: var(--dotnav-item-width);
+$dotnav-item-height: var(--dotnav-item-height);
+$dotnav-item-border-radius: var(--dotnav-item-border-radius);
 
-$dotnav-item-background:                        color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
-$dotnav-item-hover-background:                  color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
-$dotnav-item-onclick-background:                color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
-$dotnav-item-active-background:                 color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
+$dotnav-item-background: var(--dotnav-item-background);
+$dotnav-item-hover-background: var(--dotnav-item-hover-background);
+$dotnav-item-onclick-background: var(--dotnav-item-onclick-background);
+$dotnav-item-active-background: var(--dotnav-item-active-background);
 
 
 // Set custom properties
@@ -31,16 +31,16 @@ $dotnav-item-active-background:                 color-mix(in oklab, var(--invers
 
 :root {
 
-    --dotnav-margin-horizontal: #{$dotnav-margin-horizontal};
-    --dotnav-margin-vertical: #{$dotnav-margin-vertical};
+    --dotnav-margin-horizontal:                      12px;
+    --dotnav-margin-vertical:                        var(--dotnav-margin-horizontal);
 
-    --dotnav-item-width: #{$dotnav-item-width};
-    --dotnav-item-height: #{$dotnav-item-height};
-    --dotnav-item-border-radius: #{$dotnav-item-border-radius};
+    --dotnav-item-width:                             10px;
+    --dotnav-item-height:                            var(--dotnav-item-width);
+    --dotnav-item-border-radius:                     50%;
 
-    --dotnav-item-background: #{$dotnav-item-background};
-    --dotnav-item-hover-background: #{$dotnav-item-hover-background};
-    --dotnav-item-onclick-background: #{$dotnav-item-onclick-background};
-    --dotnav-item-active-background: #{$dotnav-item-active-background};
+    --dotnav-item-background:                        color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
+    --dotnav-item-hover-background:                  color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
+    --dotnav-item-onclick-background:                color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
+    --dotnav-item-active-background:                 color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
 
 }

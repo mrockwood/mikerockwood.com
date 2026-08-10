@@ -9,12 +9,12 @@
 // Variables
 // ========================================================================
 
-$totop-padding:                                 5px;
-$totop-color:                                   var(--theme-muted-color, var(--global-muted-color));
+$totop-padding: var(--totop-padding);
+$totop-color: var(--totop-color);
 
-$totop-hover-color:                             var(--theme-color, var(--global-color));
+$totop-hover-color: var(--totop-hover-color);
 
-$totop-active-color:                            var(--theme-emphasis-color, var(--global-emphasis-color));
+$totop-active-color: var(--totop-active-color);
 
 
 // Set custom properties
@@ -22,11 +22,11 @@ $totop-active-color:                            var(--theme-emphasis-color, var(
 
 :root {
 
-    --totop-padding: #{$totop-padding};
-    --totop-color: #{$totop-color};
+    --totop-padding:                                 5px;
+    --totop-color:                                   var(--theme-muted-color, var(--global-muted-color));
 
-    --totop-hover-color: #{$totop-hover-color};
+    --totop-hover-color:                             var(--theme-color, var(--global-color));
 
-    --totop-active-color: #{$totop-active-color};
+    --totop-active-color:                            var(--theme-emphasis-color, var(--global-emphasis-color));
 
 }
