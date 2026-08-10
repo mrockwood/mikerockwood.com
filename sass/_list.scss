@@ -7,31 +7,36 @@
 // Variables
 // ========================================================================
 
-$list-margin-top:                               $global-small-margin;
+$list-margin-top:                               var(--global-small-margin);
 
 $list-padding-left:                             30px;
 
-$list-marker-height:                            calc($global-line-height * 1em);
+$list-marker-height:                            calc( var(--global-line-height) * 1em );
 
-$list-muted-color:                              $global-muted-color;
-$list-emphasis-color:                           $global-emphasis-color;
-$list-primary-color:                            $global-primary-background;
-$list-secondary-color:                          $global-secondary-background;
+$list-muted-color:                              var(--theme-muted-color, var(--global-muted-color));
+$list-emphasis-color:                           var(--theme-emphasis-color, var(--global-emphasis-color));
+$list-primary-color:                            var(--theme-primary-background, var(--global-primary-background));
+$list-secondary-color:                          var(--theme-secondary-background, var(--global-secondary-background));
 
-$list-bullet-icon-color:                        $global-color;
+$list-bullet-icon-color:                        var(--theme-color, var(--global-color));
 
-$list-divider-margin-top:                       $global-small-margin;
-$list-divider-border-width:                     $global-border-width;
-$list-divider-border:                           $global-border;
+$list-divider-margin-top:                       var(--global-small-margin);
+$list-divider-border-width:                     var(--global-border-width);
+$list-divider-border:                           var(--theme-border, var(--global-border));
 
-$list-striped-padding-vertical:                 $global-small-margin;
-$list-striped-padding-horizontal:               $global-small-margin;
-$list-striped-background:                       $global-muted-background;
+$list-striped-padding-vertical:                 var(--global-small-margin);
+$list-striped-padding-horizontal:               var(--global-small-margin);
+$list-striped-background:                       var(--theme-muted-background, var(--global-muted-background));
 
-$list-large-margin-top:                         $global-margin;
-$list-large-divider-margin-top:                 $global-margin;
-$list-large-striped-padding-vertical:           $global-margin;
-$list-large-striped-padding-horizontal:         $global-small-margin;
+$list-large-margin-top:                         var(--global-margin);
+$list-large-divider-margin-top:                 var(--global-margin);
+$list-large-striped-padding-vertical:           var(--global-margin);
+$list-large-striped-padding-horizontal:         var(--global-small-margin);
+
+$list-xlarge-margin-top:                        calc( ( var(--global-margin) + var(--global-medium-margin) ) / 2 );
+$list-xlarge-divider-margin-top:                calc( ( var(--global-margin) + var(--global-medium-margin) ) / 2 );
+$list-xlarge-striped-padding-vertical:          calc( ( var(--global-margin) + var(--global-medium-margin) ) / 2 );
+$list-xlarge-striped-padding-horizontal:        var(--global-margin);
 
 $internal-list-bullet-image:                    "../../images/backgrounds/list-bullet.svg";
 
@@ -67,4 +72,29 @@ $internal-list-bullet-image:                    "../../images/backgrounds/list-b
     --list-large-striped-padding-vertical: #{$list-large-striped-padding-vertical};
     --list-large-striped-padding-horizontal: #{$list-large-striped-padding-horizontal};
 
+    --list-xlarge-margin-top: #{$list-xlarge-margin-top};
+    --list-xlarge-divider-margin-top: #{$list-xlarge-divider-margin-top};
+    --list-xlarge-striped-padding-vertical: #{$list-xlarge-striped-padding-vertical};
+    --list-xlarge-striped-padding-horizontal: #{$list-xlarge-striped-padding-horizontal};
+
 }
+
+
+// Mixins
+// ========================================================================
+
+@mixin hook-list-misc() {
+
+    .uk-list-xlarge > :nth-child(n+2),
+    .uk-list-xlarge > * > ul { margin-block-start: var(--list-xlarge-margin-top); }
+
+    .uk-list-xlarge.uk-list-divider > :nth-child(n+2) {
+        margin-block-start: var(--list-xlarge-divider-margin-top);
+        padding-block-start: var(--list-xlarge-divider-margin-top);
+    }
+
+    .uk-list-xlarge.uk-list-striped > * { padding: var(--list-xlarge-striped-padding-vertical) var(--list-xlarge-striped-padding-horizontal); }
+
+    .uk-list-xlarge.uk-list-striped > :nth-child(n+2) { margin-block-start: 0; }
+
+};

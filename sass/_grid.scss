@@ -5,6 +5,7 @@
 
 
 // Variables
+// Mostly stuck with Sass variables due to calc() in vendor files
 // ========================================================================
 
 $grid-gutter-horizontal:                        $global-gutter;
@@ -23,8 +24,8 @@ $grid-large-gutter-vertical:                    $grid-large-gutter-horizontal;
 $grid-large-gutter-horizontal-l:                $global-large-gutter;
 $grid-large-gutter-vertical-l:                  $grid-large-gutter-horizontal-l;
 
-$grid-divider-border-width:                     $global-border-width;
-$grid-divider-border:                           $global-border;
+$grid-divider-border-width:                     var(--global-border-width);
+$grid-divider-border:                           var(--theme-border, var(--global-border));
 
 
 // Set custom properties
@@ -34,8 +35,6 @@ $grid-divider-border:                           $global-border;
 
     --grid-gutter-horizontal: #{$grid-gutter-horizontal};
     --grid-gutter-vertical: #{$grid-gutter-vertical};
-    --grid-gutter-horizontal-l: #{$grid-gutter-horizontal-l};
-    --grid-gutter-vertical-l: #{$grid-gutter-vertical-l};
 
     --grid-small-gutter-horizontal: #{$grid-small-gutter-horizontal};
     --grid-small-gutter-vertical: #{$grid-small-gutter-vertical};
@@ -45,10 +44,19 @@ $grid-divider-border:                           $global-border;
 
     --grid-large-gutter-horizontal: #{$grid-large-gutter-horizontal};
     --grid-large-gutter-vertical: #{$grid-large-gutter-vertical};
-    --grid-large-gutter-horizontal-l: #{$grid-large-gutter-horizontal-l};
-    --grid-large-gutter-vertical-l: #{$grid-large-gutter-vertical-l};
 
     --grid-divider-border-width: #{$grid-divider-border-width};
     --grid-divider-border: #{$grid-divider-border};
+
+    /* Desktop and bigger */
+    @media (min-width: $breakpoint-large) {
+
+        --grid-gutter-horizontal: #{$grid-gutter-horizontal-l};
+        --grid-gutter-vertical: #{$grid-gutter-vertical-l};
+
+        --grid-large-gutter-horizontal: #{$grid-large-gutter-horizontal-l};
+        --grid-large-gutter-vertical: #{$grid-large-gutter-vertical-l};
+
+    }
 
 }

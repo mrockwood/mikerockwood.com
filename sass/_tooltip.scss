@@ -7,15 +7,18 @@
 // Variables
 // ========================================================================
 
-$tooltip-z-index:                               $global-z-index + 30;
+$tooltip-z-index:                               calc( var(--global-z-index) + 30 );
 $tooltip-margin:                                10px;
 $tooltip-max-width:                             200px;
 $tooltip-padding-vertical:                      3px;
 $tooltip-padding-horizontal:                    6px;
-$tooltip-background:                            #666;
+$tooltip-background:                            color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 20%);
 $tooltip-border-radius:                         2px;
-$tooltip-color:                                 $global-inverse-color;
+$tooltip-color:                                 var(--inverse-theme-color, var(--global-inverse-color) );
 $tooltip-font-size:                             12px;
+
+$tooltip-primary-background:                    color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 20%);
+$tooltip-primary-color:                         var(--theme-color, var(--global-color) );
 
 
 // Set custom properties
@@ -33,4 +36,20 @@ $tooltip-font-size:                             12px;
     --tooltip-color: #{$tooltip-color};
     --tooltip-font-size: #{$tooltip-font-size};
 
+    --tooltip-primary-background: #{$tooltip-primary-background};
+	--tooltip-primary-color: #{$tooltip-primary-color};
+
 }
+
+
+// Mixins
+// ========================================================================
+
+@mixin hook-tooltip-misc() {
+
+    .uk-tooltip-primary {
+        background: var(--tooltip-primary-background);
+        color: var(--tooltip-primary-color);
+    }
+
+};

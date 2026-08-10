@@ -10,7 +10,7 @@
 // ========================================================================
 
 $leader-fill-content:                           '.';
-$leader-fill-margin-left:                       $global-small-gutter;
+$leader-fill-margin-left:                       var(--global-small-gutter);
 
 
 // Set custom properties

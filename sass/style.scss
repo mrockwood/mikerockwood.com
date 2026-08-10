@@ -60,10 +60,8 @@
 @import "_container";
 @import "_vendor/container";
 
-/*
 @import "_tile";
 @import "_vendor/tile";
-*/
 
 @import "_card";
 @import "_vendor/card";
@@ -132,8 +130,8 @@
 @import "_slider";
 @import "_vendor/slider";
 
-// @import "_sticky";
-// @import "_vendor/sticky";
+@import "_sticky";
+@import "_vendor/sticky";
 
 @import "_offcanvas";
 @import "_vendor/offcanvas";

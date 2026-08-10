@@ -8,10 +8,10 @@
 // ========================================================================
 
 $progress-height:                               15px;
-$progress-margin-vertical:                      $global-margin;
-$progress-background:                           $global-muted-background;
+$progress-margin-vertical:                      var(--global-margin);
+$progress-background:                           var(--theme-muted-background, var(--global-muted-background));
 
-$progress-bar-background:                       $global-primary-background;
+$progress-bar-background:                       var(--theme-primary-background, var(--global-primary-background));
 
 
 // Set custom properties

@@ -7,29 +7,29 @@
 // Variables
 // ========================================================================
 
-$section-padding-vertical:                        $global-medium-margin;
-$section-padding-vertical-m:                      $global-large-margin;
+$section-padding-vertical:                        var(--global-medium-margin);
+$section-padding-vertical-m:                      var(--global-large-margin);
 
-$section-xsmall-padding-vertical:                 $global-margin;
+$section-xsmall-padding-vertical:                 var(--global-margin);
 
-$section-small-padding-vertical:                  $global-medium-margin;
+$section-small-padding-vertical:                  var(--global-medium-margin);
 
-$section-large-padding-vertical:                  $global-large-margin;
-$section-large-padding-vertical-m:                $global-xlarge-margin;
+$section-large-padding-vertical:                  var(--global-large-margin);
+$section-large-padding-vertical-m:                var(--global-xlarge-margin);
 
-$section-xlarge-padding-vertical:                 $global-xlarge-margin;
-$section-xlarge-padding-vertical-m:               ($global-large-margin + $global-xlarge-margin);
+$section-xlarge-padding-vertical:                 var(--global-xlarge-margin);
+$section-xlarge-padding-vertical-m:               calc(var(--global-large-margin) + var(--global-xlarge-margin));
 
-$section-default-background:                      $global-background;
+$section-default-background:                      var(--global-background);
 $section-default-color-mode:                      dark;
 
-$section-muted-background:                        $global-muted-background;
+$section-muted-background:                        var(--global-muted-background);
 $section-muted-color-mode:                        dark;
 
-$section-primary-background:                      $global-primary-background;
+$section-primary-background:                      var(--global-primary-background);
 $section-primary-color-mode:                      light;
 
-$section-secondary-background:                    $global-secondary-background;
+$section-secondary-background:                    var(--global-secondary-background);
 $section-secondary-color-mode:                    light;
 
 
@@ -39,17 +39,14 @@ $section-secondary-color-mode:                    light;
 :root {
 
     --section-padding-vertical: #{$section-padding-vertical};
-    --section-padding-vertical-m: #{$section-padding-vertical-m};
 
     --section-xsmall-padding-vertical: #{$section-xsmall-padding-vertical};
 
     --section-small-padding-vertical: #{$section-small-padding-vertical};
 
     --section-large-padding-vertical: #{$section-large-padding-vertical};
-    --section-large-padding-vertical-m: #{$section-large-padding-vertical-m};
 
     --section-xlarge-padding-vertical: #{$section-xlarge-padding-vertical};
-    --section-xlarge-padding-vertical-m: #{$section-xlarge-padding-vertical-m};
 
     --section-default-background: #{$section-default-background};
     --section-default-color-mode: #{$section-default-color-mode};
@@ -62,5 +59,13 @@ $section-secondary-color-mode:                    light;
 
     --section-secondary-background: #{$section-secondary-background};
     --section-secondary-color-mode: #{$section-secondary-color-mode};
+
+    @media (min-width: $breakpoint-medium) {
+
+        --section-padding-vertical: #{$section-padding-vertical-m};
+        --section-large-padding-vertical: #{$section-large-padding-vertical-m};
+        --section-xlarge-padding-vertical: #{$section-xlarge-padding-vertical-m};
+
+    }
 
 }

@@ -7,10 +7,10 @@
 // Variables
 // ========================================================================
 
-$align-margin-horizontal:                       $global-gutter;
-$align-margin-vertical:                         $global-gutter;
+$align-margin-horizontal:                       var(--global-gutter);
+$align-margin-vertical:                         var(--global-gutter);
 
-$align-margin-horizontal-l:                     $global-medium-gutter;
+$align-margin-horizontal-l:                     var(--global-medium-gutter);
 
 
 :root {
@@ -18,6 +18,10 @@ $align-margin-horizontal-l:                     $global-medium-gutter;
     --align-margin-horizontal: #{$align-margin-horizontal};
     --align-margin-vertical: #{$align-margin-vertical};
 
-    --align-margin-horizontal-l: #{$align-margin-horizontal-l};
+    @media (min-width: $breakpoint-medium) {
+
+        --align-margin-horizontal: #{$align-margin-horizontal-l};
+
+    }
 
 }

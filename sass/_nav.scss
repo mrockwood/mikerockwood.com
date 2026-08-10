@@ -39,62 +39,63 @@ $nav-sublist-item-padding-vertical:             2px;
 
 $nav-parent-icon-margin-left:                   0.25em;
 
-$nav-header-padding-vertical:                   $nav-item-padding-vertical;
-$nav-header-padding-horizontal:                 $nav-item-padding-horizontal;
-$nav-header-font-size:                          $global-small-font-size;
+$nav-header-padding-vertical:                   var(--nav-item-padding-vertical);
+$nav-header-padding-horizontal:                 var(--nav-item-padding-horizontal);
+$nav-header-font-size:                          var(--global-small-font-size);
+$nav-header-font-weight:                        500;
 $nav-header-text-transform:                     uppercase;
-$nav-header-margin-top:                         $global-margin;
+$nav-header-margin-top:                         var(--global-margin);
 
 $nav-divider-margin-vertical:                   5px;
 $nav-divider-margin-horizontal:                 0;
 
-$nav-default-font-size:                         $global-font-size;
-$nav-default-line-height:                       $global-line-height;
-$nav-default-item-color:                        $global-muted-color;
-$nav-default-item-hover-color:                  $global-color;
-$nav-default-item-active-color:                 $global-emphasis-color;
-$nav-default-subtitle-font-size:                $global-small-font-size;
-$nav-default-header-color:                      $global-emphasis-color;
-$nav-default-divider-border-width:              $global-border-width;
-$nav-default-divider-border:                    $global-border;
-$nav-default-sublist-font-size:                 $nav-default-font-size;
-$nav-default-sublist-line-height:               $nav-default-line-height;
-$nav-default-sublist-item-color:                $global-muted-color;
-$nav-default-sublist-item-hover-color:          $global-color;
-$nav-default-sublist-item-active-color:         $global-emphasis-color;
+$nav-default-font-size:                         var(--global-font-size);
+$nav-default-line-height:                       var(--global-line-height);
+$nav-default-item-color:                        var(--theme-muted-color, var(--global-muted-color));
+$nav-default-item-hover-color:                  var(--theme-color, var(--global-color));
+$nav-default-item-active-color:                 var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-default-subtitle-font-size:                var(--global-small-font-size);
+$nav-default-header-color:                      var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-default-divider-border-width:              var(--global-border-width);
+$nav-default-divider-border:                    var(--theme-border, var(--global-border));
+$nav-default-sublist-font-size:                 var(--nav-default-font-size);
+$nav-default-sublist-line-height:               var(--nav-default-line-height);
+$nav-default-sublist-item-color:                var(--theme-muted-color, var(--global-muted-color));
+$nav-default-sublist-item-hover-color:          var(--theme-color, var(--global-color));
+$nav-default-sublist-item-active-color:         var(--theme-emphasis-color, var(--global-emphasis-color));
 
-$nav-primary-font-size:                         $global-large-font-size;
-$nav-primary-line-height:                       $global-line-height;
-$nav-primary-item-color:                        $global-muted-color;
-$nav-primary-item-hover-color:                  $global-color;
-$nav-primary-item-active-color:                 $global-emphasis-color;
-$nav-primary-subtitle-font-size:                $global-medium-font-size;
-$nav-primary-header-color:                      $global-emphasis-color;
-$nav-primary-divider-border-width:              $global-border-width;
-$nav-primary-divider-border:                    $global-border;
-$nav-primary-sublist-font-size:                 $global-medium-font-size;
-$nav-primary-sublist-line-height:               $global-line-height;
-$nav-primary-sublist-item-color:                $global-muted-color;
-$nav-primary-sublist-item-hover-color:          $global-color;
-$nav-primary-sublist-item-active-color:         $global-emphasis-color;
+$nav-primary-font-size:                         var(--global-large-font-size);
+$nav-primary-line-height:                       var(--global-line-height);
+$nav-primary-item-color:                        var(--theme-muted-color, var(--global-muted-color));
+$nav-primary-item-hover-color:                  var(--theme-color, var(--global-color));
+$nav-primary-item-active-color:                 var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-primary-subtitle-font-size:                var(--global-medium-font-size);
+$nav-primary-header-color:                      var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-primary-divider-border-width:              var(--global-border-width);
+$nav-primary-divider-border:                    var(--theme-border, var(--global-border));
+$nav-primary-sublist-font-size:                 var(--global-medium-font-size);
+$nav-primary-sublist-line-height:               var(--global-line-height);
+$nav-primary-sublist-item-color:                var(--theme-muted-color, var(--global-muted-color));
+$nav-primary-sublist-item-hover-color:          var(--theme-color, var(--global-color));
+$nav-primary-sublist-item-active-color:         var(--theme-emphasis-color, var(--global-emphasis-color));
 
-$nav-secondary-font-size:                       $global-font-size;
-$nav-secondary-line-height:                     $global-line-height;
-$nav-secondary-item-color:                      $global-emphasis-color;
-$nav-secondary-item-hover-color:                $global-emphasis-color;
-$nav-secondary-item-active-color:               $global-emphasis-color;
-$nav-secondary-subtitle-font-size:              $global-small-font-size;
-$nav-secondary-subtitle-color:                  $global-muted-color;
-$nav-secondary-subtitle-hover-color:            $global-color;
-$nav-secondary-subtitle-active-color:           $global-emphasis-color;
-$nav-secondary-header-color:                    $global-emphasis-color;
-$nav-secondary-divider-border-width:            $global-border-width;
-$nav-secondary-divider-border:                  $global-border;
-$nav-secondary-sublist-font-size:               $global-small-font-size;
-$nav-secondary-sublist-line-height:             $global-line-height;
-$nav-secondary-sublist-item-color:              $global-muted-color;
-$nav-secondary-sublist-item-hover-color:        $global-color;
-$nav-secondary-sublist-item-active-color:       $global-emphasis-color;
+$nav-secondary-font-size:                       var(--global-font-size);
+$nav-secondary-line-height:                     var(--global-line-height);
+$nav-secondary-item-color:                      var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-secondary-item-hover-color:                var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-secondary-item-active-color:               var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-secondary-subtitle-font-size:              var(--global-small-font-size);
+$nav-secondary-subtitle-color:                  var(--theme-muted-color, var(--global-muted-color));
+$nav-secondary-subtitle-hover-color:            var(--theme-color, var(--global-color));
+$nav-secondary-subtitle-active-color:           var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-secondary-header-color:                    var(--theme-emphasis-color, var(--global-emphasis-color));
+$nav-secondary-divider-border-width:            var(--global-border-width);
+$nav-secondary-divider-border:                  var(--theme-border, var(--global-border));
+$nav-secondary-sublist-font-size:               var(--global-small-font-size);
+$nav-secondary-sublist-line-height:             var(--global-line-height);
+$nav-secondary-sublist-item-color:              var(--theme-muted-color, var(--global-muted-color));
+$nav-secondary-sublist-item-hover-color:        var(--theme-color, var(--global-color));
+$nav-secondary-sublist-item-active-color:       var(--theme-emphasis-color, var(--global-emphasis-color));
 
 $nav-medium-line-height:                        1;
 $nav-medium-font-size:                          2.5rem;    // 40px 0.714
@@ -112,8 +113,8 @@ $nav-xlarge-font-size-m:                        6rem; // 96px
 $nav-xlarge-font-size-l:                        8rem; // 128px
 
 $nav-dividers-margin-top:                       5px;
-$nav-dividers-border-width:                     $global-border-width;
-$nav-dividers-border:                           $global-border;
+$nav-dividers-border-width:                     var(--global-border-width);
+$nav-dividers-border:                           var(--theme-border, var(--global-border));
 
 
 // Set custom properties

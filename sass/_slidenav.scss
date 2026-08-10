@@ -18,12 +18,12 @@
 $slidenav-padding-vertical:                     5px;
 $slidenav-padding-horizontal:                   10px;
 
-$slidenav-color:                                color-mix(in srgb, $global-color 50%, transparent);
-$slidenav-hover-color:                          color-mix(in srgb, $global-color 10%, transparent);
-$slidenav-active-color:                         color-mix(in srgb, $global-color 50%, transparent);
+$slidenav-color:                                color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 50%);
+$slidenav-hover-color:                          color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 10%);
+$slidenav-active-color:                         color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 50%);
 
 $slidenav-large-padding-vertical:               10px;
-$slidenav-large-padding-horizontal:             $slidenav-large-padding-vertical;
+$slidenav-large-padding-horizontal:             var(--slidenav-large-padding-vertical);
 
 
 // Set custom properties

@@ -11,13 +11,13 @@
 // Variables
 // ========================================================================
 
-$padding-padding:                                       $global-gutter;
-$padding-padding-l:                                     $global-medium-gutter;
+$padding-padding:                                       var(--global-gutter);
+$padding-padding-l:                                     var(--global-medium-gutter);
 
-$padding-small-padding:                                 $global-small-gutter;
+$padding-small-padding:                                 var(--global-small-gutter);
 
-$padding-large-padding:                                 $global-medium-gutter;
-$padding-large-padding-l:                               $global-large-gutter;
+$padding-large-padding:                                 var(--global-medium-gutter);
+$padding-large-padding-l:                               var(--global-large-gutter);
 
 
 // Set custom properties
@@ -26,11 +26,16 @@ $padding-large-padding-l:                               $global-large-gutter;
 :root {
 
     --padding-padding: #{$padding-padding};
-    --padding-padding-l: #{$padding-padding-l};
 
     --padding-small-padding: #{$padding-small-padding};
 
     --padding-large-padding: #{$padding-large-padding};
-    --padding-large-padding-l: #{$padding-large-padding-l};
+
+    @media (min-width: $breakpoint-large) {
+
+        --padding-padding: #{$padding-padding-l};
+        --padding-large-padding: #{$padding-large-padding-l};
+
+    }
 
 }

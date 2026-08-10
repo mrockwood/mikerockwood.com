@@ -10,13 +10,13 @@
 // ========================================================================
 
 $form-range-track-height:                       3px;
-$form-range-track-background:                   color-mix(in srgb, $global-muted-background 5%, black);
-$form-range-track-focus-background:             color-mix(in srgb, $form-range-track-background 5%, black);
+$form-range-track-background:                   color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
+$form-range-track-focus-background:             var(--theme-muted-background, var(--global-muted-background));
 
 $form-range-thumb-height:                       15px;
-$form-range-thumb-width:                        $form-range-thumb-height;
+$form-range-thumb-width:                        var(--form-range-thumb-height);
 $form-range-thumb-border-radius:                500px;
-$form-range-thumb-background:                   $global-color;
+$form-range-thumb-background:                   var(--theme-color, var(--global-color));
 
 
 // Set custom properties

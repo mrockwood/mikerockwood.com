@@ -7,8 +7,8 @@
 // Variables
 // ========================================================================
 
-$close-color:                                   $global-muted-color;
-$close-hover-color:                             $global-color;
+$close-color:                                   var(--theme-muted-color, var(--global-muted-color));
+$close-hover-color:                             var(--theme-color, var(--global-color));
 
 
 // Set custom properties

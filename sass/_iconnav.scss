@@ -7,14 +7,14 @@
 // Variables
 // ========================================================================
 
-$iconnav-margin-horizontal:                      $global-small-margin;
-$iconnav-margin-vertical:                        $iconnav-margin-horizontal;
+$iconnav-margin-horizontal:                      var(--global-small-margin);
+$iconnav-margin-vertical:                        var(--iconnav-margin-horizontal);
 
-$iconnav-item-color:                             $global-muted-color;
+$iconnav-item-color:                             var(--theme-muted-color, var(--global-muted-color));
 
-$iconnav-item-hover-color:                       $global-color;
+$iconnav-item-hover-color:                       var(--theme-color, var(--global-color));
 
-$iconnav-item-active-color:                      $global-color;
+$iconnav-item-active-color:                      var(--theme-color, var(--global-color));
 
 
 // Set custom properties

@@ -17,17 +17,17 @@
 
 $dropbar-margin:                                0;
 $dropbar-padding-top:                           15px;
-$dropbar-padding-bottom:                        $dropbar-padding-top;
+$dropbar-padding-bottom:                        var(--dropbar-padding-top);
 $dropbar-padding-horizontal:                    15px;
-$dropbar-padding-horizontal-s:                  $global-gutter;
-$dropbar-padding-horizontal-m:                  $global-medium-gutter;
-$dropbar-background:                            $global-muted-background;
-$dropbar-color:                                 $global-color;
+$dropbar-padding-horizontal-s:                  var(--global-gutter);
+$dropbar-padding-horizontal-m:                  var(--global-medium-gutter);
+$dropbar-background:                            var(--theme-muted-background, var(--global-muted-background));
+$dropbar-color:                                 var(--theme-color, var(--global-color));
 $dropbar-color-mode:                            dark;
 $dropbar-focus-outline:                         $base-focus-outline;
 
 $dropbar-large-padding-top:                     40px;
-$dropbar-large-padding-bottom:                  $dropbar-large-padding-top;
+$dropbar-large-padding-bottom:                  var(--dropbar-large-padding-top);
 
 
 // Set custom properties
@@ -39,8 +39,6 @@ $dropbar-large-padding-bottom:                  $dropbar-large-padding-top;
     --dropbar-padding-top: #{$dropbar-padding-top};
     --dropbar-padding-bottom: #{$dropbar-padding-bottom};
     --dropbar-padding-horizontal: #{$dropbar-padding-horizontal};
-    --dropbar-padding-horizontal-s: #{$dropbar-padding-horizontal-s};
-    --dropbar-padding-horizontal-m: #{$dropbar-padding-horizontal-m};
     --dropbar-background: #{$dropbar-background};
     --dropbar-color: #{$dropbar-color};
     --dropbar-color-mode: #{$dropbar-color-mode};
@@ -48,5 +46,19 @@ $dropbar-large-padding-bottom:                  $dropbar-large-padding-top;
 
     --dropbar-large-padding-top: #{$dropbar-large-padding-top};
     --dropbar-large-padding-bottom: #{$dropbar-large-padding-bottom};
+
+    /* Phone landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        --dropbar-padding-horizontal: #{$dropbar-padding-horizontal-s};
+
+    }
+
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
+
+        --dropbar-padding-horizontal: #{$dropbar-padding-horizontal-m};
+
+    }
 
 }

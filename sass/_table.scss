@@ -7,28 +7,28 @@
 // Variables
 // ========================================================================
 
-$table-margin-vertical:                         $global-margin;
+$table-margin-vertical:                         var(--global-margin);
 
 $table-cell-padding-vertical:                   16px;
 $table-cell-padding-horizontal:                 12px;
 
-$table-header-cell-font-size:                   $global-font-size;
+$table-header-cell-font-size:                   var(--global-font-size);
 $table-header-cell-font-weight:                 bold;
-$table-header-cell-color:                       $global-color;
+$table-header-cell-color:                       var(--theme-color, var(--global-color));
 
-$table-footer-font-size:                        $global-small-font-size;
+$table-footer-font-size:                        var(--global-small-font-size);
 
-$table-caption-font-size:                       $global-small-font-size;
-$table-caption-color:                           $global-muted-color;
+$table-caption-font-size:                       var(--global-small-font-size);
+$table-caption-color:                           var(--theme-muted-color, var(--global-muted-color) );
 
 $table-row-active-background:                   #ffd;
 
-$table-divider-border-width:                    $global-border-width;
-$table-divider-border:                          $global-border;
+$table-divider-border-width:                    var(--global-border-width);
+$table-divider-border:                          var(--theme-border, var(--global-border));
 
-$table-striped-row-background:                  $global-muted-background;
+$table-striped-row-background:                  var(--theme-muted-background, var(--global-muted-background));
 
-$table-hover-row-background:                    $table-row-active-background;
+$table-hover-row-background:                    var(--table-row-active-background);
 
 $table-small-cell-padding-vertical:             10px;
 $table-small-cell-padding-horizontal:           12px;

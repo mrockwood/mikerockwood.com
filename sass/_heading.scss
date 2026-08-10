@@ -55,7 +55,7 @@ $heading-line-margin-horizontal:                calc(5px + 0.3em);
 // Set custom properties
 // ========================================================================
 
-:where([class*='uk-heading']) {
+:root {
 
     --heading-small-font-size: #{$heading-small-font-size};
     --heading-medium-font-size: #{$heading-medium-font-size};
@@ -88,12 +88,8 @@ $heading-line-margin-horizontal:                calc(5px + 0.3em);
     --heading-line-border: #{$heading-line-border};
     --heading-line-margin-horizontal: #{$heading-line-margin-horizontal};
 
-}
-
-/* Tablet landscape and bigger */
-@media (min-width: $breakpoint-medium) {
-
-    :where([class*='uk-heading']) {
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
 
         --heading-small-font-size: #{$heading-small-font-size-m};
         --heading-medium-font-size: #{$heading-medium-font-size-m};
@@ -104,12 +100,8 @@ $heading-line-margin-horizontal:                calc(5px + 0.3em);
 
     }
 
-}
-
-/* Desktop and bigger */
-@media (min-width: $breakpoint-large) {
-
-    :where([class*='uk-heading']) {
+    /* Desktop and bigger */
+    @media (min-width: $breakpoint-large) {
 
         --heading-medium-font-size: #{$heading-medium-font-size-l};
         --heading-large-font-size: #{$heading-large-font-size-l};

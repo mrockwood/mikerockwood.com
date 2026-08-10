@@ -7,26 +7,28 @@
 // Variables
 // ========================================================================
 
-$form-height:                                   $global-control-height;
-$form-line-height:                              $form-height;
+$form-accent-color:                             var(--theme-primary-background, var(--global-primary-background));
+
+$form-height:                                   var(--global-control-height);
+$form-line-height:                              var(--form-height);
 
 $form-padding-horizontal:                       10px;
-$form-multi-line-padding-horizontal:            $form-padding-horizontal;
-$form-multi-line-padding-vertical:              round($form-multi-line-padding-horizontal * 0.6);
+$form-multi-line-padding-horizontal:            var(--form-padding-horizontal);
+$form-multi-line-padding-vertical:              calc( var(--form-padding-horizontal) * 0.6 );
 
-$form-background:                               $global-muted-background;
-$form-color:                                    $global-color;
+$form-background:                               color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
+$form-color:                                    var(--theme-color, var(--global-color));
 
-$form-focus-background:                         darken($form-background, 5%);
-$form-focus-color:                              $global-color;
+$form-focus-background:                         var(--theme-muted-background, var(--global-muted-background));
+$form-focus-color:                              var(--theme-color, var(--global-color));
 
-$form-disabled-background:                      $global-muted-background;
-$form-disabled-color:                           $global-muted-color;
+$form-disabled-background:                      var(--theme-muted-background, var(--global-muted-background));
+$form-disabled-color:                           var(--theme-muted-color, var(--global-muted-color));
 
-$form-placeholder-color:                        $global-muted-color;
+$form-placeholder-color:                        var(--theme-muted-color, var(--global-muted-color));
 
-$form-danger-color:                             $global-danger-background;
-$form-success-color:                            $global-success-background;
+$form-danger-color:                             var(--theme-danger-background, var(--global-danger-background));
+$form-success-color:                            var(--theme-success-background, var(--global-success-background) );
 
 $form-width-xsmall:                             50px;
 $form-width-small:                              130px;
@@ -34,56 +36,56 @@ $form-width-medium:                             200px;
 $form-width-large:                              500px;
 
 $form-select-padding-right:                     20px;
-$form-select-icon-color:                        $global-color;
-$form-select-option-color:                      $global-color;
-$form-select-disabled-icon-color:               $global-muted-color;
+$form-select-icon-color:                        var(--theme-color, var(--global-color));
+$form-select-option-color:                      var(--theme-color, var(--global-color));
+$form-select-disabled-icon-color:               var(--theme-muted-color, var(--global-muted-color));
 
 $form-datalist-padding-right:                   20px;
-$form-datalist-icon-color:                      $global-color;
+$form-datalist-icon-color:                      var(--theme-color, var(--global-color));
 
 $form-radio-size:                               16px;
 $form-radio-margin-top:                         -4px;
-$form-radio-background:                         darken($global-muted-background, 5%);
+$form-radio-background:                         var(--theme-muted-background, var(--global-muted-background));
 
-$form-radio-focus-background:                   darken($form-radio-background, 5%);
+$form-radio-focus-background:                   var(--theme-muted-background, var(--global-muted-background));
 
-$form-radio-checked-background:                 $global-primary-background;
-$form-radio-checked-icon-color:                 $global-inverse-color;
+$form-radio-checked-background:                 var(--theme-primary-background, var(--global-primary-background));
+$form-radio-checked-icon-color:                 var(--inverse-theme-emphasis-color, var(--global-inverse-color));
 
-$form-radio-checked-focus-background:           darken($global-primary-background, 10%);
+$form-radio-checked-focus-background:           var(--theme-primary-background, var(--global-primary-background));
 
-$form-radio-disabled-background:                $global-muted-background;
-$form-radio-disabled-icon-color:                $global-muted-color;
+$form-radio-disabled-background:                var(--theme-muted-background, var(--global-muted-background));
+$form-radio-disabled-icon-color:                var(--theme-muted-color, var(--global-muted-color));
 
-$form-small-font-size:                          $global-small-font-size;
-$form-small-height:                             $global-control-small-height;
+$form-small-font-size:                          var(--global-small-font-size);
+$form-small-height:                             var(--global-control-small-height);
 $form-small-padding-horizontal:                 8px;
-$form-small-multi-line-padding-horizontal:      $form-small-padding-horizontal;
-$form-small-multi-line-padding-vertical:        round($form-small-multi-line-padding-horizontal * 0.6);
-$form-small-line-height:                        $form-small-height;
+$form-small-multi-line-padding-horizontal:      var(--form-small-padding-horizontal);
+$form-small-multi-line-padding-vertical:        calc(var(--form-small-multi-line-padding-horizontal) * 0.6);
+$form-small-line-height:                        var(--form-small-height);
 $form-small-radio-size:                         14px;
 
-$form-large-font-size:                          $global-medium-font-size;
-$form-large-height:                             $global-control-large-height;
+$form-large-font-size:                          var(--global-medium-font-size);
+$form-large-height:                             var(--global-control-large-height);
 $form-large-padding-horizontal:                 12px;
-$form-large-multi-line-padding-horizontal:      $form-large-padding-horizontal;
-$form-large-multi-line-padding-vertical:        round($form-large-multi-line-padding-horizontal * 0.6);
-$form-large-line-height:                        $form-large-height;
+$form-large-multi-line-padding-horizontal:      var(--form-large-padding-horizontal);
+$form-large-multi-line-padding-vertical:        calc(var(--form-large-multi-line-padding-horizontal) * 0.6);
+$form-large-line-height:                        var(--form-large-height);
 $form-large-radio-size:                         22px;
 
-$form-legend-font-size:                         $global-large-font-size;
+$form-legend-font-size:                         var(--global-large-font-size);
 $form-legend-line-height:                       1.4;
 
-$form-stacked-margin-bottom:                    $global-small-margin;
+$form-stacked-margin-bottom:                    var(--global-small-margin);
 
 $form-horizontal-label-width:                   200px;
 $form-horizontal-label-margin-top:              7px;
 $form-horizontal-controls-margin-left:          215px;
 $form-horizontal-controls-text-padding-top:     7px;
 
-$form-icon-width:                               $form-height;
-$form-icon-color:                               $global-muted-color;
-$form-icon-hover-color:                         $global-color;
+$form-icon-width:                               var(--form-height);
+$form-icon-color:                               var(--theme-muted-color, var(--global-muted-color));
+$form-icon-hover-color:                         var(--theme-color, var(--global-color));
 
 $internal-form-select-image:                     "../../images/backgrounds/form-select.svg";
 $internal-form-datalist-image:                   "../../images/backgrounds/form-datalist.svg";

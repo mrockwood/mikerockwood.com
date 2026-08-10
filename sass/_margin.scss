@@ -7,19 +7,19 @@
 // Variables
 // ========================================================================
 
-$margin-margin:                                        $global-margin;
+$margin-margin:                                        var(--global-margin);
 
-$margin-xsmall-margin:                                 5px;
+$margin-xsmall-margin:                                 var(--global-xsmall-margin);
 
-$margin-small-margin:                                  $global-small-margin;
+$margin-small-margin:                                  var(--global-small-margin);
 
-$margin-medium-margin:                                 $global-medium-margin;
+$margin-medium-margin:                                 var(--global-medium-margin);
 
-$margin-large-margin:                                  $global-medium-margin;
-$margin-large-margin-l:                                $global-large-margin;
+$margin-large-margin:                                  var(--global-medium-margin);
+$margin-large-margin-l:                                var(--global-large-margin);
 
-$margin-xlarge-margin:                                 $global-large-margin;
-$margin-xlarge-margin-l:                               $global-xlarge-margin;
+$margin-xlarge-margin:                                 var(--global-large-margin);
+$margin-xlarge-margin-l:                               var(--global-xlarge-margin);
 
 
 // Set custom properties
@@ -36,9 +36,15 @@ $margin-xlarge-margin-l:                               $global-xlarge-margin;
     --margin-medium-margin: #{$margin-medium-margin};
 
     --margin-large-margin: #{$margin-large-margin};
-    --margin-large-margin-l: #{$margin-large-margin-l};
 
     --margin-xlarge-margin: #{$margin-xlarge-margin};
-    --margin-xlarge-margin-l: #{$margin-xlarge-margin-l};
+
+    /* Desktop and bigger */
+    @media (min-width: $breakpoint-large) {
+
+        --margin-large-margin: #{$margin-large-margin-l};
+        --margin-xlarge-margin: #{$margin-xlarge-margin-l};
+
+    }
 
 }

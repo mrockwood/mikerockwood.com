@@ -7,10 +7,11 @@
 // Variables
 // ========================================================================
 
+// Must use Sass variables due to calc in vendor file.
 $column-gutter:                                 $global-gutter;
 $column-gutter-l:                               $global-medium-gutter;
 
-$column-divider-rule-color:                     $global-border;
+$column-divider-rule-color:                     var(--theme-border, var(--global-border));
 $column-divider-rule-width:                     1px;
 
 
@@ -20,9 +21,15 @@ $column-divider-rule-width:                     1px;
 :root {
 
     --column-gutter: #{$column-gutter};
-    --column-gutter-l: #{$column-gutter-l};
 
     --column-divider-rule-color: #{$column-divider-rule-color};
     --column-divider-rule-width: #{$column-divider-rule-width};
+
+    /* Large screen and bigger */
+    @media (min-width: $breakpoint-large) {
+
+        --column-gutter: #{$column-gutter-l};
+
+    }
 
 }

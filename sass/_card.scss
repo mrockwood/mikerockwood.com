@@ -7,74 +7,74 @@
 // Variables
 // ========================================================================
 
-$card-body-padding-horizontal:                 $global-gutter;
-$card-body-padding-vertical:                   $global-gutter;
+$card-body-padding-horizontal:                 var(--global-gutter);
+$card-body-padding-vertical:                   var(--global-gutter);
 
-$card-body-padding-horizontal-l:               $global-medium-gutter;
-$card-body-padding-vertical-l:                 $global-medium-gutter;
+$card-body-padding-horizontal-l:               var(--global-medium-gutter);
+$card-body-padding-vertical-l:                 var(--global-medium-gutter);
 
-$card-header-padding-horizontal:               $global-gutter;
-$card-header-padding-vertical:                 round(($global-gutter / 2));
+$card-header-padding-horizontal:               var(--global-gutter);
+$card-header-padding-vertical:                 calc(var(--global-gutter) / 2);
 
-$card-header-padding-horizontal-l:             $global-medium-gutter;
-$card-header-padding-vertical-l:               round(($global-medium-gutter / 2));
+$card-header-padding-horizontal-l:             var(--global-medium-gutter);
+$card-header-padding-vertical-l:               calc(var(--global-medium-gutter) / 2);
 
-$card-footer-padding-horizontal:               $global-gutter;
-$card-footer-padding-vertical:                 ($global-gutter / 2);
+$card-footer-padding-horizontal:               var(--global-gutter);
+$card-footer-padding-vertical:                 calc(var(--global-gutter) / 2);
 
-$card-footer-padding-horizontal-l:             $global-medium-gutter;
-$card-footer-padding-vertical-l:               round(($global-medium-gutter / 2));
+$card-footer-padding-horizontal-l:             var(--global-medium-gutter);
+$card-footer-padding-vertical-l:               calc(var(--global-medium-gutter) / 2);
 
-$card-title-font-size:                         $global-large-font-size;
+$card-title-font-size:                         var(--global-large-font-size);
 $card-title-line-height:                       1.4;
 
 $card-badge-top:                               15px;
 $card-badge-right:                             15px;
 $card-badge-height:                            22px;
 $card-badge-padding-horizontal:                10px;
-$card-badge-background:                        $global-primary-background;
-$card-badge-color:                             $global-inverse-color;
-$card-badge-font-size:                         $global-small-font-size;
+$card-badge-background:                        var(--theme-primary-background, var(--global-primary-background));
+$card-badge-color:                             var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+$card-badge-font-size:                         var(--global-small-font-size);
 
-$card-hover-background:                        $global-muted-background;
+$card-hover-background:                        var(--theme-muted-background, var(--global-muted-background));
 
-$card-default-background:                      $global-muted-background;
-$card-default-color:                           $global-color;
-$card-default-title-color:                     $global-emphasis-color;
-$card-default-hover-background:                color-mix(in srgb, $card-default-background 95%, black);
+$card-default-background:                      var(--theme-muted-background, var(--global-muted-background));
+$card-default-color:                           var(--theme-color, var(--global-color));
+$card-default-title-color:                     var(--theme-emphasis-color, var(--global-emphasis-color));
+$card-default-hover-background:                color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 20%);
 $card-default-color-mode:                      dark;
 
-$card-primary-background:                      $global-primary-background;
-$card-primary-color:                           $global-inverse-color;
-$card-primary-title-color:                     $card-primary-color;
-$card-primary-hover-background:                color-mix(in srgb, $card-primary-background 95%, black);
+$card-primary-background:                      var(--theme-primary-background, var(--global-primary-background));
+$card-primary-color:                           var(--theme-color, var(--inverse-global-color));
+$card-primary-title-color:                     var(--theme-emphasis-color, var(--inverse-global-emphasis-color));
+$card-primary-hover-background:                color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 10%);
 $card-primary-color-mode:                      light;
 
-$card-secondary-background:                    $global-secondary-background;
-$card-secondary-color:                         $global-inverse-color;
-$card-secondary-title-color:                   $card-secondary-color;
-$card-secondary-hover-background:              color-mix(in srgb, $card-primary-background 95%, black);
+$card-secondary-background:                    var(--theme-secondary-background, var(--global-secondary-background));
+$card-secondary-color:                         var(--theme-color, var(--inverse-global-color));
+$card-secondary-title-color:                   var(--theme-emphasis-color, var(--inverse-global-emphasis-color));
+$card-secondary-hover-background:              color-mix(in oklab, var(--theme-secondary-background, var(--global-secondary-background)), transparent 10%);
 $card-secondary-color-mode:                    light;
 
-$card-overlay-background:                      fade($global-background, 90%);
-$card-overlay-color:                           $global-color;
-$card-overlay-title-color:                     $global-emphasis-color;
-$card-overlay-hover-background:                fadein($card-overlay-background, 10%);
+$card-overlay-background:                      color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 10%);
+$card-overlay-color:                           var(--theme-color, var(--global-color));
+$card-overlay-title-color:                     var(--theme-emphasis-color, var(--global-emphasis-color));
+$card-overlay-hover-background:                var(--theme-background, var(--global-background));
 $card-overlay-color-mode:                      dark;
 
-$card-small-body-padding-horizontal:           $global-margin;
-$card-small-body-padding-vertical:             $global-margin;
-$card-small-header-padding-horizontal:         $global-margin;
-$card-small-header-padding-vertical:           round(($global-margin / 1.5));
-$card-small-footer-padding-horizontal:         $global-margin;
-$card-small-footer-padding-vertical:           round(($global-margin / 1.5));
+$card-small-body-padding-horizontal:           var(--global-margin);
+$card-small-body-padding-vertical:             var(--global-margin);
+$card-small-header-padding-horizontal:         var(--global-margin);
+$card-small-header-padding-vertical:           calc(var(--global-margin) / 1.5);
+$card-small-footer-padding-horizontal:         var(--global-margin);
+$card-small-footer-padding-vertical:           calc(var(--global-margin) / 1.5);
 
-$card-large-body-padding-horizontal-l:         $global-large-gutter;
-$card-large-body-padding-vertical-l:           $global-large-gutter;
-$card-large-header-padding-horizontal-l:       $global-large-gutter;
-$card-large-header-padding-vertical-l:         round(($global-large-gutter / 2));
-$card-large-footer-padding-horizontal-l:       $global-large-gutter;
-$card-large-footer-padding-vertical-l:         round(($global-large-gutter / 2));
+$card-large-body-padding-horizontal-l:         var(--global-large-gutter);
+$card-large-body-padding-vertical-l:           var(--global-large-gutter);
+$card-large-header-padding-horizontal-l:       var(--global-large-gutter);
+$card-large-header-padding-vertical-l:         calc(var(--global-large-gutter) / 2);
+$card-large-footer-padding-horizontal-l:       var(--global-large-gutter);
+$card-large-footer-padding-vertical-l:         calc(var(--global-large-gutter) / 2);
 
 
 // Set custom properties
@@ -85,20 +85,11 @@ $card-large-footer-padding-vertical-l:         round(($global-large-gutter / 2))
     --card-body-padding-horizontal: #{$card-body-padding-horizontal};
     --card-body-padding-vertical: #{$card-body-padding-vertical};
 
-    --card-body-padding-horizontal-l: #{$card-body-padding-horizontal-l};
-    --card-body-padding-vertical-l: #{$card-body-padding-vertical-l};
-
     --card-header-padding-horizontal: #{$card-header-padding-horizontal};
     --card-header-padding-vertical: #{$card-header-padding-vertical};
 
-    --card-header-padding-horizontal-l: #{$card-header-padding-horizontal-l};
-    --card-header-padding-vertical-l: #{$card-header-padding-vertical-l};
-
     --card-footer-padding-horizontal: #{$card-footer-padding-horizontal};
     --card-footer-padding-vertical: #{$card-footer-padding-vertical};
-
-    --card-footer-padding-horizontal-l: #{$card-footer-padding-horizontal-l};
-    --card-footer-padding-vertical-l: #{$card-footer-padding-vertical-l};
 
     --card-title-font-size: #{$card-title-font-size};
     --card-title-line-height: #{$card-title-line-height};
@@ -144,11 +135,25 @@ $card-large-footer-padding-vertical-l:         round(($global-large-gutter / 2))
     --card-small-footer-padding-horizontal: #{$card-small-footer-padding-horizontal};
     --card-small-footer-padding-vertical: #{$card-small-footer-padding-vertical};
 
-    --card-large-body-padding-horizontal-l: #{$card-large-body-padding-horizontal-l};
-    --card-large-body-padding-vertical-l: #{$card-large-body-padding-vertical-l};
-    --card-large-header-padding-horizontal-l: #{$card-large-header-padding-horizontal-l};
-    --card-large-header-padding-vertical-l: #{$card-large-header-padding-vertical-l};
-    --card-large-footer-padding-horizontal-l: #{$card-large-footer-padding-horizontal-l};
-    --card-large-footer-padding-vertical-l: #{$card-large-footer-padding-vertical-l};
+    /* Desktop and bigger */
+    @media (min-width: $breakpoint-large) {
+
+        --card-body-padding-horizontal: #{$card-body-padding-horizontal-l};
+        --card-body-padding-vertical: #{$card-body-padding-vertical-l};
+
+        --card-header-padding-horizontal: #{$card-header-padding-horizontal-l};
+        --card-header-padding-vertical: #{$card-header-padding-vertical-l};
+
+        --card-footer-padding-horizontal: #{$card-footer-padding-horizontal-l};
+        --card-footer-padding-vertical: #{$card-footer-padding-vertical-l};
+
+        --card-large-body-padding-horizontal: #{$card-large-body-padding-horizontal-l};
+        --card-large-body-padding-vertical: #{$card-large-body-padding-vertical-l};
+        --card-large-header-padding-horizontal: #{$card-large-header-padding-horizontal-l};
+        --card-large-header-padding-vertical: #{$card-large-header-padding-vertical-l};
+        --card-large-footer-padding-horizontal: #{$card-large-footer-padding-horizontal-l};
+        --card-large-footer-padding-vertical: #{$card-large-footer-padding-vertical-l};
+
+    }
 
 }

@@ -7,14 +7,14 @@
 // Variables
 // ========================================================================
 
-$alert-margin-vertical:                         $global-margin;
+$alert-margin-vertical:                         var(--global-margin);
 $alert-padding:                                 15px;
-$alert-padding-right:                           $alert-padding + 14px;
-$alert-background:                              $global-muted-background;
-$alert-color:                                   $global-color;
+$alert-padding-right:                           calc(var(--alert-padding) + 14px);
+$alert-background:                              var(--theme-muted-background, var(--global-muted-background));
+$alert-color:                                   var(--theme-color, var(--global-color));
 
-$alert-close-top:                               $alert-padding + 5px;
-$alert-close-right:                             $alert-padding;
+$alert-close-top:                               calc(var(--alert-padding) + 5px);
+$alert-close-right:                             var(--alert-padding);
 
 $alert-primary-background:                      color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 85%);
 $alert-primary-color:                           var(--theme-primary-background, var(--global-primary-background) );

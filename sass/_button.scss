@@ -7,59 +7,59 @@
 // Variables
 // ========================================================================
 
-$button-line-height:                            $global-control-height;
-$button-small-line-height:                      $global-control-small-height;
-$button-large-line-height:                      $global-control-large-height;
+$button-line-height:                            var(--global-control-height);
+$button-small-line-height:                      var(--global-control-small-height);
+$button-large-line-height:                      var(--global-control-large-height);
 
-$button-font-size:                              $global-font-size;
-$button-small-font-size:                        $global-small-font-size;
-$button-large-font-size:                        $global-medium-font-size;
+$button-font-size:                              var(--global-font-size);
+$button-small-font-size:                        var(--global-small-font-size);
+$button-large-font-size:                        var(--global-medium-font-size);
 
-$button-padding-horizontal:                     $global-gutter;
-$button-small-padding-horizontal:               $global-small-gutter;
-$button-large-padding-horizontal:               $global-medium-gutter;
+$button-padding-horizontal:                     var(--global-gutter);
+$button-small-padding-horizontal:               var(--global-small-gutter);
+$button-large-padding-horizontal:               var(--global-medium-gutter);
 
-$button-default-background:                     $global-muted-background;
-$button-default-color:                          $global-emphasis-color;
-$button-default-hover-background:               color-mix(in srgb, $button-default-background 95%, black);
-$button-default-hover-color:                    $global-emphasis-color;
-$button-default-active-background:              color-mix(in srgb, $button-default-background 90%, black);
-$button-default-active-color:                   $global-emphasis-color;
+$button-default-background:                     var(--theme-muted-background, var(--global-muted-background));
+$button-default-color:                          var(--theme-emphasis-color, var(--global-emphasis-color));
+$button-default-hover-background:               color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 15%);
+$button-default-hover-color:                    var(--theme-emphasis-color, var(--global-emphasis-color));
+$button-default-active-background:              color-mix(in oklab, var(--theme-muted-background, var(--global-muted-background)), transparent 30%);
+$button-default-active-color:                   var(--theme-emphasis-color, var(--global-emphasis-color));
 
-$button-primary-background:                     $global-primary-background;
-$button-primary-color:                          $global-inverse-color;
-$button-primary-hover-background:               color-mix(in srgb, $button-primary-background 95%, black);
-$button-primary-hover-color:                    $global-inverse-color;
-$button-primary-active-background:              color-mix(in srgb, $button-primary-background 90%, black);
-$button-primary-active-color:                   $global-inverse-color;
+$button-primary-background:                     var(--theme-primary-background, var(--global-primary-background));
+$button-primary-color:                          var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+$button-primary-hover-background:               color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 10%);
+$button-primary-hover-color:                    var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+$button-primary-active-background:              color-mix(in oklab, var(--theme-primary-background, var(--global-primary-background)), transparent 20%);
+$button-primary-active-color:                   var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
 
-$button-secondary-background:                   $global-secondary-background;
-$button-secondary-color:                        $global-inverse-color;
-$button-secondary-hover-background:             color-mix(in srgb, $button-secondary-background 95%, black);
-$button-secondary-hover-color:                  $global-inverse-color;
-$button-secondary-active-background:            color-mix(in srgb, $button-secondary-background 90%, black);
-$button-secondary-active-color:                 $global-inverse-color;
+$button-secondary-background:                   var(--theme-secondary-background, var(--global-secondary-background));
+$button-secondary-color:                        var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+$button-secondary-hover-background:             color-mix(in oklab, var(--theme-secondary-background, var(--global-secondary-background)), transparent 10%);
+$button-secondary-hover-color:                  var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+$button-secondary-active-background:            color-mix(in oklab, var(--theme-secondary-background, var(--global-secondary-background)), transparent 20%);
+$button-secondary-active-color:                 var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
 
-$button-danger-background:                      $global-danger-background;
-$button-danger-color:                           $global-inverse-color;
-$button-danger-hover-background:                color-mix(in srgb, $button-danger-background 95%, black);
-$button-danger-hover-color:                     $global-inverse-color;
-$button-danger-active-background:               color-mix(in srgb, $button-danger-background 90%, black);
-$button-danger-active-color:                    $global-inverse-color;
+$button-danger-background:                      var(--theme-danger-background, var(--global-danger-background));
+$button-danger-color:                           var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+$button-danger-hover-background:                color-mix(in oklab, var(--theme-danger-background, var(--global-danger-background)), transparent 10%);
+$button-danger-hover-color:                     var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
+$button-danger-active-background:               color-mix(in oklab, var(--theme-danger-background, var(--global-danger-background)), transparent 20%);
+$button-danger-active-color:                    var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color));
 
-$button-disabled-background:                    $global-muted-background;
-$button-disabled-color:                         $global-muted-color;
+$button-disabled-background:                    var(--theme-muted-background, var(--global-muted-background));
+$button-disabled-color:                         var(--theme-muted-color, var(--global-muted-color));
 
-$button-text-line-height:                       $global-line-height;
-$button-text-color:                             $global-emphasis-color;
-$button-text-hover-color:                       $global-muted-color;
-$button-text-disabled-color:                    $global-muted-color;
+$button-text-line-height:                       var(--global-line-height);
+$button-text-color:                             var(--theme-emphasis-color, var(--global-emphasis-color));
+$button-text-hover-color:                       var(--theme-muted-color, var(--global-muted-color));
+$button-text-disabled-color:                    var(--theme-muted-color, var(--global-muted-color));
 
-$button-link-line-height:                       $global-line-height;
-$button-link-color:                             $global-emphasis-color;
-$button-link-hover-color:                       $global-muted-color;
+$button-link-line-height:                       var(--global-line-height);
+$button-link-color:                             var(--theme-emphasis-color, var(--global-emphasis-color));
+$button-link-hover-color:                       var(--theme-muted-color, var(--global-muted-color));
 $button-link-hover-text-decoration:             none;
-$button-link-disabled-color:                    $global-muted-color;
+$button-link-disabled-color:                    var(--theme-muted-color, var(--global-muted-color));
 
 
 // Set custom properties

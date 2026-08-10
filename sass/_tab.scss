@@ -20,11 +20,11 @@ $tab-margin-horizontal:                  20px;
 
 $tab-item-padding-horizontal:            10px;
 $tab-item-padding-vertical:              5px;
-$tab-item-color:                         $global-muted-color;
-$tab-item-hover-color:                   $global-color;
+$tab-item-color:                         var(--theme-muted-color, var(--global-muted-color));
+$tab-item-hover-color:                   var(--theme-color, var(--global-color));
 $tab-item-hover-text-decoration:         none;
-$tab-item-active-color:                  $global-emphasis-color;
-$tab-item-disabled-color:                $global-muted-color;
+$tab-item-active-color:                  var(--theme-emphasis-color, var(--global-emphasis-color));
+$tab-item-disabled-color:                var(--theme-muted-color, var(--global-muted-color));
 
 
 // Set custom properties

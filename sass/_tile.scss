@@ -8,31 +8,31 @@
 // ========================================================================
 
 $tile-padding-horizontal:                      15px;
-$tile-padding-horizontal-s:                    $global-gutter;
-$tile-padding-horizontal-m:                    $global-medium-gutter;
-$tile-padding-vertical:                        $global-medium-margin;
-$tile-padding-vertical-m:                      $global-large-margin;
+$tile-padding-horizontal-s:                    var(--global-gutter);
+$tile-padding-horizontal-m:                    var(--global-medium-margin);
+$tile-padding-vertical:                        var(--global-medium-margin);
+$tile-padding-vertical-m:                      var(--global-large-margin);
 
-$tile-xsmall-padding-vertical:                 $global-margin;
+$tile-xsmall-padding-vertical:                 var(--global-margin);
 
-$tile-small-padding-vertical:                  $global-medium-margin;
+$tile-small-padding-vertical:                  var(--global-medium-margin);
 
-$tile-large-padding-vertical:                  $global-large-margin;
-$tile-large-padding-vertical-m:                $global-xlarge-margin;
+$tile-large-padding-vertical:                  var(--global-large-margin);
+$tile-large-padding-vertical-m:                var(--global-xlarge-margin);
 
-$tile-xlarge-padding-vertical:                 $global-xlarge-margin;
-$tile-xlarge-padding-vertical-m:               ($global-large-margin + $global-xlarge-margin);
+$tile-xlarge-padding-vertical:                 var(--global-xlarge-margin);
+$tile-xlarge-padding-vertical-m:               calc( var(--global-large-margin) + var(--global-xlarge-margin) );
 
-$tile-default-background:                      $global-background;
+$tile-default-background:                      var(--theme-background, var(--global-background));
 $tile-default-color-mode:                      dark;
 
-$tile-muted-background:                        $global-muted-background;
+$tile-muted-background:                        var(--theme-muted-background, var(--global-muted-background));
 $tile-muted-color-mode:                        dark;
 
-$tile-primary-background:                      $global-primary-background;
+$tile-primary-background:                      var(--theme-primary-background, var(--global-primary-background));
 $tile-primary-color-mode:                      light;
 
-$tile-secondary-background:                    $global-secondary-background;
+$tile-secondary-background:                    var(--theme-secondary-background, var(--global-secondary-background));
 $tile-secondary-color-mode:                    light;
 
 
@@ -42,20 +42,15 @@ $tile-secondary-color-mode:                    light;
 :root {
 
     --tile-padding-horizontal: #{$tile-padding-horizontal};
-    --tile-padding-horizontal-s: #{$tile-padding-horizontal-s};
-    --tile-padding-horizontal-m: #{$tile-padding-horizontal-m};
     --tile-padding-vertical: #{$tile-padding-vertical};
-    --tile-padding-vertical-m: #{$tile-padding-vertical-m};
 
     --tile-xsmall-padding-vertical: #{$tile-xsmall-padding-vertical};
 
     --tile-small-padding-vertical: #{$tile-small-padding-vertical};
 
     --tile-large-padding-vertical: #{$tile-large-padding-vertical};
-    --tile-large-padding-vertical-m: #{$tile-large-padding-vertical-m};
 
     --tile-xlarge-padding-vertical: #{$tile-xlarge-padding-vertical};
-    --tile-xlarge-padding-vertical-m: #{$tile-xlarge-padding-vertical-m};
 
     --tile-default-background: #{$tile-default-background};
     --tile-default-color-mode: #{$tile-default-color-mode};
@@ -68,5 +63,23 @@ $tile-secondary-color-mode:                    light;
 
     --tile-secondary-background: #{$tile-secondary-background};
     --tile-secondary-color-mode: #{$tile-secondary-color-mode};
+
+    /* Phone landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        --tile-padding-horizontal: #{$tile-padding-horizontal-s};
+
+    }
+
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
+
+        --tile-padding-horizontal: #{$tile-padding-horizontal-m};
+        --tile-padding-vertical: #{$tile-padding-vertical-m};
+
+        --tile-large-padding-vertical: #{$tile-large-padding-vertical-m};
+        --tile-xlarge-padding-vertical: #{$tile-xlarge-padding-vertical-m};
+
+    }
 
 }

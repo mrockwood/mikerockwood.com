@@ -33,8 +33,8 @@
 
 $panel-scrollable-height:                       170px;
 $panel-scrollable-padding:                      10px;
-$panel-scrollable-border-width:                 $global-border-width;
-$panel-scrollable-border:                       $global-border;
+$panel-scrollable-border-width:                 var(--global-border-width);
+$panel-scrollable-border:                       var(--theme-border, var(--global-border));
 
 $overflow-fade-size:                            100px;
 
@@ -43,7 +43,7 @@ $border-rounded-border-radius:                  5px;
 $box-shadow-duration:                           0.1s;
 
 $box-shadow-bottom-height:                      30px;
-$box-shadow-bottom-bottom:                      -$box-shadow-bottom-height;
+$box-shadow-bottom-bottom:                      calc( var(--box-shadow-bottom-height) * -1 );
 $box-shadow-bottom-border-radius:               100%;
 $box-shadow-bottom-background:                  #444;
 $box-shadow-bottom-blur:                        20px;
@@ -52,10 +52,10 @@ $dropcap-margin-right:                          10px;
 $dropcap-font-size:                             (($global-line-height * 3) * 1em);
 $dropcap-line-height:                           1;
 
-$logo-font-size:                                $global-large-font-size;
-$logo-font-family:                              $global-font-family;
-$logo-color:                                    $global-emphasis-color;
-$logo-hover-color:                              $global-emphasis-color;
+$logo-font-size:                                var(--global-font-size);
+$logo-font-family:                              var(--global-font-family);
+$logo-color:                                    var(--theme-muted-color, var(--global-muted-color));
+$logo-hover-color:                              var(--theme-color, var(--global-color));
 
 $dragover-box-shadow:                           0 0 20px rgba(100,100,100,0.3);
 

@@ -7,25 +7,25 @@
 // Variables
 // ========================================================================
 
-$divider-margin-vertical:                       $global-margin;
+$divider-margin-vertical:                       var(--global-margin);
 
 $divider-icon-width:                            50px;
 $divider-icon-height:                           20px;
-$divider-icon-color:                            $global-border;
+$divider-icon-color:                            var(--theme-border, var(--global-border));
 $divider-icon-line-top:                         50%;
 $divider-icon-line-width:                       100%;
-$divider-icon-line-border-width:                $global-border-width;
-$divider-icon-line-border:                      $global-border;
+$divider-icon-line-border-width:                var(--global-border-width);
+$divider-icon-line-border:                      var(--theme-border, var(--global-border));
 
 $internal-divider-icon-image:                   "../../images/backgrounds/divider-icon.svg";
 
 $divider-small-width:                           100px;
-$divider-small-border-width:                    $global-border-width;
-$divider-small-border:                          $global-border;
+$divider-small-border-width:                    var(--global-border-width);
+$divider-small-border:                          var(--theme-border, var(--global-border));
 
 $divider-vertical-height:                       100px;
-$divider-vertical-border-width:                 $global-border-width;
-$divider-vertical-border:                       $global-border;
+$divider-vertical-border-width:                 var(--global-border-width);
+$divider-vertical-border:                       var(--theme-border, var(--global-border));
 
 
 // Set custom properties

@@ -14,7 +14,11 @@
 // ========================================================================
 
 $thumbnav-margin-horizontal:                    15px;
-$thumbnav-margin-vertical:                      $thumbnav-margin-horizontal;
+$thumbnav-margin-vertical:                      var(--thumbnav-margin-horizontal);
+
+$thumbnav-item-gradient:                        linear-gradient(180deg, color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 100%), color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 50%) );
+$thumbnav-item-hover-opacity:                   0;
+$thumbnav-item-active-opacity:                  0;
 
 
 // Set custom properties
@@ -25,4 +29,37 @@ $thumbnav-margin-vertical:                      $thumbnav-margin-horizontal;
     --thumbnav-margin-horizontal: #{$thumbnav-margin-horizontal};
     --thumbnav-margin-vertical: #{$thumbnav-margin-vertical};
 
+    --thumbnav-item-gradient: #{$thumbnav-item-gradient};
+    --thumbnav-item-hover-opacity: #{$thumbnav-item-hover-opacity};
+    --thumbnav-item-active-opacity: #{$thumbnav-item-active-opacity};
+
+}
+
+
+// Mixins
+// ========================================================================
+
+@mixin hook-thumbnav-item() {
+
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: var(--thumbnav-item-gradient);
+        transition: opacity 0.1s ease-in-out;
+    }
+
+}
+
+@mixin hook-thumbnav-item-hover() {
+    &::after { opacity: var(--thumbnav-item-hover-opacity); }
+}
+
+@mixin hook-thumbnav-item-active() {
+    &::after { opacity: var(--thumbnav-item-active-opacity); }
 }

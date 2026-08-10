@@ -7,14 +7,20 @@
 // Variables
 // ========================================================================
 
-$overlay-padding-horizontal:                    $global-gutter;
-$overlay-padding-vertical:                      $global-gutter;
+$overlay-padding-horizontal:                    var(--global-gutter);
+$overlay-padding-vertical:                      var(--global-gutter);
 
-$overlay-default-background:                    color-mix(in srgb, $global-background 10%, transparent);
+$overlay-default-background:                    color-mix(in oklab, var(--global-background), transparent 20%);
 $overlay-default-color-mode:                    dark;
 
-$overlay-primary-background:                    color-mix(in srgb, $global-secondary-background 10%, transparent);
+$overlay-primary-background:                    color-mix(in oklab, var(--global-secondary-background), transparent 20%);
 $overlay-primary-color-mode:                    light;
+
+$overlay-light-background:                      color-mix(in oklab, var(--surface-default-light), transparent 20%);
+$overlay-light-color-mode:                      dark;
+
+$overlay-dark-background:                       color-mix(in oklab, var(--surface-default-dark), transparent 20%);
+$overlay-dark-color-mode:                       light;
 
 
 // Set custom properties
@@ -29,4 +35,20 @@ $overlay-primary-color-mode:                    light;
 
     --overlay-primary-background: #{$overlay-primary-background};
 
+    --overlay-light-background: #{$overlay-light-background};
+
+    --overlay-dark-background: #{$overlay-dark-background};
+
 }
+
+
+// Mixins
+// ========================================================================
+
+@mixin hook-overlay-misc() {
+
+    .uk-overlay-light { background: var(--overlay-light-background); }
+
+    .uk-overlay-dark { background: var(--overlay-dark-background); }
+
+};

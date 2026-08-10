@@ -9,18 +9,18 @@
 // Variables
 // ========================================================================
 
-$text-lead-font-size:                           $global-large-font-size;
+$text-lead-font-size:                           var(--global-large-font-size);
 $text-lead-line-height:                         1.5;
-$text-lead-color:                               $global-emphasis-color;
+$text-lead-color:                               var(--theme-emphasis-color, var(--global-emphasis-color));
 
-$text-meta-font-size:                           $global-small-font-size;
+$text-meta-font-size:                           var(--global-small-font-size);
 $text-meta-line-height:                         1.4;
-$text-meta-color:                               $global-muted-color;
+$text-meta-color:                               var(--theme-muted-color, var(--global-muted-color));
 
-$text-small-font-size:                          $global-small-font-size;
+$text-small-font-size:                          var(--global-small-font-size);
 $text-small-line-height:                        1.5;
 
-$text-large-font-size:                          $global-large-font-size;
+$text-large-font-size:                          var(--global-large-font-size);
 $text-large-line-height:                        1.5;
 
 $text-muted-color:                              $global-muted-color;
@@ -31,9 +31,18 @@ $text-success-color:                            $global-success-background;
 $text-warning-color:                            $global-warning-background;
 $text-danger-color:                             $global-danger-background;
 
-$text-background-color:                         $global-primary-background;
+$text-background-color:                         var(--theme-primary-background, var(--global-primary-background) );
 
 $text-stroke-text-stroke:                       calc(1.4px + 0.002em);
+
+$text-default-tracking:                         0;
+$text-2xsmall-tracking:                         .025em;
+$text-xsmall-tracking:                          .050em;
+$text-small-tracking:                           .075em;
+$text-medium-tracking:                          .150em;
+$text-large-tracking:                           .500em;
+$text-xlarge-tracking:                          .750em;
+$text-2xlarge-tracking:                         1em;
 
 
 // Set custom properties
@@ -68,3 +77,20 @@ $text-stroke-text-stroke:                       calc(1.4px + 0.002em);
     --text-stroke-text-stroke: #{$text-stroke-text-stroke};
 
 }
+
+
+// Mixin
+// ========================================================================
+
+@mixin hook-text-misc() {
+
+    .uk-text-tracking-default { letter-spacing: var(--text-default-tracking); }
+    .uk-text-tracking-2xsmall { letter-spacing: var(--text-2xsmall-tracking); }
+    .uk-text-tracking-xsmall { letter-spacing: var(--text-xsmall-tracking); }
+    .uk-text-tracking-small { letter-spacing: var(--text-small-tracking); }
+    .uk-text-tracking-medium { letter-spacing: var(--text-medium-tracking); }
+    .uk-text-tracking-large { letter-spacing: var(--text-large-tracking); }
+    .uk-text-tracking-xlarge { letter-spacing: var(--text-xlarge-tracking); }
+    .uk-text-tracking-2xlarge { letter-spacing: var(--text-2xlarge-tracking); }
+
+};

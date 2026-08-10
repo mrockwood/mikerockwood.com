@@ -14,16 +14,16 @@
 // ========================================================================
 
 $dotnav-margin-horizontal:                      12px;
-$dotnav-margin-vertical:                        $dotnav-margin-horizontal;
+$dotnav-margin-vertical:                        var(--dotnav-margin-horizontal);
 
 $dotnav-item-width:                             10px;
-$dotnav-item-height:                            $dotnav-item-width;
+$dotnav-item-height:                            var(--dotnav-item-width);
 $dotnav-item-border-radius:                     50%;
 
-$dotnav-item-background:                        color-mix(in srgb, $global-color 80%, transparent);
-$dotnav-item-hover-background:                  color-mix(in srgb, $global-color 40%, transparent);
-$dotnav-item-onclick-background:                color-mix(in srgb, $global-color 80%, transparent);
-$dotnav-item-active-background:                 color-mix(in srgb, $global-color 40%, transparent);
+$dotnav-item-background:                        color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
+$dotnav-item-hover-background:                  color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
+$dotnav-item-onclick-background:                color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 80%);
+$dotnav-item-active-background:                 color-mix(in oklab, var(--inverse-theme-background, var(--inverse-global-background)), transparent 40%);
 
 
 // Set custom properties

@@ -159,12 +159,8 @@ $base-selection-color:                          var(--global-inverse-color);
     --base-selection-background: #{$base-selection-background};
     --base-selection-color: #{$base-selection-color};
 
-}
-
-/* Tablet landscape and bigger */
-@media (min-width: $breakpoint-medium) {
-
-    :root {
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
 
         --base-h1-font-size: #{$base-h1-font-size-m};
         --base-h2-font-size: #{$base-h2-font-size-m};

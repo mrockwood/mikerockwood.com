@@ -18,8 +18,8 @@
 // Variables
 // ========================================================================
 
-$drop-z-index:                              $global-z-index + 20;
-$drop-margin:                               $global-margin;
+$drop-z-index:                              calc(var(--global-z-index) + 20);
+$drop-margin:                               var(--global-margin);
 $drop-viewport-margin:                      15px;
 $drop-width:                                300px;
 

@@ -14,8 +14,8 @@ $container-large-max-width:             1400px;
 $container-xlarge-max-width:            1600px;
 
 $container-padding-horizontal:          15px;
-$container-padding-horizontal-s:        $global-gutter;
-$container-padding-horizontal-m:        $global-medium-gutter;
+$container-padding-horizontal-s:        var(--global-gutter);
+$container-padding-horizontal-m:        var(--global-medium-gutter);
 
 
 // Set custom properties
@@ -30,7 +30,19 @@ $container-padding-horizontal-m:        $global-medium-gutter;
     --container-xlarge-max-width: #{$container-xlarge-max-width};
 
     --container-padding-horizontal: #{$container-padding-horizontal};
-    --container-padding-horizontal-s: #{$container-padding-horizontal-s};
-    --container-padding-horizontal-m: #{$container-padding-horizontal-m};
+
+    /* Phone landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        --container-padding-horizontal: #{$container-padding-horizontal-s};
+
+    }
+
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
+
+        --container-padding-horizontal: #{$container-padding-horizontal-m};
+
+    }
 
 }

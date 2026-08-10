@@ -7,10 +7,10 @@
 // Variables
 // ========================================================================
 
-$background-default-background:                 $global-background;
-$background-muted-background:                   $global-muted-background;
-$background-primary-background:                 $global-primary-background;
-$background-secondary-background:               $global-secondary-background;
+$background-default-background:                 var(--global-background);
+$background-muted-background:                   var(--global-muted-background);
+$background-primary-background:                 var(--global-primary-background);
+$background-secondary-background:               var(--global-secondary-background);
 
 
 // Set custom properties
