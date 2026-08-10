@@ -26,16 +26,16 @@ $comment-list-padding-left-m: var(--comment-list-padding-left);
 
 :root {
 
-    --comment-header-margin-bottom:                  --global-margin;
+    --comment-header-margin-bottom:                  var(--global-margin);
 
-    --comment-title-font-size:                       --global-medium-font-size;
+    --comment-title-font-size:                       var(--global-medium-font-size);
     --comment-title-line-height:                     1.4;
 
-    --comment-meta-font-size:                        --global-small-font-size;
+    --comment-meta-font-size:                        var(--global-small-font-size);
     --comment-meta-line-height:                      1.4;
-    --comment-meta-color:                            --global-muted-color;
+    --comment-meta-color:                            var(--global-muted-color);
 
-    --comment-list-margin-top:                       --global-large-margin;
+    --comment-list-margin-top:                       var(--global-large-margin);
     --comment-list-padding-left:                     30px;
 
     /* Tablet landscape and bigger */

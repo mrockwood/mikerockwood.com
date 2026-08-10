@@ -56,3 +56,31 @@ $offcanvas-overlay-background: var(--offcanvas-overlay-background);
     }
 
 }
+
+
+// Mixins and overrides
+// ========================================================================
+
+@mixin hook-offcanvas-misc() {
+
+    .uk-offcanvas-bar { left: calc( var(--offcanvas-bar-width) * -1 ); }
+
+    /* Phone landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        .uk-offcanvas-bar { left: calc( var(--offcanvas-bar-width) * -1 ); }
+
+    }
+
+
+    /* Flip modifier */
+    .uk-offcanvas-flip .uk-offcanvas-bar { right: calc( var(--offcanvas-bar-width) * -1 ); }
+
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        .uk-offcanvas-flip .uk-offcanvas-bar { right: calc( var(--offcanvas-bar-width) * -1); }
+
+    }
+
+};

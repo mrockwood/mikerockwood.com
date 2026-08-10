@@ -117,7 +117,7 @@ $navbar-dropdown-nav-sublist-item-active-color: var(--navbar-dropdown-nav-sublis
     --navbar-dropdown-background:                    var(--global-muted-background);
     --navbar-dropdown-color:                         var(--global-color);
     --navbar-dropdown-color-mode:                    dark;
-    --navbar-dropdown-focus-outline:                 --base-focus-outline;
+    --navbar-dropdown-focus-outline:                 var(--base-focus-outline);
     --navbar-dropdown-grid-gutter-horizontal:        var(--global-gutter);
     --navbar-dropdown-grid-gutter-vertical:          var(--navbar-dropdown-grid-gutter-horizontal);
 

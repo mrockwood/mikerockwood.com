@@ -91,7 +91,7 @@ $heading-line-margin-horizontal: var(--heading-line-margin-horizontal);
     --heading-line-width:                            2000px;
     --heading-line-border-width:                     calc(0.2px + 0.05em);
     --heading-line-border:                           var(--theme-border, var(--global-border));
-    --heading-line-height:                           --heading-line-border-width;
+    --heading-line-height:                           var(--heading-line-border-width);
     --heading-line-margin-horizontal:                calc(5px + 0.3em);
 
     /* Tablet landscape and bigger */

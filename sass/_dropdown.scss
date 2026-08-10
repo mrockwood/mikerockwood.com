@@ -58,7 +58,7 @@ $dropdown-nav-sublist-item-hover-color: var(--dropdown-nav-sublist-item-hover-co
     --dropdown-background:                           var(--theme-muted-background, var(--global-muted-background));
     --dropdown-color:                                var(--theme-color, var(--global-color));
     --dropdown-color-mode:                           dark;
-    --dropdown-focus-outline:                        --base-focus-outline;
+    --dropdown-focus-outline:                        var(--base-focus-outline);
 
     --dropdown-large-padding:                        40px;
 
