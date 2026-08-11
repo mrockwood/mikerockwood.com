@@ -42,108 +42,108 @@ $media-low-contrast:                                  'prefers-contrast: less' !
 // Typography
 //
 
-$global-font-family:                            'Rubik', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$global-font-size:                              18px;
-$global-line-height:                            1.6;      // 28.8px
+$global-font-family: var(--global-font-family);
+$global-font-size: var(--global-font-size);
+$global-line-height: 1.6; // var(--global-line-height);
 
-$global-2xlarge-font-size:                      2.625rem; // 42px
-$global-xlarge-font-size:                       2rem;     // 32px
-$global-large-font-size:                        1.5rem;   // 24px
-$global-medium-font-size:                       1.25rem;  // 20px
-$global-small-font-size:                        0.875rem; // 14px
-$global-xsmall-font-size:                       0.75rem;  // 12px
+$global-2xlarge-font-size: var(--global-2xlarge-font-size);
+$global-xlarge-font-size: var(--global-xlarge-font-size);
+$global-large-font-size: var(--global-large-font-size);
+$global-medium-font-size: var(--global-medium-font-size);
+$global-small-font-size: var(--global-small-font-size);
+$global-xsmall-font-size: var(--global-xsmall-font-size);
 
 //
 // Colors
 //
 
-$global-color:                                  var(--text-color, hsl(0 0% 40%));
-$global-emphasis-color:                         var(--text-emphasis, hsl(0 0% 20%));
-$global-muted-color:                            var(--text-muted, hsl(0 0% 60%));
+$global-color: var(--global-color);
+$global-emphasis-color: var(--global-emphasis-color);
+$global-muted-color: var(--global-muted-color);
 
-$global-link-color:                             var(--link-color, hsl(210 88% 53%));
-$global-link-hover-color:                       var(--link-hover, hsl(210 86% 43%));
+$global-link-color: var(--global-link-color);
+$global-link-hover-color: var(--global-link-hover-color);
 
-$global-inverse-color:                          var(--invert-text-emphasis, hsl(220 10% 100%));
+$global-inverse-color: var(--global-inverse-color);
 
 //
 // Backgrounds
 //
 
-$global-background:                             var(--surface-default, hsl(220 10% 100%));
+$global-background: var(--global-background);
 
-$global-muted-background:                       var(--surface-muted, hsl(0 0% 97%));
-$global-primary-background:                     var(--surface-primary, hsl(210 88% 53%));
-$global-secondary-background:                   var(--invert-surface-default, hsl(0 0% 13%));
+$global-muted-background: var(--global-muted-background);
+$global-primary-background: var(--global-primary-background);
+$global-secondary-background: var(--global-secondary-background);
 
-$global-success-background:                     var(--surface-success, hsl(158 64% 51%));
-$global-warning-background:                     var(--surface-warning, hsl(26 94% 67%));
-$global-danger-background:                      var(--surface-danger, hsl(349 84% 63%));
+$global-success-background: var(--global-success-background);
+$global-warning-background: var(--global-warning-background);
+$global-danger-background: var(--global-danger-background);
 
 //
 // Borders
 //
 
-$global-border-width:                           1px;
-$global-border-style:                           solid;
-$global-border:                                 var(--border-color, hsl(0 0% 90%));
+$global-border-width: var(--global-border-width);
+$global-border-style: var(--global-border-style);
+$global-border: var(--global-border);
 
 //
 // Box-Shadows
 //
 
-$global-small-box-shadow:                       0 2px 8px rgba(0,0,0,0.08);
-$global-medium-box-shadow:                      0 5px 15px rgba(0,0,0,0.08);
-$global-large-box-shadow:                       0 14px 25px rgba(0,0,0,0.16);
-$global-xlarge-box-shadow:                      0 28px 50px rgba(0,0,0,0.16);
+$global-small-box-shadow: var(--global-small-box-shadow);
+$global-medium-box-shadow: var(--global-medium-box-shadow);
+$global-large-box-shadow: var(--global-large-box-shadow);
+$global-xlarge-box-shadow: var(--global-xlarge-box-shadow);
 
 //
 // Spacings
 //
 
 // Used in margin, section, list
-$global-margin:                                 20px;
-$global-xsmall-margin:                          5px;
-$global-small-margin:                           10px;
-$global-medium-margin:                          40px;
-$global-large-margin:                           70px;
-$global-xlarge-margin:                          140px;
+$global-margin: var(--global-margin);
+$global-xsmall-margin: var(--global-xsmall-margin);
+$global-small-margin: var(--global-small-margin);
+$global-medium-margin: var(--global-medium-margin);
+$global-large-margin: var(--global-large-margin);
+$global-xlarge-margin: var(--global-xlarge-margin);
 
 // Used in grid, column, container, align, card, padding
-$global-gutter:                                 30px;
-$global-small-gutter:                           15px;
-$global-medium-gutter:                          40px;
-$global-large-gutter:                           70px;
+$global-gutter: var(--global-gutter);
+$global-small-gutter: var(--global-small-gutter);
+$global-medium-gutter: var(--global-medium-gutter);
+$global-large-gutter: var(--global-large-gutter);
 
 //
 // Transitions
 //
 
-$global-xslow-transition:                       1000ms;
-$global-slow-transition:                        500ms;
-$global-medium-transition:                      250ms;
-$global-fast-transition:                        150ms;
-$global-xfast-transition:                       50ms;
+$global-xslow-transition: var(--global-xslow-transition);
+$global-slow-transition: var(--global-slow-transition);
+$global-medium-transition: var(--global-medium-transition);
+$global-fast-transition: var(--global-fast-transition);
+$global-xfast-transition: var(--global-xfast-transition);
 
 //
 // Controls
 //
 
-$global-control-height:                         40px;
-$global-control-small-height:                   30px;
-$global-control-large-height:                   55px;
+$global-control-height: var(--global-control-height);
+$global-control-small-height: var(--global-control-small-height);
+$global-control-large-height: var(--global-control-large-height);
 
 //
 // Z-index
 //
 
-$global-z-index:                                1000;
+$global-z-index: var(--global-z-index);
 
 //
 // Color mode
 //
 
-$inverse-global-color-mode:                     light !default;
+$inverse-global-color-mode: light !default;
 
 
 // Set custom properties
@@ -151,67 +151,67 @@ $inverse-global-color-mode:                     light !default;
 
 :root {
 
-    --global-font-family: #{$global-font-family};
-    --global-font-size: #{$global-font-size};
-    --global-line-height: #{$global-line-height};
+    --global-font-family:                            'Rubik', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --global-font-size:                              18px;
+    --global-line-height:                            1.6;      // 28.8px
 
-    --global-2xlarge-font-size: #{$global-2xlarge-font-size};
-    --global-xlarge-font-size: #{$global-xlarge-font-size};
-    --global-large-font-size: #{$global-large-font-size};
-    --global-medium-font-size: #{$global-medium-font-size};
-    --global-small-font-size: #{$global-small-font-size};
-    --global-xsmall-font-size: #{$global-xsmall-font-size};
+    --global-2xlarge-font-size:                      2.625rem; // 42px
+    --global-xlarge-font-size:                       2rem;     // 32px
+    --global-large-font-size:                        1.5rem;   // 24px
+    --global-medium-font-size:                       1.25rem;  // 20px
+    --global-small-font-size:                        0.875rem; // 14px
+    --global-xsmall-font-size:                       0.75rem;  // 12px
 
-    --global-color: #{$global-color};
-    --global-emphasis-color: #{$global-emphasis-color};
-    --global-muted-color: #{$global-muted-color};
+    --global-color:                                  var(--text-color, hsl(0 0% 40%));
+    --global-emphasis-color:                         var(--text-emphasis, hsl(0 0% 20%));
+    --global-muted-color:                            var(--text-muted, hsl(0 0% 60%));
 
-    --global-link-color: #{$global-link-color};
-    --global-link-hover-color: #{$global-link-hover-color};
+    --global-link-color:                             var(--link-color, hsl(210 88% 53%));
+    --global-link-hover-color:                       var(--link-hover, hsl(210 86% 43%));
 
-    --global-inverse-color: #{$global-inverse-color};
+    --global-inverse-color:                          var(--invert-text-emphasis, hsl(220 10% 100%));
 
-    --global-background: #{$global-background};
+    --global-background:                             var(--surface-default, hsl(220 10% 100%));
 
-    --global-muted-background: #{$global-muted-background};
-    --global-primary-background: #{$global-primary-background};
-    --global-secondary-background: #{$global-secondary-background};
+    --global-muted-background:                       var(--surface-muted, hsl(0 0% 97%));
+    --global-primary-background:                     var(--surface-primary, hsl(210 88% 53%));
+    --global-secondary-background:                   var(--invert-surface-default, hsl(0 0% 13%));
 
-    --global-success-background: #{$global-success-background};
-    --global-warning-background: #{$global-warning-background};
-    --global-danger-background: #{$global-danger-background};
+    --global-success-background:                     var(--surface-success, hsl(158 64% 51%));
+    --global-warning-background:                     var(--surface-warning, hsl(26 94% 67%));
+    --global-danger-background:                      var(--surface-danger, hsl(349 84% 63%));
 
-    --global-border-width: #{$global-border-width};
-    --global-border-style: #{$global-border-style};
-    --global-border: #{$global-border};
+    --global-border-width:                           1px;
+    --global-border-style:                           solid;
+    --global-border:                                 var(--border-color, hsl(0 0% 90%));
 
-    --global-small-box-shadow: #{$global-small-box-shadow};
-    --global-medium-box-shadow: #{$global-medium-box-shadow};
-    --global-large-box-shadow: #{$global-large-box-shadow};
-    --global-xlarge-box-shadow: #{$global-xlarge-box-shadow};
+    --global-small-box-shadow:                       0 2px 8px rgba(0,0,0,0.08);
+    --global-medium-box-shadow:                      0 5px 15px rgba(0,0,0,0.08);
+    --global-large-box-shadow:                       0 14px 25px rgba(0,0,0,0.16);
+    --global-xlarge-box-shadow:                      0 28px 50px rgba(0,0,0,0.16);
 
-    --global-margin: #{$global-margin};
-    --global-xsmall-margin: #{$global-xsmall-margin};
-    --global-small-margin: #{$global-small-margin};
-    --global-medium-margin: #{$global-medium-margin};
-    --global-large-margin: #{$global-large-margin};
-    --global-xlarge-margin: #{$global-xlarge-margin};
+    --global-margin:                                 20px;
+    --global-xsmall-margin:                          5px;
+    --global-small-margin:                           10px;
+    --global-medium-margin:                          40px;
+    --global-large-margin:                           70px;
+    --global-xlarge-margin:                          140px;
 
-    --global-gutter: #{$global-gutter};
-    --global-small-gutter: #{$global-small-gutter};
-    --global-medium-gutter: #{$global-medium-gutter};
-    --global-large-gutter: #{$global-large-gutter};
+    --global-gutter:                                 30px;
+    --global-small-gutter:                           15px;
+    --global-medium-gutter:                          40px;
+    --global-large-gutter:                           70px;
 
-    --global-xslow-transition: #{$global-xslow-transition};
-    --global-slow-transition: #{$global-slow-transition};
-    --global-medium-transition: #{$global-medium-transition};
-    --global-fast-transition: #{$global-fast-transition};
-    --global-xfast-transition: #{$global-xfast-transition};
+    --global-xslow-transition:                       1000ms;
+    --global-slow-transition:                        500ms;
+    --global-medium-transition:                      250ms;
+    --global-fast-transition:                        150ms;
+    --global-xfast-transition:                       50ms;
 
-    --global-control-height: #{$global-control-height};
-    --global-control-small-height: #{$global-control-small-height};
-    --global-control-large-height: #{$global-control-large-height};
+    --global-control-height:                         40px;
+    --global-control-small-height:                   30px;
+    --global-control-large-height:                   55px;
 
-    --global-z-index: #{$global-z-index};
+    --global-z-index:                                1000;
 
 }

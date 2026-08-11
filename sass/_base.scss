@@ -14,9 +14,9 @@ $base-body-font-size: var(--base-body-font-size);
 $base-body-line-height: var(--base-body-line-height);
 $base-body-color: var(--base-body-color);
 
-$base-link-color: var(--theme-link-color, var(--global-link-color));
+$base-link-color: var(--theme-link-color, var(--global-link-color)); // necessary
 $base-link-text-decoration: var(--base-link-text-decoration);
-$base-link-hover-color: var(--theme-link-hover-color, var(--global-link-hover-color));
+$base-link-hover-color: var(--theme-link-hover-color, var(--global-link-hover-color)); // necessary
 $base-link-hover-text-decoration: var(--base-link-hover-text-decoration);
 
 $base-strong-font-weight: var(--base-strong-font-weight);
@@ -35,7 +35,7 @@ $base-margin-vertical: var(--base-margin-vertical);
 
 $base-heading-font-family: var(--base-heading-font-family);
 $base-heading-font-weight: var(--base-heading-font-weight);
-$base-heading-color: var(--theme-emphasis-color, var(--global-emphasis-color));
+$base-heading-color: var(--theme-emphasis-color, var(--global-emphasis-color)); // necessary
 $base-heading-text-transform: var(--base-heading-text-transform);
 $base-heading-margin-top: var(--base-heading-margin-top);
 $base-h1-font-size-m: var(--base-h1-font-size);
