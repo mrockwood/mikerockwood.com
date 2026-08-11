@@ -42,6 +42,42 @@ $inverse-global-border: var(--inverse-global-border);
 }
 
 
+/* Explicit inverse utility
+ ========================================================================== */
+
+:where(.uk-light) {
+
+    --theme-color:                                   var(--text-color-dark);
+    --theme-emphasis-color:                          var(--text-emphasis-dark);
+    --theme-muted-color:                             var(--text-muted-dark);
+
+    --theme-link-color:                              var(--link-color-dark);
+    --theme-link-hover-color:                        var(--link-hover-dark);
+
+    --theme-background:                              var(--surface-default-dark);
+    --theme-muted-background:                        var(--surface-muted-dark);
+    --theme-primary-background:                      var(--surface-primary-dark);
+    --theme-secondary-background:                    var(--surface-default-light);
+
+    --theme-border:                                  var(--border-color-dark);
+
+    --inverse-theme-color:                           var(--text-color-light);
+    --inverse-theme-emphasis-color:                  var(--text-emphasis-light);
+    --inverse-theme-muted-color:                    var(--text-muted-light);
+
+    --inverse-theme-link-color:                      var(--link-color-light);
+    --inverse-theme-link-hover-color:                var(--link-hover-light);
+
+    --inverse-theme-background:                      var(--surface-default-light);
+    --inverse-theme-muted-background:                var(--surface-muted-light);
+    --inverse-theme-primary-background:              var(--surface-primary-light);
+    --inverse-theme-secondary-background:            var(--surface-default-dark);
+
+    --inverse-theme-border:                          var(--border-color-light);
+
+}
+
+
 /* Inverted components
  ========================================================================== */
 
@@ -68,6 +104,8 @@ $inverse-global-border: var(--inverse-global-border);
     --theme-link-hover-color:                        var(--invert-link-hover);
 
     --theme-border:                                  var(--invert-border-color);
+
+    --base-hr-border:                                 var(--theme-border, var(--global-border));
 
     // inverse
 

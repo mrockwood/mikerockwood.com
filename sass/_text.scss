@@ -64,13 +64,13 @@ $text-2xlarge-tracking: var(--text-2xlarge-tracking);
     --text-large-font-size:                          var(--global-large-font-size);
     --text-large-line-height:                        1.5;
 
-    --text-muted-color:                              var(--global-muted-color);
-    --text-emphasis-color:                           var(--global-emphasis-color);
-    --text-primary-color:                            var(--global-primary-background);
-    --text-secondary-color:                          var(--global-secondary-background);
-    --text-success-color:                            var(--global-success-background);
-    --text-warning-color:                            var(--global-warning-background);
-    --text-danger-color:                             var(--global-danger-background);
+    --text-muted-color:                              var(--theme-muted-color, var(--global-muted-color));
+    --text-emphasis-color:                           var(--theme-emphasis-color, var(--global-emphasis-color));
+    --text-primary-color:                            var(--theme-primary-background, var(--global-primary-background));
+    --text-secondary-color:                          var(--theme-secondary-background, var(--global-secondary-background));
+    --text-success-color:                            var(--theme-success-background, var(--global-success-background));
+    --text-warning-color:                            var(--theme-warning-background, var(--global-warning-background));
+    --text-danger-color:                             var(--theme-danger-background, var(--global-danger-background));
 
     --text-background-color:                         var(--theme-primary-background, var(--global-primary-background) );
 
