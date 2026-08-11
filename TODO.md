@@ -105,8 +105,8 @@ Done when the repository has a documented source/generated boundary and producti
 ### Document and version the UIkit customization
 
 - [ ] Record the UIkit version and upstream source.
-- [ ] Identify upstream Sass/JavaScript versus site-specific code.
-- [ ] Keep custom theme overrides in a separate layer.
+- [x] Identify upstream Sass/JavaScript versus site-specific code.
+- [x] Keep custom theme overrides in a separate layer.
 - [ ] Remove unused UIkit modules from the production bundle where practical.
 - [ ] Document a repeatable dependency update procedure.
 
@@ -130,6 +130,7 @@ Done when publishing, previewing, and automated updates cannot conflict and cont
 - [ ] Validate generated HTML, JSON-LD, and microformats in CI.
 - [ ] Add accessibility checks for headings, landmarks, labels, alt text, and keyboard interaction.
 - [ ] Add browser smoke tests for the homepage, posts, work pages, theme switcher, and mobile menu.
+- [x] Keep standalone post pages inside a semantic `<main>` landmark.
 
 Done when template regressions fail CI before deployment and core journeys are tested with and without JavaScript where appropriate.
 
