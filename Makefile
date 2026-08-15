@@ -14,7 +14,7 @@ doctor:
 	fi
 
 serve: doctor
-	$(ZOLA) serve --drafts --open
+	$(ZOLA) serve --drafts --open --base-url 127.0.0.1
 
 build: doctor
 	$(ZOLA) build

@@ -1,106 +1,261 @@
 // Base
-@import "font.scss";
-@import "color.scss";
-@import "themes.scss";
-@import "variables.scss";
-@import "mixin.scss";
-@import "base.scss";
+
+@import "_font";
+
+@import "_color";
+
+@import "_themes";
+
+@import "_variables";
+@import "_vendor/variables";
+
+@import "_vendor/mixin";
+
+@import "_base";
+@import "_vendor/base";
+
 
 // Elements
-@import "link.scss";
-@import "heading.scss";
-@import "divider.scss";
-@import "list.scss";
-@import "description-list.scss";
-@import "table.scss";
-@import "icon.scss";
-@import "form-range.scss";
-@import "form.scss"; // After: Icon, Form Range
-@import "button.scss";
-@import "progress.scss";
+
+@import "_link";
+@import "_vendor/link";
+
+@import "heading";
+@import "_vendor/heading";
+
+// @import "divider";
+// @import "_vendor/divider";
+
+@import "_list";
+@import "_vendor/list";
+
+// @import "_description-list";
+// @import "_vendor/description-list";
+
+@import "_table";
+@import "_vendor/table";
+
+@import "_icon";
+@import "_vendor/icon";
+
+@import "_button";
+@import "_vendor/button";
+
+/*
+@import "_form-range";
+@import "_vendor/form-range";
+
+@import "_form";
+@import "_vendor/form";
+
+@import "_progress";
+@import "_vendor/progress";
+*/
 
 // Layout
-@import "section.scss";
-@import "container.scss";
-@import "tile.scss";
-@import "card.scss";
+
+@import "_section";
+@import "_vendor/section";
+
+@import "_container";
+@import "_vendor/container";
+
+@import "_tile";
+@import "_vendor/tile";
+
+@import "_card";
+@import "_vendor/card";
 
 // Common
-@import "close.scss"; // After: Icon
-@import "spinner.scss"; // After: Icon
-@import "totop.scss"; // After: Icon
-@import "marker.scss"; // After: Icon
-@import "alert.scss"; // After: Close
-@import "placeholder.scss";
-@import "badge.scss";
-@import "label.scss";
-@import "overlay.scss"; // After: Icon
-@import "article.scss";
-@import "comment.scss";
-@import "search.scss"; // After: Icon
+
+@import "_close";
+@import "_vendor/close";
+
+// @import "_spinner";
+// @import "_vendor/spinner";
+
+// @import "_totop";
+// @import "_vendor/totop";
+
+// @import "_marker";
+// @import "_vendor/marker";
+
+// @import "_alert";
+// @import "_vendor/alert";
+
+// @import "_placeholder";
+// @import "_vendor/placeholder";
+
+// @import "_badge";
+// @import "_vendor/badge";
+
+@import "_label";
+@import "_vendor/label";
+
+@import "_overlay";
+@import "_vendor/overlay";
+
+@import "_article";
+@import "_vendor/article";
+
+// @import "_comment";
+// @import "_vendor/comment";
+
+// @import "_search";
+// @import "_vendor/search";
 
 // Custom
 @import "syntax.scss";
 
 // JavaScript
-@import "accordion.scss";
-@import "drop.scss"; // After: Card
-@import "dropbar.scss";
-@import "dropnav.scss"; // After: Dropbar
-@import "modal.scss"; // After: Close
-@import "slideshow.scss";
-@import "slider.scss";
-@import "sticky.scss";
-@import "offcanvas.scss";
-@import "switcher.scss";
-@import "leader.scss";
-@import "notification.scss";
-@import "tooltip.scss";
-@import "sortable.scss";
-@import "countdown.scss";
-// Scrollspy
-// Toggle
-// Scroll
 
-@import "grid.scss";
+@import "_accordion";
+@import "_vendor/accordion";
+
+// @import "_drop";
+// @import "_vendor/drop";
+
+// @import "_dropbar";
+// @import "_vendor/dropbar";
+
+// @import "_dropnav";
+// @import "_vendor/dropnav";
+
+@import "_modal";
+@import "_vendor/modal";
+
+// @import "_slideshow";
+// @import "_vendor/slideshow";
+
+@import "_slider";
+@import "_vendor/slider";
+
+@import "_sticky";
+@import "_vendor/sticky";
+
+@import "_offcanvas";
+@import "_vendor/offcanvas";
+
+@import "_switcher";
+@import "_vendor/switcher";
+
+
+// @import "_leader";
+// @import "_vendor/leader";
+
+// @import "_notification";
+// @import "_vendor/notification";
+
+@import "_tooltip";
+@import "_vendor/tooltip";
+
+
+// @import "_sortable";
+// @import "_vendor/sortable";
+
+// @import "_countdown";
+// @import "_vendor/countdown";
+
+@import "_grid";
+// @import "_vendor/grid";
+
 
 // Navs
-@import "nav.scss";
-@import "navbar.scss"; // After: Card, Grid, Nav, Icon, Search
-@import "subnav.scss";
-@import "breadcrumb.scss";
-@import "pagination.scss";
-@import "tab.scss";
-@import "slidenav.scss"; // After: Icon
-@import "dotnav.scss";
-@import "thumbnav.scss";
-@import "iconnav.scss";
 
-@import "dropdown.scss"; // After: Card, Nav
-@import "lightbox.scss"; // After: Close, Slidenav
+@import "_nav";
+@import "_vendor/nav";
+
+@import "_navbar";
+@import "_vendor/navbar";
+
+@import "_subnav";
+@import "_vendor/subnav";
+
+// @import "_breadcrumb";
+// @import "_vendor/breadcrumb";
+
+@import "_pagination";
+@import "_vendor/pagination";
+
+@import "_tab";
+@import "_vendor/tab";
+
+@import "_slidenav";
+@import "_vendor/slidenav";
+
+@import "_dotnav";
+@import "_vendor/dotnav";
+
+@import "_thumbnav";
+@import "_vendor/thumbnav";
+
+@import "_iconnav";
+@import "_vendor/iconnav";
+
+// @import "_dropdown";
+// @import "_vendor/dropdown";
+
+@import "_lightbox";
+@import "_vendor/lightbox";
 
 // Custom
-@import "theme-switcher.scss";
+@import "_theme-switcher.scss";
 
 // Utilities
-@import "animation.scss";
-@import "width.scss";
-@import "height.scss";
-@import "ratio.scss";
-@import "text.scss";
-@import "column.scss";
-@import "cover.scss";
-@import "background.scss";
-@import "align.scss";
-@import "svg.scss";
-@import "utility.scss";
-@import "flex.scss"; // After: Utility
-@import "margin.scss";
-@import "padding.scss";
-@import "position.scss";
-@import "transition.scss";
-@import "visibility.scss";
-@import "inverse.scss";
+
+@import "_animation";
+@import "_vendor/animation";
+
+@import "_width";
+@import "_vendor/width";
+
+@import "_height";
+@import "_vendor/height";
+
+// @import "_ratio";
+// @import "_vendor/ratio";
+
+@import "_text";
+@import "_vendor/text";
+
+// @import "_column";
+// @import "_vendor/column";
+
+// @import "_cover";
+@import "_vendor/cover";
+
+@import "_background";
+@import "_vendor/background";
+
+// @import "_align";
+// @import "_vendor/align";
+
+// @import "_svg";
+@import "_vendor/svg";
+
+@import "_utility";
+@import "_vendor/utility";
+
+// @import "_flex";
+@import "_vendor/flex";
+
+@import "_margin";
+@import "_vendor/margin";
+
+@import "_padding";
+@import "_vendor/padding";
+
+@import "_position";
+@import "_vendor/position";
+
+@import "_transition";
+@import "_vendor/transition";
+
+// @import "_visibility";
+@import "_vendor/visibility";
+
+@import "_inverse";
+@import "_vendor/inverse";
 
 // Need to be loaded last
-@import "print.scss";
+@import "_vendor/print.scss";

@@ -1,16 +1,11 @@
 // Name:            Dropdown
-// Description:     Component to create dropdown menus
+// Description:     Component to create a dropdown based on Drop component
 //
 // Component:       `uk-dropdown`
 //
 // Adopted:         `uk-dropdown-nav`
 //
-// Modifiers:       `uk-dropdown-top-*`
-//                  `uk-dropdown-bottom-*`
-//                  `uk-dropdown-left-*`
-//                  `uk-dropdown-right-*`
-//                  `uk-dropdown-stack`
-//                  `uk-dropdown-grid`
+// Modifiers:       `uk-dropdown-large`
 //
 // States:          `uk-active`
 //
@@ -20,171 +15,82 @@
 // Variables
 // ========================================================================
 
-:where(.uk-dropdown) {
+$dropdown-margin: var(--dropdown-margin);
+$dropdown-viewport-margin: var(--dropdown-viewport-margin);
+$dropdown-min-width: var(--dropdown-min-width);
+$dropdown-padding: var(--dropdown-padding);
+$dropdown-background: var(--dropdown-background);
+$dropdown-color: var(--dropdown-color);
+$dropdown-color-mode: var(--dropdown-color-mode);
+$dropdown-focus-outline: var(--dropdown-focus-outline);
 
-    --dropdown-margin:                                var(--global-small-margin);
-    --dropdown-viewport-margin:                       15px;
-    --dropdown-min-width:                             200px;
-    --dropdown-padding:                               15px;
-    --dropdown-background:                            var(--theme-muted-background, var(--global-muted-background) );
-    --dropdown-color:                                 var(--theme-color, var(--global-color) );
+$dropdown-large-padding: var(--dropdown-large-padding);
 
-    --dropdown-large-padding:                         40px;
+$dropdown-dropbar-margin: var(--dropdown-dropbar-margin);
+$dropdown-dropbar-padding-top: var(--dropdown-dropbar-padding-top);
+$dropdown-dropbar-padding-bottom: var(--dropdown-dropbar-padding-bottom);
+$dropdown-dropbar-viewport-margin: var(--dropdown-dropbar-viewport-margin);
+$dropdown-dropbar-viewport-margin-s: var(--dropdown-dropbar-viewport-margin);
+$dropdown-dropbar-viewport-margin-m: var(--dropdown-dropbar-viewport-margin);
 
-    --dropdown-dropbar-padding-top:                   var(--dropdown-padding);
-    --dropdown-dropbar-padding-bottom:                var(--dropdown-dropbar-padding-top);
-    --dropdown-dropbar-viewport-margin:               15px;
-    --dropdown-dropbar-viewport-margin-s:             var(--global-gutter);
-    --dropdown-dropbar-viewport-margin-m:             var(--global-medium-gutter);
+$dropdown-dropbar-large-padding-top: var(--dropdown-dropbar-large-padding-top);
+$dropdown-dropbar-large-padding-bottom: var(--dropdown-dropbar-large-padding-bottom);
 
-    --dropdown-dropbar-large-padding-top:             var(--dropdown-large-padding);
-    --dropdown-dropbar-large-padding-bottom:          var(--dropdown-dropbar-large-padding-top);
+$dropdown-nav-item-color: var(--dropdown-nav-item-color);
+$dropdown-nav-item-hover-color: var(--dropdown-nav-item-hover-color);
+$dropdown-nav-subtitle-font-size: var(--dropdown-nav-subtitle-font-size);
+$dropdown-nav-header-color: var(--dropdown-nav-header-color);
+$dropdown-nav-divider-border-width: var(--dropdown-nav-divider-border-width);
+$dropdown-nav-divider-border: var(--dropdown-nav-divider-border);
+$dropdown-nav-sublist-item-color: var(--dropdown-nav-sublist-item-color);
+$dropdown-nav-sublist-item-hover-color: var(--dropdown-nav-sublist-item-hover-color);
 
-    --dropdown-nav-item-color:                        var(--theme-muted-color, var(--global-muted-color) );
-    --dropdown-nav-item-hover-color:                  var(--theme-color, var(--global-color) );
-    --dropdown-nav-subtitle-font-size:                var(--global-small-font-size);
-    --dropdown-nav-header-color:                      var(--theme-emphasis-color, var(--global-emphasis-color) );
-    --dropdown-nav-divider-border-width:              var(--global-border-width);
-    --dropdown-nav-divider-border:                    var(--theme-border, var(--global-border) );
-    --dropdown-nav-sublist-item-color:                var(--theme-muted-color, var(--global-muted-color) );
-    --dropdown-nav-sublist-item-hover-color:          var(--theme-color, var(--global-color) );
 
-}
+// Set custom properties
+// ========================================================================
 
-/* Phone landscape and bigger */
-@media (min-width: $breakpoint-small) {
+:root {
 
-    :where(.uk-dropdown) {
+    --dropdown-margin:                               var(--global-small-margin);
+    --dropdown-viewport-margin:                      15px;
+    --dropdown-min-width:                            200px;
+    --dropdown-padding:                              15px;
+    --dropdown-background:                           var(--theme-muted-background, var(--global-muted-background));
+    --dropdown-color:                                var(--theme-color, var(--global-color));
+    --dropdown-color-mode:                           dark;
+    --dropdown-focus-outline:                        var(--base-focus-outline);
 
-        --dropdown-dropbar-viewport-margin:           var(--global-gutter);
+    --dropdown-large-padding:                        40px;
+
+    --dropdown-dropbar-margin:                       var(--dropdown-margin);
+    --dropdown-dropbar-padding-top:                  var(--dropdown-padding);
+    --dropdown-dropbar-padding-bottom:               var(--dropdown-padding);
+    --dropdown-dropbar-viewport-margin:              15px;
+
+    --dropdown-dropbar-large-padding-top:            var(--dropdown-large-padding);
+    --dropdown-dropbar-large-padding-bottom:         var(--dropdown-dropbar-large-padding-top);
+
+    --dropdown-nav-item-color:                       var(--theme-muted-color, var(--global-muted-color));
+    --dropdown-nav-item-hover-color:                 var(--theme-color, var(--global-color));
+    --dropdown-nav-subtitle-font-size:               var(--global-small-font-size);
+    --dropdown-nav-header-color:                     var(--theme-emphasis-color, var(--global-emphasis-color));
+    --dropdown-nav-divider-border-width:             var(--global-border-width);
+    --dropdown-nav-divider-border:                   var(--theme-border, var(--global-border));
+    --dropdown-nav-sublist-item-color:               var(--theme-muted-color, var(--global-muted-color));
+    --dropdown-nav-sublist-item-hover-color:         var(--theme-color, var(--global-color));
+
+    /* Phone landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        --dropdown-dropbar-viewport-margin:          var(--global-gutter);
+
+    }
+
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
+
+        --dropdown-dropbar-viewport-margin:          var(--global-medium-gutter);
 
     }
 
 }
-
-/* Tablet landscape and bigger */
-@media (min-width: $breakpoint-medium) {
-
-    :where(.uk-dropdown) {
-
-        --dropdown-dropbar-viewport-margin:           var(--global-medium-gutter);
-
-    }
-
-}
-
-
-/* ========================================================================
-   Component: Dropdown
- ========================================================================== */
-
-/*
- * Adopts `uk-drop`
- * 1. Reset drop and let text expand the width instead of wrapping
- * 2. Set a default width
- * 3. Style
- */
-
-.uk-dropdown {
-    --uk-position-offset: var(--dropdown-margin);
-    --uk-position-viewport-offset: var(--dropdown-viewport-margin);
-    /* 1 */
-    inline-size: auto;
-    /* 2 */
-    min-inline-size: var(--dropdown-min-width);
-    /* 3 */
-    padding: var(--dropdown-padding);
-    background: var(--dropdown-background);
-    color: var(--dropdown-color);
-}
-
-/*
- * Remove margin from the last-child
- */
-
-.uk-dropdown > :last-child { margin-block-end: 0; }
-
-
-/* Size modifier
- ========================================================================== */
-
-.uk-dropdown-large { padding: var(--dropdown-large-padding); }
-
-
-/* Dropbar modifier
- ========================================================================== */
-
-/*
- * 1. Reset dropdown width to prevent to early shifting
- * 2. Reset style
- * 3. Padding
- */
-
-.uk-dropdown-dropbar {
-    /* 1 */
-    inline-size: auto;
-    /* 2 */
-    background: transparent;
-    /* 3 */
-    padding: var(--dropdown-dropbar-padding-top) 0 var(--dropdown-dropbar-padding-bottom) 0;
-    --uk-position-viewport-offset: var(--dropdown-dropbar-viewport-margin);
-}
-
-.uk-dropdown-dropbar-large {
-    padding-block-start: var(--dropdown-dropbar-large-padding-top);
-    padding-block-end: var(--dropdown-dropbar-large-padding-bottom);
-}
-
-
-/* Nav
- * Adopts `uk-nav`
- ========================================================================== */
-
-.uk-dropdown-nav {}
-
-/*
- * Items
- */
-
-.uk-dropdown-nav > li > a {
-    color: var(--dropdown-nav-item-color);
-}
-
-/* Hover + Active */
-.uk-dropdown-nav > li > a:hover,
-.uk-dropdown-nav > li.uk-active > a {
-    color: var(--dropdown-nav-item-hover-color);
-}
-
-/*
- * Subtitle
- */
-
-.uk-dropdown-nav .uk-nav-subtitle {
-    font-size: var(--dropdown-nav-subtitle-font-size);
-}
-
-/*
- * Header
- */
-
-.uk-dropdown-nav .uk-nav-header {
-    color: var(--dropdown-nav-header-color);
-}
-
-/*
- * Divider
- */
-
-.uk-dropdown-nav .uk-nav-divider {
-    border-block-start: var(--dropdown-nav-divider-border-width) solid var(--dropdown-nav-divider-border);
-}
-
-/*
- * Sublists
- */
-
-.uk-dropdown-nav .uk-nav-sub a { color: var(--dropdown-nav-sublist-item-color); }
-
-.uk-dropdown-nav .uk-nav-sub a:hover,
-.uk-dropdown-nav .uk-nav-sub li.uk-active > a { color: var(--dropdown-nav-sublist-item-hover-color); }

@@ -1,84 +1,58 @@
 // Name:            Overlay
 // Description:     Component to create content areas overlaying an image
 //
-// Component:       `uk-overlay`
-//
-// Adopted:         `uk-overlay-icon`
-//
-// Modifier:        `uk-overlay-default`
-//                  `uk-overlay-primary`
-//
 // ========================================================================
 
 
 // Variables
 // ========================================================================
 
+$overlay-padding-horizontal: var(--overlay-padding-horizontal);
+$overlay-padding-vertical: var(--overlay-padding-vertical);
+
+$overlay-default-background: var(--overlay-default-background);
+$overlay-default-color-mode: var(--overlay-default-color-mode);
+
+$overlay-primary-background: var(--overlay-primary-background);
+$overlay-primary-color-mode: var(--overlay-primary-color-mode);
+
+$overlay-light-background: var(--overlay-light-background);
+$overlay-light-color-mode: var(--overlay-light-color-mode);
+
+$overlay-dark-background: var(--overlay-dark-background);
+$overlay-dark-color-mode: var(--overlay-dark-color-mode);
+
+
+// Set custom properties
+// ========================================================================
+
 :where([class*='uk-overlay']) {
 
-    --overlay-padding-horizontal:                     var(--global-gutter);
-    --overlay-padding-vertical:                       var(--global-gutter);
+    --overlay-padding-horizontal:                    var(--global-gutter);
+    --overlay-padding-vertical:                      var(--global-gutter);
 
-    --overlay-default-background:                     color-mix(in oklab, var(--global-background), transparent 20%);
-    --overlay-primary-background:                     color-mix(in oklab, var(--global-secondary-background), transparent 20%);
-	--overlay-light-background:                       color-mix(in oklab, var(--surface-default-light), transparent 20%);
-    --overlay-dark-background:                        color-mix(in oklab, var(--surface-default-dark), transparent 20%);
+    --overlay-default-background:                    color-mix(in oklab, var(--global-background), transparent 20%);
+    --overlay-default-color-mode:                    dark;
+
+    --overlay-primary-background:                    color-mix(in oklab, var(--global-secondary-background), transparent 20%);
+    --overlay-primary-color-mode:                    light;
+
+    --overlay-light-background:                      color-mix(in oklab, var(--surface-default-light), transparent 20%);
+    --overlay-light-color-mode:                      dark;
+
+    --overlay-dark-background:                       color-mix(in oklab, var(--surface-default-dark), transparent 20%);
+    --overlay-dark-color-mode:                       light;
 
 }
 
 
-/* ========================================================================
-   Component: Overlay
- ========================================================================== */
+// Mixins
+// ========================================================================
 
-.uk-overlay {
-    padding: var(--overlay-padding-vertical) var(--overlay-padding-horizontal);
-}
+@mixin hook-overlay-misc() {
 
-/*
- * Remove margin from the last-child
- */
+    .uk-overlay-light { background: var(--overlay-light-background); }
 
-.uk-overlay > :last-child { margin-block-end: 0; }
+    .uk-overlay-dark { background: var(--overlay-dark-background); }
 
-
-/* Icon
- ========================================================================== */
-
-.uk-overlay-icon {}
-
-
-/* Style modifiers
- ========================================================================== */
-
-/*
- * Default
- */
-
-.uk-overlay-default {
-    background: var(--overlay-default-background);
-}
-
-/*
- * Primary
- */
-
-.uk-overlay-primary {
-    background: var(--overlay-primary-background);
-}
-
-/*
- * Light
- */
-
-.uk-overlay-light {
-    background: var(--overlay-light-background);
-}
-
-/*
- * Dark
- */
-
-.uk-overlay-dark {
-    background: var(--overlay-dark-background);
-}
+};

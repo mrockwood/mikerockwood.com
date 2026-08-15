@@ -21,7 +21,7 @@
 						{%- set feature_image_1200 = resize_image(path=feature_image, width=1200, height=800, format="webp", quality=80) %}
 						{%- set feature_image_1600 = resize_image(path=feature_image, width=1600, height=1060, format="webp", quality=80) %}
 
-						<img class="" loading="lazy" alt="" width="3000" height="2000"
+						<img class="" loading="lazy" alt="" width="3000" height="2000" src="{{ feature_image_960.url | safe }}"
 						srcset="{{ feature_image_640.url | safe }} 640w,
 								{{ feature_image_960.url | safe }} 960w,
 								{{ feature_image_1200.url | safe }} 1200w,
@@ -64,7 +64,7 @@
 								{%- set slider_image3_600 = resize_image(path=slider_image3, width=600, height=400, format="webp", quality=80) %}
 								{%- set slider_image3_1200 = resize_image(path=slider_image3, width=1200, height=800, format="webp", quality=80) %}
 
-								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000" src="{{ slider_image3_600.url | safe }}"
 									srcset="{{ slider_image3_600.url | safe }} 600w,
 											{{ slider_image3_1200.url | safe }} 1200w"
 									sizes="(max-width: 600px) 600px,
@@ -80,7 +80,7 @@
 								{%- set slider_image1_600 = resize_image(path=slider_image1, width=600, height=400, format="webp", quality=80) %}
 								{%- set slider_image1_1200 = resize_image(path=slider_image1, width=1200, height=800, format="webp", quality=80) %}
 
-								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000" src="{{ slider_image1_600.url | safe }}"
 									srcset="{{ slider_image1_600.url | safe }} 600w,
 											{{ slider_image1_1200.url | safe }} 1200w"
 									sizes="(max-width: 600px) 600px,
@@ -96,7 +96,7 @@
 								{%- set slider_image2_600 = resize_image(path=slider_image2, width=600, height=400, format="webp", quality=80) %}
 								{%- set slider_image2_1200 = resize_image(path=slider_image2, width=1200, height=800, format="webp", quality=80) %}
 
-								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000" src="{{ slider_image2_600.url | safe }}"
 									srcset="{{ slider_image2_600.url | safe }} 600w,
 											{{ slider_image2_1200.url | safe }} 1200w"
 									sizes="(max-width: 600px) 600px,
@@ -112,7 +112,7 @@
 								{%- set slider_image4_600 = resize_image(path=slider_image4, width=600, height=400, format="webp", quality=80) %}
 								{%- set slider_image4_1200 = resize_image(path=slider_image4, width=1200, height=800, format="webp", quality=80) %}
 
-								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000"
+								<img class="uk-transition-opaque" loading="lazy" alt="" width="3000" width="2000" src="{{ slider_image4_600.url | safe }}"
 									srcset="{{ slider_image4_600.url | safe }} 600w,
 											{{ slider_image4_1200.url | safe }} 1200w"
 									sizes="(max-width: 600px) 600px,
@@ -209,10 +209,10 @@
 			</div>
 			<div class="uk-width-1-2@m">
 				<ul
-					class="uk-accordion-divider"
+					class="uk-accordion-default uk-accordion-divider"
 					uk-accordion="multiple: true"
 					style="
-						--accordion-title-font-size: var(--global-large-font-size);
+						--accordion-default-title-font-size: var(--global-large-font-size);
 					"
 				>
 					<li>
@@ -264,19 +264,19 @@
 			<div>
 				<div class="uk-panel uk-margin-remove-first-child" uk-scrollspy="target: [uk-scrollspy-class];">
 					<h3 class="uk-h6 uk-margin-top uk-margin-remove-bottom">Hardness</h3>
-					<img class="uk-text-emphasis uk-margin-top" alt uk-svg src="{{ config.base_url | safe }}/images/materials-icon-01.svg">
+					<img class="uk-text-emphasis uk-margin-top" alt uk-svg src="{{ get_url(path='/images/materials-icon-01.svg') }}">
 				</div>
 			</div>
 			<div>
 				<div class="uk-panel uk-margin-remove-first-child" uk-scrollspy="target: [uk-scrollspy-class];">
 					<h3 class="uk-h6 uk-margin-top uk-margin-remove-bottom">Origin</h3>
-					<img class="uk-text-emphasis uk-margin-top" alt uk-svg src="{{ config.base_url | safe }}/images/materials-icon-02.svg">
+					<img class="uk-text-emphasis uk-margin-top" alt uk-svg src="{{ get_url(path='/images/materials-icon-02.svg') }}">
 				</div>
 			</div>
 			<div>
 				<div class="uk-panel uk-margin-remove-first-child" uk-scrollspy="target: [uk-scrollspy-class];">
 					<h3 class="uk-h6 uk-margin-top uk-margin-remove-bottom">Certificate</h3>
-					<img class="uk-text-emphasis uk-margin-top" alt uk-svg src="{{ config.base_url | safe }}/images/materials-icon-03.svg">
+					<img class="uk-text-emphasis uk-margin-top" alt uk-svg src="{{ get_url(path='/images/materials-icon-03.svg') }}">
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,83 @@
+// Name:            Label
+// Description:     Component to indicate important notes
+//
+// Component:       `uk-label`
+//
+// Modifiers:       `uk-label-success`
+//                  `uk-label-warning`
+//                  `uk-label-danger`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-label']) {
+
+    --label-padding-vertical:                         2px;
+    --label-padding-horizontal:                       calc( ( var(--global-xsmall-margin) + var(--global-small-margin) ) / 2);
+    --label-background:                               var(--theme-secondary-background, var(--global-secondary-background) );
+    --label-line-height:                              var(--global-line-height);
+    --label-font-size:                                var(--global-xsmall-font-size);
+    --label-color:                                    var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+    --label-border-radius:                            2px;
+    --label-text-transform:                           uppercase;
+
+    --label-success-background:                       var(--theme-success-background, var(--global-success-background) );
+    --label-success-color:                            var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+    --label-warning-background:                       var(--theme-warning-background, var(--global-warning-background) );
+    --label-warning-color:                            var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+    --label-danger-background:                        var(--theme-danger-background, var(--global-danger-background) );
+    --label-danger-color:                             var(--inverse-theme-emphasis-color, var(--inverse-global-emphasis-color) );
+
+}
+
+
+/* ========================================================================
+   Component: Label
+ ========================================================================== */
+
+.uk-label {
+    display: inline-block;
+    padding: var(--label-padding-vertical) var(--label-padding-horizontal);
+    background: var(--label-background);
+    line-height: var(--label-line-height);
+    font-size: var(--label-font-size);
+    color: var(--label-color);
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: var(--label-border-radius);
+    text-transform: var(--label-text-transform);
+}
+
+
+/* Color modifiers
+ ========================================================================== */
+
+/*
+ * Success
+ */
+
+.uk-label-success {
+    background-color: var(--label-success-background);
+    color: var(--label-success-color);
+}
+
+/*
+ * Warning
+ */
+
+.uk-label-warning {
+    background-color: var(--label-warning-background);
+    color: var(--label-warning-color);
+}
+
+/*
+ * Danger
+ */
+
+.uk-label-danger {
+    background-color: var(--label-danger-background);
+    color: var(--label-danger-color);
+}

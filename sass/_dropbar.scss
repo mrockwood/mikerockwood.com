@@ -15,88 +15,50 @@
 // Variables
 // ========================================================================
 
-:where(.uk-dropbar) {
+$dropbar-margin: var(--dropbar-margin);
+$dropbar-padding-top: var(--dropbar-padding-top);
+$dropbar-padding-bottom: var(--dropbar-padding-bottom);
+$dropbar-padding-horizontal: var(--dropbar-padding-horizontal);
+$dropbar-padding-horizontal-s: var(--dropbar-padding-horizontal);
+$dropbar-padding-horizontal-m: var(--dropbar-padding-horizontal);
+$dropbar-background: var(--dropbar-background);
+$dropbar-color: var(--dropbar-color);
+$dropbar-color-mode: var(--dropbar-color-mode);
+$dropbar-focus-outline: var(--dropbar-focus-outline);
 
-    --dropbar-margin:                                 0;
-    --dropbar-padding-top:                            15px;
-    --dropbar-padding-bottom:                         var(--dropbar-padding-top);
-    --dropbar-padding-horizontal:                     15px;
-    --dropbar-background:                             var(--theme-muted-background, var(--global-muted-background) );
-    --dropbar-color:                                  var(--theme-color, var(--global-color) );
+$dropbar-large-padding-top: var(--dropbar-large-padding-top);
+$dropbar-large-padding-bottom: var(--dropbar-large-padding-bottom);
 
-    --dropbar-large-padding-top:                      40px;
-    --dropbar-large-padding-bottom:                   var(--dropbar-large-padding-top);
 
-}
+// Set custom properties
+// ========================================================================
 
-/* Phone landscape and bigger */
-@media (min-width: $breakpoint-small) {
+:root {
 
-    :where(.uk-dropbar) {
+    --dropbar-margin:                                0;
+    --dropbar-padding-top:                           15px;
+    --dropbar-padding-bottom:                        var(--dropbar-padding-top);
+    --dropbar-padding-horizontal:                    15px;
+    --dropbar-background:                            var(--theme-muted-background, var(--global-muted-background));
+    --dropbar-color:                                 var(--theme-color, var(--global-color));
+    --dropbar-color-mode:                            dark;
+    --dropbar-focus-outline:                         var(--base-focus-outline);
 
-        --dropbar-padding-horizontal:                 var(--global-gutter);
+    --dropbar-large-padding-top:                     40px;
+    --dropbar-large-padding-bottom:                  var(--dropbar-large-padding-top);
+
+    /* Phone landscape and bigger */
+    @media (min-width: $breakpoint-small) {
+
+        --dropbar-padding-horizontal:                var(--global-gutter);
+
+    }
+
+    /* Tablet landscape and bigger */
+    @media (min-width: $breakpoint-medium) {
+
+        --dropbar-padding-horizontal:                var(--global-medium-gutter);
 
     }
 
 }
-
-/* Tablet landscape and bigger */
-@media (min-width: $breakpoint-medium) {
-
-    :where(.uk-dropbar) {
-
-        --dropbar-padding-horizontal:                 var(--global-medium-gutter);
-
-    }
-
-}
-
-
-/* ========================================================================
-   Component: Dropbar
- ========================================================================== */
-
-/*
- * Adopts `uk-drop`
- * 1. Reset drop
- * 2. Style
- */
-
-.uk-dropbar {
-    --uk-position-offset: var(--dropbar-margin);
-    --uk-position-shift-offset: 0;
-    --uk-position-viewport-offset: 0;
-    /* 1 */
-    inline-size: auto;
-    /* 2 */
-    padding: var(--dropbar-padding-top) var(--dropbar-padding-horizontal) var(--dropbar-padding-bottom) var(--dropbar-padding-horizontal);
-    background: var(--dropbar-background);
-    color: var(--dropbar-color);
-}
-
-/*
- * Remove margin from the last-child
- */
-
-.uk-dropbar > :last-child { margin-block-end: 0; }
-
-
-/* Size modifier
- ========================================================================== */
-
-.uk-dropbar-large {
-    padding-block-start: var(--dropbar-large-padding-top);
-    padding-block-end: var(--dropbar-large-padding-bottom);
-}
-
-
-/* Direction modifier
- ========================================================================== */
-
-.uk-dropbar-top {}
-
-.uk-dropbar-bottom {}
-
-.uk-dropbar-left {}
-
-.uk-dropbar-right {}

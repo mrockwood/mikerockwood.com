@@ -1,0 +1,168 @@
+//
+// Component:       Variables
+// Description:     Defines common values which are used across all components
+//
+// ========================================================================
+
+
+// Breakpoints
+// ========================================================================
+
+// Phone Portrait:   Galaxy (360x640), iPhone 6 (375x667), iPhone 6+ (414x736)
+// Phone Landscape:  Galaxy (640x360), iPhone 6 (667x375), iPhone 6+ (736x414)
+// Tablet Portrait:  iPad (768x1024), Galaxy Tab (800x1280),
+// Tablet Landscape: iPad (1024x768), iPad Pro (1024x1366),
+// Desktop:          Galaxy Tab (1280x800), iPad Pro (1366x1024)
+
+$breakpoint-small:                                    640px !default;  // Phone landscape
+$breakpoint-medium:                                   960px !default;  // Tablet Landscape
+$breakpoint-large:                                    1200px !default; // Desktop
+$breakpoint-xlarge:                                   1600px !default; // Large Screens
+
+$breakpoint-xsmall-max:                               ($breakpoint-small - 1) !default;
+$breakpoint-small-max:                                ($breakpoint-medium - 1) !default;
+$breakpoint-medium-max:                               ($breakpoint-large - 1) !default;
+$breakpoint-large-max:                                ($breakpoint-xlarge - 1) !default;
+
+
+// Media
+// ========================================================================
+
+$media-os-dark:                                       'prefers-color-scheme: dark' !default;
+$media-os-light:                                      'prefers-color-scheme: light' !default;
+
+$media-motion-ok:                                     'prefers-reduced-motion: no-preference' !default;
+$media-motion-not-ok:                                 'prefers-reduced-motion: reduce' !default;
+
+$media-opacity-ok:                                    'prefers-reduced-transparency: no-preference' !default;
+$media-opacity-not-ok:                                'prefers-reduced-transparency: reduce' !default;
+
+$media-use-data-ok:                                   'prefers-reduced-data: no-preference' !default;
+$media-use-data-not-ok:                               'prefers-reduced-data: reduce' !default;
+
+$media-high-contrast:                                 'prefers-contrast: more' !default;
+$media-low-contrast:                                  'prefers-contrast: less' !default;
+
+
+// Global variables
+// ========================================================================
+
+:where(html) {
+
+	//
+	// Typography
+	//
+
+	--global-font-family:                             'Rubik', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--global-font-size:                               18px;
+	--global-line-height:                             1.6;      // 24px
+
+	--global-2xlarge-font-size:                       2.625rem; // 42px
+	--global-xlarge-font-size:                        2rem;     // 32px
+	--global-large-font-size:                         1.5rem;   // 24px
+	--global-medium-font-size:                        1.25rem;  // 20px
+	--global-small-font-size:                         0.875rem; // 14px
+	--global-xsmall-font-size:                        0.75rem;  // 12px
+
+	//
+	// Text colors
+	//
+
+	--global-color:                                   var(--text-color, hsl(0 0% 40%));
+	--global-emphasis-color:                          var(--text-emphasis, hsl(0 0% 20%));
+	--global-muted-color:                             var(--text-muted, hsl(0 0% 60%));
+
+	--global-link-color:                              var(--link-color, hsl(210 88% 53%));
+	--global-link-hover-color:                        var(--link-hover, hsl(210 86% 43%));
+
+	--global-inverse-color:                           var(--invert-text-emphasis, hsl(220 10% 100%));
+
+	//
+	// Backgrounds
+	//
+
+	--global-background:                              var(--surface-default, hsl(220 10% 100%));
+
+	--global-muted-background:                        var(--surface-muted, hsl(0 0% 97%));
+	--global-primary-background:                      var(--surface-primary, hsl(210 88% 53%));
+	--global-secondary-background:                    var(--invert-surface-default, hsl(0 0% 13%));
+
+	--global-success-background:                      var(--surface-success, hsl(158 64% 51%));
+	--global-warning-background:                      var(--surface-warning, hsl(26 94% 67%));
+	--global-danger-background:                       var(--surface-danger, hsl(349 84% 63%));
+
+	//
+	// Borders
+	//
+
+	--global-border-width:                            1px;
+	--global-border-style:                            solid;
+	--global-border:                                  var(--border-color, hsl(0 0% 90%));
+
+	//
+	// Box-Shadows
+	//
+
+	--global-small-box-shadow:                        0 2px 8px rgba(0,0,0,0.08);
+	--global-medium-box-shadow:                       0 5px 15px rgba(0,0,0,0.08);
+	--global-large-box-shadow:                        0 14px 25px rgba(0,0,0,0.16);
+	--global-xlarge-box-shadow:                       0 28px 50px rgba(0,0,0,0.16);
+
+	//
+	// Spacings
+	//
+
+	// Used in margin, section, list
+	--global-margin:                                  20px;
+	--global-xsmall-margin:                           5px;
+	--global-small-margin:                            10px;
+	--global-medium-margin:                           40px;
+	--global-large-margin:                            70px;
+	--global-xlarge-margin:                           140px;
+
+	// Used in grid, column, container, align, card, padding
+	--global-gutter:                                  30px;
+	--global-small-gutter:                            15px;
+	--global-medium-gutter:                           40px;
+	--global-large-gutter:                            70px;
+
+	//
+	// Transitions
+	//
+
+	--global-xslow-transition:                        1000ms;
+	--global-slow-transition:                         500ms;
+	--global-medium-transition:                       250ms;
+	--global-fast-transition:                         150ms;
+	--global-xfast-transition:                        50ms;
+
+	//
+	// Controls
+	//
+
+	--global-control-height:                          40px;
+	--global-control-small-height:                    30px;
+	--global-control-large-height:                    55px;
+
+	//
+	// Z-index
+	//
+
+	--global-z-index:                                 1000;
+
+}
+
+
+@media ($media-motion-not-ok) {
+
+	:where(html) {
+
+		--global-xslow-transition:                    0ms;
+		--global-slow-transition:                     0ms;
+		--global-medium-transition:                   0ms;
+		--global-fast-transition:                     0ms;
+		--global-xfast-transition:                    0ms;
+
+	}
+
+}

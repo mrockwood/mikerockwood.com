@@ -13,103 +13,65 @@
 // Variables
 // ========================================================================
 
+$thumbnav-margin-horizontal: var(--thumbnav-margin-horizontal);
+$thumbnav-margin-vertical: var(--thumbnav-margin-vertical);
+
+$thumbnav-item-gradient: var(--thumbnav-item-gradient);
+$thumbnav-item-hover-opacity: var(--thumbnav-item-hover-opacity);
+$thumbnav-item-active-opacity: var(--thumbnav-item-active-opacity);
+
+
+// Set custom properties
+// ========================================================================
+
 :where([class*='uk-thumbnav']) {
 
-    --thumbnav-margin-horizontal: 15px;
-    --thumbnav-margin-vertical: var(--thumbnav-margin-horizontal);
+    --thumbnav-margin-horizontal:                    15px;
+    --thumbnav-margin-vertical:                      var(--thumbnav-margin-horizontal);
 
-	--thumbnav-item-gradient: linear-gradient(180deg, color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 100%), color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 50%) );
-	--thumbnav-item-hover-opacity: 0;
-	--thumbnav-item-active-opacity: 0;
+    --thumbnav-item-gradient:                        linear-gradient(180deg, color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 100%), color-mix(in oklab, var(--theme-background, var(--global-background)), transparent 50%) );
+    --thumbnav-item-hover-opacity:                   0;
+    --thumbnav-item-active-opacity:                  0;
 
 }
 
 
-/* ========================================================================
-   Component: Thumbnav
- ========================================================================== */
+// Mixins
+// ========================================================================
 
-/*
- * 1. Allow items to wrap into the next line
- * 2. Reset list
- * 3. Gutter
- */
-
-.uk-thumbnav {
-    display: flex;
-    /* 1 */
-    flex-wrap: wrap;
-    /* 2 */
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    /* 3 */
-    margin-inline-start: calc( var(--thumbnav-margin-horizontal) * -1 );
+@mixin hook-thumbnav() {
+    margin-left: calc( var(--thumbnav-margin-horizontal) * -1 );
 }
 
-/*
- * Space is allocated based on content dimensions, but shrinks: 0 1 auto
- * 1. Gutter
- */
+@mixin hook-thumbnav-item() {
 
-.uk-thumbnav > * {
-    /* 1 */
-    padding-inline-start: var(--thumbnav-margin-horizontal);
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: var(--thumbnav-item-gradient);
+        transition: opacity 0.1s ease-in-out;
+    }
+
 }
 
-
-/* Items
- ========================================================================== */
-
-/*
- * Items
- */
-
-.uk-thumbnav > * > * {
-    display: inline-block;
-	position: relative;
+@mixin hook-thumbnav-item-hover() {
+    &::after { opacity: var(--thumbnav-item-hover-opacity); }
 }
 
-.uk-thumbnav > * > *::after {
-	content: "";
-	position: absolute;
-	inset-block-start: 0;
-    inset-block-end: 0;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-	background-image: var(--thumbnav-item-gradient);
-	transition: opacity 0.1s ease-in-out;
+@mixin hook-thumbnav-item-active() {
+    &::after { opacity: var(--thumbnav-item-active-opacity); }
 }
 
-/* Hover */
-.uk-thumbnav > * > :hover {}
+@mixin hook-thumbnav-misc() {
 
-.uk-thumbnav > * > :hover::after { opacity: var(--thumbnav-item-hover-opacity); }
+    .uk-thumbnav-vertical {
+        margin-top: calc( var(--thumbnav-margin-vertical) * -1 );
+    }
 
-/* Active */
-.uk-thumbnav > .uk-active > * {}
-
-.uk-thumbnav > .uk-active > *::after { opacity: var(--thumbnav-item-active-opacity); }
-
-
-/* Modifier: 'uk-thumbnav-vertical'
- ========================================================================== */
-
-/*
- * 1. Change direction
- * 2. Gutter
- */
-
-.uk-thumbnav-vertical {
-    /* 1 */
-    flex-direction: column;
-    /* 2 */
-    margin-inline-start: 0;
-    margin-block-start: calc( var(--thumbnav-margin-vertical) * -1 );
-}
-
-/* 2 */
-.uk-thumbnav-vertical > * {
-    padding-inline-start: 0;
-    padding-block-start: var(--thumbnav-margin-vertical);
 }

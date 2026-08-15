@@ -3,11 +3,9 @@
 //
 // Component:       `uk-drop`
 //
-// Modifiers:       `uk-drop-top-*`
-//                  `uk-drop-bottom-*`
-//                  `uk-drop-left-*`
-//                  `uk-drop-right-*`
-//                  `uk-drop-stack`
+// Sub-objects:     `uk-drop-parent-icon`
+//
+// Modifiers:       `uk-drop-stack`
 //                  `uk-drop-grid`
 //
 // States:          `uk-open`
@@ -20,57 +18,24 @@
 // Variables
 // ========================================================================
 
-:where(.uk-drop) {
+$drop-z-index: var(--drop-z-index);
+$drop-margin: var(--drop-margin);
+$drop-viewport-margin: var(--drop-viewport-margin);
+$drop-width: var(--drop-width);
 
-    --drop-z-index:                               calc( var(--global-z-index) + 20 );
-    --drop-margin:                                var(--global-margin);
-    --drop-viewport-margin:                       15px;
-    --drop-width:                                 300px;
+$drop-parent-icon-margin-left: var(--drop-parent-icon-margin-left);
 
-    --drop-parent-icon-margin-left:               0.25em;
+
+// Set custom properties
+// ========================================================================
+
+:root {
+
+    --drop-z-index:                              calc(var(--global-z-index) + 20);
+    --drop-margin:                               var(--global-margin);
+    --drop-viewport-margin:                      15px;
+    --drop-width:                                300px;
+
+    --drop-parent-icon-margin-left:              0.25em;
 
 }
-
-
-/* ========================================================================
-   Component: Drop
- ========================================================================== */
-
-/*
- * 1. Hide by default
- * 2. Set position
- * 3. Set a default width
- */
-
- .uk-drop {
-    /* 1 */
-    display: none;
-    /* 2 */
-    position: absolute;
-    z-index: var(--drop-z-index);
-    --uk-position-offset: var(--drop-margin);
-    --uk-position-viewport-offset: var(--drop-viewport-margin);
-    /* 3 */
-    box-sizing: border-box;
-    inline-size: var(--drop-width);
-}
-
-/* Show */
-.uk-drop.uk-open { display: block; }
-
-
-/* Grid modifiers
- ========================================================================== */
-
-.uk-drop-stack .uk-drop-grid > * { inline-size: 100% !important; }
-
-
-/* Parent icon
- ========================================================================== */
-
-.uk-drop-parent-icon {
-    margin-inline-start: var(--drop-parent-icon-margin-left);
-    transition: transform 0.3s ease-out;
-}
-
-[aria-expanded="true"] > .uk-drop-parent-icon { transform: rotateX(180deg); }

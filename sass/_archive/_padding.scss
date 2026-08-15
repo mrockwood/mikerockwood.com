@@ -1,0 +1,70 @@
+// Name:            Padding
+// Description:     Utilities for padding
+//
+// Component:       `uk-padding`
+//                  `uk-padding-large`
+//                  `uk-padding-remove-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+:where([class*='uk-padding']) {
+
+    --padding-padding:                                       var(--global-gutter);
+    --padding-small-padding:                                 var(--global-small-gutter);
+    --padding-large-padding:                                 var(--global-medium-gutter);
+
+}
+
+@media (min-width: $breakpoint-large) {
+
+    :where([class*='uk-padding']) {
+
+        --padding-padding:                                   var(--global-medium-gutter);
+        --padding-large-padding:                             var(--global-large-gutter);
+
+    }
+
+}
+
+
+/* ========================================================================
+   Component: Padding
+ ========================================================================== */
+
+.uk-padding { padding: var(--padding-padding); }
+
+
+/* Small
+ ========================================================================== */
+
+.uk-padding-small { padding: var(--padding-small-padding); }
+
+
+/* Large
+ ========================================================================== */
+
+.uk-padding-large { padding: var(--padding-large-padding); }
+
+
+/* Remove
+ ========================================================================== */
+
+.uk-padding-remove { padding: 0 !important; }
+.uk-padding-remove-top { padding-block-start: 0 !important; }
+.uk-padding-remove-bottom { padding-block-end: 0 !important; }
+.uk-padding-remove-left { padding-inline-start: 0 !important; }
+.uk-padding-remove-right { padding-inline-end: 0 !important; }
+
+.uk-padding-remove-vertical {
+    padding-block-start: 0 !important;
+    padding-block-end: 0 !important;
+}
+
+.uk-padding-remove-horizontal {
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+}
