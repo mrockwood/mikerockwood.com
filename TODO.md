@@ -15,13 +15,24 @@ means partly complete or verified manually, and `[ ]` means still outstanding.
 - There is no automated HTML, feed, structured-data, accessibility, or browser
   test suite yet.
 
+### Dependency boundary
+
+- Local editing and local builds should require only Zola and Make.
+- Sveltia should continue to work through its hosted web application without a
+  local package-install step.
+- CI/CD-only validators, browsers, and publishing tools are acceptable when they
+  do not change the local editing workflow.
+- Vendored frontend assets are preferred over adding a local JavaScript package
+  toolchain.
+
 ## P0 — Keep publishing safe
 
 ### Add explicit CI checks
 
 - [ ] Run `zola check` as a named CI step before deployment.
 - [ ] Build the site once and fail the workflow if the build fails.
-- [ ] Validate generated Atom XML and JSON-LD in CI.
+- [ ] Optionally validate generated Atom XML and JSON-LD in CI using isolated
+  CI tooling; do not add those tools to the local setup.
 - [ ] Add an internal-link check when the current content and URL behavior are
   stable enough for it.
 
@@ -33,7 +44,7 @@ deployment.
 - [x] Pin the Zola version and GitHub Actions used by deployment.
 - [x] Use a shared `site-publish` concurrency group for publishing workflows.
 - [x] Make the Webmention fetch fail on HTTP errors and avoid empty commits.
-- [ ] Pin or otherwise make the `npm`/`npx` dependency used by
+- [ ] Pin or otherwise make the CI-only `npm`/`npx` dependency used by
   `send-webmentions.yml` reproducible.
 - [ ] Decide whether automated Webmention commits should go directly to `main`
   or open a pull request.
