@@ -126,8 +126,8 @@ and every exposed field has a known rendering path.
 ### Assets and UIkit
 
 - [x] Document which Sass files are upstream UIkit and which are site-specific.
-- [ ] Decide whether the `sass/_archive/` copy is still needed; remove it or
-  document why it remains.
+- [x] Decide whether the `sass/_archive/` copy is still needed and remove the
+  unused archive.
 - [x] Document the UIkit version and the procedure for updating it.
 - [x] Separate original media from generated derivatives and decide which belong
   in Git.
@@ -152,5 +152,4 @@ and every exposed field has a known rendering path.
 2. Decide which IndieWeb features are real and finish or remove their scaffolding.
 3. Move section queries out of `base.html` and consolidate the post shell.
 4. Audit the CMS against the post types that are actually active.
-5. Decide whether the archived Sass copy is still needed, then clean up any
-   remaining dead asset or template code.
+5. Clean up any remaining dead asset or template code.

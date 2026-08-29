@@ -88,16 +88,15 @@ setup unless they become necessary for ordinary editing.
 `sass/style.scss` is the Sass entry point compiled by Zola. Files directly under
 `sass/` are site-specific overrides and customizations. Files under
 `sass/_vendor/` are the vendored UIkit Sass source used by the entry point.
-The `sass/_archive/` directory is not imported by the current entry point; do
-not modify or delete it until its historical purpose has been decided.
 
 UIkit JavaScript and icons are vendored under `static/scripts/_vendor/` and are
 loaded by `templates/base.html`. The current JavaScript banner identifies UIkit
 `3.25.21`. To update UIkit, obtain the matching upstream release, compare the
 Sass and JavaScript changes, preserve the site's custom Sass files and theme
 overrides, rebuild, and inspect the homepage, menus, theme picker, modals, and
-post layouts. Do not introduce a package-manager build step just to update the
-vendored assets.
+post layouts. The old Sass archive has been removed because it was not imported
+or referenced by the active build. Do not introduce a package-manager build step
+just to update the vendored assets.
 
 ## Images and generated derivatives
 
