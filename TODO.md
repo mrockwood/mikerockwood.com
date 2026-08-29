@@ -44,7 +44,7 @@ deployment.
 - [x] Pin the Zola version and GitHub Actions used by deployment.
 - [x] Use a shared `site-publish` concurrency group for publishing workflows.
 - [x] Make the Webmention fetch fail on HTTP errors and avoid empty commits.
-- [ ] Pin or otherwise make the CI-only `npm`/`npx` dependency used by
+- [x] Pin or otherwise make the CI-only `npm`/`npx` dependency used by
   `send-webmentions.yml` reproducible.
 - [ ] Decide whether automated Webmention commits should go directly to `main`
   or open a pull request.

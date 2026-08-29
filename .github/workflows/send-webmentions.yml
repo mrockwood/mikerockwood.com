@@ -16,7 +16,7 @@ jobs:
         run: sleep 60  # Waits for 1 minute (60 seconds) before running the next steps
         
       - name: Install Webmention Package
-        run: npm install @remy/webmention
+        run: npm install @remy/webmention@1.5.0
 
       - name: Send Webmentions
         run: npx webmention https://mikerockwood.com/atom.xml --limit=0 --send
