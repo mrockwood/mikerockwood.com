@@ -140,7 +140,7 @@ and every exposed field has a known rendering path.
 - [x] Remove the known orphaned templates.
 - [ ] Remove unused components, dead configuration fields, and transitional
   commented-out code.
-- [ ] Remove accidental repository artifacts such as `.DS_Store` files.
+- [x] Remove accidental repository artifacts such as `.DS_Store` files.
 - [x] Move important architectural decisions out of long-lived template comments
   and into the README or maintenance documentation.
 - [x] Add a short architecture section to the README describing the render path:
