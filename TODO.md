@@ -1,155 +1,144 @@
-# Site architecture TODO
+# Site TODO
 
-This roadmap is ordered by architectural impact. Each task has a completion criterion so it can be used as an implementation plan.
+Last reviewed: 2026-08-29
 
-## P0 — Reliable foundation
+This is a practical roadmap for the current site. `[x]` means complete, `[~]`
+means partly complete or verified manually, and `[ ]` means still outstanding.
 
-### Pin the build toolchain
+## Current baseline
 
-- [x] Pin the Zola version locally and in CI.
-- [x] Replace the deployment action's `@master` reference with a pinned release or commit.
-- [x] Make every Makefile target use the same configurable Zola command.
-- [x] Document the supported local setup and build commands.
+- Zola `0.23.2` is pinned in [`ZOLA_VERSION`](ZOLA_VERSION).
+- `make check` and `make build` pass locally.
+- The site has a shared Zola shell in `templates/base.html`, separate templates
+  for several post types, a Sveltia CMS configuration, Atom feeds, microformats,
+  and Webmention workflows.
+- There is no automated HTML, feed, structured-data, accessibility, or browser
+  test suite yet.
 
-Progress: local and CI builds now target Zola `0.23.2`. The CI build action is pinned to a specific commit.
+## P0 — Keep publishing safe
 
-Done when a clean checkout builds on a new machine and local and CI builds use the same Zola version.
+### Add explicit CI checks
 
-### Make deployment safe and deterministic
+- [ ] Run `zola check` as a named CI step before deployment.
+- [ ] Build the site once and fail the workflow if the build fails.
+- [ ] Validate generated Atom XML and JSON-LD in CI.
+- [ ] Add an internal-link check when the current content and URL behavior are
+  stable enough for it.
 
-- [x] Remove or redesign `make push` so it cannot automatically commit and push arbitrary changes.
-- [x] Make deployment fail clearly when the build fails.
-- [x] Pin third-party GitHub Actions.
-- [x] Prevent automated Webmention updates from racing with content deployments.
+Done when a malformed template, feed, or structured-data block prevents a
+deployment.
 
-Done when only successfully built output is published and automated jobs cannot overwrite or rebase over content work.
+### Make automated writes predictable
 
-### Define the publishing data model
+- [x] Pin the Zola version and GitHub Actions used by deployment.
+- [x] Use a shared `site-publish` concurrency group for publishing workflows.
+- [x] Make the Webmention fetch fail on HTTP errors and avoid empty commits.
+- [ ] Pin or otherwise make the `npm`/`npx` dependency used by
+  `send-webmentions.yml` reproducible.
+- [ ] Decide whether automated Webmention commits should go directly to `main`
+  or open a pull request.
 
-- [x] Document common fields required by every post: title, date, summary, type, content, taxonomy, canonical URL, and author.
-- [x] Normalize type-specific fields such as `bookmark-of`, `like-of`, `repost-of`, `in-reply-to`, media IDs, and thumbnails.
-- [x] Choose one naming convention for front matter keys.
-- [x] Add Sveltia validation for required fields and valid values per post type.
+## P1 — Simplify the template architecture
 
-Done when a new post can be created from the CMS with required fields and constrained values enforced by the editor.
+### Separate the page shell from content queries
 
-## P1 — Consolidate templates and post rendering
+- [ ] Keep `templates/base.html` responsible for document structure, shared
+  metadata, header, footer, and global UI.
+- [ ] Move `get_section()` calls for projects and post types into the templates
+  that actually use them, or into a clearly named data partial.
+- [ ] Keep the data dependencies of the homepage and posts index visible in
+  those templates.
+
+Done when a page that does not display posts or work does not implicitly load
+every content section.
 
 ### Create a shared post layout
 
-- [ ] Build one shared post shell for title, date, author, content, taxonomies, related links, and footer metadata.
-- [ ] Move only genuinely type-specific markup into small components.
-- [ ] Standardize template inheritance so post templates override the same block.
-- [ ] Remove duplicated commented-out layouts once the shared shell works.
+- [ ] Build one shared shell for post title, date, author, content, taxonomies,
+  related links, and footer metadata.
+- [ ] Leave only genuinely type-specific markup in article, bookmark, jam, note,
+  photo, video, and other post-type templates.
+- [ ] Standardize standalone post templates on the same semantic `<main>` and
+  metadata blocks.
+- [ ] Remove obsolete commented-out layouts after the shared shell is working.
 
-Done when common post behavior is implemented once and shared features do not require editing every post-type template.
+Done when common post behavior is implemented once.
 
-### Separate post type from visual presentation
+### Centralize metadata
 
-- [ ] Represent post type as data rather than relying entirely on directory-specific templates.
-- [ ] Define which types have standalone pages, feeds, archive pages, or only appear in the unified stream.
-- [ ] Consolidate or remove types that are no longer actively used.
-
-Done when adding a post type requires a small configuration change rather than another family of duplicated templates.
-
-### Centralize page metadata
-
-- [ ] Create one metadata component for title, description, image, canonical URL, publication date, and content type.
-- [ ] Generate appropriate Open Graph types for articles, profiles, work, and generic pages.
-- [ ] Fix and validate the JSON-LD output.
+- [~] Shared title, description, image, canonical, Open Graph, and JSON-LD
+  output lives in `templates/base.html`.
+- [x] JSON-LD strings are JSON-encoded and the generated JSON is valid.
+- [x] The generated Atom feed is well-formed XML and its text/URL values are
+  explicitly XML-escaped.
+- [ ] Choose accurate Open Graph types for articles, work, profiles, and the
+  generic site shell.
 - [ ] Add automated checks for canonical URLs, descriptions, and structured data.
 
-Done when every important page has valid title, description, canonical, Open Graph, and structured-data output.
+## P1 — Define the IndieWeb features actually supported
 
-## P1 — Finish the IndieWeb implementation
+- [ ] Decide which features are intentionally supported: h-card, h-entry,
+  Webmention receiving, Webmention sending, IndieAuth, syndication, and feeds.
+- [ ] Reuse one canonical author h-card instead of maintaining both an inline
+  version and a partial unless both have a deliberate purpose.
+- [ ] Add and verify `u-url`, `u-uid`, `p-author`, `dt-published`, and `e-content`
+  on the post types that publish standalone pages.
+- [ ] Decide whether the currently commented-out IndieAuth and Webmention links
+  should be enabled or removed.
+- [ ] Validate the Webmention JSON shape before rendering it.
+- [ ] Render received Webmentions on the relevant post pages, or document that
+  receiving is not currently supported.
+- [ ] Ensure the sending workflow uses a pinned, reproducible dependency.
 
-### Define the IndieWeb contract
+Done when the README can accurately describe the site's IndieWeb behavior and a
+microformats/Webmention test can verify it.
 
-- [ ] Decide which features are supported: h-card, h-entry, Webmention receiving, Webmention sending, IndieAuth, syndication, and feeds.
-- [ ] Document required microformats properties for every post type.
-- [ ] Identify the canonical author h-card and reuse it consistently.
-- [ ] Add stable `u-url`, `u-uid`, `p-author`, `dt-published`, and `e-content` properties where appropriate.
+## P1 — Make the CMS match the content model
 
-Done when a microformats parser can identify the author, canonical URL, date, content, and relationship target for every published post.
-
-### Connect Webmentions end to end
-
-- [ ] Enable and verify the `rel="webmention"` endpoint link.
-- [ ] Confirm the receiver is configured for the correct domain and endpoint.
-- [ ] Define and validate the fetched Webmention JSON schema.
-- [ ] Render likes, replies, reposts, bookmarks, and other mentions on relevant post pages.
-- [ ] Make the fetch workflow fail on HTTP errors or invalid JSON.
-- [ ] Ensure empty or malformed Webmention data cannot break the build.
-
-Done when a test Webmention can be received, fetched, rendered, and deployed without manual intervention.
-
-### Decide whether to implement IndieAuth
-
-- [ ] Either implement and test the IndieAuth endpoints or remove the inactive scaffolding.
-- [ ] Document the identity provider and authorization flow if enabled.
-
-Done when IndieAuth is either functional and tested or no longer presented as part of the site's architecture.
-
-## P1 — Maintainable assets and frontend dependencies
-
-### Establish an asset pipeline
-
-- [ ] Separate original/source media from generated derivatives and test fixtures.
-- [ ] Decide which generated files belong in Git and which are produced during builds.
-- [ ] Audit duplicate images and remove obsolete variants.
-- [ ] Use consistent responsive image sizes, formats, dimensions, and lazy-loading behavior.
-- [ ] Measure the largest pages and set practical size budgets.
-
-Done when the repository has a documented source/generated boundary and production pages do not ship unnecessarily large originals.
-
-### Document and version the UIkit customization
-
-- [ ] Record the UIkit version and upstream source.
-- [x] Identify upstream Sass/JavaScript versus site-specific code.
-- [x] Keep custom theme overrides in a separate layer.
-- [ ] Remove unused UIkit modules from the production bundle where practical.
-- [ ] Document a repeatable dependency update procedure.
-
-Done when a future UIkit update has a known upgrade path and custom styles are distinguishable from framework code.
-
-## P2 — Content operations and quality
-
-### Make CMS and Git workflows explicit
-
-- [ ] Document Sveltia CMS authentication, permissions, and branch behavior.
-- [ ] Decide whether CMS edits and automated Webmention updates use direct commits, branches, or pull requests.
+- [~] Active collections have required dates, taxonomies, type-specific fields,
+  URL widgets, and select options where appropriate.
+- [ ] Audit every CMS collection against the templates and front matter actually
+  in use, especially the empty post sections for photos, videos, reposts, RSVPs,
+  and likes.
+- [ ] Add or remove collections for post types deliberately; do not expose an
+  editor for a type that has no supported rendering path.
+- [ ] Add content templates for the post types that remain active.
+- [ ] Document CMS authentication, permissions, branch behavior, and how an edit
+  reaches production.
 - [ ] Add a preview workflow for content changes.
-- [ ] Add content templates for every supported post type.
 
-Done when publishing, previewing, and automated updates cannot conflict and contributors can create valid content without studying templates.
+Done when a new post can be created in Sveltia without studying the templates,
+and every exposed field has a known rendering path.
 
-### Add quality checks
+## P2 — Reduce maintenance cost
 
-- [ ] Run `zola check` in CI.
-- [ ] Add internal-link checking and distinguish it from external-link availability checks.
-- [ ] Validate generated HTML, JSON-LD, and microformats in CI.
-- [ ] Add accessibility checks for headings, landmarks, labels, alt text, and keyboard interaction.
-- [ ] Add browser smoke tests for the homepage, posts, work pages, theme switcher, and mobile menu.
-- [x] Keep standalone post pages inside a semantic `<main>` landmark.
+### Assets and UIkit
 
-Done when template regressions fail CI before deployment and core journeys are tested with and without JavaScript where appropriate.
+- [ ] Document which Sass files are upstream UIkit and which are site-specific.
+- [ ] Decide whether the `sass/_archive/` copy is still needed; remove it or
+  document why it remains.
+- [ ] Document the UIkit version and the procedure for updating it.
+- [ ] Separate original media from generated derivatives and decide which belong
+  in Git.
+- [ ] Check the largest pages for unnecessarily large images and missing image
+  dimensions or useful alt text.
 
-### Remove transitional code
+### Cleanup and documentation
 
 - [x] Remove stale Nunjucks references.
-- [ ] Remove commented-out includes, unused components, and duplicate layouts.
-- [x] Remove orphaned templates.
-- [ ] Remove dead configuration fields.
-- [ ] Remove `.DS_Store` and other accidental repository artifacts.
-- [ ] Record current architectural decisions in project documentation rather than abandoned template comments.
+- [x] Remove the known orphaned templates.
+- [ ] Remove unused components, dead configuration fields, and transitional
+  commented-out code.
+- [ ] Remove accidental repository artifacts such as `.DS_Store` files.
+- [ ] Move important architectural decisions out of long-lived template comments
+  and into the README or this file.
+- [ ] Add a short architecture section to the README describing the render path:
+  content section → section/page template → shared layout → generated output.
 
-Done when every template and workflow has a current purpose and a new maintainer can follow the rendering path.
+## Suggested next sequence
 
-## Suggested sequence
-
-1. Pin Zola and make CI reproducible.
-2. Define and validate the common content model.
-3. Consolidate shared post and metadata templates.
-4. Finish or explicitly narrow the IndieWeb implementation.
-5. Clarify UIkit and asset boundaries.
-6. Add automated quality checks and remove transitional code.
+1. Add explicit CI checks for `zola check`, the build, Atom XML, and JSON-LD.
+2. Decide which IndieWeb features are real and finish or remove their scaffolding.
+3. Move section queries out of `base.html` and consolidate the post shell.
+4. Audit the CMS against the post types that are actually active.
+5. Document and clean up the asset/UIkit boundary.
