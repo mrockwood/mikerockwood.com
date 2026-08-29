@@ -131,7 +131,7 @@ and every exposed field has a known rendering path.
 - [x] Document the UIkit version and the procedure for updating it.
 - [x] Separate original media from generated derivatives and decide which belong
   in Git.
-- [ ] Check the largest pages for unnecessarily large images and missing image
+- [x] Check the largest pages for unnecessarily large images and missing image
   dimensions or useful alt text.
 
 ### Cleanup and documentation

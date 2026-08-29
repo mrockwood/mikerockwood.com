@@ -108,7 +108,9 @@ unless the asset workflow is intentionally changed.
 
 When changing an image, preserve useful intrinsic dimensions and meaningful alt
 text in the template. Use Zola's image processing where an appropriately sized
-derivative is needed.
+derivative is needed. The largest source images are resized for normal page
+display; full-resolution work images remain available as intentional lightbox
+targets.
 
 ## IndieWeb and Webmentions
 

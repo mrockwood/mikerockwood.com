@@ -48,6 +48,8 @@
 						class=""
 						loading="lazy"
 						alt="{%- if not page.extra["featured-image-caption"] %}decorative header image{% endif %}"
+						width="{{ featured_image_960.width }}"
+						height="{{ featured_image_960.height }}"
 						srcset="{{ featured_image_640.url | safe }} 640w,
 								{{ featured_image_960.url | safe }} 960w,
 								{{ featured_image_1200.url | safe }} 1200w,

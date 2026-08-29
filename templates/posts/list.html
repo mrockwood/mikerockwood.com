@@ -37,11 +37,11 @@
 					<a class="" href="{{ article.permalink }}">
 						{%- if article.extra["featured-image"] %}
 							{% set featured_image = resize_image(path=article.extra["featured-image"], width=900, op="fit_width", format="webp", quality=80) %}
-							<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="featured image for article">
+							<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="Featured image for {{ article.title }}" width="{{ featured_image.width }}" height="{{ featured_image.height }}">
 						{%- else %}
 							{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
 							{% set placeholderImg = resize_image(path=placeholderImg, width=900, op="fit_width", format="webp", quality=80) %}
-							<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="placeholder">
+							<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="" width="{{ placeholderImg.width }}" height="{{ placeholderImg.height }}">
 						{% endif %}
 					</a>
 					<p class="uk-article-meta uk-margin-remove-bottom">
@@ -72,11 +72,11 @@
 								<a class="" href="{{ article.permalink }}">
 									{%- if article.extra["featured-image"] %}
 										{% set featured_image = resize_image(path=article.extra["featured-image"], width=600, op="fit_width", format="webp", quality=75) %}
-										<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="featured image for article">
+										<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="Featured image for {{ article.title }}" width="{{ featured_image.width }}" height="{{ featured_image.height }}">
 									{%- else %}
 										{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
 										{% set placeholderImg = resize_image(path=placeholderImg, width=600, op="fit_width", format="webp", quality=75) %}
-										<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="placeholder">
+										<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="" width="{{ placeholderImg.width }}" height="{{ placeholderImg.height }}">
 									{% endif %}
 								</a>
 							</div>
@@ -270,7 +270,7 @@
 
 					{#
 					{% if jam.extra.thumbnail %}
-						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" />
+						<img src="{{ jam.extra.thumbnail }}" alt="album art for {{ jam.title }}" width="300" height="300" />
 					{% else %}
 						{{ jam.title }}
 					{% endif %}
