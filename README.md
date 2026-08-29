@@ -39,6 +39,7 @@ The generated site goes into `public/`.
 
 ```text
 content/     Pages, posts, documentation, and work history
+docs/        Maintainer and architecture documentation
 sass/        UIkit Sass and site-specific styles
 static/      Fonts, images, JavaScript, CMS files, and other static assets
 templates/   Zola templates, components, and shortcodes
@@ -71,6 +72,14 @@ The post type comes from its directory, not a front matter field. Summaries are 
 The site is deployed to GitHub Pages through GitHub Actions. The CMS lives at `/admin/` and uses [Sveltia CMS](https://github.com/sveltia/sveltia-cms).
 
 The site also includes IndieWeb features such as microformats, Atom feeds, and Webmention support. Social profile links and author details live in `config.toml`.
+
+## Maintenance
+
+The rendering architecture, vendored assets, CMS workflow, CI/CD behavior, and
+dependency policy are documented in [docs/MAINTAINING.md](docs/MAINTAINING.md).
+
+In short, content flows from a section or page template through the shared
+`templates/base.html` shell into generated files under `public/`.
 
 ## Useful files
 
