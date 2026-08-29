@@ -31,8 +31,8 @@ means partly complete or verified manually, and `[ ]` means still outstanding.
 
 - [x] Run `zola check` as a named CI step before deployment.
 - [x] Build the site once and fail the workflow if the build fails.
-- [ ] Optionally validate generated Atom XML and JSON-LD in CI using isolated
-  CI tooling; do not add those tools to the local setup.
+- [x] Validate generated Atom XML and JSON-LD in CI using isolated CI tooling;
+  do not add those tools to the local setup.
 - [x] Add an internal-link check when the current content and URL behavior are
   stable enough for it.
 

@@ -36,6 +36,11 @@ jobs:
           check_links: true
           check_flags: --skip-external-links
 
+      - name: Validate generated Atom XML and JSON-LD
+        run: |
+          python3 -c 'import xml.etree.ElementTree as ET; ET.parse("public/atom.xml")'
+          python3 -c 'import json,pathlib,re; blocks=[x for p in pathlib.Path("public").rglob("*.html") for x in re.findall(r"<script type=\"application/ld\+json\">(.*?)</script>", p.read_text(), re.S)]; assert blocks, "No JSON-LD found"; [json.loads(x) for x in blocks]'
+
   deploy:
     if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
     needs: build
