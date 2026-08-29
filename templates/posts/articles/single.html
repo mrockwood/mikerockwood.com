@@ -92,8 +92,6 @@
 									"
 								>
 
-									<!-- <li class="uk-nav-header">On This Page</li>
-									<li class="uk-nav-divider"></li> -->
 
 									{%- for heading in page.toc -%}
 										{% if heading.level == 1 and heading.children %}
@@ -115,18 +113,6 @@
 
 					</div>
 
-					{# <div class="uk-width-1-1 uk-hidden@m">
-
-						<button
-							class="js-toggle-otp uk-button uk-button-default uk-width-1-1"
-							uk-toggle="target: .js-otp; animation: uk-animation-slide-top"
-							type="button"
-						>
-							On This Page
-							<span class="js-otp-icon uk-margin-small-left uk-icon" uk-icon="icon: plus-circle"></span>
-						</button>
-						<p class="js-otp" hidden="">test</p>
-					</div>#}
 
 					{% endif %}
 				</div>
@@ -146,32 +132,6 @@
 </article>
 
 
-{# Pagination #}
-{#
-{%- if page.lower or page.higher %}
-<nav class="uk-section uk-section-small">
-
-	<div class="uk-container uk-container-large">
-
-		<hr>
-
-		<ul class="uk-pagination">
-
-			{% if page.lower %}
-			<li><a href="{{ page.lower.permalink }}"><span class="uk-margin-xsmall-right" uk-pagination-previous></span> Previous</a></li>
-			{% endif %}
-
-			{% if page.higher %}
-			<li class="uk-margin-auto-left"><a href="{{ page.higher.permalink }}">Next <span class="uk-margin-xsmall-left" uk-pagination-next></a></li>
-			{% endif %}
-
-		</ul>
-
-	</div>
-
-</nav>
-{% endif %}
-#}
 
 </article>
 

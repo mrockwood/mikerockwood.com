@@ -138,7 +138,7 @@ and every exposed field has a known rendering path.
 
 - [x] Remove stale Nunjucks references.
 - [x] Remove the known orphaned templates.
-- [ ] Remove unused components, dead configuration fields, and transitional
+- [x] Remove unused components, dead configuration fields, and transitional
   commented-out code.
 - [x] Remove accidental repository artifacts such as `.DS_Store` files.
 - [x] Move important architectural decisions out of long-lived template comments

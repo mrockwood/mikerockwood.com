@@ -1,8 +1,0 @@
-{% component utils.author(page) %}
-    ::
-    {% if page.extra.author -%}
-        {{ page.extra.author }}
-    {%- else -%}    
-        {{ config.extra.author }}
-    {%- endif -%}
-{%- endcomponent utils.author -%}

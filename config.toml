@@ -12,7 +12,6 @@ build_search_index = false
 output_dir = "public"
 
 generate_feeds = true
-#feed_filename = "atom.xml"
 
 #ignored_content = ["*.{graphml,xlsx}", "temp.*"]
 
@@ -41,13 +40,6 @@ menu = [
 	{url = "/about/", name = "About", slash = true},
     {url = "/posts/", name = "Posts", slash = true},
 ]
-menu_footer = [
-    #{url = "/categories/", name = "Categories", slash = true},
-    #{url = "/tags/", name = "Tags", slash = true},
-    {url = "/atom.xml", name = "Feed", slash = false},
-    {url = "/sitemap.xml", name = "Sitemap", slash = false},
-]
-
 [extra.author]
 name = "Mike Rockwood"
 email = "rockwood@gmail.com"

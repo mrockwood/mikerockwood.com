@@ -30,8 +30,7 @@ Content lives under `content/`. Each section's `_index.md` selects a section
 template, and individual pages may select a page template. Templates inherit
 from `templates/base.html`, which owns the document shell, shared metadata,
 header, footer, global menus, scripts, and the intentional registry of content
-sections. Components, partials, and shortcodes provide reusable pieces below
-that layer.
+sections. Shortcodes provide reusable pieces for Markdown content.
 
 The main paths are:
 

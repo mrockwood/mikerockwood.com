@@ -24,7 +24,6 @@
         {%- set feed_url = page.permalink | trim_end(pat="/") %}
     {%- endif %}
     <link href="{{ feed_url | escape_xml | safe }}" rel="self" type="application/atom+xml"/>
-    {# <link href="{{ get_url(path='@/posts/_index.md') }}" rel="alternate"/> #}
 	<link href="
       {%- if section is defined and section -%}
         {{ section.permalink | escape_xml | safe }}

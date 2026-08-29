@@ -42,7 +42,7 @@ content/     Pages, posts, documentation, and work history
 docs/        Maintainer and architecture documentation
 sass/        UIkit Sass and site-specific styles
 static/      Fonts, images, JavaScript, CMS files, and other static assets
-templates/   Zola templates, components, and shortcodes
+templates/   Zola templates and shortcodes
 config.toml  Site and author configuration
 Makefile     Local development commands
 ```
@@ -86,8 +86,6 @@ In short, content flows from a section or page template through the shared
 - `config.toml` controls site metadata, menus, taxonomies, and author information
 - `templates/base.html` defines the shared page shell
 - `templates/posts/` contains post-type layouts
-- `templates/components/` contains reusable Tera components
-- `templates/partials/` contains reusable template fragments
 - `templates/shortcodes/` contains Markdown shortcodes
 - `sass/style.scss` is the main stylesheet entry point
 - `.github/workflows/` contains build, deployment, and Webmention automation
