@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}" xml:base="{{ config.base_url | escape_xml | safe }}">
-    <title>{{ config.title }}
-    {%- if term is defined and term %} - {{ term.name }}
-    {%- elif section is defined and section.title %} - {{ section.title }}
+    <title>{{ config.title | escape_xml | safe }}
+    {%- if term is defined and term %} - {{ term.name | escape_xml | safe }}
+    {%- elif section is defined and section.title %} - {{ section.title | escape_xml | safe }}
 	{%- else %} - All Posts
     {%- endif -%}
     </title>
     <subtitle>
 		{%- if section is defined and section.description %}
-		{{ section.description }}
+		{{ section.description | escape_xml | safe }}
 	{%- else %}
-		{{ config.description }}
+		{{ config.description | escape_xml | safe }}
 	{%- endif %}
 	</subtitle>
 	<id>
@@ -23,7 +23,7 @@
     {%- if not feed_url is defined %}
         {%- set feed_url = page.permalink | trim_end(pat="/") %}
     {%- endif %}
-    <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
+    <link href="{{ feed_url | escape_xml | safe }}" rel="self" type="application/atom+xml"/>
     {# <link href="{{ get_url(path='@/posts/_index.md') }}" rel="alternate"/> #}
 	<link href="
       {%- if section is defined and section -%}
@@ -33,14 +33,16 @@
       {%- endif -%}
     " rel="alternate" />
     <author>
-        <name>{{ config.extra.author.name }}</name>
+        <name>{{ config.extra.author.name | escape_xml | safe }}</name>
         <uri>{{ config.base_url | escape_xml | safe }}</uri>
-        <email>{{ config.extra.author.email }}</email>
+        <email>{{ config.extra.author.email | escape_xml | safe }}</email>
     </author>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>{{ last_updated | default(value=now()) | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
 
 	{%- for p in pages %}
+		{%- set category = "" -%}
+		{%- set cat_url = "" -%}
 
 		{%- if p.taxonomies.categories -%}
 			{%- set category = p.taxonomies.categories[0] -%}
@@ -50,11 +52,11 @@
 		{%- endif %}
 	{%- if p.relative_path is starting_with(pat="posts/") %}
 	<entry>
-		<id>{{ p.permalink | safe }}</id>
-		<link href="{{ p.permalink | safe }}" type="text/html"/>
+		<id>{{ p.permalink | escape_xml | safe }}</id>
+		<link href="{{ p.permalink | escape_xml | safe }}" type="text/html"/>
         <title>
 			{%- if p.title -%}
-				{{ p.title }}
+				{{ p.title | escape_xml | safe }}
 			{%- else -%}
 				{%- if category -%}{{ category }}{% else %}Post{%- endif %} from {{ p.date | date(format="%Y-%m-%d at %H:%M") }}
 			{%- endif -%}
@@ -64,12 +66,12 @@
 
 		{#- Grab the first, and usually only, category #}
 		{%- if p.taxonomies.categories %}
-		<category term="{{ category | lower }}" scheme="{{ cat_url | safe }}" label="{{ category }}" />
+		<category term="{{ category | lower | escape_xml | safe }}" scheme="{{ cat_url | escape_xml | safe }}" label="{{ category | escape_xml | safe }}" />
 		{%- endif %}
 
 		{#- Some posts have descriptions, which we can use as summaries #}
 		{%- if p.description %}
-		<summary>{{ p.description }}</summary>
+		<summary>{{ p.description | escape_xml | safe }}</summary>
 		{%- endif %}
 
 		{#- Not all post types have content #}
@@ -80,7 +82,7 @@
 
 		{#- Bookmarks get an extra tag for the bookmark URL #}
 		{%- if p.extra["bookmark-of"] %}
-			<link rel="alternate" href="{{ p.extra["bookmark-of"] | safe }}" />
+			<link rel="alternate" href="{{ p.extra["bookmark-of"] | escape_xml | safe }}" />
 		{%- endif %}
     </entry>
 	{%- endif %}
