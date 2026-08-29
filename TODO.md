@@ -46,8 +46,9 @@ deployment.
 - [x] Make the Webmention fetch fail on HTTP errors and avoid empty commits.
 - [x] Pin or otherwise make the CI-only `npm`/`npx` dependency used by
   `send-webmentions.yml` reproducible.
-- [ ] Decide whether automated Webmention commits should go directly to `main`
-  or open a pull request.
+- [x] Keep automated Webmention commits going directly to `main`; the fetched
+  JSON is generated cache data rather than editorial content, and pull requests
+  would add maintenance without useful review at the current scale.
 
 ## P1 — Simplify the template architecture
 

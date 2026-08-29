@@ -36,6 +36,8 @@ jobs:
             "https://webmention.io/api/mentions.json" \
             -o static/webmention/webmentions.json
 
+      # This is generated cache data, so direct commits to main are intentional.
+      # The shared concurrency group prevents this from racing with publishing.
       - name: Commit and Push Webmentions
         run: |
           set -euo pipefail
