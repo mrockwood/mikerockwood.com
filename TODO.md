@@ -29,11 +29,11 @@ means partly complete or verified manually, and `[ ]` means still outstanding.
 
 ### Add explicit CI checks
 
-- [ ] Run `zola check` as a named CI step before deployment.
-- [ ] Build the site once and fail the workflow if the build fails.
+- [x] Run `zola check` as a named CI step before deployment.
+- [x] Build the site once and fail the workflow if the build fails.
 - [ ] Optionally validate generated Atom XML and JSON-LD in CI using isolated
   CI tooling; do not add those tools to the local setup.
-- [ ] Add an internal-link check when the current content and URL behavior are
+- [x] Add an internal-link check when the current content and URL behavior are
   stable enough for it.
 
 Done when a malformed template, feed, or structured-data block prevents a

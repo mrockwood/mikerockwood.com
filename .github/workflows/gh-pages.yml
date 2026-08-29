@@ -29,11 +29,12 @@ jobs:
         id: zola-version
         run: echo "version=$(tr -d '[:space:]' < ZOLA_VERSION)" >> "$GITHUB_OUTPUT"
 
-      - name: Build Zola site
+      - name: Check and build Zola site
         uses: getzola/github-pages@435a833fd3f1edcb28d70576c89e30a6365cd8f7
         with:
           zola_version: v${{ steps.zola-version.outputs.version }}
-          check_links: false
+          check_links: true
+          check_flags: --skip-external-links
 
   deploy:
     if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
