@@ -36,7 +36,7 @@
 	{%- elif page.description -%}
 		{% set description = page.description %}
 	{%- else -%}
-		{% set description = page.content | striptags | truncate(length=200) | safe %}
+		{% set description = page.content | striptags | truncate(length=200) %}
 	{%- endif -%}
 {%- endif -%}
 
@@ -150,20 +150,20 @@
 	{#- JSON LD #}
 	<script type="application/ld+json">
 		{
-			"@context":"http://schema.org"
-			"name":"{{ config.extra.author.name }}",
-			"description":"{{ config.description }}",
+			"@context":"https://schema.org",
+			"name":{{ config.extra.author.name | json_encode() | safe }},
+			"description":{{ config.description | json_encode() | safe }},
 			"author": {
 				"@type":"Person",
-				"name":"{{ config.extra.author.name }}"
+				"name":{{ config.extra.author.name | json_encode() | safe }}
 			},
 			"@type":"WebSite",
-			"url":"{{ config.base_url | safe }}",
-			"image":"{{ get_url(path=config.extra.author.avatar) }}",
-			"headline":"{{ config.title }}",
+			"url":{{ config.base_url | json_encode() | safe }},
+			"image":{{ get_url(path=config.extra.author.avatar) | json_encode() | safe }},
+			"headline":{{ config.title | json_encode() | safe }},
 			"sameAs":[
-				"https://{{ config.extra.social.mastodon | safe }}",
-				"https://www.github.com/{{ config.extra.social.github }}"
+				{{ ("https://" ~ config.extra.social.mastodon) | json_encode() | safe }},
+				{{ ("https://www.github.com/" ~ config.extra.social.github) | json_encode() | safe }}
 			]
 		}
 	</script>
