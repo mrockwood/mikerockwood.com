@@ -1,3 +1,10 @@
+{#-
+	Site content registry
+
+	These section objects are intentionally loaded here so the shared layout and
+	descendant templates can use a consistent set of post types. Some sections
+	are currently empty, but remain registered for future publishing.
+-#}
 {#- Posts -#}
 {%- set posts = get_section(path="posts/_index.md") %}
 {%- set articles = get_section(path="posts/articles/_index.md") %}

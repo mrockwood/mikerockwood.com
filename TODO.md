@@ -52,17 +52,16 @@ deployment.
 
 ## P1 — Simplify the template architecture
 
-### Separate the page shell from content queries
+### Keep the intentional content registry
 
-- [ ] Keep `templates/base.html` responsible for document structure, shared
-  metadata, header, footer, and global UI.
-- [ ] Move `get_section()` calls for projects and post types into the templates
-  that actually use them, or into a clearly named data partial.
-- [ ] Keep the data dependencies of the homepage and posts index visible in
-  those templates.
+- [x] Keep `templates/base.html` responsible for document structure, shared
+  metadata, header, footer, global UI, and the site content registry.
+- [x] Keep the `get_section()` calls centralized so current and future post types
+  are available consistently to descendant templates.
+- [x] Document that empty post sections are intentional future publishing types.
 
-Done when a page that does not display posts or work does not implicitly load
-every content section.
+Done when the centralized registry remains intentional, documented, and easy to
+update when a post type is added or permanently retired.
 
 ### Create a shared post layout
 
