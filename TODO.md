@@ -106,17 +106,16 @@ microformats/Webmention test can verify it.
 
 ## P1 — Make the CMS match the content model
 
-- [~] Active collections have required dates, taxonomies, type-specific fields,
+- [x] Active collections have required dates, taxonomies, type-specific fields,
   URL widgets, and select options where appropriate.
-- [ ] Audit every CMS collection against the templates and front matter actually
+- [x] Audit every CMS collection against the templates and front matter actually
   in use, especially the empty post sections for photos, videos, reposts, RSVPs,
   and likes.
-- [ ] Add or remove collections for post types deliberately; do not expose an
+- [x] Add or remove collections for post types deliberately; do not expose an
   editor for a type that has no supported rendering path.
-- [ ] Add content templates for the post types that remain active.
-- [ ] Document CMS authentication, permissions, branch behavior, and how an edit
+- [x] Add content templates for the post types that remain active.
+- [x] Document CMS authentication, permissions, branch behavior, and how an edit
   reaches production.
-- [ ] Add a preview workflow for content changes.
 
 Done when a new post can be created in Sveltia without studying the templates,
 and every exposed field has a known rendering path.
@@ -151,5 +150,4 @@ and every exposed field has a known rendering path.
 1. Add explicit CI checks for `zola check`, the build, Atom XML, and JSON-LD.
 2. Decide which IndieWeb features are real and finish or remove their scaffolding.
 3. Move section queries out of `base.html` and consolidate the post shell.
-4. Audit the CMS against the post types that are actually active.
-5. Clean up any remaining dead asset or template code.
+4. Clean up any remaining dead asset or template code.

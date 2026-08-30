@@ -4,6 +4,13 @@
 
 <article class="h-entry">
 
+	<header class="uk-section uk-section-small">
+		<div class="uk-container uk-container-small uk-text-center">
+			<h1 class="p-name uk-heading-small">{{ page.title }}</h1>
+			<p>RSVP: <strong>{{ page.extra.rsvp | capitalize }}</strong> for <a class="u-in-reply-to" href="{{ page.extra["in-reply-to"] }}">this event</a>.</p>
+		</div>
+	</header>
+
 	<div class="p-name e-content">
 
 		{{ page.content | safe }}

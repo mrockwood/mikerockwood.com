@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="uk-section">
+	<div class="uk-container uk-container-large">
+		{% for post in paginator.pages %}
+		<article class="h-entry uk-article uk-margin-large-bottom">
+			{% if post.title %}<h2 class="p-name uk-article-title"><a href="{{ post.permalink }}">{{ post.title }}</a></h2>{% endif %}
+			{% if post.date %}<time class="dt-published uk-text-meta" datetime="{{ post.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ post.date | date(format="%d %B, %Y") }}</time>{% endif %}
+			<div class="e-content uk-margin-small-top">{{ post.content | safe }}</div>
+		</article>
+		{% endfor %}
+
+		{% if paginator.previous or paginator.next %}
+		<nav aria-label="Pagination">
+			<ul class="uk-pagination">
+				{% if paginator.previous %}<li><a href="{{ paginator.previous }}">Previous</a></li>{% endif %}
+				{% if paginator.next %}<li class="uk-margin-auto-left"><a href="{{ paginator.next }}">Next</a></li>{% endif %}
+			</ul>
+		</nav>
+		{% endif %}
+	</div>
+</section>
+{% endblock content %}
