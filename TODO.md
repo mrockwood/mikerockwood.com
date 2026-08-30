@@ -77,14 +77,14 @@ Done when common post behavior is implemented once.
 
 ### Centralize metadata
 
-- [~] Shared title, description, image, canonical, Open Graph, and JSON-LD
+- [x] Shared title, description, image, canonical, Open Graph, and JSON-LD
   output lives in `templates/base.html`.
 - [x] JSON-LD strings are JSON-encoded and the generated JSON is valid.
 - [x] The generated Atom feed is well-formed XML and its text/URL values are
   explicitly XML-escaped.
-- [ ] Choose accurate Open Graph types for articles, work, profiles, and the
+- [x] Choose accurate Open Graph types for articles, work, profiles, and the
   generic site shell.
-- [ ] Add automated checks for canonical URLs, descriptions, and structured data.
+- [x] Add automated checks for canonical URLs, descriptions, and structured data.
 
 ## P1 — Define the IndieWeb features actually supported
 

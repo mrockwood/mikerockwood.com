@@ -58,6 +58,10 @@
 	{%- endif -%}
 {%- endif -%}
 
+{%- if not description -%}
+	{% set description = config.description %}
+{%- endif -%}
+
 <!DOCTYPE html>
 
 <html lang="en" class="no-js">
@@ -142,7 +146,13 @@
 
 	{#- SEO -#}
 	{% block head_seo %}
-	<meta property="og:type" content="website"/>
+	{%- set og_type = "website" -%}
+	{%- if page and current_path == "/about/" -%}
+		{%- set og_type = "profile" -%}
+	{%- elif page and current_path is starting_with(pat="/posts/articles/") and "/page/" not in current_path -%}
+		{%- set og_type = "article" -%}
+	{%- endif -%}
+	<meta property="og:type" content="{{ og_type }}"/>
 	<meta property="og:title" content="{{ title | default(value=config.title) }}" />
 	<meta property="og:description" content="{{ description | default(value=config.description) }}"/>
 	{% if current_url %}<meta property="og:url" content="{{ current_url | safe }}"/>{%- endif %}
