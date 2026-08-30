@@ -55,12 +55,23 @@ site's existing kebab-case names such as `bookmark-of`, `like-of`, and
 
 Sveltia is served from `static/admin/` and loaded from its hosted JavaScript
 package. Its configuration is in `static/admin/config.yml`; it writes to the
-`main` branch of the repository. Keep the CMS fields aligned with the matching
-content front matter and templates. A field is not useful merely because the
-CMS can edit it: it must have a known rendering path.
+`main` branch of the repository. Authentication is handled by the configured
+Sveltia GitHub auth worker. The configuration is public and contains no
+credentials; editors need the GitHub repository permissions required by that
+auth service.
 
-After a CMS edit reaches `main`, the GitHub Pages workflow checks and builds the
-site before deployment. Local preview remains `make serve`.
+Keep the CMS fields aligned with the matching content front matter and
+templates. A field is not useful merely because the CMS can edit it: it must
+have a known rendering path. The retained post types each have a CMS
+collection, a section list template, and a single-entry template. New generic
+pages use `templates/pages/default.html`; specialized existing pages can select
+their explicit page template.
+
+The CMS uses Sveltia's simple workflow. Saving an entry commits and pushes
+directly to `main`; there is no CMS review or pull-request step. After a CMS
+edit reaches `main`, the GitHub Pages workflow checks and builds the site before
+deployment. The `preview_path` values link to the live site after deployment,
+not to a separate draft site. Local preview remains `make serve`.
 
 ## CI/CD workflows
 
