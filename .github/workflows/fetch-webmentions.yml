@@ -35,6 +35,13 @@ jobs:
             --data-urlencode "token=${WEBMENTION_TOKEN}" \
             "https://webmention.io/api/mentions.json" \
             -o static/webmention/webmentions.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("static/webmention/webmentions.json").read_text())
+          assert isinstance(data, dict) and isinstance(data.get("links"), list)
+          assert all(isinstance(link, dict) for link in data["links"])
+          PY
 
       # This is generated cache data, so direct commits to main are intentional.
       # The shared concurrency group prevents this from racing with publishing.

@@ -3,6 +3,8 @@
 {%- block content %}
 
 <article class="h-entry">
+{% include "posts/_microformats.html" %}
+	{% if page.date %}<time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}" hidden>{{ page.date }}</time>{% endif %}
 
 	<header>
 

@@ -124,12 +124,9 @@ targets.
 
 ## IndieWeb and Webmentions
 
-The site currently publishes an Atom feed and includes h-card/microformat
-markup. Webmention fetch and send workflows exist, but the fetched JSON is not
-currently rendered by the templates. Treat changes to those workflows as
-integration changes and verify both the feed and the public URLs after a
-deployment.
-
-The IndieAuth and receiving Webmention links in `templates/base.html` are
-currently scaffolding. Enable them only after the corresponding service and
-endpoints have been verified.
+The site publishes an Atom feed and uses h-card/h-entry microformats. It
+advertises a webmention.io receiving endpoint, fetches received data, and sends
+mentions from the production feed, but it does not currently render received
+mentions. IndieAuth endpoints are advertised, but authentication is not a
+supported site feature until the corresponding service and endpoints are
+verified. Treat changes to these integrations as deployment-sensitive changes.
