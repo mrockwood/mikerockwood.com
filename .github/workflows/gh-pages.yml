@@ -36,10 +36,30 @@ jobs:
           check_links: true
           check_flags: --skip-external-links
 
-      - name: Validate generated Atom XML and JSON-LD
+      - name: Validate generated Atom XML and metadata
         run: |
           python3 -c 'import xml.etree.ElementTree as ET; ET.parse("public/atom.xml")'
-          python3 -c 'import json,pathlib,re; blocks=[x for p in pathlib.Path("public").rglob("*.html") for x in re.findall(r"<script type=\"application/ld\+json\">(.*?)</script>", p.read_text(), re.S)]; assert blocks, "No JSON-LD found"; [json.loads(x) for x in blocks]'
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          for path in Path("public").rglob("*.html"):
+              source = path.read_text()
+              if "<html" not in source or 'name="robots" content="noindex"' in source: continue
+              canonical = re.findall(r'<link rel="canonical" href="([^"]+)"', source)
+              descriptions = re.findall(r'<meta name="description" content="([^"]*)"', source)
+              og_types = re.findall(r'<meta property="og:type" content="([^"]+)"', source)
+              json_ld = re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>', source, re.S)
+              if path.name != "404.html":
+                  assert len(canonical) == 1, f"{path}: expected one canonical URL"
+                  url = urlparse(canonical[0]); assert url.scheme == "https" and url.netloc == "mikerockwood.com", f"{path}: invalid canonical URL"
+              assert len(descriptions) == 1 and descriptions[0].strip(), f"{path}: expected one non-empty description"
+              assert len(og_types) == 1 and og_types[0] in ("website", "article", "profile"), f"{path}: invalid Open Graph type"
+              assert json_ld, f"{path}: expected JSON-LD"
+              for block in json_ld:
+                  data = json.loads(block); assert data.get("@context") == "https://schema.org" and data.get("@type") and data.get("url"), f"{path}: incomplete JSON-LD"
+          PY
 
   deploy:
     if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
