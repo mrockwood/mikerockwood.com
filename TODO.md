@@ -90,16 +90,16 @@ Done when common post behavior is implemented once.
 
 - [ ] Decide which features are intentionally supported: h-card, h-entry,
   Webmention receiving, Webmention sending, IndieAuth, syndication, and feeds.
-- [ ] Reuse one canonical author h-card instead of maintaining both an inline
+- [x] Reuse one canonical author h-card instead of maintaining both an inline
   version and a partial unless both have a deliberate purpose.
 - [ ] Add and verify `u-url`, `u-uid`, `p-author`, `dt-published`, and `e-content`
   on the post types that publish standalone pages.
-- [ ] Decide whether the currently commented-out IndieAuth and Webmention links
+- [x] Decide whether the currently commented-out IndieAuth and Webmention links
   should be enabled or removed.
 - [ ] Validate the Webmention JSON shape before rendering it.
-- [ ] Render received Webmentions on the relevant post pages, or document that
+- [x] Render received Webmentions on the relevant post pages, or document that
   receiving is not currently supported.
-- [ ] Ensure the sending workflow uses a pinned, reproducible dependency.
+- [x] Ensure the sending workflow uses a pinned, reproducible dependency.
 
 Done when the README can accurately describe the site's IndieWeb behavior and a
 microformats/Webmention test can verify it.
