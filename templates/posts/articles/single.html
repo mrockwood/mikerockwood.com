@@ -33,34 +33,15 @@
 
 	{%- if page.extra["featured-image"] %}
 
-		{%- set featured_image = page.extra["featured-image"] %}
-		{%- set featured_image_640 = resize_image(path=featured_image, width=640, op="fit_width", format="webp", quality=75) %}
-		{%- set featured_image_960 = resize_image(path=featured_image, width=960, op="fit_width", format="webp", quality=75) %}
-		{%- set featured_image_1200 = resize_image(path=featured_image, width=1200, op="fit_width", format="webp", quality=75) %}
-		{%- set featured_image_1600 = resize_image(path=featured_image, width=1600, op="fit_width", format="webp", quality=75) %}
-
 		<div
 			class="uk-section uk-section-secondary uk-padding-remove"
 			style="background: linear-gradient( to bottom, var(--surface-default) 0 50%, var(--invert-surface-default) 50% 100% );"
 		>
 			<figure class="uk-container uk-container-large">
-				<picture>
-					<img
-						class=""
-						loading="lazy"
-						alt="{%- if not page.extra["featured-image-caption"] %}decorative header image{% endif %}"
-						width="{{ featured_image_960.width }}"
-						height="{{ featured_image_960.height }}"
-						srcset="{{ featured_image_640.url | safe }} 640w,
-								{{ featured_image_960.url | safe }} 960w,
-								{{ featured_image_1200.url | safe }} 1200w,
-								{{ featured_image_1600.url | safe }} 1600w"
-						sizes="(max-width: 640px) 640px,
-								(max-width: 960px) 960px,
-								(max-width: 1200px) 1200px,
-								1600px"
-					>
-				</picture>
+				{{<media.responsive_image
+					path={page.extra["featured-image"]}
+					alt={"decorative header image" if not page.extra["featured-image-caption"] else ""}
+				/>}}
 				{%- if page.extra["featured-image-caption"] %}
 				<figcaption class="uk-text-small uk-margin-small">
 					{{ page.extra["featured-image-caption"] | markdown | safe }}

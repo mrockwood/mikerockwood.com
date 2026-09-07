@@ -15,9 +15,7 @@
 
 			{% set project_relative_path_array = project.relative_path | split(pat="/")  %}
 			{% set feature_image = project_relative_path_array[0] ~ "/" ~ project_relative_path_array[1] ~ "/" ~ project.extra["featured-image"] %}
-			{% set image = resize_image(path=feature_image, width=1200, op='fit_width', format='webp', quality=75) %}
-
-			{% if project.extra["external-link"] %}
+		{% if project.extra["external-link"] %}
 				{% set link = project.extra["external-link"] %}
 			{% endif %}
 
@@ -27,7 +25,12 @@
 						<div class="uk-width-expand@m">
 							<div class="uk-panel uk-overflow-hidden">
 								<canvas width="1200" height="1000" aria-hidden="true"></canvas>
-								<img src="{{ image.url }}" alt="Screenshot of {{ project.title }}" width="1200" height="1000" data-uk-cover="" class="uk-cover">
+								{{<media.responsive_image
+									path={feature_image}
+									alt={"Screenshot of " ~ project.title}
+									class="uk-cover"
+									cover={true}
+								/>}}
 								<div class="uk-position-cover uk-position-z-index uk-visible@m" style="background-image: linear-gradient(to right, var(--card-default-background) 8.33%, transparent);"></div>
 								<div class="uk-position-cover uk-position-z-index uk-hidden@m" style="background-image: linear-gradient(to top, var(--card-default-background) 8.33%, transparent);"></div>
 							</div>

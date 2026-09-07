@@ -14,21 +14,11 @@
 			<div class="uk-width-3-5@l">
 				<div class="uk-margin uk-container-item-padding-remove-right">
 					<div class="uk-panel uk-margin-remove-first-child">
-						{%- set feature_image = "/images/chris-ried-ieic5Tq8YMk-unsplash.jpg" %}
-						{%- set feature_image_640 = resize_image(path=feature_image, width=640, height=420, format="webp", quality=80) %}
-						{%- set feature_image_960 = resize_image(path=feature_image, width=960, height=640, format="webp", quality=80) %}
-						{%- set feature_image_1200 = resize_image(path=feature_image, width=1200, height=800, format="webp", quality=80) %}
-						{%- set feature_image_1600 = resize_image(path=feature_image, width=1600, height=1060, format="webp", quality=80) %}
-
-						<img class="" loading="lazy" alt="Close-up of code on a computer screen" width="960" height="640" src="{{ feature_image_960.url | safe }}"
-						srcset="{{ feature_image_640.url | safe }} 640w,
-								{{ feature_image_960.url | safe }} 960w,
-								{{ feature_image_1200.url | safe }} 1200w,
-								{{ feature_image_1600.url | safe }} 1600w"
-						sizes="(max-width: 640px) 640px,
-								(max-width: 960px) 960px,
-								(max-width: 1200px) 1200px,
-								1600px">
+						{{<media.responsive_image
+							path="/images/chris-ried-ieic5Tq8YMk-unsplash.jpg"
+							alt="Close-up of code on a computer screen"
+							quality={80}
+						/>}}
 
 					</div>
 				</div>
@@ -54,66 +44,42 @@
 				<ul class="uk-slider-items uk-grid uk-grid-large">
 					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
 						<div class="uk-cover-container">
-							<picture>
-
-								{%- set slider_image3 = "/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg" %}
-								{%- set slider_image3_600 = resize_image(path=slider_image3, width=600, height=400, format="webp", quality=80) %}
-								{%- set slider_image3_1200 = resize_image(path=slider_image3, width=1200, height=800, format="webp", quality=80) %}
-
-								<img class="uk-transition-opaque" loading="lazy" alt="Close-up of a guitar being played" width="600" height="400" src="{{ slider_image3_600.url | safe }}"
-									srcset="{{ slider_image3_600.url | safe }} 600w,
-											{{ slider_image3_1200.url | safe }} 1200w"
-									sizes="(max-width: 600px) 600px,
-											1200px">
-							</picture>
+							{{<media.responsive_image
+								path="/images/marcelo-leal-v6aIiHkNTMo-unsplash.jpg"
+								alt="Close-up of a guitar being played"
+								class="uk-transition-opaque"
+								quality={80}
+							/>}}
 						</div>
 					</li>
 					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
 						<div class="uk-cover-container">
-							<picture>
-
-								{%- set slider_image1 = "/images/mitchell-johnson-CZRNxAIYLzI-unsplash.jpg" %}
-								{%- set slider_image1_600 = resize_image(path=slider_image1, width=600, height=400, format="webp", quality=80) %}
-								{%- set slider_image1_1200 = resize_image(path=slider_image1, width=1200, height=800, format="webp", quality=80) %}
-
-								<img class="uk-transition-opaque" loading="lazy" alt="Chess game in progress on a tournament table" width="600" height="400" src="{{ slider_image1_600.url | safe }}"
-									srcset="{{ slider_image1_600.url | safe }} 600w,
-											{{ slider_image1_1200.url | safe }} 1200w"
-									sizes="(max-width: 600px) 600px,
-											1200px">
-							</picture>
+							{{<media.responsive_image
+								path="/images/mitchell-johnson-CZRNxAIYLzI-unsplash.jpg"
+								alt="Chess game in progress on a tournament table"
+								class="uk-transition-opaque"
+								quality={80}
+							/>}}
 						</div>
 					</li>
 					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
 						<div class="uk-cover-container">
-							<picture>
-
-								{%- set slider_image2 = "/images/ashton-bingham-pzzHdzlFFXE-unsplash.jpg" %}
-								{%- set slider_image2_600 = resize_image(path=slider_image2, width=600, height=400, format="webp", quality=80) %}
-								{%- set slider_image2_1200 = resize_image(path=slider_image2, width=1200, height=800, format="webp", quality=80) %}
-
-								<img class="uk-transition-opaque" loading="lazy" alt="Light rail train traveling through downtown Salt Lake City" width="600" height="400" src="{{ slider_image2_600.url | safe }}"
-									srcset="{{ slider_image2_600.url | safe }} 600w,
-											{{ slider_image2_1200.url | safe }} 1200w"
-									sizes="(max-width: 600px) 600px,
-											1200px">
-							</picture>
+							{{<media.responsive_image
+								path="/images/ashton-bingham-pzzHdzlFFXE-unsplash.jpg"
+								alt="Light rail train traveling through downtown Salt Lake City"
+								class="uk-transition-opaque"
+								quality={80}
+							/>}}
 						</div>
 					</li>
 					<li class="el-item uk-width-1-1 uk-width-3-5@s uk-width-1-2@m">
 						<div class="uk-cover-container">
-							<picture>
-
-								{%- set slider_image4 = "/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg" %}
-								{%- set slider_image4_600 = resize_image(path=slider_image4, width=600, height=400, format="webp", quality=80) %}
-								{%- set slider_image4_1200 = resize_image(path=slider_image4, width=1200, height=800, format="webp", quality=80) %}
-
-								<img class="uk-transition-opaque" loading="lazy" alt="Colorful home office with multiple screens" width="600" height="400" src="{{ slider_image4_600.url | safe }}"
-									srcset="{{ slider_image4_600.url | safe }} 600w,
-											{{ slider_image4_1200.url | safe }} 1200w"
-									sizes="(max-width: 600px) 600px,
-											1200px">
-							</picture>
+							{{<media.responsive_image
+								path="/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg"
+								alt="Colorful home office with multiple screens"
+								class="uk-transition-opaque"
+								quality={80}
+							/>}}
 						</div>
 					</li>
 				</ul>

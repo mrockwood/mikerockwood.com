@@ -4,8 +4,13 @@
 
 <div class="uk-section uk-section-muted uk-padding-remove uk-flex">
 	<div class="uk-inline uk-margin-auto">
-		{%- set desk_image = resize_image(path="/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg", width=2000, height=1500, format='webp', quality=90) %}
-		<img src="{{ desk_image.url }}" width="2000" height="1500" alt="A desk with a computer monitor, laptop, and tablet">
+		{{<media.responsive_image
+			path="/images/ryan-carpenter-PdBa4ALgwVc-unsplash.jpg"
+			alt="A desk with a computer monitor, laptop, and tablet"
+			sizes="100vw"
+			loading="eager"
+			quality={90}
+		/>}}
 		<div class="uk-position-medium uk-position-bottom uk-light">
 			<div class="uk-container uk-container-large" style="padding-inline: 0;">
 				<p class="uk-text-meta uk-margin-remove">This isn't my actual desk, but my setup is very similar, albeit messier.</p>

@@ -36,12 +36,18 @@
 				<article class="h-entry uk-article">
 					<a class="" href="{{ article.permalink }}">
 						{%- if article.extra["featured-image"] %}
-							{% set featured_image = resize_image(path=article.extra["featured-image"], width=900, op="fit_width", format="webp", quality=80) %}
-							<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="Featured image for {{ article.title }}" width="{{ featured_image.width }}" height="{{ featured_image.height }}">
+							{{<media.responsive_image
+								path={article.extra["featured-image"]}
+								alt={"Featured image for " ~ article.title}
+								class="uk-margin-remove"
+								quality={80}
+							/>}}
 						{%- else %}
-							{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
-							{% set placeholderImg = resize_image(path=placeholderImg, width=900, op="fit_width", format="webp", quality=80) %}
-							<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="" width="{{ placeholderImg.width }}" height="{{ placeholderImg.height }}">
+							{{<media.responsive_image
+								path="/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg"
+								class="uk-margin-remove"
+								quality={80}
+							/>}}
 						{% endif %}
 					</a>
 					<p class="uk-article-meta uk-margin-remove-bottom">
@@ -71,12 +77,16 @@
 							<div class="uk-width-2-5@s">
 								<a class="" href="{{ article.permalink }}">
 									{%- if article.extra["featured-image"] %}
-										{% set featured_image = resize_image(path=article.extra["featured-image"], width=600, op="fit_width", format="webp", quality=75) %}
-										<img class="uk-margin-remove" src="{{ featured_image.url }}" alt="Featured image for {{ article.title }}" width="{{ featured_image.width }}" height="{{ featured_image.height }}">
+										{{<media.responsive_image
+											path={article.extra["featured-image"]}
+											alt={"Featured image for " ~ article.title}
+											class="uk-margin-remove"
+										/>}}
 									{%- else %}
-										{% set placeholderImg = "/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg" %}
-										{% set placeholderImg = resize_image(path=placeholderImg, width=600, op="fit_width", format="webp", quality=75) %}
-										<img class="uk-margin-remove" src="{{ placeholderImg.url }}" alt="" width="{{ placeholderImg.width }}" height="{{ placeholderImg.height }}">
+										{{<media.responsive_image
+											path="/images/kelly-sikkema-l-lgKl4HNHM-unsplash.jpg"
+											class="uk-margin-remove"
+										/>}}
 									{% endif %}
 								</a>
 							</div>
