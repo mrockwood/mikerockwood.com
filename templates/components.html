@@ -6,12 +6,25 @@
     cover: bool = false,
     sizes: string = "auto",
     loading: string = "lazy",
-    quality: integer = 75
+    width: integer = 0,
+    height: integer = 0,
+    op: string = "fit_width",
+    format: string = "webp",
+    quality: integer = 75,
+    speed: integer = 5,
+    filter: string = "lanczos3"
 ) %}
-    {% set image_640 = resize_image(path=path, width=640, op="fit_width", format="webp", quality=quality) %}
-    {% set image_960 = resize_image(path=path, width=960, op="fit_width", format="webp", quality=quality) %}
-    {% set image_1200 = resize_image(path=path, width=1200, op="fit_width", format="webp", quality=quality) %}
-    {% set image_1600 = resize_image(path=path, width=1600, op="fit_width", format="webp", quality=quality) %}
+    {% if width > 0 and height > 0 %}
+        {% set image_640 = resize_image(path=path, width=640, height=((640 * height / width) | round | int), op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+        {% set image_960 = resize_image(path=path, width=960, height=((960 * height / width) | round | int), op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+        {% set image_1200 = resize_image(path=path, width=1200, height=((1200 * height / width) | round | int), op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+        {% set image_1600 = resize_image(path=path, width=1600, height=((1600 * height / width) | round | int), op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+    {% else %}
+        {% set image_640 = resize_image(path=path, width=640, op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+        {% set image_960 = resize_image(path=path, width=960, op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+        {% set image_1200 = resize_image(path=path, width=1200, op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+        {% set image_1600 = resize_image(path=path, width=1600, op=op, format=format, quality=quality, speed=speed, filter=filter) %}
+    {% endif %}
 
     <img
         src="{{ image_960.url }}"
