@@ -9,6 +9,6 @@ taxonomies:
     - Glam Rock
 extra:
   service: youtube
-  id: xHNRQyhwWo8
+  id: MH6VexII2p4
   thumbnail: /images/covers/brett-smiley-breathlessly-brett-cover-art.webp
 ---
