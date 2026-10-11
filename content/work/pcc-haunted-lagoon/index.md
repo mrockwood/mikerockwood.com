@@ -1,5 +1,5 @@
 ---
-title: Polynesian Cultural Center - Huanted Lagoon
+title: Polynesian Cultural Center - Haunted Lagoon
 description: ""
 date: 2012-10-01
 taxonomies:
